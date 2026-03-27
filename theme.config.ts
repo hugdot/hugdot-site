@@ -4,13 +4,13 @@ import logoImage from '@assets/img/logo.svg'
 
 export default defineThemeConfig({
   name: 'HugDot',
-  id: 'accessible-astro-starter',
+  id: 'hugdot-utility-lab',
   logo: logoImage,
   seo: {
-    title: 'Accessible Astro Starter',
+    title: 'HugDot | Free Online Utility Tools & Converters',
     description:
-      'An Accessible Starter Theme for Astro including several accessibility features and tools to help you build faster.',
-    author: 'Incluud',
+      'Powerful, on-device utility tools for images, text, and files. Your data never leaves your device.',
+    author: 'HugDot',
     image: previewImage, // Can also be a string e.g. '/social-preview-image.png',
   },
   colors: {

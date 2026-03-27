@@ -25,7 +25,15 @@ import { Icon } from 'astro-icon/components'
           <Icon aria-hidden="true" name="lucide:sun" slot="dark" />
         </DarkMode>
       </div>
-      <ResponsiveToggle />
+      <div class="responsive-toggle">
+        <div class="mobile-darkmode">
+          <DarkMode>
+            <Icon aria-hidden="true" name="lucide:moon" slot="light" />
+            <Icon aria-hidden="true" name="lucide:sun" slot="dark" />
+          </DarkMode>
+        </div>
+        <ResponsiveToggle />
+      </div>
     </div>
     <nav class="mobile-menu" aria-label="Main navigation mobile">
       <NavigationItems />
@@ -245,6 +253,21 @@ import { Icon } from 'astro-icon/components'
       gap: var(--space-2xs);
     }
 
+    .mobile-darkmode {
+      display: flex;
+
+      @include breakpoint('nav') {
+        display: none;
+      }
+    }
+
+    .desktop-darkmode {
+      display: none;
+
+      @include breakpoint('nav') {
+        display: flex;
+      }
+    }
 
     .desktop-menu {
       display: none;
@@ -259,7 +282,6 @@ import { Icon } from 'astro-icon/components'
       .responsive-toggle {
         display: none;
       }
-
 
       .desktop-menu {
         display: block;

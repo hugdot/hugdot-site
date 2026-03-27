@@ -1,0 +1,70 @@
+{
+  "toolId": "pdf-to-image",
+  "lang": "en",
+  "metaTitle": "PDF to Image Converter — Convert PDF to PNG or JPG (Free & Private)",
+  "metaDescription": "Convert PDF pages to high-quality PNG or JPG images instantly in your browser. No file uploads required. Extract specific pages or convert entire PDFs for free.",
+  "keywords": [
+    "pdf to image",
+    "convert pdf to png",
+    "pdf to jpg converter",
+    "extract pages from pdf",
+    "high quality pdf to image",
+    "no upload pdf converter",
+    "offline pdf to image",
+    "browser based pdf tool",
+    "free pdf to jpeg"
+  ],
+  "howto": [
+    {
+      "step": "Select your PDF file",
+      "description": "Click the upload area or drag and drop the PDF you want to convert. Your file stays on your device."
+    },
+    {
+      "step": "Configure settings",
+      "description": "Choose your preferred output format (PNG or JPG) and select whether to convert all pages or specific ranges."
+    },
+    {
+      "step": "Convert and Preview",
+      "description": "The tool renders each page into an image. You can preview the thumbnails before downloading."
+    },
+    {
+      "step": "Download as Images",
+      "description": "Save individual pages or download all converted images as a single, convenient ZIP archive."
+    }
+  ],
+  "why": [
+    "100% private — your PDF never leaves your browser",
+    "Convert to high-quality PNG or JPG formats",
+    "Extract specific pages or convert the entire document",
+    "No file size limits or page count restrictions",
+    "High-resolution rendering for sharp text and diagrams",
+    "Works completely offline after the initial page load",
+    "Perfect for social media sharing or presentation slides"
+  ],
+  "faq": [
+    {
+      "q": "Is it safe to convert my sensitive PDFs here?",
+      "a": "Absolutely. Unlike other converters, this tool uses your browser's local processing power. Your PDF data is never sent to any server. It's the safest way to convert confidential documents."
+    },
+    {
+      "q": "What format should I choose: PNG or JPG?",
+      "a": "Choose PNG for the best quality, especially if your PDF has text or line art. Choose JPG if you need smaller file sizes for photos or web use."
+    },
+    {
+      "q": "Can I convert a 100+ page PDF?",
+      "a": "Yes. There are no limits on page counts. However, please note that converting very large PDFs might use more of your computer's memory (RAM) since it happens locally."
+    },
+    {
+      "q": "What resolution (DPI) are the images?",
+      "a": "The images are rendered at a high-definition resolution (typically 300 DPI) to ensure that even small text remains perfectly readable after conversion."
+    },
+    {
+      "q": "Can I convert password-protected PDFs?",
+      "a": "For security reasons, you must unlock the PDF before converting. This tool focuses on privacy-first page rendering rather than cracking passwords."
+    },
+    {
+      "q": "How do I get my images after conversion?",
+      "a": "You can download pages one by one, or click 'Download All' to get all converted images packaged in a single ZIP file."
+    }
+  ]
+}

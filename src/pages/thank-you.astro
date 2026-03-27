@@ -1,0 +1,33 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import PageHeader from '@components/PageHeader.astro'
+import { Heading, Link, Notification } from 'accessible-astro-components'
+import { Icon } from 'astro-icon/components'
+---
+
+<DefaultLayout title="Thank You | HugDot">
+  <PageHeader 
+    title="Message Sent!" 
+    subtitle="Your inquiry has been successfully delivered to our factory." 
+    bgType="gradient" 
+  />
+  <section class="container my-16">
+    <div class="space-content">
+      <Notification type="info">
+        <Icon aria-hidden="true" name="lucide:check-circle" size={24} />
+        <p>Your message was sent successfully. We'll get back to you soon via <strong>admin@hugdot.com</strong>.</p>
+      </Notification>
+      
+      <div class="flex gap-4">
+        <Link href="/" isButton type="primary" animateOnHover animation="boop" pulse>
+          <Icon aria-hidden="true" name="lucide:home" size={24} />
+          Back to Tools
+        </Link>
+        
+        <Link href="/contact" isOutline>
+          Send another message
+        </Link>
+      </div>
+    </div>
+  </section>
+</DefaultLayout>

@@ -1,0 +1,70 @@
+{
+  "toolId": "image-compressor",
+  "lang": "en",
+  "metaTitle": "Image Compressor — Reduce Image File Size (Free, Private & No Quality Loss)",
+  "metaDescription": "Compress JPG, PNG, and WebP images instantly in your browser. No file uploads required. 100% private — your photos never leave your device. Save mobile data and storage for free.",
+  "keywords": [
+    "image compressor",
+    "reduce image size online",
+    "compress jpg to 200kb",
+    "png compressor",
+    "webp image compression",
+    "no upload image compressor",
+    "offline photo compressor",
+    "save mobile data",
+    "free online image optimizer"
+  ],
+  "howto": [
+    {
+      "step": "Select your image",
+      "description": "Click the upload area or drag and drop your photo (JPG, PNG, WebP). Your image is processed locally and never sent to a server."
+    },
+    {
+      "step": "Adjust compression level",
+      "description": "Use the slider to set your target file size or quality level. You can see the estimated final size before processing."
+    },
+    {
+      "step": "Preview the result",
+      "description": "Compare the original and compressed images side-by-side to ensure the visual quality meets your needs."
+    },
+    {
+      "step": "Download compressed image",
+      "description": "Once satisfied, click 'Save' to download the optimized file directly to your device."
+    }
+  ],
+  "why": [
+    "100% private — your sensitive photos and documents never leave your browser",
+    "Significant file size reduction while preserving high visual quality",
+    "Save mobile data — processing happens on your device without uploading files",
+    "Supports all modern formats: JPG, JPEG, PNG, and WebP",
+    "Works completely offline after the initial page load",
+    "No registration, no daily limits, and no watermarks — 100% free",
+    "Perfect for email attachments, web uploads, and saving storage space"
+  ],
+  "faq": [
+    {
+      "q": "Is it safe to compress my private photos here?",
+      "a": "Absolutely. This tool uses client-side compression technology. Unlike other online optimizers, your images are never uploaded to a server, providing total privacy for your personal files."
+    },
+    {
+      "q": "How can I compress an image without losing quality?",
+      "a": "Our tool uses intelligent algorithms to remove unnecessary metadata and optimize pixel data. For most uses, you can achieve 50-80% size reduction with no visible loss in quality."
+    },
+    {
+      "q": "Will this tool use my mobile data plan?",
+      "a": "Hardly any! Since the compression happens entirely on your phone or computer, you only use a tiny amount of data to load the initial website. No large files are ever uploaded or downloaded."
+    },
+    {
+      "q": "Is there a limit on file size or number of images?",
+      "a": "No. There are no file size limits and you can compress as many images as you like. Everything runs within your browser's memory without any restrictions."
+    },
+    {
+      "q": "Does it work on iPhone and Android?",
+      "a": "Yes. This tool is fully compatible with all modern mobile browsers, including Safari on iOS and Chrome on Android. It's the perfect quick fix for mobile storage issues."
+    },
+    {
+      "q": "Which format is best for compression?",
+      "a": "WebP usually offers the best compression-to-quality ratio. If you're starting with a PNG, converting it to WebP can often reduce the size by over 90% while looking identical."
+    }
+  ]
+}

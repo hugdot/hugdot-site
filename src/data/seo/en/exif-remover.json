@@ -1,0 +1,70 @@
+{
+  "toolId": "exif-remover",
+  "lang": "en",
+  "metaTitle": "EXIF Remover — Remove GPS & Metadata from Photos (Free & Private)",
+  "metaDescription": "Protect your privacy by removing hidden EXIF metadata from your photos. Delete GPS location, camera settings, and timestamps instantly in your browser. No upload required.",
+  "keywords": [
+    "exif remover",
+    "remove gps from photo",
+    "photo metadata cleaner",
+    "delete exif data",
+    "privacy photo tool",
+    "remove location from image",
+    "no upload exif cleaner",
+    "offline metadata remover",
+    "secure photo sharing"
+  ],
+  "howto": [
+    {
+      "step": "Select your image",
+      "description": "Click the upload area or drag and drop your photo (JPG, JPEG, PNG). Your file is processed locally and never sent to a server."
+    },
+    {
+      "step": "View embedded metadata",
+      "description": "Our tool automatically scans and displays the hidden EXIF data, such as GPS coordinates, camera model, and the exact date/time of capture."
+    },
+    {
+      "step": "Strip metadata",
+      "description": "With one click, the tool strips away all identified metadata while keeping the original image pixels completely untouched."
+    },
+    {
+      "step": "Download clean image",
+      "description": "Save the sanitized version of your photo. It is now safe to share on social media or public forums without revealing personal details."
+    }
+  ],
+  "why": [
+    "100% private — your sensitive photos never leave your browser for metadata stripping",
+    "Remove precise GPS location data to protect your home address and travel privacy",
+    "Delete camera model, lens settings, and timestamps that can identify your devices",
+    "See exactly what hidden data is embedded in your images before you share them",
+    "Works completely offline — essential for privacy-conscious users on the go",
+    "No registration, no limits, and no data collection — 100% free forever",
+    "Maintains original image quality — only the hidden text data is removed"
+  ],
+  "faq": [
+    {
+      "q": "What exactly is EXIF data?",
+      "a": "EXIF (Exchangeable Image File Format) is metadata embedded in your photos. It includes technical details like camera settings, but more importantly, it often contains your exact GPS coordinates and the time the photo was taken."
+    },
+    {
+      "q": "Why is it important to remove EXIF data before posting online?",
+      "a": "For your safety. If you post a photo taken at home on social media, anyone can download it and extract your exact home address from the embedded GPS data. Removing it ensures your physical location remains private."
+    },
+    {
+      "q": "Will removing metadata reduce my photo's quality?",
+      "a": "No. EXIF data is stored in a separate 'header' section of the file, not in the image pixels themselves. Stripping this data does not affect the visual quality, colors, or resolution of your photo."
+    },
+    {
+      "q": "Does this tool work on iPhone and Android photos?",
+      "a": "Yes! Smartphones are the biggest source of GPS-tagged photos. This tool is fully compatible with mobile browsers and effectively removes all tracking data from mobile-captured images."
+    },
+    {
+      "q": "Can I see the metadata before I decide to delete it?",
+      "a": "Yes. Our tool provides a preview of the found metadata so you can see exactly what information (like your camera model or location) you are about to remove."
+    },
+    {
+      "q": "Do screenshots have EXIF data?",
+      "a": "Usually, no. Screenshots typically do not contain GPS or camera information. However, photos taken directly with your camera app almost always do."
+    }
+  ]
+}

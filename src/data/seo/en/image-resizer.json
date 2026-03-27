@@ -1,0 +1,70 @@
+{
+  "toolId": "image-resizer",
+  "lang": "en",
+  "metaTitle": "Image Resizer — Resize Photos for Instagram, YouTube, Twitter (Free & Private)",
+  "metaDescription": "Resize images instantly in your browser with SNS presets or custom dimensions. No upload required — 100% private. Supports JPG, PNG, WebP with high-quality scaling.",
+  "keywords": [
+    "image resizer",
+    "resize image for instagram",
+    "youtube thumbnail resizer",
+    "twitter photo resize",
+    "custom image dimensions",
+    "no upload image resizer",
+    "offline photo resizer",
+    "pica image scaling",
+    "free online image editor"
+  ],
+  "howto": [
+    {
+      "step": "Upload your image",
+      "description": "Click the upload area or drag and drop an image (JPG, PNG, WebP, GIF). Your file stays securely on your device."
+    },
+    {
+      "step": "Select dimensions",
+      "description": "Choose from popular SNS presets like Instagram Post, YouTube Thumbnail, or TikTok Video. Or, enter your own custom width and height."
+    },
+    {
+      "step": "Lock aspect ratio",
+      "description": "Keep the 'Lock Aspect Ratio' toggle on to ensure your image doesn't look stretched or distorted while resizing."
+    },
+    {
+      "step": "Download resized image",
+      "description": "Click 'Resize Image' to process. Your perfectly sized file will be ready for instant download."
+    }
+  ],
+  "why": [
+    "100% private — your images are processed in your browser and never uploaded",
+    "Ready-to-use SNS presets for Instagram, Twitter, TikTok, YouTube, and Facebook",
+    "Advanced scaling algorithms (Pica) for high-quality results with minimal blur",
+    "Custom dimension controls with aspect ratio locking for precision",
+    "Supports all modern image formats including WebP and transparent PNGs",
+    "Works completely offline after the initial page load",
+    "Completely free with no watermarks and no registration required"
+  ],
+  "faq": [
+    {
+      "q": "Is it safe to resize my personal photos here?",
+      "a": "Yes. This tool uses client-side processing, meaning your photos are never sent to a server. All resizing happens within your browser's memory, ensuring total privacy for your images."
+    },
+    {
+      "q": "What size should I use for Instagram posts?",
+      "a": "For square posts, 1080x1080px is best. For portrait, use 1080x1350px. These and many other social media presets are built directly into the tool for your convenience."
+    },
+    {
+      "q": "Will my image lose quality when I resize it?",
+      "a": "We use the high-performance Pica library for resizing, which uses advanced interpolation to maintain sharpness. However, please note that significantly enlarging a small image may result in some loss of clarity."
+    },
+    {
+      "q": "What does 'Lock Aspect Ratio' actually do?",
+      "a": "It keeps your image's proportions consistent. If you change the width, the height will adjust automatically to prevent your photo from looking squeezed or stretched."
+    },
+    {
+      "q": "Can I resize multiple images at once?",
+      "a": "To ensure maximum performance and privacy on all devices, this tool currently processes one image at a time. You can quickly resize multiple files by repeating the process."
+    },
+    {
+      "q": "What output formats are supported?",
+      "a": "The tool supports JPG, PNG, WebP, and GIF. It typically maintains your original file format unless you choose otherwise during the export process."
+    }
+  ]
+}

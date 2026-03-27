@@ -1,0 +1,69 @@
+{
+  "toolId": "qr-code-generator",
+  "lang": "en",
+  "metaTitle": "QR Code Generator — Create Free QR Codes for URL, Wi-Fi, Text (Private & Offline)",
+  "metaDescription": "Generate high-quality QR codes instantly in your browser. No data is sent to servers. Supports URL, Wi-Fi, Email, and Text. Download as PNG or SVG for free.",
+  "keywords": [
+    "qr code generator",
+    "free qr code",
+    "wifi qr code",
+    "url to qr",
+    "svg qr code",
+    "no upload qr generator",
+    "offline qr code creator",
+    "privacy focused qr"
+  ],
+  "howto": [
+    {
+      "step": "Choose QR code type",
+      "description": "Select from URL, Text, Email, or Wi-Fi tabs depending on what you want to encode."
+    },
+    {
+      "step": "Enter your content",
+      "description": "Type your URL, message, email address, or Wi-Fi credentials into the input field. The QR code updates instantly."
+    },
+    {
+      "step": "Test before use",
+      "description": "Always scan the generated QR code with your phone camera to ensure it leads to the correct destination before printing."
+    },
+    {
+      "step": "Save QR code",
+      "description": "Download as PNG for standard digital use or SVG for high-quality printing and scalable vector graphics."
+    }
+  ],
+  "why": [
+    "No upload — everything runs in your browser",
+    "Multiple formats: URL, Text, Email, Wi-Fi",
+    "Save as PNG or SVG for any use case",
+    "No login required, completely free",
+    "Works offline after initial page load",
+    "Privacy first: Your data never leaves your device",
+    "Perfect for business cards, menus, and marketing materials"
+  ],
+  "faq": [
+    {
+      "q": "Is my data safe when generating a QR code?",
+      "a": "Yes, 100%. Unlike other online generators, our tool creates the QR code entirely within your browser. Your URL, Wi-Fi password, or messages are never sent to our servers. It works completely offline for maximum privacy."
+    },
+    {
+      "q": "What's the difference between PNG and SVG?",
+      "a": "PNG is a raster image best for digital use and printing at fixed sizes. SVG is a vector format that scales infinitely without quality loss, ideal for large-scale prints like banners or posters."
+    },
+    {
+      "q": "Can I create a QR code for Wi-Fi?",
+      "a": "Yes! Switch to the Wi-Fi tab, enter your network name (SSID), password, and security type. Anyone scanning the code can connect to your network instantly."
+    },
+    {
+      "q": "Is there a limit to QR code content?",
+      "a": "QR codes work best with shorter content (under 300 characters). Very long content creates highly complex codes that might be harder for some older cameras to scan quickly."
+    },
+    {
+      "q": "Do QR codes expire?",
+      "a": "No. The QR codes generated here are 'Static', meaning the data is hardcoded into the pattern. They never expire. However, if the destination URL changes later, the code cannot be updated."
+    },
+    {
+      "q": "Can I customize the QR code design?",
+      "a": "This tool generates clean, high-contrast black-and-white QR codes for maximum scannability. You can download the SVG file and edit it in design software to add your own colors or logos."
+    }
+  ]
+}

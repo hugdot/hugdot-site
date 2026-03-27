@@ -1,0 +1,270 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Heading } from 'accessible-astro-components'
+import { Icon } from 'astro-icon/components'
+import seoData from '@data/seo/en/pdf-merger.json'
+---
+<DefaultLayout
+  title={seoData.metaTitle}
+  description={seoData.metaDescription}
+  useTitleTemplate={false}
+  faq={seoData.faq}
+  category="MultimediaApplication"
+>
+  <section class="py-12">
+    <div class="container max-w-3xl">
+
+      <!-- Header -->
+      <div class="mb-8">
+        <div class="mb-2 flex items-center gap-2 text-sm opacity-50">
+          <a href="/" class="breadcrumb-link hover:underline">Home</a>
+          <span>/</span>
+          <a href="/tools/pdf" class="breadcrumb-link hover:underline">PDF Tools</a>
+          <span>/</span>
+          <span>{seoData.metaTitle.split(' — ')[0]}</span>
+        </div>
+        <Heading level="h1" size="h2">{seoData.metaTitle.split(' — ')[0]}</Heading>
+        <p class="mt-2 opacity-60">
+          Merge multiple PDF files into one. Everything runs in your browser — your files never leave your device.
+        </p>
+      </div>
+
+      <!-- Drop Zone -->
+      <div
+        id="drop-zone"
+        class="flex flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed border-[var(--border-color-subtle)] px-6 py-12 text-center transition-all cursor-pointer hover:border-[var(--action-color)]"
+      >
+        <Icon aria-hidden="true" name="lucide:file-plus" size="2.5rem" class="opacity-40" />
+        <div>
+          <p class="font-medium">Open PDF files here</p>
+          <p class="mt-1 text-sm opacity-50">tap or click to open</p>
+        </div>
+        <input id="file-input" type="file" accept=".pdf" multiple class="hidden" />
+      </div>
+
+      <!-- File List -->
+      <div id="file-list" class="mt-6 hidden flex-col gap-2">
+        <Heading level="h2" size="h6" class="mb-2 opacity-60">Files to merge</Heading>
+        <div id="file-items" class="flex flex-col gap-2"></div>
+
+        <!-- Merge Button -->
+        <button
+          id="merge-btn"
+          class="mt-4 flex w-full items-center justify-center gap-2 rounded-2xl bg-[var(--action-color)] px-6 py-4 font-semibold text-white transition-opacity hover:opacity-80"
+        >
+          <Icon aria-hidden="true" name="lucide:merge" size="1.25rem" />
+          Merge PDFs
+        </button>
+      </div>
+
+      <!-- Progress -->
+      <div id="progress-wrap" class="mt-6 hidden">
+        <div class="h-2 w-full overflow-hidden rounded-full bg-[var(--border-color-subtle)]">
+          <div id="progress-bar" class="h-full w-0 rounded-full bg-[var(--action-color)] transition-all duration-300"></div>
+        </div>
+        <p id="progress-text" class="mt-2 text-center text-sm opacity-60">Merging...</p>
+      </div>
+
+      <!-- Privacy Badge -->
+      <div class="mt-8 flex items-center gap-2 rounded-2xl border border-[var(--border-color-subtle)] px-5 py-4 text-sm opacity-60">
+        <Icon aria-hidden="true" name="lucide:shield-check" size="1rem" />
+        <span>Your files never leave your device. No data is sent to any server.</span>
+      </div>
+      <!-- How to Use -->
+      <div class="mt-16">
+        <Heading level="h2" size="h4" class="mb-6">How to Merge PDF Files</Heading>
+        <div class="flex flex-col gap-4">
+          {seoData.howto.map((item, index) => (
+            <div class="flex gap-4 rounded-2xl border border-[var(--border-color-subtle)] px-5 py-4">
+              <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--action-color)] text-sm font-bold text-white">
+                {index + 1}
+              </span>
+              <div>
+                <p class="font-semibold">{item.step}</p>
+                <p class="mt-1 text-sm opacity-60">{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Why Use -->
+      <div class="mt-12">
+        <Heading level="h2" size="h4" class="mb-6">Why Use This Tool</Heading>
+        <div class="flex flex-col gap-3">
+          {seoData.why.map((reason) => (
+            <div class="flex items-center gap-3 rounded-xl border border-[var(--border-color-subtle)] px-5 py-4">
+              <Icon aria-hidden="true" name="lucide:check-circle" size="1.25rem" class="shrink-0 text-[var(--action-color)]" />
+              <span class="text-sm">{reason}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="mt-12">
+        <Heading level="h2" size="h4" class="mb-6">Frequently Asked Questions</Heading>
+        <div class="flex flex-col gap-3">
+          {seoData.faq.map((item) => (
+            <details class="rounded-2xl border border-[var(--border-color-subtle)] px-5 py-4">
+              <summary class="cursor-pointer font-semibold">{item.q}</summary>
+              <p class="mt-3 text-sm opacity-60">{item.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+      
+      <div class="mt-16 border-t border-[var(--border-color-subtle)] pt-8">
+        <p class="mb-4 text-[10px] font-bold uppercase tracking-widest opacity-40">Related Keywords</p>
+        <div class="flex flex-wrap gap-x-6 gap-y-3"> {seoData.keywords.map((tag) => (
+            <span class="text-xs opacity-50">#{tag.toLowerCase()}</span> 
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</DefaultLayout>
+
+<script>
+  import { PDFDocument } from 'pdf-lib'
+
+  document.addEventListener('astro:page-load', () => {
+    const dropZone = document.getElementById('drop-zone') as HTMLDivElement
+    const fileInput = document.getElementById('file-input') as HTMLInputElement
+    const fileList = document.getElementById('file-list') as HTMLDivElement
+    const fileItems = document.getElementById('file-items') as HTMLDivElement
+    const mergeBtn = document.getElementById('merge-btn') as HTMLButtonElement
+    const progressWrap = document.getElementById('progress-wrap') as HTMLDivElement
+    const progressBar = document.getElementById('progress-bar') as HTMLDivElement
+    const progressText = document.getElementById('progress-text') as HTMLParagraphElement
+
+    let files: File[] = []
+
+    const formatSize = (bytes: number) => {
+      if (bytes < 1024) return bytes + ' B'
+      if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB'
+      return (bytes / (1024 * 1024)).toFixed(1) + ' MB'
+    }
+
+    const renderFiles = () => {
+      fileItems.innerHTML = ''
+      if (files.length === 0) {
+        fileList.classList.add('hidden')
+        fileList.classList.remove('flex')
+        return
+      }
+      fileList.classList.remove('hidden')
+      fileList.classList.add('flex')
+
+      files.forEach((file, index) => {
+        const item = document.createElement('div')
+        item.className = 'flex items-center gap-3 rounded-xl border border-[var(--border-color-subtle)] px-4 py-3'
+        item.innerHTML = `
+          <span class="shrink-0 opacity-40">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </span>
+          <span class="flex-1 truncate text-sm">${file.name}</span>
+          <span class="shrink-0 text-xs opacity-40">${formatSize(file.size)}</span>
+          <div class="flex shrink-0 gap-1">
+            <button data-action="up" data-index="${index}" class="rounded-lg p-1.5 opacity-40 hover:opacity-100 transition-opacity ${index === 0 ? 'invisible' : ''}" aria-label="Move up">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+            </button>
+            <button data-action="down" data-index="${index}" class="rounded-lg p-1.5 opacity-40 hover:opacity-100 transition-opacity ${index === files.length - 1 ? 'invisible' : ''}" aria-label="Move down">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <button data-action="remove" data-index="${index}" class="rounded-lg p-1.5 opacity-40 hover:opacity-100 transition-opacity" aria-label="Remove file">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+          </div>
+        `
+        fileItems.appendChild(item)
+      })
+    }
+
+    const addFiles = (newFiles: FileList | null) => {
+      if (!newFiles) return
+      const pdfs = Array.from(newFiles).filter(f => f.type === 'application/pdf' || f.name.endsWith('.pdf'))
+      files = [...files, ...pdfs]
+      renderFiles()
+    }
+
+    dropZone.addEventListener('click', () => fileInput.click())
+    fileInput.addEventListener('change', () => addFiles(fileInput.files))
+
+    dropZone.addEventListener('dragover', (e) => {
+      e.preventDefault()
+      dropZone.classList.add('border-[var(--action-color)]')
+    })
+    dropZone.addEventListener('dragleave', () => {
+      dropZone.classList.remove('border-[var(--action-color)]')
+    })
+    dropZone.addEventListener('drop', (e) => {
+      e.preventDefault()
+      dropZone.classList.remove('border-[var(--action-color)]')
+      addFiles(e.dataTransfer?.files ?? null)
+    })
+
+    fileItems.addEventListener('click', (e) => {
+      const btn = (e.target as HTMLElement).closest('button[data-action]') as HTMLButtonElement | null
+      if (!btn) return
+      const action = btn.dataset.action
+      const index = parseInt(btn.dataset.index ?? '0')
+
+      if (action === 'up' && index > 0) {
+        [files[index - 1], files[index]] = [files[index], files[index - 1]]
+      } else if (action === 'down' && index < files.length - 1) {
+        [files[index], files[index + 1]] = [files[index + 1], files[index]]
+      } else if (action === 'remove') {
+        files.splice(index, 1)
+      }
+      renderFiles()
+    })
+
+    mergeBtn.addEventListener('click', async () => {
+      if (files.length < 2) {
+        alert('Please add at least 2 PDF files.')
+        return
+      }
+
+      mergeBtn.disabled = true
+      progressWrap.classList.remove('hidden')
+      progressBar.style.width = '0%'
+      progressText.textContent = 'Starting...'
+
+      try {
+        const merged = await PDFDocument.create()
+
+        for (let i = 0; i < files.length; i++) {
+          progressText.textContent = `Processing file ${i + 1} of ${files.length}...`
+          progressBar.style.width = `${((i / files.length) * 90)}%`
+
+          const arrayBuffer = await files[i].arrayBuffer()
+          const pdf = await PDFDocument.load(arrayBuffer)
+          const pages = await merged.copyPages(pdf, pdf.getPageIndices())
+          pages.forEach((page: any) => merged.addPage(page))
+        }
+
+        progressText.textContent = 'Saving...'
+        progressBar.style.width = '95%'
+
+        const mergedBytes = await merged.save()
+        const blob = new Blob([new Uint8Array(mergedBytes)], { type: 'application/pdf' })
+        const url = URL.createObjectURL(blob)
+
+        const a = document.createElement('a')
+        a.href = url
+        a.download = 'merged.pdf'
+        a.click()
+        URL.revokeObjectURL(url)
+
+        progressBar.style.width = '100%'
+        progressText.textContent = 'Done! File saved.'
+      } catch (err) {
+        progressText.textContent = 'Something went wrong. Please try again.'
+        console.error(err)
+      } finally {
+        mergeBtn.disabled = false
+      }
+    })
+  })
+</script>

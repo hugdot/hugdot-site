@@ -1,0 +1,70 @@
+{
+  "toolId": "pdf-merger",
+  "lang": "en",
+  "metaTitle": "PDF Merger — Combine Multiple PDF Files (Free, Private & Offline)",
+  "metaDescription": "Merge multiple PDF documents into a single file instantly in your browser. 100% private — your files never leave your device. No limits on file size or count.",
+  "keywords": [
+    "pdf merger",
+    "combine pdf files",
+    "merge pdf online free",
+    "join pdf documents",
+    "pdf binder",
+    "no upload pdf merger",
+    "offline pdf joiner",
+    "secure pdf merging",
+    "unlimited pdf merge"
+  ],
+  "howto": [
+    {
+      "step": "Select your PDF files",
+      "description": "Drag and drop multiple PDF files or click to upload. Your documents are processed locally and never sent to a server."
+    },
+    {
+      "step": "Arrange the order",
+      "description": "Drag the file thumbnails to reorder them. The final PDF will follow the exact sequence you set here."
+    },
+    {
+      "step": "Preview and Merge",
+      "description": "Check the file names and page counts to ensure everything is correct before clicking the 'Merge' button."
+    },
+    {
+      "step": "Save your combined PDF",
+      "description": "Click 'Merge PDF' to generate the new file. It will be available for instant download to your device."
+    }
+  ],
+  "why": [
+    "100% private — your sensitive documents never leave your browser",
+    "Combine unlimited PDF files into a single document",
+    "Intuitive drag-and-drop interface for easy reordering",
+    "Perfect for combining reports, receipts, contracts, or portfolio pieces",
+    "Original quality preserved — no re-compression during merging",
+    "Works completely offline after the initial page load",
+    "No registration, no file size limits, completely free forever"
+  ],
+  "faq": [
+    {
+      "q": "Is my sensitive data safe when merging PDFs?",
+      "a": "Yes. This tool uses client-side processing, meaning the merging logic happens inside your browser's memory. No data is ever uploaded to our servers, making it ideal for legal or financial documents."
+    },
+    {
+      "q": "How many PDFs can I merge at once?",
+      "a": "There is no hard limit on the number of files. However, merging a very large number of high-resolution PDFs (e.g., 50+ files) may depend on your device's available memory (RAM)."
+    },
+    {
+      "q": "Will the merged PDF lose quality?",
+      "a": "No. The tool combines the existing data streams of your PDFs without re-encoding them. The text sharpness and image quality will remain identical to the original files."
+    },
+    {
+      "q": "Can I merge password-protected PDFs?",
+      "a": "No. For security reasons, you must unlock any encrypted PDFs before merging them. This ensures the browser can read and join the files locally without needing access to your passwords."
+    },
+    {
+      "q": "Does the order of files matter?",
+      "a": "Yes. The order in which you arrange the files on the screen is the exact order in which they will appear in the final combined PDF document."
+    },
+    {
+      "q": "Can I use this on my mobile phone?",
+      "a": "Yes! This tool is fully responsive and works on any modern web browser, whether you are on a desktop, tablet, or smartphone."
+    }
+  ]
+}

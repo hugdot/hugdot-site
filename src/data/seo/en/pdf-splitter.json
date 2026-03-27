@@ -1,0 +1,70 @@
+{
+  "toolId": "pdf-splitter",
+  "lang": "en",
+  "metaTitle": "PDF Splitter — Split & Extract PDF Pages (Free, Private & Offline)",
+  "metaDescription": "Split PDF files into separate pages or extract specific page ranges instantly in your browser. 100% private — your documents never leave your device. No limits.",
+  "keywords": [
+    "pdf splitter",
+    "extract pdf pages",
+    "split pdf online free",
+    "separate pdf pages",
+    "pdf page extractor",
+    "split pdf by range",
+    "no upload pdf splitter",
+    "offline pdf tools",
+    "high quality pdf split"
+  ],
+  "howto": [
+    {
+      "step": "Select your PDF file",
+      "description": "Drag and drop or click to upload the PDF you want to split. Processing happens entirely on your device."
+    },
+    {
+      "step": "Choose split method",
+      "description": "Select your preferred method: extract specific pages (e.g., 1, 3-5), split every N pages, or divide the file into equal parts."
+    },
+    {
+      "step": "Preview and Organize",
+      "description": "Review the page thumbnails to ensure you are selecting the correct sections of your document."
+    },
+    {
+      "step": "Download split PDFs",
+      "description": "Click 'Split PDF' to process. Your separated files will be available for instant download, often as a single ZIP archive."
+    }
+  ],
+  "why": [
+    "100% private — your sensitive documents never leave your browser",
+    "Multiple split methods: by page, by range, or into equal parts",
+    "Extract only the specific pages you need for smaller file sizes",
+    "No re-encoding — original PDF quality is perfectly preserved",
+    "Works completely offline after the initial page load",
+    "No file size limits or registration required — completely free",
+    "Perfect for separating contracts, receipts, or large reports"
+  ],
+  "faq": [
+    {
+      "q": "Is it safe to split my confidential documents here?",
+      "a": "Yes. Unlike other PDF services, our tool performs the splitting logic inside your browser's memory. Your file is never uploaded to any server, ensuring total privacy for legal or financial documents."
+    },
+    {
+      "q": "Will splitting my PDF reduce its quality?",
+      "a": "No. The tool extracts the original data streams from your PDF without re-compressing them. The quality of images and text in the split files will be identical to the original."
+    },
+    {
+      "q": "Can I extract just a single page?",
+      "a": "Absolutely. Simply enter the specific page number you need, and the tool will generate a new PDF containing only that page."
+    },
+    {
+      "q": "Can I split a PDF into 10-page segments?",
+      "a": "Yes. Use the 'Split every N pages' option and set the value to 10. A 50-page PDF will automatically be divided into five 10-page documents."
+    },
+    {
+      "q": "What happens if my PDF is password-protected?",
+      "a": "For privacy and technical reasons, you must remove the password from the PDF before splitting it. This ensures the browser can read and separate the pages locally."
+    },
+    {
+      "q": "How are the split files delivered?",
+      "a": "Depending on the method chosen, you will either download a single new PDF or a ZIP file containing multiple separated PDF documents."
+    }
+  ]
+}

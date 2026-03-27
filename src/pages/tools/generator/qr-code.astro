@@ -1,0 +1,376 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Heading } from 'accessible-astro-components'
+import { Icon } from 'astro-icon/components'
+import seoData from '@data/seo/en/qr-code-generator.json'
+---
+
+<DefaultLayout
+  title={seoData.metaTitle}
+  description={seoData.metaDescription}
+  useTitleTemplate={false}
+  faq={seoData.faq}
+  category="UtilityApplication"
+>
+  <section class="py-12">
+    <div class="container max-w-3xl">
+
+      <!-- Header -->
+      <div class="mb-8">
+        <div class="mb-2 flex items-center gap-2 text-sm opacity-50">
+          <a href="/" class="breadcrumb-link hover:underline">Home</a>
+          <span>/</span>
+          <a href="/tools/generator" class="breadcrumb-link hover:underline">Generators</a>
+          <span>/</span>
+          <span>{seoData.metaTitle.split(' — ')[0]}</span>
+        </div>
+        <Heading level="h1" size="h2">{seoData.metaTitle.split(' — ')[0]}</Heading>
+        <p class="mt-2 opacity-60">
+          Generate QR codes instantly from any URL, text, email, or Wi-Fi credentials.
+          Everything runs in your browser — your data never leaves your device.
+        </p>
+      </div>
+
+      <!-- Type Selector -->
+      <div class="mb-6 flex flex-wrap gap-2">
+        {['URL', 'Text', 'Email', 'Wi-Fi'].map((type) => (
+          <button
+            class="qr-type-btn rounded-full border border-[var(--border-color-subtle)] px-4 py-2 text-sm font-medium transition-all hover:border-[var(--action-color)]"
+            data-type={type}
+          >
+            {type}
+          </button>
+        ))}
+      </div>
+
+      <!-- Input Forms -->
+      <div id="form-url" class="qr-form flex flex-col gap-3">
+        <input
+          id="input-url"
+          type="url"
+          placeholder="https://example.com"
+          class="w-full rounded-2xl border-2 border-[var(--border-color-subtle)] bg-[var(--background-color)] px-5 py-4 text-base outline-none transition-all focus:border-[var(--action-color)]"
+          aria-label="URL input"
+        />
+      </div>
+
+      <div id="form-text" class="qr-form hidden flex-col gap-3">
+        <textarea
+          id="input-text-qr"
+          placeholder="Enter any text..."
+          rows="4"
+          class="w-full resize-none rounded-2xl border-2 border-[var(--border-color-subtle)] bg-[var(--background-color)] px-5 py-4 text-base outline-none transition-all focus:border-[var(--action-color)]"
+          aria-label="Text input"
+        ></textarea>
+      </div>
+
+      <div id="form-email" class="qr-form hidden flex-col gap-3">
+        <input
+          id="input-email"
+          type="email"
+          placeholder="email@example.com"
+          class="w-full rounded-2xl border-2 border-[var(--border-color-subtle)] bg-[var(--background-color)] px-5 py-4 text-base outline-none transition-all focus:border-[var(--action-color)]"
+          aria-label="Email input"
+        />
+        <input
+          id="input-email-subject"
+          type="text"
+          placeholder="Subject (optional)"
+          class="w-full rounded-2xl border-2 border-[var(--border-color-subtle)] bg-[var(--background-color)] px-5 py-4 text-base outline-none transition-all focus:border-[var(--action-color)]"
+          aria-label="Email subject"
+        />
+      </div>
+
+      <div id="form-wifi" class="qr-form hidden flex-col gap-3">
+        <input
+          id="input-wifi-ssid"
+          type="text"
+          placeholder="Wi-Fi Network Name (SSID)"
+          class="w-full rounded-2xl border-2 border-[var(--border-color-subtle)] bg-[var(--background-color)] px-5 py-4 text-base outline-none transition-all focus:border-[var(--action-color)]"
+          aria-label="Wi-Fi SSID"
+        />
+        <input
+          id="input-wifi-password"
+          type="password"
+          placeholder="Password"
+          class="w-full rounded-2xl border-2 border-[var(--border-color-subtle)] bg-[var(--background-color)] px-5 py-4 text-base outline-none transition-all focus:border-[var(--action-color)]"
+          aria-label="Wi-Fi password"
+        />
+        <div class="flex gap-3">
+          {['WPA', 'WEP', 'None'].map((sec) => (
+            <button
+              class="wifi-security-btn rounded-full border border-[var(--border-color-subtle)] px-4 py-2 text-sm transition-all hover:border-[var(--action-color)]"
+              data-security={sec}
+            >
+              {sec}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <!-- QR Options -->
+      <div class="mt-6 flex flex-wrap items-center gap-4">
+        <div class="flex items-center gap-2">
+          <label class="text-sm opacity-60" for="qr-size">Size</label>
+          <select
+            id="qr-size"
+            class="rounded-xl border border-[var(--border-color-subtle)] bg-[var(--background-color)] px-3 py-2 text-sm outline-none"
+          >
+            <option value="128">Small</option>
+            <option value="256" selected>Medium</option>
+            <option value="512">Large</option>
+          </select>
+        </div>
+        <div class="flex items-center gap-2">
+          <label class="text-sm opacity-60" for="qr-color">Color</label>
+          <input
+            id="qr-color"
+            type="color"
+            value="#000000"
+            class="h-9 w-9 cursor-pointer rounded-lg border border-[var(--border-color-subtle)]"
+          />
+        </div>
+        <div class="flex items-center gap-2">
+          <label class="text-sm opacity-60" for="qr-bg">Background</label>
+          <input
+            id="qr-bg"
+            type="color"
+            value="#ffffff"
+            class="h-9 w-9 cursor-pointer rounded-lg border border-[var(--border-color-subtle)]"
+          />
+        </div>
+      </div>
+
+      <!-- QR Output -->
+      <div class="mt-8 flex flex-col items-center gap-6">
+        <div
+          id="qr-placeholder"
+          class="flex h-64 w-64 items-center justify-center rounded-2xl border-2 border-dashed border-[var(--border-color-subtle)] text-sm opacity-40"
+        >
+          QR code will appear here
+        </div>
+        <canvas id="qr-canvas" class="hidden rounded-2xl"></canvas>
+
+        <div class="flex gap-3">
+          <button
+            id="download-png"
+            disabled
+            class="flex items-center gap-2 rounded-full border border-[var(--border-color-subtle)] px-5 py-2.5 text-sm font-medium transition-all hover:border-[var(--action-color)] disabled:opacity-30"
+          >
+            <Icon aria-hidden="true" name="lucide:download" size="1rem" />
+            Save PNG
+          </button>
+          <button
+            id="download-svg"
+            disabled
+            class="flex items-center gap-2 rounded-full border border-[var(--border-color-subtle)] px-5 py-2.5 text-sm font-medium transition-all hover:border-[var(--action-color)] disabled:opacity-30"
+          >
+            <Icon aria-hidden="true" name="lucide:download" size="1rem" />
+            Save SVG
+          </button>
+        </div>
+      </div>
+
+      <!-- Privacy Badge -->
+      <div class="mt-8 flex items-center gap-2 rounded-2xl border border-[var(--border-color-subtle)] px-5 py-4 text-sm opacity-60">
+        <Icon aria-hidden="true" name="lucide:shield-check" size="1rem" />
+        <span>Your data never leaves your device. No data is sent to any server.</span>
+      </div>
+      <!-- How to Use -->
+      <div class="mt-16">
+        <Heading level="h2" size="h4" class="mb-6">How to Generate QR Code</Heading>
+        <div class="flex flex-col gap-4">
+          {seoData.howto.map((item, index) => (
+            <div class="flex gap-4 rounded-2xl border border-[var(--border-color-subtle)] px-5 py-4">
+              <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--action-color)] text-sm font-bold text-white">
+                {index + 1}
+              </span>
+              <div>
+                <p class="font-semibold">{item.step}</p>
+                <p class="mt-1 text-sm opacity-60">{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Why Use -->
+      <div class="mt-12">
+        <Heading level="h2" size="h4" class="mb-6">Why Use This Tool</Heading>
+        <div class="flex flex-col gap-3">
+          {seoData.why.map((reason) => (
+            <div class="flex items-center gap-3 rounded-xl border border-[var(--border-color-subtle)] px-5 py-4">
+              <Icon aria-hidden="true" name="lucide:check-circle" size="1.25rem" class="shrink-0 text-[var(--action-color)]" />
+              <span class="text-sm">{reason}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="mt-12">
+        <Heading level="h2" size="h4" class="mb-6">Frequently Asked Questions</Heading>
+        <div class="flex flex-col gap-3">
+          {seoData.faq.map((item) => (
+            <details class="rounded-2xl border border-[var(--border-color-subtle)] px-5 py-4">
+              <summary class="cursor-pointer font-semibold">{item.q}</summary>
+              <p class="mt-3 text-sm opacity-60">{item.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+      
+      <div class="mt-16 border-t border-[var(--border-color-subtle)] pt-8">
+        <p class="mb-4 text-[10px] font-bold uppercase tracking-widest opacity-40">Related Keywords</p>
+        <div class="flex flex-wrap gap-x-6 gap-y-3"> {seoData.keywords.map((tag) => (
+            <span class="text-xs opacity-50">#{tag.toLowerCase()}</span> 
+          ))}
+        </div>
+      </div>
+
+    </div>
+  </section>
+</DefaultLayout>
+
+<script>
+  import QRCode from 'qrcode';
+  document.addEventListener('astro:page-load', () => {
+    let currentType = 'URL'
+    let currentSecurity = 'WPA'
+    let qrLoaded = true
+
+    const placeholder = document.getElementById('qr-placeholder') as HTMLElement
+    const canvas = document.getElementById('qr-canvas') as HTMLCanvasElement
+    const downloadPng = document.getElementById('download-png') as HTMLButtonElement
+    const downloadSvg = document.getElementById('download-svg') as HTMLButtonElement
+    const sizeSelect = document.getElementById('qr-size') as HTMLSelectElement
+    const colorInput = document.getElementById('qr-color') as HTMLInputElement
+    const bgInput = document.getElementById('qr-bg') as HTMLInputElement
+    const typeBtns = document.querySelectorAll<HTMLButtonElement>('.qr-type-btn')
+
+    // Tab switching — runs immediately, no library needed
+    const showForm = (type: string) => {
+      const map: Record<string, string> = {
+        'URL': 'form-url',
+        'Text': 'form-text',
+        'Email': 'form-email',
+        'Wi-Fi': 'form-wifi',
+      }
+      document.querySelectorAll<HTMLElement>('.qr-form').forEach((form) => {
+        form.style.display = form.id === map[type] ? 'flex' : 'none'
+      })
+      typeBtns.forEach((btn) => {
+        btn.style.fontWeight = btn.dataset.type === type ? '700' : '400'
+        btn.style.borderWidth = btn.dataset.type === type ? '2px' : '1px'
+      })
+    }
+
+    typeBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        currentType = btn.dataset.type ?? 'URL'
+        showForm(currentType)
+        if (qrLoaded) generateQR()
+      })
+    })
+
+    // Init tabs immediately
+    showForm('URL')
+
+    // Wi-Fi security
+    document.querySelectorAll<HTMLButtonElement>('.wifi-security-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        currentSecurity = btn.dataset.security ?? 'WPA'
+        document.querySelectorAll<HTMLButtonElement>('.wifi-security-btn').forEach((b) => {
+          b.style.fontWeight = b === btn ? '700' : '400'
+          b.style.borderWidth = b === btn ? '2px' : '1px'
+        })
+        if (qrLoaded) generateQR()
+      })
+    })
+
+    const getContent = (): string => {
+      switch (currentType) {
+        case 'URL':
+          return (document.getElementById('input-url') as HTMLInputElement)?.value ?? ''
+        case 'Text':
+          return (document.getElementById('input-text-qr') as HTMLTextAreaElement)?.value ?? ''
+        case 'Email': {
+          const email = (document.getElementById('input-email') as HTMLInputElement)?.value ?? ''
+          const subject = (document.getElementById('input-email-subject') as HTMLInputElement)?.value ?? ''
+          return email ? `mailto:${email}${subject ? `?subject=${encodeURIComponent(subject)}` : ''}` : ''
+        }
+        case 'Wi-Fi': {
+          const ssid = (document.getElementById('input-wifi-ssid') as HTMLInputElement)?.value ?? ''
+          const pass = (document.getElementById('input-wifi-password') as HTMLInputElement)?.value ?? ''
+          return ssid ? `WIFI:T:${currentSecurity};S:${ssid};P:${pass};;` : ''
+        }
+        default:
+          return ''
+      }
+    }
+
+    const generateQR = async () => {
+      if (!qrLoaded) return
+      const content = getContent()
+      const size = parseInt(sizeSelect?.value ?? '256')
+      const color = colorInput?.value ?? '#000000'
+      const bg = bgInput?.value ?? '#ffffff'
+
+      if (!content.trim()) {
+        placeholder.style.display = 'flex'
+        canvas.style.display = 'none'
+        downloadPng.disabled = true
+        downloadSvg.disabled = true
+        return
+      }
+
+      try {
+        await QRCode.toCanvas(canvas, content, {
+          width: size,
+          margin: 2,
+          color: { dark: color, light: bg },
+          errorCorrectionLevel: 'H',
+        })
+        placeholder.style.display = 'none'
+        canvas.style.display = 'block'
+        downloadPng.disabled = false
+        downloadSvg.disabled = false
+      } catch (e) {
+        console.error('QR generation failed', e)
+      }
+    }
+
+    downloadPng.addEventListener('click', () => {
+      const link = document.createElement('a')
+      link.download = 'qrcode.png'
+      link.href = canvas.toDataURL('image/png')
+      link.click()
+    })
+
+    downloadSvg.addEventListener('click', async () => {
+      const content = getContent()
+      if (!content.trim()) return
+      const color = colorInput?.value ?? '#000000'
+      const bg = bgInput?.value ?? '#ffffff'
+      try {
+        const svgStr = await QRCode.toString(content, { 
+          type: 'svg',
+          margin: 2,
+          color: { dark: color, light: bg },
+          errorCorrectionLevel: 'H',
+        })
+        const blob = new Blob([svgStr], { type: 'image/svg+xml' })
+        const link = document.createElement('a')
+        link.download = 'qrcode.svg'
+        link.href = URL.createObjectURL(blob)
+        link.click()
+      } catch (e) {
+        console.error('SVG generation failed', e)
+      }
+    })
+
+    document.querySelectorAll('input, textarea, select').forEach((el) => {
+      el.addEventListener('input', () => { if (qrLoaded) generateQR() })
+    })
+  })
+</script>

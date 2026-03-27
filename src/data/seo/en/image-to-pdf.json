@@ -1,0 +1,70 @@
+{
+  "toolId": "image-to-pdf",
+  "lang": "en",
+  "metaTitle": "Image to PDF Converter — Convert JPG, PNG, WebP to PDF (Free & Private)",
+  "metaDescription": "Convert your images to a single, professional PDF document instantly in your browser. No file uploads required. Combine multiple photos into one PDF for free.",
+  "keywords": [
+    "image to pdf",
+    "convert jpg to pdf",
+    "png to pdf converter",
+    "webp to pdf",
+    "combine images to pdf",
+    "no upload image converter",
+    "offline image to pdf",
+    "photo to pdf binder",
+    "free pdf creator"
+  ],
+  "howto": [
+    {
+      "step": "Select your images",
+      "description": "Click the upload area or drag and drop your photos (JPG, PNG, WebP). Your images stay on your device and are never sent to our servers."
+    },
+    {
+      "step": "Arrange the sequence",
+      "description": "Drag and drop the image thumbnails to reorder them. Each image will represent one page in your final PDF."
+    },
+    {
+      "step": "Configure page settings",
+      "description": "Our tool automatically scales your images to fit standard A4 dimensions while preserving the original aspect ratio."
+    },
+    {
+      "step": "Download your PDF",
+      "description": "Click 'Convert to PDF' to generate the document. It will be ready for instant download to your device."
+    }
+  ],
+  "why": [
+    "100% private — your personal photos and documents never leave your browser",
+    "Supports all popular formats: JPG, JPEG, PNG, and WebP",
+    "Easily combine multiple images into one clean, organized PDF file",
+    "Intuitive drag-and-drop reordering for perfect page sequencing",
+    "Optimized for mobile and desktop for quick conversions on the go",
+    "Works completely offline after the initial page load",
+    "No registration, no watermarks, and no file size limits — 100% free"
+  ],
+  "faq": [
+    {
+      "q": "Is it safe to convert my personal IDs or receipts here?",
+      "a": "Yes. This tool uses client-side processing. Unlike other websites, your sensitive images are processed entirely within your browser's memory. No data is ever uploaded to a server, making it the most secure way to handle private documents."
+    },
+    {
+      "q": "How many images can I combine into one PDF?",
+      "a": "There is no hard limit on the number of images. However, creating extremely large PDFs (e.g., 100+ high-resolution photos) may take a moment depending on your device's processing power."
+    },
+    {
+      "q": "What size will the images be in the resulting PDF?",
+      "a": "By default, images are scaled to fit a standard A4 page size. We maintain the original aspect ratio of your photos to ensure they don't look stretched or distorted."
+    },
+    {
+      "q": "Can I convert my images back to their original format later?",
+      "a": "Yes! If you need to turn your PDF back into individual images, you can use our 'PDF to Image' tool to extract them at high quality."
+    },
+    {
+      "q": "Does this tool compress my images?",
+      "a": "Images are embedded at their original quality to ensure clarity. If you need a smaller PDF file size for emailing, we recommend using our 'Image Compressor' tool before converting them."
+    },
+    {
+      "q": "What happens if my images have different sizes or orientations?",
+      "a": "The tool handles different sizes automatically. Each image becomes its own page, centered and scaled to provide a consistent look throughout the document."
+    }
+  ]
+}

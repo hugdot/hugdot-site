@@ -1,0 +1,66 @@
+{
+  "toolId": "word-counter",
+  "lang": "en",
+  "metaTitle": "Word Counter — Free Word & Character Count (Real-time & Private)",
+  "metaDescription": "Count words, characters, sentences, and paragraphs instantly in your browser. No data sent to servers. Check Twitter, Instagram, and TikTok limits for free.",
+  "keywords": [
+    "word counter",
+    "character counter",
+    "word count with spaces",
+    "character count no spaces",
+    "reading time calculator",
+    "twitter character limit checker",
+    "instagram bio word count",
+    "seo meta description length",
+    "free text analyzer",
+    "offline word counter"
+  ],
+  "howto": [
+    {
+      "step": "Paste your text",
+      "description": "Type or paste any text into the input box. The counter updates instantly as you type."
+    },
+    {
+      "step": "Check the counts",
+      "description": "See real-time word, character, sentence, and paragraph counts below the text area."
+    },
+    {
+      "step": "Monitor platform limits",
+      "description": "Watch the visual progress bars to ensure your text fits Twitter, Instagram, TikTok, and other platform character limits."
+    }
+  ],
+  "why": [
+    "100% private — your text never leaves your browser",
+    "Real-time counting with instant updates as you type",
+    "Platform-specific character limits with visual progress bars",
+    "Reading time estimation based on average reading speed",
+    "Works completely offline — no internet connection required",
+    "No sign-up, no installation, completely free forever"
+  ],
+  "faq": [
+    {
+      "q": "Does this tool save my text anywhere?",
+      "a": "No. Everything runs in your browser. Your text is never sent to any server or saved anywhere for maximum privacy."
+    },
+    {
+      "q": "Does the character count include spaces?",
+      "a": "Yes. Every space, punctuation mark, and symbol is counted as a character. This is consistent with how social media platforms and search engines measure text length."
+    },
+    {
+      "q": "How is reading time calculated?",
+      "a": "Reading time is estimated based on an average reading speed of 200 words per minute, which is the typical rate for adults reading on screens."
+    },
+    {
+      "q": "Why are there platform character limits?",
+      "a": "Social media platforms like Twitter (280 chars), Instagram Bio (150 chars), and TikTok Bio (80 chars) have strict character limits. The visual bars help you see if your text fits before posting."
+    },
+    {
+      "q": "What counts as a sentence?",
+      "a": "Sentences are counted based on punctuation marks like periods (.), exclamation points (!), and question marks (?)."
+    },
+    {
+      "q": "Can I use this for SEO meta descriptions?",
+      "a": "Yes! Google typically displays 150-160 characters for meta descriptions. You can use the character counter to ensure your description fits perfectly for search engine results."
+    }
+  ]
+}

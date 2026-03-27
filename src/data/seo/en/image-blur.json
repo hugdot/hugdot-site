@@ -1,0 +1,70 @@
+{
+  "toolId": "image-blur",
+  "lang": "en",
+  "metaTitle": "Image Blur — Blur Photos & Hide Sensitive Info (Free, Private & Offline)",
+  "metaDescription": "Blur your images instantly in your browser to protect privacy or create artistic effects. 100% private — your photos never leave your device. No upload required.",
+  "keywords": [
+    "image blur",
+    "blur photo online",
+    "censor image online",
+    "hide face in photo",
+    "blur background online",
+    "no upload image blur",
+    "offline photo blur",
+    "privacy blur tool",
+    "free image editor"
+  ],
+  "howto": [
+    {
+      "step": "Select your image",
+      "description": "Click the upload area or drag and drop the image (JPG, PNG, WebP) you want to blur. Your file remains securely on your device."
+    },
+    {
+      "step": "Adjust blur intensity",
+      "description": "Use the slider to control the blur strength. You can see the changes in real-time on the preview window."
+    },
+    {
+      "step": "Check the results",
+      "description": "Ensure that sensitive information is sufficiently hidden or the desired artistic effect is achieved before saving."
+    },
+    {
+      "step": "Download blurred image",
+      "description": "Click 'Blur & Save' to process. Your modified image will be ready for instant download to your device."
+    }
+  ],
+  "why": [
+    "100% private — your sensitive images are processed locally and never uploaded",
+    "Real-time preview allows you to see exactly how much blur is applied",
+    "Perfect for hiding faces, license plates, or confidential text in screenshots",
+    "Create beautiful bokeh or soft-focus effects for your social media photos",
+    "Works completely offline after the initial page load",
+    "No registration, no watermarks, and no file size limits — 100% free",
+    "Supports all modern image formats including JPG, PNG, and WebP"
+  ],
+  "faq": [
+    {
+      "q": "Is my sensitive data safe when blurring images here?",
+      "a": "Yes. This tool uses client-side processing. Unlike other online editors, your images are never sent to a server, providing the highest level of privacy for censoring confidential documents or personal photos."
+    },
+    {
+      "q": "Why would I need to blur an entire image?",
+      "a": "Common uses include hiding faces for privacy compliance, blurring background distractions in portraits, censoring sensitive details in screenshots, or creating soft textures for design backgrounds."
+    },
+    {
+      "q": "Is the blur effect reversible after saving?",
+      "a": "No. Once an image is blurred and saved, the original pixel data is permanently altered. We recommend always keeping a copy of your original, unblurred file just in case."
+    },
+    {
+      "q": "Can I blur only a specific part of the image?",
+      "a": "This current version applies a uniform blur to the entire image. For selective blurring of specific areas (like just a face), you may need a more advanced layered photo editor."
+    },
+    {
+      "q": "Does this tool detect faces automatically?",
+      "a": "No, this tool does not use AI face detection to ensure maximum speed and offline capability. You have full manual control over the blur intensity via the slider."
+    },
+    {
+      "q": "Will the output format be the same as the original?",
+      "a": "Yes. The tool typically exports the blurred image in the same format (JPG, PNG, or WebP) as the original file you provided."
+    }
+  ]
+}

@@ -1,0 +1,90 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import PageHeader from '@components/PageHeader.astro'
+import { Form, Input, Button, Textarea, Heading, Link } from 'accessible-astro-components'
+import { Icon } from 'astro-icon/components'
+---
+
+<DefaultLayout title="Contact | HugDot">
+  <PageHeader 
+    title="Contact HugDot" 
+    subtitle="Feedback, bug reports, or feature requests? We're listening." 
+    bgType="gradient" 
+  />
+
+  <section class="my-16 container">
+    <div class="grid grid-cols-1 gap-32 md:grid-cols-2">
+      <div class="space-content">
+        <Heading level="h2">Drop a message</Heading>
+        <p>Have a specific utility tool in mind? Let us know. We prioritize building tools that solve real-world automation problems.</p>
+        
+        <Form name="contact" action="/api/contact" method="post">
+          <Input
+            name="name"
+            label="Name / Alias"
+            required
+            placeholder="How should we address you?"
+            autocomplete="name"
+          />
+
+          <Input 
+            name="email" 
+            label="Email Address" 
+            type="email" 
+            required 
+            placeholder="where we can reach you"
+            autocomplete="email" 
+          />
+
+          <Textarea 
+            name="message" 
+            label="Message" 
+            placeholder="Describe your request or the issue you've encountered..."
+            required 
+          />
+
+          <Button htmlType="submit" type="primary">Send Message</Button>
+        </Form>
+      </div>
+
+      <div class="space-content">
+        <Heading level="h3">The Lab</Heading>
+        <p class="text-lg">
+          <strong>HugDot ( . )</strong> is a digital lab dedicated to building high-utility, privacy-first web tools.
+        </p>
+
+        <div class="gap-2xs flex items-center">
+          <Icon aria-hidden="true" name="lucide:mail" size={20} class="flex-shrink-0" />
+          <p>
+            <span class="font-bold">Inquiries:</span>
+            <Link href="mailto:admin@hugdot.com">admin@hugdot.com</Link>
+          </p>
+        </div>
+
+        <div class="gap-2xs flex items-center border-t border-gray-200 dark:border-gray-700 pt-6 mt-4">
+          <div class="space-y-2">
+            <p class="font-bold flex items-center gap-2">
+              <Icon name="lucide:shield-check" size={18} />
+              On-Device Privacy
+            </p>
+            <p class="text-sm opacity-80">
+              Your files never leave your browser. All processing happens locally on your device via WASM and JS. We don't see your data, and we don't want to.
+            </p>
+          </div>
+        </div>
+
+        <div class="mt-8">
+          <p class="font-bold mb-4">Follow the Build</p>
+          <ul class="flex flex-wrap gap-4">
+            <li>
+              <Link href="https://x.com/GetHugDot" isButton isExternal hideIcon animateOnHover animationType="boop">
+                <Icon aria-hidden="true" name="lucide:twitter" size={24} />
+                <span class="sr-only">X (Twitter)</span>
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+</DefaultLayout>

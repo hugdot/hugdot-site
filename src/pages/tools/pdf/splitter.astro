@@ -1,0 +1,359 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Heading } from 'accessible-astro-components'
+import { Icon } from 'astro-icon/components'
+import seoData from '@data/seo/en/pdf-splitter.json'
+---
+
+<DefaultLayout
+  title={seoData.metaTitle}
+  description={seoData.metaDescription}
+  useTitleTemplate={false}
+  faq={seoData.faq}
+  category="MultimediaApplication"
+>
+  <section class="py-12">
+    <div class="container max-w-3xl">
+
+      <!-- Header -->
+      <div class="mb-8">
+        <div class="mb-2 flex items-center gap-2 text-sm opacity-50">
+          <a href="/" class="breadcrumb-link hover:underline">Home</a>
+          <span>/</span>
+          <a href="/tools/pdf" class="breadcrumb-link hover:underline">PDF Tools</a>
+          <span>/</span>
+          <span>{seoData.metaTitle.split(' — ')[0]}</span>
+        </div>
+        <Heading level="h1" size="h2">{seoData.metaTitle.split(' — ')[0]}</Heading>
+        <p class="mt-2 opacity-60">
+          Split a PDF into separate pages or custom ranges. Everything runs in your browser — your files never leave your device.
+        </p>
+      </div>
+
+      <!-- Drop Zone -->
+      <div
+        id="drop-zone"
+        class="flex flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed border-[var(--border-color-subtle)] px-6 py-12 text-center transition-all cursor-pointer hover:border-[var(--action-color)]"
+      >
+        <Icon aria-hidden="true" name="lucide:file-minus" size="2.5rem" class="opacity-40" />
+        <div>
+          <p class="font-medium">Open a PDF file here</p>
+          <p class="mt-1 text-sm opacity-50">tap or click to open</p>
+        </div>
+        <input id="file-input" type="file" accept=".pdf" class="hidden" />
+      </div>
+
+      <!-- File Info -->
+      <div id="file-info" class="mt-4 hidden items-center gap-3 rounded-xl border border-[var(--border-color-subtle)] px-4 py-3">
+        <Icon aria-hidden="true" name="lucide:file-text" size="1.25rem" class="shrink-0 opacity-40" />
+        <span id="file-name" class="flex-1 truncate text-sm"></span>
+        <span id="file-pages" class="shrink-0 text-xs opacity-40"></span>
+        <button id="clear-file" class="shrink-0 rounded-lg p-1.5 opacity-40 hover:opacity-100 transition-opacity" aria-label="Remove file">
+          <Icon aria-hidden="true" name="lucide:x" size="1rem" />
+        </button>
+      </div>
+
+      <!-- Split Options -->
+      <div id="split-options" class="mt-6 hidden flex-col gap-4">
+        <Heading level="h2" size="h6" class="opacity-60">Split method</Heading>
+
+        <!-- Tab Buttons -->
+        <div class="flex gap-2">
+          <button
+            id="tab-all"
+            class="tab-btn flex-1 rounded-xl border-2 border-[var(--action-color)] bg-[var(--action-color)] px-4 py-3 text-sm font-semibold text-white transition-all"
+            data-tab="all"
+          >
+            Every Page
+          </button>
+          <button
+            id="tab-range"
+            class="tab-btn flex-1 rounded-xl border-2 border-[var(--border-color-subtle)] px-4 py-3 text-sm font-semibold transition-all hover:border-[var(--action-color)]"
+            data-tab="range"
+          >
+            Custom Range
+          </button>
+        </div>
+
+        <!-- Every Page Info -->
+        <div id="panel-all" class="rounded-xl border border-[var(--border-color-subtle)] px-5 py-4 text-sm opacity-60">
+          Each page will be saved as a separate PDF file, bundled in a ZIP.
+        </div>
+
+        <!-- Custom Range Input -->
+        <div id="panel-range" class="hidden flex-col gap-3">
+          <div class="rounded-xl border border-[var(--border-color-subtle)] px-5 py-4">
+            <label for="range-input" class="mb-2 block text-sm opacity-60">Enter page ranges (e.g. 1-3, 5, 7-9)</label>
+            <input
+              id="range-input"
+              type="text"
+              placeholder="1-3, 5, 7-9"
+              class="w-full rounded-xl border-2 border-[var(--border-color-subtle)] bg-[var(--background-color)] px-4 py-3 text-sm outline-none transition-all focus:border-[var(--action-color)]"
+            />
+          </div>
+          <div id="range-preview" class="hidden flex-wrap gap-2"></div>
+        </div>
+
+        <!-- Split Button -->
+        <button
+          id="split-btn"
+          class="mt-2 flex w-full items-center justify-center gap-2 rounded-2xl bg-[var(--action-color)] px-6 py-4 font-semibold text-white transition-opacity hover:opacity-80"
+        >
+          <Icon aria-hidden="true" name="lucide:scissors" size="1.25rem" />
+          Split PDF
+        </button>
+      </div>
+
+      <!-- Progress -->
+      <div id="progress-wrap" class="mt-6 hidden">
+        <div class="h-2 w-full overflow-hidden rounded-full bg-[var(--border-color-subtle)]">
+          <div id="progress-bar" class="h-full w-0 rounded-full bg-[var(--action-color)] transition-all duration-300"></div>
+        </div>
+        <p id="progress-text" class="mt-2 text-center text-sm opacity-60">Splitting...</p>
+      </div>
+
+      <!-- Privacy Badge -->
+      <div class="mt-8 flex items-center gap-2 rounded-2xl border border-[var(--border-color-subtle)] px-5 py-4 text-sm opacity-60">
+        <Icon aria-hidden="true" name="lucide:shield-check" size="1rem" />
+        <span>Your files never leave your device. No data is sent to any server.</span>
+      </div>
+      <!-- How to Use -->
+      <div class="mt-16">
+        <Heading level="h2" size="h4" class="mb-6">How to Split PDF Pages</Heading>
+        <div class="flex flex-col gap-4">
+          {seoData.howto.map((item, index) => (
+            <div class="flex gap-4 rounded-2xl border border-[var(--border-color-subtle)] px-5 py-4">
+              <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--action-color)] text-sm font-bold text-white">
+                {index + 1}
+              </span>
+              <div>
+                <p class="font-semibold">{item.step}</p>
+                <p class="mt-1 text-sm opacity-60">{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Why Use -->
+      <div class="mt-12">
+        <Heading level="h2" size="h4" class="mb-6">Why Use This Tool</Heading>
+        <div class="flex flex-col gap-3">
+          {seoData.why.map((reason) => (
+            <div class="flex items-center gap-3 rounded-xl border border-[var(--border-color-subtle)] px-5 py-4">
+              <Icon aria-hidden="true" name="lucide:check-circle" size="1.25rem" class="shrink-0 text-[var(--action-color)]" />
+              <span class="text-sm">{reason}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="mt-12">
+        <Heading level="h2" size="h4" class="mb-6">Frequently Asked Questions</Heading>
+        <div class="flex flex-col gap-3">
+          {seoData.faq.map((item) => (
+            <details class="rounded-2xl border border-[var(--border-color-subtle)] px-5 py-4">
+              <summary class="cursor-pointer font-semibold">{item.q}</summary>
+              <p class="mt-3 text-sm opacity-60">{item.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+      
+      <div class="mt-16 border-t border-[var(--border-color-subtle)] pt-8">
+        <p class="mb-4 text-[10px] font-bold uppercase tracking-widest opacity-40">Related Keywords</p>
+        <div class="flex flex-wrap gap-x-6 gap-y-3"> {seoData.keywords.map((tag) => (
+            <span class="text-xs opacity-50">#{tag.toLowerCase()}</span> 
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</DefaultLayout>
+
+<script>
+  import { PDFDocument } from 'pdf-lib'
+  import JSZip from 'jszip'
+
+  document.addEventListener('astro:page-load', async () => {
+    const dropZone = document.getElementById('drop-zone') as HTMLDivElement
+    const fileInput = document.getElementById('file-input') as HTMLInputElement
+    const fileInfo = document.getElementById('file-info') as HTMLDivElement
+    const fileName = document.getElementById('file-name') as HTMLSpanElement
+    const filePages = document.getElementById('file-pages') as HTMLSpanElement
+    const clearFile = document.getElementById('clear-file') as HTMLButtonElement
+    const splitOptions = document.getElementById('split-options') as HTMLDivElement
+    const splitBtn = document.getElementById('split-btn') as HTMLButtonElement
+    const progressWrap = document.getElementById('progress-wrap') as HTMLDivElement
+    const progressBar = document.getElementById('progress-bar') as HTMLDivElement
+    const progressText = document.getElementById('progress-text') as HTMLParagraphElement
+    const rangeInput = document.getElementById('range-input') as HTMLInputElement
+    const rangePreview = document.getElementById('range-preview') as HTMLDivElement
+    const panelAll = document.getElementById('panel-all') as HTMLDivElement
+    const panelRange = document.getElementById('panel-range') as HTMLDivElement
+
+    let currentFile: File | null = null
+    let totalPages = 0
+    let activeTab = 'all'
+
+    // Tab switching
+    document.querySelectorAll<HTMLButtonElement>('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        activeTab = btn.dataset.tab ?? 'all'
+        document.querySelectorAll<HTMLButtonElement>('.tab-btn').forEach(b => {
+          const isActive = b.dataset.tab === activeTab
+          b.classList.toggle('bg-[var(--action-color)]', isActive)
+          b.classList.toggle('text-white', isActive)
+          b.classList.toggle('border-[var(--action-color)]', isActive)
+          b.classList.toggle('border-[var(--border-color-subtle)]', !isActive)
+        })
+        panelAll.classList.toggle('hidden', activeTab !== 'all')
+        panelRange.classList.toggle('hidden', activeTab !== 'range')
+        panelRange.classList.toggle('flex', activeTab === 'range')
+      })
+    })
+
+    // Range preview
+    const parseRanges = (input: string, max: number): number[] => {
+      const pages = new Set<number>()
+      const parts = input.split(',').map(s => s.trim()).filter(Boolean)
+      for (const part of parts) {
+        if (part.includes('-')) {
+          const [a, b] = part.split('-').map(Number)
+          if (!isNaN(a) && !isNaN(b)) {
+            for (let i = Math.max(1, a); i <= Math.min(max, b); i++) pages.add(i)
+          }
+        } else {
+          const n = Number(part)
+          if (!isNaN(n) && n >= 1 && n <= max) pages.add(n)
+        }
+      }
+      return Array.from(pages).sort((a, b) => a - b)
+    }
+
+    rangeInput.addEventListener('input', () => {
+      const pages = parseRanges(rangeInput.value, totalPages)
+      rangePreview.innerHTML = ''
+      if (pages.length > 0) {
+        rangePreview.classList.remove('hidden')
+        rangePreview.classList.add('flex')
+        pages.forEach(p => {
+          const chip = document.createElement('span')
+          chip.className = 'rounded-lg border border-[var(--action-color)] px-3 py-1 text-xs text-[var(--action-color)]'
+          chip.textContent = `p.${p}`
+          rangePreview.appendChild(chip)
+        })
+      } else {
+        rangePreview.classList.add('hidden')
+        rangePreview.classList.remove('flex')
+      }
+    })
+
+    // Load file
+    const loadFile = async (file: File) => {
+      if (!file.name.endsWith('.pdf') && file.type !== 'application/pdf') return
+      currentFile = file
+      try {
+        const arrayBuffer = await file.arrayBuffer()
+        const pdf = await PDFDocument.load(arrayBuffer)
+        totalPages = pdf.getPageCount()
+        fileName.textContent = file.name
+        filePages.textContent = `${totalPages} pages`
+        fileInfo.classList.remove('hidden')
+        fileInfo.classList.add('flex')
+        splitOptions.classList.remove('hidden')
+        splitOptions.classList.add('flex')
+      } catch {
+        alert('Could not read this PDF. It may be encrypted or corrupted.')
+        currentFile = null
+      }
+    }
+
+    const resetFile = () => {
+      currentFile = null
+      totalPages = 0
+      fileInput.value = ''
+      fileInfo.classList.add('hidden')
+      fileInfo.classList.remove('flex')
+      splitOptions.classList.add('hidden')
+      splitOptions.classList.remove('flex')
+      progressWrap.classList.add('hidden')
+    }
+
+    dropZone.addEventListener('click', () => fileInput.click())
+    fileInput.addEventListener('change', () => { if (fileInput.files?.[0]) loadFile(fileInput.files[0]) })
+    clearFile.addEventListener('click', resetFile)
+
+    dropZone.addEventListener('dragover', (e) => {
+      e.preventDefault()
+      dropZone.classList.add('border-[var(--action-color)]')
+    })
+    dropZone.addEventListener('dragleave', () => dropZone.classList.remove('border-[var(--action-color)]'))
+    dropZone.addEventListener('drop', (e) => {
+      e.preventDefault()
+      dropZone.classList.remove('border-[var(--action-color)]')
+      if (e.dataTransfer?.files?.[0]) loadFile(e.dataTransfer.files[0])
+    })
+
+    // Split
+    splitBtn.addEventListener('click', async () => {
+      if (!currentFile) return
+
+      let pagesToExtract: number[] = []
+
+      if (activeTab === 'all') {
+        pagesToExtract = Array.from({ length: totalPages }, (_, i) => i + 1)
+      } else {
+        pagesToExtract = parseRanges(rangeInput.value, totalPages)
+        if (pagesToExtract.length === 0) {
+          alert('Please enter valid page ranges.')
+          return
+        }
+      }
+
+      splitBtn.disabled = true
+      progressWrap.classList.remove('hidden')
+      progressBar.style.width = '0%'
+      progressText.textContent = 'Starting...'
+
+      try {
+        const arrayBuffer = await currentFile.arrayBuffer()
+        const srcPdf = await PDFDocument.load(arrayBuffer)
+        const zip = new JSZip()
+        const baseName = currentFile.name.replace(/\.pdf$/i, '')
+
+        for (let i = 0; i < pagesToExtract.length; i++) {
+          const pageNum = pagesToExtract[i]
+          progressText.textContent = `Processing page ${pageNum} of ${totalPages}...`
+          progressBar.style.width = `${((i / pagesToExtract.length) * 90)}%`
+
+          const newPdf = await PDFDocument.create()
+          const [page] = await newPdf.copyPages(srcPdf, [pageNum - 1])
+          newPdf.addPage(page)
+          const pdfBytes = await newPdf.save()
+          zip.file(`${baseName}_p${String(pageNum).padStart(3, '0')}.pdf`, pdfBytes)
+        }
+
+        progressText.textContent = 'Creating ZIP...'
+        progressBar.style.width = '95%'
+
+        const zipBlob = await zip.generateAsync({ type: 'blob' })
+        const url = URL.createObjectURL(zipBlob)
+        const a = document.createElement('a')
+        a.href = url
+        a.download = `${baseName}_split.zip`
+        a.click()
+        URL.revokeObjectURL(url)
+
+        progressBar.style.width = '100%'
+        progressText.textContent = 'Done! ZIP file saved.'
+      } catch (err) {
+        progressText.textContent = 'Something went wrong. Please try again.'
+        console.error(err)
+      } finally {
+        splitBtn.disabled = false
+      }
+    })
+  })
+</script>

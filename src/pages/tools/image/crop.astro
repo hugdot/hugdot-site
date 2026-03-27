@@ -1,0 +1,519 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Heading } from 'accessible-astro-components'
+import { Icon } from 'astro-icon/components'
+import seoData from '@data/seo/en/image-crop.json'
+---
+
+<DefaultLayout
+  title={seoData.metaTitle}
+  description={seoData.metaDescription}
+  useTitleTemplate={false}
+  faq={seoData.faq}
+  category="MultimediaApplication"
+>
+  <section class="py-12">
+    <div class="container max-w-3xl">
+      <!-- Header -->
+      <div class="mb-8">
+        <div class="mb-2 flex items-center gap-2 text-sm opacity-50">
+          <a href="/" class="breadcrumb-link hover:underline">Home</a>
+          <span>/</span>
+          <a href="/tools/image" class="breadcrumb-link hover:underline">Image Tools</a>
+          <span>/</span>
+          <span>{seoData.metaTitle.split(' — ')[0]}</span>
+        </div>
+        <Heading level="h1" size="h2">{seoData.metaTitle.split(' — ')[0]}</Heading>
+        <p class="mt-2 opacity-60">
+          Crop images with your finger or mouse. Your images never leave your device — 100% private.
+        </p>
+      </div>
+
+      <!-- Drop Zone -->
+      <div
+        id="drop-zone"
+        class="flex cursor-pointer flex-col items-center justify-center gap-4 rounded-2xl border-2 border-dashed border-[var(--border-color-subtle)] p-12 text-center transition-all hover:border-[var(--action-color)]"
+      >
+        <Icon aria-hidden="true" name="lucide:image-plus" size="3rem" class="opacity-30" />
+        <div>
+          <p class="font-semibold">Open an image</p>
+          <p class="text-sm opacity-50">or tap to choose</p>
+        </div>
+        <p class="text-xs opacity-40">Supports JPG, PNG, WebP</p>
+        <input id="file-input" type="file" accept="image/*" class="hidden" aria-label="Open image" />
+      </div>
+
+      <!-- Editor -->
+      <div id="editor-panel" class="mt-6 hidden flex-col gap-4">
+        <!-- Aspect Ratio Presets -->
+        <div class="flex flex-col gap-2">
+          <label class="text-sm opacity-60">Aspect ratio</label>
+          <div class="flex flex-wrap gap-2">
+            {
+              [
+                { label: 'Free', value: '0' },
+                { label: '1:1', value: '1' },
+                { label: '4:3', value: '1.333' },
+                { label: '16:9', value: '1.778' },
+                { label: '9:16', value: '0.5625' },
+                { label: '3:4', value: '0.75' },
+              ].map((preset) => (
+                <button
+                  class="ratio-btn rounded-xl border-2 border-[var(--border-color-subtle)] px-3 py-2 text-sm font-medium transition-all hover:border-[var(--action-color)]"
+                  data-ratio={preset.value}
+                >
+                  {preset.label}
+                </button>
+              ))
+            }
+          </div>
+        </div>
+
+        <!-- Canvas Wrapper -->
+        <div
+          class="relative w-full touch-none overflow-hidden rounded-2xl border border-[var(--border-color-subtle)] bg-[#111]"
+          id="canvas-wrapper"
+        >
+          <canvas id="canvas-display" class="w-full touch-none"></canvas>
+        </div>
+
+        <!-- Crop Info -->
+        <div class="flex items-center justify-center gap-2 text-sm opacity-50">
+          <Icon aria-hidden="true" name="lucide:crop" size="1rem" />
+          <span id="crop-info">Drag to adjust crop area</span>
+        </div>
+
+        <!-- Save Button -->
+        <button
+          id="save-btn"
+          class="flex w-full items-center justify-center gap-2 rounded-2xl bg-[var(--action-color)] px-6 py-4 font-semibold text-white transition-opacity hover:opacity-80"
+        >
+          <Icon aria-hidden="true" name="lucide:save" size="1.25rem" />
+          Save Cropped Image
+        </button>
+
+        <!-- Reset Button -->
+        <button
+          id="reset-btn"
+          class="flex w-full items-center justify-center gap-2 rounded-2xl border border-[var(--border-color-subtle)] px-6 py-4 text-sm font-medium transition-all hover:border-[var(--action-color)]"
+        >
+          <Icon aria-hidden="true" name="lucide:refresh-cw" size="1rem" />
+          Open Another Image
+        </button>
+      </div>
+
+      <!-- Privacy Badge -->
+      <div
+        class="mt-8 flex items-center gap-2 rounded-2xl border border-[var(--border-color-subtle)] px-5 py-4 text-sm opacity-60"
+      >
+        <Icon aria-hidden="true" name="lucide:shield-check" size="1rem" />
+        <span>Your images never leave your device. No data is sent to any server.</span>
+      </div>
+
+      <!-- How to Use -->
+      <div class="mt-16">
+        <Heading level="h2" size="h4" class="mb-6">How to Crop Images</Heading>
+        <div class="flex flex-col gap-4">
+          {
+            seoData.howto.map((item, index) => (
+              <div class="flex gap-4 rounded-2xl border border-[var(--border-color-subtle)] px-5 py-4">
+                <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--action-color)] text-sm font-bold text-white">
+                  {index + 1}
+                </span>
+                <div>
+                  <p class="font-semibold">{item.step}</p>
+                  <p class="mt-1 text-sm opacity-60">{item.description}</p>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- Why Use -->
+      <div class="mt-12">
+        <Heading level="h2" size="h4" class="mb-6">Why Use This Tool</Heading>
+        <div class="flex flex-col gap-3">
+          {
+            seoData.why.map((reason) => (
+              <div class="flex items-center gap-3 rounded-xl border border-[var(--border-color-subtle)] px-5 py-4">
+                <Icon
+                  aria-hidden="true"
+                  name="lucide:check-circle"
+                  size="1.25rem"
+                  class="shrink-0 text-[var(--action-color)]"
+                />
+                <span class="text-sm">{reason}</span>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="mt-12">
+        <Heading level="h2" size="h4" class="mb-6">Frequently Asked Questions</Heading>
+        <div class="flex flex-col gap-3">
+          {
+            seoData.faq.map((item) => (
+              <details class="rounded-2xl border border-[var(--border-color-subtle)] px-5 py-4">
+                <summary class="cursor-pointer font-semibold">{item.q}</summary>
+                <p class="mt-3 text-sm opacity-60">{item.a}</p>
+              </details>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="mt-16 border-t border-[var(--border-color-subtle)] pt-8">
+        <p class="mb-4 text-[10px] font-bold tracking-widest uppercase opacity-40">Related Keywords</p>
+        <div class="flex flex-wrap gap-x-6 gap-y-3">
+          {seoData.keywords.map((tag) => <span class="text-xs opacity-50">#{tag.toLowerCase()}</span>)}
+        </div>
+      </div>
+    </div>
+  </section>
+</DefaultLayout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const dropZone = document.getElementById('drop-zone') as HTMLDivElement
+    const fileInput = document.getElementById('file-input') as HTMLInputElement
+    const editorPanel = document.getElementById('editor-panel') as HTMLDivElement
+    const canvas = document.getElementById('canvas-display') as HTMLCanvasElement
+    const cropInfo = document.getElementById('crop-info') as HTMLSpanElement
+    const saveBtn = document.getElementById('save-btn') as HTMLButtonElement
+    const resetBtn = document.getElementById('reset-btn') as HTMLButtonElement
+
+    const ctx = canvas.getContext('2d')!
+    let img: HTMLImageElement | null = null
+    let originalFile: File | null = null
+    let aspectRatio = 0 // 0 = free
+
+    // Crop region in canvas coordinates
+    let crop = { x: 0, y: 0, w: 0, h: 0 }
+    let scale = 1 // image scale factor for display
+
+    const HANDLE_SIZE = 20
+    const MIN_CROP = 20
+
+    type DragMode = 'none' | 'move' | 'nw' | 'ne' | 'sw' | 'se' | 'n' | 's' | 'e' | 'w'
+    let dragMode: DragMode = 'none'
+    let dragStart = { x: 0, y: 0 }
+    let cropStart = { x: 0, y: 0, w: 0, h: 0 }
+
+    // Aspect ratio buttons
+    document.querySelectorAll<HTMLButtonElement>('.ratio-btn').forEach((btn) => {
+      if (btn.dataset.ratio === '0') {
+        btn.classList.add('border-[var(--action-color)]', 'text-[var(--action-color)]')
+      }
+      btn.addEventListener('click', () => {
+        aspectRatio = parseFloat(btn.dataset.ratio ?? '0')
+        document.querySelectorAll<HTMLButtonElement>('.ratio-btn').forEach((b) => {
+          const isActive = b.dataset.ratio === btn.dataset.ratio
+          b.classList.toggle('border-[var(--action-color)]', isActive)
+          b.classList.toggle('text-[var(--action-color)]', isActive)
+          b.classList.toggle('border-[var(--border-color-subtle)]', !isActive)
+        })
+        if (aspectRatio > 0 && img) {
+          applyAspectRatio()
+          redraw()
+        }
+      })
+    })
+
+    const applyAspectRatio = () => {
+      if (!img) return
+      const cx = crop.x + crop.w / 2
+      const cy = crop.y + crop.h / 2
+      let w = crop.w
+      let h = w / aspectRatio
+      const imgHeight = img.height
+      const imgWidth = img.width
+      if (h > imgHeight * scale) {
+        h = imgHeight * scale
+        w = h * aspectRatio
+      }
+      crop.x = Math.max(0, cx - w / 2)
+      crop.y = Math.max(0, cy - h / 2)
+      crop.w = w
+      crop.h = h
+      clampCrop()
+    }
+
+    const clampCrop = () => {
+      if (!img) return
+      const imgWidth = img.width
+      const imgHeight = img.height
+      const iw = imgWidth * scale
+      const ih = imgHeight * scale
+      crop.x = Math.max(0, Math.min(crop.x, iw - MIN_CROP))
+      crop.y = Math.max(0, Math.min(crop.y, ih - MIN_CROP))
+      crop.w = Math.max(MIN_CROP, Math.min(crop.w, iw - crop.x))
+      crop.h = Math.max(MIN_CROP, Math.min(crop.h, ih - crop.y))
+    }
+
+    const redraw = () => {
+      if (!img) return
+      const iw = img.width * scale
+      const ih = img.height * scale
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height)
+
+      // Draw image
+      ctx.drawImage(img, 0, 0, iw, ih)
+
+      // Dark overlay outside crop
+      ctx.fillStyle = 'rgba(0,0,0,0.55)'
+      ctx.fillRect(0, 0, canvas.width, crop.y)
+      ctx.fillRect(0, crop.y, crop.x, crop.h)
+      ctx.fillRect(crop.x + crop.w, crop.y, canvas.width - crop.x - crop.w, crop.h)
+      ctx.fillRect(0, crop.y + crop.h, canvas.width, canvas.height - crop.y - crop.h)
+
+      // Crop border
+      ctx.strokeStyle = 'rgba(255,255,255,0.9)'
+      ctx.lineWidth = 2
+      ctx.setLineDash([])
+      ctx.strokeRect(crop.x, crop.y, crop.w, crop.h)
+
+      // Grid lines (rule of thirds)
+      ctx.strokeStyle = 'rgba(255,255,255,0.25)'
+      ctx.lineWidth = 1
+      for (let i = 1; i < 3; i++) {
+        ctx.beginPath()
+        ctx.moveTo(crop.x + (crop.w / 3) * i, crop.y)
+        ctx.lineTo(crop.x + (crop.w / 3) * i, crop.y + crop.h)
+        ctx.stroke()
+        ctx.beginPath()
+        ctx.moveTo(crop.x, crop.y + (crop.h / 3) * i)
+        ctx.lineTo(crop.x + crop.w, crop.y + (crop.h / 3) * i)
+        ctx.stroke()
+      }
+
+      // Corner handles
+      const handles = getHandlePositions()
+      handles.forEach(({ x, y }) => {
+        ctx.fillStyle = 'white'
+        ctx.shadowColor = 'rgba(0,0,0,0.5)'
+        ctx.shadowBlur = 4
+        ctx.beginPath()
+        ctx.arc(x, y, HANDLE_SIZE / 2, 0, Math.PI * 2)
+        ctx.fill()
+        ctx.shadowBlur = 0
+      })
+
+      // Crop size info
+      const realW = Math.round(crop.w / scale)
+      const realH = Math.round(crop.h / scale)
+      cropInfo.textContent = `${realW} × ${realH} px`
+    }
+
+    const getHandlePositions = () => [
+      { id: 'nw', x: crop.x, y: crop.y },
+      { id: 'ne', x: crop.x + crop.w, y: crop.y },
+      { id: 'sw', x: crop.x, y: crop.y + crop.h },
+      { id: 'se', x: crop.x + crop.w, y: crop.y + crop.h },
+      { id: 'n', x: crop.x + crop.w / 2, y: crop.y },
+      { id: 's', x: crop.x + crop.w / 2, y: crop.y + crop.h },
+      { id: 'w', x: crop.x, y: crop.y + crop.h / 2 },
+      { id: 'e', x: crop.x + crop.w, y: crop.y + crop.h / 2 },
+    ]
+
+    const getPos = (clientX: number, clientY: number) => {
+      const rect = canvas.getBoundingClientRect()
+      const sx = canvas.width / rect.width
+      const sy = canvas.height / rect.height
+      return { x: (clientX - rect.left) * sx, y: (clientY - rect.top) * sy }
+    }
+
+    const getDragMode = (x: number, y: number): DragMode => {
+      const handles = getHandlePositions()
+      for (const h of handles) {
+        const dist = Math.sqrt((x - h.x) ** 2 + (y - h.y) ** 2)
+        if (dist < HANDLE_SIZE) return h.id as DragMode
+      }
+      if (x > crop.x && x < crop.x + crop.w && y > crop.y && y < crop.y + crop.h) return 'move'
+      return 'none'
+    }
+
+    const onStart = (x: number, y: number) => {
+      dragMode = getDragMode(x, y)
+      dragStart = { x, y }
+      cropStart = { ...crop }
+    }
+
+    const onMove = (x: number, y: number) => {
+      if (dragMode === 'none' || !img) return
+      const dx = x - dragStart.x
+      const dy = y - dragStart.y
+      const imgWidth = img.width
+      const imgHeight = img.height
+      const iw = imgWidth * scale
+      const ih = imgHeight * scale
+
+      if (dragMode === 'move') {
+        crop.x = Math.max(0, Math.min(cropStart.x + dx, iw - crop.w))
+        crop.y = Math.max(0, Math.min(cropStart.y + dy, ih - crop.h))
+      } else {
+        let nx = cropStart.x,
+          ny = cropStart.y,
+          nw = cropStart.w,
+          nh = cropStart.h
+
+        if (dragMode.includes('e')) nw = Math.max(MIN_CROP, cropStart.w + dx)
+        if (dragMode.includes('s')) nh = Math.max(MIN_CROP, cropStart.h + dy)
+        if (dragMode.includes('w')) {
+          nx = cropStart.x + dx
+          nw = Math.max(MIN_CROP, cropStart.w - dx)
+        }
+        if (dragMode.includes('n')) {
+          ny = cropStart.y + dy
+          nh = Math.max(MIN_CROP, cropStart.h - dy)
+        }
+
+        if (aspectRatio > 0) {
+          if (dragMode.includes('e') || dragMode.includes('w')) nh = nw / aspectRatio
+          else nw = nh * aspectRatio
+        }
+
+        crop = { x: nx, y: ny, w: nw, h: nh }
+        clampCrop()
+      }
+
+      redraw()
+    }
+
+    const onEnd = () => {
+      dragMode = 'none'
+    }
+
+    // Mouse
+    canvas.addEventListener('mousedown', (e) => {
+      const pos = getPos(e.clientX, e.clientY)
+      onStart(pos.x, pos.y)
+    })
+    canvas.addEventListener('mousemove', (e) => {
+      onMove(...(Object.values(getPos(e.clientX, e.clientY)) as [number, number]))
+    })
+    canvas.addEventListener('mouseup', onEnd)
+
+    // Touch
+    canvas.addEventListener(
+      'touchstart',
+      (e) => {
+        e.preventDefault()
+        const t = e.touches[0]
+        const p = getPos(t.clientX, t.clientY)
+        onStart(p.x, p.y)
+      },
+      { passive: false },
+    )
+
+    canvas.addEventListener(
+      'touchmove',
+      (e) => {
+        e.preventDefault()
+        const t = e.touches[0]
+        const p = getPos(t.clientX, t.clientY)
+        onMove(p.x, p.y)
+      },
+      { passive: false },
+    )
+
+    canvas.addEventListener(
+      'touchend',
+      (e) => {
+        e.preventDefault()
+        onEnd()
+      },
+      { passive: false },
+    )
+
+    // Load image
+    const loadImage = (file: File) => {
+      if (!file.type.startsWith('image/')) return
+      originalFile = file
+      const url = URL.createObjectURL(file)
+      const image = new Image()
+
+      image.onload = () => {
+        img = image
+
+        const wrapper = document.getElementById('canvas-wrapper')
+        const maxW = wrapper ? wrapper.clientWidth : 800 // 기본값 800px
+
+        scale = image.width > maxW ? maxW / image.width : 1
+
+        canvas.width = image.width * scale
+        canvas.height = image.height * scale
+
+        const pad = 20
+        crop = { x: pad, y: pad, w: canvas.width - pad * 2, h: canvas.height - pad * 2 }
+        if (aspectRatio > 0) applyAspectRatio()
+
+        redraw()
+        dropZone.style.display = 'none'
+        editorPanel.classList.remove('hidden')
+        editorPanel.classList.add('flex')
+      }
+      image.src = url
+    }
+    // Save
+    saveBtn.addEventListener('click', () => {
+      if (!img || !originalFile) return
+      const realX = Math.round(crop.x / scale)
+      const realY = Math.round(crop.y / scale)
+      const realW = Math.round(crop.w / scale)
+      const realH = Math.round(crop.h / scale)
+
+      const output = document.createElement('canvas')
+      output.width = realW
+      output.height = realH
+      const octx = output.getContext('2d')!
+      octx.drawImage(img, realX, realY, realW, realH, 0, 0, realW, realH)
+
+      const ext = originalFile.name.split('.').pop()?.toLowerCase() ?? 'jpg'
+      const mimeType = ext === 'png' ? 'image/png' : 'image/jpeg'
+      const name = originalFile.name.replace(/\.[^/.]+$/, '')
+      output.toBlob(
+        (blob) => {
+          if (!blob) return
+          const url = URL.createObjectURL(blob)
+          const a = document.createElement('a')
+          a.href = url
+          a.download = `${name}-cropped.${ext}`
+          a.click()
+          URL.revokeObjectURL(url)
+        },
+        mimeType,
+        0.95,
+      )
+    })
+
+    // Reset
+    resetBtn.addEventListener('click', () => {
+      img = null
+      originalFile = null
+      fileInput.value = ''
+      editorPanel.classList.add('hidden')
+      editorPanel.classList.remove('flex')
+      dropZone.style.display = 'flex'
+    })
+
+    dropZone.addEventListener('click', () => fileInput.click())
+    fileInput.addEventListener('change', () => {
+      if (fileInput.files?.[0]) loadImage(fileInput.files[0])
+    })
+
+    dropZone.addEventListener('dragover', (e) => {
+      e.preventDefault()
+      dropZone.classList.add('border-[var(--action-color)]')
+    })
+    dropZone.addEventListener('dragleave', () => dropZone.classList.remove('border-[var(--action-color)]'))
+    dropZone.addEventListener('drop', (e) => {
+      e.preventDefault()
+      dropZone.classList.remove('border-[var(--action-color)]')
+      if (e.dataTransfer?.files?.[0]) loadImage(e.dataTransfer.files[0])
+    })
+  })
+</script>

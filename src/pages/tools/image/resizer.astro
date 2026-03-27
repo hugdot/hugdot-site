@@ -1,0 +1,459 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Heading } from 'accessible-astro-components'
+import { Icon } from 'astro-icon/components'
+import seoData from '@data/seo/en/image-resizer.json'
+
+const presets = [
+  { label: 'Custom', w: 0, h: 0, icon: 'lucide:settings' },
+  { label: 'Insta', w: 1080, h: 1080, icon: 'lucide:instagram' },
+  { label: 'X', w: 1200, h: 675, icon: 'lucide:twitter' },
+  { label: 'TikTok', w: 1080, h: 1920, icon: 'lucide:music' },
+  { label: 'YouTube', w: 1280, h: 720, icon: 'lucide:youtube' },
+  { label: 'Fbook', w: 1200, h: 630, icon: 'lucide:facebook' },
+  { label: 'LinkedIn', w: 1200, h: 627, icon: 'lucide:linkedin' },
+]
+---
+
+<DefaultLayout
+  title={seoData.metaTitle}
+  description={seoData.metaDescription}
+  useTitleTemplate={false}
+  faq={seoData.faq}
+  category="MultimediaApplication"
+>
+  <section class="py-12">
+    <div class="container max-w-3xl">
+
+      <!-- Header -->
+      <div class="mb-8">
+        <div class="mb-2 flex items-center gap-2 text-sm opacity-50">
+          <a href="/" class="breadcrumb-link hover:underline">Home</a>
+          <span>/</span>
+          <a href="/tools/image" class="breadcrumb-link hover:underline">Image Tools</a>
+          <span>/</span>
+          <span>{seoData.metaTitle.split(' — ')[0]}</span>
+        </div>
+        <Heading level="h1" size="h2">{seoData.metaTitle.split(' — ')[0]}</Heading>
+        <p class="mt-2 opacity-60">
+          Resize images for any platform instantly.
+          Your images never leave your device — 100% private.
+        </p>
+      </div>
+
+      <!-- Upload Area -->
+      <div
+        id="drop-zone"
+        class="flex cursor-pointer flex-col items-center justify-center gap-4 rounded-2xl border-2 border-dashed border-[var(--border-color-subtle)] p-12 text-center transition-all hover:border-[var(--action-color)]"
+      >
+        <Icon aria-hidden="true" name="lucide:image-plus" size="3rem" class="opacity-30" />
+        <div>
+          <p class="font-semibold">Open an image</p>
+          <p class="text-sm opacity-50">or tap to choose</p>
+        </div>
+        <p class="text-xs opacity-40">Supports JPG, PNG, WebP — up to 30MB</p>
+        <input id="file-input" type="file" accept="image/*" class="hidden" aria-label="Open image" />
+      </div>
+
+      <!-- Settings Panel -->
+      <div id="settings-panel" class="mt-6 hidden flex-col gap-6">
+
+        <!-- Original Info -->
+        <div class="flex items-center gap-3 rounded-2xl border border-[var(--border-color-subtle)] px-5 py-4 text-sm">
+          <Icon aria-hidden="true" name="lucide:info" size="1rem" class="opacity-40 shrink-0" />
+          <span id="original-info" class="opacity-60"></span>
+        </div>
+
+        <!-- Presets -->
+        <div class="flex flex-col gap-3">
+          <p class="text-sm font-medium">Choose a preset</p>
+          <div class="flex flex-col gap-3">
+            <!-- Custom button alone on top -->
+            <button
+              class="preset-btn flex w-full items-center justify-center gap-2 rounded-full border border-[var(--border-color-subtle)] px-4 py-2 text-sm transition-all hover:border-[var(--action-color)]"
+              data-w={presets[0].w}
+              data-h={presets[0].h}
+              data-label={presets[0].label}
+            >
+              <Icon aria-hidden="true" name={presets[0].icon} size="1rem" class="opacity-60" />
+              {presets[0].label}
+            </button>
+
+            <!-- SNS presets in 2-column grid -->
+            <div class="grid grid-cols-2 gap-2">
+              {presets.slice(1).map((preset) => (
+                <button
+                  class="preset-btn flex items-center gap-2 rounded-full border border-[var(--border-color-subtle)] px-4 py-2.5 text-sm transition-all hover:border-[var(--action-color)]"
+                  data-w={preset.w}
+                  data-h={preset.h}
+                  data-label={preset.label}
+                >
+                  <Icon aria-hidden="true" name={preset.icon} size="1rem" class="opacity-60 shrink-0" />
+                  <span class="font-medium">{preset.label}</span>
+                  <span class="ml-auto text-xs opacity-40">{preset.w}×{preset.h}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        <!-- Custom Dimensions -->
+        <div class="flex flex-col gap-3">
+          <p class="text-sm font-medium">Or set custom size</p>
+          <div class="flex items-center gap-3">
+            <div class="flex flex-col gap-1">
+              <label class="text-xs opacity-50" for="input-width">Width (px)</label>
+              <input
+                id="input-width"
+                type="number"
+                min="1"
+                placeholder="Width"
+                class="w-28 rounded-xl border border-[var(--border-color-subtle)] bg-[var(--background-color)] px-3 py-2 text-sm outline-none focus:border-[var(--action-color)]"
+              />
+            </div>
+            <button
+              id="lock-ratio-btn"
+              class="mt-4 rounded-full border border-[var(--border-color-subtle)] p-2 transition-all hover:border-[var(--action-color)]"
+              aria-label="Lock aspect ratio"
+              title="Lock aspect ratio"
+            >
+              <Icon aria-hidden="true" name="lucide:lock" size="1rem" id="lock-icon" />
+            </button>
+            <div class="flex flex-col gap-1">
+              <label class="text-xs opacity-50" for="input-height">Height (px)</label>
+              <input
+                id="input-height"
+                type="number"
+                min="1"
+                placeholder="Height"
+                class="w-28 rounded-xl border border-[var(--border-color-subtle)] bg-[var(--background-color)] px-3 py-2 text-sm outline-none focus:border-[var(--action-color)]"
+              />
+            </div>
+          </div>
+        </div>
+
+        <!-- Resize Button -->
+        <button
+          id="resize-btn"
+          class="flex items-center justify-center gap-2 rounded-full bg-[var(--action-color)] px-8 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+        >
+          <Icon aria-hidden="true" name="lucide:maximize" size="1rem" />
+          Resize
+        </button>
+      </div>
+
+      <!-- Loading -->
+      <div id="loading" class="mt-8 hidden flex-col items-center gap-3">
+        <div class="h-8 w-8 animate-spin rounded-full border-4 border-[var(--border-color-subtle)] border-t-[var(--action-color)]"></div>
+        <p class="text-sm opacity-50">Resizing...</p>
+      </div>
+
+      <!-- Result -->
+      <div id="result-panel" class="mt-8 hidden flex-col gap-6">
+        <div class="flex flex-col gap-2">
+          <p class="text-sm font-medium opacity-60">Result</p>
+          <img id="preview-result" src="" alt="Resized image" class="w-full rounded-2xl border border-[var(--border-color-subtle)] object-contain" />
+          <p id="result-info" class="text-sm opacity-50"></p>
+        </div>
+
+        <!-- Save Button -->
+        <button
+          id="save-btn"
+          class="flex items-center justify-center gap-2 rounded-full bg-[var(--action-color)] px-8 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+        >
+          <Icon aria-hidden="true" name="lucide:save" size="1rem" />
+          Save Resized Image
+        </button>
+
+        <!-- Open Another -->
+        <button
+          id="reset-btn"
+          class="flex items-center justify-center gap-2 rounded-full border border-[var(--border-color-subtle)] px-8 py-3 text-sm font-medium transition-all hover:border-[var(--action-color)]"
+        >
+          <Icon aria-hidden="true" name="lucide:refresh-cw" size="1rem" />
+          Open Another Image
+        </button>
+      </div>
+
+      <!-- Privacy Badge -->
+      <div class="mt-8 flex items-center gap-2 rounded-2xl border border-[var(--border-color-subtle)] px-5 py-4 text-sm opacity-60">
+        <Icon aria-hidden="true" name="lucide:shield-check" size="1rem" />
+        <span>Your images never leave your device. No data is sent to any server.</span>
+      </div>
+      
+      <!-- How to Use -->
+      <div class="mt-16">
+        <Heading level="h2" size="h4" class="mb-6">How to Resize Image</Heading>
+        <div class="flex flex-col gap-4">
+          {seoData.howto.map((item, index) => (
+            <div class="flex gap-4 rounded-2xl border border-[var(--border-color-subtle)] px-5 py-4">
+              <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--action-color)] text-sm font-bold text-white">
+                {index + 1}
+              </span>
+              <div>
+                <p class="font-semibold">{item.step}</p>
+                <p class="mt-1 text-sm opacity-60">{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Why Use -->
+      <div class="mt-12">
+        <Heading level="h2" size="h4" class="mb-6">Why Use This Tool</Heading>
+        <div class="flex flex-col gap-3">
+          {seoData.why.map((reason) => (
+            <div class="flex items-center gap-3 rounded-xl border border-[var(--border-color-subtle)] px-5 py-4">
+              <Icon aria-hidden="true" name="lucide:check-circle" size="1.25rem" class="shrink-0 text-[var(--action-color)]" />
+              <span class="text-sm">{reason}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="mt-12">
+        <Heading level="h2" size="h4" class="mb-6">Frequently Asked Questions</Heading>
+        <div class="flex flex-col gap-3">
+          {seoData.faq.map((item) => (
+            <details class="rounded-2xl border border-[var(--border-color-subtle)] px-5 py-4">
+              <summary class="cursor-pointer font-semibold">{item.q}</summary>
+              <p class="mt-3 text-sm opacity-60">{item.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+      
+      <div class="mt-16 border-t border-[var(--border-color-subtle)] pt-8">
+        <p class="mb-4 text-[10px] font-bold uppercase tracking-widest opacity-40">Related Keywords</p>
+        <div class="flex flex-wrap gap-x-6 gap-y-3"> {seoData.keywords.map((tag) => (
+            <span class="text-xs opacity-50">#{tag.toLowerCase()}</span> 
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</DefaultLayout>
+
+<script>
+  // @ts-ignore
+  import Pica from 'pica'
+  document.addEventListener('astro:page-load', () => {
+    initResizer();
+
+    function initResizer() {
+      let originalFile: File | null = null
+      let originalWidth = 0
+      let originalHeight = 0
+      let aspectRatio = 1
+      let ratioLocked = true
+      let resizedBlob: Blob | null = null
+
+      const dropZone = document.getElementById('drop-zone') as HTMLElement
+      const fileInput = document.getElementById('file-input') as HTMLInputElement
+      const settingsPanel = document.getElementById('settings-panel') as HTMLElement
+      const resultPanel = document.getElementById('result-panel') as HTMLElement
+      const loading = document.getElementById('loading') as HTMLElement
+      const originalInfo = document.getElementById('original-info') as HTMLElement
+      const inputWidth = document.getElementById('input-width') as HTMLInputElement
+      const inputHeight = document.getElementById('input-height') as HTMLInputElement
+      const lockRatioBtn = document.getElementById('lock-ratio-btn') as HTMLButtonElement
+      const lockIcon = document.getElementById('lock-icon') as HTMLElement
+      const resizeBtn = document.getElementById('resize-btn') as HTMLButtonElement
+      const previewResult = document.getElementById('preview-result') as HTMLImageElement
+      const resultInfo = document.getElementById('result-info') as HTMLElement
+      const saveBtn = document.getElementById('save-btn') as HTMLButtonElement
+      const resetBtn = document.getElementById('reset-btn') as HTMLButtonElement
+      const presetBtns = document.querySelectorAll<HTMLButtonElement>('.preset-btn')
+
+      const formatSize = (bytes: number) => {
+        if (bytes < 1024 * 1024) return `${(bytes / 1024).toFixed(1)} KB`
+        return `${(bytes / (1024 * 1024)).toFixed(2)} MB`
+      }
+
+      const show = (el: HTMLElement) => el.style.display = 'flex'
+      const hide = (el: HTMLElement) => el.style.display = 'none'
+
+      const updateLockBtn = () => {
+        lockIcon.setAttribute('name', ratioLocked ? 'lucide:lock' : 'lucide:lock-open')
+        lockRatioBtn.classList.toggle('border-[var(--action-color)]', ratioLocked)
+      }
+
+      // Lock ratio toggle
+      lockRatioBtn.addEventListener('click', () => {
+        ratioLocked = !ratioLocked
+        updateLockBtn()
+      })
+
+      // Width input — auto-update height if locked
+      inputWidth.addEventListener('input', () => {
+        if (ratioLocked && inputWidth.value) {
+          const w = parseInt(inputWidth.value)
+          inputHeight.value = String(Math.round(w / aspectRatio))
+        }
+        clearPresetSelection()
+      })
+
+      // Height input — auto-update width if locked
+      inputHeight.addEventListener('input', () => {
+        if (ratioLocked && inputHeight.value) {
+          const h = parseInt(inputHeight.value)
+          inputWidth.value = String(Math.round(h * aspectRatio))
+        }
+        clearPresetSelection()
+      })
+
+      const clearPresetSelection = () => {
+        presetBtns.forEach((btn) => btn.classList.remove('border-[var(--action-color)]', 'font-bold'))
+      }
+
+      // Preset buttons
+      presetBtns.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const w = parseInt(btn.dataset.w ?? '0')
+          const h = parseInt(btn.dataset.h ?? '0')
+
+          clearPresetSelection()
+          btn.classList.add('border-[var(--action-color)]', 'font-bold')
+
+          if (w === 0 && h === 0) {
+            // Custom — clear inputs
+            inputWidth.value = String(originalWidth)
+            inputHeight.value = String(originalHeight)
+            ratioLocked = true
+            updateLockBtn()
+          } else {
+            inputWidth.value = String(w)
+            inputHeight.value = String(h)
+            ratioLocked = false
+            updateLockBtn()
+          }
+        })
+      })
+
+      const loadImage = (file: File) => {
+        originalFile = file
+        const img = new Image()
+        const url = URL.createObjectURL(file)
+        img.onload = () => {
+          originalWidth = img.width
+          originalHeight = img.height
+          aspectRatio = img.width / img.height
+
+          originalInfo.textContent = `${img.width} × ${img.height}px — ${formatSize(file.size)}`
+          inputWidth.value = String(img.width)
+          inputHeight.value = String(img.height)
+
+          hide(dropZone)
+          show(settingsPanel)
+          URL.revokeObjectURL(url)
+        }
+        img.src = url
+      }
+
+      const resize = async () => {
+        if (!originalFile) return
+
+        const targetW = parseInt(inputWidth.value)
+        const targetH = parseInt(inputHeight.value)
+
+        if (!targetW || !targetH) return
+
+        hide(resultPanel)
+        show(loading)
+
+        try {
+          const img = new Image()
+          const originalUrl = URL.createObjectURL(originalFile)
+
+          img.onload = async () => {
+            const srcCanvas = document.createElement('canvas')
+            srcCanvas.width = img.width
+            srcCanvas.height = img.height
+            const ctx = srcCanvas.getContext('2d')!
+            ctx.drawImage(img, 0, 0)
+
+            const dstCanvas = document.createElement('canvas')
+            dstCanvas.width = targetW
+            dstCanvas.height = targetH
+
+            const picaInstance = new Pica()
+            await picaInstance.resize(srcCanvas, dstCanvas, {
+              quality: 3,
+              alpha: true,
+            })
+
+            const mimeType = originalFile!.type || 'image/jpeg'
+            dstCanvas.toBlob((blob) => {
+              if (!blob) return
+              resizedBlob = blob
+              previewResult.src = URL.createObjectURL(blob)
+              resultInfo.textContent = `${targetW} × ${targetH}px — ${formatSize(blob.size)}`
+
+              hide(loading)
+              show(resultPanel)
+              URL.revokeObjectURL(originalUrl)
+            }, mimeType, 0.92)
+          }
+
+          img.src = originalUrl
+        } catch (e) {
+          console.error('Resize failed', e)
+          hide(loading)
+        }
+      }
+
+      resizeBtn.addEventListener('click', resize)
+
+      // Drop zone
+      dropZone.addEventListener('click', () => fileInput.click())
+      dropZone.addEventListener('dragover', (e) => {
+        e.preventDefault()
+        dropZone.classList.add('border-[var(--action-color)]')
+      })
+      dropZone.addEventListener('dragleave', () => {
+        dropZone.classList.remove('border-[var(--action-color)]')
+      })
+      dropZone.addEventListener('drop', (e) => {
+        e.preventDefault()
+        dropZone.classList.remove('border-[var(--action-color)]')
+        const file = e.dataTransfer?.files[0]
+        if (file && file.type.startsWith('image/')) loadImage(file)
+      })
+
+      fileInput.addEventListener('change', () => {
+        const file = fileInput.files?.[0]
+        if (file) loadImage(file)
+      })
+
+      // Save
+      saveBtn.addEventListener('click', () => {
+        if (!resizedBlob || !originalFile) return
+        const ext = originalFile.name.split('.').pop() ?? 'jpg'
+        const name = originalFile.name.replace(/\.[^/.]+$/, '')
+        const w = inputWidth.value
+        const h = inputHeight.value
+        const link = document.createElement('a')
+        link.download = `${name}-${w}x${h}.${ext}`
+        link.href = URL.createObjectURL(resizedBlob)
+        link.click()
+      })
+
+      // Reset
+      resetBtn.addEventListener('click', () => {
+        originalFile = null
+        resizedBlob = null
+        fileInput.value = ''
+        ratioLocked = true
+        hide(resultPanel)
+        hide(settingsPanel)
+        hide(loading)
+        dropZone.style.display = 'flex'
+        updateLockBtn()
+      })
+
+      updateLockBtn()
+    }
+  })
+</script>

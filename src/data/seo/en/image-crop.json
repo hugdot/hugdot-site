@@ -1,0 +1,70 @@
+{
+  "toolId": "image-crop",
+  "lang": "en",
+  "metaTitle": "Image Crop — Free Online Photo Cropper (Private & High Quality)",
+  "metaDescription": "Crop your images instantly in your browser. Use presets for Instagram, YouTube, and more. 100% private — your photos never leave your device. No registration required.",
+  "keywords": [
+    "image crop",
+    "photo cropper online",
+    "crop image to 1:1",
+    "instagram photo cropper",
+    "free image cropper",
+    "crop webp png jpg",
+    "no upload image crop",
+    "offline photo cropper",
+    "aspect ratio presets"
+  ],
+  "howto": [
+    {
+      "step": "Select your image",
+      "description": "Click the upload area or drag and drop your photo (JPG, PNG, WebP, GIF). Your file stays securely on your device throughout the process."
+    },
+    {
+      "step": "Adjust the crop area",
+      "description": "Drag the corners of the crop box to select the area you want to keep. You can also move the entire box to center your subject."
+    },
+    {
+      "step": "Use aspect ratio presets",
+      "description": "Choose from standard ratios like 1:1 (Square), 16:9 (Widescreen), or 4:5 (Portrait) to match social media requirements perfectly."
+    },
+    {
+      "step": "Download your cropped image",
+      "description": "Once satisfied, click 'Crop Image' to process. Your perfectly framed photo will be ready for instant download."
+    }
+  ],
+  "why": [
+    "100% private — your images are processed locally and never uploaded to any server",
+    "Popular aspect ratio presets for Instagram, Facebook, YouTube, and LinkedIn",
+    "Free-form cropping for custom dimensions and unique framing",
+    "Maintains original image quality — no unnecessary re-compression",
+    "Works seamlessly on all devices, including smartphones and tablets",
+    "Completely free with no watermarks and no file size limits",
+    "Perfect for creating profile pictures, social media posts, and thumbnails"
+  ],
+  "faq": [
+    {
+      "q": "Is my personal photo safe when cropping here?",
+      "a": "Yes. This tool uses client-side processing, meaning your photos stay inside your browser. No data is ever sent to a server, providing the highest level of privacy for your personal images."
+    },
+    {
+      "q": "What aspect ratio should I use for Instagram?",
+      "a": "For standard feed posts, use 1:1 (Square). For portrait posts, 4:5 is ideal. For Stories, Reels, and IGTV, the 9:16 vertical ratio is recommended. These presets are available in the tool."
+    },
+    {
+      "q": "Will cropping my image reduce its quality?",
+      "a": "No. Cropping simply discards the pixels outside your selected area. The pixels within the crop box retain their original quality and sharpness without additional compression."
+    },
+    {
+      "q": "What is the best crop for profile pictures?",
+      "a": "Most platforms (like WhatsApp, LinkedIn, or Twitter) use a 1:1 square ratio for profile pictures, which they then display as circles or squares. Using the 1:1 preset ensures your face stays centered."
+    },
+    {
+      "q": "Can I rotate the image while cropping?",
+      "a": "This tool is specialized for precise cropping. If you need to fix a tilted photo, we recommend using our 'Image Rotate' tool first, then coming back here to crop it to the perfect size."
+    },
+    {
+      "q": "Can I undo or reset my crop settings?",
+      "a": "Yes! You can adjust the crop box as many times as you like before clicking the download button. If you've already saved it, just reload the original file to start over."
+    }
+  ]
+}

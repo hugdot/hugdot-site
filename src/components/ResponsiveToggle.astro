@@ -39,6 +39,7 @@ const { class: className } = Astro.props
       if (!text || !icon) return
 
       text.textContent = 'Close'
+      text.className = 'sr-only'
       toggle.setAttribute('aria-expanded', 'true')
       toggle.setAttribute('aria-label', 'Close menu navigation')
       icon.innerHTML = `<path d="M10 10 2 2m8 8 8 8m-8-8 8-8m-8 8-8 8" stroke="var(--foreground-color)" stroke-width="2.667" stroke-linecap="round" stroke-linejoin="round"/>`
@@ -50,6 +51,7 @@ const { class: className } = Astro.props
       if (!text || !icon) return
 
       text.textContent = 'Menu'
+      text.className = 'sr-only'
       toggle.setAttribute('aria-expanded', 'false')
       toggle.setAttribute('aria-label', 'Open menu navigation')
       icon.innerHTML = `<path d="M2 1.667h24m-24 8h24m-24 8h24" stroke="var(--foreground-color)" stroke-width="2.667" stroke-linecap="round" stroke-linejoin="round"/>`

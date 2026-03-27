@@ -18,7 +18,11 @@ const categories = [
     icon: 'lucide:image',
     href: '/tools/image',
     tools: [
-      { label: 'Image Compressor', href: '/tools/image/compressor', description: 'Compress images without quality loss' },
+      {
+        label: 'Image Compressor',
+        href: '/tools/image/compressor',
+        description: 'Compress images without quality loss',
+      },
       { label: 'Image Resizer', href: '/tools/image/resizer', description: 'Resize images to any dimension' },
       { label: 'Image Blur', href: '/tools/image/blur', description: 'Blur entire image or specific areas' },
       { label: 'Image Crop', href: '/tools/image/crop', description: 'Crop images with touch support' },
@@ -41,13 +45,17 @@ const categories = [
     icon: 'lucide:wand',
     href: '/tools/generator',
     tools: [
-      { label: 'QR Code Generator', href: '/tools/generator/qr-code', description: 'Generate QR codes for any URL or text' },
+      {
+        label: 'QR Code Generator',
+        href: '/tools/generator/qr-code',
+        description: 'Generate QR codes for any URL or text',
+      },
     ],
   },
 ]
 ---
 
-<DefaultLayout title="Free Browser-Based Tools" useTitleTemplate={true}>
+<DefaultLayout title="HugDot" useTitleTemplate={true}>
   <Hero />
 
   <!-- Category Overview Grid -->
@@ -55,17 +63,19 @@ const categories = [
     <div class="container">
       <Heading level="h2" class="mb-8 text-center text-2xl font-bold">Tool Categories</Heading>
       <ul class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
-        {categories.map((cat) => (
-          <li>
-            <a
-              href={cat.href}
-              class="flex flex-col items-center gap-3 rounded-xl border border-[var(--border-color-subtle)] p-6 text-center text-[var(--foreground-color)] no-underline category-card transition-all hover:border-[var(--action-color)] hover:shadow-md"
-            >
-              <Icon aria-hidden="true" name={cat.icon} size="2rem" class="text-[var(--action-color)]" />
-              <span class="text-sm font-semibold">{cat.label}</span>
-            </a>
-          </li>
-        ))}
+        {
+          categories.map((cat) => (
+            <li>
+              <a
+                href={cat.href}
+                class="category-card flex flex-col items-center gap-3 rounded-xl border border-[var(--border-color-subtle)] p-6 text-center text-[var(--foreground-color)] no-underline transition-all hover:border-[var(--action-color)] hover:shadow-md"
+              >
+                <Icon aria-hidden="true" name={cat.icon} size="2rem" class="text-[var(--action-color)]" />
+                <span class="text-sm font-semibold">{cat.label}</span>
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </div>
   </section>
@@ -73,37 +83,38 @@ const categories = [
   <!-- Tool Lists by Category -->
   <section id="tools" class="my-16 scroll-mt-8">
     <div class="container flex flex-col gap-20">
-      {categories.map((category) => (
-        <div data-category={category.label.toLowerCase()}>
-          <div class="mb-6 flex items-center justify-between">
-            <div class="flex items-center gap-3">
-              <Icon aria-hidden="true" name={category.icon} size="1.5rem" class="text-[var(--action-color)]" />
-              <Heading level="h2" size="h4">{category.label}</Heading>
+      {
+        categories.map((category) => (
+          <div data-category={category.label.toLowerCase()}>
+            <div class="mb-6 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <Icon aria-hidden="true" name={category.icon} size="1.5rem" class="text-[var(--action-color)]" />
+                <Heading level="h2" size="h4">
+                  {category.label}
+                </Heading>
+              </div>
+              <a href={category.href} class="text-sm text-[var(--action-color)] underline-offset-4 hover:underline">
+                See all →
+              </a>
             </div>
-            <a
-              href={category.href}
-              class="text-sm text-[var(--action-color)] underline-offset-4 hover:underline"
-            >
-              See all →
-            </a>
+            <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+              {category.tools.map((tool) => (
+                <li>
+                  <a
+                    href={tool.href}
+                    class="tool-card flex h-full flex-col gap-2 rounded-xl border border-[var(--border-color-subtle)] p-5 text-[var(--foreground-color)] no-underline transition-all hover:border-[var(--action-color)] hover:shadow-md"
+                    data-tool-name={tool.label.toLowerCase()}
+                  >
+                    <span class="font-semibold">{tool.label}</span>
+                    <span class="text-sm opacity-60">{tool.description}</span>
+                    <span class="mt-auto pt-2 text-xs font-medium text-[var(--action-color)]">Open →</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
-          <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {category.tools.map((tool) => (
-              <li>
-                <a
-                  href={tool.href}
-                  class="flex h-full flex-col gap-2 rounded-xl border border-[var(--border-color-subtle)] p-5 text-[var(--foreground-color)] no-underline tool-card transition-all hover:border-[var(--action-color)] hover:shadow-md"
-                  data-tool-name={tool.label.toLowerCase()}
-                >
-                  <span class="font-semibold">{tool.label}</span>
-                  <span class="text-sm opacity-60">{tool.description}</span>
-                  <span class="mt-auto pt-2 text-xs font-medium text-[var(--action-color)]">Open →</span>
-                </a>
-              </li>
-            ))}
-          </ul>
-        </div>
-      ))}
+        ))
+      }
     </div>
   </section>
 </DefaultLayout>

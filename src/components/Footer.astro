@@ -14,51 +14,57 @@ const generatorTools = getToolsByCategory('generator')
   <section class="py-16">
     <Heading level="h2" class="sr-only">Footer</Heading>
     <div class="container grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
-
       <div class="flex flex-col gap-4">
         <Heading level="h3" size="h6">Text Tools</Heading>
         <ul class="flex flex-col gap-2">
-          {textTools.map((tool) => (
-            <li>
-              <Link href={tool.href}>{tool.label}</Link>
-            </li>
-          ))}
+          {
+            textTools.map((tool) => (
+              <li>
+                <Link href={tool.href}>{tool.label}</Link>
+              </li>
+            ))
+          }
         </ul>
       </div>
 
       <div class="flex flex-col gap-4">
         <Heading level="h3" size="h6">Image Tools</Heading>
         <ul class="flex flex-col gap-2">
-          {imageTools.map((tool) => (
-            <li>
-              <Link href={tool.href}>{tool.label}</Link>
-            </li>
-          ))}
+          {
+            imageTools.map((tool) => (
+              <li>
+                <Link href={tool.href}>{tool.label}</Link>
+              </li>
+            ))
+          }
         </ul>
       </div>
 
       <div class="flex flex-col gap-4">
         <Heading level="h3" size="h6">PDF Tools</Heading>
         <ul class="flex flex-col gap-2">
-          {pdfTools.map((tool) => (
-            <li>
-              <Link href={tool.href}>{tool.label}</Link>
-            </li>
-          ))}
+          {
+            pdfTools.map((tool) => (
+              <li>
+                <Link href={tool.href}>{tool.label}</Link>
+              </li>
+            ))
+          }
         </ul>
       </div>
 
       <div class="flex flex-col gap-4">
         <Heading level="h3" size="h6">Generators</Heading>
         <ul class="flex flex-col gap-2">
-          {generatorTools.map((tool) => (
-            <li>
-              <Link href={tool.href}>{tool.label}</Link>
-            </li>
-          ))}
+          {
+            generatorTools.map((tool) => (
+              <li>
+                <Link href={tool.href}>{tool.label}</Link>
+              </li>
+            ))
+          }
         </ul>
       </div>
-
     </div>
   </section>
 
@@ -72,7 +78,7 @@ const generatorTools = getToolsByCategory('generator')
           <li><Link href="/privacy-policy">Privacy Policy</Link></li>
         </ul>
       </div>
-      <p class="text-sm opacity-75">&copy; {currentYear} DevKit. All rights reserved.</p>
+      <p class="text-sm opacity-75">&copy; {currentYear} hugdot. All rights reserved.</p>
     </div>
   </section>
 </footer>

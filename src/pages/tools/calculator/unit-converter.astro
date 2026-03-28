@@ -17,7 +17,6 @@ const relatedTools = tools.filter((t) => t.category === 'calculator' && t.id !==
 >
   <section class="py-12">
     <div class="container max-w-3xl">
-
       <!-- Header -->
       <div class="mb-8">
         <div class="mb-2 flex items-center gap-2 text-sm opacity-50">
@@ -28,19 +27,23 @@ const relatedTools = tools.filter((t) => t.category === 'calculator' && t.id !==
           <span>{seoData.metaTitle.split(' — ')[0]}</span>
         </div>
         <Heading level="h1" size="h2">{seoData.metaTitle.split(' — ')[0]}</Heading>
-        <p class="mt-2 opacity-60">
-          Convert length, weight, temperature, volume, speed and more instantly.
-        </p>
+        <p class="mt-2 opacity-60">Convert length, weight, temperature, volume, speed and more instantly.</p>
         <div class="mt-4 flex flex-wrap gap-2">
-          <span class="flex items-center gap-1.5 rounded-full border border-[var(--border-color-subtle)] px-3 py-1.5 text-xs font-medium">
+          <span
+            class="flex items-center gap-1.5 rounded-full border border-[var(--border-color-subtle)] px-3 py-1.5 text-xs font-medium"
+          >
             <Icon aria-hidden="true" name="lucide:wifi-off" size="0.875rem" class="text-[var(--action-color)]" />
             Works Offline
           </span>
-          <span class="flex items-center gap-1.5 rounded-full border border-[var(--border-color-subtle)] px-3 py-1.5 text-xs font-medium">
+          <span
+            class="flex items-center gap-1.5 rounded-full border border-[var(--border-color-subtle)] px-3 py-1.5 text-xs font-medium"
+          >
             <Icon aria-hidden="true" name="lucide:zap" size="0.875rem" class="text-[var(--action-color)]" />
             Instant
           </span>
-          <span class="flex items-center gap-1.5 rounded-full border border-[var(--border-color-subtle)] px-3 py-1.5 text-xs font-medium">
+          <span
+            class="flex items-center gap-1.5 rounded-full border border-[var(--border-color-subtle)] px-3 py-1.5 text-xs font-medium"
+          >
             <Icon aria-hidden="true" name="lucide:infinity" size="0.875rem" class="text-[var(--action-color)]" />
             No Limits
           </span>
@@ -49,78 +52,84 @@ const relatedTools = tools.filter((t) => t.category === 'calculator' && t.id !==
 
       <!-- Tool -->
       <div class="flex flex-col gap-6 rounded-2xl border border-[var(--border-color-subtle)] p-6">
-
         <!-- Category Tabs -->
         <div class="flex flex-wrap gap-2">
-          {['Length', 'Weight', 'Temperature', 'Volume', 'Speed', 'Area'].map((cat) => (
-            <button
-              data-category={cat}
-              class="category-btn rounded-full border border-[var(--border-color-subtle)] px-4 py-1.5 text-xs font-medium transition-all hover:border-[var(--action-color)]"
-            >
-              {cat}
-            </button>
-          ))}
+          {
+            ['Length', 'Weight', 'Temperature', 'Volume', 'Speed', 'Area'].map((cat) => (
+              <button
+                data-category={cat}
+                class="category-btn rounded-full border border-[var(--border-color-subtle)] px-4 py-1.5 text-xs font-medium transition-all hover:border-[var(--action-color)]"
+              >
+                {cat}
+              </button>
+            ))
+          }
         </div>
 
         <!-- Input -->
-        <div class="flex flex-col gap-2">
-          <div class="flex gap-3">
-            <input
-              id="input-value"
-              type="number"
-              inputmode="decimal"
-              placeholder="Enter value..."
-              class="flex-1 rounded-xl border border-[var(--border-color-subtle)] bg-transparent px-4 py-3 text-lg font-semibold outline-none focus:border-[var(--action-color)]"
-            />
-            <select
-              id="input-unit"
-              class="rounded-xl border border-[var(--border-color-subtle)] bg-[var(--background-color)] px-4 py-3 text-sm outline-none focus:border-[var(--action-color)]"
-            ></select>
-          </div>
+        <div class="grid max-w-md grid-cols-12 gap-2 sm:gap-3">
+          <input
+            id="input-value"
+            type="number"
+            class="col-span-7 rounded-xl border border-[var(--border-color-subtle)] bg-transparent px-3 py-3 text-lg font-semibold outline-none focus:border-[var(--action-color)] sm:px-4"
+            placeholder="0"
+          />
+
+          <select
+            id="input-unit"
+            class="col-span-5 rounded-xl border border-[var(--border-color-subtle)] bg-[var(--background-color)] px-2 py-3 text-xs outline-none focus:border-[var(--action-color)] sm:px-4 sm:text-sm"
+          >
+          </select>
         </div>
 
         <!-- Results -->
         <div id="results-list" class="flex flex-col gap-2"></div>
-
       </div>
 
       <!-- Privacy Badge -->
-      <div class="mt-8 flex items-center gap-2 rounded-2xl border border-[var(--border-color-subtle)] px-5 py-4 text-sm opacity-60">
+      <div
+        class="mt-8 flex items-center gap-2 rounded-2xl border border-[var(--border-color-subtle)] px-5 py-4 text-sm opacity-60"
+      >
         <Icon aria-hidden="true" name="lucide:shield-check" size="1rem" />
         <span>All calculations happen in your browser. No data is sent to any server.</span>
       </div>
 
       <!-- Related Tools -->
-      {relatedTools.length > 0 && (
-        <div class="mt-12">
-          <Heading level="h2" size="h4" class="mb-6">Related Tools</Heading>
-          <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
-            {relatedTools.map((tool) => (
-              <a href={tool.href}
-                class="rounded-xl border border-[var(--border-color-subtle)] px-4 py-3 text-sm font-medium text-[var(--foreground-color)] no-underline transition-all hover:border-[var(--action-color)]">
-                {tool.label} →
-              </a>
-            ))}
+      {
+        relatedTools.length > 0 && (
+          <div class="mt-12">
+            <Heading level="h2" size="h4" class="mb-6">
+              Related Tools
+            </Heading>
+            <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
+              {relatedTools.map((tool) => (
+                <a
+                  href={tool.href}
+                  class="rounded-xl border border-[var(--border-color-subtle)] px-4 py-3 text-sm font-medium text-[var(--foreground-color)] no-underline transition-all hover:border-[var(--action-color)]"
+                >
+                  {tool.label} →
+                </a>
+              ))}
+            </div>
           </div>
-        </div>
-      )}
-
+        )
+      }
     </div>
   </section>
 </DefaultLayout>
 
 <style>
   .category-btn.active {
+    border-color: var(--action-color);
     background-color: var(--action-color);
     color: white;
-    border-color: var(--action-color);
   }
 </style>
 
 <script>
   document.addEventListener('astro:page-load', () => {
     const inputValue = document.getElementById('input-value') as HTMLInputElement
-    const inputUnit = (document.getElementById('input-unit') as any) as HTMLSelectElement;
+    const inputUnit = document.getElementById('input-unit') as any as HTMLSelectElement
     const resultsList = document.getElementById('results-list') as HTMLElement
     const categoryBtns = document.querySelectorAll('.category-btn') as NodeListOf<HTMLButtonElement>
 
@@ -161,8 +170,8 @@ const relatedTools = tools.filter((t) => t.category === 'calculator' && t.id !==
           },
           {
             label: 'Fahrenheit (°F)',
-            toBase: (v) => (v - 32) * 5 / 9,
-            fromBase: (v) => v * 9 / 5 + 32,
+            toBase: (v) => ((v - 32) * 5) / 9,
+            fromBase: (v) => (v * 9) / 5 + 32,
           },
           {
             label: 'Kelvin (K)',
@@ -253,7 +262,8 @@ const relatedTools = tools.filter((t) => t.category === 'calculator' && t.id !==
         }
 
         const row = document.createElement('div')
-        row.className = 'flex items-center justify-between rounded-xl border border-[var(--border-color-subtle)] px-4 py-3 cursor-pointer transition-all hover:border-[var(--action-color)]'
+        row.className =
+          'flex items-center justify-between rounded-xl border border-[var(--border-color-subtle)] px-4 py-3 cursor-pointer transition-all hover:border-[var(--action-color)]'
         row.innerHTML = `
           <span class="text-sm opacity-60">${unit.label}</span>
           <div class="flex items-center gap-2">

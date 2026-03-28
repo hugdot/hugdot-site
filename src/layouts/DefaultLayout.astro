@@ -40,6 +40,7 @@ interface Props {
   useTitleTemplate?: boolean
   faq?: { q: string; a: string }[]
   howto?: { step: string; description: string }[]
+  why?: string[]
   category?: string
 }
 
@@ -53,6 +54,7 @@ const {
   useTitleTemplate = true,
   faq = [],
   howto = [],
+  why = [],
   category = 'UtilitiesApplication',
 } = Astro.props
 
@@ -130,7 +132,9 @@ const imageUrl = new URL(imagePath, Astro.site).href
           operatingSystem: 'Any',
           applicationCategory: category,
           offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-          featureList: 'Serverless, 100% Private, Client-side processing',
+          featureList: ['Serverless, 100% Private, Client-side processing',
+          ...why
+          ].join(', '),
         },
         ...(Astro.props.howto && Astro.props.howto.length > 0
           ? [

@@ -25,15 +25,13 @@ import { Icon } from 'astro-icon/components'
           <Icon aria-hidden="true" name="lucide:sun" slot="dark" />
         </DarkMode>
       </div>
-      <div class="responsive-toggle">
-        <div class="mobile-darkmode">
-          <DarkMode>
-            <Icon aria-hidden="true" name="lucide:moon" slot="light" />
-            <Icon aria-hidden="true" name="lucide:sun" slot="dark" />
-          </DarkMode>
-        </div>
-        <ResponsiveToggle />
+      <div class="mobile-darkmode">
+        <DarkMode>
+          <Icon aria-hidden="true" name="lucide:moon" slot="light" />
+          <Icon aria-hidden="true" name="lucide:sun" slot="dark" />
+        </DarkMode>
       </div>
+      <ResponsiveToggle />
     </div>
     <nav class="mobile-menu" aria-label="Main navigation mobile">
       <NavigationItems />
@@ -43,14 +41,12 @@ import { Icon } from 'astro-icon/components'
 
 <script>
   document.addEventListener('astro:page-load', () => {
-    // variables
     const mainNav = document.querySelector('#main-navigation') as HTMLElement | null
     if (!mainNav) return
 
     const mainMenu = mainNav.querySelector('ul') as HTMLUListElement | null
     const dropdownMenus = [...document.querySelectorAll('.has-dropdown button')] as HTMLButtonElement[]
 
-    // functions
     const setActiveMenuItem = (): void => {
       const mobileDesktopMenus = mainNav.querySelectorAll('nav > ul')
       const currentPathname = window.location.pathname
@@ -108,7 +104,6 @@ import { Icon } from 'astro-icon/components'
       }
     }
 
-    // execution
     mainMenu &&
       mainMenu.addEventListener('keydown', (event: KeyboardEvent) => {
         const element = event.target as Element
@@ -238,7 +233,6 @@ import { Icon } from 'astro-icon/components'
       align-items: center;
     }
 
-    // Mobile-first: show mobile menu by default
     .mobile-menu {
       display: none;
 
@@ -247,10 +241,15 @@ import { Icon } from 'astro-icon/components'
       }
     }
 
+    // 모바일에서 햄버거 버튼 강제 표시
     .responsive-toggle {
-      display: flex;
+      display: flex !important;
       align-items: center;
       gap: var(--space-2xs);
+
+      @include breakpoint('nav') {
+        display: none !important;
+      }
     }
 
     .mobile-darkmode {
@@ -273,13 +272,8 @@ import { Icon } from 'astro-icon/components'
       display: none;
     }
 
-    // Desktop: switch to desktop menu at nav breakpoint
     @include breakpoint('nav') {
       .mobile-menu {
-        display: none;
-      }
-
-      .responsive-toggle {
         display: none;
       }
 
@@ -290,9 +284,9 @@ import { Icon } from 'astro-icon/components'
 
     .wrapper {
       display: flex;
+      position: relative;
       align-items: center;
       gap: var(--space-m);
-      position: relative;
       z-index: 10;
     }
 
@@ -347,13 +341,13 @@ import { Icon } from 'astro-icon/components'
     }
 
     .mobile-menu {
+      position: relative;
       flex-basis: 100%;
+      z-index: 1;
       margin-block-start: var(--space-m);
       border: 1px solid var(--border-color-subtle);
       border-radius: var(--radius-l);
       padding: var(--space-m);
-      position: relative;
-      z-index: 1;
 
       > ul {
         flex-direction: column;

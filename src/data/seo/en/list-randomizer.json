@@ -1,0 +1,66 @@
+{
+  "toolId": "list-randomizer",
+  "lang": "en",
+  "metaTitle": "List Randomizer — Free Online List Shuffler & Random Picker",
+  "metaDescription": "Randomly shuffle a list or pick winners instantly in your browser. Perfect for lotteries, team picks, and decision making. 100% private — no data sent to servers.",
+  "keywords": [
+    "list randomizer",
+    "random list picker",
+    "random name picker",
+    "lottery picker online",
+    "random team generator",
+    "list shuffler",
+    "random winner picker",
+    "random order generator",
+    "free list randomizer",
+    "online random picker"
+  ],
+  "howto": [
+    {
+      "step": "Enter your list",
+      "description": "Type or paste your list items — one per line, or separated by commas."
+    },
+    {
+      "step": "Choose a mode",
+      "description": "Shuffle the whole list, or pick a winner from your list."
+    },
+    {
+      "step": "Randomize",
+      "description": "Click Randomize to instantly shuffle or pick randomly."
+    },
+    {
+      "step": "Copy the result",
+      "description": "Copy the result to your clipboard with one tap."
+    }
+  ],
+  "why": [
+    "100% private — your list never leaves your browser",
+    "Two modes: full shuffle or single winner pick",
+    "Auto-detects list format — no need to choose separators",
+    "Remove duplicates option for clean results",
+    "Works completely offline after the initial page load",
+    "No sign-up, no limits, completely free forever"
+  ],
+  "faq": [
+    {
+      "q": "What can I use this tool for?",
+      "a": "You can use it for lotteries, random team picks, deciding what to eat, shuffling playlists, drawing campaign winners, and any situation where you need a fair random choice."
+    },
+    {
+      "q": "How do I enter my list?",
+      "a": "Enter one item per line, or separate items with commas. The tool auto-detects the format."
+    },
+    {
+      "q": "Is the randomization truly random?",
+      "a": "Yes. The tool uses the Fisher-Yates shuffle algorithm with Math.random() for unbiased randomization."
+    },
+    {
+      "q": "Can I remove duplicate items?",
+      "a": "Yes. Enable the Remove Duplicates option before randomizing to ensure each item appears only once."
+    },
+    {
+      "q": "Is my list saved anywhere?",
+      "a": "No. Everything runs in your browser. Your list is never sent to any server or saved anywhere."
+    }
+  ]
+}

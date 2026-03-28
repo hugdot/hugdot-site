@@ -8,8 +8,7 @@ export default defineThemeConfig({
   logo: logoImage,
   seo: {
     title: 'HugDot | Free Online Utility Tools & Converters',
-    description:
-      'Powerful, on-device utility tools for images, text, and files. Your data never leaves your device.',
+    description: 'Powerful, on-device utility tools for images, text, and files. Your data never leaves your device.',
     author: 'HugDot',
     image: previewImage, // Can also be a string e.g. '/social-preview-image.png',
   },
@@ -27,6 +26,8 @@ export default defineThemeConfig({
         label: 'Text',
         items: [
           { label: 'Word Counter', href: '/tools/text/word-counter' },
+          { label: 'Case Converter', href: '/tools/text/case-converter' },
+          { label: 'Lorem Ipsum Generator', href: '/tools/text/lorem-ipsum-generator' },
         ],
       },
       {
@@ -55,6 +56,17 @@ export default defineThemeConfig({
         label: 'Generator',
         items: [
           { label: 'QR Code Generator', href: '/tools/generator/qr-code' },
+          { label: 'Password Generator', href: '/tools/generator/password-generator' },
+          { label: 'List Randomizer', href: '/tools/generator/list-randomizer' },
+        ],
+      },
+      {
+        type: 'dropdown',
+        label: 'SNS',
+        items: [
+          { label: 'Instagram Post Generator', href: '/tools/sns/instagram-post-generator' },
+          { label: 'Tweet Generator', href: '/tools/sns/tweet-generator' },
+          { label: 'YouTube Thumbnail Grabber', href: '/tools/sns/youtube-thumbnail-grabber' },
         ],
       },
     ],

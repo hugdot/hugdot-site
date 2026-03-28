@@ -3,56 +3,25 @@ import DefaultLayout from '@layouts/DefaultLayout.astro'
 import Hero from '@components/Hero.astro'
 import { Heading } from 'accessible-astro-components'
 import { Icon } from 'astro-icon/components'
+import { tools } from '../data/tools'
 
-const categories = [
-  {
-    label: 'Text Tools',
-    icon: 'lucide:type',
-    href: '/tools/text',
-    tools: [
-      { label: 'Word Counter', href: '/tools/text/word-counter', description: 'Count words, characters & sentences' },
-    ],
-  },
-  {
-    label: 'Image Tools',
-    icon: 'lucide:image',
-    href: '/tools/image',
-    tools: [
-      {
-        label: 'Image Compressor',
-        href: '/tools/image/compressor',
-        description: 'Compress images without quality loss',
-      },
-      { label: 'Image Resizer', href: '/tools/image/resizer', description: 'Resize images to any dimension' },
-      { label: 'Image Blur', href: '/tools/image/blur', description: 'Blur entire image or specific areas' },
-      { label: 'Image Crop', href: '/tools/image/crop', description: 'Crop images with touch support' },
-      { label: 'Image to PDF', href: '/tools/image/to-pdf', description: 'Convert images to a PDF file' },
-      { label: 'EXIF Remover', href: '/tools/image/exif-remover', description: 'Remove hidden metadata from photos' },
-    ],
-  },
-  {
-    label: 'PDF Tools',
-    icon: 'lucide:file-text',
-    href: '/tools/pdf',
-    tools: [
-      { label: 'PDF Merger', href: '/tools/pdf/merger', description: 'Merge multiple PDFs into one file' },
-      { label: 'PDF Splitter', href: '/tools/pdf/splitter', description: 'Split PDF into separate pages' },
-      { label: 'PDF to Image', href: '/tools/pdf/to-image', description: 'Convert PDF pages to images' },
-    ],
-  },
-  {
-    label: 'Generators',
-    icon: 'lucide:wand',
-    href: '/tools/generator',
-    tools: [
-      {
-        label: 'QR Code Generator',
-        href: '/tools/generator/qr-code',
-        description: 'Generate QR codes for any URL or text',
-      },
-    ],
-  },
-]
+const categoryConfigs = {
+  text: { label: 'Text Tools', icon: 'lucide:type', href: '/tools/text' },
+  image: { label: 'Image Tools', icon: 'lucide:image', href: '/tools/image' },
+  pdf: { label: 'PDF Tools', icon: 'lucide:file-text', href: '/tools/pdf' },
+  generator: { label: 'Generators', icon: 'lucide:wand', href: '/tools/generator' },
+  sns: { label: 'SNS Tools', icon: 'lucide:share-2', href: '/tools/sns' },
+}
+const categories = Object.entries(categoryConfigs).map(([key, config]) => ({
+  ...config,
+  tools: tools
+    .filter(t => t.category === key && t.available)
+    .map(t => ({
+      label: t.label,
+      href: t.href,
+      description: `${t.label} utility for your daily tasks` 
+    }))
+})).filter(cat => cat.tools.length > 0); //
 ---
 
 <DefaultLayout title="HugDot" useTitleTemplate={true}>

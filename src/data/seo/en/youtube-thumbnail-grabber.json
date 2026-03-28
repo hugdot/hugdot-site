@@ -1,0 +1,61 @@
+{
+  "toolId": "youtube-thumbnail-grabber",
+  "lang": "en",
+  "metaTitle": "YouTube Thumbnail Grabber — Download YouTube Thumbnails Free",
+  "metaDescription": "Download YouTube video thumbnails in max resolution instantly. Just paste the YouTube URL and save the thumbnail image. Free, fast, and no login required.",
+  "keywords": [
+    "youtube thumbnail grabber",
+    "youtube thumbnail downloader",
+    "download youtube thumbnail",
+    "youtube thumbnail extractor",
+    "get youtube thumbnail",
+    "youtube video thumbnail",
+    "youtube thumbnail hd",
+    "youtube thumbnail 1080p",
+    "free youtube thumbnail downloader",
+    "online youtube thumbnail grabber"
+  ],
+  "howto": [
+    {
+      "step": "Paste YouTube URL",
+      "description": "Paste any YouTube video URL into the input box. Supports all URL formats including youtu.be short links."
+    },
+    {
+      "step": "Thumbnails load instantly",
+      "description": "All available thumbnail resolutions are displayed automatically."
+    },
+    {
+      "step": "Save your thumbnail",
+      "description": "Click Save on any resolution to download the thumbnail image directly to your device."
+    }
+  ],
+  "why": [
+    "No login or API key required — works instantly",
+    "Supports all YouTube URL formats including youtu.be short links",
+    "Multiple resolutions: Max, HD, SD and more",
+    "Works completely offline after thumbnails are loaded",
+    "No sign-up, no limits, completely free forever"
+  ],
+  "faq": [
+    {
+      "q": "Do I need a YouTube account to use this?",
+      "a": "No. You just need the URL of any public YouTube video. No login or API key required."
+    },
+    {
+      "q": "What URL formats are supported?",
+      "a": "All standard YouTube URL formats are supported including youtube.com/watch?v=, youtu.be/, and youtube.com/embed/ links."
+    },
+    {
+      "q": "Why is the Max Resolution thumbnail not available for some videos?",
+      "a": "Not all videos have a maximum resolution (1280x720) thumbnail. If it's not available, the next best resolution will be shown."
+    },
+    {
+      "q": "Can I use downloaded thumbnails freely?",
+      "a": "Thumbnails are owned by the video creator or YouTube. Please respect copyright and only use thumbnails with permission or for personal use."
+    },
+    {
+      "q": "Does this work on mobile?",
+      "a": "Yes. The tool is fully optimized for mobile browsers including Safari on iOS and Chrome on Android."
+    }
+  ]
+}

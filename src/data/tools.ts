@@ -14,12 +14,30 @@ export const tools: Tool[] = [
   // Text
   {
     id: 'word-counter',
-  label: 'Word Counter',
+    label: 'Word Counter',
     category: 'text',
     slug: 'word-counter',
     href: '/tools/text/word-counter',
     icon: 'lucide:type',
     available: true,
+  },
+  {
+    id: 'case-converter',
+    category: 'text',
+    slug: 'case-converter',
+    href: '/tools/text/case-converter',
+    icon: 'lucide:case-sensitive',
+    available: true,
+    label: 'Case Converter',
+  },
+  {
+    id: 'lorem-ipsum-generator',
+    category: 'text',
+    slug: 'lorem-ipsum-generator',
+    href: '/tools/text/lorem-ipsum-generator',
+    icon: 'lucide:text',
+    available: true,
+    label: 'Lorem Ipsum Generator',
   },
 
   // Image
@@ -117,11 +135,56 @@ export const tools: Tool[] = [
     available: true,
     label: 'QR Code Generator',
   },
+  {
+    id: 'password-generator',
+    category: 'generator',
+    slug: 'password-generator',
+    href: '/tools/generator/password-generator',
+    icon: 'lucide:key-round',
+    available: true,
+    label: 'Password Generator',
+  },
+  {
+    id: 'list-randomizer',
+    category: 'generator',
+    slug: 'list-randomizer',
+    href: '/tools/generator/list-randomizer',
+    icon: 'lucide:shuffle',
+    available: true,
+    label: 'List Randomizer',
+  },
+  // SNS
+  {
+    id: 'instagram-post-generator',
+    category: 'sns',
+    slug: 'instagram-post-generator',
+    href: '/tools/sns/instagram-post-generator',
+    icon: 'lucide:instagram',
+    available: true,
+    label: 'Instagram Post Generator',
+  },
+  {
+    id: 'tweet-generator',
+    category: 'sns',
+    slug: 'tweet-generator',
+    href: '/tools/sns/tweet-generator',
+    icon: 'lucide:twitter',
+    available: true,
+    label: 'Tweet Generator',
+  },
+  {
+    id: 'youtube-thumbnail-grabber',
+    category: 'sns',
+    slug: 'youtube-thumbnail-grabber',
+    href: '/tools/sns/youtube-thumbnail-grabber',
+    icon: 'lucide:youtube',
+    available: true,
+    label: 'YouTube Thumbnail Grabber',
+  },
 ]
 
 // 헬퍼 함수
-export const getToolById = (id: string) =>
-  tools.find((t) => t.id === id)
+export const getToolById = (id: string) => tools.find((t) => t.id === id)
 
 export const getToolsByCategory = (category: ToolCategory) =>
   tools.filter((t) => t.category === category && t.available)

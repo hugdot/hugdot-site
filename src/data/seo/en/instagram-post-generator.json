@@ -1,0 +1,70 @@
+{
+  "toolId": "instagram-post-generator",
+  "lang": "en",
+  "metaTitle": "Instagram Post Generator — Fake Instagram Post Maker (Free & Private)",
+  "metaDescription": "Create realistic-looking fake Instagram posts instantly in your browser. Customize username, photo, caption, likes and more. 100% private — no data sent to servers.",
+  "keywords": [
+    "instagram post generator",
+    "fake instagram post maker",
+    "instagram post creator",
+    "fake instagram screenshot",
+    "instagram post template",
+    "fake social media post",
+    "instagram caption generator",
+    "prank instagram post",
+    "instagram post simulator",
+    "fake instagram post online"
+  ],
+  "howto": [
+    {
+      "step": "Customize your post",
+      "description": "Enter a username, caption, like/comment counts, and choose light or dark theme."
+    },
+    {
+      "step": "Upload photos",
+      "description": "Upload an avatar and a post image from your device. Nothing is sent to any server."
+    },
+    {
+      "step": "Preview in real time",
+      "description": "See your fake Instagram post update instantly as you type."
+    },
+    {
+      "step": "Save your post",
+      "description": "Click Save to download the post as a PNG image directly to your device."
+    }
+  ],
+  "why": [
+    "100% private — your photos and data never leave your browser",
+    "Realistic Instagram UI with light and dark theme support",
+    "Real-time preview updates as you type",
+    "Custom avatar, post image, caption, likes and comments",
+    "Works completely offline after the initial page load",
+    "No watermarks, no sign-up, completely free forever"
+  ],
+  "faq": [
+    {
+      "q": "Is this tool safe to use with my photos?",
+      "a": "Yes. Everything runs entirely in your browser. Your photos and personal data are never uploaded to any server."
+    },
+    {
+      "q": "Can I use this on my phone?",
+      "a": "Absolutely. The tool is fully optimized for mobile browsers including Safari on iOS and Chrome on Android."
+    },
+    {
+      "q": "Will the generated image have a watermark?",
+      "a": "No. The downloaded image is completely clean with no watermarks or branding."
+    },
+    {
+      "q": "Can I make a dark mode Instagram post?",
+      "a": "Yes! You can switch between light and dark theme to match the look you want."
+    },
+    {
+      "q": "Is it okay to use this for pranks?",
+      "a": "This tool is intended for fun and creative purposes only. Please do not use generated images to spread misinformation or harm others."
+    },
+    {
+      "q": "What image formats are supported for upload?",
+      "a": "You can upload JPG, PNG, and WebP images for both the avatar and post image."
+    }
+  ]
+}

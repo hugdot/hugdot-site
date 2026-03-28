@@ -1,0 +1,287 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Heading } from 'accessible-astro-components'
+import { Icon } from 'astro-icon/components'
+import { tools } from '@data/tools'
+import seoData from '@data/seo/en/list-randomizer.json'
+
+const relatedTools = tools.filter((t) => t.category === 'generator' && t.id !== 'list-randomizer' && t.available)
+---
+
+<DefaultLayout
+  title={seoData.metaTitle}
+  description={seoData.metaDescription}
+  useTitleTemplate={false}
+  faq={seoData.faq}
+  howto={seoData.howto}
+  why={seoData.why}
+  category="UtilitiesApplication"
+>
+  <section class="py-12">
+    <div class="container max-w-3xl">
+
+      <!-- Header -->
+      <div class="mb-8">
+        <div class="mb-2 flex items-center gap-2 text-sm opacity-50">
+          <a href="/" class="breadcrumb-link hover:underline">Home</a>
+          <span>/</span>
+          <a href="/tools/generator" class="breadcrumb-link hover:underline">Generator Tools</a>
+          <span>/</span>
+          <span>{seoData.metaTitle.split(' — ')[0]}</span>
+        </div>
+        <Heading level="h1" size="h2">{seoData.metaTitle.split(' — ')[0]}</Heading>
+        <p class="mt-2 opacity-60">
+          Shuffle a list or pick a random winner instantly. Perfect for lotteries, team picks, and decisions.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <span class="flex items-center gap-1.5 rounded-full border border-[var(--border-color-subtle)] px-3 py-1.5 text-xs font-medium">
+            <Icon aria-hidden="true" name="lucide:shield-check" size="0.875rem" class="text-[var(--action-color)]" />
+            No Upload
+          </span>
+          <span class="flex items-center gap-1.5 rounded-full border border-[var(--border-color-subtle)] px-3 py-1.5 text-xs font-medium">
+            <Icon aria-hidden="true" name="lucide:user-x" size="0.875rem" class="text-[var(--action-color)]" />
+            No Login
+          </span>
+          <span class="flex items-center gap-1.5 rounded-full border border-[var(--border-color-subtle)] px-3 py-1.5 text-xs font-medium">
+            <Icon aria-hidden="true" name="lucide:infinity" size="0.875rem" class="text-[var(--action-color)]" />
+            No Limits
+          </span>
+        </div>
+      </div>
+
+      <!-- Tool -->
+      <div class="flex flex-col gap-4">
+
+        <!-- Input -->
+        <div class="flex flex-col gap-2">
+          <div class="flex items-center justify-between">
+            <label class="text-sm font-medium" for="input-list">Your List</label>
+            <span id="item-count" class="text-xs opacity-40">0 items</span>
+          </div>
+          <textarea
+            id="input-list"
+            rows="6"
+            placeholder="Enter items — one per line or separated by commas&#10;&#10;e.g.&#10;Alice&#10;Bob&#10;Charlie"
+            class="w-full resize-none rounded-2xl border border-[var(--border-color-subtle)] bg-transparent px-4 py-3 text-sm outline-none focus:border-[var(--action-color)]"
+          ></textarea>
+        </div>
+
+        <!-- Options -->
+        <div class="flex flex-wrap items-center gap-4">
+          <label class="flex cursor-pointer items-center gap-2 text-sm">
+            <input id="opt-remove-duplicates" type="checkbox" class="accent-[var(--action-color)]" />
+            Remove duplicates
+          </label>
+        </div>
+
+        <!-- Mode Buttons -->
+        <div class="grid grid-cols-2 gap-3">
+          <button
+            id="btn-shuffle"
+            class="flex items-center justify-center gap-2 rounded-full bg-[var(--action-color)] px-6 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+          >
+            <Icon aria-hidden="true" name="lucide:shuffle" size="1rem" />
+            Shuffle List
+          </button>
+          <button
+            id="btn-pick"
+            class="flex items-center justify-center gap-2 rounded-full border border-[var(--border-color-subtle)] px-6 py-3 text-sm font-semibold transition-all hover:border-[var(--action-color)]"
+          >
+            <Icon aria-hidden="true" name="lucide:trophy" size="1rem" />
+            Pick Winner
+          </button>
+        </div>
+
+        <!-- Winner Result -->
+        <div id="winner-panel" class="hidden flex-col items-center gap-3 rounded-2xl border border-[var(--border-color-subtle)] py-10 text-center">
+          <p class="text-sm opacity-50">🎉 Winner</p>
+          <p id="winner-text" class="text-4xl font-bold text-[var(--action-color)]"></p>
+          <button id="btn-pick-again" class="mt-2 flex items-center gap-1.5 rounded-full border border-[var(--border-color-subtle)] px-4 py-2 text-xs font-medium transition-all hover:border-[var(--action-color)]">
+            <Icon aria-hidden="true" name="lucide:refresh-cw" size="0.75rem" />
+            Pick Again
+          </button>
+        </div>
+
+        <!-- Shuffle Result -->
+        <div id="shuffle-panel" class="hidden flex-col gap-3">
+          <div class="flex items-center justify-between">
+            <span class="text-xs font-semibold uppercase tracking-widest opacity-40">Shuffled List</span>
+            <button id="copy-btn" class="flex items-center gap-1.5 rounded-full border border-[var(--border-color-subtle)] px-4 py-1.5 text-xs font-medium transition-all hover:border-[var(--action-color)]">
+              <Icon aria-hidden="true" name="lucide:copy" size="0.75rem" />
+              Copy
+            </button>
+          </div>
+          <div id="shuffle-result" class="flex flex-col gap-2"></div>
+        </div>
+
+      </div>
+
+      <!-- Privacy Badge -->
+      <div class="mt-8 flex items-center gap-2 rounded-2xl border border-[var(--border-color-subtle)] px-5 py-4 text-sm opacity-60">
+        <Icon aria-hidden="true" name="lucide:shield-check" size="1rem" />
+        <span>Your list never leaves your device. No data is sent to any server.</span>
+      </div>
+
+      <!-- How to Use -->
+      <div class="mt-16">
+        <Heading level="h2" size="h4" class="mb-6">How to Use List Randomizer</Heading>
+        <div class="flex flex-col gap-4">
+          {seoData.howto.map((item, index) => (
+            <div class="flex gap-4 rounded-2xl border border-[var(--border-color-subtle)] px-5 py-4">
+              <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--action-color)] text-sm font-bold text-white">
+                {index + 1}
+              </span>
+              <div>
+                <p class="font-semibold">{item.step}</p>
+                <p class="mt-1 text-sm opacity-60">{item.description}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- Why Use -->
+      <div class="mt-12">
+        <Heading level="h2" size="h4" class="mb-6">Why Use This Tool</Heading>
+        <div class="flex flex-col gap-3">
+          {seoData.why.map((reason) => (
+            <div class="flex items-center gap-3 rounded-xl border border-[var(--border-color-subtle)] px-5 py-4">
+              <Icon aria-hidden="true" name="lucide:check-circle" size="1.25rem" class="shrink-0 text-[var(--action-color)]" />
+              <span class="text-sm">{reason}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="mt-12">
+        <Heading level="h2" size="h4" class="mb-6">Frequently Asked Questions</Heading>
+        <div class="flex flex-col gap-3">
+          {seoData.faq.map((item) => (
+            <details class="rounded-2xl border border-[var(--border-color-subtle)] px-5 py-4">
+              <summary class="cursor-pointer font-semibold">{item.q}</summary>
+              <p class="mt-3 text-sm opacity-60">{item.a}</p>
+            </details>
+          ))}
+        </div>
+      </div>
+
+      <!-- Keywords -->
+      <div class="mt-16 border-t border-[var(--border-color-subtle)] pt-8">
+        <p class="mb-4 text-[10px] font-bold tracking-widest uppercase opacity-40">Related Keywords</p>
+        <div class="flex flex-wrap gap-x-6 gap-y-3">
+          {seoData.keywords.map((tag) => <span class="text-xs opacity-50">#{tag.toLowerCase()}</span>)}
+        </div>
+      </div>
+
+      <!-- Related Tools -->
+      {relatedTools.length > 0 && (
+        <div class="mt-12">
+          <Heading level="h2" size="h4" class="mb-6">Related Tools</Heading>
+          <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
+            {relatedTools.map((tool) => (
+              <a href={tool.href}
+                class="rounded-xl border border-[var(--border-color-subtle)] px-4 py-3 text-sm font-medium text-[var(--foreground-color)] no-underline transition-all hover:border-[var(--action-color)]">
+                {tool.label} →
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+
+    </div>
+  </section>
+</DefaultLayout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const inputList = document.getElementById('input-list') as HTMLTextAreaElement
+    const itemCount = document.getElementById('item-count') as HTMLElement
+    const optRemoveDuplicates = document.getElementById('opt-remove-duplicates') as HTMLInputElement
+    const btnShuffle = document.getElementById('btn-shuffle') as HTMLButtonElement
+    const btnPick = document.getElementById('btn-pick') as HTMLButtonElement
+    const btnPickAgain = document.getElementById('btn-pick-again') as HTMLButtonElement
+    const winnerPanel = document.getElementById('winner-panel') as HTMLElement
+    const winnerText = document.getElementById('winner-text') as HTMLElement
+    const shufflePanel = document.getElementById('shuffle-panel') as HTMLElement
+    const shuffleResult = document.getElementById('shuffle-result') as HTMLElement
+    const copyBtn = document.getElementById('copy-btn') as HTMLButtonElement
+
+    const parseList = (text: string): string[] => {
+      let items: string[]
+      if (text.includes('\n')) {
+        items = text.split('\n')
+      } else if (text.includes(',')) {
+        items = text.split(',')
+      } else {
+        items = text.split(' ')
+      }
+      items = items.map((i) => i.trim()).filter(Boolean)
+      if (optRemoveDuplicates.checked) {
+        items = [...new Set(items)]
+      }
+      return items
+    }
+
+    const shuffle = (arr: string[]): string[] => {
+      const a = [...arr]
+      for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]]
+      }
+      return a
+    }
+
+    const updateCount = () => {
+      const items = parseList(inputList.value)
+      itemCount.textContent = `${items.length} item${items.length !== 1 ? 's' : ''}`
+    }
+
+    inputList.addEventListener('input', updateCount)
+    optRemoveDuplicates.addEventListener('change', updateCount)
+
+    btnShuffle.addEventListener('click', () => {
+      const items = parseList(inputList.value)
+      if (items.length < 2) return
+
+      const shuffled = shuffle(items)
+      winnerPanel.style.display = 'none'
+      shuffleResult.innerHTML = ''
+      shuffled.forEach((item, index) => {
+        const div = document.createElement('div')
+        div.className = 'flex items-center gap-3 rounded-xl border border-[var(--border-color-subtle)] px-4 py-3'
+        div.innerHTML = `
+          <span class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[var(--action-color)] text-xs font-bold text-white">${index + 1}</span>
+          <span class="text-sm">${item}</span>
+        `
+        shuffleResult.appendChild(div)
+      })
+      shufflePanel.style.display = 'flex'
+    })
+
+    const pickWinner = () => {
+      const items = parseList(inputList.value)
+      if (items.length < 1) return
+      const winner = items[Math.floor(Math.random() * items.length)]
+      winnerText.textContent = winner
+      shufflePanel.style.display = 'none'
+      winnerPanel.style.display = 'flex'
+    }
+
+    btnPick.addEventListener('click', pickWinner)
+    btnPickAgain.addEventListener('click', pickWinner)
+
+    copyBtn.addEventListener('click', async () => {
+      const items = Array.from(shuffleResult.querySelectorAll('span:last-child')).map((el) => el.textContent).join('\n')
+      await navigator.clipboard.writeText(items)
+      copyBtn.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Copied!`
+      copyBtn.style.borderColor = 'var(--action-color)'
+      copyBtn.style.color = 'var(--action-color)'
+      setTimeout(() => {
+        copyBtn.innerHTML = `<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg> Copy`
+        copyBtn.style.borderColor = ''
+        copyBtn.style.color = ''
+      }, 2000)
+    })
+  })
+</script>

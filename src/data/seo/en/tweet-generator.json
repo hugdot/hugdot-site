@@ -1,0 +1,70 @@
+{
+  "toolId": "tweet-generator",
+  "lang": "en",
+  "metaTitle": "Tweet Generator — Fake Tweet Maker Online (Free & Private)",
+  "metaDescription": "Create realistic-looking fake tweets instantly in your browser. Customize name, username, photo, stats and more. 100% private — your data never leaves your device.",
+  "keywords": [
+    "tweet generator",
+    "fake tweet maker",
+    "fake tweet creator",
+    "fake twitter post",
+    "tweet screenshot generator",
+    "fake tweet online",
+    "x post generator",
+    "twitter post maker",
+    "fake social media post",
+    "tweet image generator"
+  ],
+  "howto": [
+    {
+      "step": "Customize your tweet",
+      "description": "Enter a name, username, tweet text, and stats like likes, retweets, and views."
+    },
+    {
+      "step": "Upload an avatar",
+      "description": "Optionally upload a profile photo from your device. Nothing is sent to any server."
+    },
+    {
+      "step": "Preview in real time",
+      "description": "See your fake tweet update instantly as you type."
+    },
+    {
+      "step": "Save your tweet",
+      "description": "Click Save to download the tweet as a PNG image directly to your device."
+    }
+  ],
+  "why": [
+    "100% private — your photos and data never leave your browser",
+    "Realistic X (Twitter) UI with light and dark theme support",
+    "Real-time preview updates as you type",
+    "Custom avatar, name, username, stats and more",
+    "Works completely offline after the initial page load",
+    "No watermarks, no sign-up, completely free forever"
+  ],
+  "faq": [
+    {
+      "q": "Is this tool safe to use with my photos?",
+      "a": "Yes. Everything runs entirely in your browser. Your photos and personal data are never uploaded to any server."
+    },
+    {
+      "q": "Can I use this on my phone?",
+      "a": "Absolutely. The tool is fully optimized for mobile browsers including Safari on iOS and Chrome on Android."
+    },
+    {
+      "q": "Will the generated image have a watermark?",
+      "a": "No. The downloaded image is completely clean with no watermarks or branding."
+    },
+    {
+      "q": "Can I make a dark mode tweet?",
+      "a": "Yes! You can switch between light and dark theme to match the look you want."
+    },
+    {
+      "q": "Is it okay to use this for pranks?",
+      "a": "This tool is intended for fun and creative purposes only. Please do not use generated images to spread misinformation or harm others."
+    },
+    {
+      "q": "What image formats are supported for the avatar?",
+      "a": "You can upload JPG, PNG, and WebP images for the avatar."
+    }
+  ]
+}

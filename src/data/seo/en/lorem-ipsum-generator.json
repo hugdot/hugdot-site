@@ -1,0 +1,61 @@
+{
+  "toolId": "lorem-ipsum-generator",
+  "lang": "en",
+  "metaTitle": "Lorem Ipsum Generator — Free Placeholder Text Generator",
+  "metaDescription": "Generate Lorem Ipsum placeholder text instantly. Choose paragraphs, sentences or words. Optional HTML tags included. 100% free and works offline.",
+  "keywords": [
+    "lorem ipsum generator",
+    "placeholder text generator",
+    "dummy text generator",
+    "lorem ipsum text",
+    "random text generator",
+    "lorem ipsum paragraphs",
+    "fake text generator",
+    "blind text generator",
+    "web design placeholder text",
+    "free lorem ipsum"
+  ],
+  "howto": [
+    {
+      "step": "Choose your unit",
+      "description": "Select whether you want to generate by paragraphs, sentences, or words."
+    },
+    {
+      "step": "Set the amount",
+      "description": "Use the slider to choose how much text to generate."
+    },
+    {
+      "step": "Copy the result",
+      "description": "Click Copy to copy the generated text to your clipboard instantly."
+    }
+  ],
+  "why": [
+    "Generate by paragraphs, sentences, or words — your choice",
+    "Optional HTML paragraph tags for web development use",
+    "Instant generation with real-time preview",
+    "Works completely offline after the initial page load",
+    "No sign-up, no limits, completely free forever"
+  ],
+  "faq": [
+    {
+      "q": "What is Lorem Ipsum?",
+      "a": "Lorem Ipsum is placeholder text commonly used in design and publishing. It originates from a Latin text by Cicero and has been used as dummy text since the 1960s."
+    },
+    {
+      "q": "Why do designers use Lorem Ipsum?",
+      "a": "Lorem Ipsum allows designers to focus on layout and visual design without being distracted by readable content. It simulates real text without conveying any meaning."
+    },
+    {
+      "q": "What is the HTML tags option?",
+      "a": "When enabled, each paragraph is wrapped in <p> tags, making it ready to paste directly into HTML code."
+    },
+    {
+      "q": "Can I generate just a few words?",
+      "a": "Yes. Switch to Words mode and set the amount to generate any number of words from 1 to 200."
+    },
+    {
+      "q": "Is the generated text always the same?",
+      "a": "No. The text is randomly generated each time so you always get fresh placeholder content."
+    }
+  ]
+}

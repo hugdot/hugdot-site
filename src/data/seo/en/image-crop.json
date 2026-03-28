@@ -1,87 +1,98 @@
 {
   "toolId": "image-crop",
   "lang": "en",
-  "metaTitle": "Image Crop — Free Online Photo Cropper (Private & High Quality)",
-  "metaDescription": "Crop your images instantly in your browser. Use presets for Instagram, YouTube, and more. 100% private — your photos never leave your device. No registration required.",
+  "metaTitle": "Image Crop — Precise Online Photo Cropper (Free & Private)",
+  "metaDescription": "Crop your images instantly in your browser with pro presets for Instagram, YouTube, and more. 100% private — your photos never leave your device. No upload required.",
+  "introSummary": "Master your visual framing with our professional Image Crop tool. Whether you're centering a profile picture for LinkedIn, preparing an Instagram 4:5 portrait post, or creating a YouTube thumbnail in 16:9, our tool provides pixel-perfect accuracy. Built with a 'Privacy-First' architecture, all processing happens locally on your device, ensuring your personal photos and sensitive screenshots are never uploaded to a server.",
   "keywords": [
     "image crop",
     "photo cropper online",
     "crop image to 1:1",
     "instagram photo cropper",
+    "youtube thumbnail cropper",
     "free image cropper",
     "crop webp png jpg",
     "no upload image crop",
-    "offline photo cropper",
-    "aspect ratio presets"
+    "aspect ratio presets",
+    "circular profile pic cropper"
+  ],
+  "contextUsage": [
+    {
+      "title": "For Social Media Content",
+      "desc": "Perfectly frame your posts using built-in presets: 1:1 for Instagram feeds, 9:16 for TikTok/Reels, and 16:9 for YouTube thumbnails."
+    },
+    {
+      "title": "For Professional Profiles",
+      "desc": "Ensure your face is centered for LinkedIn, WhatsApp, or Twitter profile pictures by using our precise 1:1 square crop mode."
+    },
+    {
+      "title": "For Web Design & UI",
+      "desc": "Create consistent hero images or product cards by cropping various stock photos into a standardized aspect ratio for a clean website layout."
+    }
   ],
   "howto": [
     {
-      "step": "Select your image",
-      "description": "Click the upload area or drag and drop your photo (JPG, PNG, WebP, GIF). Your file stays securely on your device throughout the process."
+      "step": "Upload Your Source Image",
+      "description": "Drag and drop your JPG, PNG, or WebP file. Our tool handles high-resolution photos instantly without server-side latency."
     },
     {
-      "step": "Adjust the crop area",
-      "description": "Drag the corners of the crop box to select the area you want to keep. You can also move the entire box to center your subject."
+      "step": "Select Aspect Ratio",
+      "description": "Choose a preset (1:1, 4:5, 16:9, etc.) or use 'Freeform' mode to manually define the exact area you want to keep."
     },
     {
-      "step": "Use aspect ratio presets",
-      "description": "Choose from standard ratios like 1:1 (Square), 16:9 (Widescreen), or 4:5 (Portrait) to match social media requirements perfectly."
+      "step": "Adjust the Crop Box",
+      "description": "Drag the corners to resize or move the entire box to find the perfect composition. Use the 'Rule of Thirds' for a professional look."
     },
     {
-      "step": "Download your cropped image",
-      "description": "Once satisfied, click 'Crop Image' to process. Your perfectly framed photo will be ready for instant download."
+      "step": "Instant Secure Save",
+      "description": "Click 'Crop & Download'. Your perfectly framed image is generated in-browser and saved directly to your local storage."
     }
   ],
   "why": [
-    "100% private — your images are processed locally and never uploaded to any server",
-    "Popular aspect ratio presets for Instagram, Facebook, YouTube, and LinkedIn",
-    "Free-form cropping for custom dimensions and unique framing",
-    "Maintains original image quality — no unnecessary re-compression",
-    "Works seamlessly on all devices, including smartphones and tablets",
-    "Completely free with no watermarks and no file size limits",
-    "Perfect for creating profile pictures, social media posts, and thumbnails"
+    "Lossless Precision — We preserve the original pixel quality within your selected area. No unnecessary re-compression during the crop.",
+    "Social Media Ready — Pre-configured ratios for Instagram, Facebook, YouTube, LinkedIn, and Pinterest to save you time.",
+    "100% On-Device — Your private photos never touch the internet. Everything is processed via local JavaScript for total security.",
+    "Cross-Format Support — Seamlessly crop modern formats like WebP alongside traditional JPG and PNG files.",
+    "Zero File Size Limits — Crop massive 4K or 8K images without waiting for slow uploads or worrying about server-side crashes.",
+    "Free & Ad-Free — No watermarks, no registration, and no daily limits. A pure, high-performance utility for everyone."
   ],
   "faq": [
     {
-      "q": "Is my personal photo safe when cropping here?",
-      "a": "Yes. This tool uses client-side processing, meaning your photos stay inside your browser. No data is ever sent to a server, providing the highest level of privacy for your personal images."
+      "q": "What is the best aspect ratio for Instagram posts?",
+      "a": "For standard feed posts, 1:1 (Square) is classic, but 4:5 (Portrait) is often better as it takes up more vertical screen space and increases engagement."
     },
     {
-      "q": "What aspect ratio should I use for Instagram?",
-      "a": "For standard feed posts, use 1:1 (Square). For portrait posts, 4:5 is ideal. For Stories, Reels, and IGTV, the 9:16 vertical ratio is recommended. These presets are available in the tool."
+      "q": "Is my data safe when cropping sensitive documents?",
+      "a": "Absolutely. Since our tool is 'Serverless', your image data never leaves your computer's memory. It is the safest way to crop IDs or confidential screenshots."
     },
     {
-      "q": "Will cropping my image reduce its quality?",
-      "a": "No. Cropping simply discards the pixels outside your selected area. The pixels within the crop box retain their original quality and sharpness without additional compression."
+      "q": "Will cropping make my photo look blurry?",
+      "a": "Cropping itself doesn't cause blurriness, but if you crop a very small area from a low-resolution photo, the final result may have fewer pixels than desired for high-quality printing."
     },
     {
-      "q": "What is the best crop for profile pictures?",
-      "a": "Most platforms (like WhatsApp, LinkedIn, or Twitter) use a 1:1 square ratio for profile pictures, which they then display as circles or squares. Using the 1:1 preset ensures your face stays centered."
+      "q": "Can I crop a GIF or an animated WebP?",
+      "a": "This tool is optimized for static images (JPG, PNG, WebP). For animated files, it will typically crop the first frame as a static image."
     },
     {
-      "q": "Can I rotate the image while cropping?",
-      "a": "This tool is specialized for precise cropping. If you need to fix a tilted photo, we recommend using our 'Image Rotate' tool first, then coming back here to crop it to the perfect size."
-    },
-    {
-      "q": "Can I undo or reset my crop settings?",
-      "a": "Yes! You can adjust the crop box as many times as you like before clicking the download button. If you've already saved it, just reload the original file to start over."
+      "q": "How do I get a perfect circle for my profile picture?",
+      "a": "Most platforms that use circular avatars require a 1:1 square image. Use our 1:1 preset to center your face, and the platform will handle the circular masking automatically."
     }
   ],
   "technicalSpecs": [
-    { "quality": "Input Formats", "size": "JPG, PNG, WebP, GIF", "useCase": "Universal compatibility for all image types" },
-    { "quality": "Aspect Ratio Presets", "size": "1:1, 4:5, 16:9, 9:16", "useCase": "Perfect sizing for IG, YT, FB, TK" },
-    { "quality": "Privacy", "size": "Client-side Canvas API", "useCase": "Photos never leave your browser memory" },
-    { "quality": "Data Integrity", "size": "No Re-compression", "useCase": "Maintains original pixel quality inside crop area" },
-    { "quality": "Output Type", "size": "High-Res PNG or JPG", "useCase": "Clear, crisp, and standardized downloads" }
+    { "quality": "Cropping Engine", "size": "HTML5 Canvas 2D", "useCase": "High-speed, hardware-accelerated image manipulation" },
+    { "quality": "Aspect Ratios", "size": "1:1, 4:5, 16:9, 9:16, 3:2", "useCase": "Standardized framing for all major digital platforms" },
+    { "quality": "Privacy Protocol", "size": "Local Memory Buffer", "useCase": "Ensures zero data exposure to external servers or APIs" },
+    { "quality": "Input Depth", "size": "Original Bit-depth", "useCase": "Maintains color accuracy and contrast of the source file" },
+    { "quality": "Supported Formats", "size": "JPG, PNG, WebP, SVG", "useCase": "Universal compatibility for photographers and designers" }
   ],
   "troubleshooting": [
-    "Crop box not adjusting correctly? If your source image is extremely large (over 20MB), the browser may struggle. Try a slightly smaller image for smoother editing.",
-    "Result too small? Cropping naturally reduces resolution. For high-quality prints or large displays, ensure you start with a very high-resolution source.",
-    "Image tilted after cropping? If your photo needs a slight rotation, use our 'Image Rotate' tool first to straighten it before defining the final crop area."
+    "Crop box feels laggy? On mobile devices, extremely high-resolution photos (above 20MP) can tax the CPU. Close other tabs for better responsiveness.",
+    "Final image is too small? Remember that cropping removes pixels. If you need a specific pixel width (e.g., 1920px), ensure your original photo is larger than that.",
+    "Image needs straightening? This tool is for straight cropping. If your horizon is tilted, use our 'Image Rotate' tool before applying the final crop."
   ],
   "proTips": [
-    "Use the 1:1 preset for all profile pictures (WhatsApp, LinkedIn, Twitter) to ensure your face stays perfectly centered when circular cropping is applied by the platform.",
-    "For compelling social media feed posts, try the 4:5 (Portrait) ratio to occupy more vertical screen space and increase user engagement.",
-    "Combine this with an 'Image Compressor' after cropping if you need a specific file size for website SEO or email attachments."
+    "For LinkedIn profile pictures, use the 1:1 ratio and leave a little bit of 'white space' around your head so you aren't too zoomed in once circular-cropped.",
+    "When creating YouTube thumbnails, always use the 16:9 preset. This ensures your key elements won't be cut off when displayed on different devices.",
+    "Need a specific file size? Crop your image here first, then use our 'Image Compressor' to hit your target KB/MB limit for web forms."
   ]
 }

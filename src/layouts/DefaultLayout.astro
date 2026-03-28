@@ -39,13 +39,15 @@ interface Props {
    * Set to false to use the title as-is without appending site name
    */
   useTitleTemplate?: boolean
+  introSummary?: string
+  contextUsage?: { title: string; desc: string }[]
   faq?: { q: string; a: string }[]
   howto?: { step: string; description: string }[]
   why?: string[]
-  technicalSpecs?: any[];
-  troubleshooting?: string[];
-  proTips?: string[];
-  keywords?: string[];
+  technicalSpecs?: any[]
+  troubleshooting?: string[]
+  proTips?: string[]
+  keywords?: string[]
   category?: string
 }
 
@@ -58,6 +60,8 @@ const {
   type = 'website',
   useTitleTemplate = true,
   category = 'UtilitiesApplication',
+  introSummary = '',
+  contextUsage = [],
   faq = [],
   howto = [],
   why = [],
@@ -140,11 +144,13 @@ const imageUrl = new URL(imagePath, Astro.site).href
           name: title.split(' — ')[0],
           operatingSystem: 'Any',
           applicationCategory: category,
-          description: description,
+          description: introSummary || description,
           image: imageUrl,
           offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
-          featureList: ['Serverless, 100% Private, Client-side processing',
-          ...why
+          featureList: [
+            'Serverless, 100% Private, Client-side processing',
+            ...(why || []),
+            ...(contextUsage ? contextUsage.map((c) => c.title) : []),
           ].join(', '),
         },
         ...(Astro.props.howto && Astro.props.howto.length > 0
@@ -193,7 +199,9 @@ const imageUrl = new URL(imagePath, Astro.site).href
     <main id="main-content" transition:animate="fade">
       <slot />
       <div class="container max-w-4xl pb-24">
-        <ToolExtraContent 
+        <ToolExtraContent
+          introSummary={introSummary}
+          contextUsage={contextUsage}
           howto={howto}
           why={why}
           faq={faq}

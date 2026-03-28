@@ -1,8 +1,9 @@
 {
   "toolId": "tip-calculator",
   "lang": "en",
-  "metaTitle": "Tip Calculator — Free Bill Splitting & Tip Calculator Online",
-  "metaDescription": "Calculate tips and split bills instantly on your phone. Choose tip percentage, split between people, and see everyone's share. 100% free and works offline.",
+  "metaTitle": "Tip Calculator — Fast Bill Splitting & Gratuity Calculator",
+  "metaDescription": "Calculate tips and split bills instantly. Perfect for restaurants and group dining. 100% free, works offline, and keeps your data private.",
+  "introSummary": "Our professional Tip Calculator is the perfect companion for dining out, traveling, and group social events. Whether you're navigating international tipping etiquette or splitting a large dinner bill among friends, our tool provides instant, error-free calculations. Designed for speed and privacy, it works entirely on your device—making it ideal for restaurants with poor cellular signal. No ads, no sign-ups, just a clean utility to handle your gratuity and per-person shares in seconds.",
   "keywords": [
     "tip calculator",
     "bill splitter",
@@ -13,59 +14,86 @@
     "dinner bill calculator",
     "gratuity calculator",
     "tip split between people",
-    "free tip calculator mobile"
+    "free tip calculator mobile",
+    "dining bill divider"
+  ],
+  "contextUsage": [
+    {
+      "title": "For International Travelers",
+      "desc": "Quickly determine the correct gratuity based on local standards (15%, 18%, or 20%) while dining in countries with established tipping cultures."
+    },
+    {
+      "title": "For Group Dining & Socializing",
+      "desc": "Effortlessly split the total bill, including tax and tip, among up to 50 people to ensure everyone pays their fair share accurately."
+    },
+    {
+      "title": "For Service Industry Workers",
+      "desc": "Easily calculate expected gratuity on pre-tax totals to verify receipts and manage earnings with transparency."
+    }
   ],
   "howto": [
     {
-      "step": "Enter the bill amount",
-      "description": "Type in the total bill amount from your receipt."
+      "step": "Input Total Bill Amount",
+      "description": "Enter the total amount from your receipt. You can use either the pre-tax or after-tax total depending on your preference."
     },
     {
-      "step": "Choose a tip percentage",
-      "description": "Select a preset tip (10%, 15%, 18%, 20%, 25%) or enter a custom amount."
+      "step": "Select Tip Percentage",
+      "description": "Choose from standard presets (15%, 18%, 20%, 25%) or enter a custom percentage for exceptional service."
     },
     {
-      "step": "Split between people",
-      "description": "Set how many people are splitting the bill to see each person's share instantly."
+      "step": "Set Number of People",
+      "description": "Adjust the 'Split' slider to the number of people in your party. The 'Per Person' total updates instantly as you slide."
+    },
+    {
+      "step": "View Instant Results",
+      "description": "Review the calculated tip amount, the new total bill, and exactly what each individual owes including their share of the tip."
     }
   ],
   "why": [
-    "Instant calculation — no button press needed",
-    "Split the bill between up to 20 people",
-    "Custom tip percentage for full flexibility",
-    "Shows tip amount, total, and per-person share clearly",
-    "Works completely offline — perfect for restaurants with no signal",
-    "No sign-up, no ads, completely free forever"
+    "Instant Calculations — No 'Calculate' button required. Results update in real-time as you change the bill amount, tip, or number of people.",
+    "Flexible Splitting — Split the bill between 1 and 100 people, making it suitable for everything from dates to large corporate banquets.",
+    "Custom Gratuity — Full control to enter any tip percentage, allowing you to reward service exactly as you see fit.",
+    "Privacy-First & Offline — Your financial data never leaves your phone. Works perfectly in basement restaurants or remote areas without Wi-Fi.",
+    "Clean & Minimalist — Designed for mobile-first use at the table. No distracting ads or unnecessary menus—just the numbers you need.",
+    "Zero Cost Forever — A completely free utility with no hidden fees, subscriptions, or 'Pro' versions."
   ],
   "faq": [
     {
-      "q": "How much should I tip at a restaurant?",
-      "a": "In the US, the standard tip is 15-20% for sit-down restaurants. 18% is common for average service, 20% for good service, and 25% for exceptional service."
+      "q": "What is the standard tip percentage in the US?",
+      "a": "The standard is 15-20% for sit-down service. 18% is typical for good service, while 20% or more is common for excellent service or in major metropolitan areas."
     },
     {
-      "q": "How do I split a bill evenly?",
-      "a": "Enter the bill amount, choose your tip percentage, then set the number of people. The calculator will show exactly how much each person owes including tip."
+      "q": "Should I tip on the pre-tax or post-tax total?",
+      "a": "Etiquette traditionally suggests tipping on the pre-tax amount. However, many people now tip on the full total for simplicity. Our tool supports both—just enter the amount you prefer."
     },
     {
-      "q": "Does this work without internet?",
-      "a": "Yes. Once the page is loaded, the calculator works completely offline. Perfect for restaurants with poor signal."
+      "q": "Does this tool store my bill information?",
+      "a": "No. This is a client-side utility. All calculations happen in your browser's temporary memory and are wiped as soon as you close the tab."
     },
     {
-      "q": "Can I use a custom tip percentage?",
-      "a": "Yes. Tap the Custom button and enter any tip percentage you like."
+      "q": "What if the restaurant already included a service charge?",
+      "a": "Check your bill for 'Auto-Gratuity' (common for parties of 6 or more). If a service charge is already included, you are not usually expected to tip extra unless you wish to."
     },
     {
-      "q": "Is tax included in the tip calculation?",
-      "a": "The tip is calculated on the pre-tax bill amount by default, which is the standard practice. Enter your after-tax total if you prefer to tip on the full amount."
+      "q": "Can I split the bill unevenly?",
+      "a": "This tool calculates an even split. For uneven splits, use the total bill result and divide manually based on individual orders."
     }
   ],
-  "proTips": [
-    "In the US, tipping 20% is considered standard for good service at sit-down restaurants.",
-    "For large groups, many restaurants automatically add an 18% gratuity — check your bill first!",
-    "When splitting unevenly, use the total amount and divide manually after seeing the per-person share."
+  "technicalSpecs": [
+    { "quality": "Calculation Engine", "size": "Local JavaScript", "useCase": "Instant, server-free math updates" },
+    { "quality": "Input Precision", "size": "2 Decimal Places", "useCase": "Ensures cent-accurate financial results" },
+    { "quality": "Splitting Capacity", "size": "Up to 100 People", "useCase": "Suitable for large parties and events" },
+    { "quality": "Privacy Standard", "size": "Zero-Data Persistence", "useCase": "No logs or history kept for total anonymity" },
+    { "quality": "UI Optimization", "size": "Mobile-First Responsive", "useCase": "Easy one-handed input at the dinner table" }
   ],
   "troubleshooting": [
-    "If the per-person amount looks off, double-check the number of people is set correctly.",
-    "For bills with tax already included, enter the full after-tax amount for the most accurate tip."
+    "Per-person amount looks wrong? Ensure the 'Split' value accurately reflects the number of paying guests in your group.",
+    "Calculation not updating? Make sure your browser's JavaScript is enabled. The tool performs all math locally on your device.",
+    "Keyboard covering the result? On some mobile devices, tap outside the input field to hide the keyboard and see the full breakdown."
+  ],
+  "proTips": [
+    "Rounding Tip: Many people like to round the total bill to the nearest dollar. You can adjust the custom tip percentage slightly to achieve an even total.",
+    "Service Tip: If you're at a buffet or a coffee shop, a smaller tip (10% or a few dollars) is often acceptable compared to full-service dining.",
+    "Travel Tip: Keep this page bookmarked on your phone's home screen for quick access while traveling abroad to avoid awkward tipping mistakes."
   ]
 }

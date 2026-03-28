@@ -10,6 +10,7 @@ import seoData from '@data/seo/en/qr-code-generator.json'
   description={seoData.metaDescription}
   useTitleTemplate={false}
   faq={seoData.faq}
+  howto={seoData.howto}
   category="UtilityApplication"
 >
   <section class="py-12">
@@ -243,7 +244,7 @@ import seoData from '@data/seo/en/qr-code-generator.json'
     const canvas = document.getElementById('qr-canvas') as HTMLCanvasElement
     const downloadPng = document.getElementById('download-png') as HTMLButtonElement
     const downloadSvg = document.getElementById('download-svg') as HTMLButtonElement
-    const sizeSelect = document.getElementById('qr-size') as HTMLSelectElement
+    const sizeSelect = document.getElementById('qr-size') as unknown as HTMLSelectElement
     const colorInput = document.getElementById('qr-color') as HTMLInputElement
     const bgInput = document.getElementById('qr-bg') as HTMLInputElement
     const typeBtns = document.querySelectorAll<HTMLButtonElement>('.qr-type-btn')

@@ -37,9 +37,10 @@ interface Props {
    * Whether to use the title template (default: true)
    * Set to false to use the title as-is without appending site name
    */
-   useTitleTemplate?: boolean
-   faq?: { q: string; a: string }[] 
-   category?: string
+  useTitleTemplate?: boolean
+  faq?: { q: string; a: string }[]
+  howto?: { step: string; description: string }[]
+  category?: string
 }
 
 const {
@@ -51,7 +52,8 @@ const {
   type = 'website',
   useTitleTemplate = true,
   faq = [],
-  category = 'UtilitiesApplication'
+  howto = [],
+  category = 'UtilitiesApplication',
 } = Astro.props
 
 // For social sharing, we need the full absolute URL
@@ -87,8 +89,6 @@ const imageUrl = new URL(imagePath, Astro.site).href
     </style>
 
     <SEO
-    
-
       title={title}
       titleTemplate={useTitleTemplate ? `%s - ${themeConfig.seo.title}` : undefined}
       titleDefault={themeConfig.seo.title}
@@ -120,27 +120,53 @@ const imageUrl = new URL(imagePath, Astro.site).href
         ],
       }}
     />
-<script type="application/ld+json" set:html={JSON.stringify([
-      {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": title.split(' — ')[0],
-        "operatingSystem": "Any",
-        "applicationCategory": category,
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
-        "featureList": "Serverless, 100% Private, Client-side processing"
-      },
-      ...(faq.length > 0 ? [{
-        "@context": "https://schema.org",
-        "@type": "FAQPage",
-        "mainEntity": faq.map(item => ({
-          "@type": "Question",
-          "name": item.q,
-          "acceptedAnswer": { "@type": "Answer", "text": item.a }
-        }))
-      }] : [])
-    ])}></script>
-    
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify([
+        {
+          '@context': 'https://schema.org',
+          '@type': 'SoftwareApplication',
+          name: title.split(' — ')[0],
+          operatingSystem: 'Any',
+          applicationCategory: category,
+          offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+          featureList: 'Serverless, 100% Private, Client-side processing',
+        },
+        ...(Astro.props.howto && Astro.props.howto.length > 0
+          ? [
+              {
+                '@context': 'https://schema.org',
+                '@type': 'HowTo',
+                name: `How to use ${title.split(' — ')[0]}`,
+                step: Astro.props.howto.map((item) => ({
+                  '@type': 'HowToStep',
+                  name: item.step,
+                  itemListElement: [
+                    {
+                      '@type': 'HowToDirection',
+                      text: item.description,
+                    },
+                  ],
+                })),
+              },
+            ]
+          : []),
+        ...(faq.length > 0
+          ? [
+              {
+                '@context': 'https://schema.org',
+                '@type': 'FAQPage',
+                mainEntity: faq.map((item) => ({
+                  '@type': 'Question',
+                  name: item.q,
+                  acceptedAnswer: { '@type': 'Answer', text: item.a },
+                })),
+              },
+            ]
+          : []),
+      ])}
+    />
+
     <!-- Enable Astro View Transitions for all browsers -->
     <ClientRouter />
   </head>

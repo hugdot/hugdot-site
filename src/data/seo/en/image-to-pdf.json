@@ -66,5 +66,22 @@
       "q": "What happens if my images have different sizes or orientations?",
       "a": "The tool handles different sizes automatically. Each image becomes its own page, centered and scaled to provide a consistent look throughout the document."
     }
+  ],
+  "technicalSpecs": [
+    { "quality": "Input Formats", "size": "JPG, PNG, WebP", "useCase": "Universal image compatibility" },
+    { "quality": "Page Layout", "size": "Auto-scaled A4 (210x297mm)", "useCase": "Standardized professional documents" },
+    { "quality": "Privacy", "size": "Client-side PDF-Lib", "useCase": "Photos never leave your browser memory" },
+    { "quality": "Image Quality", "size": "Original Resolution", "useCase": "Preserves text sharpness in receipts/IDs" },
+    { "quality": "Output Type", "size": "Single PDF Document", "useCase": "Batch combine for easy sharing" }
+  ],
+  "troubleshooting": [
+    "Images appearing too small? The tool scales images to fit A4 width. If your original image is very low resolution, it may appear blurry when stretched to a full page.",
+    "Order of pages is wrong? Drag the thumbnails in the preview area to reorder. The top-left image will be page 1, and the bottom-right will be the last page.",
+    "Browser crash with many images? Processing 50+ high-res photos (e.g., 20MB each) requires significant RAM. Try converting in smaller batches if your device struggles."
+  ],
+  "proTips": [
+    "Scan your paper documents with your phone camera, then use this tool to turn them into a professional PDF without needing a scanner.",
+    "For the best visual result, use images with the same orientation (all portrait or all landscape) to ensure a consistent flow in the final PDF.",
+    "Since this tool works entirely offline, it is the safest way to convert sensitive documents like passports or bank statements for official applications."
   ]
 }

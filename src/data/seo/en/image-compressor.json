@@ -66,5 +66,22 @@
       "q": "Which format is best for compression?",
       "a": "WebP usually offers the best compression-to-quality ratio. If you're starting with a PNG, converting it to WebP can often reduce the size by over 90% while looking identical."
     }
+  ],
+  "technicalSpecs": [
+    { "quality": "Compression Type", "size": "Lossy & Lossless Options", "useCase": "Balance between file size and visual fidelity" },
+    { "quality": "Input Formats", "size": "JPG, PNG, WebP", "useCase": "Optimizes all modern web image standards" },
+    { "quality": "Privacy", "size": "100% Client-side Worker", "useCase": "Images processed in-browser, never uploaded" },
+    { "quality": "Data Efficiency", "size": "Zero-Data Processing", "useCase": "Compress large files without using mobile data" },
+    { "quality": "Metadata", "size": "EXIF Stripping (Optional)", "useCase": "Remove hidden location/camera data for privacy" }
+  ],
+  "troubleshooting": [
+    "Image size didn't change? If an image is already highly optimized, further compression may not yield significant gains. Try switching to WebP format for better results.",
+    "Result looks pixelated? Lowering the quality slider too far (below 60%) can cause visible artifacts. Use the side-by-side preview to find the perfect balance.",
+    "Browser tab crashed? Compressing extremely large raw images (40MB+) can exceed mobile browser memory. Try refreshing the page or using a desktop browser for massive files."
+  ],
+  "proTips": [
+    "Convert your PNG screenshots to WebP during compression to save up to 90% of space without losing any noticeable detail.",
+    "Always use the 'Preview' feature to compare text sharpness, especially if you are compressing documents or infographics with small fonts.",
+    "Need to hit a specific limit (e.g., 'under 200kb' for a web form)? Adjust the quality slider and check the 'Estimated Size' before clicking save."
   ]
 }

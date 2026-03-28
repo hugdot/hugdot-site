@@ -66,5 +66,22 @@
       "q": "What image formats are supported for upload?",
       "a": "You can upload JPG, PNG, and WebP images for both the avatar and post image."
     }
+  ],
+  "technicalSpecs": [
+    { "quality": "UI Accuracy", "size": "Current Instagram Layout", "useCase": "High-fidelity social media mockups" },
+    { "quality": "Themes", "size": "Light & Dark Mode", "useCase": "Match your device's native appearance" },
+    { "quality": "Privacy", "size": "Local Canvas Rendering", "useCase": "Photos never leave your browser memory" },
+    { "quality": "Output Format", "size": "High-Resolution PNG", "useCase": "Clear, crisp screenshots without compression" },
+    { "quality": "Compatibility", "size": "JPG, PNG, WebP", "useCase": "Supports all common image formats for upload" }
+  ],
+  "troubleshooting": [
+    "Image not appearing? Ensure your uploaded photo is not corrupted and is in a standard format (JPG/PNG). Try re-uploading if the preview is blank.",
+    "Save button not working? This tool uses the HTML5 Canvas API. Make sure your browser is up to date and you haven't disabled JavaScript.",
+    "Text cutting off? If your caption is extremely long, some parts might not fit in the standard post view. Try shortening the text for a better visual result."
+  ],
+  "proTips": [
+    "Switch to Dark Mode before saving to create a sleek, modern look for your presentation or mockup.",
+    "Use a high-quality square image (1:1 ratio) for the post photo to get the most realistic Instagram-style result.",
+    "Since this tool works entirely offline, you can safely use it to design internal marketing concepts without risking a data leak."
   ]
 }

@@ -66,5 +66,22 @@
       "q": "How are the split files delivered?",
       "a": "Depending on the method chosen, you will either download a single new PDF or a ZIP file containing multiple separated PDF documents."
     }
+  ],
+  "technicalSpecs": [
+    { "quality": "Processing Method", "size": "Direct Stream Extraction", "useCase": "Zero quality loss, 1:1 copy" },
+    { "quality": "Split Options", "size": "Ranges, Every N pages, Equal parts", "useCase": "Flexible document management" },
+    { "quality": "Privacy", "size": "100% In-browser (WebAssembly)", "useCase": "Secure for legal & financial docs" },
+    { "quality": "File Compatibility", "size": "Standard PDF 1.4 - 2.0", "useCase": "Supports all modern PDF versions" },
+    { "quality": "Output Format", "size": "Individual PDF or ZIP", "useCase": "Organized batch downloads" }
+  ],
+  "troubleshooting": [
+    "Split button not active? Check if you have entered a valid page range (e.g., 1-5, 8, 12-15). Ensure the numbers don't exceed the total page count.",
+    "File too large to process? Splitting very heavy PDFs (500MB+) might hit browser memory limits. Try splitting into fewer parts if the tab crashes.",
+    "Encrypted PDF? If your file has a 'Document Assembly' restriction, you must remove the owner password before this tool can separate the pages."
+  ],
+  "proTips": [
+    "Type '1-5, 10' to extract the first five pages and page ten into a single new document simultaneously.",
+    "Use 'Split every N pages' to quickly break down massive monthly reports into individual daily or weekly segments.",
+    "Since this tool works offline, you can safely process sensitive contracts without an internet connection for maximum security."
   ]
 }

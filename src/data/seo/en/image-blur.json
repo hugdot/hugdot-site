@@ -66,5 +66,22 @@
       "q": "Will the output format be the same as the original?",
       "a": "Yes. The tool typically exports the blurred image in the same format (JPG, PNG, or WebP) as the original file you provided."
     }
+  ],
+  "technicalSpecs": [
+    { "quality": "Blur Algorithm", "size": "Gaussian Blur / StackBlur", "useCase": "Smooth, natural-looking blurring effects" },
+    { "quality": "Processing Mode", "size": "Direct Canvas Manipulation", "useCase": "Instant real-time preview without lag" },
+    { "quality": "Privacy", "size": "Local Sandboxed Processing", "useCase": "Censored content never touches any server" },
+    { "quality": "Input Formats", "size": "JPG, PNG, WebP", "useCase": "Supports all common web and mobile photos" },
+    { "quality": "Output Type", "size": "High-Fidelity Modified Image", "useCase": "Permanent privacy protection for sensitive data" }
+  ],
+  "troubleshooting": [
+    "Blur not strong enough? If the maximum slider setting doesn't hide text sufficiently, try saving the image and then re-uploading it to apply a second layer of blur.",
+    "Preview lagging on mobile? Large high-resolution images (20MB+) require more CPU power for real-time blurring. Close other apps for a smoother experience.",
+    "Can't undo the blur? Remember that once you download the blurred file, the original data is overwritten in that new file. Always keep your original source photo safe."
+  ],
+  "proTips": [
+    "Use a low blur setting (5-10%) to create a soft-focus bokeh effect for your portrait photos, making the subject stand out more.",
+    "When censoring sensitive documents or ID cards, use a high blur intensity to ensure that even OCR (Optical Character Recognition) tools cannot read the hidden text.",
+    "Combine this with the 'Image Crop' tool first if you only need to blur a specific area: crop that part, blur it, and use it as a standalone censored asset."
   ]
 }

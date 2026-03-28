@@ -66,5 +66,22 @@
       "q": "What output formats are supported?",
       "a": "The tool supports JPG, PNG, WebP, and GIF. It typically maintains your original file format unless you choose otherwise during the export process."
     }
+  ],
+  "technicalSpecs": [
+    { "quality": "Scaling Engine", "size": "Pica (High-performance)", "useCase": "High-quality interpolation with minimal blur" },
+    { "quality": "SNS Presets", "size": "IG, YT, TW, FB, TK", "useCase": "Instant sizing for social media platforms" },
+    { "quality": "Privacy", "size": "Local Canvas / Web Worker", "useCase": "Images never touch any external server" },
+    { "quality": "Constraints", "size": "Aspect Ratio Locking", "useCase": "Prevents image distortion and stretching" },
+    { "quality": "Format Support", "size": "JPG, PNG, WebP, GIF", "useCase": "Universal compatibility for all web assets" }
+  ],
+  "troubleshooting": [
+    "Image looks blurry? If you are enlarging a small image significantly, pixelation is inevitable. For best results, always start with a higher resolution source.",
+    "Resize button not responding? Large images (over 20MB) may take a few seconds to process depending on your device's CPU. Ensure you don't close the tab during processing.",
+    "Wrong dimensions in download? Make sure 'Lock Aspect Ratio' is toggled correctly. If you need a specific non-standard size, unlock it before entering values."
+  ],
+  "proTips": [
+    "Use the 'Instagram Portrait' (1080x1350) preset to occupy more vertical screen space and increase engagement on your posts.",
+    "If you need to resize a transparent PNG, our tool preserves the alpha channel perfectly so your logo or icon stays transparent.",
+    "Combine this with an 'Image Compressor' after resizing if you need to hit a specific file size limit for website SEO or email attachments."
   ]
 }

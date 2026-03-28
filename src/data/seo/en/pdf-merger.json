@@ -66,5 +66,22 @@
       "q": "Can I use this on my mobile phone?",
       "a": "Yes! This tool is fully responsive and works on any modern web browser, whether you are on a desktop, tablet, or smartphone."
     }
+  ],
+  "technicalSpecs": [
+    { "quality": "Merging Engine", "size": "PDF-Lib / Client-side", "useCase": "Fast & secure local joining" },
+    { "quality": "Data Integrity", "size": "Non-destructive", "useCase": "No re-compression, 100% original quality" },
+    { "quality": "Privacy", "size": "In-memory processing", "useCase": "Files never touch any server" },
+    { "quality": "File Limits", "size": "Unlimited files", "useCase": "Dependent only on your device's RAM" },
+    { "quality": "Output Type", "size": "Single Combined PDF", "useCase": "Perfect for portfolios & reports" }
+  ],
+  "troubleshooting": [
+    "Files not merging? Ensure none of the PDFs are corrupted or password-protected. This tool requires open access to read file streams locally.",
+    "Browser tab became unresponsive? If you are merging a large number of high-res files (e.g., 1GB+ total), close other tabs to free up system memory (RAM).",
+    "Wrong order in final PDF? Double-check the thumbnail sequence in the preview area. The final document follows the top-to-bottom or left-to-right order shown."
+  ],
+  "proTips": [
+    "Drag and drop thumbnails to reorder your documents. This is the easiest way to organize a multi-part report before merging.",
+    "If your final PDF is too large to email, consider using a PDF compressor tool after merging to reduce the overall file size.",
+    "Since this tool works offline, you can safely merge highly sensitive legal contracts without an internet connection for maximum privacy."
   ]
 }

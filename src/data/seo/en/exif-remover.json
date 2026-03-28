@@ -66,5 +66,22 @@
       "q": "Do screenshots have EXIF data?",
       "a": "Usually, no. Screenshots typically do not contain GPS or camera information. However, photos taken directly with your camera app almost always do."
     }
+  ],
+  "technicalSpecs": [
+    { "quality": "Metadata Types", "size": "EXIF, IPTC, XMP", "useCase": "Comprehensive cleaning of hidden image headers" },
+    { "quality": "GPS Sanitization", "size": "Full Coordinate Removal", "useCase": "Prevents location tracking from shared photos" },
+    { "quality": "Privacy", "size": "Client-side Buffer Processing", "useCase": "Photos never leave your browser for stripping" },
+    { "quality": "Data Integrity", "size": "Non-Destructive Pixels", "useCase": "Original image quality remains 100% untouched" },
+    { "quality": "File Formats", "size": "JPG, JPEG, PNG, WebP", "useCase": "Supports all common digital camera and phone files" }
+  ],
+  "troubleshooting": [
+    "No metadata found? Screenshots or images saved for web (like from social media) often have metadata pre-removed. Our tool will notify you if no EXIF headers are detected.",
+    "File extension changed? In some cases, to ensure a clean header, the output might be standardized to a high-quality JPG. Check your settings before saving.",
+    "Browser memory issues? Stripping data from very large professional RAW-converted JPEGs (30MB+) may take a few seconds of processing time."
+  ],
+  "proTips": [
+    "Always run your 'Home' or 'Work' photos through this tool before posting on public forums or classified sites like Craigslist to hide your exact address.",
+    "Use the 'Preview' feature as a privacy audit—you might be surprised to see exactly which camera model and lens you used on a photo from years ago.",
+    "Combine this with the 'Image Blur' tool if you need to hide both the digital tracking data (EXIF) and visual sensitive info (faces/text) in one go."
   ]
 }

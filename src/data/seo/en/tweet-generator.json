@@ -66,5 +66,22 @@
       "q": "What image formats are supported for the avatar?",
       "a": "You can upload JPG, PNG, and WebP images for the avatar."
     }
+  ],
+  "technicalSpecs": [
+    { "quality": "Export Format", "size": "PNG", "useCase": "High-quality, lossless image" },
+    { "quality": "Theme Support", "size": "Light / Dark", "useCase": "Matches X (Twitter) UI" },
+    { "quality": "Processing", "size": "100% Client-side", "useCase": "No server uploads (Privacy)" },
+    { "quality": "Avatar Support", "size": "JPG, PNG, WebP", "useCase": "Supports all common formats" },
+    { "quality": "Resolution", "size": "Retina Ready", "useCase": "Sharp text on all displays" }
+  ],
+  "troubleshooting": [
+    "Image not downloading? Ensure you've granted 'Save Image' permissions in your mobile browser.",
+    "Avatar looking blurry? Try uploading a square image with at least 400x400 pixels for best results.",
+    "Font looking different? The tool uses system fonts that mimic the official X (Twitter) typography."
+  ],
+  "proTips": [
+    "Switch to Dark Mode to create 'night owl' style tweets that stand out in light-themed feeds.",
+    "Use realistic numbers for likes and retweets to make your prank or meme look more authentic.",
+    "Try adding emojis to your tweet text – our generator fully supports the latest emoji sets."
   ]
 }

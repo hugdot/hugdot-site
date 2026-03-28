@@ -65,5 +65,22 @@
       "q": "Can I customize the QR code design?",
       "a": "This tool generates clean, high-contrast black-and-white QR codes for maximum scannability. You can download the SVG file and edit it in design software to add your own colors or logos."
     }
+  ],
+  "technicalSpecs": [
+    { "quality": "QR Type", "size": "Static (Hardcoded)", "useCase": "Never expires, works offline" },
+    { "quality": "Export Formats", "size": "PNG, SVG", "sizeUnit": "High-Res", "useCase": "Digital & Professional Print" },
+    { "quality": "Processing", "size": "100% Client-side", "useCase": "Maximum privacy (No server logs)" },
+    { "quality": "Wi-Fi Security", "size": "WPA/WPA2, WEP", "useCase": "Compatible with all modern routers" },
+    { "quality": "Correction Level", "size": "Medium (Level M)", "useCase": "Balance between scan speed & data" }
+  ],
+  "troubleshooting": [
+    "QR code not scanning? Ensure your content isn't too long. Shorter URLs create cleaner, easier-to-scan patterns.",
+    "Blurry image on print? Download the SVG format instead of PNG for infinite scaling without quality loss.",
+    "Wi-Fi connection failed? Double-check your SSID (Network Name) and Password. Both are case-sensitive."
+  ],
+  "proTips": [
+    "Use a URL shortener before generating a QR code to keep the pattern simple and fast to scan.",
+    "Always test your QR code with at least two different devices (iOS and Android) before printing in bulk.",
+    "Download the SVG file if you want to add your logo or change colors in design tools like Canva or Illustrator."
   ]
 }

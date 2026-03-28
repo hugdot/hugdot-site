@@ -9,10 +9,8 @@ import seoData from '@data/seo/en/pdf-to-image.json'
   title={seoData.metaTitle}
   description={seoData.metaDescription}
   useTitleTemplate={false}
-  faq={seoData.faq}
-  howto={seoData.howto}
-  why={seoData.why}
   category="MultimediaApplication"
+  {...seoData}
 >
   <section class="py-12">
     <div class="container max-w-3xl">
@@ -143,68 +141,6 @@ import seoData from '@data/seo/en/pdf-to-image.json'
       >
         <Icon aria-hidden="true" name="lucide:shield-check" size="1rem" />
         <span>Your files never leave your device. No data is sent to any server.</span>
-      </div>
-
-      <!-- How to Use -->
-      <div class="mt-16">
-        <Heading level="h2" size="h4" class="mb-6">How to Convert PDF to Image</Heading>
-        <div class="flex flex-col gap-4">
-          {
-            seoData.howto.map((item, index) => (
-              <div class="flex gap-4 rounded-2xl border border-[var(--border-color-subtle)] px-5 py-4">
-                <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--action-color)] text-sm font-bold text-white">
-                  {index + 1}
-                </span>
-                <div>
-                  <p class="font-semibold">{item.step}</p>
-                  <p class="mt-1 text-sm opacity-60">{item.description}</p>
-                </div>
-              </div>
-            ))
-          }
-        </div>
-      </div>
-
-      <!-- Why Use -->
-      <div class="mt-12">
-        <Heading level="h2" size="h4" class="mb-6">Why Use This Tool</Heading>
-        <div class="flex flex-col gap-3">
-          {
-            seoData.why.map((reason) => (
-              <div class="flex items-center gap-3 rounded-xl border border-[var(--border-color-subtle)] px-5 py-4">
-                <Icon
-                  aria-hidden="true"
-                  name="lucide:check-circle"
-                  size="1.25rem"
-                  class="shrink-0 text-[var(--action-color)]"
-                />
-                <span class="text-sm">{reason}</span>
-              </div>
-            ))
-          }
-        </div>
-      </div>
-
-      <!-- FAQ -->
-      <div class="mt-12">
-        <Heading level="h2" size="h4" class="mb-6">Frequently Asked Questions</Heading>
-        <div class="flex flex-col gap-3">
-          {
-            seoData.faq.map((item) => (
-              <details class="rounded-2xl border border-[var(--border-color-subtle)] px-5 py-4">
-                <summary class="cursor-pointer font-semibold">{item.q}</summary>
-                <p class="mt-3 text-sm opacity-60">{item.a}</p>
-              </details>
-            ))
-          }
-        </div>
-      </div>
-
-      <div class="mt-16 border-t border-[var(--border-color-subtle)] pt-8">
-        <p class="mb-4 text-[10px] font-bold tracking-widest uppercase opacity-40">Related Keywords</p>
-        <div class="flex flex-wrap gap-x-6 gap-y-3">
-          {seoData.keywords.map((tag) => <span class="text-xs opacity-50">#{tag.toLowerCase()}</span>)}
-        </div>
       </div>
     </div>
   </section>

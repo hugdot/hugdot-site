@@ -57,5 +57,22 @@
       "q": "Is the generated text always the same?",
       "a": "No. The text is randomly generated each time so you always get fresh placeholder content."
     }
+  ],
+  "technicalSpecs": [
+    { "quality": "Text Source", "size": "Cicero's 'De Finibus'", "useCase": "Standard professional dummy text" },
+    { "quality": "Units", "size": "Paragraphs, Sentences, Words", "useCase": "Flexible for UI/UX design components" },
+    { "quality": "HTML Support", "size": "<p> Tag Wrapping", "useCase": "Ready for direct web development" },
+    { "quality": "Processing", "size": "Local JS Generation", "useCase": "Instant results without server delay" },
+    { "quality": "Privacy", "size": "100% Offline Capable", "useCase": "Secure for internal mockup projects" }
+  ],
+  "troubleshooting": [
+    "Text not updating? Ensure the quantity slider is set to at least 1. The generator updates in real-time as you change the values.",
+    "HTML tags not showing? Check if the 'Include HTML Tags' toggle is enabled before clicking the copy button.",
+    "Copy to clipboard failed? This can happen in some older browsers. Try selecting the text manually if the 'Copy' button doesn't work."
+  ],
+  "proTips": [
+    "Use 'Words' mode to generate short strings for buttons or navigation menu items to see how they fit your layout.",
+    "Enable HTML tags to save time when building prototypes; you can paste the result directly into your code editor.",
+    "If you're designing for a specific language, remember that Lorem Ipsum has a Latin-like distribution of letters, which is ideal for testing English or European layouts."
   ]
 }

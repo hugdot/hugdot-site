@@ -62,5 +62,22 @@
       "q": "Is my list saved anywhere?",
       "a": "No. Everything runs in your browser. Your list is never sent to any server or saved anywhere."
     }
+  ],
+  "technicalSpecs": [
+    { "quality": "Algorithm", "size": "Fisher-Yates Shuffle", "useCase": "100% unbiased & fair randomization" },
+    { "quality": "Input Handling", "size": "Multi-separator Auto-detect", "useCase": "Detects Newline, Comma, or Semicolon" },
+    { "quality": "Privacy", "size": "Local Memory Processing", "useCase": "List data never leaves your browser" },
+    { "quality": "Features", "size": "Deduplication & Single Pick", "useCase": "Clean results for lotteries and winners" },
+    { "quality": "Speed", "size": "Instant (O(n) complexity)", "useCase": "Shuffles thousands of items in milliseconds" }
+  ],
+  "troubleshooting": [
+    "List not splitting correctly? Ensure your items are separated clearly by a new line or a comma. If you have both, the tool prioritizes new lines.",
+    "Wrong winner picked? Every click on 'Randomize' generates a fresh result. If you need a permanent record, make sure to copy the result immediately.",
+    "Browser lag with huge lists? Processing lists with over 10,000 items might take a moment. For best performance, keep lists under 5,000 items."
+  ],
+  "proTips": [
+    "Use the 'Remove Duplicates' toggle to ensure that each entry has an equal and fair chance without double-counting.",
+    "If you're picking a winner for a giveaway, record your screen while clicking 'Randomize' to provide proof of a fair and transparent draw.",
+    "Combine this with a case converter if you need to standardize your list (e.g., making all names Uppercase) before shuffling."
   ]
 }

@@ -61,5 +61,22 @@
       "q": "Is my text saved anywhere?",
       "a": "No. Everything runs in your browser. Your text is never sent to any server or saved anywhere."
     }
+  ],
+  "technicalSpecs": [
+    { "quality": "Supported Formats", "size": "10+ Case Types", "useCase": "Standard, Programming, and URL-friendly styles" },
+    { "quality": "Coding Cases", "size": "camel, snake, kebab", "useCase": "Naming variables and CSS classes for developers" },
+    { "quality": "Privacy", "size": "Local String Processing", "useCase": "Sensitive text/code never leaves your device" },
+    { "quality": "Speed", "size": "Instant (O(1) feedback)", "useCase": "Real-time updates as you type or click" },
+    { "quality": "Accessibility", "size": "One-tap Copy", "useCase": "Fast workflow for writing and editing" }
+  ],
+  "troubleshooting": [
+    "Unexpected characters? Some cases like snake_case or kebab-case may automatically replace special characters or spaces with underscores/hyphens to maintain formatting.",
+    "Title Case not working? Ensure your text has spaces between words. Our algorithm identifies word boundaries to capitalize the correct letters.",
+    "Formatting lost? This tool converts plain text. If you paste rich text (bold/italics), only the character case will be preserved in the output."
+  ],
+  "proTips": [
+    "Use 'kebab-case' for naming your website's URL slugs and CSS class names to improve SEO and maintainability.",
+    "If you accidentally wrote an entire paragraph with 'Caps Lock' on, simply paste it here and click 'Sentence case' to fix it instantly.",
+    "Developers: Use 'camelCase' or 'snake_case' to quickly reformat variable names when switching between JavaScript and Python coding environments."
   ]
 }

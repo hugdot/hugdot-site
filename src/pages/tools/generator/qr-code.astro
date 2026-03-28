@@ -9,14 +9,11 @@ import seoData from '@data/seo/en/qr-code-generator.json'
   title={seoData.metaTitle}
   description={seoData.metaDescription}
   useTitleTemplate={false}
-  faq={seoData.faq}
-  howto={seoData.howto}
-  why={seoData.why}
   category="UtilityApplication"
+  {...seoData}
 >
   <section class="py-12">
     <div class="container max-w-3xl">
-
       <!-- Header -->
       <div class="mb-8">
         <div class="mb-2 flex items-center gap-2 text-sm opacity-50">
@@ -28,21 +25,23 @@ import seoData from '@data/seo/en/qr-code-generator.json'
         </div>
         <Heading level="h1" size="h2">{seoData.metaTitle.split(' — ')[0]}</Heading>
         <p class="mt-2 opacity-60">
-          Generate QR codes instantly from any URL, text, email, or Wi-Fi credentials.
-          Everything runs in your browser — your data never leaves your device.
+          Generate QR codes instantly from any URL, text, email, or Wi-Fi credentials. Everything runs in your browser —
+          your data never leaves your device.
         </p>
       </div>
 
       <!-- Type Selector -->
       <div class="mb-6 flex flex-wrap gap-2">
-        {['URL', 'Text', 'Email', 'Wi-Fi'].map((type) => (
-          <button
-            class="qr-type-btn rounded-full border border-[var(--border-color-subtle)] px-4 py-2 text-sm font-medium transition-all hover:border-[var(--action-color)]"
-            data-type={type}
-          >
-            {type}
-          </button>
-        ))}
+        {
+          ['URL', 'Text', 'Email', 'Wi-Fi'].map((type) => (
+            <button
+              class="qr-type-btn rounded-full border border-[var(--border-color-subtle)] px-4 py-2 text-sm font-medium transition-all hover:border-[var(--action-color)]"
+              data-type={type}
+            >
+              {type}
+            </button>
+          ))
+        }
       </div>
 
       <!-- Input Forms -->
@@ -51,7 +50,7 @@ import seoData from '@data/seo/en/qr-code-generator.json'
           id="input-url"
           type="url"
           placeholder="https://example.com"
-          class="w-full rounded-2xl border-2 border-[var(--border-color-subtle)] bg-[var(--background-color)] px-5 py-4 text-base outline-none transition-all focus:border-[var(--action-color)]"
+          class="w-full rounded-2xl border-2 border-[var(--border-color-subtle)] bg-[var(--background-color)] px-5 py-4 text-base transition-all outline-none focus:border-[var(--action-color)]"
           aria-label="URL input"
         />
       </div>
@@ -61,9 +60,8 @@ import seoData from '@data/seo/en/qr-code-generator.json'
           id="input-text-qr"
           placeholder="Enter any text..."
           rows="4"
-          class="w-full resize-none rounded-2xl border-2 border-[var(--border-color-subtle)] bg-[var(--background-color)] px-5 py-4 text-base outline-none transition-all focus:border-[var(--action-color)]"
-          aria-label="Text input"
-        ></textarea>
+          class="w-full resize-none rounded-2xl border-2 border-[var(--border-color-subtle)] bg-[var(--background-color)] px-5 py-4 text-base transition-all outline-none focus:border-[var(--action-color)]"
+          aria-label="Text input"></textarea>
       </div>
 
       <div id="form-email" class="qr-form hidden flex-col gap-3">
@@ -71,14 +69,14 @@ import seoData from '@data/seo/en/qr-code-generator.json'
           id="input-email"
           type="email"
           placeholder="email@example.com"
-          class="w-full rounded-2xl border-2 border-[var(--border-color-subtle)] bg-[var(--background-color)] px-5 py-4 text-base outline-none transition-all focus:border-[var(--action-color)]"
+          class="w-full rounded-2xl border-2 border-[var(--border-color-subtle)] bg-[var(--background-color)] px-5 py-4 text-base transition-all outline-none focus:border-[var(--action-color)]"
           aria-label="Email input"
         />
         <input
           id="input-email-subject"
           type="text"
           placeholder="Subject (optional)"
-          class="w-full rounded-2xl border-2 border-[var(--border-color-subtle)] bg-[var(--background-color)] px-5 py-4 text-base outline-none transition-all focus:border-[var(--action-color)]"
+          class="w-full rounded-2xl border-2 border-[var(--border-color-subtle)] bg-[var(--background-color)] px-5 py-4 text-base transition-all outline-none focus:border-[var(--action-color)]"
           aria-label="Email subject"
         />
       </div>
@@ -88,25 +86,27 @@ import seoData from '@data/seo/en/qr-code-generator.json'
           id="input-wifi-ssid"
           type="text"
           placeholder="Wi-Fi Network Name (SSID)"
-          class="w-full rounded-2xl border-2 border-[var(--border-color-subtle)] bg-[var(--background-color)] px-5 py-4 text-base outline-none transition-all focus:border-[var(--action-color)]"
+          class="w-full rounded-2xl border-2 border-[var(--border-color-subtle)] bg-[var(--background-color)] px-5 py-4 text-base transition-all outline-none focus:border-[var(--action-color)]"
           aria-label="Wi-Fi SSID"
         />
         <input
           id="input-wifi-password"
           type="password"
           placeholder="Password"
-          class="w-full rounded-2xl border-2 border-[var(--border-color-subtle)] bg-[var(--background-color)] px-5 py-4 text-base outline-none transition-all focus:border-[var(--action-color)]"
+          class="w-full rounded-2xl border-2 border-[var(--border-color-subtle)] bg-[var(--background-color)] px-5 py-4 text-base transition-all outline-none focus:border-[var(--action-color)]"
           aria-label="Wi-Fi password"
         />
         <div class="flex gap-3">
-          {['WPA', 'WEP', 'None'].map((sec) => (
-            <button
-              class="wifi-security-btn rounded-full border border-[var(--border-color-subtle)] px-4 py-2 text-sm transition-all hover:border-[var(--action-color)]"
-              data-security={sec}
-            >
-              {sec}
-            </button>
-          ))}
+          {
+            ['WPA', 'WEP', 'None'].map((sec) => (
+              <button
+                class="wifi-security-btn rounded-full border border-[var(--border-color-subtle)] px-4 py-2 text-sm transition-all hover:border-[var(--action-color)]"
+                data-security={sec}
+              >
+                {sec}
+              </button>
+            ))
+          }
         </div>
       </div>
 
@@ -174,68 +174,18 @@ import seoData from '@data/seo/en/qr-code-generator.json'
       </div>
 
       <!-- Privacy Badge -->
-      <div class="mt-8 flex items-center gap-2 rounded-2xl border border-[var(--border-color-subtle)] px-5 py-4 text-sm opacity-60">
+      <div
+        class="mt-8 flex items-center gap-2 rounded-2xl border border-[var(--border-color-subtle)] px-5 py-4 text-sm opacity-60"
+      >
         <Icon aria-hidden="true" name="lucide:shield-check" size="1rem" />
         <span>Your data never leaves your device. No data is sent to any server.</span>
       </div>
-      <!-- How to Use -->
-      <div class="mt-16">
-        <Heading level="h2" size="h4" class="mb-6">How to Generate QR Code</Heading>
-        <div class="flex flex-col gap-4">
-          {seoData.howto.map((item, index) => (
-            <div class="flex gap-4 rounded-2xl border border-[var(--border-color-subtle)] px-5 py-4">
-              <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[var(--action-color)] text-sm font-bold text-white">
-                {index + 1}
-              </span>
-              <div>
-                <p class="font-semibold">{item.step}</p>
-                <p class="mt-1 text-sm opacity-60">{item.description}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <!-- Why Use -->
-      <div class="mt-12">
-        <Heading level="h2" size="h4" class="mb-6">Why Use This Tool</Heading>
-        <div class="flex flex-col gap-3">
-          {seoData.why.map((reason) => (
-            <div class="flex items-center gap-3 rounded-xl border border-[var(--border-color-subtle)] px-5 py-4">
-              <Icon aria-hidden="true" name="lucide:check-circle" size="1.25rem" class="shrink-0 text-[var(--action-color)]" />
-              <span class="text-sm">{reason}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <!-- FAQ -->
-      <div class="mt-12">
-        <Heading level="h2" size="h4" class="mb-6">Frequently Asked Questions</Heading>
-        <div class="flex flex-col gap-3">
-          {seoData.faq.map((item) => (
-            <details class="rounded-2xl border border-[var(--border-color-subtle)] px-5 py-4">
-              <summary class="cursor-pointer font-semibold">{item.q}</summary>
-              <p class="mt-3 text-sm opacity-60">{item.a}</p>
-            </details>
-          ))}
-        </div>
-      </div>
-      
-      <div class="mt-16 border-t border-[var(--border-color-subtle)] pt-8">
-        <p class="mb-4 text-[10px] font-bold uppercase tracking-widest opacity-40">Related Keywords</p>
-        <div class="flex flex-wrap gap-x-6 gap-y-3"> {seoData.keywords.map((tag) => (
-            <span class="text-xs opacity-50">#{tag.toLowerCase()}</span> 
-          ))}
-        </div>
-      </div>
-
     </div>
   </section>
 </DefaultLayout>
 
 <script>
-  import QRCode from 'qrcode';
+  import QRCode from 'qrcode'
   document.addEventListener('astro:page-load', () => {
     let currentType = 'URL'
     let currentSecurity = 'WPA'
@@ -253,9 +203,9 @@ import seoData from '@data/seo/en/qr-code-generator.json'
     // Tab switching — runs immediately, no library needed
     const showForm = (type: string) => {
       const map: Record<string, string> = {
-        'URL': 'form-url',
-        'Text': 'form-text',
-        'Email': 'form-email',
+        URL: 'form-url',
+        Text: 'form-text',
+        Email: 'form-email',
         'Wi-Fi': 'form-wifi',
       }
       document.querySelectorAll<HTMLElement>('.qr-form').forEach((form) => {
@@ -355,7 +305,7 @@ import seoData from '@data/seo/en/qr-code-generator.json'
       const color = colorInput?.value ?? '#000000'
       const bg = bgInput?.value ?? '#ffffff'
       try {
-        const svgStr = await QRCode.toString(content, { 
+        const svgStr = await QRCode.toString(content, {
           type: 'svg',
           margin: 2,
           color: { dark: color, light: bg },
@@ -372,7 +322,9 @@ import seoData from '@data/seo/en/qr-code-generator.json'
     })
 
     document.querySelectorAll('input, textarea, select').forEach((el) => {
-      el.addEventListener('input', () => { if (qrLoaded) generateQR() })
+      el.addEventListener('input', () => {
+        if (qrLoaded) generateQR()
+      })
     })
   })
 </script>

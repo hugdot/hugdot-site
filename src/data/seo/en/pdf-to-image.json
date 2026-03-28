@@ -66,5 +66,22 @@
       "q": "How do I get my images after conversion?",
       "a": "You can download pages one by one, or click 'Download All' to get all converted images packaged in a single ZIP file."
     }
+  ],
+  "technicalSpecs": [
+    { "quality": "Rendering Engine", "size": "PDF.js (Mozilla)", "useCase": "Industry-standard accuracy" },
+    { "quality": "Resolution Range", "size": "72 - 300 DPI", "useCase": "Adjustable: fast preview to high-res print" },
+    { "quality": "Privacy", "size": "Client-side Rendering", "useCase": "Zero server uploads (Safe for confidential docs)" },
+    { "quality": "Export Formats", "size": "JPG (0.92 Quality), PNG", "useCase": "Optimized for both web and storage" },
+    { "quality": "Output Options", "size": "Individual or ZIP", "useCase": "Pick specific pages or save everything at once" }
+  ],
+  "troubleshooting": [
+    "Conversion taking too long? High DPI (300) requires more processing power. Try 150 DPI for a faster result on large files.",
+    "Browser tab crashed? Very large PDFs can exceed browser memory limits. If this happens, reload the page and convert fewer pages at a time.",
+    "File selection not working? Ensure you are uploading a valid .pdf file. Encrypted or password-protected PDFs are not supported for security reasons."
+  ],
+  "proTips": [
+    "Use 72 DPI for quick social media sharing, and 300 DPI for professional documents or printing.",
+    "Save storage space by using JPG (0.92 quality) which provides a great balance between clear text and small file size.",
+    "You can save individual pages directly from the preview grid if you don't need the entire document."
   ]
 }

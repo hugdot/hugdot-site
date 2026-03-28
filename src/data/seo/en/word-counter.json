@@ -62,5 +62,21 @@
       "q": "Can I use this for SEO meta descriptions?",
       "a": "Yes! Google typically displays 150-160 characters for meta descriptions. You can use the character counter to ensure your description fits perfectly for search engine results."
     }
+  ],
+  "technicalSpecs": [
+    { "quality": "Characters", "size": "1,000,000+", "useCase": "Unlimited local counting" },
+    { "quality": "Reading Speed", "size": "200 WPM", "useCase": "Adult average on screens" },
+    { "quality": "Privacy", "size": "100%", "useCase": "Local-only processing" },
+    { "quality": "Format", "size": "UTF-8", "useCase": "Supports all languages/emojis" }
+  ],
+  "troubleshooting": [
+    "Characters not updating? Ensure JavaScript is enabled in your browser.",
+    "Copied text looking weird? Clear formatting before pasting for the most accurate count.",
+    "Reading time seems off? Remember, it's an estimate based on average speeds, not a guarantee."
+  ],
+  "proTips": [
+    "Twitter allows 280 characters, but 240 is often cited as the 'sweet spot' for engagement.",
+    "Keep your SEO Meta Descriptions under 155 characters to avoid being cut off by Google.",
+    "For professional writing, aim for an average sentence length of 15-20 words to maximize readability."
   ]
 }

@@ -7,6 +7,7 @@ import Header from '@components/Header.astro'
 import Footer from '@components/Footer.astro'
 import { ClientRouter } from 'astro:transitions'
 import type { ImageMetadata } from 'astro'
+import ToolExtraContent from '../components/tools/ToolExtraContent.astro'
 
 interface Props {
   /**
@@ -41,6 +42,10 @@ interface Props {
   faq?: { q: string; a: string }[]
   howto?: { step: string; description: string }[]
   why?: string[]
+  technicalSpecs?: any[];
+  troubleshooting?: string[];
+  proTips?: string[];
+  keywords?: string[];
   category?: string
 }
 
@@ -52,10 +57,14 @@ const {
   author = themeConfig.seo.author ?? '',
   type = 'website',
   useTitleTemplate = true,
+  category = 'UtilitiesApplication',
   faq = [],
   howto = [],
   why = [],
-  category = 'UtilitiesApplication',
+  technicalSpecs = [],
+  troubleshooting = [],
+  proTips = [],
+  keywords = [],
 } = Astro.props
 
 // For social sharing, we need the full absolute URL
@@ -183,6 +192,17 @@ const imageUrl = new URL(imagePath, Astro.site).href
     <Header />
     <main id="main-content" transition:animate="fade">
       <slot />
+      <div class="container max-w-4xl pb-24">
+        <ToolExtraContent 
+          howto={howto}
+          why={why}
+          faq={faq}
+          technicalSpecs={technicalSpecs}
+          troubleshooting={troubleshooting}
+          proTips={proTips}
+          keywords={keywords}
+        />
+      </div>
     </main>
     <Footer />
     <style lang="scss" is:global>

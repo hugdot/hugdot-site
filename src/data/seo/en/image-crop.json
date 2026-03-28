@@ -66,5 +66,22 @@
       "q": "Can I undo or reset my crop settings?",
       "a": "Yes! You can adjust the crop box as many times as you like before clicking the download button. If you've already saved it, just reload the original file to start over."
     }
+  ],
+  "technicalSpecs": [
+    { "quality": "Input Formats", "size": "JPG, PNG, WebP, GIF", "useCase": "Universal compatibility for all image types" },
+    { "quality": "Aspect Ratio Presets", "size": "1:1, 4:5, 16:9, 9:16", "useCase": "Perfect sizing for IG, YT, FB, TK" },
+    { "quality": "Privacy", "size": "Client-side Canvas API", "useCase": "Photos never leave your browser memory" },
+    { "quality": "Data Integrity", "size": "No Re-compression", "useCase": "Maintains original pixel quality inside crop area" },
+    { "quality": "Output Type", "size": "High-Res PNG or JPG", "useCase": "Clear, crisp, and standardized downloads" }
+  ],
+  "troubleshooting": [
+    "Crop box not adjusting correctly? If your source image is extremely large (over 20MB), the browser may struggle. Try a slightly smaller image for smoother editing.",
+    "Result too small? Cropping naturally reduces resolution. For high-quality prints or large displays, ensure you start with a very high-resolution source.",
+    "Image tilted after cropping? If your photo needs a slight rotation, use our 'Image Rotate' tool first to straighten it before defining the final crop area."
+  ],
+  "proTips": [
+    "Use the 1:1 preset for all profile pictures (WhatsApp, LinkedIn, Twitter) to ensure your face stays perfectly centered when circular cropping is applied by the platform.",
+    "For compelling social media feed posts, try the 4:5 (Portrait) ratio to occupy more vertical screen space and increase user engagement.",
+    "Combine this with an 'Image Compressor' after cropping if you need a specific file size for website SEO or email attachments."
   ]
 }

@@ -131,6 +131,8 @@ const imageUrl = new URL(imagePath, Astro.site).href
           name: title.split(' — ')[0],
           operatingSystem: 'Any',
           applicationCategory: category,
+          description: description,
+          image: imageUrl,
           offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
           featureList: ['Serverless, 100% Private, Client-side processing',
           ...why
@@ -142,6 +144,9 @@ const imageUrl = new URL(imagePath, Astro.site).href
                 '@context': 'https://schema.org',
                 '@type': 'HowTo',
                 name: `How to use ${title.split(' — ')[0]}`,
+                url: url,
+                image: imageUrl,
+                description: description,
                 step: Astro.props.howto.map((item) => ({
                   '@type': 'HowToStep',
                   name: item.step,

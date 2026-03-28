@@ -1,0 +1,66 @@
+{
+  "toolId": "unit-converter",
+  "lang": "en",
+  "metaTitle": "Unit Converter — Free Online Length, Weight, Temperature & More",
+  "metaDescription": "Convert units instantly — length, weight, temperature, volume, speed and more. 100% free, works offline, and no login required.",
+  "keywords": [
+    "unit converter",
+    "length converter",
+    "weight converter",
+    "temperature converter",
+    "km to miles converter",
+    "kg to lbs converter",
+    "celsius to fahrenheit",
+    "volume converter",
+    "speed converter",
+    "free unit converter online"
+  ],
+  "howto": [
+    {
+      "step": "Choose a category",
+      "description": "Select from Length, Weight, Temperature, Volume, Speed, and more."
+    },
+    {
+      "step": "Enter a value",
+      "description": "Type the number you want to convert into the input box."
+    },
+    {
+      "step": "See all conversions instantly",
+      "description": "All unit conversions update in real time as you type."
+    }
+  ],
+  "why": [
+    "Covers 6 categories — Length, Weight, Temperature, Volume, Speed, Area",
+    "All conversions update instantly as you type",
+    "Works completely offline — perfect for travel",
+    "No sign-up, no limits, completely free forever",
+    "Clean mobile-friendly interface"
+  ],
+  "faq": [
+    {
+      "q": "What unit categories are supported?",
+      "a": "Length, Weight, Temperature, Volume, Speed, and Area are all supported with the most commonly used units in each category."
+    },
+    {
+      "q": "How accurate are the conversions?",
+      "a": "All conversions use standard conversion factors and are accurate to 6 significant figures."
+    },
+    {
+      "q": "Does this work offline?",
+      "a": "Yes. Once the page is loaded, the converter works completely offline. Perfect for travel or areas with poor signal."
+    },
+    {
+      "q": "Is my data stored anywhere?",
+      "a": "No. Everything runs entirely in your browser. No data is sent to any server."
+    }
+  ],
+  "proTips": [
+    "Traveling to the US? Use the Length converter to quickly switch between km and miles.",
+    "Cooking with a foreign recipe? Use the Volume converter to switch between cups, ml, and liters.",
+    "The Temperature converter is great for checking weather forecasts in Celsius vs Fahrenheit."
+  ],
+  "troubleshooting": [
+    "If results show many decimal places, that is normal for precise unit conversions.",
+    "For temperature, make sure to select the correct source unit (Celsius, Fahrenheit, or Kelvin)."
+  ]
+}

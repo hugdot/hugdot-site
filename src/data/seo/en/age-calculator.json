@@ -1,0 +1,70 @@
+{
+  "toolId": "age-calculator",
+  "lang": "en",
+  "metaTitle": "Age Calculator — Calculate Exact Age in Years, Months & Days",
+  "metaDescription": "Calculate your exact age in years, months, and days instantly. Find out days until your next birthday too. 100% free and works offline.",
+  "keywords": [
+    "age calculator",
+    "calculate my age",
+    "how old am i",
+    "age calculator online",
+    "birthday age calculator",
+    "exact age calculator",
+    "age in days calculator",
+    "days until birthday",
+    "date of birth calculator",
+    "free age calculator"
+  ],
+  "howto": [
+    {
+      "step": "Enter your date of birth",
+      "description": "Select your birth date using the date picker."
+    },
+    {
+      "step": "See your exact age",
+      "description": "Your age in years, months, and days is calculated instantly."
+    },
+    {
+      "step": "Check your next birthday",
+      "description": "See how many days are left until your next birthday."
+    }
+  ],
+  "why": [
+    "Calculates exact age in years, months, and days",
+    "Shows days until your next birthday",
+    "Shows total days, weeks, and months lived",
+    "Works completely offline — no internet needed",
+    "No sign-up, no limits, completely free forever"
+  ],
+  "faq": [
+    {
+      "q": "How is my exact age calculated?",
+      "a": "Your age is calculated by comparing your date of birth to today's date, accounting for leap years and varying month lengths."
+    },
+    {
+      "q": "Does this work for any date of birth?",
+      "a": "Yes. You can enter any date of birth from the past to calculate an exact age."
+    },
+    {
+      "q": "How are days until next birthday calculated?",
+      "a": "The tool finds your next upcoming birthday and counts the exact number of days remaining from today."
+    },
+    {
+      "q": "Is my date of birth stored anywhere?",
+      "a": "No. Everything runs entirely in your browser. Your data is never sent to any server."
+    },
+    {
+      "q": "Can I calculate someone else's age?",
+      "a": "Yes. Simply enter their date of birth to calculate their exact age."
+    }
+  ],
+  "proTips": [
+    "Use this tool to quickly verify age requirements for forms, applications, or events.",
+    "Check how many days until a friend's birthday to plan ahead for a surprise.",
+    "Calculate the age difference between two people by running the tool twice."
+  ],
+  "troubleshooting": [
+    "If the date picker doesn't open, try typing the date directly in YYYY-MM-DD format.",
+    "Make sure the birth date is not set to a future date."
+  ]
+}

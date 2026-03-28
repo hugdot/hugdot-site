@@ -1,0 +1,220 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Heading } from 'accessible-astro-components'
+import { Icon } from 'astro-icon/components'
+import { tools } from '@data/tools'
+import seoData from '@data/seo/en/age-calculator.json'
+
+const relatedTools = tools.filter((t) => t.category === 'calculator' && t.id !== 'age-calculator' && t.available)
+---
+
+<DefaultLayout
+  title={seoData.metaTitle}
+  description={seoData.metaDescription}
+  useTitleTemplate={false}
+  category="UtilitiesApplication"
+  {...seoData}
+>
+  <section class="py-12">
+    <div class="container max-w-3xl">
+
+      <!-- Header -->
+      <div class="mb-8">
+        <div class="mb-2 flex items-center gap-2 text-sm opacity-50">
+          <a href="/" class="breadcrumb-link hover:underline">Home</a>
+          <span>/</span>
+          <a href="/tools/calculator" class="breadcrumb-link hover:underline">Calculator Tools</a>
+          <span>/</span>
+          <span>{seoData.metaTitle.split(' — ')[0]}</span>
+        </div>
+        <Heading level="h1" size="h2">{seoData.metaTitle.split(' — ')[0]}</Heading>
+        <p class="mt-2 opacity-60">
+          Find out your exact age in years, months, and days. See how many days until your next birthday.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <span class="flex items-center gap-1.5 rounded-full border border-[var(--border-color-subtle)] px-3 py-1.5 text-xs font-medium">
+            <Icon aria-hidden="true" name="lucide:wifi-off" size="0.875rem" class="text-[var(--action-color)]" />
+            Works Offline
+          </span>
+          <span class="flex items-center gap-1.5 rounded-full border border-[var(--border-color-subtle)] px-3 py-1.5 text-xs font-medium">
+            <Icon aria-hidden="true" name="lucide:zap" size="0.875rem" class="text-[var(--action-color)]" />
+            Instant
+          </span>
+          <span class="flex items-center gap-1.5 rounded-full border border-[var(--border-color-subtle)] px-3 py-1.5 text-xs font-medium">
+            <Icon aria-hidden="true" name="lucide:shield-check" size="0.875rem" class="text-[var(--action-color)]" />
+            Private
+          </span>
+        </div>
+      </div>
+
+      <!-- Tool -->
+      <div class="flex flex-col gap-6 rounded-2xl border border-[var(--border-color-subtle)] p-6">
+
+        <!-- Date Input -->
+        <div class="flex flex-col gap-2">
+          <label class="text-sm font-medium" for="input-dob">Date of Birth</label>
+          <input
+            id="input-dob"
+            type="date"
+            class="w-full rounded-xl border border-[var(--border-color-subtle)] bg-transparent px-4 py-3 text-sm outline-none focus:border-[var(--action-color)]"
+          />
+        </div>
+
+        <!-- Main Result -->
+        <div id="result-panel" class="hidden flex-col gap-4">
+
+          <!-- Age Display -->
+          <div class="flex flex-col items-center rounded-2xl bg-[var(--action-color)] px-6 py-8 text-white">
+            <p class="mb-2 text-sm font-medium opacity-80">Your Age</p>
+            <div class="flex items-end gap-4">
+              <div class="flex flex-col items-center">
+                <span id="result-years" class="text-5xl font-bold">0</span>
+                <span class="mt-1 text-sm opacity-80">years</span>
+              </div>
+              <div class="flex flex-col items-center">
+                <span id="result-months" class="text-3xl font-bold">0</span>
+                <span class="mt-1 text-sm opacity-80">months</span>
+              </div>
+              <div class="flex flex-col items-center">
+                <span id="result-days" class="text-3xl font-bold">0</span>
+                <span class="mt-1 text-sm opacity-80">days</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stats Grid -->
+          <div class="grid grid-cols-2 gap-3">
+            <div class="flex flex-col items-center rounded-2xl border border-[var(--border-color-subtle)] px-4 py-5">
+              <span class="mb-1 text-xs font-medium opacity-50">Total Days Lived</span>
+              <span id="result-total-days" class="text-2xl font-bold text-[var(--action-color)]">0</span>
+            </div>
+            <div class="flex flex-col items-center rounded-2xl border border-[var(--border-color-subtle)] px-4 py-5">
+              <span class="mb-1 text-xs font-medium opacity-50">Total Weeks</span>
+              <span id="result-total-weeks" class="text-2xl font-bold text-[var(--action-color)]">0</span>
+            </div>
+            <div class="flex flex-col items-center rounded-2xl border border-[var(--border-color-subtle)] px-4 py-5">
+              <span class="mb-1 text-xs font-medium opacity-50">Total Months</span>
+              <span id="result-total-months" class="text-2xl font-bold text-[var(--action-color)]">0</span>
+            </div>
+            <div class="flex flex-col items-center rounded-2xl border border-[var(--border-color-subtle)] px-4 py-5">
+              <span class="mb-1 text-xs font-medium opacity-50">Next Birthday In</span>
+              <span id="result-next-bday" class="text-2xl font-bold text-[var(--action-color)]">0</span>
+              <span class="text-xs opacity-50">days</span>
+            </div>
+          </div>
+
+          <!-- Next Birthday Date -->
+          <div class="flex items-center gap-3 rounded-2xl border border-[var(--border-color-subtle)] px-5 py-4">
+            <Icon aria-hidden="true" name="lucide:cake" size="1.25rem" class="shrink-0 text-[var(--action-color)]" />
+            <div>
+              <p class="text-sm font-medium">Next Birthday</p>
+              <p id="result-bday-date" class="text-sm opacity-60"></p>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Empty State -->
+        <div id="empty-state" class="flex flex-col items-center justify-center gap-2 rounded-2xl border border-dashed border-[var(--border-color-subtle)] py-12 text-center opacity-40">
+          <Icon aria-hidden="true" name="lucide:cake" size="2rem" />
+          <p class="text-sm">Enter your date of birth to calculate your age</p>
+        </div>
+
+      </div>
+
+      <!-- Privacy Badge -->
+      <div class="mt-8 flex items-center gap-2 rounded-2xl border border-[var(--border-color-subtle)] px-5 py-4 text-sm opacity-60">
+        <Icon aria-hidden="true" name="lucide:shield-check" size="1rem" />
+        <span>Your date of birth never leaves your device. No data is sent to any server.</span>
+      </div>
+
+      <!-- Related Tools -->
+      {relatedTools.length > 0 && (
+        <div class="mt-12">
+          <Heading level="h2" size="h4" class="mb-6">Related Tools</Heading>
+          <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
+            {relatedTools.map((tool) => (
+              <a href={tool.href}
+                class="rounded-xl border border-[var(--border-color-subtle)] px-4 py-3 text-sm font-medium text-[var(--foreground-color)] no-underline transition-all hover:border-[var(--action-color)]">
+                {tool.label} →
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+
+    </div>
+  </section>
+</DefaultLayout>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const inputDob = document.getElementById('input-dob') as HTMLInputElement
+    const resultPanel = document.getElementById('result-panel') as HTMLElement
+    const emptyState = document.getElementById('empty-state') as HTMLElement
+    const resultYears = document.getElementById('result-years') as HTMLElement
+    const resultMonths = document.getElementById('result-months') as HTMLElement
+    const resultDays = document.getElementById('result-days') as HTMLElement
+    const resultTotalDays = document.getElementById('result-total-days') as HTMLElement
+    const resultTotalWeeks = document.getElementById('result-total-weeks') as HTMLElement
+    const resultTotalMonths = document.getElementById('result-total-months') as HTMLElement
+    const resultNextBday = document.getElementById('result-next-bday') as HTMLElement
+    const resultBdayDate = document.getElementById('result-bday-date') as HTMLElement
+
+    // set max date to today
+    const today = new Date()
+    inputDob.max = today.toISOString().split('T')[0]
+
+    const calculate = () => {
+      const dob = new Date(inputDob.value)
+      if (!inputDob.value || isNaN(dob.getTime())) {
+        emptyState.style.display = 'flex'
+        resultPanel.style.display = 'none'
+        return
+      }
+
+      emptyState.style.display = 'none'
+      resultPanel.style.display = 'flex'
+
+      const now = new Date()
+
+      // Exact age
+      let years = now.getFullYear() - dob.getFullYear()
+      let months = now.getMonth() - dob.getMonth()
+      let days = now.getDate() - dob.getDate()
+
+      if (days < 0) {
+        months--
+        const prevMonth = new Date(now.getFullYear(), now.getMonth(), 0)
+        days += prevMonth.getDate()
+      }
+      if (months < 0) {
+        years--
+        months += 12
+      }
+
+      resultYears.textContent = String(years)
+      resultMonths.textContent = String(months)
+      resultDays.textContent = String(days)
+
+      // Total stats
+      const totalDays = Math.floor((now.getTime() - dob.getTime()) / (1000 * 60 * 60 * 24))
+      resultTotalDays.textContent = totalDays.toLocaleString()
+      resultTotalWeeks.textContent = Math.floor(totalDays / 7).toLocaleString()
+      resultTotalMonths.textContent = (years * 12 + months).toLocaleString()
+
+      // Next birthday
+      let nextBday = new Date(now.getFullYear(), dob.getMonth(), dob.getDate())
+      if (nextBday <= now) {
+        nextBday = new Date(now.getFullYear() + 1, dob.getMonth(), dob.getDate())
+      }
+      const daysUntilBday = Math.ceil((nextBday.getTime() - now.getTime()) / (1000 * 60 * 60 * 24))
+      resultNextBday.textContent = daysUntilBday === 0 ? '🎉 Today!' : String(daysUntilBday)
+
+      const bdayOptions: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' }
+      resultBdayDate.textContent = nextBday.toLocaleDateString('en-US', bdayOptions)
+    }
+
+    inputDob.addEventListener('change', calculate)
+  })
+</script>

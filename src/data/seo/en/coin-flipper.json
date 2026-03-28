@@ -1,0 +1,71 @@
+{
+  "toolId": "coin-flipper",
+  "lang": "en",
+  "metaTitle": "Coin Flipper & Dice Roller — Free Online Random Decision Maker",
+  "metaDescription": "Flip a coin or roll dice instantly on your phone. Make random decisions, play games, or settle disputes fairly. 100% free and works offline.",
+  "keywords": [
+    "coin flipper",
+    "flip a coin online",
+    "dice roller",
+    "roll dice online",
+    "random coin flip",
+    "virtual dice roller",
+    "online coin toss",
+    "heads or tails",
+    "random decision maker",
+    "free coin flip online"
+  ],
+  "howto": [
+    {
+      "step": "Choose Coin or Dice",
+      "description": "Switch between Coin Flip and Dice Roller using the tabs at the top."
+    },
+    {
+      "step": "Tap to flip or roll",
+      "description": "Tap the big button to instantly get a random result."
+    },
+    {
+      "step": "Check your history",
+      "description": "See your recent results and statistics below."
+    }
+  ],
+  "why": [
+    "Instant results with satisfying animation",
+    "Coin flip with heads/tails statistics tracker",
+    "Dice roller supports D4, D6, D8, D10, D12, D20",
+    "Roll multiple dice at once",
+    "Works completely offline — no internet needed",
+    "No sign-up, no limits, completely free forever"
+  ],
+  "faq": [
+    {
+      "q": "Is the coin flip truly random?",
+      "a": "Yes. The coin flip uses the browser's cryptographically secure Math.random() function to ensure a fair 50/50 result every time."
+    },
+    {
+      "q": "What dice types are available?",
+      "a": "D4, D6, D8, D10, D12, and D20 are all available. You can also roll multiple dice at once."
+    },
+    {
+      "q": "Can I use this for board games?",
+      "a": "Absolutely. The dice roller supports all standard tabletop RPG and board game dice types."
+    },
+    {
+      "q": "Does it work offline?",
+      "a": "Yes. Once the page is loaded, everything works completely offline."
+    },
+    {
+      "q": "Is there a history of results?",
+      "a": "Yes. Your last 10 results are shown below the main button so you can track your luck."
+    }
+  ],
+  "proTips": [
+    "Use the coin flip to settle quick disputes fairly — it's a true 50/50 chance.",
+    "For tabletop RPGs, use D20 for attack rolls and D6 for damage rolls.",
+    "Roll multiple D6 at once for board games like Monopoly or Catan."
+  ],
+  "troubleshooting": [
+    "If the animation seems slow, try refreshing the page.",
+    "For multiple dice, the total of all dice is shown along with individual results."
+  ]
+}

@@ -1,4 +1,4 @@
-export type ToolCategory = 'text' | 'image' | 'pdf' | 'generator' | 'file' | 'sns'
+export type ToolCategory = 'text' | 'image' | 'pdf' | 'generator' | 'file' | 'sns' | 'calculator'
 
 export interface Tool {
   id: string
@@ -38,6 +38,15 @@ export const tools: Tool[] = [
     icon: 'lucide:text',
     available: true,
     label: 'Lorem Ipsum Generator',
+  },
+  {
+    id: 'text-diff-checker',
+    category: 'text',
+    slug: 'text-diff-checker',
+    href: '/tools/text/text-diff-checker',
+    icon: 'lucide:diff',
+    available: true,
+    label: 'Text Diff Checker',
   },
 
   // Image
@@ -152,6 +161,42 @@ export const tools: Tool[] = [
     icon: 'lucide:shuffle',
     available: true,
     label: 'List Randomizer',
+  },
+  {
+    id: 'coin-flipper',
+    category: 'generator',
+    slug: 'coin-flipper',
+    href: '/tools/generator/coin-flipper',
+    icon: 'lucide:circle-dollar-sign',
+    available: true,
+    label: 'Coin Flipper & Dice Roller',
+  },
+  {
+    id: 'tip-calculator',
+    category: 'calculator',
+    slug: 'tip-calculator',
+    href: '/tools/calculator/tip-calculator',
+    icon: 'lucide:receipt',
+    available: true,
+    label: 'Tip Calculator',
+  },
+  {
+    id: 'age-calculator',
+    category: 'calculator',
+    slug: 'age-calculator',
+    href: '/tools/calculator/age-calculator',
+    icon: 'lucide:cake',
+    available: true,
+    label: 'Age Calculator',
+  },
+  {
+    id: 'unit-converter',
+    category: 'calculator',
+    slug: 'unit-converter',
+    href: '/tools/calculator/unit-converter',
+    icon: 'lucide:arrow-left-right',
+    available: true,
+    label: 'Unit Converter',
   },
   // SNS
   {

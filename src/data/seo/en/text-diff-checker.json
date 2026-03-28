@@ -1,0 +1,84 @@
+{
+  "toolId": "text-diff-checker",
+  "lang": "en",
+  "metaTitle": "Text Diff Checker — Compare Two Texts & Find Differences Online",
+  "metaDescription": "Compare two texts side by side and instantly highlight differences. Perfect for proofreading, code review, and document comparison. 100% private — your text never leaves your device.",
+  "keywords": [
+    "text diff checker",
+    "compare two texts online",
+    "text comparison tool",
+    "find differences in text",
+    "online diff tool",
+    "text difference highlighter",
+    "document comparison tool",
+    "side by side text compare",
+    "free diff checker",
+    "text diff online"
+  ],
+  "howto": [
+    {
+      "step": "Paste your original text",
+      "description": "Type or paste the original version of your text into the left box."
+    },
+    {
+      "step": "Paste the modified text",
+      "description": "Type or paste the new or modified version into the right box."
+    },
+    {
+      "step": "See differences instantly",
+      "description": "Differences are highlighted in real time — green for additions, red for deletions."
+    }
+  ],
+  "why": [
+    "100% private — your text never leaves your browser",
+    "Real-time diff highlighting as you type",
+    "Word-level and line-level comparison modes",
+    "Clear color coding — green for added, red for removed",
+    "Works completely offline after the initial page load",
+    "No sign-up, no limits, completely free forever"
+  ],
+  "faq": [
+    {
+      "q": "What is a text diff checker?",
+      "a": "A text diff checker compares two versions of text and highlights what has been added, removed, or changed between them."
+    },
+    {
+      "q": "Is my text stored anywhere?",
+      "a": "No. Everything runs entirely in your browser. Your text is never sent to any server or saved anywhere."
+    },
+    {
+      "q": "What is the difference between word and line mode?",
+      "a": "Word mode highlights individual word changes within each line, while line mode treats each entire line as a single unit of comparison."
+    },
+    {
+      "q": "Can I use this to compare code?",
+      "a": "Yes. The tool works with any plain text including source code, JSON, HTML, CSS, and more."
+    },
+    {
+      "q": "Is there a text size limit?",
+      "a": "No. There are no limits on text size. Everything is processed locally in your browser."
+    }
+  ],
+  "technicalSpecs": [
+    {
+      "quality": "Word Mode",
+      "size": "Word-level",
+      "useCase": "Best for comparing sentences, paragraphs, and prose documents."
+    },
+    {
+      "quality": "Line Mode",
+      "size": "Line-level",
+      "useCase": "Best for comparing code, configs, and structured text files."
+    }
+  ],
+  "troubleshooting": [
+    "If no differences appear, make sure both text boxes have content and are not identical.",
+    "For large texts, switch to Line mode for faster and cleaner results.",
+    "Whitespace-only differences may appear subtle — look for faint highlights."
+  ],
+  "proTips": [
+    "Use Line mode for comparing code or JSON to get cleaner, line-by-line results.",
+    "Paste before and after versions of an email or blog post to catch accidental edits.",
+    "Use the diff result to quickly identify what changed in a contract or legal document."
+  ]
+}

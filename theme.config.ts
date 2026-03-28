@@ -28,6 +28,7 @@ export default defineThemeConfig({
           { label: 'Word Counter', href: '/tools/text/word-counter' },
           { label: 'Case Converter', href: '/tools/text/case-converter' },
           { label: 'Lorem Ipsum Generator', href: '/tools/text/lorem-ipsum-generator' },
+          { label: 'Text Diff Checker', href: '/tools/text/text-diff-checker' },
         ],
       },
       {
@@ -58,6 +59,7 @@ export default defineThemeConfig({
           { label: 'QR Code Generator', href: '/tools/generator/qr-code' },
           { label: 'Password Generator', href: '/tools/generator/password-generator' },
           { label: 'List Randomizer', href: '/tools/generator/list-randomizer' },
+          { label: 'Coin Flipper & Dice Roller', href: '/tools/generator/coin-flipper' },
         ],
       },
       {
@@ -67,6 +69,15 @@ export default defineThemeConfig({
           { label: 'Instagram Post Generator', href: '/tools/sns/instagram-post-generator' },
           { label: 'Tweet Generator', href: '/tools/sns/tweet-generator' },
           { label: 'YouTube Thumbnail Grabber', href: '/tools/sns/youtube-thumbnail-grabber' },
+        ],
+      },
+      {
+        type: 'dropdown',
+        label: 'Calculator',
+        items: [
+          { label: 'Tip Calculator', href: '/tools/calculator/tip-calculator' },
+          { label: 'Age Calculator', href: '/tools/calculator/age-calculator' },
+          { label: 'Unit Converter', href: '/tools/calculator/unit-converter' },
         ],
       },
     ],

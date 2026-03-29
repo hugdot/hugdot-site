@@ -193,6 +193,14 @@ const imageUrl = new URL(imagePath, Astro.site).href
 
     <!-- Enable Astro View Transitions for all browsers -->
     <ClientRouter />
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S9T7556CP8"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-S9T7556CP8');
+    </script>
   </head>
   <body>
     <Header />

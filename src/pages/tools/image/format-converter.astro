@@ -1,0 +1,462 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Heading } from 'accessible-astro-components'
+import { Icon } from 'astro-icon/components'
+import { tools, getToolHref } from '@data/tools/index'
+import seoData from '@data/seo/en/image-format-converter.json'
+
+const relatedTools = tools.filter((t) => t.category === 'image' && t.id !== 'image-format-converter' && t.available)
+---
+
+<DefaultLayout
+  title={seoData.metaTitle}
+  description={seoData.metaDescription}
+  useTitleTemplate={false}
+  category="MultimediaApplication"
+  {...seoData}
+>
+  <section class="py-12">
+    <div class="container max-w-3xl">
+
+      <!-- Header -->
+      <div class="mb-8">
+        <div class="mb-2 flex items-center gap-2 text-sm opacity-50">
+          <a href="/" class="breadcrumb-link hover:underline">Home</a>
+          <span>/</span>
+          <a href="/tools/image" class="breadcrumb-link hover:underline">Image Tools</a>
+          <span>/</span>
+          <span>{seoData.metaTitle.split(' — ')[0]}</span>
+        </div>
+        <Heading level="h1" size="h2">{seoData.metaTitle.split(' — ')[0]}</Heading>
+        <p class="mt-2 opacity-60">
+          Convert images between JPG, PNG, WebP and AVIF instantly. Batch convert up to 20 images at once.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <span class="flex items-center gap-1.5 rounded-full border border-[var(--border-color-subtle)] px-3 py-1.5 text-xs font-medium">
+            <Icon aria-hidden="true" name="lucide:shield-check" size="0.875rem" class="text-[var(--action-color)]" />
+            No Upload
+          </span>
+          <span class="flex items-center gap-1.5 rounded-full border border-[var(--border-color-subtle)] px-3 py-1.5 text-xs font-medium">
+            <Icon aria-hidden="true" name="lucide:user-x" size="0.875rem" class="text-[var(--action-color)]" />
+            No Login
+          </span>
+          <span class="flex items-center gap-1.5 rounded-full border border-[var(--border-color-subtle)] px-3 py-1.5 text-xs font-medium">
+            <Icon aria-hidden="true" name="lucide:layers" size="0.875rem" class="text-[var(--action-color)]" />
+            Batch up to 20
+          </span>
+        </div>
+      </div>
+
+      <!-- Tool -->
+      <div class="flex flex-col gap-6">
+
+        <!-- Drop Zone -->
+        <div
+          id="drop-zone"
+          class="flex cursor-pointer flex-col items-center justify-center gap-4 rounded-2xl border-2 border-dashed border-[var(--border-color-subtle)] p-12 text-center transition-all hover:border-[var(--action-color)]"
+        >
+          <Icon aria-hidden="true" name="lucide:image-plus" size="3rem" class="opacity-30" />
+          <div>
+            <p class="font-semibold">Open images</p>
+            <p class="text-sm opacity-50">or drag & drop here</p>
+          </div>
+          <p class="text-xs opacity-40">JPG, PNG, WebP, GIF — up to 20 files</p>
+          <input id="file-input" type="file" accept="image/*" multiple class="hidden" />
+        </div>
+
+        <!-- Settings Panel -->
+        <div id="settings-panel" class="hidden flex-col gap-6 rounded-2xl border border-[var(--border-color-subtle)] p-6">
+
+          <!-- File Count -->
+          <div class="flex items-center gap-2 text-sm opacity-60">
+            <Icon aria-hidden="true" name="lucide:images" size="1rem" />
+            <span id="file-count"></span>
+          </div>
+
+          <!-- Output Format -->
+          <div class="flex flex-col gap-3">
+            <p class="text-sm font-medium">Output Format</p>
+            <div class="grid grid-cols-4 gap-2">
+              {['JPG', 'PNG', 'WebP', 'AVIF'].map((fmt) => (
+                <button
+                  data-format={fmt}
+                  class="format-btn rounded-xl border border-[var(--border-color-subtle)] py-3 text-sm font-semibold transition-all hover:border-[var(--action-color)]"
+                >
+                  {fmt}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <!-- Quality Slider -->
+          <div id="quality-wrap" class="flex flex-col gap-3">
+            <div class="flex items-center justify-between">
+              <label class="text-sm font-medium" for="quality-slider">Quality</label>
+              <span id="quality-value" class="text-lg font-bold text-[var(--action-color)]">90%</span>
+            </div>
+            <input
+              id="quality-slider"
+              type="range"
+              min="10"
+              max="100"
+              value="90"
+              class="w-full accent-[var(--action-color)]"
+            />
+            <div class="flex justify-between text-xs opacity-40">
+              <span>Smaller file</span>
+              <span>Better quality</span>
+            </div>
+          </div>
+
+          <!-- Convert Button -->
+          <button
+            id="convert-btn"
+            class="flex items-center justify-center gap-2 rounded-full bg-[var(--action-color)] px-8 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+          >
+            <Icon aria-hidden="true" name="lucide:repeat" size="1rem" />
+            Convert
+          </button>
+
+        </div>
+
+        <!-- Loading -->
+        <div id="loading" class="hidden flex-col items-center gap-3">
+          <div class="h-8 w-8 animate-spin rounded-full border-4 border-[var(--border-color-subtle)] border-t-[var(--action-color)]"></div>
+          <p id="loading-text" class="text-sm opacity-50">Converting...</p>
+        </div>
+
+        <!-- Result Panel -->
+        <div id="result-panel" class="hidden flex-col gap-4">
+
+          <!-- Stats -->
+          <div class="grid grid-cols-3 gap-3">
+            <div class="flex flex-col items-center rounded-2xl border border-[var(--border-color-subtle)] px-4 py-4">
+              <span class="mb-1 text-xs opacity-50">Files</span>
+              <span id="stat-files" class="text-lg font-bold"></span>
+            </div>
+            <div class="flex flex-col items-center rounded-2xl border border-[var(--border-color-subtle)] px-4 py-4">
+              <span class="mb-1 text-xs opacity-50">Original</span>
+              <span id="stat-original" class="text-lg font-bold"></span>
+            </div>
+            <div class="flex flex-col items-center rounded-2xl border border-[var(--border-color-subtle)] px-4 py-4">
+              <span class="mb-1 text-xs opacity-50">Converted</span>
+              <span id="stat-converted" class="text-lg font-bold text-[var(--action-color)]"></span>
+            </div>
+          </div>
+
+          <!-- Result List -->
+          <div id="result-list" class="flex flex-col gap-2"></div>
+
+          <!-- Actions -->
+          <div class="flex gap-3">
+            <button
+              id="save-btn"
+              class="flex flex-1 items-center justify-center gap-2 rounded-full bg-[var(--action-color)] px-8 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+            >
+              <Icon aria-hidden="true" name="lucide:save" size="1rem" />
+              <span id="save-btn-text">Save</span>
+            </button>
+            <button
+              id="reset-btn"
+              class="flex items-center justify-center gap-2 rounded-full border border-[var(--border-color-subtle)] px-6 py-3 text-sm font-medium transition-all hover:border-[var(--action-color)]"
+            >
+              <Icon aria-hidden="true" name="lucide:refresh-cw" size="1rem" />
+              Reset
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Privacy Badge -->
+      <div class="mt-8 flex items-center gap-2 rounded-2xl border border-[var(--border-color-subtle)] px-5 py-4 text-sm opacity-60">
+        <Icon aria-hidden="true" name="lucide:shield-check" size="1rem" />
+        <span>Your images never leave your device. No data is sent to any server.</span>
+      </div>
+
+      <!-- Related Tools -->
+      {relatedTools.length > 0 && (
+        <div class="mt-12">
+          <Heading level="h2" size="h4" class="mb-6">Related Tools</Heading>
+          <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
+            {relatedTools.map((tool) => (
+              
+              <a href={getToolHref(tool.category, tool.slug)}
+                class="rounded-xl border border-[var(--border-color-subtle)] px-4 py-3 text-sm font-medium text-[var(--foreground-color)] no-underline transition-all hover:border-[var(--action-color)]"
+              >
+                {tool.label} →
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+
+    </div>
+  </section>
+</DefaultLayout>
+
+<style>
+  .format-btn.active {
+    background-color: var(--action-color);
+    color: white;
+    border-color: var(--action-color);
+  }
+</style>
+
+<script>
+  import JSZip from 'jszip'
+
+  let cleanupFn: (() => void) | null = null
+
+  document.addEventListener('astro:page-load', () => {
+    cleanupFn?.()
+    cleanupFn = initConverter()
+  })
+
+  function initConverter(): () => void {
+    const MAX_FILES = 20
+    const CONCURRENCY = navigator.hardwareConcurrency <= 4 ? 2 : 3
+
+    let originalFiles: File[] = []
+    let convertedBlobs: { blob: Blob; name: string }[] = []
+    let selectedFormat = 'WebP'
+    let jobToken = 0
+
+    const dropZone = document.getElementById('drop-zone') as HTMLElement
+    const fileInput = document.getElementById('file-input') as HTMLInputElement
+    const settingsPanel = document.getElementById('settings-panel') as HTMLElement
+    const loading = document.getElementById('loading') as HTMLElement
+    const loadingText = document.getElementById('loading-text') as HTMLElement
+    const resultPanel = document.getElementById('result-panel') as HTMLElement
+    const resultList = document.getElementById('result-list') as HTMLElement
+    const fileCount = document.getElementById('file-count') as HTMLElement
+    const qualitySlider = document.getElementById('quality-slider') as HTMLInputElement
+    const qualityValue = document.getElementById('quality-value') as HTMLElement
+    const qualityWrap = document.getElementById('quality-wrap') as HTMLElement
+    const convertBtn = document.getElementById('convert-btn') as HTMLButtonElement
+    const saveBtn = document.getElementById('save-btn') as HTMLButtonElement
+    const saveBtnText = document.getElementById('save-btn-text') as HTMLElement
+    const resetBtn = document.getElementById('reset-btn') as HTMLButtonElement
+    const statFiles = document.getElementById('stat-files') as HTMLElement
+    const statOriginal = document.getElementById('stat-original') as HTMLElement
+    const statConverted = document.getElementById('stat-converted') as HTMLElement
+    const formatBtns = document.querySelectorAll('.format-btn') as NodeListOf<HTMLButtonElement>
+
+    const formatSize = (bytes: number) =>
+      bytes < 1024 * 1024
+        ? `${(bytes / 1024).toFixed(1)} KB`
+        : `${(bytes / 1024 / 1024).toFixed(2)} MB`
+
+    const show = (el: HTMLElement) => (el.style.display = 'flex')
+    const hide = (el: HTMLElement) => (el.style.display = 'none')
+
+    const getMimeType = (fmt: string): string => {
+      const map: Record<string, string> = {
+        JPG: 'image/jpeg',
+        PNG: 'image/png',
+        WebP: 'image/webp',
+        AVIF: 'image/avif',
+      }
+      return map[fmt] ?? 'image/jpeg'
+    }
+
+    const getExt = (fmt: string): string => {
+      const map: Record<string, string> = {
+        JPG: 'jpg',
+        PNG: 'png',
+        WebP: 'webp',
+        AVIF: 'avif',
+      }
+      return map[fmt] ?? 'jpg'
+    }
+
+    const setFormat = (fmt: string) => {
+      selectedFormat = fmt
+      formatBtns.forEach((btn) => {
+        btn.classList.toggle('active', btn.dataset.format === fmt)
+      })
+      // PNG is lossless — hide quality slider
+      qualityWrap.style.display = fmt === 'PNG' ? 'none' : 'flex'
+    }
+
+    const convertSingle = (file: File): Promise<Blob | null> => {
+      return new Promise((resolve) => {
+        const img = new Image()
+        const url = URL.createObjectURL(file)
+        img.onload = () => {
+          const canvas = document.createElement('canvas')
+          canvas.width = img.naturalWidth
+          canvas.height = img.naturalHeight
+          const ctx = canvas.getContext('2d')!
+
+          // Fill white background for JPG
+          if (selectedFormat === 'JPG') {
+            ctx.fillStyle = '#ffffff'
+            ctx.fillRect(0, 0, canvas.width, canvas.height)
+          }
+
+          ctx.drawImage(img, 0, 0)
+          URL.revokeObjectURL(url)
+
+          const quality = parseInt(qualitySlider.value) / 100
+          const mimeType = getMimeType(selectedFormat)
+
+          canvas.toBlob(
+            (blob) => resolve(blob),
+            mimeType,
+            selectedFormat === 'PNG' ? undefined : quality
+          )
+        }
+        img.onerror = () => { URL.revokeObjectURL(url); resolve(null) }
+        img.src = url
+      })
+    }
+
+    const runConvert = async () => {
+      const currentToken = ++jobToken
+      convertedBlobs = []
+      resultList.innerHTML = ''
+      hide(resultPanel)
+      show(loading)
+
+      let totalOriginal = 0
+      let totalConverted = 0
+      const results: { blob: Blob | null; file: File }[] = []
+
+      for (let i = 0; i < originalFiles.length; i += CONCURRENCY) {
+        if (currentToken !== jobToken) return
+        const chunk = originalFiles.slice(i, i + CONCURRENCY)
+        const chunkResults = await Promise.all(
+          chunk.map(async (file) => {
+            const blob = await convertSingle(file)
+            return { blob, file }
+          })
+        )
+        if (currentToken !== jobToken) return
+        results.push(...chunkResults)
+        const processed = Math.min(i + CONCURRENCY, originalFiles.length)
+        loadingText.textContent = `Converting... (${processed}/${originalFiles.length})`
+      }
+
+      results.forEach(({ blob, file }) => {
+        totalOriginal += file.size
+        if (blob) {
+          totalConverted += blob.size
+          const ext = getExt(selectedFormat)
+          const name = `${file.name.replace(/\.[^/.]+$/, '')}.${ext}`
+          convertedBlobs.push({ blob, name })
+
+          const previewUrl = URL.createObjectURL(blob)
+          const item = document.createElement('div')
+          item.className = 'flex items-center gap-3 rounded-xl border border-[var(--border-color-subtle)] px-4 py-3'
+          item.innerHTML = `
+            <img src="${previewUrl}" alt="${file.name}" class="h-12 w-12 shrink-0 rounded-lg object-cover" />
+            <div class="min-w-0 flex-1">
+              <p class="truncate text-sm font-medium">${name}</p>
+              <p class="text-xs opacity-50">${formatSize(file.size)} → ${formatSize(blob.size)}</p>
+            </div>
+            <span class="shrink-0 rounded-full bg-green-500/10 px-3 py-1 text-xs font-medium text-green-500">✓</span>
+          `
+          resultList.appendChild(item)
+        } else {
+          const item = document.createElement('div')
+          item.className = 'flex items-center gap-3 rounded-xl border border-red-500/20 px-4 py-3'
+          item.innerHTML = `
+            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-red-500/10 text-xs text-red-500">ERR</div>
+            <div class="min-w-0 flex-1">
+              <p class="truncate text-sm font-medium">${file.name}</p>
+              <p class="text-xs text-red-500">Conversion failed</p>
+            </div>
+          `
+          resultList.appendChild(item)
+        }
+      })
+
+      statFiles.textContent = String(originalFiles.length)
+      statOriginal.textContent = formatSize(totalOriginal)
+      statConverted.textContent = formatSize(totalConverted)
+      saveBtnText.textContent = convertedBlobs.length === 1 ? 'Save Image' : 'Download All (ZIP)'
+
+      hide(loading)
+      show(resultPanel)
+    }
+
+    const downloadAll = async () => {
+      if (!convertedBlobs.length) return
+
+      if (convertedBlobs.length === 1) {
+        const { blob, name } = convertedBlobs[0]
+        const url = URL.createObjectURL(blob)
+        const link = document.createElement('a')
+        link.href = url
+        link.download = name
+        link.click()
+        URL.revokeObjectURL(url)
+        return
+      }
+
+      const zip = new JSZip()
+      convertedBlobs.forEach(({ blob, name }) => zip.file(name, blob))
+      const zipBlob = await zip.generateAsync({ type: 'blob' })
+      const url = URL.createObjectURL(zipBlob)
+      const link = document.createElement('a')
+      link.href = url
+      link.download = `hugdot-converted-${selectedFormat.toLowerCase()}.zip`
+      link.click()
+      URL.revokeObjectURL(url)
+    }
+
+    const handleFiles = (files: FileList) => {
+      originalFiles = Array.from(files)
+        .filter((f) => f.type.startsWith('image/'))
+        .slice(0, MAX_FILES)
+      if (!originalFiles.length) return
+
+      fileCount.textContent = `${originalFiles.length} image${originalFiles.length > 1 ? 's' : ''} selected`
+      hide(dropZone)
+      hide(resultPanel)
+      settingsPanel.style.display = 'flex'
+    }
+
+    // Init format
+    setFormat('WebP')
+
+    formatBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        if (btn.dataset.format) setFormat(btn.dataset.format)
+      })
+    })
+
+    qualitySlider.addEventListener('input', () => {
+      qualityValue.textContent = `${qualitySlider.value}%`
+    })
+
+    convertBtn.addEventListener('click', runConvert)
+    saveBtn.addEventListener('click', downloadAll)
+
+    dropZone.addEventListener('click', () => fileInput.click())
+    dropZone.addEventListener('dragover', (e) => { e.preventDefault(); dropZone.classList.add('border-[var(--action-color)]') })
+    dropZone.addEventListener('dragleave', () => dropZone.classList.remove('border-[var(--action-color)]'))
+    dropZone.addEventListener('drop', (e) => {
+      e.preventDefault()
+      dropZone.classList.remove('border-[var(--action-color)]')
+      if (e.dataTransfer?.files) handleFiles(e.dataTransfer.files)
+    })
+    fileInput.addEventListener('change', () => { if (fileInput.files) handleFiles(fileInput.files) })
+
+    resetBtn.addEventListener('click', () => {
+      jobToken++
+      originalFiles = []
+      convertedBlobs = []
+      fileInput.value = ''
+      resultList.innerHTML = ''
+      hide(resultPanel)
+      hide(loading)
+      hide(settingsPanel)
+      show(dropZone)
+    })
+
+    return () => { jobToken++ }
+  }
+</script>

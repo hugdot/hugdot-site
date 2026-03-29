@@ -35,4 +35,20 @@ export const imageTools: Tool[] = [
     available: true,
     label: 'EXIF Remover',
   },
+  {
+    id: 'image-format-converter',
+    category: 'image',
+    slug: 'format-converter',
+    icon: 'lucide:repeat',
+    available: true,
+    label: 'Image Format Converter',
+  },
+  {
+    id: 'image-watermark',
+    category: 'image',
+    slug: 'watermark',
+    icon: 'lucide:stamp',
+    available: true,
+    label: 'Image Watermark',
+  },
 ]

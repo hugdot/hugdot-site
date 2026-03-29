@@ -36,6 +36,8 @@ export default defineThemeConfig({
         label: 'Image',
         items: [
           { label: 'Image Compressor', href: '/tools/image/compressor' },
+          { label: 'Image Format Converter', href: '/tools/image/format-converter' },
+          { label: 'Image Watermark', href: '/tools/image/watermark' },
           { label: 'Image Resizer', href: '/tools/image/resizer' },
           { label: 'Image Blur', href: '/tools/image/blur' },
           { label: 'Image Crop', href: '/tools/image/crop' },

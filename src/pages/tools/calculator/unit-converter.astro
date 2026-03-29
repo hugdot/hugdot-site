@@ -2,7 +2,7 @@
 import DefaultLayout from '@layouts/DefaultLayout.astro'
 import { Heading } from 'accessible-astro-components'
 import { Icon } from 'astro-icon/components'
-import { tools } from '@data/tools'
+import { tools, getToolHref } from '@data/tools/index'
 import seoData from '@data/seo/en/unit-converter.json'
 
 const relatedTools = tools.filter((t) => t.category === 'calculator' && t.id !== 'unit-converter' && t.available)
@@ -104,7 +104,7 @@ const relatedTools = tools.filter((t) => t.category === 'calculator' && t.id !==
             <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
               {relatedTools.map((tool) => (
                 <a
-                  href={tool.href}
+                  href={getToolHref(tool.category, tool.slug)}
                   class="rounded-xl border border-[var(--border-color-subtle)] px-4 py-3 text-sm font-medium text-[var(--foreground-color)] no-underline transition-all hover:border-[var(--action-color)]"
                 >
                   {tool.label} →

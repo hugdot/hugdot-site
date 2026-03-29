@@ -2,7 +2,7 @@
 import DefaultLayout from '@layouts/DefaultLayout.astro'
 import { Heading } from 'accessible-astro-components'
 import { Icon } from 'astro-icon/components'
-import { tools } from '@data/tools'
+import { tools, getToolHref } from '@data/tools/index'
 import seoData from '@data/seo/en/word-counter.json'
 
 const relatedTools = tools.filter(t => t.category === 'text' && t.id !== 'word-counter' && t.available)
@@ -141,7 +141,7 @@ const relatedTools = tools.filter(t => t.category === 'text' && t.id !== 'word-c
           <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
             {relatedTools.map((tool) => (
               <a
-                href={tool.href}
+                href={getToolHref(tool.category, tool.slug)}
                 class="rounded-xl border border-[var(--border-color-subtle)] px-4 py-3 text-sm font-medium transition-all hover:border-[var(--action-color)] text-[var(--foreground-color)] no-underline"
               >
                 {tool.label} →

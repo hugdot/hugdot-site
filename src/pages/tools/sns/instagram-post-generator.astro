@@ -2,8 +2,8 @@
 import DefaultLayout from '@layouts/DefaultLayout.astro'
 import { Heading } from 'accessible-astro-components'
 import { Icon } from 'astro-icon/components'
-import { tools } from '@data/tools'
 import seoData from '@data/seo/en/instagram-post-generator.json'
+import { tools, getToolHref } from '@data/tools/index'
 
 const relatedTools = tools.filter((t) => t.category === 'sns' && t.id !== 'instagram-post-generator' && t.available)
 ---
@@ -222,7 +222,7 @@ const relatedTools = tools.filter((t) => t.category === 'sns' && t.id !== 'insta
           <Heading level="h2" size="h4" class="mb-6">Related Tools</Heading>
           <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
             {relatedTools.map((tool) => (
-              <a href={tool.href}
+              <a href={getToolHref(tool.category, tool.slug)}
                 class="rounded-xl border border-[var(--border-color-subtle)] px-4 py-3 text-sm font-medium text-[var(--foreground-color)] no-underline transition-all hover:border-[var(--action-color)]">
                 {tool.label} →
               </a>

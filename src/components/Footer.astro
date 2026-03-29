@@ -1,7 +1,7 @@
 ---
 import Logo from './Logo.astro'
 import { Heading, Link } from 'accessible-astro-components'
-import { getToolsByCategory } from '@data/tools'
+import { tools, getToolHref, getToolsByCategory } from '@data/tools/index'
 
 const currentYear = new Date().getFullYear()
 const textTools = getToolsByCategory('text')
@@ -21,7 +21,7 @@ const calculatorTools = getToolsByCategory('calculator')
         <Heading level="h3" size="h6">Text Tools</Heading>
         <ul class="flex flex-col gap-2">
           {textTools.map((tool) => (
-            <li><Link href={tool.href}>{tool.label}</Link></li>
+            <li><Link href={getToolHref(tool.category, tool.slug)}>{tool.label}</Link></li>
           ))}
         </ul>
       </div>
@@ -30,7 +30,7 @@ const calculatorTools = getToolsByCategory('calculator')
         <Heading level="h3" size="h6">Image Tools</Heading>
         <ul class="flex flex-col gap-2">
           {imageTools.map((tool) => (
-            <li><Link href={tool.href}>{tool.label}</Link></li>
+            <li><Link href={getToolHref(tool.category, tool.slug)}>{tool.label}</Link></li>
           ))}
         </ul>
       </div>
@@ -39,7 +39,7 @@ const calculatorTools = getToolsByCategory('calculator')
         <Heading level="h3" size="h6">PDF Tools</Heading>
         <ul class="flex flex-col gap-2">
           {pdfTools.map((tool) => (
-            <li><Link href={tool.href}>{tool.label}</Link></li>
+            <li><Link href={getToolHref(tool.category, tool.slug)}>{tool.label}</Link></li>
           ))}
         </ul>
       </div>
@@ -48,7 +48,7 @@ const calculatorTools = getToolsByCategory('calculator')
         <Heading level="h3" size="h6">Generators</Heading>
         <ul class="flex flex-col gap-2">
           {generatorTools.map((tool) => (
-            <li><Link href={tool.href}>{tool.label}</Link></li>
+            <li><Link href={getToolHref(tool.category, tool.slug)}>{tool.label}</Link></li>
           ))}
         </ul>
       </div>
@@ -57,7 +57,7 @@ const calculatorTools = getToolsByCategory('calculator')
         <Heading level="h3" size="h6">SNS Tools</Heading>
         <ul class="flex flex-col gap-2">
           {snsTools.map((tool) => (
-            <li><Link href={tool.href}>{tool.label}</Link></li>
+            <li><Link href={getToolHref(tool.category, tool.slug)}>{tool.label}</Link></li>
           ))}
         </ul>
       </div>
@@ -66,7 +66,7 @@ const calculatorTools = getToolsByCategory('calculator')
         <Heading level="h3" size="h6">Calculators</Heading>
         <ul class="flex flex-col gap-2">
           {calculatorTools.map((tool) => (
-            <li><Link href={tool.href}>{tool.label}</Link></li>
+            <li><Link href={getToolHref(tool.category, tool.slug)}>{tool.label}</Link></li>
           ))}
         </ul>
       </div>

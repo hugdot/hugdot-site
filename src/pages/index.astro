@@ -3,7 +3,7 @@ import DefaultLayout from '@layouts/DefaultLayout.astro'
 import Hero from '@components/Hero.astro'
 import { Heading } from 'accessible-astro-components'
 import { Icon } from 'astro-icon/components'
-import { tools } from '../data/tools'
+import { tools, getToolHref } from '../data/tools/'
 
 const categoryConfigs = {
   text: { label: 'Text Tools', icon: 'lucide:type', href: '/tools/text' },
@@ -13,16 +13,18 @@ const categoryConfigs = {
   sns: { label: 'SNS Tools', icon: 'lucide:share-2', href: '/tools/sns' },
   calculator: { label: 'Calculators', icon: 'lucide:calculator', href: '/tools/calculator' },
 }
-const categories = Object.entries(categoryConfigs).map(([key, config]) => ({
-  ...config,
-  tools: tools
-    .filter(t => t.category === key && t.available)
-    .map(t => ({
-      label: t.label,
-      href: t.href,
-      description: `${t.label} utility for your daily tasks` 
-    }))
-})).filter(cat => cat.tools.length > 0); //
+const categories = Object.entries(categoryConfigs)
+  .map(([key, config]) => ({
+    ...config,
+    tools: tools
+      .filter((t) => t.category === key && t.available)
+      .map((t) => ({
+        label: t.label,
+        href: getToolHref(t.category, t.slug),
+        description: `${t.label} utility for your daily tasks`,
+      })),
+  }))
+  .filter((cat) => cat.tools.length > 0) //
 ---
 
 <DefaultLayout title="HugDot" useTitleTemplate={true}>

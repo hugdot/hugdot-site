@@ -2,7 +2,10 @@
 import DefaultLayout from '@layouts/DefaultLayout.astro'
 import { Heading } from 'accessible-astro-components'
 import { Icon } from 'astro-icon/components'
+import { tools } from '@data/tools'
 import seoData from '@data/seo/en/exif-remover.json'
+
+const relatedTools = tools.filter((t) => t.category === 'image' && t.id !== 'exif-remover' && t.available)
 ---
 
 <DefaultLayout
@@ -26,9 +29,22 @@ import seoData from '@data/seo/en/exif-remover.json'
         </div>
         <Heading level="h1" size="h2">{seoData.metaTitle.split(' — ')[0]}</Heading>
         <p class="mt-2 opacity-60">
-          Remove hidden metadata from your photos — including GPS location, camera model, and shooting date.
-          Your images never leave your device — 100% private.
+          Remove hidden metadata from your photos — including GPS location, camera model, and shooting date. Batch process up to 20 images at once.
         </p>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <span class="flex items-center gap-1.5 rounded-full border border-[var(--border-color-subtle)] px-3 py-1.5 text-xs font-medium">
+            <Icon aria-hidden="true" name="lucide:shield-check" size="0.875rem" class="text-[var(--action-color)]" />
+            No Upload
+          </span>
+          <span class="flex items-center gap-1.5 rounded-full border border-[var(--border-color-subtle)] px-3 py-1.5 text-xs font-medium">
+            <Icon aria-hidden="true" name="lucide:user-x" size="0.875rem" class="text-[var(--action-color)]" />
+            No Login
+          </span>
+          <span class="flex items-center gap-1.5 rounded-full border border-[var(--border-color-subtle)] px-3 py-1.5 text-xs font-medium">
+            <Icon aria-hidden="true" name="lucide:layers" size="0.875rem" class="text-[var(--action-color)]" />
+            Batch up to 20
+          </span>
+        </div>
       </div>
 
       <!-- Privacy Warning -->
@@ -43,61 +59,62 @@ import seoData from '@data/seo/en/exif-remover.json'
       <!-- Drop Zone -->
       <div
         id="drop-zone"
-        class="flex flex-col items-center justify-center gap-4 rounded-2xl border-2 border-dashed border-[var(--border-color-subtle)] p-12 text-center transition-all hover:border-[var(--action-color)] cursor-pointer"
+        class="flex cursor-pointer flex-col items-center justify-center gap-4 rounded-2xl border-2 border-dashed border-[var(--border-color-subtle)] p-12 text-center transition-all hover:border-[var(--action-color)]"
       >
         <Icon aria-hidden="true" name="lucide:image-plus" size="3rem" class="opacity-30" />
         <div>
-          <p class="font-semibold">Open an image</p>
-          <p class="text-sm opacity-50">or tap to choose</p>
+          <p class="font-semibold">Open images</p>
+          <p class="text-sm opacity-50">or drag & drop here</p>
         </div>
-        <p class="text-xs opacity-40">Supports JPG, PNG, WebP</p>
-        <input id="file-input" type="file" accept="image/*" class="hidden" aria-label="Open image" />
+        <p class="text-xs opacity-40">JPG, PNG, WebP — up to 20 files</p>
+        <input id="file-input" type="file" accept="image/*" multiple class="hidden" aria-label="Open images" />
+      </div>
+
+      <!-- Loading -->
+      <div id="loading" class="mt-6 hidden flex-col items-center gap-3">
+        <div class="h-8 w-8 animate-spin rounded-full border-4 border-[var(--border-color-subtle)] border-t-[var(--action-color)]"></div>
+        <p id="loading-text" class="text-sm opacity-50">Processing...</p>
       </div>
 
       <!-- Result Panel -->
       <div id="result-panel" class="mt-6 hidden flex-col gap-6">
 
-        <!-- EXIF Data Found -->
-        <div id="exif-found" class="hidden flex-col gap-3">
-          <Heading level="h2" size="h6" class="opacity-60">Metadata found</Heading>
-          <div id="exif-items" class="flex flex-col gap-2"></div>
-        </div>
-
-        <!-- No EXIF -->
-        <div id="exif-none" class="hidden items-center gap-3 rounded-2xl border border-[var(--border-color-subtle)] px-5 py-4 text-sm">
-          <Icon aria-hidden="true" name="lucide:check-circle" size="1.25rem" class="text-green-500 opacity-100" />
-          <span class="opacity-60">No sensitive metadata found in this image.</span>
-        </div>
-
-        <!-- Size Comparison -->
-        <div class="grid grid-cols-2 gap-4">
-          <div class="flex flex-col items-center gap-1 rounded-2xl border border-[var(--border-color-subtle)] p-4 text-center">
-            <span class="text-xs opacity-50">Original size</span>
-            <span id="size-original" class="text-lg font-bold"></span>
+        <!-- Summary Stats -->
+        <div class="grid grid-cols-3 gap-3">
+          <div class="flex flex-col items-center rounded-2xl border border-[var(--border-color-subtle)] px-4 py-4">
+            <span class="mb-1 text-xs opacity-50">Files</span>
+            <span id="stat-files" class="text-lg font-bold"></span>
           </div>
-          <div class="flex flex-col items-center gap-1 rounded-2xl border border-[var(--border-color-subtle)] p-4 text-center">
-            <span class="text-xs opacity-50">After removal</span>
-            <span id="size-cleaned" class="text-lg font-bold text-[var(--action-color)]"></span>
+          <div class="flex flex-col items-center rounded-2xl border border-[var(--border-color-subtle)] px-4 py-4">
+            <span class="mb-1 text-xs opacity-50">EXIF Found</span>
+            <span id="stat-exif" class="text-lg font-bold text-red-500"></span>
+          </div>
+          <div class="flex flex-col items-center rounded-2xl border border-[var(--border-color-subtle)] px-4 py-4">
+            <span class="mb-1 text-xs opacity-50">Clean</span>
+            <span id="stat-clean" class="text-lg font-bold text-green-500"></span>
           </div>
         </div>
 
-        <!-- Save Button -->
-        <button
-          id="save-btn"
-          class="flex w-full items-center justify-center gap-2 rounded-2xl bg-[var(--action-color)] px-6 py-4 font-semibold text-white transition-opacity hover:opacity-80"
-        >
-          <Icon aria-hidden="true" name="lucide:shield-check" size="1.25rem" />
-          Save Clean Image
-        </button>
+        <!-- Batch Grid -->
+        <div id="batch-grid" class="flex flex-col gap-3"></div>
 
-        <!-- Open Another -->
-        <button
-          id="reset-btn"
-          class="flex w-full items-center justify-center gap-2 rounded-2xl border border-[var(--border-color-subtle)] px-6 py-4 text-sm font-medium transition-all hover:border-[var(--action-color)]"
-        >
-          <Icon aria-hidden="true" name="lucide:refresh-cw" size="1rem" />
-          Open Another Image
-        </button>
+        <!-- Actions -->
+        <div class="flex gap-3">
+          <button
+            id="save-btn"
+            class="flex flex-1 items-center justify-center gap-2 rounded-full bg-[var(--action-color)] px-8 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+          >
+            <Icon aria-hidden="true" name="lucide:shield-check" size="1rem" />
+            Save All Clean Images
+          </button>
+          <button
+            id="reset-btn"
+            class="flex items-center justify-center gap-2 rounded-full border border-[var(--border-color-subtle)] px-6 py-3 text-sm font-medium transition-all hover:border-[var(--action-color)]"
+          >
+            <Icon aria-hidden="true" name="lucide:refresh-cw" size="1rem" />
+            Reset
+          </button>
+        </div>
 
       </div>
 
@@ -106,36 +123,56 @@ import seoData from '@data/seo/en/exif-remover.json'
         <Icon aria-hidden="true" name="lucide:shield-check" size="1rem" />
         <span>Your images never leave your device. No data is sent to any server.</span>
       </div>
-      
+
+      <!-- Related Tools -->
+      {relatedTools.length > 0 && (
+        <div class="mt-12">
+          <Heading level="h2" size="h4" class="mb-6">Related Tools</Heading>
+          <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
+            {relatedTools.map((tool) => (
+              <a href={tool.href}
+                class="rounded-xl border border-[var(--border-color-subtle)] px-4 py-3 text-sm font-medium text-[var(--foreground-color)] no-underline transition-all hover:border-[var(--action-color)]">
+                {tool.label} →
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+
     </div>
   </section>
 </DefaultLayout>
 
 <script>
   import exifr from 'exifr'
+  import JSZip from 'jszip'
+
+  let cleanupFn: (() => void) | null = null
 
   document.addEventListener('astro:page-load', () => {
-    if ((window as any).__exifRemoverInit) return
-    ;(window as any).__exifRemoverInit = true
+    cleanupFn?.()
+    cleanupFn = initExifRemover()
+  })
 
-    const dropZone = document.getElementById('drop-zone') as HTMLDivElement
+  function initExifRemover(): () => void {
+    const MAX_FILES = 20
+    const CONCURRENCY = navigator.hardwareConcurrency <= 4 ? 2 : 3
+
+    let originalFiles: File[] = []
+    let cleanedBlobs: Blob[] = []
+    let jobToken = 0
+
+    const dropZone = document.getElementById('drop-zone') as HTMLElement
     const fileInput = document.getElementById('file-input') as HTMLInputElement
-    const resultPanel = document.getElementById('result-panel') as HTMLDivElement
-    const exifFound = document.getElementById('exif-found') as HTMLDivElement
-    const exifNone = document.getElementById('exif-none') as HTMLDivElement
-    const exifItems = document.getElementById('exif-items') as HTMLDivElement
-    const sizeOriginal = document.getElementById('size-original') as HTMLSpanElement
-    const sizeCleaned = document.getElementById('size-cleaned') as HTMLSpanElement
+    const loading = document.getElementById('loading') as HTMLElement
+    const loadingText = document.getElementById('loading-text') as HTMLElement
+    const resultPanel = document.getElementById('result-panel') as HTMLElement
+    const batchGrid = document.getElementById('batch-grid') as HTMLElement
     const saveBtn = document.getElementById('save-btn') as HTMLButtonElement
     const resetBtn = document.getElementById('reset-btn') as HTMLButtonElement
-
-    let cleanedBlob: Blob | null = null
-    let originalFile: File | null = null
-
-    const formatSize = (bytes: number) => {
-      if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB'
-      return (bytes / (1024 * 1024)).toFixed(2) + ' MB'
-    }
+    const statFiles = document.getElementById('stat-files') as HTMLElement
+    const statExif = document.getElementById('stat-exif') as HTMLElement
+    const statClean = document.getElementById('stat-clean') as HTMLElement
 
     const EXIF_LABELS: Record<string, string> = {
       Make: '📷 Camera make',
@@ -155,205 +192,205 @@ import seoData from '@data/seo/en/exif-remover.json'
       LensModel: '🔭 Lens model',
       Artist: '👤 Artist',
       Copyright: '©️ Copyright',
-      ImageDescription: '📝 Description',
-      UserComment: '💬 User comment',
-      XPComment: '💬 Comment',
-      XPAuthor: '👤 Author',
     }
+
+    const formatSize = (bytes: number) =>
+      bytes < 1024 * 1024
+        ? `${(bytes / 1024).toFixed(1)} KB`
+        : `${(bytes / 1024 / 1024).toFixed(2)} MB`
+
+    const show = (el: HTMLElement) => (el.style.display = 'flex')
+    const hide = (el: HTMLElement) => (el.style.display = 'none')
 
     const removeExifFromJpeg = (buffer: ArrayBuffer): ArrayBuffer => {
       const data = new Uint8Array(buffer)
       const chunks: Uint8Array[] = []
       let i = 0
-
       chunks.push(data.slice(0, 2))
       i = 2
-
       while (i < data.length - 1) {
-        if (data[i] !== 0xFF) break
+        if (data[i] !== 0xff) break
         const marker = data[i + 1]
-
-        if (marker >= 0xE0 && marker <= 0xEF) {
+        if (marker >= 0xe0 && marker <= 0xef) {
           const segLen = (data[i + 2] << 8) | data[i + 3]
-          if (marker === 0xE0) {
-            chunks.push(data.slice(i, i + 2 + segLen))
-          }
+          if (marker === 0xe0) chunks.push(data.slice(i, i + 2 + segLen))
           i += 2 + segLen
           continue
         }
-
-        if (marker === 0xDA) {
+        if (marker === 0xda) {
           chunks.push(data.slice(i))
           break
         }
-
         const segLen = (data[i + 2] << 8) | data[i + 3]
         chunks.push(data.slice(i, i + 2 + segLen))
         i += 2 + segLen
       }
-
-      const totalLength = chunks.reduce((acc, chunk) => acc + chunk.length, 0)
+      const totalLength = chunks.reduce((acc, c) => acc + c.length, 0)
       const result = new Uint8Array(totalLength)
       let offset = 0
-      chunks.forEach(chunk => {
-        result.set(chunk, offset)
-        offset += chunk.length
-      })
-
+      chunks.forEach((c) => { result.set(c, offset); offset += c.length })
       return result.buffer
     }
 
-    const processImage = async (file: File) => {
-      originalFile = file
+    const processFile = async (file: File): Promise<{ blob: Blob; hasExif: boolean; exifData: Record<string, any> }> => {
+      const isJpeg = file.type === 'image/jpeg' || /\.(jpg|jpeg)$/i.test(file.name)
+      const arrayBuffer = await file.arrayBuffer()
 
+      let exifData: Record<string, any> = {}
       try {
-        const isImage = file.type.startsWith('image/') ||
-          /\.(jpg|jpeg|png|webp|gif)$/i.test(file.name)
-        if (!isImage) return
+        exifData = await exifr.parse(arrayBuffer, { pick: Object.keys(EXIF_LABELS), gps: true }) ?? {}
+      } catch { /* ignore */ }
 
-        const isJpeg = file.type === 'image/jpeg' ||
-          file.type === 'image/jpg' ||
-          /\.(jpg|jpeg)$/i.test(file.name)
+      const hasExif = Object.keys(exifData).length > 0
 
-        // 파일을 딱 한 번만 읽어서 재사용 (안드로이드 권한 문제 방지)
-        const arrayBuffer = await file.arrayBuffer()
+      let cleanedBuffer: ArrayBuffer
+      if (isJpeg) {
+        cleanedBuffer = removeExifFromJpeg(arrayBuffer)
+      } else {
+        const blob = new Blob([arrayBuffer], { type: file.type })
+        const url = URL.createObjectURL(blob)
+        const img = new Image()
+        await new Promise<void>((resolve) => { img.onload = () => resolve(); img.src = url })
+        const canvas = document.createElement('canvas')
+        canvas.width = img.naturalWidth
+        canvas.height = img.naturalHeight
+        canvas.getContext('2d')!.drawImage(img, 0, 0)
+        URL.revokeObjectURL(url)
+        cleanedBuffer = await new Promise<ArrayBuffer>((resolve) => {
+          canvas.toBlob((b) => b!.arrayBuffer().then(resolve), file.type, 1.0)
+        })
+      }
 
-        // EXIF 파싱 (arrayBuffer 재사용, 실패해도 계속 진행)
-        let exifData = null
-        try {
-          exifData = await exifr.parse(arrayBuffer, {
-            pick: Object.keys(EXIF_LABELS),
-            gps: true,
-          })
-        } catch {
-          // 파싱 실패 무시
-        }
-
-        // EXIF 제거
-        let cleanedBuffer: ArrayBuffer
-
-        if (isJpeg) {
-          cleanedBuffer = removeExifFromJpeg(arrayBuffer)
-        } else {
-          const blob = new Blob([arrayBuffer], { type: file.type || 'image/png' })
-          const url = URL.createObjectURL(blob)
-          const img = new Image()
-          await new Promise<void>((resolve) => {
-            img.onload = () => resolve()
-            img.src = url
-          })
-          const canvas = document.createElement('canvas')
-          canvas.width = img.naturalWidth
-          canvas.height = img.naturalHeight
-          canvas.getContext('2d')!.drawImage(img, 0, 0)
-          URL.revokeObjectURL(url)
-          cleanedBuffer = await new Promise<ArrayBuffer>((resolve) => {
-            canvas.toBlob((blob) => {
-              blob!.arrayBuffer().then(resolve)
-            }, file.type || 'image/png', 1.0)
-          })
-        }
-
-        cleanedBlob = new Blob([cleanedBuffer], { type: file.type || 'image/jpeg' })
-
-        sizeOriginal.textContent = formatSize(file.size)
-        sizeCleaned.textContent = formatSize(cleanedBlob.size)
-
-        exifItems.innerHTML = ''
-
-        if (exifData && Object.keys(exifData).length > 0) {
-          const hasGPS = exifData.GPSLatitude || exifData.GPSLongitude
-
-          Object.entries(exifData).forEach(([key, value]) => {
-            const label = EXIF_LABELS[key] ?? key
-            let displayValue = ''
-
-            if (Array.isArray(value)) {
-              displayValue = value.map((v: any) => typeof v === 'number' ? v.toFixed(4) : v).join(', ')
-            } else if (typeof value === 'number') {
-              displayValue = (value as number).toFixed(4)
-            } else {
-              displayValue = String(value)
-            }
-
-            const isGPS = key.startsWith('GPS')
-            const row = document.createElement('div')
-            row.className = `flex items-center justify-between rounded-xl border px-4 py-3 text-sm ${isGPS ? 'border-red-500/30 bg-red-500/5' : 'border-[var(--border-color-subtle)]'}`
-            row.innerHTML = `
-              <span class="opacity-60">${label}</span>
-              <span class="font-medium text-right max-w-[60%] truncate ${isGPS ? 'text-red-500' : ''}">${displayValue}</span>
-            `
-            exifItems.appendChild(row)
-          })
-
-          if (hasGPS) {
-            const badge = document.createElement('div')
-            badge.className = 'flex items-center gap-2 rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm text-red-500'
-            badge.innerHTML = `
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-              <span>⚠️ GPS location data detected — will be removed when you save</span>
-            `
-            exifItems.appendChild(badge)
-          }
-
-          exifFound.classList.remove('hidden')
-          exifFound.classList.add('flex')
-          exifNone.classList.add('hidden')
-          exifNone.classList.remove('flex')
-        } else {
-          exifFound.classList.add('hidden')
-          exifFound.classList.remove('flex')
-          exifNone.classList.remove('hidden')
-          exifNone.classList.add('flex')
-        }
-
-        dropZone.style.display = 'none'
-        resultPanel.classList.remove('hidden')
-        resultPanel.classList.add('flex')
-
-      } catch (err) {
-        console.error('EXIF processing error:', err)
-        alert('Could not process this image. Please try another file.')
+      return {
+        blob: new Blob([cleanedBuffer], { type: file.type }),
+        hasExif,
+        exifData,
       }
     }
 
-    saveBtn.addEventListener('click', () => {
-      if (!cleanedBlob || !originalFile) return
-      const ext = originalFile.name.split('.').pop()?.toLowerCase() ?? 'jpg'
-      const name = originalFile.name.replace(/\.[^/.]+$/, '')
-      const url = URL.createObjectURL(cleanedBlob)
+    const processBatch = async () => {
+      const currentToken = ++jobToken
+      cleanedBlobs = []
+      batchGrid.innerHTML = ''
+      hide(resultPanel)
+      show(loading)
+
+      let exifCount = 0
+      const results: { blob: Blob; hasExif: boolean; exifData: Record<string, any> }[] = []
+
+      for (let i = 0; i < originalFiles.length; i += CONCURRENCY) {
+        if (currentToken !== jobToken) return
+        const chunk = originalFiles.slice(i, i + CONCURRENCY)
+        const chunkResults = await Promise.all(chunk.map(processFile))
+        if (currentToken !== jobToken) return
+        results.push(...chunkResults)
+        const processed = Math.min(i + CONCURRENCY, originalFiles.length)
+        loadingText.textContent = `Processing... (${processed}/${originalFiles.length})`
+      }
+
+      results.forEach((r, i) => {
+        cleanedBlobs.push(r.blob)
+        if (r.hasExif) exifCount++
+
+        const hasGPS = r.exifData.GPSLatitude || r.exifData.GPSLongitude
+        const card = document.createElement('div')
+        card.className = 'rounded-2xl border border-[var(--border-color-subtle)] px-5 py-4'
+        card.innerHTML = `
+          <div class="flex items-center justify-between gap-3">
+            <div class="flex items-center gap-3 min-w-0">
+              <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${r.hasExif ? 'bg-red-500/10' : 'bg-green-500/10'}">
+                <span class="text-lg">${r.hasExif ? '⚠️' : '✅'}</span>
+              </div>
+              <div class="min-w-0">
+                <p class="truncate text-sm font-medium">${originalFiles[i].name}</p>
+                <p class="text-xs opacity-50">${formatSize(originalFiles[i].size)} → ${formatSize(r.blob.size)}</p>
+              </div>
+            </div>
+            <span class="shrink-0 rounded-full px-3 py-1 text-xs font-medium ${r.hasExif ? 'bg-red-500/10 text-red-500' : 'bg-green-500/10 text-green-500'}">
+              ${r.hasExif ? `${Object.keys(r.exifData).length} fields` : 'Clean'}
+            </span>
+          </div>
+          ${hasGPS ? `
+          <div class="mt-3 flex items-center gap-2 rounded-xl border border-red-500/20 bg-red-500/5 px-3 py-2 text-xs text-red-500">
+            <span>📍 GPS location detected — will be removed</span>
+          </div>` : ''}
+          ${r.hasExif ? `
+          <div class="mt-3 flex flex-wrap gap-2">
+            ${Object.keys(r.exifData).slice(0, 5).map((k) => `
+              <span class="rounded-full border border-[var(--border-color-subtle)] px-2 py-0.5 text-xs opacity-60">${EXIF_LABELS[k] ?? k}</span>
+            `).join('')}
+            ${Object.keys(r.exifData).length > 5 ? `<span class="rounded-full border border-[var(--border-color-subtle)] px-2 py-0.5 text-xs opacity-40">+${Object.keys(r.exifData).length - 5} more</span>` : ''}
+          </div>` : ''}
+        `
+        batchGrid.appendChild(card)
+      })
+
+      statFiles.textContent = String(originalFiles.length)
+      statExif.textContent = String(exifCount)
+      statClean.textContent = String(originalFiles.length - exifCount)
+
+      hide(loading)
+      show(resultPanel)
+    }
+
+    const handleFiles = async (files: FileList) => {
+      originalFiles = Array.from(files)
+        .filter((f) => f.type.startsWith('image/'))
+        .slice(0, MAX_FILES)
+      if (!originalFiles.length) return
+      hide(dropZone)
+      await processBatch()
+    }
+
+    const downloadAll = async () => {
+      if (!cleanedBlobs.length) return
+      if (cleanedBlobs.length === 1) {
+        const url = URL.createObjectURL(cleanedBlobs[0])
+        const a = document.createElement('a')
+        a.href = url
+        a.download = `${originalFiles[0].name.replace(/\.[^/.]+$/, '')}-clean.${originalFiles[0].name.split('.').pop()}`
+        a.click()
+        URL.revokeObjectURL(url)
+        return
+      }
+      const zip = new JSZip()
+      cleanedBlobs.forEach((blob, i) => {
+        const ext = originalFiles[i].name.split('.').pop()
+        const name = originalFiles[i].name.replace(/\.[^/.]+$/, '')
+        zip.file(`${name}-clean.${ext}`, blob)
+      })
+      const blob = await zip.generateAsync({ type: 'blob' })
+      const url = URL.createObjectURL(blob)
       const a = document.createElement('a')
       a.href = url
-      a.download = `${name}-clean.${ext}`
+      a.download = 'hugdot-clean-images.zip'
       a.click()
       URL.revokeObjectURL(url)
-    })
+    }
 
-    resetBtn.addEventListener('click', () => {
-      cleanedBlob = null
-      originalFile = null
+    const reset = () => {
+      jobToken++
+      originalFiles = []
+      cleanedBlobs = []
       fileInput.value = ''
-      resultPanel.classList.add('hidden')
-      resultPanel.classList.remove('flex')
-      exifFound.classList.add('hidden')
-      exifFound.classList.remove('flex')
-      exifNone.classList.add('hidden')
-      exifNone.classList.remove('flex')
-      dropZone.style.display = 'flex'
-    })
+      batchGrid.innerHTML = ''
+      hide(resultPanel)
+      hide(loading)
+      show(dropZone)
+    }
 
     dropZone.addEventListener('click', () => fileInput.click())
-    fileInput.addEventListener('change', () => { if (fileInput.files?.[0]) processImage(fileInput.files[0]) })
-
-    dropZone.addEventListener('dragover', (e) => {
-      e.preventDefault()
-      dropZone.classList.add('border-[var(--action-color)]')
-    })
+    dropZone.addEventListener('dragover', (e) => { e.preventDefault(); dropZone.classList.add('border-[var(--action-color)]') })
     dropZone.addEventListener('dragleave', () => dropZone.classList.remove('border-[var(--action-color)]'))
     dropZone.addEventListener('drop', (e) => {
       e.preventDefault()
       dropZone.classList.remove('border-[var(--action-color)]')
-      if (e.dataTransfer?.files?.[0]) processImage(e.dataTransfer.files[0])
+      if (e.dataTransfer?.files) handleFiles(e.dataTransfer.files)
     })
-  })
+    fileInput.addEventListener('change', () => { if (fileInput.files) handleFiles(fileInput.files) })
+    saveBtn.addEventListener('click', downloadAll)
+    resetBtn.addEventListener('click', reset)
+
+    return reset
+  }
 </script>

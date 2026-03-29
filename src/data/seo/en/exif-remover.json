@@ -1,98 +1,93 @@
 {
   "toolId": "exif-remover",
   "lang": "en",
-  "metaTitle": "EXIF Remover — Remove GPS & Metadata from Photos (Free & Private)",
-  "metaDescription": "Protect your privacy by removing hidden EXIF metadata from your photos. Delete GPS location, camera settings, and timestamps instantly in your browser. No upload required.",
-  "introSummary": "Our professional-grade EXIF remover is designed for anyone needing to remove GPS from photos instantly for secure photo sharing. Whether you need to strip photo timestamps for a resume or delete camera metadata before posting on social media, this offline-first tool ensures your privacy without any cloud uploads.",
+  "metaTitle": "EXIF Remover — Strip GPS & Metadata (Free, Private, No Upload)",
+  "metaDescription": "Securely remove GPS location and hidden metadata from up to 20 photos at once. 100% private, local browser processing. Keep your original photo quality intact.",
+  "introSummary": "Protect your digital footprint with hugdot's Batch EXIF Remover. Our professional-grade tool allows you to strip GPS coordinates, camera settings, and timestamps from up to 20 images simultaneously. By processing everything locally in your browser, hugdot ensures your sensitive location data never touches a server. Whether you're clearing home addresses from marketplace photos or stripping device info for professional privacy, our 'Zero-Upload' technology keeps you safe.",
   "keywords": [
-    "exif remover",
-    "remove gps from photo",
-    "photo metadata cleaner",
-    "delete exif data",
-    "privacy photo tool",
-    "remove location from image",
-    "no upload exif cleaner",
-    "offline metadata remover",
-    "secure photo sharing",
-    "original quality preserved"
+    "batch exif remover",
+    "bulk remove gps from photos",
+    "remove location from multiple images",
+    "private metadata cleaner",
+    "delete exif data batch",
+    "hugdot exif tool",
+    "no upload metadata remover",
+    "secure batch photo cleaner",
+    "strip gps coordinates online",
+    "original quality image sanitizer"
   ],
   "contextUsage": [
     {
-      "title": "For Marketplaces",
-      "desc": "Selling on eBay, Craigslist, or Facebook? Remove your home address from product photos before posting."
+      "title": "For Marketplaces & Classifieds",
+      "desc": "Selling items online? Batch-process all your product photos to strip your home GPS coordinates before posting on Facebook or Craigslist."
     },
     {
-      "title": "For Professional Use",
-      "desc": "Strip camera serial numbers, lens settings, and edit history from headshots or portfolio images."
+      "title": "For Social Media Privacy",
+      "desc": "Safely share entire vacation albums. Remove precise tracking data from up to 20 photos in one go before uploading to public forums."
     },
     {
-      "title": "For Social Media Safety",
-      "desc": "Safely share vacation or family photos on Reddit and public forums by stripping precise GPS coordinates."
+      "title": "For Professional Portfolios",
+      "desc": "Clean your professional shots by removing camera serial numbers, lens metadata, and edit history while preserving 100% image quality."
     }
   ],
   "howto": [
     {
-      "step": "Select your image",
-      "description": "Click the upload area or drag and drop your photo (JPG, JPEG, PNG, WebP). Your file is processed locally and never leaves your device."
+      "step": "Select Up to 20 Photos",
+      "description": "Drag and drop your JPG, PNG, or WebP files. Since processing is 100% local, even high-res batches load and scan instantly."
     },
     {
-      "step": "View embedded metadata",
-      "description": "Our tool automatically scans and displays hidden EXIF data, such as GPS coordinates, camera model, and the exact date/time of capture."
+      "step": "Audit Privacy Alerts",
+      "description": "hugdot automatically scans each file and highlights sensitive data like GPS locations or timestamps that need to be removed."
     },
     {
-      "step": "Strip metadata",
-      "description": "With one click, the tool strips away all identified metadata headers while keeping the original image pixels 100% untouched."
+      "step": "Batch Strip Metadata",
+      "description": "Click 'Save All Clean Images'. Our engine strips hidden headers from all files in parallel without re-compressing or touching your pixels."
     },
     {
-      "step": "Download clean image",
-      "description": "Save the sanitized version. It's now safe to share online without revealing your physical location or technical device details."
+      "step": "Secure ZIP Download",
+      "description": "Download your sanitized images individually or as a single, organized ZIP archive. Your original location data is now gone forever."
     }
   ],
   "why": [
-    "100% Private — Unlike other tools, your sensitive photos never leave your browser or touch our servers.",
-    "Zero Quality Loss — We only strip the hidden text header. Your image resolution and colors remain 100% original.",
-    "Remove Precise GPS Location — Instantly hide your home address, hotel, or office coordinates from any shared image.",
-    "No Cloud Re-encoding — Most online cleaners re-compress your photo; we don't. Your file stays crisp and clear.",
-    "Works Completely Offline — Essential for privacy-conscious users who need a secure metadata cleaner on the go.",
-    "No Registration & No Limits — A 100% free utility designed for speed, privacy, and unlimited daily use."
+    "Parallel Batch Processing — Clean up to 20 images at once with our high-speed, concurrency-managed local engine.",
+    "100% Mathematical Privacy — Your photos never leave your device. No cloud, no servers, no risk of data leaks.",
+    "Zero Re-compression — We only target the hidden text headers. Your image resolution, colors, and quality remain 100% original.",
+    "GPS & Privacy Audit — See exactly what information is hidden in your photos before you decide to wipe it clean.",
+    "No Data Consumption — Perfect for mobile users; once loaded, hugdot works offline without using your data plan to upload files.",
+    "ZIP Bundle Output — Save time by downloading all your cleaned photos in a single, organized ZIP file."
   ],
   "faq": [
     {
-      "q": "What exactly is EXIF data and why is it risky?",
-      "a": "EXIF (Exchangeable Image File Format) is metadata hidden in your photos. It includes technical settings, but more importantly, it often contains your exact GPS coordinates. Sharing this online can reveal your home address to strangers."
+      "q": "Why is 'Batch' mode better on hugdot?",
+      "a": "Most tools make you upload one by one. hugdot uses your browser's power to clean 20 photos simultaneously, saving you time while keeping everything private."
     },
     {
-      "q": "Will stripping metadata reduce my photo's resolution?",
-      "a": "No. Metadata is stored in a separate 'header' section of the file. Our tool specifically targets this header without touching the image data, ensuring your photo quality is never compromised."
+      "q": "Does this tool work on smartphone photos?",
+      "a": "Yes! Smartphones are the primary source of GPS-tagged photos. hugdot is fully optimized for mobile and desktop browsers."
     },
     {
-      "q": "Does this tool work on iPhone, Android, and DSLR photos?",
-      "a": "Yes! Smartphones and modern cameras are the biggest sources of tagged photos. This tool is fully compatible with mobile browsers and all major digital camera formats."
+      "q": "What happens to the original pixels?",
+      "a": "Nothing. Unlike 'online optimizers' that re-encode your image, hugdot only slices out the metadata segments. Your pixels stay exactly as they were."
     },
     {
-      "q": "Can I audit my privacy before deleting?",
-      "a": "Absolutely. Our tool provides a full preview of the detected metadata so you can audit exactly what information (like camera model or location) is currently embedded."
-    },
-    {
-      "q": "How does this compare to other online EXIF cleaners?",
-      "a": "Most online tools require an upload, which puts your privacy at risk. Hugdot processes everything 'on-device' (client-side), making it the most secure way to clean your photos."
+      "q": "Is it really safe to use for sensitive IDs?",
+      "a": "Absolutely. Because hugdot uses 'Client-Side' processing, the data never travels over the internet. It is physically impossible for us to see your photos."
     }
   ],
   "technicalSpecs": [
-    { "quality": "Metadata Formats", "size": "EXIF, IPTC, XMP", "useCase": "Comprehensive stripping of all hidden image metadata layers" },
-    { "quality": "GPS Sanitization", "size": "Full Coordinate Removal", "useCase": "Prevents exact location tracking from shared vacation or home photos" },
-    { "quality": "Privacy Standard", "size": "Local Buffer Processing", "useCase": "Your data never leaves your device—privacy by design" },
-    { "quality": "Image Integrity", "size": "No Re-compression", "useCase": "Maintains 1:1 original visual quality with zero artifacts" },
-    { "quality": "Compatibility", "size": "JPG, PNG, WebP", "useCase": "Supports all common smartphone and professional camera file types" }
+    { "quality": "Batch Capacity", "size": "Up to 20 Images", "useCase": "Fast workflow for social media albums and marketplace listings" },
+    { "quality": "Processing Logic", "size": "Local Binary Slicing", "useCase": "Removes headers without re-encoding, preserving 1:1 original quality" },
+    { "quality": "Privacy Level", "size": "Zero-Upload Offline Ready", "useCase": "Military-grade privacy for sensitive documents and locations" },
+    { "quality": "Supported Headers", "size": "EXIF, GPS, IPTC, XMP", "useCase": "Complete sanitization of all hidden tracking and technical data" }
   ],
   "troubleshooting": [
-    "No metadata found? Photos from social media (WhatsApp, Instagram) often have metadata auto-removed. We'll alert you if no headers are detected.",
-    "File size unchanged? Metadata headers are tiny (a few KB). Since we don't re-compress your image, a clean file will be nearly identical in size.",
-    "Large file handling? Stripping headers from 30MB+ high-res images may take a second in your browser memory."
+    "Already clean? Many social apps (like WhatsApp) strip metadata automatically. If hugdot says 'Clean', your photo is already safe to share.",
+    "Processing multiple files? If you're on a mobile device, keep the tab active to ensure your browser gives full CPU power to the batch engine.",
+    "ZIP file issues? Ensure you have enough storage space on your device, as hugdot packages the clean images in your local memory."
   ],
   "proTips": [
-    "Run every 'Marketplace' photo through this tool to ensure buyers don't see your exact address in the image metadata.",
-    "Use the 'Preview' feature as a privacy audit—see which lens or camera settings were used on photos from years ago.",
-    "Combine with our 'Image Blur' tool if you need to hide both digital tracking data (EXIF) and visual info like license plates."
+    "Always batch-clean your photos before posting on Reddit or public forums to prevent 'OSINT' tracking of your location.",
+    "Use the ZIP download feature to keep your 'Clean' versions organized and separate from your original high-res library.",
+    "If you need to hide a house number or face *visually*, use this tool first, then head over to our 'Image Blur' tool for total protection."
   ]
 }

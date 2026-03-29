@@ -1,98 +1,98 @@
 {
   "toolId": "image-resizer",
   "lang": "en",
-  "metaTitle": "Image Resizer — Resize Photos for Instagram, YouTube & SNS (Free)",
-  "metaDescription": "Resize images instantly in your browser with SNS presets or custom dimensions. 100% private — your photos never leave your device. High-quality scaling for JPG, PNG, WebP.",
-  "introSummary": "Our professional Image Resizer is the ultimate tool for social media managers, designers, and content creators. Whether you need to resize a photo for an Instagram story (1080x1920), a YouTube thumbnail (1280x720), or a custom web banner, our tool delivers crisp results using the advanced Pica scaling engine. Experience 100% private, on-device processing that ensures your sensitive images are never uploaded to a server.",
+  "metaTitle": "Image Resizer — Resize Photos for Instagram & YouTube (Free)",
+  "metaDescription": "Resize up to 20 images at once instantly in your browser. Use SNS presets or custom dimensions. 100% private — no upload required. High-quality Pica scaling for JPG, PNG, WebP.",
+  "introSummary": "Our professional Batch Image Resizer is the ultimate productivity tool for social media managers and designers. Process up to 20 images simultaneously with one click. Whether you need to adapt photos for Instagram (1080x1350), YouTube thumbnails (1280x720), or custom web assets, our tool ensures crisp results using the industry-leading Pica scaling engine. Experience 100% private, on-device processing where your files never leave your computer.",
   "keywords": [
-    "image resizer",
+    "batch image resizer",
+    "bulk resize images online",
     "resize image for instagram",
     "youtube thumbnail resizer",
     "twitter photo resize",
-    "custom image dimensions",
     "no upload image resizer",
     "offline photo resizer",
     "pica image scaling",
     "change photo px size",
-    "free online image editor"
+    "free batch image editor"
   ],
   "contextUsage": [
     {
-      "title": "For Social Media Mastery",
-      "desc": "Instantly adapt your content for any platform. Use one-click presets for Instagram Posts, TikTok Videos, Twitter Headers, and Facebook Covers."
+      "title": "Bulk Social Media Prep",
+      "desc": "Prepare an entire week's worth of content in seconds. Batch resize up to 20 photos to perfectly fit Instagram, TikTok, or X (Twitter) using our smart presets."
     },
     {
-      "title": "For Web & SEO Optimization",
-      "desc": "Improve your site's loading speed by resizing oversized high-res photos to the exact dimensions needed for your blog or UI components."
+      "title": "Web Performance at Scale",
+      "desc": "Optimize your website's SEO by batch-resizing large galleries to specific UI dimensions, reducing page weight without uploading sensitive assets to a server."
     },
     {
-      "title": "For Professional Documents",
-      "desc": "Resize ID photos, resume headshots, or product images to meet specific pixel requirements for official government or corporate portals."
+      "title": "Professional Asset Handling",
+      "desc": "Quickly standardize product photos or headshots for corporate portals. Our 'Contain' mode ensures every image fits the target size while preserving its original aspect ratio."
     }
   ],
   "howto": [
     {
-      "step": "Upload Your Image",
-      "description": "Drag and drop your JPG, PNG, or WebP file. Because we use local browser workers, even 4K images load without consuming your mobile data."
+      "step": "Upload Multiple Images",
+      "description": "Drag and drop up to 20 JPG, PNG, or WebP files. Our tool uses local browser threads, so even 8K images are handled without using your network bandwidth."
     },
     {
-      "step": "Choose Your Dimensions",
-      "description": "Select from our curated list of SNS presets or enter custom Width and Height values in pixels (px). Use the 'Lock Aspect Ratio' to prevent stretching."
+      "step": "Set Your Target Dimensions",
+      "description": "Choose a preset like 'Insta' or enter custom Width/Height. In Batch Mode, images are automatically scaled to fit (Contain) within these dimensions to prevent cropping."
     },
     {
-      "step": "Verify Scaling Quality",
-      "description": "Check the real-time preview. Our engine applies high-quality interpolation to ensure your scaled-down images remain sharp and professional."
+      "step": "High-Quality Batch Processing",
+      "description": "Click 'Resize'. Our engine applies the Lanczos3 filter via Pica, processing multiple images in parallel to ensure maximum speed and professional sharpness."
     },
     {
-      "step": "Instant Secure Save",
-      "description": "Click 'Resize & Download'. The newly sized image is generated instantly in your browser's memory and saved directly to your local device."
+      "step": "Secure ZIP Download",
+      "description": "Preview your results instantly. For single images, save directly; for batches, grab everything in a single, organized ZIP file generated right in your browser memory."
     }
   ],
   "why": [
-    "High-Performance Scaling — Powered by the Pica library, providing superior image interpolation compared to standard browser resizing.",
-    "Comprehensive SNS Presets — Built-in templates for Instagram, YouTube, TikTok, LinkedIn, and Twitter to ensure perfect platform fit.",
-    "Privacy-First Architecture — Your private photos and work assets stay on your machine. No server uploads, no data harvesting, 100% secure.",
-    "Aspect Ratio Protection — One-click locking ensures your subjects never look distorted or unnaturally squeezed during the resize process.",
-    "Transparent PNG Support — Fully preserves the alpha channel (transparency) for logos, icons, and UI elements during scaling.",
-    "Zero Wait Time — Works entirely offline after the initial load. No waiting for server responses or slow upload progress bars."
+    "Parallel Batch Processing — Resize up to 20 images at once using multi-threaded browser workers for lightning-fast performance.",
+    "Smart 'Contain' Scaling — Automatically fits images of different orientations into your target size without distorting or stretching the subject.",
+    "Privacy-First (No Upload) — Your work stays private. Processing happens 100% on your device, making it safe for sensitive or proprietary company assets.",
+    "Pica Scaling Engine — Uses advanced interpolation algorithms (Lanczos3) that outperform standard browser resizing for superior clarity.",
+    "One-Click SNS Presets — Instantly apply standard sizes for Instagram, YouTube, TikTok, LinkedIn, Facebook, and X (Twitter).",
+    "ZIP Export — Save time by downloading all processed images in a single ZIP file, maintaining original filenames with new dimension suffixes."
   ],
   "faq": [
     {
-      "q": "What is the best size for an Instagram portrait post?",
-      "a": "The recommended size is 1080x1350 pixels. This aspect ratio (4:5) occupies more screen space than a square, leading to higher engagement rates."
+      "q": "Can I resize multiple images with different aspect ratios at once?",
+      "a": "Yes! In Batch Mode, our tool uses 'Contain' logic. This means each image will scale down to fit within your chosen dimensions while keeping its original shape, so nothing gets stretched."
     },
     {
-      "q": "Does resizing an image reduce its file size?",
-      "a": "Yes. Reducing the pixel dimensions (e.g., from 4000px to 1080px) significantly decreases the amount of data in the file, making it perfect for web use."
+      "q": "Is there a limit to how many images I can process?",
+      "a": "You can process up to 20 images per batch. This ensures your browser remains stable and responsive while delivering high-speed results."
     },
     {
-      "q": "Is my data safe when resizing sensitive ID photos?",
-      "a": "Absolutely. This is a 'Serverless' tool. Your photo is processed inside your browser's sandbox and is never sent to the internet or stored anywhere else."
+      "q": "Why is 'No-Upload' important for image resizing?",
+      "a": "Most online tools send your photos to a server, which can be a security risk. Our tool works entirely in your browser (serverless), ensuring your data never leaves your device."
     },
     {
-      "q": "Can I enlarge a small image without it getting blurry?",
-      "a": "While our Pica engine uses advanced logic to minimize blur, enlarging a small image (upscaling) will always have limitations. For best results, always scale down from a high-res source."
+      "q": "Will my resized PNG images still have a transparent background?",
+      "a": "Absolutely. Our engine fully supports alpha channel transparency for PNG and WebP files, making it perfect for logos and UI icons."
     },
     {
-      "q": "Will this tool work on my smartphone?",
-      "a": "Yes. Our Image Resizer is fully responsive and works perfectly on iOS (Safari) and Android (Chrome) browsers for quick on-the-go edits."
+      "q": "What happens if an image fails to resize?",
+      "a": "If a file is corrupted or too large for your browser's memory, the batch list will show a 'Failed' status for that specific item while continuing to process the rest."
     }
   ],
   "technicalSpecs": [
-    { "quality": "Scaling Engine", "size": "Pica / Lanczos3 Filter", "useCase": "Professional-grade sharpness for downscaled web images" },
-    { "quality": "Preset Library", "size": "15+ Social Platforms", "useCase": "Instant sizing for IG, YT, FB, TK, TW, LI" },
-    { "quality": "Privacy Protocol", "size": "Local Web Worker", "useCase": "Decouples image processing from the main UI thread for safety" },
-    { "quality": "Format Preservation", "size": "Full Metadata Sync", "useCase": "Retains original file type (JPG/PNG/WebP) after resizing" },
-    { "quality": "Input Limits", "size": "Browser Memory Dependent", "useCase": "Handles ultra-high resolution (8K+) photos on modern devices" }
+    { "quality": "Scaling Algorithm", "size": "Pica / Lanczos3", "useCase": "Best-in-class sharpness for professional downscaling" },
+    { "quality": "Batch Capacity", "size": "Up to 20 Files", "useCase": "Concurrent multi-file processing via Web Workers" },
+    { "quality": "Privacy Level", "size": "100% Client-Side", "useCase": "Zero data transfer; works offline after initial load" },
+    { "quality": "Output Format", "size": "ZIP / Individual", "useCase": "Flexible saving options for bulk or single edits" },
+    { "quality": "Max Resolution", "size": "Up to 8K+", "useCase": "Handles professional DSLR and mobile high-res photos" }
   ],
   "troubleshooting": [
-    "Image looks stretched? Ensure the 'Lock Aspect Ratio' toggle is active. If you need a specific size that doesn't match the original ratio, use our 'Image Crop' tool first.",
-    "Resize taking too long? Very large images (over 30MB) require more CPU power. Close other background tabs to speed up the local processing.",
-    "Download didn't start? Check if your browser blocked the automatic download popup. You may need to click 'Allow' to save the file."
+    "Images appearing with black bars? This is part of 'Contain' mode to prevent stretching. If you need a perfect fill, try resizing one by one or using a crop tool first.",
+    "Browser feeling sluggish? Processing 20 large images uses significant RAM. Close other tabs or process in smaller batches if you are on a device with limited memory.",
+    "ZIP file not downloading? Ensure your browser allows multiple file downloads or check for a 'Pop-up blocked' notification in your address bar."
   ],
   "proTips": [
-    "When creating a YouTube thumbnail, always use 1280x720 pixels to ensure it looks crisp on all devices from mobile to TV.",
-    "For web designers: Resize your images to the exact container size (e.g., 800px wide) before uploading to WordPress to significantly boost your PageSpeed score.",
-    "Need to hit a specific KB limit? Resize your image here first, then run it through our 'Image Compressor' for the ultimate optimization combo."
+    "For the best Instagram results, use the 1080x1350 (Portrait) preset. It covers more screen area than standard squares and gets more engagement.",
+    "Social Media Managers: Use the Batch feature to resize your entire campaign gallery to 1200x675 for X (Twitter) in one go to maintain a consistent feed look.",
+    "Combine with Compression: For ultimate SEO, resize your images here first, then use our 'Image Compressor' to shrink the file size before uploading to your site."
   ]
 }

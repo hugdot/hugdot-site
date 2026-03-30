@@ -43,6 +43,8 @@ import { Icon } from 'astro-icon/components'
             required 
           />
 
+          <div id="status-message" class="hidden my-4 p-4 rounded text-sm font-bold"></div>
+
           <Button htmlType="submit" type="primary">Send Message</Button>
         </Form>
       </div>
@@ -88,3 +90,43 @@ import { Icon } from 'astro-icon/components'
     </div>
   </section>
 </DefaultLayout>
+
+<script>
+  // accessible-astro-components의 Form 태그를 찾아 AJAX로 가로챕니다.
+  const contactForm = document.querySelector('form[name="contact"]');
+  const statusDiv = document.getElementById('status-message');
+  const submitBtn = contactForm?.querySelector('button[type="submit"]');
+
+  contactForm?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    if (!statusDiv || !submitBtn) return;
+
+    // 초기화
+    submitBtn.textContent = 'Sending...';
+    submitBtn.setAttribute('disabled', 'true');
+    statusDiv.classList.add('hidden');
+
+    const formData = new FormData(e.target as HTMLFormElement);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        body: formData,
+      });
+
+      if (response.ok) {
+        statusDiv.textContent = '✅ Message sent successfully!';
+        statusDiv.className = 'block my-4 p-4 rounded text-sm font-bold bg-green-100 text-green-800';
+        (e.target as HTMLFormElement).reset();
+      } else {
+        throw new Error();
+      }
+    } catch (err) {
+      statusDiv.textContent = '❌ Failed to send. Please try again.';
+      statusDiv.className = 'block my-4 p-4 rounded text-sm font-bold bg-red-100 text-red-800';
+    } finally {
+      submitBtn.textContent = 'Send Message';
+      submitBtn.removeAttribute('disabled');
+    }
+  });
+</script>

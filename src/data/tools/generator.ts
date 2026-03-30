@@ -32,5 +32,6 @@ export const generatorTools: Tool[] = [
     icon: 'lucide:circle-dollar-sign',
     available: true,
     label: 'Coin Flipper & Dice Roller',
+    excludeFromLauncher: true,
   },
 ]

@@ -17,7 +17,8 @@ const categories = Object.entries(categoryConfigs)
   .map(([key, config]) => ({
     ...config,
     tools: tools
-      .filter((t) => t.category === key && t.available)
+      .filter((t) => t.category === key && t.available
+        && !t.excludeFromLauncher)
       .map((t) => ({
         label: t.label,
         href: getToolHref(t.category, t.slug),

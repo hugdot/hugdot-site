@@ -8,6 +8,7 @@ export const calculatorTools: Tool[] = [
     icon: 'lucide:receipt',
     available: true,
     label: 'Tip Calculator',
+    excludeFromLauncher: true,
   },
   {
     id: 'age-calculator',
@@ -16,6 +17,7 @@ export const calculatorTools: Tool[] = [
     icon: 'lucide:cake',
     available: true,
     label: 'Age Calculator',
+    excludeFromLauncher: true,
   },
   {
     id: 'unit-converter',
@@ -24,5 +26,6 @@ export const calculatorTools: Tool[] = [
     icon: 'lucide:arrow-left-right',
     available: true,
     label: 'Unit Converter',
+    excludeFromLauncher: true,
   },
 ]

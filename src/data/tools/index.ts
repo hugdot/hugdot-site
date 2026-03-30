@@ -16,6 +16,7 @@ export interface Tool {
   icon: string;
   available: boolean;
   label: string;
+  excludeFromLauncher?: boolean;
 }
 
 // 모든 도구를 하나의 배열로 합체
@@ -31,8 +32,8 @@ export const tools: Tool[] = [
 // 헬퍼 함수들 (기존 로직 유지)
 export const getToolById = (id: string) => tools.find((t) => t.id === id);
 export const getToolsByCategory = (category: ToolCategory) =>
-  tools.filter((t) => t.category === category && t.available);
-export const availableTools = tools.filter((t) => t.available);
+  tools.filter((t) => t.category === category && t.available && !t.excludeFromLauncher);
+export const availableTools = tools.filter((t) => t.available && !t.excludeFromLauncher);
 export const getToolHref = (category: ToolCategory, slug: string): string => {
   return `/tools/${category}/${slug}`;
 };

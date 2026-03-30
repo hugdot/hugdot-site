@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# 지도의 위치를 알려줍니다 (본인의 도메인에 맞게)
+Sitemap: https://hugdot.com/sitemap-index.xml

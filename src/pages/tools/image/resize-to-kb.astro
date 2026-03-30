@@ -1,0 +1,619 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Heading } from 'accessible-astro-components'
+import { Icon } from 'astro-icon/components'
+import { tools, getToolHref } from '@data/tools/index'
+import seoData from '@data/seo/en/resize-to-kb.json'
+
+const relatedTools = tools.filter((t) => t.category === 'image' && t.id !== 'image-resize-to-kb' && t.available)
+---
+
+<DefaultLayout
+  title={seoData.metaTitle}
+  description={seoData.metaDescription}
+  useTitleTemplate={false}
+  category="MultimediaApplication"
+  {...seoData}
+>
+  <section class="py-12">
+    <div class="container max-w-3xl">
+
+      <!-- Header -->
+      <div class="mb-8">
+        <div class="mb-2 flex items-center gap-2 text-sm opacity-50">
+          <a href="/" class="breadcrumb-link hover:underline">Home</a>
+          <span>/</span>
+          <a href="/tools/image" class="breadcrumb-link hover:underline">Image Tools</a>
+          <span>/</span>
+          <span>Resize to Target KB</span>
+        </div>
+        <Heading level="h1" size="h2">Resize to Target KB</Heading>
+        <p class="mt-2 opacity-60">
+          Compress images to an exact file size. Binary search finds the best quality without exceeding your target.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <span class="flex items-center gap-1.5 rounded-full border border-[var(--border-color-subtle)] px-3 py-1.5 text-xs font-medium">
+            <Icon aria-hidden="true" name="lucide:shield-check" size="0.875rem" class="text-[var(--action-color)]" />
+            No Upload
+          </span>
+          <span class="flex items-center gap-1.5 rounded-full border border-[var(--border-color-subtle)] px-3 py-1.5 text-xs font-medium">
+            <Icon aria-hidden="true" name="lucide:user-x" size="0.875rem" class="text-[var(--action-color)]" />
+            No Login
+          </span>
+          <span class="flex items-center gap-1.5 rounded-full border border-[var(--border-color-subtle)] px-3 py-1.5 text-xs font-medium">
+            <Icon aria-hidden="true" name="lucide:cpu" size="0.875rem" class="text-[var(--action-color)]" />
+            Smart Algorithm
+          </span>
+        </div>
+      </div>
+
+      <!-- Tool -->
+      <div class="flex flex-col gap-6">
+
+        <!-- Drop Zone -->
+        <div
+          id="drop-zone"
+          class="flex cursor-pointer flex-col items-center justify-center gap-4 rounded-2xl border-2 border-dashed border-[var(--border-color-subtle)] p-12 text-center transition-all hover:border-[var(--action-color)]"
+        >
+          <Icon aria-hidden="true" name="lucide:image-plus" size="3rem" class="opacity-30" />
+          <div>
+            <p class="font-semibold">Open an image</p>
+            <p class="text-sm opacity-50">or drag & drop here</p>
+          </div>
+          <p class="text-xs opacity-40">JPG, PNG, WebP — up to 30MB</p>
+          <input id="file-input" type="file" accept="image/*" class="hidden" />
+        </div>
+
+        <!-- Settings Panel -->
+        <div id="settings-panel" class="hidden flex-col gap-6 rounded-2xl border border-[var(--border-color-subtle)] p-6">
+
+          <!-- Original Info -->
+          <div class="flex items-center gap-3 rounded-xl border border-[var(--border-color-subtle)] px-4 py-3 text-sm">
+            <Icon aria-hidden="true" name="lucide:info" size="1rem" class="shrink-0 opacity-40" />
+            <span id="original-info" class="opacity-60"></span>
+          </div>
+
+          <!-- Target KB Input -->
+          <div class="flex flex-col gap-3">
+            <label class="text-sm font-medium" for="target-kb">Target File Size</label>
+            <div class="flex items-center gap-3">
+              <input
+                id="target-kb"
+                type="number"
+                inputmode="numeric"
+                min="10"
+                max="10000"
+                placeholder="200"
+                class="flex-1 rounded-xl border border-[var(--border-color-subtle)] bg-transparent px-4 py-3 text-2xl font-bold outline-none focus:border-[var(--action-color)]"
+              />
+              <span class="text-lg font-semibold opacity-60">KB</span>
+            </div>
+            <!-- Quick Presets -->
+            <div class="flex flex-wrap gap-2">
+              {[50, 100, 200, 500, 1000].map((kb) => (
+                <button
+                  data-kb={kb}
+                  class="preset-kb-btn rounded-full border border-[var(--border-color-subtle)] px-3 py-1.5 text-xs font-medium transition-all hover:border-[var(--action-color)]"
+                >
+                  {kb >= 1000 ? `${kb/1000}MB` : `${kb}KB`}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <!-- Output Format -->
+          <div class="flex flex-col gap-3">
+            <p class="text-sm font-medium">Output Format</p>
+            <div class="grid grid-cols-3 gap-2">
+              {['JPG', 'PNG', 'WebP'].map((fmt) => (
+                <button
+                  data-format={fmt}
+                  class="format-btn rounded-xl border border-[var(--border-color-subtle)] py-3 text-sm font-semibold transition-all hover:border-[var(--action-color)]"
+                >
+                  {fmt}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          <!-- Compress Button -->
+          <button
+            id="compress-btn"
+            class="flex items-center justify-center gap-2 rounded-full bg-[var(--action-color)] px-8 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+          >
+            <Icon aria-hidden="true" name="lucide:zap" size="1rem" />
+            Compress to Target
+          </button>
+
+        </div>
+
+        <!-- Processing -->
+        <div id="processing" class="hidden flex-col items-center gap-4 rounded-2xl border border-[var(--border-color-subtle)] p-8">
+          <div class="h-8 w-8 animate-spin rounded-full border-4 border-[var(--border-color-subtle)] border-t-[var(--action-color)]"></div>
+          <div class="text-center">
+            <p id="processing-title" class="font-medium">Finding optimal quality...</p>
+            <p id="processing-detail" class="mt-1 text-sm opacity-50"></p>
+          </div>
+          <!-- Binary Search Visualizer -->
+          <div class="w-full rounded-full bg-[var(--border-color-subtle)]" style="height:4px;">
+            <div id="search-progress" class="h-full rounded-full bg-[var(--action-color)] transition-all duration-300" style="width:0%"></div>
+          </div>
+          <p id="search-status" class="text-xs opacity-40"></p>
+        </div>
+
+        <!-- Result Panel -->
+        <div id="result-panel" class="hidden flex-col gap-6">
+
+          <!-- Result Stats -->
+          <div class="grid grid-cols-2 gap-3 sm:grid-cols-4">
+            <div class="flex flex-col items-center rounded-2xl border border-[var(--border-color-subtle)] px-4 py-4">
+              <span class="mb-1 text-xs opacity-50">Final Size</span>
+              <span id="result-size" class="text-lg font-bold text-[var(--action-color)]"></span>
+            </div>
+            <div class="flex flex-col items-center rounded-2xl border border-[var(--border-color-subtle)] px-4 py-4">
+              <span class="mb-1 text-xs opacity-50">Quality</span>
+              <span id="result-quality" class="text-lg font-bold"></span>
+            </div>
+            <div class="flex flex-col items-center rounded-2xl border border-[var(--border-color-subtle)] px-4 py-4">
+              <span class="mb-1 text-xs opacity-50">Resolution</span>
+              <span id="result-resolution" class="text-lg font-bold"></span>
+            </div>
+            <div class="flex flex-col items-center rounded-2xl border border-[var(--border-color-subtle)] px-4 py-4">
+              <span class="mb-1 text-xs opacity-50">Saved</span>
+              <span id="result-saved" class="text-lg font-bold text-green-500"></span>
+            </div>
+          </div>
+
+          <!-- Feedback Message -->
+          <div id="result-feedback" class="flex items-center gap-3 rounded-2xl border border-[var(--border-color-subtle)] px-5 py-4 text-sm">
+            <Icon aria-hidden="true" name="lucide:check-circle" size="1.25rem" class="shrink-0 text-[var(--action-color)]" />
+            <span id="result-feedback-text"></span>
+          </div>
+
+          <!-- Preview -->
+          <div class="grid grid-cols-2 gap-4">
+            <div class="flex flex-col gap-2">
+              <p class="text-xs font-medium opacity-60">Original</p>
+              <img id="preview-original" src="" alt="Original" class="w-full rounded-2xl border border-[var(--border-color-subtle)] object-cover aspect-square" />
+            </div>
+            <div class="flex flex-col gap-2">
+              <p class="text-xs font-medium opacity-60">Compressed</p>
+              <img id="preview-result" src="" alt="Compressed" class="w-full rounded-2xl border border-[var(--border-color-subtle)] object-cover aspect-square" />
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div class="flex gap-3">
+            <button
+              id="save-btn"
+              class="flex flex-1 items-center justify-center gap-2 rounded-full bg-[var(--action-color)] px-8 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+            >
+              <Icon aria-hidden="true" name="lucide:save" size="1rem" />
+              Save Image
+            </button>
+            <button
+              id="reset-btn"
+              class="flex items-center justify-center gap-2 rounded-full border border-[var(--border-color-subtle)] px-6 py-3 text-sm font-medium transition-all hover:border-[var(--action-color)]"
+            >
+              <Icon aria-hidden="true" name="lucide:refresh-cw" size="1rem" />
+              Reset
+            </button>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Privacy Badge -->
+      <div class="mt-8 flex items-center gap-2 rounded-2xl border border-[var(--border-color-subtle)] px-5 py-4 text-sm opacity-60">
+        <Icon aria-hidden="true" name="lucide:shield-check" size="1rem" />
+        <span>Your images never leave your device. No data is sent to any server.</span>
+      </div>
+
+      <!-- Related Tools -->
+      {relatedTools.length > 0 && (
+        <div class="mt-12">
+          <Heading level="h2" size="h4" class="mb-6">Related Tools</Heading>
+          <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
+            {relatedTools.map((tool) => (
+              
+              <a  href={getToolHref(tool.category, tool.slug)}
+                class="rounded-xl border border-[var(--border-color-subtle)] px-4 py-3 text-sm font-medium text-[var(--foreground-color)] no-underline transition-all hover:border-[var(--action-color)]"
+              >
+                {tool.label} →
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
+
+    </div>
+  </section>
+</DefaultLayout>
+
+<style>
+  .format-btn.active {
+    background-color: var(--action-color);
+    color: white;
+    border-color: var(--action-color);
+  }
+  .preset-kb-btn.active {
+    background-color: var(--action-color);
+    color: white;
+    border-color: var(--action-color);
+  }
+</style>
+
+<script>
+  let cleanupFn: (() => void) | null = null
+
+  document.addEventListener('astro:page-load', () => {
+    cleanupFn?.()
+    cleanupFn = initResizeToKb()
+  })
+
+  function initResizeToKb(): () => void {
+    let originalFile: File | null = null
+    let originalImg: HTMLImageElement | null = null
+    let resultBlob: Blob | null = null
+    let resultPreviewUrl: string | null = null
+    let selectedFormat = 'JPG'
+
+    const dropZone = document.getElementById('drop-zone') as HTMLElement
+    const fileInput = document.getElementById('file-input') as HTMLInputElement
+    const settingsPanel = document.getElementById('settings-panel') as HTMLElement
+    const originalInfo = document.getElementById('original-info') as HTMLElement
+    const targetKbInput = document.getElementById('target-kb') as HTMLInputElement
+    const processing = document.getElementById('processing') as HTMLElement
+    const processingTitle = document.getElementById('processing-title') as HTMLElement
+    const processingDetail = document.getElementById('processing-detail') as HTMLElement
+    const searchProgress = document.getElementById('search-progress') as HTMLElement
+    const searchStatus = document.getElementById('search-status') as HTMLElement
+    const resultPanel = document.getElementById('result-panel') as HTMLElement
+    const resultSize = document.getElementById('result-size') as HTMLElement
+    const resultQuality = document.getElementById('result-quality') as HTMLElement
+    const resultResolution = document.getElementById('result-resolution') as HTMLElement
+    const resultSaved = document.getElementById('result-saved') as HTMLElement
+    const resultFeedbackText = document.getElementById('result-feedback-text') as HTMLElement
+    const previewOriginal = document.getElementById('preview-original') as HTMLImageElement
+    const previewResult = document.getElementById('preview-result') as HTMLImageElement
+    const saveBtn = document.getElementById('save-btn') as HTMLButtonElement
+    const resetBtn = document.getElementById('reset-btn') as HTMLButtonElement
+    const compressBtn = document.getElementById('compress-btn') as HTMLButtonElement
+    const formatBtns = document.querySelectorAll('.format-btn') as NodeListOf<HTMLButtonElement>
+    const presetBtns = document.querySelectorAll('.preset-kb-btn') as NodeListOf<HTMLButtonElement>
+
+    const show = (el: HTMLElement) => (el.style.display = 'flex')
+    const hide = (el: HTMLElement) => (el.style.display = 'none')
+
+    const formatSize = (bytes: number) =>
+      bytes < 1024 * 1024
+        ? `${(bytes / 1024).toFixed(1)} KB`
+        : `${(bytes / 1024 / 1024).toFixed(2)} MB`
+
+    const getMimeType = (fmt: string) =>
+      ({ JPG: 'image/jpeg', PNG: 'image/png', WebP: 'image/webp' }[fmt] ?? 'image/jpeg')
+
+    const getExt = (fmt: string) =>
+      ({ JPG: 'jpg', PNG: 'png', WebP: 'webp' }[fmt] ?? 'jpg')
+
+    const setFormat = (fmt: string) => {
+      selectedFormat = fmt
+      formatBtns.forEach((btn) => btn.classList.toggle('active', btn.dataset.format === fmt))
+    }
+
+    // ─── Canvas → Blob (Promise) ───────────────────────────────────────────────
+    const canvasToBlob = (canvas: HTMLCanvasElement, mimeType: string, quality: number): Promise<Blob> => {
+      return new Promise((resolve, reject) => {
+        canvas.toBlob(
+          (blob) => blob ? resolve(blob) : reject(new Error('toBlob failed')),
+          mimeType,
+          mimeType === 'image/png' ? undefined : quality
+        )
+      })
+    }
+
+    // ─── 이미지를 Canvas에 그리기 (스케일 적용) ────────────────────────────────
+    const drawImageToCanvas = (
+      img: HTMLImageElement,
+      scale: number
+    ): HTMLCanvasElement => {
+      const canvas = document.createElement('canvas')
+      canvas.width = Math.round(img.naturalWidth * scale)
+      canvas.height = Math.round(img.naturalHeight * scale)
+      const ctx = canvas.getContext('2d')!
+
+      // JPG는 흰 배경으로 채우기 (투명도 제거)
+      if (selectedFormat === 'JPG') {
+        ctx.fillStyle = '#ffffff'
+        ctx.fillRect(0, 0, canvas.width, canvas.height)
+      }
+      ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
+      return canvas
+    }
+
+    // ─── 핵심: Binary Search로 최적 Quality 탐색 ─────────────────────────────
+    // x, y, width, height 대신 quality(0~1)와 scale을 인자로 받아 처리
+    const findOptimalQuality = async (
+      img: HTMLImageElement,
+      targetBytes: number,
+      scale: number,
+      mimeType: string,
+      onProgress: (iter: number, lo: number, hi: number, currentSize: number) => void
+    ): Promise<{ blob: Blob; quality: number } | null> => {
+      const MAX_ITERATIONS = 10
+      const TOLERANCE = 0.02 // 2% 오차 허용
+
+      let lo = 0.1
+      let hi = 1.0
+      let bestBlob: Blob | null = null
+      let bestQuality = 0
+
+      // PNG는 quality 무의미 — 단순 변환
+      if (mimeType === 'image/png') {
+        const canvas = drawImageToCanvas(img, scale)
+        const blob = await canvasToBlob(canvas, mimeType, 1)
+        // 메모리 해제
+        canvas.width = 1; canvas.height = 1
+        return blob.size <= targetBytes ? { blob, quality: 1 } : null
+      }
+
+      for (let i = 0; i < MAX_ITERATIONS; i++) {
+        const mid = (lo + hi) / 2
+        const canvas = drawImageToCanvas(img, scale)
+        const blob = await canvasToBlob(canvas, mimeType, mid)
+
+        // 메모리 절약: 사용 완료된 Canvas 즉시 해제
+        canvas.width = 1
+        canvas.height = 1
+
+        onProgress(i + 1, lo, hi, blob.size)
+
+        if (blob.size <= targetBytes) {
+          // 목표 이하 — quality 올려서 더 좋은 화질 탐색
+          bestBlob = blob
+          bestQuality = mid
+          lo = mid
+
+          // 목표에 충분히 근접했으면 종료
+          if ((targetBytes - blob.size) / targetBytes < TOLERANCE) break
+        } else {
+          // 목표 초과 — quality 낮추기
+          hi = mid
+        }
+
+        // lo와 hi가 너무 가까우면 종료
+        if (hi - lo < 0.01) break
+      }
+
+      return bestBlob ? { blob: bestBlob, quality: bestQuality } : null
+    }
+
+    // ─── 스마트 압축 메인 함수 ────────────────────────────────────────────────
+    // 반환값: { blob, quality, scale, finalSize }
+    const compressToTargetKb = async (
+      img: HTMLImageElement,
+      targetKb: number
+    ): Promise<{
+      blob: Blob
+      quality: number
+      scale: number
+      finalSize: number
+    }> => {
+      const targetBytes = targetKb * 1024
+      const mimeType = getMimeType(selectedFormat)
+
+      // 타임아웃 처리 (모바일 환경 보호 — 30초)
+      const timeoutPromise = new Promise<never>((_, reject) =>
+        setTimeout(() => reject(new Error('Compression timeout')), 30000)
+      )
+
+      const compressPromise = async () => {
+        let scale = 1.0
+        const MIN_SCALE = 0.1
+        const SCALE_STEP = 0.9 // 0.9배씩 줄이기
+        let iteration = 0
+
+        while (scale >= MIN_SCALE) {
+          iteration++
+
+          processingTitle.textContent = scale === 1.0
+            ? 'Finding optimal quality...'
+            : `Reducing resolution (${Math.round(scale * 100)}%)...`
+
+          const result = await findOptimalQuality(
+            img,
+            targetBytes,
+            scale,
+            mimeType,
+            (iter, lo, hi, currentSize) => {
+              // 이진탐색 진행 시각화
+              const progress = Math.min((iter / 10) * 100, 95)
+              searchProgress.style.width = `${progress}%`
+              searchStatus.textContent = `Iteration ${iter}/10 — trying quality ${((lo + hi) / 2 * 100).toFixed(0)}% — current: ${formatSize(currentSize)}`
+              processingDetail.textContent = `Target: ${formatSize(targetBytes)} / Current: ${formatSize(currentSize)}`
+            }
+          )
+
+          if (result) {
+            searchProgress.style.width = '100%'
+            return {
+              blob: result.blob,
+              quality: result.quality,
+              scale,
+              finalSize: result.blob.size,
+            }
+          }
+
+          // 현재 scale에서 불가능 — 해상도 줄이기
+          scale = parseFloat((scale * SCALE_STEP).toFixed(3))
+          processingTitle.textContent = `Quality optimization failed at ${Math.round(scale / SCALE_STEP * 100)}% — trying smaller resolution...`
+        }
+
+        // 최소 scale에서도 실패 — 최저 화질로 강제 압축
+        const canvas = drawImageToCanvas(img, MIN_SCALE)
+        const blob = await canvasToBlob(canvas, mimeType, 0.1)
+        canvas.width = 1; canvas.height = 1
+        return { blob, quality: 0.1, scale: MIN_SCALE, finalSize: blob.size }
+      }
+
+      return Promise.race([compressPromise(), timeoutPromise])
+    }
+
+    // ─── 압축 실행 ────────────────────────────────────────────────────────────
+    const runCompress = async () => {
+      if (!originalFile || !originalImg) return
+
+      const targetKb = parseInt(targetKbInput.value)
+      if (!targetKb || targetKb < 10) {
+        alert('Please enter a target size of at least 10 KB.')
+        return
+      }
+
+      // 원본이 이미 목표보다 작으면
+      if (originalFile.size <= targetKb * 1024) {
+        alert(`The original image (${formatSize(originalFile.size)}) is already smaller than your target (${targetKb} KB).`)
+        return
+      }
+
+      hide(settingsPanel)
+      hide(resultPanel)
+      show(processing)
+      searchProgress.style.width = '0%'
+
+      // 기존 preview URL 해제
+      if (resultPreviewUrl) {
+        URL.revokeObjectURL(resultPreviewUrl)
+        resultPreviewUrl = null
+      }
+
+      try {
+        const { blob, quality, scale, finalSize } = await compressToTargetKb(originalImg, targetKb)
+        resultBlob = blob
+
+        // Preview URL 생성
+        resultPreviewUrl = URL.createObjectURL(blob)
+        previewResult.src = resultPreviewUrl
+
+        // 원본 preview
+        const origUrl = URL.createObjectURL(originalFile)
+        previewOriginal.src = origUrl
+        // 원본 URL은 이미지 로드 후 해제
+        previewOriginal.onload = () => URL.revokeObjectURL(origUrl)
+
+        // 결과 표시
+        resultSize.textContent = formatSize(finalSize)
+        resultQuality.textContent = `${Math.round(quality * 100)}%`
+        resultResolution.textContent = `${Math.round(scale * 100)}%`
+
+        const savedBytes = originalFile.size - finalSize
+        const savedPercent = Math.round((savedBytes / originalFile.size) * 100)
+        resultSaved.textContent = `${savedPercent}%`
+
+        // 피드백 메시지
+        const overTarget = finalSize > targetKb * 1024
+        resultFeedbackText.textContent = overTarget
+          ? `Compressed to ${formatSize(finalSize)} — could not reach target without significant quality loss.`
+          : `Compressed to ${formatSize(finalSize)} (quality ${Math.round(quality * 100)}%, resolution ${Math.round(scale * 100)}%) — ${formatSize(savedBytes)} saved!`
+
+        hide(processing)
+        show(resultPanel)
+
+      } catch (err) {
+        console.error('Compression failed:', err)
+        hide(processing)
+        show(settingsPanel)
+        alert('Compression failed or timed out. Please try a larger target size.')
+      }
+    }
+
+    // ─── 파일 로드 ────────────────────────────────────────────────────────────
+    const handleFile = (file: File) => {
+      if (!file.type.startsWith('image/')) return
+      originalFile = file
+
+      const url = URL.createObjectURL(file)
+      const img = new Image()
+      img.onload = () => {
+        originalImg = img
+        originalInfo.textContent = `${img.naturalWidth} × ${img.naturalHeight}px — ${formatSize(file.size)}`
+
+        // 자동으로 원본의 50%를 기본 타겟으로 제안
+        const suggestedKb = Math.round(file.size / 1024 / 2)
+        targetKbInput.value = String(suggestedKb)
+
+        hide(dropZone)
+        hide(resultPanel)
+        show(settingsPanel)
+        URL.revokeObjectURL(url)
+      }
+      img.onerror = () => URL.revokeObjectURL(url)
+      img.src = url
+    }
+
+    // ─── 이벤트 바인딩 ────────────────────────────────────────────────────────
+    formatBtns.forEach((btn) => {
+      btn.addEventListener('click', () => { if (btn.dataset.format) setFormat(btn.dataset.format) })
+    })
+
+    presetBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const kb = btn.dataset.kb
+        if (kb) {
+          targetKbInput.value = kb
+          presetBtns.forEach((b) => b.classList.remove('active'))
+          btn.classList.add('active')
+        }
+      })
+    })
+
+    targetKbInput.addEventListener('input', () => {
+      presetBtns.forEach((b) => b.classList.remove('active'))
+    })
+
+    compressBtn.addEventListener('click', runCompress)
+
+    saveBtn.addEventListener('click', () => {
+      if (!resultBlob || !originalFile) return
+      const ext = getExt(selectedFormat)
+      const name = originalFile.name.replace(/\.[^/.]+$/, '')
+      const url = URL.createObjectURL(resultBlob)
+      const link = document.createElement('a')
+      link.href = url
+      link.download = `${name}-${targetKbInput.value}kb.${ext}`
+      link.click()
+      URL.revokeObjectURL(url)
+    })
+
+    resetBtn.addEventListener('click', () => {
+      if (resultPreviewUrl) { URL.revokeObjectURL(resultPreviewUrl); resultPreviewUrl = null }
+      originalFile = null
+      originalImg = null
+      resultBlob = null
+      fileInput.value = ''
+      previewOriginal.src = ''
+      previewResult.src = ''
+      hide(resultPanel)
+      hide(processing)
+      hide(settingsPanel)
+      show(dropZone)
+    })
+
+    dropZone.addEventListener('click', () => fileInput.click())
+    dropZone.addEventListener('dragover', (e) => { e.preventDefault(); dropZone.classList.add('border-[var(--action-color)]') })
+    dropZone.addEventListener('dragleave', () => dropZone.classList.remove('border-[var(--action-color)]'))
+    dropZone.addEventListener('drop', (e) => {
+      e.preventDefault()
+      dropZone.classList.remove('border-[var(--action-color)]')
+      if (e.dataTransfer?.files[0]) handleFile(e.dataTransfer.files[0])
+    })
+    fileInput.addEventListener('change', () => { if (fileInput.files?.[0]) handleFile(fileInput.files[0]) })
+
+    // init
+    setFormat('JPG')
+
+    return () => {
+      if (resultPreviewUrl) URL.revokeObjectURL(resultPreviewUrl)
+    }
+  }
+</script>

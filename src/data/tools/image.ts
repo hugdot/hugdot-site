@@ -59,4 +59,12 @@ export const imageTools: Tool[] = [
     available: true,
     label: 'HEIC Converter',
   },
+  {
+    id: 'image-resize-to-kb',
+    category: 'image',
+    slug: 'resize-to-kb',
+    icon: 'lucide:hard-drive-download',
+    available: true,
+    label: 'Resize to Target KB',
+  },
 ]

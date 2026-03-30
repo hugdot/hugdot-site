@@ -1,18 +1,23 @@
 ---
 import themeConfig from '@theme-config'
-import { Link, DarkMode } from 'accessible-astro-components'
+import { Link } from 'accessible-astro-components'
 import { Icon } from 'astro-icon/components'
 
 /**
  * Navigation Items Component
- *
- * @description A component that displays the navigation items for the website
+ * * @description excludeFromLauncher 속성을 사용하여 GNB 메뉴 노출 여부를 제어합니다.
  */
+
+// 1. 테마 공식 속성인 excludeFromLauncher를 기준으로 필터링합니다.
+// as any[]를 사용하여 타입 유연성을 확보합니다.
+const visibleItems = (themeConfig.navigation.items as any[]).filter(
+  (item) => !item.excludeFromLauncher
+)
 ---
 
 <ul class="menu">
   {
-    themeConfig.navigation.items.map((item) => (
+    visibleItems.map((item) => (
       <li
         class={`menu-item ${item.type === 'dropdown' ? 'has-dropdown' : ''} ${item.icon ? 'type-icon animate-rotate' : ''}`}
       >
@@ -33,9 +38,11 @@ import { Icon } from 'astro-icon/components'
             )}
           </Link>
         ) : null}
+        
         {item.type === 'dropdown' && (
           <ul class="dropdown-menu">
-            {item.items.map((subItem) => (
+            {/* 하위 아이템 중에서도 제외 설정이 된 것이 있다면 필터링합니다. */}
+            {(item.items as any[]).filter(sub => !sub.excludeFromLauncher).map((subItem) => (
               <li class="submenu-item">
                 <Link href={subItem.href} isExternal={subItem.external ?? false}>
                   {subItem.label}
@@ -47,5 +54,4 @@ import { Icon } from 'astro-icon/components'
       </li>
     ))
   }
-  
 </ul>

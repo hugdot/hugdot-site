@@ -8,6 +8,7 @@ export const snsTools: Tool[] = [
     icon: 'lucide:instagram',
     available: true,
     label: 'Instagram Post Generator',
+    excludeFromLauncher: true
   },
   {
     id: 'tweet-generator',
@@ -16,6 +17,7 @@ export const snsTools: Tool[] = [
     icon: 'lucide:twitter',
     available: true,
     label: 'Tweet Generator',
+    excludeFromLauncher: true
   },
   {
     id: 'youtube-thumbnail-grabber',
@@ -24,5 +26,6 @@ export const snsTools: Tool[] = [
     icon: 'lucide:youtube',
     available: true,
     label: 'YouTube Thumbnail Grabber',
+    excludeFromLauncher: true
   },
 ]

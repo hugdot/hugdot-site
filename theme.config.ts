@@ -44,6 +44,7 @@ export default defineThemeConfig({
           { label: 'Image to PDF', href: '/tools/image/to-pdf' },
           { label: 'EXIF Remover', href: '/tools/image/exif-remover' },
           { label: 'HEIC Converter', href: '/tools/image/heic-converter' },
+          { label: 'Resize to Target KB', href: '/tools/image/resize-to-kb' },
         ],
       },
       {
@@ -58,17 +59,27 @@ export default defineThemeConfig({
       },
       {
         type: 'dropdown',
+        label: 'File',
+        items: [
+          { label: 'Metadata Remover', href: '/tools/file/metadata-remover' },
+        ],
+      },
+      {
+        type: 'dropdown',
         label: 'Generator',
         items: [
           { label: 'QR Code Generator', href: '/tools/generator/qr-code' },
           { label: 'Password Generator', href: '/tools/generator/password-generator' },
           { label: 'List Randomizer', href: '/tools/generator/list-randomizer' },
-          { label: 'Coin Flipper & Dice Roller', href: '/tools/generator/coin-flipper' },
+          { label: 'Coin Flipper & Dice Roller', href: '/tools/generator/coin-flipper', 
+            // @ts-ignore 
+           excludeFromLauncher: true },
         ],
       },
       {
         type: 'dropdown',
         label: 'SNS',
+        excludeFromLauncher: true,
         items: [
           { label: 'Instagram Post Generator', href: '/tools/sns/instagram-post-generator' },
           { label: 'Tweet Generator', href: '/tools/sns/tweet-generator' },
@@ -78,6 +89,7 @@ export default defineThemeConfig({
       {
         type: 'dropdown',
         label: 'Calculator',
+        excludeFromLauncher: true,
         items: [
           { label: 'Tip Calculator', href: '/tools/calculator/tip-calculator' },
           { label: 'Age Calculator', href: '/tools/calculator/age-calculator' },

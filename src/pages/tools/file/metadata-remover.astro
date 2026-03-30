@@ -1,0 +1,694 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Heading } from 'accessible-astro-components'
+import { Icon } from 'astro-icon/components'
+import { tools, getToolHref } from '@data/tools/index'
+import seoData from '@data/seo/en/metadata-remover.json'
+
+const relatedTools = tools.filter((t) => t.category === 'file' && t.id !== 'metadata-remover' && t.available)
+---
+
+<DefaultLayout
+  title={seoData.metaTitle}
+  description={seoData.metaDescription}
+  useTitleTemplate={false}
+  category="UtilitiesApplication"
+  {...seoData}
+>
+  <section class="py-12">
+    <div class="container max-w-3xl">
+      <!-- Header -->
+      <div class="mb-8">
+        <div class="mb-2 flex items-center gap-2 text-sm opacity-50">
+          <a href="/" class="breadcrumb-link hover:underline">Home</a>
+          <span>/</span>
+          <a href="/tools/file" class="breadcrumb-link hover:underline">File Tools</a>
+          <span>/</span>
+          <span>Metadata Remover</span>
+        </div>
+        <Heading level="h1" size="h2">Metadata Remover</Heading>
+        <p class="mt-2 opacity-60">
+          See exactly what hidden data is inside your files — then remove it all with one click.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <span
+            class="flex items-center gap-1.5 rounded-full border border-[var(--border-color-subtle)] px-3 py-1.5 text-xs font-medium"
+          >
+            <Icon aria-hidden="true" name="lucide:shield-check" size="0.875rem" class="text-[var(--action-color)]" />
+            No Upload
+          </span>
+          <span
+            class="flex items-center gap-1.5 rounded-full border border-[var(--border-color-subtle)] px-3 py-1.5 text-xs font-medium"
+          >
+            <Icon aria-hidden="true" name="lucide:user-x" size="0.875rem" class="text-[var(--action-color)]" />
+            No Login
+          </span>
+          <span
+            class="flex items-center gap-1.5 rounded-full border border-[var(--border-color-subtle)] px-3 py-1.5 text-xs font-medium"
+          >
+            <Icon aria-hidden="true" name="lucide:eye-off" size="0.875rem" class="text-[var(--action-color)]" />
+            Privacy First
+          </span>
+        </div>
+      </div>
+
+      <!-- Privacy Warning -->
+      <div class="mb-6 flex items-start gap-3 rounded-2xl border border-red-500/30 bg-red-500/10 px-5 py-4 text-sm">
+        <Icon aria-hidden="true" name="lucide:alert-triangle" size="1.25rem" class="mt-0.5 shrink-0 text-red-500" />
+        <div>
+          <p class="font-semibold text-red-500">Your files may contain sensitive hidden data</p>
+          <p class="mt-1 opacity-70">
+            Images can contain GPS location, device info, and timestamps. Documents can reveal author names, edit
+            history, and company information.
+          </p>
+        </div>
+      </div>
+
+      <!-- Tool -->
+      <div class="flex flex-col gap-6">
+        <!-- Drop Zone -->
+        <div
+          id="drop-zone"
+          class="flex cursor-pointer flex-col items-center justify-center gap-4 rounded-2xl border-2 border-dashed border-[var(--border-color-subtle)] p-12 text-center transition-all hover:border-[var(--action-color)]"
+        >
+          <Icon aria-hidden="true" name="lucide:file-search" size="3rem" class="opacity-30" />
+          <div>
+            <p class="font-semibold">Open a file to inspect</p>
+            <p class="text-sm opacity-50">or drag & drop here</p>
+          </div>
+          <div class="flex flex-wrap justify-center gap-2">
+            <span class="rounded-full border border-[var(--border-color-subtle)] px-3 py-1 text-xs opacity-60">JPG</span
+            >
+            <span class="rounded-full border border-[var(--border-color-subtle)] px-3 py-1 text-xs opacity-60">PNG</span
+            >
+            <span class="rounded-full border border-[var(--border-color-subtle)] px-3 py-1 text-xs opacity-60"
+              >WebP</span
+            >
+            <span class="rounded-full border border-[var(--border-color-subtle)] px-3 py-1 text-xs opacity-60">PDF</span
+            >
+            <span class="rounded-full border border-[var(--border-color-subtle)] px-3 py-1 text-xs opacity-60"
+              >DOCX</span
+            >
+          </div>
+          <input id="file-input" type="file" accept=".jpg,.jpeg,.png,.webp,.pdf,.docx" class="hidden" />
+        </div>
+
+        <!-- Loading -->
+        <div id="loading" class="hidden flex-col items-center gap-3">
+          <div
+            class="h-8 w-8 animate-spin rounded-full border-4 border-[var(--border-color-subtle)] border-t-[var(--action-color)]"
+          >
+          </div>
+          <p class="text-sm opacity-50">Scanning for metadata...</p>
+        </div>
+
+        <!-- Inspection Panel (Step 1) -->
+        <div id="inspection-panel" class="hidden flex-col gap-6">
+          <!-- File Info -->
+          <div class="flex items-center gap-3 rounded-xl border border-[var(--border-color-subtle)] px-4 py-3">
+            <Icon aria-hidden="true" name="lucide:file" size="1.25rem" class="shrink-0 opacity-40" />
+            <div class="min-w-0 flex-1">
+              <p id="file-name" class="truncate text-sm font-medium"></p>
+              <p id="file-size" class="text-xs opacity-50"></p>
+            </div>
+            <span
+              id="file-type-badge"
+              class="shrink-0 rounded-full border border-[var(--border-color-subtle)] px-3 py-1 text-xs font-medium"
+            ></span>
+          </div>
+
+          <!-- Risk Summary -->
+          <div id="risk-summary" class="hidden flex-col gap-2">
+            <div
+              id="risk-high"
+              class="hidden items-center gap-3 rounded-xl border border-red-500/30 bg-red-500/10 px-4 py-3 text-sm"
+            >
+              <Icon aria-hidden="true" name="lucide:alert-circle" size="1.25rem" class="shrink-0 text-red-500" />
+              <span id="risk-high-text" class="font-medium text-red-500"></span>
+            </div>
+            <div
+              id="risk-low"
+              class="hidden items-center gap-3 rounded-xl border border-yellow-500/30 bg-yellow-500/10 px-4 py-3 text-sm"
+            >
+              <Icon aria-hidden="true" name="lucide:info" size="1.25rem" class="shrink-0 text-yellow-500" />
+              <span id="risk-low-text" class="text-yellow-500"></span>
+            </div>
+          </div>
+
+          <!-- Metadata List -->
+          <div class="flex flex-col gap-2">
+            <div class="flex items-center justify-between">
+              <p class="text-sm font-medium">Found Metadata</p>
+              <span
+                id="metadata-count"
+                class="rounded-full bg-[var(--action-color)] px-2.5 py-0.5 text-xs font-bold text-white"></span>
+            </div>
+            <div id="metadata-list" class="flex flex-col gap-2"></div>
+          </div>
+
+          <!-- No Metadata -->
+          <div
+            id="no-metadata"
+            class="hidden items-center gap-3 rounded-2xl border border-green-500/30 bg-green-500/10 px-5 py-4 text-sm"
+          >
+            <Icon aria-hidden="true" name="lucide:check-circle" size="1.25rem" class="shrink-0 text-green-500" />
+            <span class="font-medium text-green-500">No sensitive metadata found in this file.</span>
+          </div>
+
+          <!-- Strip Button -->
+          <div id="strip-wrap" class="hidden flex-col gap-3">
+            <button
+              id="strip-btn"
+              class="flex items-center justify-center gap-2 rounded-full bg-red-500 px-8 py-4 text-sm font-bold text-white transition-opacity hover:opacity-90"
+            >
+              <Icon aria-hidden="true" name="lucide:shield-check" size="1.25rem" />
+              Strip All Metadata & Save Clean File
+            </button>
+            <p class="text-center text-xs opacity-40">All metadata listed above will be permanently removed</p>
+          </div>
+
+          <!-- Reset -->
+          <button
+            id="reset-btn"
+            class="flex items-center justify-center gap-2 rounded-full border border-[var(--border-color-subtle)] px-8 py-3 text-sm font-medium transition-all hover:border-[var(--action-color)]"
+          >
+            <Icon aria-hidden="true" name="lucide:refresh-cw" size="1rem" />
+            Open Another File
+          </button>
+        </div>
+
+        <!-- Stripping Progress -->
+        <div id="stripping" class="hidden flex-col items-center gap-3">
+          <div
+            class="h-8 w-8 animate-spin rounded-full border-4 border-[var(--border-color-subtle)] border-t-[var(--action-color)]"
+          >
+          </div>
+          <p class="text-sm opacity-50">Stripping metadata...</p>
+        </div>
+      </div>
+
+      <!-- Privacy Badge -->
+      <div
+        class="mt-8 flex items-center gap-2 rounded-2xl border border-[var(--border-color-subtle)] px-5 py-4 text-sm opacity-60"
+      >
+        <Icon aria-hidden="true" name="lucide:shield-check" size="1rem" />
+        <span>Your files never leave your device. All processing happens locally in your browser.</span>
+      </div>
+
+      <!-- Related Tools -->
+      {
+        relatedTools.length > 0 && (
+          <div class="mt-12">
+            <Heading level="h2" size="h4" class="mb-6">
+              Related Tools
+            </Heading>
+            <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
+              {relatedTools.map((tool) => (
+                <a
+                  href={getToolHref(tool.category, tool.slug)}
+                  class="rounded-xl border border-[var(--border-color-subtle)] px-4 py-3 text-sm font-medium text-[var(--foreground-color)] no-underline transition-all hover:border-[var(--action-color)]"
+                >
+                  {tool.label} →
+                </a>
+              ))}
+            </div>
+          </div>
+        )
+      }
+    </div>
+  </section>
+</DefaultLayout>
+
+<script>
+  import ExifReader from 'exifreader'
+  import JSZip from 'jszip'
+
+  // pdf-lib 동적 로드 (PDF 처리 시에만)
+  let pdfLibLoaded = false
+  const loadPdfLib = (): Promise<void> => {
+    return new Promise((resolve, reject) => {
+      if (pdfLibLoaded) {
+        resolve()
+        return
+      }
+      const script = document.createElement('script')
+      script.src = 'https://unpkg.com/pdf-lib/dist/pdf-lib.min.js'
+      script.crossOrigin = 'anonymous'
+      script.onload = () => {
+        pdfLibLoaded = true
+        resolve()
+      }
+      script.onerror = () => reject(new Error('Failed to load pdf-lib'))
+      document.head.appendChild(script)
+    })
+  }
+
+  let cleanupFn: (() => void) | null = null
+  document.addEventListener('astro:page-load', () => {
+    cleanupFn?.()
+    cleanupFn = initMetadataRemover()
+  })
+
+  function initMetadataRemover(): () => void {
+    let currentFile: File | null = null
+    let fileType: 'image' | 'pdf' | 'docx' | null = null
+
+    const dropZone = document.getElementById('drop-zone') as HTMLElement
+    const fileInput = document.getElementById('file-input') as HTMLInputElement
+    const loading = document.getElementById('loading') as HTMLElement
+    const inspectionPanel = document.getElementById('inspection-panel') as HTMLElement
+    const stripping = document.getElementById('stripping') as HTMLElement
+    const fileName = document.getElementById('file-name') as HTMLElement
+    const fileSize = document.getElementById('file-size') as HTMLElement
+    const fileTypeBadge = document.getElementById('file-type-badge') as HTMLElement
+    const riskSummary = document.getElementById('risk-summary') as HTMLElement
+    const riskHigh = document.getElementById('risk-high') as HTMLElement
+    const riskHighText = document.getElementById('risk-high-text') as HTMLElement
+    const riskLow = document.getElementById('risk-low') as HTMLElement
+    const riskLowText = document.getElementById('risk-low-text') as HTMLElement
+    const metadataList = document.getElementById('metadata-list') as HTMLElement
+    const metadataCount = document.getElementById('metadata-count') as HTMLElement
+    const noMetadata = document.getElementById('no-metadata') as HTMLElement
+    const stripWrap = document.getElementById('strip-wrap') as HTMLElement
+    const stripBtn = document.getElementById('strip-btn') as HTMLButtonElement
+    const resetBtn = document.getElementById('reset-btn') as HTMLButtonElement
+
+    const show = (el: HTMLElement) => (el.style.display = 'flex')
+    const hide = (el: HTMLElement) => (el.style.display = 'none')
+
+    const formatSize = (bytes: number) =>
+      bytes < 1024 * 1024 ? `${(bytes / 1024).toFixed(1)} KB` : `${(bytes / 1024 / 1024).toFixed(2)} MB`
+
+    // ─── 개인정보 위험 필드 정의 ─────────────────────────────────────────────
+    const HIGH_RISK_KEYS = new Set([
+      'GPSLatitude',
+      'GPSLongitude',
+      'GPSAltitude',
+      'GPSPosition',
+      'GPSLatitudeRef',
+      'GPSLongitudeRef',
+      'GPSDateStamp',
+      'GPSTimeStamp',
+      'Author',
+      'Creator',
+      'Producer',
+      'dc:creator',
+      'meta:author',
+      'xmp:CreatorTool',
+      'pdf:Author',
+      'Make',
+      'Model',
+      'LensModel',
+      'SerialNumber',
+      'CameraSerialNumber',
+      'OwnerName',
+      'Artist',
+    ])
+
+    const isHighRisk = (key: string): boolean => {
+      return (
+        HIGH_RISK_KEYS.has(key) ||
+        key.toLowerCase().includes('gps') ||
+        key.toLowerCase().includes('author') ||
+        key.toLowerCase().includes('creator') ||
+        key.toLowerCase().includes('serial') ||
+        key.toLowerCase().includes('owner') ||
+        key.toLowerCase().includes('location')
+      )
+    }
+
+    // ─── 메타데이터 아이템 렌더링 ─────────────────────────────────────────────
+    const renderMetadataItem = (key: string, value: string, high: boolean) => {
+      const item = document.createElement('div')
+      item.className = `flex items-start justify-between gap-3 rounded-xl border px-4 py-3 text-sm ${
+        high ? 'border-red-500/30 bg-red-500/5' : 'border-[var(--border-color-subtle)]'
+      }`
+      item.innerHTML = `
+        <div class="flex items-start gap-2 min-w-0">
+          ${
+            high
+              ? `<svg class="mt-0.5 h-4 w-4 shrink-0 text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>`
+              : `<svg class="mt-0.5 h-4 w-4 shrink-0 opacity-30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>`
+          }
+          <span class="${high ? 'text-red-500 font-medium' : 'opacity-60'}">${key}</span>
+        </div>
+        <span class="text-right text-xs opacity-70 max-w-[50%] break-all">${value}</span>
+      `
+      metadataList.appendChild(item)
+    }
+
+    // ─── Step 1: 이미지 메타데이터 검사 ──────────────────────────────────────
+    const inspectImage = async (file: File) => {
+      const arrayBuffer = await file.arrayBuffer()
+      let tags: Record<string, any> = {}
+
+      try {
+        tags = ExifReader.load(arrayBuffer, { expanded: true })
+      } catch {
+        /* EXIF 없음 */
+      }
+
+      const items: { key: string; value: string; high: boolean }[] = []
+
+      // EXIF, XMP, IPTC 모두 스캔
+      const sections = ['exif', 'xmp', 'iptc', 'icc', 'Thumbnail']
+      for (const section of sections) {
+        if (!tags[section]) continue
+        for (const [key, tagObj] of Object.entries(tags[section] as Record<string, any>)) {
+          if (key === 'MakerNote' || key === 'UserComment') continue
+          let value = ''
+          if (tagObj?.description !== undefined) {
+            value = String(tagObj.description)
+          } else if (tagObj?.value !== undefined) {
+            value = Array.isArray(tagObj.value) ? tagObj.value.slice(0, 3).join(', ') : String(tagObj.value)
+          } else {
+            continue
+          }
+          if (value.length > 80) value = value.slice(0, 80) + '...'
+          items.push({ key, value, high: isHighRisk(key) })
+        }
+      }
+
+      return items
+    }
+
+    // ─── Step 1: PDF 메타데이터 검사 ─────────────────────────────────────────
+    const inspectPdf = async (file: File): Promise<{ key: string; value: string; high: boolean }[]> => {
+      await loadPdfLib()
+      const { PDFDocument } = (window as any).PDFLib
+      const arrayBuffer = await file.arrayBuffer()
+      const pdfDoc = await PDFDocument.load(arrayBuffer, { ignoreEncryption: true })
+
+      const items: { key: string; value: string; high: boolean }[] = []
+      const fields: [string, string | undefined][] = [
+        ['Title', pdfDoc.getTitle()],
+        ['Author', pdfDoc.getAuthor()],
+        ['Subject', pdfDoc.getSubject()],
+        ['Creator', pdfDoc.getCreator()],
+        ['Producer', pdfDoc.getProducer()],
+        ['Keywords', pdfDoc.getKeywords()],
+        ['CreationDate', pdfDoc.getCreationDate()?.toISOString()],
+        ['ModificationDate', pdfDoc.getModificationDate()?.toISOString()],
+      ]
+
+      for (const [key, value] of fields) {
+        if (value) {
+          items.push({ key, value: String(value).slice(0, 80), high: isHighRisk(key) })
+        }
+      }
+      return items
+    }
+
+    // ─── Step 1: DOCX 메타데이터 검사 ────────────────────────────────────────
+    const inspectDocx = async (file: File): Promise<{ key: string; value: string; high: boolean }[]> => {
+      const arrayBuffer = await file.arrayBuffer()
+      const zip = await JSZip.loadAsync(arrayBuffer)
+      const items: { key: string; value: string; high: boolean }[] = []
+
+      // docProps/core.xml 파싱
+      const coreXml = await zip.file('docProps/core.xml')?.async('text')
+      if (coreXml) {
+        const parser = new DOMParser()
+        const doc = parser.parseFromString(coreXml, 'text/xml')
+        const fields = [
+          'dc:creator',
+          'cp:lastModifiedBy',
+          'dc:title',
+          'dc:subject',
+          'dc:description',
+          'cp:keywords',
+          'cp:category',
+          'dcterms:created',
+          'dcterms:modified',
+          'cp:revision',
+        ]
+        for (const field of fields) {
+          const el = doc.getElementsByTagName(field)[0]
+          if (el?.textContent) {
+            const key = field.split(':')[1] ?? field
+            items.push({ key, value: el.textContent.slice(0, 80), high: isHighRisk(field) })
+          }
+        }
+      }
+
+      // docProps/app.xml 파싱
+      const appXml = await zip.file('docProps/app.xml')?.async('text')
+      if (appXml) {
+        const parser = new DOMParser()
+        const doc = parser.parseFromString(appXml, 'text/xml')
+        const fields = ['Application', 'Company', 'Manager', 'Template']
+        for (const field of fields) {
+          const el = doc.getElementsByTagName(field)[0]
+          if (el?.textContent) {
+            items.push({ key: field, value: el.textContent.slice(0, 80), high: isHighRisk(field) })
+          }
+        }
+      }
+
+      return items
+    }
+
+    // ─── Step 2: 이미지 메타데이터 제거 ──────────────────────────────────────
+    // Canvas로 재렌더링 → 원본 EXIF 데이터 물리적 삭제
+    const stripImage = async (file: File): Promise<Blob> => {
+      return new Promise((resolve, reject) => {
+        const url = URL.createObjectURL(file)
+        const img = new Image()
+        img.onload = () => {
+          const canvas = document.createElement('canvas')
+          canvas.width = img.naturalWidth
+          canvas.height = img.naturalHeight
+          const ctx = canvas.getContext('2d')!
+
+          // JPG는 흰 배경
+          if (file.type === 'image/jpeg') {
+            ctx.fillStyle = '#ffffff'
+            ctx.fillRect(0, 0, canvas.width, canvas.height)
+          }
+          ctx.drawImage(img, 0, 0)
+          URL.revokeObjectURL(url)
+
+          const mimeType = file.type || 'image/jpeg'
+          canvas.toBlob(
+            (blob) => {
+              // Canvas 메모리 해제
+              canvas.width = 1
+              canvas.height = 1
+              blob ? resolve(blob) : reject(new Error('toBlob failed'))
+            },
+            mimeType,
+            0.95,
+          )
+        }
+        img.onerror = () => {
+          URL.revokeObjectURL(url)
+          reject(new Error('Image load failed'))
+        }
+        img.src = url
+      })
+    }
+
+    // ─── Step 2: PDF 메타데이터 제거 ─────────────────────────────────────────
+    const stripPdf = async (file: File): Promise<Blob> => {
+      await loadPdfLib()
+      const { PDFDocument } = (window as any).PDFLib
+      const arrayBuffer = await file.arrayBuffer()
+      const pdfDoc = await PDFDocument.load(arrayBuffer, { ignoreEncryption: true })
+
+      // 모든 메타데이터 필드 제거
+      pdfDoc.setTitle('')
+      pdfDoc.setAuthor('')
+      pdfDoc.setSubject('')
+      pdfDoc.setCreator('')
+      pdfDoc.setProducer('')
+      pdfDoc.setKeywords([])
+      pdfDoc.setCreationDate(new Date(0))
+      pdfDoc.setModificationDate(new Date(0))
+
+      const pdfBytes = await pdfDoc.save()
+      return new Blob([pdfBytes], { type: 'application/pdf' })
+    }
+
+    // ─── Step 2: DOCX 메타데이터 제거 ────────────────────────────────────────
+    const stripDocx = async (file: File): Promise<Blob> => {
+      const arrayBuffer = await file.arrayBuffer()
+      const zip = await JSZip.loadAsync(arrayBuffer)
+
+      // core.xml 초기화
+      const blankCore = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<cp:coreProperties xmlns:cp="http://schemas.openxmlformats.org/package/2006/metadata/core-properties"
+  xmlns:dc="http://purl.org/dc/elements/1.1/"
+  xmlns:dcterms="http://purl.org/dc/terms/"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+</cp:coreProperties>`
+
+      // app.xml 초기화
+      const blankApp = `<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Properties xmlns="http://schemas.openxmlformats.org/officeDocument/2006/extended-properties">
+  <Application>Microsoft Office</Application>
+</Properties>`
+
+      zip.file('docProps/core.xml', blankCore)
+      if (zip.file('docProps/app.xml')) {
+        zip.file('docProps/app.xml', blankApp)
+      }
+
+      const blob = await zip.generateAsync({
+        type: 'blob',
+        mimeType: 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+      })
+      return blob
+    }
+
+    // ─── 파일 검사 진입점 ─────────────────────────────────────────────────────
+    const inspectFile = async (file: File) => {
+      currentFile = file
+
+      // 파일 타입 감지
+      const name = file.name.toLowerCase()
+      if (name.endsWith('.pdf')) fileType = 'pdf'
+      else if (name.endsWith('.docx')) fileType = 'docx'
+      else fileType = 'image'
+
+      hide(dropZone)
+      show(loading)
+
+      try {
+        let items: { key: string; value: string; high: boolean }[] = []
+
+        if (fileType === 'image') items = await inspectImage(file)
+        else if (fileType === 'pdf') items = await inspectPdf(file)
+        else if (fileType === 'docx') items = await inspectDocx(file)
+
+        hide(loading)
+
+        // 파일 정보
+        fileName.textContent = file.name
+        fileSize.textContent = formatSize(file.size)
+        fileTypeBadge.textContent = fileType.toUpperCase()
+
+        metadataList.innerHTML = ''
+
+        if (items.length === 0) {
+          show(noMetadata)
+          hide(stripWrap)
+          hide(riskSummary)
+          metadataCount.textContent = '0'
+        } else {
+          hide(noMetadata)
+          show(stripWrap)
+          metadataCount.textContent = String(items.length)
+
+          const highRiskItems = items.filter((i) => i.high)
+          const lowRiskItems = items.filter((i) => !i.high)
+
+          // 리스크 요약
+          show(riskSummary)
+          if (highRiskItems.length > 0) {
+            show(riskHigh)
+            riskHighText.textContent = `⚠️ ${highRiskItems.length} high-risk field(s) found — includes personal or location data`
+          } else {
+            hide(riskHigh)
+          }
+          if (lowRiskItems.length > 0) {
+            show(riskLow)
+            riskLowText.textContent = `${lowRiskItems.length} other metadata field(s) found`
+          } else {
+            hide(riskLow)
+          }
+
+          // 위험 순으로 정렬 (high risk 먼저)
+          const sorted = [...highRiskItems, ...lowRiskItems]
+          sorted.forEach(({ key, value, high }) => renderMetadataItem(key, value, high))
+        }
+
+        show(inspectionPanel)
+      } catch (err) {
+        console.error('Inspection failed:', err)
+        hide(loading)
+        show(dropZone)
+        alert('Failed to read file metadata. Please try another file.')
+      }
+    }
+
+    // ─── Step 2: 메타데이터 제거 실행 ─────────────────────────────────────────
+    const stripMetadata = async () => {
+      if (!currentFile || !fileType) return
+
+      hide(inspectionPanel)
+      show(stripping)
+
+      try {
+        let cleanBlob: Blob
+
+        if (fileType === 'image') cleanBlob = await stripImage(currentFile)
+        else if (fileType === 'pdf') cleanBlob = await stripPdf(currentFile)
+        else cleanBlob = await stripDocx(currentFile)
+
+        // 즉시 다운로드
+        const url = URL.createObjectURL(cleanBlob)
+        const ext = currentFile.name.split('.').pop() ?? 'jpg'
+        const baseName = currentFile.name.replace(/\.[^/.]+$/, '')
+        const link = document.createElement('a')
+        link.href = url
+        link.download = `${baseName}-clean.${ext}`
+        link.click()
+
+        // URL 즉시 해제
+        setTimeout(() => URL.revokeObjectURL(url), 1000)
+
+        hide(stripping)
+        show(inspectionPanel)
+
+        // 성공 피드백
+        const successMsg = document.createElement('div')
+        successMsg.className =
+          'flex items-center gap-3 rounded-2xl border border-green-500/30 bg-green-500/10 px-5 py-4 text-sm text-green-500'
+        successMsg.innerHTML = `
+          <svg class="h-5 w-5 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          <span class="font-medium">Clean file saved! All metadata has been permanently removed.</span>
+        `
+        inspectionPanel.insertBefore(successMsg, inspectionPanel.firstChild)
+        setTimeout(() => successMsg.remove(), 5000)
+      } catch (err) {
+        console.error('Strip failed:', err)
+        hide(stripping)
+        show(inspectionPanel)
+        alert('Failed to remove metadata. Please try again.')
+      }
+    }
+
+    // ─── 이벤트 바인딩 ────────────────────────────────────────────────────────
+    stripBtn.addEventListener('click', stripMetadata)
+
+    resetBtn.addEventListener('click', () => {
+      currentFile = null
+      fileType = null
+      metadataList.innerHTML = ''
+      hide(inspectionPanel)
+      hide(stripping)
+      hide(loading)
+      show(dropZone)
+      fileInput.value = ''
+    })
+
+    dropZone.addEventListener('click', () => fileInput.click())
+    dropZone.addEventListener('dragover', (e) => {
+      e.preventDefault()
+      dropZone.classList.add('border-[var(--action-color)]')
+    })
+    dropZone.addEventListener('dragleave', () => dropZone.classList.remove('border-[var(--action-color)]'))
+    dropZone.addEventListener('drop', (e) => {
+      e.preventDefault()
+      dropZone.classList.remove('border-[var(--action-color)]')
+      if (e.dataTransfer?.files[0]) inspectFile(e.dataTransfer.files[0])
+    })
+    fileInput.addEventListener('change', () => {
+      if (fileInput.files?.[0]) inspectFile(fileInput.files[0])
+    })
+
+    return () => {
+      currentFile = null
+    }
+  }
+</script>

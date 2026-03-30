@@ -1,0 +1,93 @@
+{
+  "toolId": "metadata-remover",
+  "lang": "en",
+  "metaTitle": "Metadata Remover — Strip Hidden Privacy Data from Images & PDFs (100% Private)",
+  "metaDescription": "See and remove hidden GPS, camera info, and author data from your photos, PDFs, and DOCX files. 100% local processing—your files never leave your device.",
+  "introSummary": "Did you know your photos contain your exact GPS coordinates and device serial numbers? Or that your PDFs reveal who edited them and when? Our 'Deep-Scan' engine exposes this hidden metadata and lets you wipe it clean with one click. Built on a 'Zero-Server' architecture, all processing happens entirely in your browser's RAM. It's the ultimate privacy shield for sharing documents and photos safely in a digital world.",
+  "keywords": [
+    "remove metadata from image",
+    "strip exif data online",
+    "remove gps from photo",
+    "pdf metadata remover",
+    "clean document properties",
+    "remove author from docx",
+    "privacy-first metadata scrubber",
+    "no upload exif cleaner",
+    "check hidden image data",
+    "anonymous photo sharing tool"
+  ],
+  "contextUsage": [
+    {
+      "title": "For Social Media Privacy",
+      "desc": "Before uploading photos to Reddit, Twitter, or Discord, strip away GPS tags that could reveal your home address."
+    },
+    {
+      "title": "For Professional Documents",
+      "desc": "Clean PDF and DOCX properties to ensure clients or competitors can't see internal author names or edit history."
+    },
+    {
+      "title": "For Classified Content",
+      "desc": "Safely share sensitive screenshots or ID scans by removing device fingerprints and timestamps."
+    }
+  ],
+  "howto": [
+    {
+      "step": "Select Your File",
+      "description": "Drag and drop any JPG, PNG, WebP, PDF, or DOCX file. Our scanner works instantly on files up to 50MB."
+    },
+    {
+      "step": "Inspect Hidden Data",
+      "description": "Review the 'Risk Summary' to see high-risk items like GPS coordinates, camera models, and author tags."
+    },
+    {
+      "step": "Strip & Clean",
+      "description": "Click 'Strip All Metadata'. Our engine physically recreates the file without any hidden data structures."
+    },
+    {
+      "step": "Download Secure File",
+      "description": "Save your 'Clean' version. You can now share it anywhere knowing your privacy is 100% protected."
+    }
+  ],
+  "why": [
+    "Deep-Scan Technology — We don't just hide tags; we scan EXIF, XMP, IPTC, and Document Properties for total exposure.",
+    "Physical Data Destruction — Unlike simple 'hide' tools, we re-render images to ensure original metadata is physically unrecoverable.",
+    "Zero-Server Guarantee — Just like our slogan 'Your file is yours', your data never touches a server. All work is done in your RAM.",
+    "Risk-Level Categorization — We highlight sensitive fields in red so you know exactly what information was at risk.",
+    "Multi-Format Support — One tool for everything: images, professional PDFs, and office documents.",
+    "100% Free & Unlimited — No subscriptions, no limits on file count. Just pure utility for your digital safety."
+  ],
+  "faq": [
+    {
+      "q": "What kind of metadata can you remove?",
+      "a": "We remove everything from GPS locations and camera settings (EXIF) to author names, software versions, and creation dates (XMP/Metadata)."
+    },
+    {
+      "q": "Does stripping metadata reduce image quality?",
+      "a": "For images, we re-render at 95% quality by default to ensure all hidden data is wiped. For PDFs and DOCX, the content remains identical while only the properties are cleared."
+    },
+    {
+      "q": "How is this safer than other online tools?",
+      "a": "Most tools upload your file to their server. HugDot processes everything locally on your CPU. If you disconnect your internet, the tool still works!"
+    },
+    {
+      "q": "Can I see what was removed?",
+      "a": "Yes! Our inspection panel lists every single piece of metadata found before you decide to strip it."
+    }
+  ],
+  "technicalSpecs": [
+    { "quality": "Scan Depth", "size": "EXIF, XMP, IPTC, Core/App XML", "useCase": "Comprehensive data discovery" },
+    { "quality": "Security Model", "size": "Isolating Web Worker", "useCase": "Secure, non-blocking local processing" },
+    { "quality": "Privacy Compliance", "size": "100% Client-Side", "useCase": "GDPR/HIPAA compliant sharing" },
+    { "quality": "Engine Speed", "size": "Instant (<500ms)", "useCase": "Optimized for fast browser-side execution" }
+  ],
+  "troubleshooting": [
+    "File not loading? Ensure it's not password-protected. We cannot scan encrypted PDFs for security reasons.",
+    "GPS still showing? After stripping, our tool generates a NEW file. Make sure you are using the version with '-clean' in the filename.",
+    "Browser lag? For very large PDFs, the 'Deep-Scan' might take a few seconds. Stay on the tab until it finishes."
+  ],
+  "proTips": [
+    "Always use the 'Inspection' phase to audit your files. You'll be surprised what your phone's camera stores by default!",
+    "Strip metadata from your Resume/CV before sending it to recruiters to look more professional.",
+    "Combined with our 'Face Blur' tool, this provides a complete identity protection suite for your photos."
+  ]
+}

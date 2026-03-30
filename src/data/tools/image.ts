@@ -51,4 +51,12 @@ export const imageTools: Tool[] = [
     available: true,
     label: 'Image Watermark',
   },
+  {
+    id: 'heic-converter',
+    category: 'image',
+    slug: 'heic-converter',
+    icon: 'lucide:file-image',
+    available: true,
+    label: 'HEIC Converter',
+  },
 ]

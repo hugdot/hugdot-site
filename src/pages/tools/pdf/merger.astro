@@ -2,8 +2,12 @@
 import DefaultLayout from '@layouts/DefaultLayout.astro'
 import { Heading } from 'accessible-astro-components'
 import { Icon } from 'astro-icon/components'
+import { tools, getToolHref } from '@data/tools/index'
 import seoData from '@data/seo/en/pdf-merger.json'
+
+const relatedTools = tools.filter((t) => t.category === 'pdf' && t.id !== 'pdf-merger' && t.available)
 ---
+
 <DefaultLayout
   title={seoData.metaTitle}
   description={seoData.metaDescription}
@@ -13,7 +17,6 @@ import seoData from '@data/seo/en/pdf-merger.json'
 >
   <section class="py-12">
     <div class="container max-w-3xl">
-
       <!-- Header -->
       <div class="mb-8">
         <div class="mb-2 flex items-center gap-2 text-sm opacity-50">
@@ -32,7 +35,7 @@ import seoData from '@data/seo/en/pdf-merger.json'
       <!-- Drop Zone -->
       <div
         id="drop-zone"
-        class="flex flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed border-[var(--border-color-subtle)] px-6 py-12 text-center transition-all cursor-pointer hover:border-[var(--action-color)]"
+        class="flex cursor-pointer flex-col items-center justify-center gap-3 rounded-2xl border-2 border-dashed border-[var(--border-color-subtle)] px-6 py-12 text-center transition-all hover:border-[var(--action-color)]"
       >
         <Icon aria-hidden="true" name="lucide:file-plus" size="2.5rem" class="opacity-40" />
         <div>
@@ -60,16 +63,37 @@ import seoData from '@data/seo/en/pdf-merger.json'
       <!-- Progress -->
       <div id="progress-wrap" class="mt-6 hidden">
         <div class="h-2 w-full overflow-hidden rounded-full bg-[var(--border-color-subtle)]">
-          <div id="progress-bar" class="h-full w-0 rounded-full bg-[var(--action-color)] transition-all duration-300"></div>
+          <div id="progress-bar" class="h-full w-0 rounded-full bg-[var(--action-color)] transition-all duration-300">
+          </div>
         </div>
         <p id="progress-text" class="mt-2 text-center text-sm opacity-60">Merging...</p>
       </div>
 
       <!-- Privacy Badge -->
-      <div class="mt-8 flex items-center gap-2 rounded-2xl border border-[var(--border-color-subtle)] px-5 py-4 text-sm opacity-60">
+      <div
+        class="mt-8 flex items-center gap-2 rounded-2xl border border-[var(--border-color-subtle)] px-5 py-4 text-sm opacity-60"
+      >
         <Icon aria-hidden="true" name="lucide:shield-check" size="1rem" />
         <span>Your files never leave your device. No data is sent to any server.</span>
       </div>
+
+      {relatedTools.length > 0 && (
+        <div class="mt-16 border-t border-[var(--border-color-subtle)] pt-12">
+          <Heading level="h2" size="h5" class="mb-6 opacity-60">
+            Related Tools
+          </Heading>
+          <div class="grid grid-cols-1 gap-3 sm:grid-cols-2">
+            {relatedTools.map((tool) => (
+              <a 
+                href={getToolHref(tool.category, tool.slug)}
+                class="flex items-center justify-between rounded-xl border border-[var(--border-color-subtle)] px-4 py-3 text-sm font-medium text-[var(--foreground-color)] no-underline transition-all hover:border-[var(--action-color)] hover:bg-[var(--action-color-off)]"
+              >
+                {tool.label} →
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   </section>
 </DefaultLayout>
@@ -132,7 +156,7 @@ import seoData from '@data/seo/en/pdf-merger.json'
 
     const addFiles = (newFiles: FileList | null) => {
       if (!newFiles) return
-      const pdfs = Array.from(newFiles).filter(f => f.type === 'application/pdf' || f.name.endsWith('.pdf'))
+      const pdfs = Array.from(newFiles).filter((f) => f.type === 'application/pdf' || f.name.endsWith('.pdf'))
       files = [...files, ...pdfs]
       renderFiles()
     }
@@ -160,9 +184,9 @@ import seoData from '@data/seo/en/pdf-merger.json'
       const index = parseInt(btn.dataset.index ?? '0')
 
       if (action === 'up' && index > 0) {
-        [files[index - 1], files[index]] = [files[index], files[index - 1]]
+        ;[files[index - 1], files[index]] = [files[index], files[index - 1]]
       } else if (action === 'down' && index < files.length - 1) {
-        [files[index], files[index + 1]] = [files[index + 1], files[index]]
+        ;[files[index], files[index + 1]] = [files[index + 1], files[index]]
       } else if (action === 'remove') {
         files.splice(index, 1)
       }
@@ -185,7 +209,7 @@ import seoData from '@data/seo/en/pdf-merger.json'
 
         for (let i = 0; i < files.length; i++) {
           progressText.textContent = `Processing file ${i + 1} of ${files.length}...`
-          progressBar.style.width = `${((i / files.length) * 90)}%`
+          progressBar.style.width = `${(i / files.length) * 90}%`
 
           const arrayBuffer = await files[i].arrayBuffer()
           const pdf = await PDFDocument.load(arrayBuffer)

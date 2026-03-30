@@ -18,4 +18,12 @@ export const pdfTools: Tool[] = [
     available: true,
     label: 'PDF to Image',
   },
+  {
+    id: 'pdf-redact',
+    category: 'pdf',
+    slug: 'redact',
+    icon: 'lucide:shield-off',
+    available: true,
+    label: 'PDF Redact',
+  },
 ]

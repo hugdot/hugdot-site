@@ -43,6 +43,7 @@ export default defineThemeConfig({
           { label: 'Image Crop', href: '/tools/image/crop' },
           { label: 'Image to PDF', href: '/tools/image/to-pdf' },
           { label: 'EXIF Remover', href: '/tools/image/exif-remover' },
+          { label: 'HEIC Converter', href: '/tools/image/heic-converter' },
         ],
       },
       {
@@ -52,6 +53,7 @@ export default defineThemeConfig({
           { label: 'PDF Merger', href: '/tools/pdf/merger' },
           { label: 'PDF Splitter', href: '/tools/pdf/splitter' },
           { label: 'PDF to Image', href: '/tools/pdf/to-image' },
+          { label: 'PDF Redact', href: '/tools/pdf/redact' },
         ],
       },
       {

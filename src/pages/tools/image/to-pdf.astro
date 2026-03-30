@@ -2,7 +2,11 @@
 import DefaultLayout from '@layouts/DefaultLayout.astro'
 import { Heading } from 'accessible-astro-components'
 import { Icon } from 'astro-icon/components'
+import { tools, getToolHref } from '@data/tools/index'
 import seoData from '@data/seo/en/image-to-pdf.json'
+
+const relatedTools = tools.filter((t) => t.category === 'image' && t.id !== 'image-to-pdf' && t.available)
+
 ---
 
 <DefaultLayout
@@ -88,7 +92,22 @@ import seoData from '@data/seo/en/image-to-pdf.json'
         <Icon aria-hidden="true" name="lucide:shield-check" size="1rem" />
         <span>Your images never leave your device. No data is sent to any server.</span>
       </div>
-      
+      <!-- Related Tools -->
+      {relatedTools.length > 0 && (
+        <div class="mt-12">
+          <Heading level="h2" size="h4" class="mb-6">Related Tools</Heading>
+          <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
+            {relatedTools.map((tool) => (
+              
+              <a href={getToolHref(tool.category, tool.slug)}
+                class="rounded-xl border border-[var(--border-color-subtle)] px-4 py-3 text-sm font-medium text-[var(--foreground-color)] no-underline transition-all hover:border-[var(--action-color)]"
+              >
+                {tool.label} →
+              </a>
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   </section>
 </DefaultLayout>

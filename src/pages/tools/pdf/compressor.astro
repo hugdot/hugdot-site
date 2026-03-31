@@ -1,0 +1,496 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Heading } from 'accessible-astro-components'
+import { Icon } from 'astro-icon/components'
+import { tools, getToolHref } from '@data/tools/index'
+import seoData from '@data/seo/en/pdf-compressor.json'
+
+
+const relatedTools = tools.filter((t) => t.category === 'pdf' && t.id !== 'pdf-compressor' && t.available)
+---
+
+<DefaultLayout
+  title={seoData.metaTitle}
+  description={seoData.metaDescription}
+  useTitleTemplate={false}
+  category="MultimediaApplication"
+  {...seoData}
+>
+  <section class="py-12">
+    <div class="container max-w-3xl">
+      <!-- Header -->
+      <div class="mb-8">
+        <div class="mb-2 flex items-center gap-2 text-sm opacity-50">
+          <a href="/" class="breadcrumb-link hover:underline">Home</a>
+          <span>/</span>
+          <a href="/tools/pdf" class="breadcrumb-link hover:underline">PDF Tools</a>
+          <span>/</span>
+          <span>PDF Compressor</span>
+        </div>
+        <Heading level="h1" size="h2">PDF Compressor</Heading>
+        <p class="mt-2 opacity-60">
+          Reduce PDF file size by compressing embedded images. Text and structure are always preserved.
+        </p>
+        <div class="mt-4 flex flex-wrap gap-2">
+          <span
+            class="flex items-center gap-1.5 rounded-full border border-[var(--border-color-subtle)] px-3 py-1.5 text-xs font-medium"
+          >
+            <Icon aria-hidden="true" name="lucide:shield-check" size="0.875rem" class="text-[var(--action-color)]" />
+            No Upload
+          </span>
+          <span
+            class="flex items-center gap-1.5 rounded-full border border-[var(--border-color-subtle)] px-3 py-1.5 text-xs font-medium"
+          >
+            <Icon aria-hidden="true" name="lucide:user-x" size="0.875rem" class="text-[var(--action-color)]" />
+            No Login
+          </span>
+          <span
+            class="flex items-center gap-1.5 rounded-full border border-[var(--border-color-subtle)] px-3 py-1.5 text-xs font-medium"
+          >
+            <Icon aria-hidden="true" name="lucide:type" size="0.875rem" class="text-[var(--action-color)]" />
+            Text Preserved
+          </span>
+        </div>
+      </div>
+
+      <!-- Tool -->
+      <div class="flex flex-col gap-6">
+        <!-- Drop Zone -->
+        <div
+          id="drop-zone"
+          class="flex cursor-pointer flex-col items-center justify-center gap-4 rounded-2xl border-2 border-dashed border-[var(--border-color-subtle)] p-12 text-center transition-all hover:border-[var(--action-color)]"
+        >
+          <Icon aria-hidden="true" name="lucide:file-down" size="3rem" class="opacity-30" />
+          <div>
+            <p class="font-semibold">Open a PDF</p>
+            <p class="text-sm opacity-50">or drag & drop here</p>
+          </div>
+          <p class="text-xs opacity-40">PDF files only — up to 100MB</p>
+          <input id="file-input" type="file" accept=".pdf,application/pdf" class="hidden" />
+        </div>
+
+        <!-- Settings Panel -->
+        <div
+          id="settings-panel"
+          class="hidden flex-col gap-6 rounded-2xl border border-[var(--border-color-subtle)] p-6"
+        >
+          <!-- File Info -->
+          <div class="flex items-center gap-3 rounded-xl border border-[var(--border-color-subtle)] px-4 py-3">
+            <Icon aria-hidden="true" name="lucide:file-text" size="1.25rem" class="shrink-0 opacity-40" />
+            <div class="min-w-0 flex-1">
+              <p id="file-name" class="truncate text-sm font-medium"></p>
+              <p id="file-size" class="text-xs opacity-50"></p>
+            </div>
+          </div>
+
+          <!-- Compression Level -->
+          <div class="flex flex-col gap-3">
+            <p class="text-sm font-medium">Compression Level</p>
+            <div class="grid grid-cols-3 gap-2">
+              {
+                [
+                  { id: 'low', label: 'Low', desc: 'Best quality', quality: 0.8, maxDim: 2400 },
+                  { id: 'medium', label: 'Medium', desc: 'Balanced', quality: 0.6, maxDim: 1600 },
+                  { id: 'high', label: 'High', desc: 'Smallest size', quality: 0.4, maxDim: 1200 },
+                ].map((level) => (
+                  <button
+                    data-level={level.id}
+                    data-quality={level.quality}
+                    data-maxdim={level.maxDim}
+                    class="level-btn flex flex-col items-center rounded-xl border border-[var(--border-color-subtle)] px-4 py-3 transition-all hover:border-[var(--action-color)]"
+                  >
+                    <span class="text-sm font-semibold">{level.label}</span>
+                    <span class="text-xs opacity-50">{level.desc}</span>
+                  </button>
+                ))
+              }
+            </div>
+          </div>
+
+          <!-- Custom Quality -->
+          <div class="flex flex-col gap-3">
+            <div class="flex items-center justify-between">
+              <label class="text-sm font-medium" for="quality-slider">Image Quality</label>
+              <span id="quality-display" class="text-lg font-bold text-[var(--action-color)]">60%</span>
+            </div>
+            <input
+              id="quality-slider"
+              type="range"
+              min="10"
+              max="95"
+              value="60"
+              class="w-full accent-[var(--action-color)]"
+            />
+            <div class="flex justify-between text-xs opacity-40">
+              <span>Smaller file</span>
+              <span>Better quality</span>
+            </div>
+          </div>
+
+          <!-- Max Image Dimension -->
+          <div class="flex flex-col gap-3">
+            <div class="flex items-center justify-between">
+              <label class="text-sm font-medium" for="dimension-slider">Max Image Dimension</label>
+              <span id="dimension-display" class="text-lg font-bold text-[var(--action-color)]">1600px</span>
+            </div>
+            <input
+              id="dimension-slider"
+              type="range"
+              min="600"
+              max="3000"
+              step="200"
+              value="1600"
+              class="w-full accent-[var(--action-color)]"
+            />
+            <div class="flex justify-between text-xs opacity-40">
+              <span>600px</span>
+              <span>3000px</span>
+            </div>
+          </div>
+
+          <!-- Compress Button -->
+          <button
+            id="compress-btn"
+            class="flex items-center justify-center gap-2 rounded-full bg-[var(--action-color)] px-8 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+          >
+            <Icon aria-hidden="true" name="lucide:zap" size="1rem" />
+            Compress PDF
+          </button>
+        </div>
+
+        <!-- Processing -->
+        <div
+          id="processing"
+          class="hidden flex-col items-center gap-4 rounded-2xl border border-[var(--border-color-subtle)] p-8"
+        >
+          <div
+            class="h-8 w-8 animate-spin rounded-full border-4 border-[var(--border-color-subtle)] border-t-[var(--action-color)]"
+          >
+          </div>
+          <div class="w-full flex-col gap-2">
+            <!-- Progress Bar -->
+            <div class="flex items-center justify-between text-sm">
+              <span id="progress-message" class="opacity-60">Loading...</span>
+              <span id="progress-percent" class="font-bold text-[var(--action-color)]">0%</span>
+            </div>
+            <div class="mt-2 w-full rounded-full bg-[var(--border-color-subtle)]" style="height:6px;">
+              <div
+                id="progress-bar"
+                class="h-full rounded-full bg-[var(--action-color)] transition-all duration-300"
+                style="width:0%"
+              >
+              </div>
+            </div>
+          </div>
+          <p class="text-xs opacity-40">Processing in background — UI remains responsive</p>
+        </div>
+
+        <!-- Result Panel -->
+        <div id="result-panel" class="hidden flex-col gap-6">
+          <!-- Stats -->
+          <div class="grid grid-cols-3 gap-3">
+            <div class="flex flex-col items-center rounded-2xl border border-[var(--border-color-subtle)] px-4 py-4">
+              <span class="mb-1 text-xs opacity-50">Original</span>
+              <span id="result-original" class="text-lg font-bold"></span>
+            </div>
+            <div class="flex flex-col items-center rounded-2xl border border-[var(--border-color-subtle)] px-4 py-4">
+              <span class="mb-1 text-xs opacity-50">Compressed</span>
+              <span id="result-compressed" class="text-lg font-bold text-[var(--action-color)]"></span>
+            </div>
+            <div class="flex flex-col items-center rounded-2xl border border-[var(--border-color-subtle)] px-4 py-4">
+              <span class="mb-1 text-xs opacity-50">Saved</span>
+              <span id="result-saved" class="text-lg font-bold text-green-500"></span>
+            </div>
+          </div>
+
+          <!-- Feedback -->
+          <div
+            id="result-feedback"
+            class="flex items-center gap-3 rounded-2xl border border-[var(--border-color-subtle)] px-5 py-4 text-sm"
+          >
+            <Icon
+              aria-hidden="true"
+              name="lucide:check-circle"
+              size="1.25rem"
+              class="shrink-0 text-[var(--action-color)]"
+            />
+            <span id="result-feedback-text"></span>
+          </div>
+
+          <!-- Actions -->
+          <div class="flex gap-3">
+            <button
+              id="save-btn"
+              class="flex flex-1 items-center justify-center gap-2 rounded-full bg-[var(--action-color)] px-8 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-90"
+            >
+              <Icon aria-hidden="true" name="lucide:save" size="1rem" />
+              Save Compressed PDF
+            </button>
+            <button
+              id="reset-btn"
+              class="flex items-center justify-center gap-2 rounded-full border border-[var(--border-color-subtle)] px-6 py-3 text-sm font-medium transition-all hover:border-[var(--action-color)]"
+            >
+              <Icon aria-hidden="true" name="lucide:refresh-cw" size="1rem" />
+              Reset
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Privacy Badge -->
+      <div
+        class="mt-8 flex items-center gap-2 rounded-2xl border border-[var(--border-color-subtle)] px-5 py-4 text-sm opacity-60"
+      >
+        <Icon aria-hidden="true" name="lucide:shield-check" size="1rem" />
+        <span>Your PDF never leaves your device. All compression happens locally in your browser.</span>
+      </div>
+
+      <!-- Related Tools -->
+      {
+        relatedTools.length > 0 && (
+          <div class="mt-12">
+            <Heading level="h2" size="h4" class="mb-6">
+              Related Tools
+            </Heading>
+            <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
+              {relatedTools.map((tool) => (
+                <a
+                  href={getToolHref(tool.category, tool.slug)}
+                  class="rounded-xl border border-[var(--border-color-subtle)] px-4 py-3 text-sm font-medium text-[var(--foreground-color)] no-underline transition-all hover:border-[var(--action-color)]"
+                >
+                  {tool.label} →
+                </a>
+              ))}
+            </div>
+          </div>
+        )
+      }
+    </div>
+  </section>
+</DefaultLayout>
+
+<style>
+  .level-btn.active {
+    border-color: var(--action-color);
+    background-color: var(--action-color);
+    color: white;
+  }
+</style>
+
+<script>
+  let cleanupFn: (() => void) | null = null
+
+  document.addEventListener('astro:page-load', () => {
+    cleanupFn?.()
+    cleanupFn = initPdfCompressor()
+  })
+
+  function initPdfCompressor(): () => void {
+    let originalFile: File | null = null
+    let compressedBytes: Uint8Array | null = null
+    let worker: Worker | null = null
+
+    const dropZone = document.getElementById('drop-zone') as HTMLElement
+    const fileInput = document.getElementById('file-input') as HTMLInputElement
+    const settingsPanel = document.getElementById('settings-panel') as HTMLElement
+    const processing = document.getElementById('processing') as HTMLElement
+    const resultPanel = document.getElementById('result-panel') as HTMLElement
+    const fileName = document.getElementById('file-name') as HTMLElement
+    const fileSize = document.getElementById('file-size') as HTMLElement
+    const qualitySlider = document.getElementById('quality-slider') as HTMLInputElement
+    const qualityDisplay = document.getElementById('quality-display') as HTMLElement
+    const dimensionSlider = document.getElementById('dimension-slider') as HTMLInputElement
+    const dimensionDisplay = document.getElementById('dimension-display') as HTMLElement
+    const progressBar = document.getElementById('progress-bar') as HTMLElement
+    const progressPercent = document.getElementById('progress-percent') as HTMLElement
+    const progressMessage = document.getElementById('progress-message') as HTMLElement
+    const resultOriginal = document.getElementById('result-original') as HTMLElement
+    const resultCompressed = document.getElementById('result-compressed') as HTMLElement
+    const resultSaved = document.getElementById('result-saved') as HTMLElement
+    const resultFeedbackText = document.getElementById('result-feedback-text') as HTMLElement
+    const compressBtn = document.getElementById('compress-btn') as HTMLButtonElement
+    const saveBtn = document.getElementById('save-btn') as HTMLButtonElement
+    const resetBtn = document.getElementById('reset-btn') as HTMLButtonElement
+    const levelBtns = document.querySelectorAll('.level-btn') as NodeListOf<HTMLButtonElement>
+
+    const show = (el: HTMLElement) => (el.style.display = 'flex')
+    const hide = (el: HTMLElement) => (el.style.display = 'none')
+
+    const formatSize = (bytes: number) =>
+      bytes < 1024 * 1024 ? `${(bytes / 1024).toFixed(1)} KB` : `${(bytes / 1024 / 1024).toFixed(2)} MB`
+
+    // ─── 레벨 버튼 ────────────────────────────────────────────────────────────
+    const setLevel = (btn: HTMLButtonElement) => {
+      levelBtns.forEach((b) => b.classList.remove('active'))
+      btn.classList.add('active')
+      const quality = parseFloat(btn.dataset.quality ?? '0.6')
+      const maxDim = parseInt(btn.dataset.maxdim ?? '1600')
+      qualitySlider.value = String(Math.round(quality * 100))
+      qualityDisplay.textContent = `${Math.round(quality * 100)}%`
+      dimensionSlider.value = String(maxDim)
+      dimensionDisplay.textContent = `${maxDim}px`
+    }
+
+    levelBtns.forEach((btn) => {
+      btn.addEventListener('click', () => setLevel(btn))
+    })
+
+    // Medium 기본 선택
+    const mediumBtn = document.querySelector('[data-level="medium"]') as HTMLButtonElement
+    if (mediumBtn) setLevel(mediumBtn)
+
+    qualitySlider.addEventListener('input', () => {
+      qualityDisplay.textContent = `${qualitySlider.value}%`
+      levelBtns.forEach((b) => b.classList.remove('active'))
+    })
+
+    dimensionSlider.addEventListener('input', () => {
+      dimensionDisplay.textContent = `${dimensionSlider.value}px`
+      levelBtns.forEach((b) => b.classList.remove('active'))
+    })
+
+    // ─── 파일 로드 ────────────────────────────────────────────────────────────
+    const handleFile = (file: File) => {
+      if (!file.type.includes('pdf') && !file.name.endsWith('.pdf')) return
+      originalFile = file
+      fileName.textContent = file.name
+      fileSize.textContent = formatSize(file.size)
+      hide(dropZone)
+      hide(resultPanel)
+      show(settingsPanel)
+    }
+
+    // ─── 압축 실행 ────────────────────────────────────────────────────────────
+    const runCompress = async () => {
+      if (!originalFile) return
+
+      const quality = parseInt(qualitySlider.value) / 100
+      const maxDimension = parseInt(dimensionSlider.value)
+
+      hide(settingsPanel)
+      hide(resultPanel)
+      show(processing)
+      progressBar.style.width = '0%'
+      progressPercent.textContent = '0%'
+
+      try {
+        // Worker 생성 (매번 새로 생성 — 상태 초기화)
+        if (worker) {
+          worker.terminate()
+          worker = null
+        }
+        worker = new Worker('/workers/pdf-compressor.worker.js')
+
+        const pdfBytes = new Uint8Array(await originalFile.arrayBuffer())
+
+        const result = await new Promise<Uint8Array>((resolve, reject) => {
+          const msgId = `compress-${Date.now()}`
+
+          worker!.addEventListener('message', (e) => {
+            const { type, percent, message, compressedBytes: bytes, id } = e.data
+
+            if (type === 'progress') {
+              progressBar.style.width = `${percent}%`
+              progressPercent.textContent = `${percent}%`
+              progressMessage.textContent = message
+            } else if (type === 'done' && id === msgId) {
+              resolve(new Uint8Array(bytes))
+            } else if (type === 'error') {
+              reject(new Error(e.data.message))
+            }
+          })
+
+          worker!.onerror = (err) => reject(err)
+
+          // pdfBytes Transferable로 전송
+          worker!.postMessage(
+            {
+              type: 'compress',
+              pdfBytes: pdfBytes.buffer,
+              options: { quality, maxDimension },
+              id: msgId,
+            },
+            [pdfBytes.buffer],
+          )
+        })
+
+        compressedBytes = result
+
+        // 결과 표시
+        const originalSize = originalFile.size
+        const compressedSize = result.byteLength
+        const savedBytes = originalSize - compressedSize
+        const savedPercent = Math.round((savedBytes / originalSize) * 100)
+
+        resultOriginal.textContent = formatSize(originalSize)
+        resultCompressed.textContent = formatSize(compressedSize)
+        resultSaved.textContent = savedPercent > 0 ? `${savedPercent}%` : '~0%'
+
+        resultFeedbackText.textContent =
+          savedPercent > 0
+            ? `Compressed from ${formatSize(originalSize)} to ${formatSize(compressedSize)} — saved ${formatSize(savedBytes)} (${savedPercent}%)`
+            : 'PDF is already well-optimized. Try a higher compression level for more savings.'
+
+        hide(processing)
+        show(resultPanel)
+      } catch (err) {
+        console.error('PDF compression failed:', err)
+        hide(processing)
+        show(settingsPanel)
+        alert('Compression failed. The PDF may be encrypted or corrupted.')
+      }
+    }
+
+    // ─── 저장 ─────────────────────────────────────────────────────────────────
+    saveBtn.addEventListener('click', () => {
+      if (!compressedBytes || !originalFile) return
+      const blob = new Blob([compressedBytes as any], { type: 'application/pdf' })
+      const url = URL.createObjectURL(blob)
+      const name = originalFile.name.replace(/\.pdf$/i, '')
+      const link = document.createElement('a')
+      link.href = url
+      link.download = `${name}-compressed.pdf`
+      link.click()
+      setTimeout(() => URL.revokeObjectURL(url), 1000)
+    })
+
+    // ─── 리셋 ─────────────────────────────────────────────────────────────────
+    resetBtn.addEventListener('click', () => {
+      if (worker) {
+        worker.terminate()
+        worker = null
+      }
+      originalFile = null
+      compressedBytes = null
+      fileInput.value = ''
+      hide(resultPanel)
+      hide(processing)
+      hide(settingsPanel)
+      show(dropZone)
+    })
+
+    // ─── 드롭존 ───────────────────────────────────────────────────────────────
+    compressBtn.addEventListener('click', runCompress)
+    dropZone.addEventListener('click', () => fileInput.click())
+    dropZone.addEventListener('dragover', (e) => {
+      e.preventDefault()
+      dropZone.classList.add('border-[var(--action-color)]')
+    })
+    dropZone.addEventListener('dragleave', () => dropZone.classList.remove('border-[var(--action-color)]'))
+    dropZone.addEventListener('drop', (e) => {
+      e.preventDefault()
+      dropZone.classList.remove('border-[var(--action-color)]')
+      if (e.dataTransfer?.files[0]) handleFile(e.dataTransfer.files[0])
+    })
+    fileInput.addEventListener('change', () => {
+      if (fileInput.files?.[0]) handleFile(fileInput.files[0])
+    })
+
+    return () => {
+      if (worker) {
+        worker.terminate()
+        worker = null
+      }
+    }
+  }
+</script>

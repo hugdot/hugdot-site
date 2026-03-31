@@ -52,6 +52,7 @@ export default defineThemeConfig({
         label: 'PDF',
         items: [
           { label: 'PDF Merger', href: '/tools/pdf/merger' },
+          { label: 'PDF Compressor', href: '/tools/pdf/compressor' },
           { label: 'PDF Splitter', href: '/tools/pdf/splitter' },
           { label: 'PDF to Image', href: '/tools/pdf/to-image' },
           { label: 'PDF Redact', href: '/tools/pdf/redact' },

@@ -11,6 +11,14 @@ export const pdfTools: Tool[] = [
     label: 'PDF Splitter',
   },
   {
+    id: 'pdf-compressor',
+    category: 'pdf',
+    slug: 'compressor',
+    icon: 'lucide:file-down',
+    available: true,
+    label: 'PDF Compressor',
+  },
+  {
     id: 'pdf-to-image',
     category: 'pdf',
     slug: 'to-image',

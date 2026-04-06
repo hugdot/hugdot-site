@@ -53,24 +53,6 @@ const calculatorTools = getToolsByCategory('calculator')
         </ul>
       </div>
 
-      <div class="flex flex-col gap-4">
-        <Heading level="h3" size="h6">SNS Tools</Heading>
-        <ul class="flex flex-col gap-2">
-          {snsTools.map((tool) => (
-            <li><Link href={getToolHref(tool.category, tool.slug)}>{tool.label}</Link></li>
-          ))}
-        </ul>
-      </div>
-
-      <div class="flex flex-col gap-4">
-        <Heading level="h3" size="h6">Calculators</Heading>
-        <ul class="flex flex-col gap-2">
-          {calculatorTools.map((tool) => (
-            <li><Link href={getToolHref(tool.category, tool.slug)}>{tool.label}</Link></li>
-          ))}
-        </ul>
-      </div>
-
     </div>
   </section>
 

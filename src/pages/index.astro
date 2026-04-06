@@ -5,7 +5,16 @@ import { Heading } from 'accessible-astro-components'
 import { Icon } from 'astro-icon/components'
 import { tools, getToolHref } from '../data/tools/'
 
-// 1. 카테고리 설정: href를 ID(#) 방식으로 변경하여 404 에러 원천 차단
+// 1. SEO 데이터 동적 임포트: src/data/seo/en 폴더의 모든 JSON을 가져옴
+const seoFiles = import.meta.glob('/src/data/seo/en/*.json', { eager: true });
+
+// 2. 파일 경로에서 slug를 추출하여 매핑 객체 생성
+const seoDataMap = Object.entries(seoFiles).reduce((acc, [path, content]: [string, any]) => {
+  const fileName = path.split('/').pop()?.replace('.json', '');
+  if (fileName) acc[fileName] = content;
+  return acc;
+}, {} as Record<string, any>);
+
 const categoryConfigs = {
   text: { id: 'text-tools', label: 'Text Tools', icon: 'lucide:type', href: '#text-tools', desc: 'Securely process strings, format code, and analyze text data right in your browser.' },
   image: { id: 'image-tools', label: 'Image Tools', icon: 'lucide:image', href: '#image-tools', desc: 'Compress, convert, and watermark your photos without ever uploading them to a server.' },
@@ -20,12 +29,20 @@ const categories = Object.entries(categoryConfigs)
     ...config,
     tools: tools
       .filter((t) => t.category === key && t.available && !t.excludeFromLauncher)
-      .map((t) => ({
-        label: t.label,
-        href: getToolHref(t.category, t.slug),
-        // 2. 타입 에러 해결: (t as any)를 사용해 description 속성 접근 허용
-        description: (t as any).description || `${t.label} utility for your daily tasks`,
-      })),
+      .map((t) => {
+        // 3. JSON 데이터 병합: t.slug와 일치하는 JSON 파일의 metaDescription 사용
+        const seo = seoDataMap[t.id] || seoDataMap[t.slug] || {};
+        const toolDesc = seo.metaDescription || seo.introSummary;
+
+        return {
+          label: t.label,
+          href: getToolHref(t.category, t.slug),
+          // 데이터가 너무 길면 디자인을 위해 자르고, 없으면 기본 문구 출력
+          description: toolDesc 
+            ? (toolDesc.length > 95 ? toolDesc.substring(0, 92) + '...' : toolDesc)
+            : `${t.label} utility for your daily digital tasks.`,
+        };
+      }),
   }))
   .filter((cat) => cat.tools.length > 0)
 ---
@@ -73,7 +90,6 @@ const categories = Object.entries(categoryConfigs)
     <div class="container flex flex-col gap-24">
       {
         categories.map((category) => (
-          /* 4. 섹션 ID 부여: 클릭 시 해당 위치로 부드럽게 스크롤 */
           <div id={category.id} class="space-y-6 scroll-mt-24">
             <div class="mb-6 flex items-center justify-between border-b border-[var(--border-color-subtle)] pb-6">
               <div class="flex flex-col gap-2">
@@ -136,7 +152,6 @@ const categories = Object.entries(categoryConfigs)
     transform: translateY(-2px);
   }
 
-  /* 부드러운 스크롤 효과 추가 */
   html {
     scroll-behavior: smooth;
   }

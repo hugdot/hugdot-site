@@ -7,9 +7,7 @@ import { Icon } from 'astro-icon/components'
     <h1 class="text-3xl font-bold lg:text-5xl">
       Your Device. <span class="text-gradient">Your Tools.</span>
     </h1>
-    <p class="text-base font-semibold opacity-50 tracking-wide">
-      No Upload. No Login. No Limits.
-    </p>
+    <p class="text-base font-semibold tracking-wide opacity-50">No Upload. No Login. No Limits.</p>
 
     <div class="relative w-full max-w-2xl">
       <Icon
@@ -25,19 +23,18 @@ import { Icon } from 'astro-icon/components'
         placeholder="Search tools..."
         autocomplete="off"
         spellcheck="false"
-        class="w-full rounded-full border-2 border-[var(--border-color-subtle)] bg-[var(--background-color)] py-4 pr-6 pl-14 text-lg shadow-sm outline-none transition-all focus:border-[var(--brand-primary)] focus:shadow-md"
+        class="w-full rounded-full border-2 border-[var(--border-color-subtle)] bg-[var(--background-color)] py-4 pr-6 pl-14 text-lg shadow-sm transition-all outline-none focus:border-[var(--brand-primary)] focus:shadow-md"
         aria-label="Search tools"
       />
       <!-- Search results dropdown -->
       <ul
         id="search-results"
-        class="absolute left-0 right-0 top-full z-50 mt-2 hidden max-h-80 overflow-y-auto rounded-2xl border border-[var(--border-color-subtle)] bg-[var(--background-color)] shadow-lg"
+        class="absolute top-full right-0 left-0 z-50 mt-2 hidden max-h-80 overflow-y-auto rounded-2xl border border-[var(--border-color-subtle)] bg-[var(--background-color)] shadow-lg"
         role="listbox"
         aria-label="Search results"
       >
       </ul>
     </div>
-
   </div>
 </section>
 

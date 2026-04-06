@@ -213,6 +213,16 @@ const relatedTools = tools.filter((t) => t.category === 'calculator' && t.id !==
 
       const bdayOptions: Intl.DateTimeFormatOptions = { year: 'numeric', month: 'long', day: 'numeric' }
       resultBdayDate.textContent = nextBday.toLocaleDateString('en-US', bdayOptions)
+
+      if (typeof (window as any) .gtag === 'function') {
+        (window as any).gtag('event', 'tool_use', {
+          'tool_id': 'age-calculator',
+          'action': 'calculate',
+          'result_years': years, // 계산된 나이 정보를 넘길 수도 있습니다
+          'page_language': 'en'  // 현재 페이지가 영어판(en)임을 기록
+        });
+      }
+
     }
 
     inputDob.addEventListener('change', calculate)

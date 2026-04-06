@@ -215,6 +215,16 @@ const relatedTools = tools.filter((t) => t.category === 'calculator' && t.id !==
       resultTip.textContent = fmt(tipAmount)
       resultTotal.textContent = fmt(total)
       resultPerPerson.textContent = fmt(perPerson)
+      if (bill > 0 && typeof (window as any).gtag === 'function') {
+        (window as any).gtag('event', 'tool_use', {
+          'tool_id': 'tip-calculator',
+          'action': 'calculate',
+          'bill_amount': bill,
+          'tip_percentage': tip,
+          'split_count': people,
+          'page_language': 'en'
+        });
+      }
     }
 
     const setTip = (pct: number) => {
@@ -279,6 +289,7 @@ const relatedTools = tools.filter((t) => t.category === 'calculator' && t.id !==
       resultTotal.textContent = '$0.00'
       resultPerPerson.textContent = '$0.00'
       setTip(15)
+
     })
   })
 </script>

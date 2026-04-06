@@ -286,6 +286,16 @@ const relatedTools = tools.filter((t) => t.category === 'calculator' && t.id !==
         })
         resultsList.appendChild(row)
       })
+      if (val > 0 && typeof (window as any).gtag === 'function') {
+        (window as any).gtag('event', 'tool_use', {
+          'tool_id': 'unit-converter',
+          'action': 'convert',
+          'category': currentCategory,
+          'input_unit': inputUnit.value,
+          'input_value': val,
+          'page_language': 'en'
+        });
+      }
     }
 
     const setCategory = (cat: string) => {

@@ -338,5 +338,29 @@ const relatedTools = tools.filter((t) => t.category === 'generator' && t.id !== 
     }
 
     btnRoll.addEventListener('click', roll)
+
+    if (typeof (window as any).gtag === 'function') {
+      // 1. 동전 던지기 추적 (버튼이나 동전 클릭 시)
+      const trackCoin = () => {
+        (window as any).gtag('event', 'tool_use', {
+          'tool_id': 'coin-flipper',
+          'action': 'flip',
+          'page_language': 'en'
+        });
+      };
+      btnFlip.addEventListener('click', trackCoin);
+      coin.addEventListener('click', trackCoin);
+
+      // 2. 주사위 굴리기 추적
+      btnRoll.addEventListener('click', () => {
+        (window as any).gtag('event', 'tool_use', {
+          'tool_id': 'dice-roller',
+          'action': 'roll',
+          'dice_type': currentDice,
+          'dice_count': numDice,
+          'page_language': 'en'
+        });
+      });
+    }
   })
 </script>

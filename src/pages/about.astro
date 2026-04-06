@@ -1,0 +1,117 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import PageHeader from '@components/PageHeader.astro'
+import { Heading } from 'accessible-astro-components'
+import { Icon } from 'astro-icon/components'
+---
+
+<DefaultLayout title="About Us | HugDot">
+  <PageHeader 
+    title="About HugDot" 
+    subtitle="Our mission is to simplify your digital workflow without compromising your privacy." 
+    bgType="gradient" 
+  />
+
+  <section class="my-16 container">
+    <div class="grid grid-cols-1 gap-16 md:grid-cols-2 items-start">
+      
+      <div class="space-content">
+        <Heading level="h2">The "Dot" in Digital Freedom</Heading>
+        <p class="text-lg leading-relaxed">
+          <strong>HugDot ( . )</strong> was founded on a simple yet powerful premise: 
+          <em>Your files belong to you, and they should stay with you.</em>
+        </p>
+        <p>
+          In an era where most web tools act as "data vacuums," we decided to build a different kind of lab. 
+          A place where high-performance utility meets absolute privacy. We don't just "protect" your data; 
+          we design our systems so we never have access to it in the first place.
+        </p>
+
+        <div class="mt-8 space-y-6">
+          <div class="flex gap-4">
+            <div class="mt-1 bg-primary-100 dark:bg-primary-900 p-2 rounded-lg h-fit">
+              <Icon name="lucide:zap" size={24} class="text-primary-600" />
+            </div>
+            <div>
+              <h4 class="font-bold text-xl">Speed of Native, Ease of Web</h4>
+              <p class="text-sm opacity-80">By utilizing WebAssembly (WASM) and modern JavaScript, our tools run at near-native speeds directly in your browser tab.</p>
+            </div>
+          </div>
+
+          <div class="flex gap-4">
+            <div class="mt-1 bg-primary-100 dark:bg-primary-900 p-2 rounded-lg h-fit">
+              <Icon name="lucide:globe" size={24} class="text-primary-600" />
+            </div>
+            <div>
+              <h4 class="font-bold text-xl">Global Accessibility</h4>
+              <p class="text-sm opacity-80">We believe utility has no borders. HugDot is being built to support 16+ languages, ensuring everyone has access to professional-grade tools.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-gray-50 dark:bg-gray-900 p-8 rounded-2xl border border-gray-200 dark:border-gray-800 space-content">
+        <Heading level="h3">Why HugDot?</Heading>
+        
+        <div class="space-y-4">
+          <p class="font-bold text-primary-600 dark:text-primary-400">1. Zero Server-Side Processing</p>
+          <p class="text-sm">
+            Traditional tools upload your PDF, image, or video to their servers. We don't. 
+            All logic happens locally on your CPU/GPU. No "Upload" button means no data leak risk.
+          </p>
+
+          <p class="font-bold text-primary-600 dark:text-primary-400">2. Privacy by Design</p>
+          <p class="text-sm">
+            We don't require accounts for basic utilities. No tracking pixels, no intrusive cookies. 
+            Just the tool you need, exactly when you need it.
+          </p>
+
+          <p class="font-bold text-primary-600 dark:text-primary-400">3. Built for Automation</p>
+          <p class="text-sm">
+            From Programmatic SEO tools to batch image processors, we build for efficiency. 
+            Our lab is constantly evolving to tackle the most repetitive digital tasks.
+          </p>
+        </div>
+
+        <hr class="my-8 border-gray-200 dark:border-gray-800" />
+
+        <div class="flex flex-col gap-4">
+          <p class="text-sm italic opacity-70">
+            "HugDot is an operation fueled by coffee and a passion for clean code. 
+            Every tool is built with the user's rights in mind."
+          </p>
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-primary-500 to-secondary-500"></div>
+            <div>
+              <p class="text-sm font-bold">Kim</p>
+              <p class="text-xs opacity-60">Founder & Webmaster</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="py-16 bg-primary-600 text-white text-center">
+    <div class="container space-content">
+      <Heading level="h2">Need a Custom Tool?</Heading>
+      <p class="max-w-xl mx-auto opacity-90">
+        If you have a workflow problem that needs an automated, private solution, we want to hear from you.
+      </p>
+      <div class="mt-8">
+        <a href="/contact" class="bg-white text-primary-600 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition-colors">
+          Get in Touch
+        </a>
+      </div>
+    </div>
+  </section>
+</DefaultLayout>
+
+<style>
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+</style>

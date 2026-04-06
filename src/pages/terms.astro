@@ -1,0 +1,36 @@
+---
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import PageHeader from '@components/PageHeader.astro'
+import { Heading } from 'accessible-astro-components'
+
+---
+
+<DefaultLayout title="Terms of Service | HugDot">
+  <PageHeader 
+    title="Terms of Service" 
+    subtitle="Last updated: April 2026" 
+    bgType="gradient" 
+  />
+
+  <section class="my-16 container">
+    <div class="space-content max-w-1xl mx-auto">
+      <Heading level="h2">1. Acceptance of Terms</Heading>
+      <p>By accessing and using HugDot (hugdot.com), you accept and agree to be bound by the terms and provision of this agreement.</p>
+
+      <Heading level="h2">2. Description of Service</Heading>
+      <p>HugDot provides various browser-based utility tools. These services are provided "as-is" and "as-available" without any warranty of any kind.</p>
+
+      <Heading level="h2">3. User Responsibility & Privacy</Heading>
+      <p>Users are responsible for the data they process using our tools. While we prioritize privacy through on-device processing, we recommend not processing highly sensitive personal information.</p>
+
+      <Heading level="h2">4. Intellectual Property</Heading>
+      <p>The code, design, and original content of HugDot are the intellectual property of In-ae Hyun and are protected by applicable copyright and trademark law.</p>
+
+      <Heading level="h2">5. Limitation of Liability</Heading>
+      <p>In no event shall HugDot or its operator be liable for any damages (including, without limitation, damages for loss of data or profit) arising out of the use or inability to use the tools on HugDot.</p>
+
+      <Heading level="h2">6. Governing Law</Heading>
+      <p>Any claim relating to HugDot's website shall be governed by the laws of the Republic of Korea without regard to its conflict of law provisions.</p>
+    </div>
+  </section>
+</DefaultLayout>

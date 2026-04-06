@@ -601,6 +601,17 @@ const relatedTools = tools.filter((t) => t.category === 'file' && t.id !== 'meta
           const sorted = [...highRiskItems, ...lowRiskItems]
           sorted.forEach(({ key, value, high }) => renderMetadataItem(key, value, high))
         }
+        if (typeof (window as any).gtag === 'function') {
+          (window as any).gtag('event', 'tool_use', {
+            'tool_id': 'metadata-remover',
+            'action': 'inspect',
+            'file_type': fileType, 
+            'metadata_count': items.length,
+            // 💡 여기서 직접 high-risk 아이템 개수를 계산합니다.
+            'high_risk_count': items.filter(i => i.high).length, 
+            'page_language': 'en'
+          });
+        }
 
         show(inspectionPanel)
       } catch (err) {

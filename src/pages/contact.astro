@@ -1,132 +1,159 @@
 ---
 import DefaultLayout from '@layouts/DefaultLayout.astro'
-import PageHeader from '@components/PageHeader.astro'
-import { Form, Input, Button, Textarea, Heading, Link } from 'accessible-astro-components'
 import { Icon } from 'astro-icon/components'
 ---
 
-<DefaultLayout title="Contact | HugDot">
-  <PageHeader 
-    title="Contact HugDot" 
-    subtitle="Feedback, bug reports, or feature requests? We're listening." 
-    bgType="gradient" 
-  />
+<DefaultLayout title="Contact | HugDot" description="Contact HugDot for feedback, bug reports, or feature requests.">
+<div class="ct-page">
+  <div class="cw">
 
-  <section class="my-16 container">
-    <div class="grid grid-cols-1 gap-32 md:grid-cols-2">
-      <div class="space-content">
-        <Heading level="h2">Drop a message</Heading>
-        <p>Have a specific utility tool in mind? Let us know. We prioritize building tools that solve real-world automation problems.</p>
-        
-        <Form name="contact" action="/api/contact" method="post">
-          <Input
-            name="name"
-            label="Name / Alias"
-            required
-            placeholder="How should we address you?"
-            autocomplete="name"
-          />
+    <div class="ct-header">
+      <p class="eyebrow">Contact</p>
+      <h1 class="ct-title">Get in Touch</h1>
+      <p class="ct-sub">Bug reports, data corrections, or feature requests — we're listening.</p>
+    </div>
 
-          <Input 
-            name="email" 
-            label="Email Address" 
-            type="email" 
-            required 
-            placeholder="where we can reach you"
-            autocomplete="email" 
-          />
+    <div class="ct-grid">
 
-          <Textarea 
-            name="message" 
-            label="Message" 
-            placeholder="Describe your request or the issue you've encountered..."
-            required 
-          />
-
-          <div id="status-message" class="hidden my-4 p-4 rounded text-sm font-bold"></div>
-
-          <Button htmlType="submit" type="primary">Send Message</Button>
-        </Form>
+      <!-- 폼 -->
+      <div class="ct-form-wrap">
+        <form id="contactForm" class="ct-form">
+          <div class="field">
+            <label for="name" class="field-label">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your name or alias" class="field-input" autocomplete="name"/>
+          </div>
+          <div class="field">
+            <label for="email" class="field-label">Email</label>
+            <input type="email" id="email" name="email" required placeholder="your@email.com" class="field-input" autocomplete="email"/>
+          </div>
+          <div class="field">
+            <label for="message" class="field-label">Message</label>
+            <textarea id="message" name="message" required placeholder="Describe the issue or your request..." rows="5" class="field-input field-textarea"></textarea>
+          </div>
+          <div id="formStatus" class="form-status hidden"></div>
+          <button type="submit" id="submitBtn" class="ct-submit">
+            <Icon name="lucide:send" size="0.9rem"/>
+            Send Message
+          </button>
+        </form>
       </div>
 
-      <div class="space-content">
-        <Heading level="h3">The Lab</Heading>
-        <p class="text-lg">
-          <strong>HugDot ( . )</strong> is a digital lab dedicated to building high-utility, privacy-first web tools.
-        </p>
-
-        <div class="gap-2xs flex items-center">
-          <Icon aria-hidden="true" name="lucide:mail" size={20} class="flex-shrink-0" />
-          <p>
-            <span class="font-bold">Inquiries:</span>
-            <Link href="mailto:admin@hugdot.com">admin@hugdot.com</Link>
-          </p>
-        </div>
-
-        <div class="gap-2xs flex items-center border-t border-gray-200 dark:border-gray-700 pt-6 mt-4">
-          <div class="space-y-2">
-            <p class="font-bold flex items-center gap-2">
-              <Icon name="lucide:shield-check" size={18} />
-              On-Device Privacy
-            </p>
-            <p class="text-sm opacity-80">
-              Your files never leave your browser. All processing happens locally on your device via WASM and JS. We don't see your data, and we don't want to.
-            </p>
+      <!-- 사이드 정보 -->
+      <div class="ct-info">
+        <div class="info-card">
+          <Icon name="lucide:mail" size="1.1rem" class="info-icon"/>
+          <div>
+            <p class="info-title">Email</p>
+            <a href="mailto:admin@hugdot.com" class="info-link">admin@hugdot.com</a>
           </div>
         </div>
 
-        <div class="mt-8">
-          <p class="font-bold mb-4">Follow the Build</p>
-          <ul class="flex flex-wrap gap-4">
-            <li>
-              <Link href="https://x.com/GetHugDot" isButton isExternal hideIcon animateOnHover animationType="boop">
-                <Icon aria-hidden="true" name="lucide:twitter" size={24} />
-                <span class="sr-only">X (Twitter)</span>
-              </Link>
-            </li>
-          </ul>
+        <div class="info-card">
+          <Icon name="lucide:database" size="1.1rem" class="info-icon"/>
+          <div>
+            <p class="info-title">Data Corrections</p>
+            <p class="info-desc">Found incorrect game data? Let us know the character/item name and the correct value.</p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <Icon name="lucide:lightbulb" size="1.1rem" class="info-icon"/>
+          <div>
+            <p class="info-title">Feature Requests</p>
+            <p class="info-desc">Have an idea for a new tool or page? We'd love to hear it.</p>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <Icon name="lucide:globe" size="1.1rem" class="info-icon"/>
+          <div>
+            <p class="info-title">Languages</p>
+            <p class="info-desc">Translation issues or missing text in your language? Please mention the language and page.</p>
+          </div>
         </div>
       </div>
+
     </div>
-  </section>
-</DefaultLayout>
+  </div>
+</div>
 
-<script>
-  // accessible-astro-components의 Form 태그를 찾아 AJAX로 가로챕니다.
-  const contactForm = document.querySelector('form[name="contact"]');
-  const statusDiv = document.getElementById('status-message');
-  const submitBtn = contactForm?.querySelector('button[type="submit"]');
+<script is:inline>
+;(function(){
+  var form = document.getElementById('contactForm')
+  var status = document.getElementById('formStatus')
+  var btn = document.getElementById('submitBtn')
 
-  contactForm?.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    if (!statusDiv || !submitBtn) return;
+  if (!form) return
 
-    // 초기화
-    submitBtn.textContent = 'Sending...';
-    submitBtn.setAttribute('disabled', 'true');
-    statusDiv.classList.add('hidden');
+  form.addEventListener('submit', async function(e) {
+    e.preventDefault()
+    if (!status || !btn) return
 
-    const formData = new FormData(e.target as HTMLFormElement);
+    btn.disabled = true
+    btn.textContent = 'Sending...'
+    status.className = 'form-status hidden'
+
+    var formData = new FormData(form)
 
     try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        body: formData,
-      });
-
-      if (response.ok) {
-        statusDiv.textContent = '✅ Message sent successfully!';
-        statusDiv.className = 'block my-4 p-4 rounded text-sm font-bold bg-green-100 text-green-800';
-        (e.target as HTMLFormElement).reset();
+      var res = await fetch('/api/contact', { method:'POST', body:formData })
+      if (res.ok) {
+        status.textContent = '✅ Message sent successfully!'
+        status.className = 'form-status form-status--ok'
+        form.reset()
       } else {
-        throw new Error();
+        throw new Error()
       }
-    } catch (err) {
-      statusDiv.textContent = '❌ Failed to send. Please try again.';
-      statusDiv.className = 'block my-4 p-4 rounded text-sm font-bold bg-red-100 text-red-800';
+    } catch(err) {
+      status.textContent = '❌ Failed to send. Please email us directly at admin@hugdot.com'
+      status.className = 'form-status form-status--err'
     } finally {
-      submitBtn.textContent = 'Send Message';
-      submitBtn.removeAttribute('disabled');
+      btn.disabled = false
+      btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg> Send Message'
     }
-  });
+  })
+})()
 </script>
+</DefaultLayout>
+
+<style>
+.ct-page { min-height:100vh; background:var(--c-bg); color:var(--foreground-color); padding:4rem 0 6rem; }
+.cw { max-width:1000px; margin:0 auto; padding:0 1.5rem; }
+
+.ct-header { margin-bottom:3rem; }
+.eyebrow { font-size:.68rem; font-weight:900; letter-spacing:.14em; text-transform:uppercase; color:var(--c-accent); margin-bottom:.5rem; }
+.ct-title { font-family:var(--font-display); font-size:clamp(1.8rem,4vw,2.8rem); font-weight:700; letter-spacing:-.02em; margin-bottom:.5rem; }
+.ct-sub { font-size:.88rem; color:var(--c-muted); line-height:1.7; }
+
+.ct-grid { display:grid; grid-template-columns:1fr; gap:2rem; }
+@media(min-width:768px) { .ct-grid { grid-template-columns:1fr 1fr; align-items:start; } }
+
+/* 폼 */
+.ct-form { display:flex; flex-direction:column; gap:1rem; }
+.field { display:flex; flex-direction:column; gap:.4rem; }
+.field-label { font-size:.72rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--c-muted); }
+.field-input { padding:.6rem .85rem; border:1px solid var(--c-border); border-radius:var(--radius-sm); background:var(--c-surface); color:var(--foreground-color); font-size:.85rem; outline:none; transition:border-color var(--anim-fast); width:100%; box-sizing:border-box; }
+.field-input:focus { border-color:var(--c-accent); }
+.field-input::placeholder { color:var(--c-muted); }
+.field-textarea { resize:vertical; min-height:120px; font-family:inherit; line-height:1.6; }
+
+.form-status { padding:.7rem 1rem; border-radius:var(--radius-sm); font-size:.8rem; font-weight:700; }
+.form-status.hidden { display:none; }
+.form-status--ok { background:rgba(74,222,128,.1); border:1px solid rgba(74,222,128,.3); color:#4ade80; }
+.form-status--err { background:rgba(248,113,113,.1); border:1px solid rgba(248,113,113,.3); color:#f87171; }
+
+.ct-submit { display:inline-flex; align-items:center; gap:.5rem; padding:.7rem 1.4rem; border-radius:var(--radius-md); background:var(--c-accent); color:#fff; font-size:.85rem; font-weight:700; cursor:pointer; border:none; transition:opacity var(--anim-fast); align-self:flex-start; }
+.ct-submit:hover { opacity:.85; }
+.ct-submit:disabled { opacity:.5; cursor:not-allowed; }
+
+/* 사이드 정보 */
+.ct-info { display:flex; flex-direction:column; gap:.75rem; }
+.info-card { display:flex; align-items:flex-start; gap:.85rem; padding:1rem 1.1rem; border:1px solid var(--c-border); border-radius:var(--radius-md); background:var(--c-surface); }
+.info-icon { color:var(--c-accent); flex-shrink:0; margin-top:.1rem; }
+.info-title { font-size:.82rem; font-weight:700; margin-bottom:.25rem; }
+.info-desc { font-size:.72rem; color:var(--c-muted); line-height:1.6; word-break:keep-all; }
+.info-link { font-size:.82rem; color:var(--c-accent); text-decoration:underline; text-underline-offset:3px; }
+.info-link:hover { opacity:.8; }
+
+h1,p { word-break:keep-all; }
+</style>

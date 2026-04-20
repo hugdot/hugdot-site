@@ -1,0 +1,694 @@
+---
+// src/components/starrail/SkillMatsTab.astro
+interface Props {
+  char: any
+  lang: string
+  allData: Record<string, any>
+  labels: any
+  itemsMap: Record<string, any>
+}
+
+const toAssetUrl = (rel: string) => {
+  if (!rel) return ''
+
+  // 중복 경로 제거
+  let cleanPath = rel.replace(/^\//, '').replace(/^starrail\/assets\//, '')
+  const fileName = cleanPath.split('/').pop() || ''
+
+  // A. [스탯 아이콘] Icon...webp -> property 폴더로
+  if (fileName.includes('Icon')) {
+    return `/starrail/assets/icon/property/${fileName}`
+  }
+
+  // B. [행적/스킬 노드 아이콘] 1001_skill.webp -> skill 폴더로
+  if (fileName.includes('_') && /^\d{4}/.test(fileName)) {
+    return `/starrail/assets/icon/skill/${fileName}`
+  }
+
+  // C. [재료 아이콘] 데이터에 character로 되어 있는 경우 item으로 변경
+  if (cleanPath.includes('icon/character/')) {
+    cleanPath = cleanPath.replace('icon/character/', 'icon/item/')
+  }
+
+  return `/starrail/assets/${cleanPath}`
+}
+
+const { char, lang, allData, itemsMap } = Astro.props
+
+const baseDir = `/src/data/starrail/${lang}`
+const skillTreeModule = allData[`${baseDir}/character_skill_trees.json`] as any
+const skillModule = allData[`${baseDir}/character_skills.json`] as any
+
+const treeData: Record<string, any> = skillTreeModule?.default ?? skillTreeModule ?? {}
+const skillData: Record<string, any> = skillModule?.default ?? skillModule ?? {}
+
+
+
+const charId = char?.id ?? ''
+const skillTreeIds: string[] = char?.skill_trees ?? []
+
+interface MatItem {
+  id: string
+  num: number
+  name: string
+  icon: string
+}
+interface SkillNode {
+  id: string
+  name: string
+  icon: string
+  type: 'skill' | 'major' | 'minor'
+  skillName?: string
+  promotion: number
+  materials: MatItem[]
+}
+
+const nodes: SkillNode[] = []
+const majorRe = new RegExp(`^${charId}81\\d{2}$`)
+const minorRe = new RegExp(`^${charId}82\\d{2}$`)
+
+for (const tid of skillTreeIds) {
+  const node = treeData[tid]
+  if (!node) continue
+
+  let nodeType: 'skill' | 'major' | 'minor' = 'skill'
+  if (majorRe.test(tid)) nodeType = 'major'
+  else if (minorRe.test(tid)) nodeType = 'minor'
+
+  let linkedSkillName = ''
+  if (node.level_up_skills?.length) {
+    const sk = skillData[node.level_up_skills[0].id]
+    linkedSkillName = sk?.name ?? ''
+  }
+
+  for (const lv of node.levels ?? []) {
+    const mats = lv.materials ?? []
+    if (!mats.length) continue
+
+    const matItems: MatItem[] = mats.map((m: any) => {
+      const item = itemsMap[m.id]
+      let icon = item?.icon ?? ''
+      if (icon.includes('icon/character/')) icon = icon.replace('icon/character/', 'icon/item/')
+      if (m.id === '2') icon = 'icon/item/2.webp'
+      return {
+        id: m.id,
+        num: m.num,
+        name: item?.name ?? `Item ${m.id}`,
+        icon: icon ? toAssetUrl(icon) : '',
+      }
+    })
+
+    nodes.push({
+      id: tid,
+      name: node.name ?? '',
+      icon: node.icon ?? '',
+      type: nodeType,
+      skillName: linkedSkillName || undefined,
+      promotion: lv.promotion ?? 0,
+      materials: matItems,
+    })
+  }
+}
+
+// 전체 누적 재료
+const totalMap = new Map<string, { num: number; name: string; icon: string }>()
+for (const node of nodes) {
+  for (const m of node.materials) {
+    const ex = totalMap.get(m.id)
+    if (ex) ex.num += m.num
+    else totalMap.set(m.id, { num: m.num, name: m.name, icon: m.icon })
+  }
+}
+const totalMats = [...totalMap.entries()]
+  .map(([id, v]) => ({ id, ...v }))
+  .sort((a, b) => (a.id === '2' ? -1 : b.id === '2' ? 1 : a.id.localeCompare(b.id)))
+
+// 스킬 그룹화
+interface SkillGroup {
+  skillName: string
+  icon: string
+  nodes: SkillNode[]
+}
+const skillGroups: SkillGroup[] = []
+const seenSkills = new Map<string, SkillGroup>()
+
+for (const node of nodes) {
+  if (node.type !== 'skill') continue
+  const key = node.skillName ?? node.name
+  if (!seenSkills.has(key)) {
+    const g: SkillGroup = { skillName: key, icon: node.icon, nodes: [] }
+    seenSkills.set(key, g)
+    skillGroups.push(g)
+  }
+  seenSkills.get(key)!.nodes.push(node)
+}
+
+const majorNodes = nodes.filter((n) => n.type === 'major')
+const minorNodes = nodes.filter((n) => n.type === 'minor')
+---
+
+<div class="skillmats-tab">
+  <!-- ── 전체 누적 재료 ── -->
+  <div class="sm-section">
+    <div class="panel-header">
+      <div class="panel-accent"></div>
+      <h2 class="panel-title">{lang === 'kr' ? '전체 행적 재료 (누적)' : 'Total Skill Materials'}</h2>
+    </div>
+    <div class="total-grid">
+      {
+        totalMats.map((m) => (
+          <div class="total-mat" title={m.name}>
+            <div class="mat-icon-wrap">
+              {m.icon ? (
+                <img
+                  src={m.icon}
+                  alt={m.name}
+                  width="38"
+                  height="38"
+                  loading="lazy"
+                  decoding="async"
+                  class="mat-icon-img"
+                />
+              ) : (
+                <span class="mat-ph">?</span>
+              )}
+            </div>
+            <p class="mat-name">{m.name}</p>
+            <p class="mat-num">×{m.num.toLocaleString()}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  <!-- ── 스킬 레벨업 재료 ── -->
+  {
+    skillGroups.length > 0 && (
+      <div class="sm-section">
+        <div class="panel-header">
+          <div class="panel-accent" />
+          <h2 class="panel-title">{lang === 'kr' ? '스킬 레벨업 재료' : 'Skill Upgrade Materials'}</h2>
+        </div>
+        <div class="skill-groups">
+          {skillGroups.map((g, gIdx) => {
+            const maxLv = g.nodes.length
+            const lvMatsJson = JSON.stringify(
+              g.nodes.map((node, ni) => ({
+                from: ni + 1,
+                to: ni + 2,
+                mats: node.materials,
+              })),
+            )
+            return (
+              <div class="skill-group">
+                <div class="sg-header">
+                  <div class="sg-icon-wrap">
+                    {g.icon && (
+                      <img
+                        src={toAssetUrl(g.icon)}
+                        alt={g.skillName}
+                        width="32"
+                        height="32"
+                        loading="lazy"
+                        decoding="async"
+                        class="sg-icon"
+                      />
+                    )}
+                  </div>
+                  <span class="sg-name">{g.skillName}</span>
+                  <div class="sg-ctrl">
+                    <span class="sg-lv-badge">
+                      Lv.<span id={`sg-from-${gIdx}`}>1</span>
+                      <span class="sg-arrow">→</span>
+                      <span id={`sg-to-${gIdx}`}>2</span>
+                    </span>
+                    <input
+                      id={`sg-range-${gIdx}`}
+                      type="range"
+                      min="1"
+                      max={maxLv}
+                      value="1"
+                      class="range-input sg-range"
+                      data-sg-idx={gIdx}
+                    />
+                    <span class="sg-max">/ {maxLv + 1}</span>
+                  </div>
+                </div>
+                <div class="sg-mats" id={`sg-mats-${gIdx}`} data-mats={lvMatsJson}>
+                  {g.nodes[0]?.materials.map((m) => (
+                    <div class="mat-chip" title={m.name}>
+                      {m.icon ? (
+                        <img
+                          src={m.icon}
+                          alt={m.name}
+                          width="36"
+                          height="36"
+                          loading="lazy"
+                          decoding="async"
+                          class="mat-chip-img"
+                        />
+                      ) : (
+                        <span class="mat-chip-ph">?</span>
+                      )}
+                      <span class="mat-chip-num">×{m.num.toLocaleString()}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    )
+  }
+
+  <!-- ── 주요 행적 해금 재료 ── -->
+  {
+    majorNodes.length > 0 && (
+      <div class="sm-section">
+        <div class="panel-header">
+          <div class="panel-accent" />
+          <h2 class="panel-title">{lang === 'kr' ? '주요 행적 해금 재료' : 'Major Trace Materials'}</h2>
+        </div>
+        <div class="trace-list">
+          {majorNodes.map((node) => (
+            <div class="trace-card">
+              <div class="trace-card-header">
+                <div class="sg-icon-wrap">
+                  {node.icon && (
+                    <img
+                      src={toAssetUrl(node.icon)}
+                      alt={node.name}
+                      width="28"
+                      height="28"
+                      loading="lazy"
+                      decoding="async"
+                      class="sg-icon"
+                    />
+                  )}
+                </div>
+                <span class="tr-name">{node.name}</span>
+                <span class="tr-badge">A{node.promotion}</span>
+              </div>
+              <div class="sg-mats">
+                {node.materials.map((m) => (
+                  <div class="mat-chip" title={m.name}>
+                    {m.icon ? (
+                      <img
+                        src={m.icon}
+                        alt={m.name}
+                        width="36"
+                        height="36"
+                        loading="lazy"
+                        decoding="async"
+                        class="mat-chip-img"
+                      />
+                    ) : (
+                      <span class="mat-chip-ph">?</span>
+                    )}
+                    <span class="mat-chip-num">×{m.num.toLocaleString()}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    )
+  }
+
+  <!-- ── 특성 행적 해금 재료 ── -->
+  {
+    minorNodes.length > 0 && (
+      <div class="sm-section">
+        <div class="panel-header">
+          <div class="panel-accent" />
+          <h2 class="panel-title">{lang === 'kr' ? '특성 행적 해금 재료' : 'Minor Trace Materials'}</h2>
+        </div>
+        <div class="trace-list">
+          {minorNodes.map((node) => (
+            <div class="trace-card">
+              <div class="trace-card-header">
+                <span class="tr-name">
+                  {lang === 'kr' ? '특성' : 'Minor'}
+                  {node.promotion > 0 ? ` A${node.promotion}` : ''}
+                </span>
+              </div>
+              <div class="sg-mats">
+                {node.materials.map((m) => (
+                  <div class="mat-chip" title={m.name}>
+                    {m.icon ? (
+                      <img
+                        src={m.icon}
+                        alt={m.name}
+                        width="36"
+                        height="36"
+                        loading="lazy"
+                        decoding="async"
+                        class="mat-chip-img"
+                      />
+                    ) : (
+                      <span class="mat-chip-ph">?</span>
+                    )}
+                    <span class="mat-chip-num">×{m.num.toLocaleString()}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    )
+  }
+</div>
+
+<script is:inline>
+  ;(function () {
+    document.addEventListener(
+      'DOMContentLoaded',
+      function () {
+        document.querySelectorAll('.sg-range').forEach(function (input) {
+          var idx = parseInt(input.getAttribute('data-sg-idx'), 10)
+          var display = document.getElementById('sg-mats-' + idx)
+          var fromEl = document.getElementById('sg-from-' + idx)
+          var toEl = document.getElementById('sg-to-' + idx)
+          if (!display) return
+
+          var allMats = []
+          try {
+            allMats = JSON.parse(display.getAttribute('data-mats') || '[]')
+          } catch (e) {}
+
+          function render(lvIdx) {
+            if (!allMats.length) return
+
+            // Lv.1 ~ 선택 레벨까지 누적 집계
+            var accumulated = []
+            var idxMap = {}
+            for (var i = 0; i <= lvIdx; i++) {
+              var entry = allMats[i]
+              if (!entry) continue
+              entry.mats.forEach(function (m) {
+                if (idxMap[m.id] !== undefined) {
+                  accumulated[idxMap[m.id]].num += m.num
+                } else {
+                  idxMap[m.id] = accumulated.length
+                  accumulated.push({ id: m.id, name: m.name, icon: m.icon, num: m.num })
+                }
+              })
+            }
+
+            // 레벨 표시: 항상 1 → 선택레벨+1
+            if (fromEl) fromEl.textContent = '1'
+            if (toEl) toEl.textContent = String(allMats[lvIdx] ? allMats[lvIdx].to : lvIdx + 2)
+
+            display.replaceChildren()
+            accumulated.forEach(function (m) {
+              var chip = document.createElement('div')
+              chip.className = 'mat-chip'
+              chip.title = m.name
+
+              if (m.icon) {
+                var img = document.createElement('img')
+                img.src = m.icon
+                img.alt = m.name
+                img.width = 36
+                img.height = 36
+                img.loading = 'lazy'
+                img.decoding = 'async'
+                img.className = 'mat-chip-img'
+                chip.appendChild(img)
+              } else {
+                var ph = document.createElement('span')
+                ph.className = 'mat-chip-ph'
+                ph.textContent = '?'
+                chip.appendChild(ph)
+              }
+
+              var num = document.createElement('span')
+              num.className = 'mat-chip-num'
+              num.textContent = '×' + m.num.toLocaleString()
+              chip.appendChild(num)
+
+              display.appendChild(chip)
+            })
+          }
+
+          input.addEventListener(
+            'input',
+            function () {
+              render(parseInt(input.value, 10) - 1)
+            },
+            { passive: true },
+          )
+
+          render(0)
+        })
+      },
+      { once: true },
+    )
+  })()
+</script>
+
+<style>
+  .skillmats-tab {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .sm-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* ── 전체 누적 재료 ── */
+  .total-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    gap: 0.6rem;
+  }
+  .total-mat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    transition: border-color var(--anim-fast);
+    cursor: default;
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-md);
+    background: var(--c-surface);
+    padding: 0.6rem 0.4rem;
+    text-align: center;
+  }
+  .total-mat:hover {
+    border-color: var(--c-accent);
+  }
+  .mat-icon-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--c-border-hi);
+    border-radius: var(--radius-sm);
+    background: var(--c-surface2);
+    padding: 2px;
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+  }
+  .mat-icon-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .mat-ph {
+    color: var(--c-muted);
+    font-size: 0.9rem;
+  }
+  .mat-name {
+    color: var(--c-muted);
+    font-weight: 600;
+    font-size: 0.58rem;
+    line-height: 1.3;
+    word-break: keep-all;
+  }
+  .mat-num {
+    color: var(--c-accent);
+    font-weight: 700;
+    font-size: 0.68rem;
+    font-family: var(--font-mono);
+  }
+
+  /* ── 스킬 그룹 ── */
+  .skill-groups {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .skill-group {
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    background: var(--c-surface);
+    overflow: hidden;
+  }
+
+  .sg-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.65rem;
+    border-bottom: 1px solid var(--c-border);
+    background: var(--c-surface2);
+    padding: 0.65rem 1rem;
+    min-height: 52px;
+  }
+
+  /* 스킬 아이콘: 어두운 배경 고정으로 흰 아이콘 선명하게 */
+  .sg-icon-wrap {
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--c-border-hi);
+    border-radius: var(--radius-sm);
+    background: #12122a;
+    padding: 3px;
+    width: 36px;
+    height: 36px;
+    overflow: hidden;
+  }
+  .sg-icon {
+    filter: none;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .sg-name {
+    flex: 1;
+    min-width: 0;
+    font-weight: 700;
+    font-size: 0.88rem;
+    font-family: var(--font-display);
+    word-break: keep-all;
+  }
+
+  /* 슬라이더 컨트롤 */
+  .sg-ctrl {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: auto;
+  }
+  .sg-lv-badge {
+    color: var(--c-accent);
+    font-weight: 700;
+    font-size: 0.75rem;
+    font-family: var(--font-mono);
+    white-space: nowrap;
+  }
+  .sg-arrow {
+    margin: 0 0.1rem;
+    color: var(--c-muted);
+  }
+  .sg-max {
+    color: var(--c-muted);
+    font-size: 0.62rem;
+    font-family: var(--font-mono);
+    white-space: nowrap;
+  }
+  input[type='range'].sg-range {
+    width: 90px;
+  }
+
+  /* 재료 표시 영역 */
+  .sg-mats {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.85rem 1rem;
+    min-height: 64px;
+  }
+
+  /* 재료 칩: 아이콘 + 수량 가로 정렬 */
+  .mat-chip {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: border-color var(--anim-fast);
+    cursor: default;
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-sm);
+    background: var(--c-surface2);
+    padding: 0.3rem 0.6rem 0.3rem 0.35rem;
+  }
+  .mat-chip:hover {
+    border-color: var(--c-border-hi);
+  }
+  .mat-chip-img {
+    flex-shrink: 0;
+    border-radius: 4px;
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+  }
+  .mat-chip-ph {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 32px;
+    height: 32px;
+    color: var(--c-muted);
+    font-size: 0.8rem;
+  }
+  .mat-chip-num {
+    color: var(--c-text);
+    font-weight: 700;
+    font-size: 0.75rem;
+    font-family: var(--font-mono);
+    white-space: nowrap;
+  }
+
+  /* ── 주요/특성 행적 ── */
+  .trace-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+  }
+
+  .trace-card {
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    background: var(--c-surface);
+    overflow: hidden;
+  }
+  .trace-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    border-bottom: 1px solid var(--c-border);
+    background: var(--c-surface2);
+    padding: 0.55rem 0.9rem;
+    min-height: 46px;
+  }
+  .tr-name {
+    flex: 1;
+    font-weight: 700;
+    font-size: 0.85rem;
+    font-family: var(--font-display);
+    word-break: keep-all;
+  }
+  .tr-badge {
+    flex-shrink: 0;
+    border-radius: 4px;
+    background: var(--c-accent);
+    padding: 0.15em 0.45em;
+    color: #fff;
+    font-weight: 900;
+    font-size: 0.6rem;
+    font-family: var(--font-mono);
+  }
+</style>

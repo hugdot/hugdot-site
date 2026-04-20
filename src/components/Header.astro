@@ -1,52 +1,562 @@
 ---
-import Navigation from '@components/Navigation.astro'
-import { HighContrast, ReducedMotion, SkipLink } from 'accessible-astro-components'
+// src/components/Header.astro
+import { Icon } from 'astro-icon/components'
 
-/**
- * Header Component
- *
- * @description A component that displays the header of the website
- */
+const games = [
+  {
+    id: 'starrail',
+    shortName: 'Star Rail',
+    icon: 'lucide:star',
+    color: '#7c9dfc',
+    href: '/kr/starrail',
+    available: true,
+  },
+  // {
+  //   id: 'zenless',
+  //   shortName: 'ZZZ',
+  //   icon: 'lucide:zap',
+  //   color: '#f59e0b',
+  //   href: '/kr/zenless',
+  //   available: false,
+  // },
+]
+
+const pathname = Astro.url.pathname
+const currentGame = games.find(g => pathname.includes(`/${g.id}`))
+
+const langMatch = pathname.match(/^\/(kr|en|jp|cn|cht|fr|de|es|id|pt|ru|th|vi)\//)
+const currentLang = langMatch?.[1] ?? 'kr'
+
+const languages = [
+  { code: 'kr',  label: '한국어'     },
+  { code: 'en',  label: 'English'    },
+  { code: 'jp',  label: '日本語'     },
+  { code: 'cn',  label: '简体中文'   },
+  { code: 'cht', label: '繁體中文'   },
+  { code: 'fr',  label: 'Français'   },
+  { code: 'de',  label: 'Deutsch'    },
+  { code: 'es',  label: 'Español'    },
+  { code: 'id',  label: 'Bahasa'     },
+  { code: 'pt',  label: 'Português'  },
+  { code: 'ru',  label: 'Русский'    },
+  { code: 'th',  label: 'ภาษาไทย'   },
+  { code: 'vi',  label: 'Tiếng Việt' },
+]
+
+const menuLabels: Record<string, Record<string, string>> = {
+  kr:  { characters:'캐릭터', lightcones:'광추', relics:'유물', simulated:'시뮬레이션 우주', planner:'계획', achievements:'업적', items:'재료' },
+  en:  { characters:'Characters', lightcones:'Light Cones', relics:'Relics', simulated:'Sim. Universe', planner:'Planner', achievements:'Achievements', items:'Materials' },
+  jp:  { characters:'キャラ', lightcones:'光円錐', relics:'遺物', simulated:'模擬宇宙', planner:'プランナー', achievements:'実績', items:'素材' },
+  cn:  { characters:'角色', lightcones:'光锥', relics:'遗器', simulated:'模拟宇宙', planner:'计划器', achievements:'成就', items:'材料' },
+  cht: { characters:'角色', lightcones:'光錐', relics:'遺器', simulated:'模擬宇宙', planner:'計畫器', achievements:'成就', items:'材料' },
+  fr:  { characters:'Personnages', lightcones:'Cônes', relics:'Reliques', simulated:'Univ. Simulé', planner:'Planificateur', achievements:'Succès', items:'Matériaux' },
+  de:  { characters:'Charaktere', lightcones:'Lichtkegel', relics:'Relikte', simulated:'Sim. Universum', planner:'Planer', achievements:'Erfolge', items:'Materialien' },
+  es:  { characters:'Personajes', lightcones:'Conos', relics:'Reliquias', simulated:'Univ. Simulado', planner:'Planificador', achievements:'Logros', items:'Materiales' },
+  id:  { characters:'Karakter', lightcones:'Kerucut', relics:'Relik', simulated:'Alam Simulasi', planner:'Perencana', achievements:'Pencapaian', items:'Material' },
+  pt:  { characters:'Personagens', lightcones:'Cones', relics:'Relíquias', simulated:'Univ. Simulado', planner:'Planejador', achievements:'Conquistas', items:'Materiais' },
+  ru:  { characters:'Персонажи', lightcones:'Световые конусы', relics:'Реликвии', simulated:'Сим. Вселенная', planner:'Планировщик', achievements:'Достижения', items:'Материалы' },
+  th:  { characters:'ตัวละคร', lightcones:'โคนแสง', relics:'โบราณวัตถุ', simulated:'จักรวาลจำลอง', planner:'วางแผน', achievements:'ความสำเร็จ', items:'วัสดุ' },
+  vi:  { characters:'Nhân Vật', lightcones:'Nón Sáng', relics:'Di Vật', simulated:'Vũ Trụ Mô Phỏng', planner:'Lập Kế Hoạch', achievements:'Thành Tích', items:'Vật Liệu' },
+}
+
+const m = menuLabels[currentLang] ?? menuLabels['en']
+
+const starRailMenus = [
+  { label: m.characters,   href: `/${currentLang}/starrail/characters` },
+  { label: m.lightcones,   href: `/${currentLang}/starrail/light-cones` },
+  { label: m.relics,       href: `/${currentLang}/starrail/relics` },
+  { label: m.simulated,    href: `/${currentLang}/starrail/simulated-universe` },
+  { label: m.planner,      href: `/${currentLang}/starrail/planner` },
+  { label: m.achievements, href: `/${currentLang}/starrail/achievements` },
+  { label: m.items,        href: `/${currentLang}/starrail/items` },
+]
+const currentMenus = currentGame?.id === 'starrail' ? starRailMenus : []
+
+const switchLang = (code: string) =>
+  currentLang
+    ? pathname.replace(`/${currentLang}/`, `/${code}/`)
+    : `/${code}/starrail`
 ---
 
-<header>
-  <SkipLink />
-  <!-- Initialize preference components -->
-  <div hidden>
-    <HighContrast />
-    <ReducedMotion />
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+
+    <!-- ── 로고 ── -->
+    <a href="/" class="logo" aria-label="HugDot Home">
+      <span class="logo-mark">H</span>
+      <span class="logo-text">ugDot</span>
+    </a>
+
+    <!-- ── 게임 선택 ── -->
+    <div class="dropdown-wrap" id="game-wrap">
+      <button class="hdr-btn" id="game-btn" aria-haspopup="true" aria-expanded="false">
+        <Icon name={currentGame ? currentGame.icon : 'lucide:gamepad-2'} size="0.85rem" />
+        <span>{currentGame ? currentGame.shortName : 'Games'}</span>
+        <Icon name="lucide:chevron-down" size="0.7rem" class="chevron-icon" />
+      </button>
+      <div class="dropdown game-dropdown" id="game-dropdown" role="menu">
+        {games.map(g => (
+          <a
+            href={g.href}
+            class={`dd-item ${currentGame?.id === g.id ? 'dd-item--active' : ''} ${!g.available ? 'dd-item--disabled' : ''}`}
+            role="menuitem"
+          >
+            <Icon name={g.icon} size="0.85rem" style={`color:${g.color}`} />
+            <span>{g.shortName}</span>
+            {!g.available && <span class="soon-tag">Soon</span>}
+          </a>
+        ))}
+      </div>
+    </div>
+
+    <!-- ── 게임 서브 네비 ── -->
+    {currentMenus.length > 0 && (
+      <nav class="sub-nav" aria-label="Game navigation">
+        {currentMenus.map(item => (
+          <a
+            href={item.href}
+            class={`sub-link ${pathname.startsWith(item.href) ? 'sub-link--active' : ''}`}
+          >
+            {item.label}
+          </a>
+        ))}
+      </nav>
+    )}
+
+    <div class="header-right">
+
+      <!-- ── 언어 선택 ── -->
+      <div class="dropdown-wrap" id="lang-wrap">
+        <button class="hdr-btn lang-btn" id="lang-btn" aria-haspopup="true" aria-expanded="false" aria-label="언어 선택">
+          <Icon name="lucide:globe" size="0.95rem" class="globe-icon" />
+          <span class="lang-current-code">{currentLang.toUpperCase()}</span>
+          <Icon name="lucide:chevron-down" size="0.7rem" class="chevron-icon" />
+        </button>
+        <div class="dropdown lang-dropdown" id="lang-dropdown" role="menu">
+          <div class="lang-grid">
+            {languages.map(l => (
+              <a
+                href={switchLang(l.code)}
+                class={`lang-item ${l.code === currentLang ? 'lang-item--active' : ''}`}
+                role="menuitem"
+              >
+                <span class="lang-code-label">{l.code.toUpperCase()}</span>
+                <span class="lang-name">{l.label}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- ── 모바일 햄버거 ── -->
+      <button class="mob-toggle" id="mob-toggle" aria-label="메뉴" aria-expanded="false">
+        <Icon name="lucide:menu" size="1.2rem" />
+      </button>
+    </div>
   </div>
 
-  <Navigation />
+  <!-- ── 모바일 메뉴 ── -->
+  <div class="mob-menu" id="mob-menu" aria-hidden="true">
+    {currentMenus.length > 0 && (
+      <div class="mob-section">
+        <p class="mob-section-label">{currentGame?.shortName}</p>
+        {currentMenus.map(item => (
+          <a
+            href={item.href}
+            class={`mob-link ${pathname.startsWith(item.href) ? 'mob-link--active' : ''}`}
+          >
+            {item.label}
+          </a>
+        ))}
+      </div>
+    )}
+
+    <div class="mob-section">
+      <p class="mob-section-label">
+        <Icon name="lucide:globe" size="0.8rem" />
+        언어 선택
+      </p>
+      <div class="mob-lang-grid">
+        {languages.map(l => (
+          <a
+            href={switchLang(l.code)}
+            class={`mob-lang-item ${l.code === currentLang ? 'mob-lang-item--active' : ''}`}
+          >
+            <span class="mob-lang-code">{l.code.toUpperCase()}</span>
+            <span class="mob-lang-label">{l.label}</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
 </header>
 
-<style lang="scss" is:global>
-  @use '@assets/scss/base/breakpoint' as *;
+<script is:inline>
+;(function () {
+  var openId = null
 
-  header {
-    li.type-icon {
-      display: block;
-
-      @include breakpoint('nav') {
-        translate: 0 4px;
-      }
-
-      button {
-        border: none;
-        border-radius: 0;
-      }
-
-      svg {
-        inline-size: 30px;
-        block-size: 30px;
-      }
-    }
-
-    li.type-icon ~ li.type-icon {
-      @include breakpoint('nav') {
-        margin-inline-start: calc(var(--space-2xs) * -1);
-      }
-    }
-
+  function closeAll() {
+    ;['game-dropdown', 'lang-dropdown'].forEach(function (id) {
+      var el = document.getElementById(id)
+      if (el) el.classList.remove('open')
+    })
+    ;['game-btn', 'lang-btn'].forEach(function (id) {
+      var el = document.getElementById(id)
+      if (el) el.setAttribute('aria-expanded', 'false')
+    })
+    openId = null
   }
+
+  function initDropdown(btnId, dropId) {
+    var btn = document.getElementById(btnId)
+    var dd  = document.getElementById(dropId)
+    if (!btn || !dd) return
+    btn.addEventListener('click', function (e) {
+      e.stopPropagation()
+      if (openId === dropId) { closeAll(); return }
+      closeAll()
+      dd.classList.add('open')
+      btn.setAttribute('aria-expanded', 'true')
+      openId = dropId
+    }, { passive: true })
+  }
+
+  function initMob() {
+    var toggle = document.getElementById('mob-toggle')
+    var menu   = document.getElementById('mob-menu')
+    if (!toggle || !menu) return
+    toggle.addEventListener('click', function () {
+      var isOpen = menu.classList.toggle('mob-menu--open')
+      toggle.setAttribute('aria-expanded', String(isOpen))
+      menu.setAttribute('aria-hidden', String(!isOpen))
+    }, { passive: true })
+  }
+
+  function initSticky() {
+    var header = document.getElementById('site-header')
+    if (!header) return
+    window.addEventListener('scroll', function () {
+      header.classList.toggle('scrolled', window.scrollY > 10)
+    }, { passive: true })
+  }
+
+  document.addEventListener('click', closeAll, { passive: true })
+
+  document.addEventListener('DOMContentLoaded', function () {
+    initDropdown('game-btn', 'game-dropdown')
+    initDropdown('lang-btn', 'lang-dropdown')
+    initMob()
+    initSticky()
+  }, { once: true })
+})()
+</script>
+
+<style>
+/* ── 헤더 쉘 ── */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: color-mix(in srgb, var(--c-bg) 75%, transparent);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid transparent;
+  transition: border-color 200ms, box-shadow 200ms;
+}
+.site-header.scrolled {
+  border-bottom-color: var(--c-border);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+}
+
+.header-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ── 로고 ── */
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  flex-shrink: 0;
+  margin-right: 0.5rem;
+}
+.logo-mark {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: var(--c-accent);
+  letter-spacing: -0.03em;
+  line-height: 1;
+}
+.logo-text {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--foreground-color);
+  letter-spacing: -0.03em;
+  line-height: 1;
+  opacity: 0.85;
+}
+
+/* ── 공통 헤더 버튼 ── */
+.hdr-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.65rem;
+  border: 1px solid var(--c-border);
+  border-radius: 8px;
+  background: var(--c-surface);
+  color: var(--foreground-color);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: border-color 140ms, background 140ms;
+  min-height: 34px;
+}
+.hdr-btn:hover { border-color: var(--c-border-hi); background: var(--c-surface2); }
+.chevron-icon { opacity: 0.5; transition: transform 200ms; }
+.hdr-btn[aria-expanded="true"] .chevron-icon { transform: rotate(180deg); }
+
+/* 언어 버튼 강조 */
+.lang-btn {
+  border-color: color-mix(in srgb, var(--c-accent) 35%, transparent);
+}
+.lang-btn:hover { border-color: var(--c-accent); }
+.globe-icon { color: var(--c-accent); }
+.lang-current-code {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--c-accent);
+}
+
+/* ── 드롭다운 공통 ── */
+.dropdown-wrap { position: relative; }
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border-hi);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(-6px);
+  pointer-events: none;
+  transition: opacity 160ms, transform 160ms;
+  z-index: 200;
+}
+.dropdown.open {
+  opacity: 1;
+  transform: none;
+  pointer-events: auto;
+}
+
+/* 게임 드롭다운 */
+.game-dropdown { min-width: 160px; padding: 0.4rem; }
+.dd-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--foreground-color);
+  text-decoration: none;
+  transition: background 120ms;
+}
+.dd-item:hover { background: var(--c-surface2); }
+.dd-item--active { background: var(--c-accent-glow); color: var(--c-accent); }
+.dd-item--disabled { opacity: 0.45; pointer-events: none; }
+.soon-tag {
+  margin-left: auto;
+  font-size: 0.55rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  background: var(--c-surface2);
+  border: 1px solid var(--c-border);
+  border-radius: 4px;
+  padding: 0.1em 0.4em;
+  color: var(--c-muted);
+}
+
+/* ── 언어 드롭다운 ── */
+.lang-dropdown {
+  left: auto;
+  right: 0;
+  min-width: 300px;
+  padding: 0.5rem;
+}
+.lang-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.25rem;
+}
+.lang-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.65rem;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 120ms;
+  border: 1px solid transparent;
+}
+.lang-item:hover { background: var(--c-surface2); border-color: var(--c-border); }
+.lang-item--active {
+  background: var(--c-accent-glow);
+  border-color: color-mix(in srgb, var(--c-accent) 35%, transparent);
+}
+.lang-code-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--c-accent);
+  min-width: 2.5ch;
+  flex-shrink: 0;
+}
+.lang-name {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--foreground-color);
+  opacity: 0.8;
+}
+.lang-item--active .lang-name { opacity: 1; }
+
+/* ── 서브 네비 ── */
+.sub-nav {
+  display: flex;
+  align-items: center;
+  gap: 0.1rem;
+  margin-left: 0.25rem;
+}
+.sub-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.65rem;
+  border-radius: 6px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  text-decoration: none;
+  transition: color 140ms, background 140ms;
+  white-space: nowrap;
+}
+.sub-link:hover { color: var(--foreground-color); background: var(--c-surface2); }
+.sub-link--active { color: var(--c-accent); background: var(--c-accent-glow); }
+
+/* ── 오른쪽 영역 ── */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-left: auto;
+}
+
+/* ── 모바일 토글 ── */
+.mob-toggle {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  width: 36px; height: 36px;
+  border: 1px solid var(--c-border);
+  border-radius: 8px;
+  background: var(--c-surface);
+  color: var(--foreground-color);
+  cursor: pointer;
+  transition: border-color 140ms;
+}
+.mob-toggle:hover { border-color: var(--c-border-hi); }
+
+/* ── 모바일 메뉴 ── */
+.mob-menu {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+  border-top: 1px solid var(--c-border);
+  background: var(--c-surface);
+  padding: 1rem 1.25rem 1.5rem;
+}
+.mob-menu--open { display: flex; }
+
+.mob-section { display: flex; flex-direction: column; gap: 0.4rem; }
+.mob-section-label {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.6rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  margin-bottom: 0.2rem;
+}
+.mob-link {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--foreground-color);
+  text-decoration: none;
+  transition: background 120ms;
+}
+.mob-link:hover { background: var(--c-surface2); }
+.mob-link--active { background: var(--c-accent-glow); color: var(--c-accent); }
+
+.mob-lang-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 0.3rem;
+}
+.mob-lang-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.45rem 0.65rem;
+  border-radius: 8px;
+  border: 1px solid var(--c-border);
+  text-decoration: none;
+  transition: border-color 120ms, background 120ms;
+}
+.mob-lang-item:hover { background: var(--c-surface2); border-color: var(--c-border-hi); }
+.mob-lang-item--active { border-color: var(--c-accent); background: var(--c-accent-glow); }
+.mob-lang-code {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  font-weight: 700;
+  color: var(--c-accent);
+  min-width: 2.5ch;
+}
+.mob-lang-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--foreground-color);
+  opacity: 0.8;
+}
+
+/* ── 반응형 ── */
+@media (max-width: 767px) {
+  .sub-nav { display: none; }
+  .mob-toggle { display: flex; }
+}
+@media (max-width: 480px) {
+  .lang-dropdown { min-width: 260px; }
+  .lang-grid { grid-template-columns: 1fr; }
+}
 </style>

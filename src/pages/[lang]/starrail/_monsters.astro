@@ -1,0 +1,453 @@
+---
+// src/pages/[lang]/starrail/monsters.astro
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Icon } from 'astro-icon/components'
+
+const allData = import.meta.glob('/src/data/starrail/**/*.json', { eager: true })
+
+export async function getStaticPaths() {
+  const languages = ['kr', 'en', 'jp', 'cn', 'fr', 'de', 'es', 'id', 'pt', 'ru', 'th', 'vi', 'cht']
+  return languages.map((lang) => ({ params: { lang } }))
+}
+
+const { lang } = Astro.params
+const baseDir = `/src/data/starrail/${lang}`
+
+const monstersRaw: Record<string, any> = (allData[`${baseDir}/monsters.json`] as any)?.default ?? {}
+const itemsRaw:    Record<string, any> = (allData[`${baseDir}/items.json`]    as any)?.default ?? {}
+
+const toItemIcon = (icon: string) => {
+  if (!icon) return ''
+  let p = icon.replace(/^\//, '').replace(/^starrail\/assets\//, '')
+  if (p.includes('icon/character/')) p = p.replace('icon/character/', 'icon/item/')
+  return `/starrail/assets/${p}`
+}
+
+const ELEMENTS = ['Physical', 'Fire', 'Ice', 'Thunder', 'Wind', 'Quantum', 'Imaginary']
+
+const EL_ICON: Record<string, string> = {
+  Physical:  '/starrail/assets/icon/element/Physical.webp',
+  Fire:      '/starrail/assets/icon/element/Fire.webp',
+  Ice:       '/starrail/assets/icon/element/Ice.webp',
+  Thunder:   '/starrail/assets/icon/element/Thunder.webp',
+  Wind:      '/starrail/assets/icon/element/Wind.webp',
+  Quantum:   '/starrail/assets/icon/element/Quantum.webp',
+  Imaginary: '/starrail/assets/icon/element/Imaginary.webp',
+}
+
+// 몬스터 목록
+const monsters = Object.values(monstersRaw)
+  .filter((m: any) => m.name?.trim())
+  .map((m: any) => ({
+    ...m,
+    // 드랍 아이템 정보 추가
+    drop_item_info: (m.drop_items ?? [])
+      .map((id: string) => {
+        const item = itemsRaw[id]
+        if (!item || !item.name?.trim()) return null
+        return {
+          id,
+          name: item.name,
+          icon: toItemIcon(item.icon ?? ''),
+          rarity: item.rarity ?? 1,
+        }
+      })
+      .filter(Boolean),
+  }))
+  .sort((a, b) => {
+    const gradeOrder: Record<string, number> = { Boss: 0, Elite: 1, Normal: 2 }
+    return (gradeOrder[a.grade] ?? 2) - (gradeOrder[b.grade] ?? 2) || a.name.localeCompare(b.name)
+  })
+
+const totalMonsters = monsters.length
+
+// 등급별 카운트
+const gradeCounts = monsters.reduce((acc: Record<string, number>, m: any) => {
+  acc[m.grade] = (acc[m.grade] ?? 0) + 1
+  return acc
+}, {})
+
+// 속성별 카운트 (약점 기준)
+const elCounts: Record<string, number> = {}
+for (const m of monsters as any[]) {
+  for (const w of m.weaknesses ?? []) {
+    elCounts[w.key] = (elCounts[w.key] ?? 0) + 1
+  }
+}
+
+const L = lang === 'kr'
+  ? { title:'적', subtitle:'파밍 가능한 적 목록 및 약점/드랍 정보',
+      search:'적 이름 검색…', all:'전체', reset:'초기화',
+      showing:'{v}개 표시', total:'전체 {t}개', noMatch:'조건에 맞는 적이 없습니다.',
+      grade:'등급', weakness:'약점 속성', drops:'드랍 아이템',
+      resistance:'저항', immune:'면역',
+      normal:'일반', elite:'정예', boss:'보스',
+      noDrops:'드랍 정보 없음', exp:'경험치' }
+  : { title:'Enemies', subtitle:'Farmable enemies with weaknesses and drop info',
+      search:'Search enemy…', all:'All', reset:'Reset',
+      showing:'{v} shown', total:'{t} total', noMatch:'No enemies match.',
+      grade:'Grade', weakness:'Weakness', drops:'Drops',
+      resistance:'Resistance', immune:'Immune',
+      normal:'Normal', elite:'Elite', boss:'Boss',
+      noDrops:'No drop info', exp:'EXP' }
+
+const GRADE_LABEL: Record<string, string> = {
+  Normal: L.normal, Elite: L.elite, Boss: L.boss,
+}
+const GRADE_COLOR: Record<string, string> = {
+  Normal: '#60a5fa', Elite: '#a78bfa', Boss: '#fbbf24',
+}
+---
+
+<DefaultLayout title={`${L.title} | Star Rail DB`} description="Honkai: Star Rail enemy list with weaknesses and drop information.">
+<div class="mo-page">
+
+  <!-- 헤더 -->
+  <div class="mo-header">
+    <div class="mw">
+      <nav class="bc">
+        <a href={`/${lang}`}>Home</a><span>/</span>
+        <a href={`/${lang}/starrail`}>Star Rail</a><span>/</span>
+        <span class="bc-cur">{L.title}</span>
+      </nav>
+      <div class="hd-row">
+        <div>
+          <h1 class="mo-title">{L.title}</h1>
+          <p class="mo-sub">{L.subtitle}</p>
+        </div>
+        <div class="hd-stats">
+          {(['Boss', 'Elite', 'Normal'] as const).map(grade => (
+            <div class="hd-stat" style={`--gc:${GRADE_COLOR[grade]}`}>
+              <span class="stat-v">{gradeCounts[grade] ?? 0}</span>
+              <span class="stat-l">{GRADE_LABEL[grade]}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 필터 -->
+  <div class="filter-bar mw">
+    <!-- 검색 -->
+    <div class="sw">
+      <Icon name="lucide:search" size="0.85rem" class="si"/>
+      <input type="search" id="monSearch" placeholder={L.search} autocomplete="off" class="sinput"/>
+    </div>
+
+    <!-- 등급 필터 -->
+    <div class="filter-group">
+      <span class="filter-label">{L.grade}</span>
+      <div class="filter-btns" id="gradeFilter">
+        <button class="fbtn fbtn--on" data-grade="all">{L.all}</button>
+        {(['Boss', 'Elite', 'Normal'] as const).map(grade => (
+          <button class="fbtn" data-grade={grade} style={`--gc:${GRADE_COLOR[grade]}`}>
+            {GRADE_LABEL[grade]}
+            <span class="fbtn-cnt">{gradeCounts[grade] ?? 0}</span>
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <!-- 약점 필터 -->
+    <div class="filter-group">
+      <span class="filter-label">{L.weakness}</span>
+      <div class="filter-btns" id="elFilter">
+        <button class="fbtn fbtn--on" data-el="all">{L.all}</button>
+        {ELEMENTS.map(el => (
+          EL_ICON[el] && (
+            <button class="fbtn el-fbtn" data-el={el} title={el}>
+              <img src={EL_ICON[el]} alt={el} width="18" height="18" loading="lazy" class="el-fbtn-icon"/>
+              <span class="fbtn-cnt">{elCounts[el] ?? 0}</span>
+            </button>
+          )
+        ))}
+      </div>
+    </div>
+
+    <div class="filter-meta">
+      <p class="scount" id="monCount" aria-live="polite">
+        {L.showing.replace('{v}', String(totalMonsters))}
+        <span class="mu">· {L.total.replace('{t}', String(totalMonsters))}</span>
+      </p>
+      <button class="rbtn" id="monReset" type="button">
+        <Icon name="lucide:rotate-ccw" size="0.7rem"/>{L.reset}
+      </button>
+    </div>
+  </div>
+
+  <!-- 몬스터 그리드 -->
+  <div class="mo-body mw">
+    <div class="mon-grid" id="monGrid">
+      {(monsters as any[]).map(m => (
+        <div
+          class="mon-card"
+          data-mon
+          data-name={m.name.toLowerCase()}
+          data-grade={m.grade}
+          data-weak={m.weaknesses.map((w: any) => w.key).join(',')}
+        >
+          <!-- 헤더 -->
+          <div class="mc-hd" style={`--gc:${GRADE_COLOR[m.grade]}`}>
+            <div class="mc-grade-bar"></div>
+            <div class="mc-hd-content">
+              <div class="mc-name-row">
+                <p class="mc-name">{m.name}</p>
+                <span class="mc-grade-tag">{GRADE_LABEL[m.grade]}</span>
+              </div>
+              {m.exp > 0 && (
+                <p class="mc-exp">{L.exp}: {m.exp.toLocaleString()}</p>
+              )}
+            </div>
+          </div>
+
+          <!-- 약점 -->
+          {m.weaknesses.length > 0 && (
+            <div class="mc-section">
+              <p class="mc-label">{L.weakness}</p>
+              <div class="mc-elements">
+                {m.weaknesses.map((w: any) => (
+                  <div class="el-chip" title={w.name}>
+                    <img src={w.icon} alt={w.name} width="20" height="20" loading="lazy" class="el-chip-icon"/>
+                    <span class="el-chip-name">{w.name}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <!-- 저항 -->
+          {m.resistances.length > 0 && (
+            <div class="mc-section">
+              <p class="mc-label">{L.resistance}</p>
+              <div class="mc-res">
+                {m.resistances.map((r: any) => (
+                  <div class="res-chip">
+                    <img src={EL_ICON[r.key]} alt={r.name} width="14" height="14" loading="lazy"/>
+                    <span class="res-val">{r.value}%</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          )}
+
+          <!-- 드랍 아이템 -->
+          <div class="mc-section">
+            <p class="mc-label">{L.drops}</p>
+            {m.drop_item_info.length > 0 ? (
+              <div class="drop-list">
+                {m.drop_item_info.map((item: any) => (
+                  <a href={`/${lang}/starrail/items#${item.id}`} class={`drop-chip r${Math.min(item.rarity, 5)}`} title={item.name}>
+                    {item.icon && (
+                      <img src={item.icon} alt={item.name} width="24" height="24" loading="lazy" class="drop-icon"/>
+                    )}
+                    <span class="drop-name">{item.name}</span>
+                  </a>
+                ))}
+              </div>
+            ) : (
+              <p class="no-info">{L.noDrops}</p>
+            )}
+          </div>
+
+          <!-- 소개 -->
+          {m.intro && (
+            <div class="mc-intro">
+              <p class="mc-intro-text">{m.intro}</p>
+            </div>
+          )}
+        </div>
+      ))}
+    </div>
+
+    <div id="monEmpty" class="empty hidden">
+      <Icon name="lucide:search-x" size="2.5rem"/>
+      <p>{L.noMatch}</p>
+    </div>
+  </div>
+
+</div>
+
+<script is:inline define:vars={{ lShowing: L.showing, lTotal: L.total, totalMonsters }}>
+;(function(){
+  document.addEventListener('DOMContentLoaded', function(){
+    var searchInput = document.getElementById('monSearch')
+    var countEl     = document.getElementById('monCount')
+    var emptyEl     = document.getElementById('monEmpty')
+    var resetBtn    = document.getElementById('monReset')
+    var cards       = [].slice.call(document.querySelectorAll('[data-mon]'))
+    var gradeFilter = document.getElementById('gradeFilter')
+    var elFilter    = document.getElementById('elFilter')
+
+    var activeGrade = 'all'
+    var activeEl    = 'all'
+
+    function applyFilter() {
+      var q = searchInput ? searchInput.value.trim().toLowerCase() : ''
+      var v = 0
+
+      cards.forEach(function(card) {
+        var name  = card.dataset.name || ''
+        var grade = card.dataset.grade || ''
+        var weak  = card.dataset.weak || ''
+
+        var matchQ     = !q || name.indexOf(q) !== -1
+        var matchGrade = activeGrade === 'all' || grade === activeGrade
+        var matchEl    = activeEl === 'all' || weak.split(',').indexOf(activeEl) !== -1
+
+        var show = matchQ && matchGrade && matchEl
+        card.classList.toggle('hidden', !show)
+        if (show) v++
+      })
+
+      var ss = lShowing.replace('{v}', String(v))
+      var ts = lTotal.replace('{t}', String(totalMonsters))
+      if (countEl) countEl.innerHTML = ss + ' <span class="mu">· ' + ts + '</span>'
+      if (emptyEl) emptyEl.classList.toggle('hidden', v !== 0)
+    }
+
+    // 등급 필터
+    if (gradeFilter) {
+      gradeFilter.querySelectorAll('.fbtn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          activeGrade = btn.dataset.grade || 'all'
+          gradeFilter.querySelectorAll('.fbtn').forEach(function(b) { b.classList.toggle('fbtn--on', b === btn) })
+          applyFilter()
+        }, { passive: true })
+      })
+    }
+
+    // 속성 필터
+    if (elFilter) {
+      elFilter.querySelectorAll('.fbtn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          activeEl = btn.dataset.el || 'all'
+          elFilter.querySelectorAll('.fbtn').forEach(function(b) { b.classList.toggle('fbtn--on', b === btn) })
+          applyFilter()
+        }, { passive: true })
+      })
+    }
+
+    // 검색
+    if (searchInput) {
+      searchInput.addEventListener('input', applyFilter, { passive: true })
+      searchInput.addEventListener('search', applyFilter, { passive: true })
+    }
+
+    // 초기화
+    if (resetBtn) {
+      resetBtn.addEventListener('click', function() {
+        if (searchInput) { searchInput.value = ''; searchInput.focus() }
+        activeGrade = 'all'; activeEl = 'all'
+        document.querySelectorAll('.fbtn').forEach(function(b) {
+          b.classList.toggle('fbtn--on', b.dataset.grade === 'all' || b.dataset.el === 'all')
+        })
+        applyFilter()
+      }, { passive: true })
+    }
+
+    applyFilter()
+  }, { once: true })
+})()
+</script>
+</DefaultLayout>
+
+<style>
+.mo-page { min-height:100vh; background:var(--c-bg); color:var(--foreground-color); }
+.mw { max-width:1400px; margin:0 auto; padding:0 1.5rem; }
+
+/* 헤더 */
+.mo-header { border-bottom:1px solid var(--c-border); background:var(--c-surface); padding:2rem 0 1.5rem; }
+.bc { display:flex; align-items:center; gap:.4rem; font-size:.68rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--c-muted); margin-bottom:.75rem; }
+.bc a { color:inherit; text-decoration:none; }
+.bc a:hover { color:var(--c-accent); }
+.bc span { opacity:.4; }
+.bc-cur { color:var(--c-accent); opacity:1 !important; }
+.hd-row { display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; }
+.mo-title { font-family:var(--font-display); font-size:clamp(1.8rem,4vw,2.6rem); font-weight:700; letter-spacing:-.03em; text-transform:uppercase; line-height:1; }
+.mo-sub { margin-top:.35rem; font-size:.82rem; color:var(--c-muted); }
+.hd-stats { display:flex; gap:.5rem; }
+.hd-stat { display:flex; flex-direction:column; align-items:center; padding:.4rem .8rem; border:1px solid color-mix(in srgb,var(--gc) 30%,transparent); border-radius:var(--radius-md); background:color-mix(in srgb,var(--gc) 8%,var(--c-surface2)); min-width:60px; text-align:center; }
+.stat-v { font-family:var(--font-mono); font-size:1.1rem; font-weight:900; color:var(--gc); line-height:1; }
+.stat-l { font-size:.55rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--c-muted); margin-top:.2rem; }
+
+/* 필터 바 */
+.filter-bar { display:flex; flex-wrap:wrap; align-items:center; gap:1rem; padding:1.25rem 1.5rem; border-bottom:1px solid var(--c-border); background:var(--c-surface); }
+.sw { position:relative; display:flex; align-items:center; min-width:200px; }
+.si { position:absolute; left:.7rem; color:var(--c-muted); pointer-events:none; }
+.sinput { width:100%; padding:.5rem .75rem .5rem 2.1rem; border:1px solid var(--c-border); border-radius:var(--radius-sm); background:var(--c-bg); color:var(--foreground-color); font-size:.78rem; outline:none; transition:border-color var(--anim-fast); }
+.sinput::placeholder { color:var(--c-muted); }
+.sinput:focus { border-color:var(--c-accent); }
+
+.filter-group { display:flex; align-items:center; gap:.5rem; flex-wrap:wrap; }
+.filter-label { font-size:.62rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; color:var(--c-muted); white-space:nowrap; }
+.filter-btns { display:flex; gap:.3rem; flex-wrap:wrap; }
+.fbtn { display:inline-flex; align-items:center; gap:.3rem; padding:.35rem .65rem; border:1px solid var(--c-border); border-radius:var(--radius-sm); background:var(--c-surface2); color:var(--c-muted); font-size:.7rem; font-weight:700; cursor:pointer; transition:border-color var(--anim-fast),color var(--anim-fast),background var(--anim-fast); white-space:nowrap; }
+.fbtn:hover { border-color:var(--c-border-hi); color:var(--foreground-color); }
+.fbtn--on { border-color:var(--gc,var(--c-accent)); background:color-mix(in srgb,var(--gc,var(--c-accent)) 12%,transparent); color:var(--gc,var(--c-accent)); }
+.el-fbtn { padding:.3rem .5rem; }
+.el-fbtn-icon { width:18px; height:18px; object-fit:contain; }
+.fbtn-cnt { font-family:var(--font-mono); font-size:.58rem; font-weight:700; background:var(--c-bg); border-radius:99px; padding:.1em .4em; color:var(--c-muted); }
+.fbtn--on .fbtn-cnt { background:color-mix(in srgb,var(--gc,var(--c-accent)) 20%,transparent); color:var(--gc,var(--c-accent)); }
+
+.filter-meta { display:flex; align-items:center; gap:.6rem; margin-left:auto; }
+.scount { font-size:.65rem; font-weight:700; color:var(--c-accent); white-space:nowrap; }
+.mu { color:var(--c-muted); font-weight:500; }
+.rbtn { display:inline-flex; align-items:center; gap:.4rem; padding:.35rem .7rem; border:1px solid var(--c-border); border-radius:var(--radius-sm); background:transparent; color:var(--c-muted); font-size:.65rem; font-weight:700; cursor:pointer; transition:border-color var(--anim-fast),color var(--anim-fast); white-space:nowrap; }
+.rbtn:hover { border-color:var(--c-accent); color:var(--c-accent); }
+
+/* 바디 */
+.mo-body { padding:1.5rem 1.5rem 3rem; }
+
+/* 몬스터 그리드 */
+.mon-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(300px,1fr)); gap:.75rem; }
+
+.mon-card { border:1px solid var(--c-border); border-radius:var(--radius-md); background:var(--c-surface); overflow:hidden; display:flex; flex-direction:column; transition:border-color var(--anim-fast); }
+.mon-card:hover { border-color:var(--c-border-hi); }
+.mon-card.hidden { display:none; }
+
+/* 카드 헤더 */
+.mc-hd { display:flex; align-items:stretch; }
+.mc-grade-bar { width:4px; flex-shrink:0; background:var(--gc,var(--c-accent)); }
+.mc-hd-content { flex:1; padding:.7rem .85rem; background:var(--c-surface2); }
+.mc-name-row { display:flex; align-items:center; gap:.5rem; justify-content:space-between; }
+.mc-name { font-family:var(--font-display); font-size:.92rem; font-weight:700; line-height:1.2; word-break:keep-all; flex:1; }
+.mc-grade-tag { font-size:.58rem; font-weight:900; letter-spacing:.06em; text-transform:uppercase; padding:.15em .5em; border-radius:4px; border:1px solid color-mix(in srgb,var(--gc) 40%,transparent); color:var(--gc); background:color-mix(in srgb,var(--gc) 12%,transparent); white-space:nowrap; flex-shrink:0; }
+.mc-exp { font-family:var(--font-mono); font-size:.65rem; color:var(--c-muted); margin-top:.2rem; }
+
+/* 섹션 */
+.mc-section { padding:.6rem .85rem; border-top:1px solid var(--c-border); display:flex; flex-direction:column; gap:.35rem; }
+.mc-label { font-size:.6rem; font-weight:900; letter-spacing:.1em; text-transform:uppercase; color:var(--c-muted); }
+
+/* 약점 */
+.mc-elements { display:flex; flex-wrap:wrap; gap:.35rem; }
+.el-chip { display:inline-flex; align-items:center; gap:.3rem; padding:.2rem .5rem; border:1px solid var(--c-border); border-radius:var(--radius-sm); background:var(--c-surface2); }
+.el-chip-icon { width:20px; height:20px; object-fit:contain; }
+.el-chip-name { font-size:.68rem; font-weight:700; }
+
+/* 저항 */
+.mc-res { display:flex; flex-wrap:wrap; gap:.3rem; }
+.res-chip { display:inline-flex; align-items:center; gap:.25rem; padding:.15rem .4rem; border:1px solid var(--c-border); border-radius:4px; background:var(--c-surface2); }
+.res-val { font-family:var(--font-mono); font-size:.65rem; font-weight:700; color:var(--c-muted); }
+
+/* 드랍 */
+.drop-list { display:flex; flex-wrap:wrap; gap:.35rem; }
+.drop-chip { display:inline-flex; align-items:center; gap:.35rem; padding:.25rem .55rem .25rem .3rem; border:1px solid var(--c-border); border-radius:var(--radius-sm); background:var(--c-surface2); text-decoration:none; color:var(--foreground-color); transition:border-color var(--anim-fast),background var(--anim-fast); }
+.drop-chip:hover { border-color:var(--c-accent); background:var(--c-accent-glow); }
+.drop-chip.r5 { border-color:rgba(251,191,36,.3); }
+.drop-chip.r4 { border-color:rgba(167,139,250,.3); }
+.drop-chip.r3 { border-color:rgba(96,165,250,.3); }
+.drop-icon { width:24px; height:24px; object-fit:contain; border-radius:3px; }
+.drop-name { font-size:.68rem; font-weight:700; word-break:keep-all; }
+
+/* 소개 */
+.mc-intro { padding:.55rem .85rem; border-top:1px solid var(--c-border); background:color-mix(in srgb,var(--c-surface2) 50%,transparent); }
+.mc-intro-text { font-size:.7rem; line-height:1.65; color:var(--c-muted); word-break:keep-all; }
+
+.no-info { font-size:.72rem; color:var(--c-muted); font-style:italic; }
+
+.empty { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1rem; padding:5rem 2rem; color:var(--c-muted); text-align:center; border:1px dashed var(--c-border); border-radius:var(--radius-lg); font-size:.85rem; font-weight:600; margin-top:1rem; }
+.empty svg { opacity:.3; }
+.hidden { display:none !important; }
+h1,h2,p { word-break:keep-all; }
+</style>

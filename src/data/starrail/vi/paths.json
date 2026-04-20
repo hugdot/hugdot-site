@@ -1,0 +1,83 @@
+{
+  "Warrior": {
+    "id": "Warrior",
+    "text": "Destruction",
+    "name": "Hủy Diệt",
+    "desc": "Có khả năng tấn công và sinh tồn phi thường, có thể thích nghi với nhiều môi trường chiến đấu khác nhau.",
+    "icon": "/starrail/assets/icon/character/Destruction.webp",
+    "icon_middle": "/starrail/assets/icon/path/DestructionMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/DestructionSmall.webp"
+  },
+  "Rogue": {
+    "id": "Rogue",
+    "text": "The Hunt",
+    "name": "Săn Bắn",
+    "desc": "Có khả năng tấn công đơn thể phi phàm, là sức mạnh tấn công chủ yếu để chiến thắng Kẻ Địch Tinh Anh.",
+    "icon": "/starrail/assets/icon/character/Hunt.webp",
+    "icon_middle": "/starrail/assets/icon/path/HuntMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/HuntSmall.webp"
+  },
+  "Mage": {
+    "id": "Mage",
+    "text": "Erudition",
+    "name": "Tri Thức",
+    "desc": "Có khả năng tấn công nhóm nổi trội, chỉ cần ra một đòn có thể bắt trọn nhiều kẻ địch.",
+    "icon": "/starrail/assets/icon/character/Erudition.webp",
+    "icon_middle": "/starrail/assets/icon/path/EruditionMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/EruditionSmall.webp"
+  },
+  "Shaman": {
+    "id": "Shaman",
+    "text": "Harmony",
+    "name": "Hòa Hợp",
+    "desc": "Có thể thi triển hiệu ứng buff cho phe ta, giúp tăng sức chiến đấu toàn đội.",
+    "icon": "/starrail/assets/icon/character/Harmony.webp",
+    "icon_middle": "/starrail/assets/icon/path/HarmonyMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/HarmonySmall.webp"
+  },
+  "Warlock": {
+    "id": "Warlock",
+    "text": "Nihility",
+    "name": "Hư Vô",
+    "desc": "Có thể thi triển Hiệu Ứng Xấu lên kẻ địch, giảm sức chiến đấu của địch để giành ưu thế.",
+    "icon": "/starrail/assets/icon/character/Nihility.webp",
+    "icon_middle": "/starrail/assets/icon/path/NihilityMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/NihilitySmall.webp"
+  },
+  "Knight": {
+    "id": "Knight",
+    "text": "Preservation",
+    "name": "Bảo Hộ",
+    "desc": "Có khả năng Bảo Vệ mạnh mẽ, có thể bảo vệ đồng đội bằng nhiều cách khác nhau.",
+    "icon": "/starrail/assets/icon/character/Preservation.webp",
+    "icon_middle": "/starrail/assets/icon/path/PreservationMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/PreservationSmall.webp"
+  },
+  "Priest": {
+    "id": "Priest",
+    "text": "Abundance",
+    "name": "Trù Phú",
+    "desc": "Có thể trị liệu vết thương cho phe ta, giúp đồng đội hồi phục.",
+    "icon": "/starrail/assets/icon/character/Abundance.webp",
+    "icon_middle": "/starrail/assets/icon/path/AbundanceMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/AbundanceSmall.webp"
+  },
+  "Memory": {
+    "id": "Memory",
+    "text": "Remembrance",
+    "name": "Ký Ức",
+    "desc": "Có thể triệu hồi Linh Hồn Ký Ức có Năng Lực Đặc Biệt, kề vai tác chiến cùng đội trong chiến đấu.",
+    "icon": "/starrail/assets/icon/character/Remembrance.webp",
+    "icon_middle": "/starrail/assets/icon/path/RemembranceMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/RemembranceSmall.webp"
+  },
+  "Elation": {
+    "id": "Elation",
+    "text": "Elation",
+    "name": "Vui Vẻ",
+    "desc": "Tạo ra các loại trò cười theo cách riêng của mình để thu hút Aeon Aha cùng vui vẻ",
+    "icon": "/starrail/assets/icon/character/Elation.webp",
+    "icon_middle": "/starrail/assets/icon/path/ElationMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/ElationSmall.webp"
+  }
+}

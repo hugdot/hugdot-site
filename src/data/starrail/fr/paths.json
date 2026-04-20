@@ -1,0 +1,83 @@
+{
+  "Warrior": {
+    "id": "Warrior",
+    "text": "Destruction",
+    "name": "La Destruction",
+    "desc": "Inflige d'importants dégâts et possède une grande survivabilité. Utile dans une multitude de scénarios en combat.",
+    "icon": "/starrail/assets/icon/character/Destruction.webp",
+    "icon_middle": "/starrail/assets/icon/path/DestructionMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/DestructionSmall.webp"
+  },
+  "Rogue": {
+    "id": "Rogue",
+    "text": "The Hunt",
+    "name": "La Chasse",
+    "desc": "Inflige d'importants dégâts sur cible unique. Principale source de dégâts pour vaincre les ennemis d'élite.",
+    "icon": "/starrail/assets/icon/character/Hunt.webp",
+    "icon_middle": "/starrail/assets/icon/path/HuntMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/HuntSmall.webp"
+  },
+  "Mage": {
+    "id": "Mage",
+    "text": "Erudition",
+    "name": "L'Érudition",
+    "desc": "Inflige d'importants dégâts sur cibles multiples. Principale source de dégâts pour vaincre les groupes d'ennemis.",
+    "icon": "/starrail/assets/icon/character/Erudition.webp",
+    "icon_middle": "/starrail/assets/icon/path/EruditionMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/EruditionSmall.webp"
+  },
+  "Shaman": {
+    "id": "Shaman",
+    "text": "Harmony",
+    "name": "L'Harmonie",
+    "desc": "Accorde des bonus aux alliés pour améliorer les capacités de combat de l'équipe.",
+    "icon": "/starrail/assets/icon/character/Harmony.webp",
+    "icon_middle": "/starrail/assets/icon/path/HarmonyMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/HarmonySmall.webp"
+  },
+  "Warlock": {
+    "id": "Warlock",
+    "text": "Nihility",
+    "name": "La Nihilité",
+    "desc": "Applique des malus aux ennemis pour réduire leurs capacités de combat.",
+    "icon": "/starrail/assets/icon/character/Nihility.webp",
+    "icon_middle": "/starrail/assets/icon/path/NihilityMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/NihilitySmall.webp"
+  },
+  "Knight": {
+    "id": "Knight",
+    "text": "Preservation",
+    "name": "La Préservation",
+    "desc": "Possède de puissantes capacités défensives qui permettent de protéger les alliés de diverses façons.",
+    "icon": "/starrail/assets/icon/character/Preservation.webp",
+    "icon_middle": "/starrail/assets/icon/path/PreservationMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/PreservationSmall.webp"
+  },
+  "Priest": {
+    "id": "Priest",
+    "text": "Abundance",
+    "name": "L'Abondance",
+    "desc": "Soigne les alliés et restaure des PV à l'équipe.",
+    "icon": "/starrail/assets/icon/character/Abundance.webp",
+    "icon_middle": "/starrail/assets/icon/path/AbundanceMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/AbundanceSmall.webp"
+  },
+  "Memory": {
+    "id": "Memory",
+    "text": "Remembrance",
+    "name": "Le Souvenir",
+    "desc": "Capable d'invoquer un mnémesprit avec des capacités spéciales pour se battre aux côtés de l'équipe.",
+    "icon": "/starrail/assets/icon/character/Remembrance.webp",
+    "icon_middle": "/starrail/assets/icon/path/RemembranceMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/RemembranceSmall.webp"
+  },
+  "Elation": {
+    "id": "Elation",
+    "text": "Elation",
+    "name": "L'Allégresse",
+    "desc": "Génère différents types de Panache pour inciter Aha à se joindre aux festivités.",
+    "icon": "/starrail/assets/icon/character/Elation.webp",
+    "icon_middle": "/starrail/assets/icon/path/ElationMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/ElationSmall.webp"
+  }
+}

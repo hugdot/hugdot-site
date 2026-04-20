@@ -1,0 +1,296 @@
+---
+// src/pages/[lang]/index.astro
+import DefaultLayout from '../../layouts/DefaultLayout.astro'
+
+export async function getStaticPaths() {
+  const languages = ['kr', 'en', 'jp', 'cn', 'cht', 'fr', 'de', 'es', 'id', 'pt', 'ru', 'th', 'vi']
+  return languages.map(lang => ({ params: { lang } }))
+}
+
+const { lang } = Astro.params
+
+// 언어별 UI 텍스트
+const t: Record<string, Record<string, string>> = {
+  kr:  { title: '게임 선택', desc: '원하는 게임 데이터베이스를 선택하세요', soon: '준비 중' },
+  en:  { title: 'Select Game', desc: 'Choose a game database', soon: 'Coming Soon' },
+  jp:  { title: 'ゲーム選択', desc: 'ゲームデータベースを選択してください', soon: '準備中' },
+  cn:  { title: '选择游戏', desc: '选择游戏数据库', soon: '即将推出' },
+  cht: { title: '選擇遊戲', desc: '選擇遊戲資料庫', soon: '即將推出' },
+  fr:  { title: 'Choisir un jeu', desc: 'Choisissez une base de données', soon: 'Bientôt' },
+  de:  { title: 'Spiel wählen', desc: 'Wähle eine Spieldatenbank', soon: 'Demnächst' },
+  es:  { title: 'Elegir juego', desc: 'Elige una base de datos', soon: 'Próximamente' },
+  id:  { title: 'Pilih Game', desc: 'Pilih basis data game', soon: 'Segera' },
+  pt:  { title: 'Escolher jogo', desc: 'Escolha um banco de dados', soon: 'Em breve' },
+  ru:  { title: 'Выбор игры', desc: 'Выберите базу данных', soon: 'Скоро' },
+  th:  { title: 'เลือกเกม', desc: 'เลือกฐานข้อมูลเกม', soon: 'เร็วๆ นี้' },
+  vi:  { title: 'Chọn Game', desc: 'Chọn cơ sở dữ liệu', soon: 'Sắp ra mắt' },
+}
+const ui = t[lang] ?? t['en']
+
+const games = [
+  {
+    id: 'starrail',
+    name: 'Honkai: Star Rail',
+    publisher: 'HoYoverse',
+    href: `/${lang}/starrail`,
+    available: true,
+    color: '#7c9dfc',
+    tags: ['RPG', 'Turn-based'],
+  },
+  {
+    id: 'zenless',
+    name: 'Zenless Zone Zero',
+    publisher: 'HoYoverse',
+    href: `/${lang}/zenless`,
+    available: false,
+    color: '#f59e0b',
+    tags: ['Action', 'RPG'],
+  },
+  {
+    id: 'wuthering',
+    name: 'Wuthering Waves',
+    publisher: 'Kuro Games',
+    href: `/${lang}/wuthering`,
+    available: false,
+    color: '#34d399',
+    tags: ['Action', 'RPG'],
+  },
+]
+---
+
+<DefaultLayout
+  title={`HugDot | ${ui.title}`}
+  description={ui.desc}
+  useTitleTemplate={false}
+>
+  <div class="lang-home">
+
+    <!-- Hero -->
+    <section class="lh-hero">
+      <div class="lh-hero-inner">
+        <p class="lh-eyebrow">HugDot Game Database</p>
+        <h1 class="lh-title">{ui.title}</h1>
+        <p class="lh-desc">{ui.desc}</p>
+      </div>
+      <div class="lh-bg" aria-hidden="true">
+        <div class="lh-orb lh-orb-1"></div>
+        <div class="lh-orb lh-orb-2"></div>
+      </div>
+    </section>
+
+    <!-- 게임 목록 -->
+    <section class="lh-games">
+      <div class="lh-games-inner">
+        {games.map(g => (
+          g.available
+            ? (
+              <a href={g.href} class="gc gc--available" style={`--gc-color: ${g.color}`}>
+                <div class="gc-glow" aria-hidden="true"></div>
+                <div class="gc-body">
+                  <div class="gc-top">
+                    <p class="gc-publisher">{g.publisher}</p>
+                    <div class="gc-tags">
+                      {g.tags.map(tag => <span class="gc-tag">{tag}</span>)}
+                    </div>
+                  </div>
+                  <h2 class="gc-name">{g.name}</h2>
+                  <div class="gc-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+                  </div>
+                </div>
+              </a>
+            ) : (
+              <div class="gc gc--soon" style={`--gc-color: ${g.color}`}>
+                <div class="gc-body">
+                  <div class="gc-top">
+                    <p class="gc-publisher">{g.publisher}</p>
+                    <span class="gc-soon-badge">{ui.soon}</span>
+                  </div>
+                  <h2 class="gc-name">{g.name}</h2>
+                </div>
+              </div>
+            )
+        ))}
+      </div>
+    </section>
+
+  </div>
+
+  <!-- 언어 변경 시 localStorage 저장 -->
+  <script is:inline define:vars={{ lang }}>
+  try { localStorage.setItem('hd-lang', lang) } catch (e) {}
+  </script>
+</DefaultLayout>
+
+<style>
+.lang-home { overflow-x: hidden; }
+
+/* ── Hero ── */
+.lh-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 5rem 1.25rem 4rem;
+}
+.lh-hero-inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.lh-eyebrow {
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--c-accent);
+}
+.lh-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  word-break: keep-all;
+}
+.lh-desc {
+  font-size: 0.95rem;
+  color: var(--c-muted);
+  line-height: 1.7;
+}
+
+.lh-bg { position: absolute; inset: 0; pointer-events: none; }
+.lh-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.2;
+}
+.lh-orb-1 {
+  width: 400px; height: 400px;
+  top: -100px; right: 0;
+  background: radial-gradient(circle, var(--c-accent), transparent 70%);
+}
+.lh-orb-2 {
+  width: 250px; height: 250px;
+  bottom: 0; left: 30%;
+  background: radial-gradient(circle, #a78bfa, transparent 70%);
+}
+
+/* ── 게임 목록 ── */
+.lh-games { padding: 0 1.25rem 5rem; }
+.lh-games-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+/* ── 게임 카드 ── */
+.gc {
+  position: relative;
+  border-radius: 20px;
+  border: 1px solid var(--c-border);
+  background: var(--c-surface);
+  overflow: hidden;
+  transition: border-color 200ms, transform 200ms, box-shadow 200ms;
+  text-decoration: none;
+  color: var(--foreground-color);
+  min-height: 140px;
+}
+
+.gc--available {
+  border-color: color-mix(in srgb, var(--gc-color) 25%, transparent);
+  cursor: pointer;
+}
+.gc--available:hover {
+  border-color: var(--gc-color);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px color-mix(in srgb, var(--gc-color) 20%, transparent);
+}
+.gc--available:hover .gc-arrow {
+  color: var(--gc-color);
+  transform: translateX(4px);
+}
+.gc--available:hover .gc-name { color: var(--gc-color); }
+
+.gc--soon {
+  opacity: 0.4;
+  cursor: default;
+}
+
+/* 배경 글로우 */
+.gc-glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at top right, color-mix(in srgb, var(--gc-color) 10%, transparent), transparent 60%);
+  pointer-events: none;
+}
+
+.gc-body {
+  position: relative;
+  z-index: 1;
+  padding: 1.4rem 1.4rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  height: 100%;
+}
+
+.gc-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+}
+.gc-publisher {
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+.gc-tags { display: flex; gap: 0.3rem; }
+.gc-tag {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  background: var(--c-surface2);
+  border: 1px solid var(--c-border);
+  border-radius: 4px;
+  padding: 0.1em 0.45em;
+  color: var(--c-muted);
+}
+.gc-soon-badge {
+  font-size: 0.58rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: var(--c-surface2);
+  border: 1px solid var(--c-border);
+  border-radius: 6px;
+  padding: 0.2em 0.6em;
+  color: var(--c-muted);
+}
+
+.gc-name {
+  font-family: var(--font-display);
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  transition: color 200ms;
+  word-break: keep-all;
+  flex: 1;
+}
+
+.gc-arrow {
+  align-self: flex-end;
+  color: var(--c-muted);
+  transition: color 200ms, transform 200ms;
+}
+</style>

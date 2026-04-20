@@ -1,84 +1,49 @@
 ---
 import DefaultLayout from '@layouts/DefaultLayout.astro'
-import { Heading } from 'accessible-astro-components'
 import { Icon } from 'astro-icon/components'
 ---
 
-<DefaultLayout title="Page Not Found">
-  <section class="py-12">
-    <div class="container max-w-2xl text-center">
+<DefaultLayout title="404 | HugDot" description="Page not found.">
+<div class="nf-page">
+  <div class="nw">
 
-      <div class="mb-6 flex justify-center">
-        <span class="rounded-full border border-[var(--border-color-subtle)] px-4 py-2 text-sm opacity-50">
-          404 — Page Not Found
-        </span>
-      </div>
+    <div class="nf-code">404</div>
+    <h1 class="nf-title">Page Not Found</h1>
+    <p class="nf-desc">The page you're looking for doesn't exist or has been moved.</p>
 
-      <Heading level="h1" size="h2" class="mb-4">
-        More tools are <span class="text-[var(--action-color)]">coming soon</span>
-      </Heading>
-
-      <p class="mb-8 opacity-60">
-        This tool isn't available yet. We're working on it! In the meantime, check out our existing tools below.
-      </p>
-
-      <!-- Badges -->
-      <div class="mb-10 flex flex-wrap items-center justify-center gap-3">
-        <span class="flex items-center gap-1.5 rounded-full border border-[var(--border-color-subtle)] px-4 py-2 text-sm font-medium">
-          <Icon aria-hidden="true" name="lucide:shield-check" size="1rem" class="text-[var(--action-color)]" />
-          100% Private
-        </span>
-        <span class="flex items-center gap-1.5 rounded-full border border-[var(--border-color-subtle)] px-4 py-2 text-sm font-medium">
-          <Icon aria-hidden="true" name="lucide:zap" size="1rem" class="text-[var(--action-color)]" />
-          No Upload
-        </span>
-        <span class="flex items-center gap-1.5 rounded-full border border-[var(--border-color-subtle)] px-4 py-2 text-sm font-medium">
-          <Icon aria-hidden="true" name="lucide:user-x" size="1rem" class="text-[var(--action-color)]" />
-          No Login
-        </span>
-        <span class="flex items-center gap-1.5 rounded-full border border-[var(--border-color-subtle)] px-4 py-2 text-sm font-medium">
-          <Icon aria-hidden="true" name="lucide:infinity" size="1rem" class="text-[var(--action-color)]" />
-          No Limits
-        </span>
-      </div>
-
-      <!-- Available Tools -->
-      <div class="flex flex-col gap-3">
-        <p class="text-sm font-semibold opacity-50">Available tools</p>
-        <div class="grid grid-cols-2 gap-3 sm:grid-cols-3">
-          {[
-            { label: 'Word Counter', href: '/tools/text/word-counter' },
-            { label: 'Image Compressor', href: '/tools/image/compressor' },
-            { label: 'Image Resizer', href: '/tools/image/resizer' },
-            { label: 'Image Blur', href: '/tools/image/blur' },
-            { label: 'Image Crop', href: '/tools/image/crop' },
-            { label: 'Image to PDF', href: '/tools/image/to-pdf' },
-            { label: 'EXIF Remover', href: '/tools/image/exif-remover' },
-            { label: 'PDF Merger', href: '/tools/pdf/merger' },
-            { label: 'PDF Splitter', href: '/tools/pdf/splitter' },
-            { label: 'PDF to Image', href: '/tools/pdf/to-image' },
-            { label: 'QR Code Generator', href: '/tools/generator/qr-code' },
-          ].map((tool) => (
-            <a
-              href={tool.href}
-              class="rounded-xl border border-[var(--border-color-subtle)] px-4 py-3 text-sm font-medium transition-all hover:border-[var(--action-color)] text-[var(--foreground-color)] no-underline"
-            >
-              {tool.label} →
-            </a>
-          ))}
-        </div>
-      </div>
-
-      <div class="mt-8">
-        <a
-          href="/"
-          class="inline-flex items-center gap-2 rounded-2xl bg-[var(--action-color)] px-6 py-3 text-sm font-semibold text-white transition-opacity hover:opacity-80"
-        >
-          <Icon aria-hidden="true" name="lucide:home" size="1rem" />
-          Back to Home
-        </a>
-      </div>
-
+    <div class="nf-links">
+      <a href="/" class="nf-btn nf-btn--primary">
+        <Icon name="lucide:home" size="0.9rem"/>
+        Home
+      </a>
+      <a href="/kr/starrail" class="nf-btn nf-btn--secondary">
+        <Icon name="lucide:star" size="0.9rem"/>
+        Star Rail DB
+      </a>
+      <a href="/kr/starrail/characters" class="nf-btn nf-btn--secondary">
+        <Icon name="lucide:users" size="0.9rem"/>
+        Characters
+      </a>
+      <a href="/kr/starrail/planner" class="nf-btn nf-btn--secondary">
+        <Icon name="lucide:calendar" size="0.9rem"/>
+        Planner
+      </a>
     </div>
-  </section>
+
+  </div>
+</div>
 </DefaultLayout>
+
+<style>
+.nf-page { min-height:80vh; display:flex; align-items:center; justify-content:center; background:var(--c-bg); color:var(--foreground-color); padding:4rem 1.5rem; }
+.nw { text-align:center; display:flex; flex-direction:column; align-items:center; gap:1.25rem; }
+.nf-code { font-family:var(--font-mono); font-size:6rem; font-weight:900; line-height:1; color:var(--c-accent); opacity:.15; letter-spacing:-.05em; }
+.nf-title { font-family:var(--font-display); font-size:clamp(1.5rem,4vw,2.5rem); font-weight:700; letter-spacing:-.02em; margin-top:-2rem; }
+.nf-desc { font-size:.88rem; color:var(--c-muted); max-width:360px; line-height:1.7; }
+.nf-links { display:flex; flex-wrap:wrap; gap:.5rem; justify-content:center; margin-top:.5rem; }
+.nf-btn { display:inline-flex; align-items:center; gap:.45rem; padding:.6rem 1.1rem; border-radius:var(--radius-sm); font-size:.8rem; font-weight:700; text-decoration:none; transition:opacity var(--anim-fast),transform var(--anim-fast); }
+.nf-btn:hover { opacity:.85; transform:translateY(-1px); }
+.nf-btn--primary { background:var(--c-accent); color:#fff; }
+.nf-btn--secondary { border:1px solid var(--c-border); background:var(--c-surface); color:var(--foreground-color); }
+.nf-btn--secondary:hover { border-color:var(--c-accent); color:var(--c-accent); }
+</style>

@@ -1,0 +1,83 @@
+{
+  "Warrior": {
+    "id": "Warrior",
+    "text": "Destruction",
+    "name": "Destrucción",
+    "desc": "Buena combinación de daño y capacidad de supervivencia, puede adaptarse a distintas situaciones de combate.",
+    "icon": "/starrail/assets/icon/character/Destruction.webp",
+    "icon_middle": "/starrail/assets/icon/path/DestructionMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/DestructionSmall.webp"
+  },
+  "Rogue": {
+    "id": "Rogue",
+    "text": "The Hunt",
+    "name": "Cacería",
+    "desc": "Capacidad extraordinaria de infligir daño a objetivos individuales. Principal fuente de daño para vencer a enemigos de élite.",
+    "icon": "/starrail/assets/icon/character/Hunt.webp",
+    "icon_middle": "/starrail/assets/icon/path/HuntMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/HuntSmall.webp"
+  },
+  "Mage": {
+    "id": "Mage",
+    "text": "Erudition",
+    "name": "Erudición",
+    "desc": "Capacidad excelente para infligir daño en el AdE. Puede atacar a varios enemigos a la vez.",
+    "icon": "/starrail/assets/icon/character/Erudition.webp",
+    "icon_middle": "/starrail/assets/icon/path/EruditionMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/EruditionSmall.webp"
+  },
+  "Shaman": {
+    "id": "Shaman",
+    "text": "Harmony",
+    "name": "Armonía",
+    "desc": "Proporciona efectos positivos a los aliados para mejorar la capacidad de combate del equipo.",
+    "icon": "/starrail/assets/icon/character/Harmony.webp",
+    "icon_middle": "/starrail/assets/icon/path/HarmonyMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/HarmonySmall.webp"
+  },
+  "Warlock": {
+    "id": "Warlock",
+    "text": "Nihility",
+    "name": "Nihilidad",
+    "desc": "Inflige estados negativos a los enemigos para reducir su capacidad de combate y sus ventajas.",
+    "icon": "/starrail/assets/icon/character/Nihility.webp",
+    "icon_middle": "/starrail/assets/icon/path/NihilityMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/NihilitySmall.webp"
+  },
+  "Knight": {
+    "id": "Knight",
+    "text": "Preservation",
+    "name": "Conservación",
+    "desc": "Gran capacidad de defensa para proteger a los aliados de muchas formas.",
+    "icon": "/starrail/assets/icon/character/Preservation.webp",
+    "icon_middle": "/starrail/assets/icon/path/PreservationMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/PreservationSmall.webp"
+  },
+  "Priest": {
+    "id": "Priest",
+    "text": "Abundance",
+    "name": "Abundancia",
+    "desc": "Puede curar a los aliados y proporcionar capacidad de regeneración al equipo.",
+    "icon": "/starrail/assets/icon/character/Abundance.webp",
+    "icon_middle": "/starrail/assets/icon/path/AbundanceMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/AbundanceSmall.webp"
+  },
+  "Memory": {
+    "id": "Memory",
+    "text": "Remembrance",
+    "name": "Reminiscencia",
+    "desc": "Puede invocar a un mnemoduende con habilidades especiales para que luche junto al equipo en la batalla.",
+    "icon": "/starrail/assets/icon/character/Remembrance.webp",
+    "icon_middle": "/starrail/assets/icon/path/RemembranceMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/RemembranceSmall.webp"
+  },
+  "Elation": {
+    "id": "Elation",
+    "text": "Elation",
+    "name": "Exultación",
+    "desc": "Produce a su manera distintos tipos de material cómico para atraer al Eón Aha y divertirse juntos.",
+    "icon": "/starrail/assets/icon/character/Elation.webp",
+    "icon_middle": "/starrail/assets/icon/path/ElationMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/ElationSmall.webp"
+  }
+}

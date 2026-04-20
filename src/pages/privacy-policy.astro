@@ -1,96 +1,93 @@
 ---
 import DefaultLayout from '@layouts/DefaultLayout.astro'
-import { Heading } from 'accessible-astro-components'
 ---
 
 <DefaultLayout
-  title="Privacy Policy"
-  description="Privacy Policy for our free online tools. We do not collect, store, or transmit any of your data."
+  title="Privacy Policy | HugDot"
+  description="Privacy Policy for HugDot. We do not collect, store, or transmit any of your personal data."
 >
-  <section class="py-12">
-    <div class="container max-w-3xl">
+<div class="pp-page">
+  <div class="pw">
 
-      <div class="mb-8">
-        <Heading level="h1" size="h2">Privacy Policy</Heading>
-        <p class="mt-2 opacity-60">Last updated: March 2026</p>
-      </div>
+    <div class="pp-header">
+      <h1 class="pp-title">Privacy Policy</h1>
+      <p class="pp-date">Last updated: March 2026</p>
+    </div>
 
-      <div class="flex flex-col gap-8 leading-relaxed">
-
-        <!-- TL;DR -->
-        <div class="flex items-start gap-3 rounded-2xl border border-[var(--border-color-subtle)] bg-[var(--background-color)] px-6 py-5">
-          <span class="text-2xl">🔒</span>
-          <div>
-            <p class="font-semibold">The short version</p>
-            <p class="mt-1 opacity-60">All tools on this site run entirely in your browser. Your files, text, and data never leave your device. We do not collect, store, or transmit any of your personal data or files.</p>
-          </div>
-        </div>
-
-        <!-- Section 1 -->
-        <div>
-          <Heading level="h2" size="h4">1. No Data Collection</Heading>
-          <p class="mt-3 opacity-70">
-            We do not collect any personal information from users of this site. All tools operate entirely on your device using your browser's built-in capabilities. No files, images, documents, or text you process with our tools are ever uploaded to any server.
-          </p>
-        </div>
-
-        <!-- Section 2 -->
-        <div>
-          <Heading level="h2" size="h4">2. How Our Tools Work</Heading>
-          <p class="mt-3 opacity-70">
-            Every tool on this site is built using client-side technologies (HTML, CSS, JavaScript). When you use a tool — such as compressing an image, merging PDFs, or generating a QR code — all processing happens locally in your browser. Your data never leaves your device.
-          </p>
-        </div>
-
-        <!-- Section 3 -->
-        <div>
-          <Heading level="h2" size="h4">3. Cookies & Local Storage</Heading>
-          <p class="mt-3 opacity-70">
-            We do not use tracking cookies. We may use your browser's local storage solely to remember your preferences (such as dark mode settings). This data stays on your device and is never transmitted to us.
-          </p>
-        </div>
-
-        <!-- Section 4 -->
-        <div>
-          <Heading level="h2" size="h4">4. Third-Party Advertising</Heading>
-          <p class="mt-3 opacity-70">
-            This site may display advertisements served by Google AdSense. Google may use cookies to serve ads based on your prior visits to this website or other websites. You can opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" class="text-[var(--action-color)] underline">Google Ads Settings</a>.
-          </p>
-        </div>
-
-        <!-- Section 5 -->
-        <div>
-          <Heading level="h2" size="h4">5. Analytics</Heading>
-          <p class="mt-3 opacity-70">
-            We may use anonymized analytics tools to understand general usage patterns (such as which tools are most popular). This data does not include any personally identifiable information or the content of files you process.
-          </p>
-        </div>
-
-        <!-- Section 6 -->
-        <div>
-          <Heading level="h2" size="h4">6. Children's Privacy</Heading>
-          <p class="mt-3 opacity-70">
-            Our site is not directed at children under the age of 13. We do not knowingly collect personal information from children.
-          </p>
-        </div>
-
-        <!-- Section 7 -->
-        <div>
-          <Heading level="h2" size="h4">7. Changes to This Policy</Heading>
-          <p class="mt-3 opacity-70">
-            We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated date. Continued use of the site after changes constitutes acceptance of the new policy.
-          </p>
-        </div>
-
-        <!-- Section 8 -->
-        <div>
-          <Heading level="h2" size="h4">8. Contact</Heading>
-          <p class="mt-3 opacity-70">
-            If you have any questions about this Privacy Policy, please contact us through the <a href="/contact" class="text-[var(--action-color)] underline">Contact page</a>.
-          </p>
-        </div>
-
+    <!-- TL;DR -->
+    <div class="pp-tldr">
+      <span class="pp-lock">🔒</span>
+      <div>
+        <p class="pp-tldr-title">The short version</p>
+        <p class="pp-tldr-desc">HugDot is a game database. We do not collect, store, or transmit your personal data. Your planner and settings data is saved only on your own device via localStorage.</p>
       </div>
     </div>
-  </section>
+
+    <div class="pp-sections">
+
+      <div class="pp-section">
+        <h2>1. No Data Collection</h2>
+        <p>We do not collect any personal information from users of this site. HugDot is a static game database — all pages are pre-rendered and served directly to your browser. No personal data is uploaded to any server.</p>
+      </div>
+
+      <div class="pp-section">
+        <h2>2. How the Site Works</h2>
+        <p>HugDot provides game data (characters, items, skills, etc.) in read-only format. Interactive features such as the Ascension Planner use your browser's localStorage to save your selections. This data stays on your device and is never transmitted to us.</p>
+      </div>
+
+      <div class="pp-section">
+        <h2>3. Cookies & Local Storage</h2>
+        <p>We do not use tracking cookies. We use your browser's localStorage solely to remember your preferences (such as language selection and planner data). This data stays on your device and is never sent to our servers.</p>
+      </div>
+
+      <div class="pp-section">
+        <h2>4. Third-Party Advertising</h2>
+        <p>This site may display advertisements served by Google AdSense. Google may use cookies to serve ads based on your prior visits to this or other websites. You can opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer">Google Ads Settings</a>.</p>
+      </div>
+
+      <div class="pp-section">
+        <h2>5. Analytics</h2>
+        <p>We may use anonymized analytics tools to understand general usage patterns such as which pages are most visited. This data does not include any personally identifiable information.</p>
+      </div>
+
+      <div class="pp-section">
+        <h2>6. Children's Privacy</h2>
+        <p>Our site is not directed at children under the age of 13. We do not knowingly collect personal information from children.</p>
+      </div>
+
+      <div class="pp-section">
+        <h2>7. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated date. Continued use of the site after changes constitutes acceptance of the new policy.</p>
+      </div>
+
+      <div class="pp-section">
+        <h2>8. Contact</h2>
+        <p>If you have any questions about this Privacy Policy, please contact us through the <a href="/contact">Contact page</a>.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
 </DefaultLayout>
+
+<style>
+.pp-page { min-height:100vh; background:var(--c-bg); color:var(--foreground-color); padding:4rem 0 6rem; }
+.pw { max-width:720px; margin:0 auto; padding:0 1.5rem; }
+
+.pp-header { margin-bottom:2rem; }
+.pp-title { font-family:var(--font-display); font-size:clamp(1.8rem,4vw,2.8rem); font-weight:700; letter-spacing:-.02em; margin-bottom:.4rem; }
+.pp-date { font-size:.75rem; color:var(--c-muted); }
+
+.pp-tldr { display:flex; gap:1rem; align-items:flex-start; padding:1.25rem 1.4rem; border:1px solid color-mix(in srgb,var(--c-accent) 30%,transparent); border-radius:var(--radius-lg); background:var(--c-surface); margin-bottom:2.5rem; }
+.pp-lock { font-size:1.5rem; flex-shrink:0; margin-top:.1rem; }
+.pp-tldr-title { font-size:.88rem; font-weight:700; margin-bottom:.3rem; }
+.pp-tldr-desc { font-size:.78rem; color:var(--c-muted); line-height:1.7; word-break:keep-all; }
+
+.pp-sections { display:flex; flex-direction:column; gap:0; }
+.pp-section { padding:1.5rem 0; border-bottom:1px solid var(--c-border); }
+.pp-section:last-child { border-bottom:none; }
+.pp-section h2 { font-size:.95rem; font-weight:700; color:var(--c-accent); margin-bottom:.6rem; }
+.pp-section p { font-size:.82rem; color:var(--c-muted); line-height:1.85; word-break:keep-all; }
+.pp-section a { color:var(--c-accent); text-decoration:underline; text-underline-offset:3px; }
+.pp-section a:hover { opacity:.8; }
+</style>

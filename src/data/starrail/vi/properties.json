@@ -1,0 +1,582 @@
+{
+  "MaxHP": {
+    "type": "MaxHP",
+    "name": "HP",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": false,
+    "order": 1,
+    "icon": "/starrail/assets/icon/character/IconMaxHP.webp"
+  },
+  "Attack": {
+    "type": "Attack",
+    "name": "Tấn Công",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": false,
+    "order": 2,
+    "icon": "/starrail/assets/icon/character/IconAttack.webp"
+  },
+  "Defence": {
+    "type": "Defence",
+    "name": "Phòng Thủ",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": false,
+    "order": 3,
+    "icon": "/starrail/assets/icon/character/IconDefence.webp"
+  },
+  "Speed": {
+    "type": "Speed",
+    "name": "Tốc Độ",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": false,
+    "order": 4,
+    "icon": "/starrail/assets/icon/character/IconSpeed.webp"
+  },
+  "CriticalChance": {
+    "type": "CriticalChance",
+    "name": "Tỷ Lệ Bạo Kích",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": false,
+    "order": 5,
+    "icon": "/starrail/assets/icon/character/IconCriticalChance.webp"
+  },
+  "CriticalDamage": {
+    "type": "CriticalDamage",
+    "name": "Sát Thương Bạo Kích",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": false,
+    "order": 6,
+    "icon": "/starrail/assets/icon/character/IconCriticalDamage.webp"
+  },
+  "BreakDamageAddedRatio": {
+    "type": "BreakDamageAddedRatio",
+    "name": "Tấn Công Kích Phá",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": false,
+    "order": 7,
+    "icon": "/starrail/assets/icon/character/IconBreakUp.webp"
+  },
+  "BreakDamageAddedRatioBase": {
+    "type": "BreakDamageAddedRatioBase",
+    "name": "Tấn Công Kích Phá",
+    "field": "break_dmg",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 8,
+    "icon": "/starrail/assets/icon/character/IconBreakUp.webp"
+  },
+  "HealRatio": {
+    "type": "HealRatio",
+    "name": "Tăng Lượng Trị Liệu",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": true,
+    "order": 9,
+    "icon": "/starrail/assets/icon/character/IconHealRatio.webp"
+  },
+  "MaxSP": {
+    "type": "MaxSP",
+    "name": "Giới Hạn Năng Lượng",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": false,
+    "order": 10,
+    "icon": "/starrail/assets/icon/character/IconEnergyLimit.webp"
+  },
+  "SpecialMaxSP": {
+    "type": "SpecialMaxSP",
+    "name": "",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": false,
+    "order": 11,
+    "icon": "/starrail/assets/icon/character/IconEnergy_1308.webp"
+  },
+  "SPRatio": {
+    "type": "SPRatio",
+    "name": "Hiệu Suất Hồi Năng Lượng",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": true,
+    "order": 12,
+    "icon": "/starrail/assets/icon/character/IconEnergyRecovery.webp"
+  },
+  "StatusProbability": {
+    "type": "StatusProbability",
+    "name": "Chính Xác Hiệu Ứng",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": true,
+    "order": 13,
+    "icon": "/starrail/assets/icon/character/IconStatusProbability.webp"
+  },
+  "StatusResistance": {
+    "type": "StatusResistance",
+    "name": "Kháng Hiệu Ứng",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": true,
+    "order": 14,
+    "icon": "/starrail/assets/icon/character/IconStatusResistance.webp"
+  },
+  "CriticalChanceBase": {
+    "type": "CriticalChanceBase",
+    "name": "Tỷ Lệ Bạo Kích",
+    "field": "crit_rate",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 15,
+    "icon": "/starrail/assets/icon/character/IconCriticalChance.webp"
+  },
+  "CriticalDamageBase": {
+    "type": "CriticalDamageBase",
+    "name": "Sát Thương Bạo Kích",
+    "field": "crit_dmg",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 16,
+    "icon": "/starrail/assets/icon/character/IconCriticalDamage.webp"
+  },
+  "HealRatioBase": {
+    "type": "HealRatioBase",
+    "name": "Tăng Lượng Trị Liệu",
+    "field": "heal_rate",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 17,
+    "icon": "/starrail/assets/icon/character/IconHealRatio.webp"
+  },
+  "StanceBreakAddedRatio": {
+    "type": "StanceBreakAddedRatio",
+    "name": "",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": false,
+    "order": 18,
+    "icon": null
+  },
+  "SPRatioBase": {
+    "type": "SPRatioBase",
+    "name": "Hiệu Suất Hồi Năng Lượng",
+    "field": "sp_rate",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 19,
+    "icon": "/starrail/assets/icon/character/IconEnergyRecovery.webp"
+  },
+  "StatusProbabilityBase": {
+    "type": "StatusProbabilityBase",
+    "name": "Chính Xác Hiệu Ứng",
+    "field": "effect_hit",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 20,
+    "icon": "/starrail/assets/icon/character/IconStatusProbability.webp"
+  },
+  "StatusResistanceBase": {
+    "type": "StatusResistanceBase",
+    "name": "Kháng Hiệu Ứng",
+    "field": "effect_res",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 21,
+    "icon": "/starrail/assets/icon/character/IconStatusResistance.webp"
+  },
+  "ElationDamageAddedRatio": {
+    "type": "ElationDamageAddedRatio",
+    "name": "Độ Vui Vẻ",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": false,
+    "order": 22,
+    "icon": "/starrail/assets/icon/character/IconJoy.webp"
+  },
+  "ElationDamageAddedRatioBase": {
+    "type": "ElationDamageAddedRatioBase",
+    "name": "Độ Vui Vẻ",
+    "field": "elation_dmg",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 23,
+    "icon": "/starrail/assets/icon/character/IconJoy.webp"
+  },
+  "PhysicalAddedRatio": {
+    "type": "PhysicalAddedRatio",
+    "name": "Tăng Sát Thương Vật Lý",
+    "field": "physical_dmg",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 24,
+    "icon": "/starrail/assets/icon/character/IconPhysicalAddedRatio.webp"
+  },
+  "PhysicalResistance": {
+    "type": "PhysicalResistance",
+    "name": "Tăng Kháng Vật Lý",
+    "field": "physical_res",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 25,
+    "icon": "/starrail/assets/icon/character/IconPhysicalResistanceDelta.webp"
+  },
+  "FireAddedRatio": {
+    "type": "FireAddedRatio",
+    "name": "Tăng Sát Thương Hỏa",
+    "field": "fire_dmg",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 26,
+    "icon": "/starrail/assets/icon/character/IconFireAddedRatio.webp"
+  },
+  "FireResistance": {
+    "type": "FireResistance",
+    "name": "Tăng Kháng Hỏa",
+    "field": "fire_res",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 27,
+    "icon": "/starrail/assets/icon/character/IconFireResistanceDelta.webp"
+  },
+  "IceAddedRatio": {
+    "type": "IceAddedRatio",
+    "name": "Tăng Sát Thương Băng",
+    "field": "ice_dmg",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 28,
+    "icon": "/starrail/assets/icon/character/IconIceAddedRatio.webp"
+  },
+  "IceResistance": {
+    "type": "IceResistance",
+    "name": "Tăng Kháng Băng",
+    "field": "ice_res",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 29,
+    "icon": "/starrail/assets/icon/character/IconIceResistanceDelta.webp"
+  },
+  "ThunderAddedRatio": {
+    "type": "ThunderAddedRatio",
+    "name": "Tăng Sát Thương Lôi",
+    "field": "thunder_dmg",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 30,
+    "icon": "/starrail/assets/icon/character/IconThunderAddedRatio.webp"
+  },
+  "ThunderResistance": {
+    "type": "ThunderResistance",
+    "name": "Tăng Kháng Lôi",
+    "field": "thunder_res",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 31,
+    "icon": "/starrail/assets/icon/character/IconThunderResistanceDelta.webp"
+  },
+  "WindAddedRatio": {
+    "type": "WindAddedRatio",
+    "name": "Tăng Sát Thương Phong",
+    "field": "wind_dmg",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 32,
+    "icon": "/starrail/assets/icon/character/IconWindAddedRatio.webp"
+  },
+  "WindResistance": {
+    "type": "WindResistance",
+    "name": "Tăng Kháng Phong",
+    "field": "wind_res",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 33,
+    "icon": "/starrail/assets/icon/character/IconWindResistanceDelta.webp"
+  },
+  "QuantumAddedRatio": {
+    "type": "QuantumAddedRatio",
+    "name": "Tăng Sát Thương Lượng Tử",
+    "field": "quantum_dmg",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 34,
+    "icon": "/starrail/assets/icon/character/IconQuantumAddedRatio.webp"
+  },
+  "QuantumResistance": {
+    "type": "QuantumResistance",
+    "name": "Tăng Kháng Lượng Tử",
+    "field": "quantum_res",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 35,
+    "icon": "/starrail/assets/icon/character/IconQuantumResistanceDelta.webp"
+  },
+  "ImaginaryAddedRatio": {
+    "type": "ImaginaryAddedRatio",
+    "name": "Tăng Sát Thương Số Ảo",
+    "field": "imaginary_dmg",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 36,
+    "icon": "/starrail/assets/icon/character/IconImaginaryAddedRatio.webp"
+  },
+  "ImaginaryResistance": {
+    "type": "ImaginaryResistance",
+    "name": "Tăng Kháng Số Ảo",
+    "field": "imaginary_res",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 37,
+    "icon": "/starrail/assets/icon/character/IconImaginaryResistanceDelta.webp"
+  },
+  "BaseHP": {
+    "type": "BaseHP",
+    "name": "HP Cơ Bản",
+    "field": "hp",
+    "affix": true,
+    "ratio": false,
+    "percent": false,
+    "order": 38,
+    "icon": "/starrail/assets/icon/character/IconMaxHP.webp"
+  },
+  "HPDelta": {
+    "type": "HPDelta",
+    "name": "HP",
+    "field": "hp",
+    "affix": true,
+    "ratio": false,
+    "percent": false,
+    "order": 39,
+    "icon": "/starrail/assets/icon/character/IconMaxHP.webp"
+  },
+  "HPAddedRatio": {
+    "type": "HPAddedRatio",
+    "name": "HP",
+    "field": "hp",
+    "affix": true,
+    "ratio": true,
+    "percent": true,
+    "order": 40,
+    "icon": "/starrail/assets/icon/character/IconMaxHP.webp"
+  },
+  "BaseAttack": {
+    "type": "BaseAttack",
+    "name": "Tấn Công Cơ Bản",
+    "field": "atk",
+    "affix": true,
+    "ratio": false,
+    "percent": false,
+    "order": 41,
+    "icon": "/starrail/assets/icon/character/IconAttack.webp"
+  },
+  "AttackDelta": {
+    "type": "AttackDelta",
+    "name": "Tấn Công",
+    "field": "atk",
+    "affix": true,
+    "ratio": false,
+    "percent": false,
+    "order": 42,
+    "icon": "/starrail/assets/icon/character/IconAttack.webp"
+  },
+  "AttackAddedRatio": {
+    "type": "AttackAddedRatio",
+    "name": "Tấn Công",
+    "field": "atk",
+    "affix": true,
+    "ratio": true,
+    "percent": true,
+    "order": 43,
+    "icon": "/starrail/assets/icon/character/IconAttack.webp"
+  },
+  "BaseDefence": {
+    "type": "BaseDefence",
+    "name": "Phòng Thủ Cơ Bản",
+    "field": "def",
+    "affix": true,
+    "ratio": false,
+    "percent": false,
+    "order": 44,
+    "icon": "/starrail/assets/icon/character/IconDefence.webp"
+  },
+  "DefenceDelta": {
+    "type": "DefenceDelta",
+    "name": "Phòng Thủ",
+    "field": "def",
+    "affix": true,
+    "ratio": false,
+    "percent": false,
+    "order": 45,
+    "icon": "/starrail/assets/icon/character/IconDefence.webp"
+  },
+  "DefenceAddedRatio": {
+    "type": "DefenceAddedRatio",
+    "name": "Phòng Thủ",
+    "field": "def",
+    "affix": true,
+    "ratio": true,
+    "percent": true,
+    "order": 46,
+    "icon": "/starrail/assets/icon/character/IconDefence.webp"
+  },
+  "BaseSpeed": {
+    "type": "BaseSpeed",
+    "name": "Tốc Độ",
+    "field": "spd",
+    "affix": true,
+    "ratio": false,
+    "percent": false,
+    "order": 47,
+    "icon": "/starrail/assets/icon/character/IconSpeed.webp"
+  },
+  "HealTakenRatio": {
+    "type": "HealTakenRatio",
+    "name": "Tăng Lượng Nhận Trị Liệu",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": true,
+    "order": 48,
+    "icon": "/starrail/assets/icon/character/IconHealRatio.webp"
+  },
+  "PhysicalResistanceDelta": {
+    "type": "PhysicalResistanceDelta",
+    "name": "Tăng Kháng Vật Lý",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": true,
+    "order": 49,
+    "icon": "/starrail/assets/icon/character/IconPhysicalResistanceDelta.webp"
+  },
+  "FireResistanceDelta": {
+    "type": "FireResistanceDelta",
+    "name": "Tăng Kháng Hỏa",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": true,
+    "order": 50,
+    "icon": "/starrail/assets/icon/character/IconFireResistanceDelta.webp"
+  },
+  "IceResistanceDelta": {
+    "type": "IceResistanceDelta",
+    "name": "Tăng Kháng Băng",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": true,
+    "order": 51,
+    "icon": "/starrail/assets/icon/character/IconIceResistanceDelta.webp"
+  },
+  "ThunderResistanceDelta": {
+    "type": "ThunderResistanceDelta",
+    "name": "Tăng Kháng Lôi",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": true,
+    "order": 52,
+    "icon": "/starrail/assets/icon/character/IconThunderResistanceDelta.webp"
+  },
+  "WindResistanceDelta": {
+    "type": "WindResistanceDelta",
+    "name": "Tăng Kháng Phong",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": true,
+    "order": 53,
+    "icon": "/starrail/assets/icon/character/IconWindResistanceDelta.webp"
+  },
+  "QuantumResistanceDelta": {
+    "type": "QuantumResistanceDelta",
+    "name": "Tăng Kháng Lượng Tử",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": true,
+    "order": 54,
+    "icon": "/starrail/assets/icon/character/IconQuantumResistanceDelta.webp"
+  },
+  "ImaginaryResistanceDelta": {
+    "type": "ImaginaryResistanceDelta",
+    "name": "Tăng Kháng Số Ảo",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": true,
+    "order": 55,
+    "icon": "/starrail/assets/icon/character/IconImaginaryResistanceDelta.webp"
+  },
+  "SpeedDelta": {
+    "type": "SpeedDelta",
+    "name": "Tốc Độ",
+    "field": "spd",
+    "affix": true,
+    "ratio": false,
+    "percent": false,
+    "order": 57,
+    "icon": "/starrail/assets/icon/character/IconSpeed.webp"
+  },
+  "SpeedAddedRatio": {
+    "type": "SpeedAddedRatio",
+    "name": "Tốc Độ",
+    "field": "spd",
+    "affix": true,
+    "ratio": true,
+    "percent": true,
+    "order": 100,
+    "icon": "/starrail/assets/icon/character/IconSpeed.webp"
+  },
+  "AllDamageTypeAddedRatio": {
+    "type": "AllDamageTypeAddedRatio",
+    "name": "Tăng Sát Thương",
+    "field": "all_dmg",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 101,
+    "icon": "/starrail/assets/icon/character/IconAttack.webp"
+  }
+}

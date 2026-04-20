@@ -1,0 +1,83 @@
+{
+  "Warrior": {
+    "id": "Warrior",
+    "text": "Destruction",
+    "name": "Die Zerstörung",
+    "desc": "Fügt besonders viel Schaden zu und besitzt eine hohe Überlebensfähigkeit. Geeignet für verschiedene Kampfszenarien.",
+    "icon": "/starrail/assets/icon/character/Destruction.webp",
+    "icon_middle": "/starrail/assets/icon/path/DestructionMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/DestructionSmall.webp"
+  },
+  "Rogue": {
+    "id": "Rogue",
+    "text": "The Hunt",
+    "name": "Die Jagd",
+    "desc": "Fügt Einzelzielen außergewöhnlichen Schaden zu. Nützlich vor allem gegen Elitegegner.",
+    "icon": "/starrail/assets/icon/character/Hunt.webp",
+    "icon_middle": "/starrail/assets/icon/path/HuntMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/HuntSmall.webp"
+  },
+  "Mage": {
+    "id": "Mage",
+    "text": "Erudition",
+    "name": "Die Gelehrsamkeit",
+    "desc": "Fügt Mehrfachzielen beachtlich viel Schaden zu. Nützlich vor allem gegen Gruppen von Gegnern.",
+    "icon": "/starrail/assets/icon/character/Erudition.webp",
+    "icon_middle": "/starrail/assets/icon/path/EruditionMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/EruditionSmall.webp"
+  },
+  "Shaman": {
+    "id": "Shaman",
+    "text": "Harmony",
+    "name": "Die Harmonie",
+    "desc": "Wendet Buffs auf Verbündete an, um die Kampffähigkeiten des Teams zu verbessern.",
+    "icon": "/starrail/assets/icon/character/Harmony.webp",
+    "icon_middle": "/starrail/assets/icon/path/HarmonyMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/HarmonySmall.webp"
+  },
+  "Warlock": {
+    "id": "Warlock",
+    "text": "Nihility",
+    "name": "Die Nichtigkeit",
+    "desc": "Wendet Debuffs auf Gegner an, um ihre Kampffähigkeiten zu verringern.",
+    "icon": "/starrail/assets/icon/character/Nihility.webp",
+    "icon_middle": "/starrail/assets/icon/path/NihilityMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/NihilitySmall.webp"
+  },
+  "Knight": {
+    "id": "Knight",
+    "text": "Preservation",
+    "name": "Die Bewahrung",
+    "desc": "Besitzt starke Verteidigungsfähigkeiten, um Verbündete auf verschiedene Weise zu schützen.",
+    "icon": "/starrail/assets/icon/character/Preservation.webp",
+    "icon_middle": "/starrail/assets/icon/path/PreservationMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/PreservationSmall.webp"
+  },
+  "Priest": {
+    "id": "Priest",
+    "text": "Abundance",
+    "name": "Der Überfluss",
+    "desc": "Heilt Verbündete und stellt die LP der Teammitglieder wieder her.",
+    "icon": "/starrail/assets/icon/character/Abundance.webp",
+    "icon_middle": "/starrail/assets/icon/path/AbundanceMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/AbundanceSmall.webp"
+  },
+  "Memory": {
+    "id": "Memory",
+    "text": "Remembrance",
+    "name": "Das Gedenken",
+    "desc": "Beschwört einen Memogeist mit besonderen Fähigkeiten, der im Kampf an der Seite des Teams kämpft.",
+    "icon": "/starrail/assets/icon/character/Remembrance.webp",
+    "icon_middle": "/starrail/assets/icon/path/RemembranceMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/RemembranceSmall.webp"
+  },
+  "Elation": {
+    "id": "Elation",
+    "text": "Elation",
+    "name": "Das Hochgefühl",
+    "desc": "Erzeugt verschiedene Pointen, um den Äon Aha dazu zu bringen, mitzufeiern.",
+    "icon": "/starrail/assets/icon/character/Elation.webp",
+    "icon_middle": "/starrail/assets/icon/path/ElationMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/ElationSmall.webp"
+  }
+}

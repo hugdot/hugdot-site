@@ -1,0 +1,83 @@
+{
+  "Warrior": {
+    "id": "Warrior",
+    "text": "Destruction",
+    "name": "A Destruição",
+    "desc": "Causa Dano extraordinário e melhora sua capacidade de sobrevivência. Excelente para diferentes cenários de combate.",
+    "icon": "/starrail/assets/icon/character/Destruction.webp",
+    "icon_middle": "/starrail/assets/icon/path/DestructionMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/DestructionSmall.webp"
+  },
+  "Rogue": {
+    "id": "Rogue",
+    "text": "The Hunt",
+    "name": "A Caça",
+    "desc": "Causa uma quantidade extraordinária de Dano a um único alvo. A melhor maneira de causar Dano a Inimigos de Elite.",
+    "icon": "/starrail/assets/icon/character/Hunt.webp",
+    "icon_middle": "/starrail/assets/icon/path/HuntMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/HuntSmall.webp"
+  },
+  "Mage": {
+    "id": "Mage",
+    "text": "Erudition",
+    "name": "A Erudição",
+    "desc": "Causa um poderoso Dano a vários alvos. A melhor maneira de causar Dano a grupos de inimigos.",
+    "icon": "/starrail/assets/icon/character/Erudition.webp",
+    "icon_middle": "/starrail/assets/icon/path/EruditionMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/EruditionSmall.webp"
+  },
+  "Shaman": {
+    "id": "Shaman",
+    "text": "Harmony",
+    "name": "A Harmonia",
+    "desc": "Aplica melhorias em aliados para aprimorar as capacidades de combate da equipe.",
+    "icon": "/starrail/assets/icon/character/Harmony.webp",
+    "icon_middle": "/starrail/assets/icon/path/HarmonyMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/HarmonySmall.webp"
+  },
+  "Warlock": {
+    "id": "Warlock",
+    "text": "Nihility",
+    "name": "A Inexistência",
+    "desc": "Aplica penalidades em inimigos para reduzir as capacidades de combate deles.",
+    "icon": "/starrail/assets/icon/character/Nihility.webp",
+    "icon_middle": "/starrail/assets/icon/path/NihilityMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/NihilitySmall.webp"
+  },
+  "Knight": {
+    "id": "Knight",
+    "text": "Preservation",
+    "name": "A Preservação",
+    "desc": "Possui habilidades defensivas poderosas para proteger aliados de muitas formas.",
+    "icon": "/starrail/assets/icon/character/Preservation.webp",
+    "icon_middle": "/starrail/assets/icon/path/PreservationMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/PreservationSmall.webp"
+  },
+  "Priest": {
+    "id": "Priest",
+    "text": "Abundance",
+    "name": "A Abundância",
+    "desc": "Cura aliados e restaura PV da equipe.",
+    "icon": "/starrail/assets/icon/character/Abundance.webp",
+    "icon_middle": "/starrail/assets/icon/path/AbundanceMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/AbundanceSmall.webp"
+  },
+  "Memory": {
+    "id": "Memory",
+    "text": "Remembrance",
+    "name": "A Recordação",
+    "desc": "Possui a habilidade de invocar um Memoespírito com habilidades especiais para lutar ao lado da equipe em batalha.",
+    "icon": "/starrail/assets/icon/character/Remembrance.webp",
+    "icon_middle": "/starrail/assets/icon/path/RemembranceMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/RemembranceSmall.webp"
+  },
+  "Elation": {
+    "id": "Elation",
+    "text": "Elation",
+    "name": "A Euforia",
+    "desc": "Elabore diferentes tipos de piadas para atrair Aha a juntar-se à folia.",
+    "icon": "/starrail/assets/icon/character/Elation.webp",
+    "icon_middle": "/starrail/assets/icon/path/ElationMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/ElationSmall.webp"
+  }
+}

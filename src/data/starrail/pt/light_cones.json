@@ -1,0 +1,1582 @@
+{
+  "20000": {
+    "id": "20000",
+    "name": "Flechas",
+    "rarity": 3,
+    "path": "Rogue",
+    "desc": "Uma gota de força condensada pelo próprio tempo. Todos os momentos aparentemente insignificantes se unem para formar o magnífico coro do destino. \"Os olhos do caçador ficam mais apurados no instante em que ele puxa a flecha na corda do arco.\"",
+    "icon": "/starrail/assets/icon/light_cone/20000.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20000.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20000.webp"
+  },
+  "20001": {
+    "id": "20001",
+    "name": "Cornucópia",
+    "rarity": 3,
+    "path": "Priest",
+    "desc": "Uma gota de força condensada pelo próprio tempo. Todos os momentos aparentemente insignificantes se unem para formar o magnífico coro do destino. \"A vida é a existência da ordem para além de determinado limiar. Sua origem é a resposta definitiva para um universo em silêncio sepulcral, declarando o fim de uma era caótica.\"",
+    "icon": "/starrail/assets/icon/light_cone/20001.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20001.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20001.webp"
+  },
+  "20002": {
+    "id": "20002",
+    "name": "Céu Colapsado",
+    "rarity": 3,
+    "path": "Warrior",
+    "desc": "Uma gota de força condensada pelo próprio tempo. Todos os momentos aparentemente insignificantes se unem para formar o magnífico coro do destino. \"A morte de todas as coisas é tão natural quanto seu nascimento. Nada escapa da erosão do tempo, que transforma as existências concretas em pó.\"",
+    "icon": "/starrail/assets/icon/light_cone/20002.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20002.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20002.webp"
+  },
+  "20003": {
+    "id": "20003",
+    "name": "Âmbar",
+    "rarity": 3,
+    "path": "Knight",
+    "desc": "Uma gota de força condensada pelo próprio tempo. Todos os momentos aparentemente insignificantes se unem para formar o magnífico coro do destino. \"Só é capaz de sobreviver ao tempo quem não sofre o efeito do tempo.\"",
+    "icon": "/starrail/assets/icon/light_cone/20003.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20003.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20003.webp"
+  },
+  "20004": {
+    "id": "20004",
+    "name": "Vazio",
+    "rarity": 3,
+    "path": "Warlock",
+    "desc": "Uma gota de força condensada pelo próprio tempo. Todos os momentos aparentemente insignificantes se unem para formar o magnífico coro do destino. \"Ele encarou o vazio, pendurado como o sol escuro no limite de toda a matéria, ou uma boca que respondeu a todas as perguntas. Ela disse: ███ █ ███ ██ Não era possível expressá-la em linguagem humana, mas todos conseguiam compreendê-la.\"",
+    "icon": "/starrail/assets/icon/light_cone/20004.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20004.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20004.webp"
+  },
+  "20005": {
+    "id": "20005",
+    "name": "Refrão",
+    "rarity": 3,
+    "path": "Shaman",
+    "desc": "Uma gota de força condensada pelo próprio tempo. Todos os momentos aparentemente insignificantes se unem para formar o magnífico coro do destino. \"Apertam-se os dedos para formar um punho; a força está nos números. Eu me entrego a algo maior: o conceito de nós.\"",
+    "icon": "/starrail/assets/icon/light_cone/20005.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20005.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20005.webp"
+  },
+  "20006": {
+    "id": "20006",
+    "name": "Banco de Dados",
+    "rarity": 3,
+    "path": "Mage",
+    "desc": "Uma gota de força condensada pelo próprio tempo. Todos os momentos aparentemente insignificantes se unem para formar o magnífico coro do destino. \"A extinção humana é inevitável, mas a biblioteca sobreviverá: solitária, imóvel e oculta do público. Sua vasta coleção é inútil, porém livre de corrupção.\"",
+    "icon": "/starrail/assets/icon/light_cone/20006.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20006.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20006.webp"
+  },
+  "20007": {
+    "id": "20007",
+    "name": "Flecha Veloz",
+    "rarity": 3,
+    "path": "Rogue",
+    "desc": "Uma gota de força condensada pelo próprio tempo. Todos os momentos aparentemente insignificantes se unem para formar o magnífico coro do destino. \"A batalha começou. As flechas estão com sede de sangue.\"",
+    "icon": "/starrail/assets/icon/light_cone/20007.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20007.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20007.webp"
+  },
+  "20008": {
+    "id": "20008",
+    "name": "Fruta Delicada",
+    "rarity": 3,
+    "path": "Priest",
+    "desc": "Uma gota de força condensada pelo próprio tempo. Todos os momentos aparentemente insignificantes se unem para formar o magnífico coro do destino. \"Tudo ganha um sabor doce para quem está desesperado por água.\"",
+    "icon": "/starrail/assets/icon/light_cone/20008.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20008.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20008.webp"
+  },
+  "20009": {
+    "id": "20009",
+    "name": "Casa Destruída",
+    "rarity": 3,
+    "path": "Warrior",
+    "desc": "Uma gota de força condensada pelo próprio tempo. Todos os momentos aparentemente insignificantes se unem para formar o magnífico coro do destino. \"O controle absoluto vem da capacidade de causar destruição total.\"",
+    "icon": "/starrail/assets/icon/light_cone/20009.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20009.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20009.webp"
+  },
+  "20010": {
+    "id": "20010",
+    "name": "Defesa",
+    "rarity": 3,
+    "path": "Knight",
+    "desc": "Uma gota de força condensada pelo próprio tempo. Todos os momentos aparentemente insignificantes se unem para formar o magnífico coro do destino. \"Se um dia você duvidar que esses muros nos levarão à vitória, basta olhar para as corajosas almas sobre eles.\"",
+    "icon": "/starrail/assets/icon/light_cone/20010.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20010.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20010.webp"
+  },
+  "20011": {
+    "id": "20011",
+    "name": "Loop",
+    "rarity": 3,
+    "path": "Warlock",
+    "desc": "Uma gota de força condensada pelo próprio tempo. Todos os momentos aparentemente insignificantes se unem para formar o magnífico coro do destino. \"Quem foge do passado acha que ninguém entende seu desespero. Quando finalmente param para respirar, verão seu eu futuro encarando-os com olhos vermelhos.\"",
+    "icon": "/starrail/assets/icon/light_cone/20011.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20011.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20011.webp"
+  },
+  "20012": {
+    "id": "20012",
+    "name": "Rede de Engrenagens",
+    "rarity": 3,
+    "path": "Shaman",
+    "desc": "Uma gota de força condensada pelo próprio tempo. Todos os momentos aparentemente insignificantes se unem para formar o magnífico coro do destino. \"A harmonia é alcançada quando todos fazem sua parte em meio às batidas das máquinas.\"",
+    "icon": "/starrail/assets/icon/light_cone/20012.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20012.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20012.webp"
+  },
+  "20013": {
+    "id": "20013",
+    "name": "Chave Mestra",
+    "rarity": 3,
+    "path": "Mage",
+    "desc": "Uma gota de força condensada pelo próprio tempo. Todos os momentos aparentemente insignificantes se unem para formar o magnífico coro do destino. \"O conhecimento se encontra atrás de um portão trancado. Sua chave está escondida de quem procura respostas dos outros, mas é óbvia para quem se determina a achá-las por conta própria.\"",
+    "icon": "/starrail/assets/icon/light_cone/20013.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20013.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20013.webp"
+  },
+  "20014": {
+    "id": "20014",
+    "name": "Antagonista",
+    "rarity": 3,
+    "path": "Rogue",
+    "desc": "Uma gota de força condensada pelo próprio tempo. Todos os momentos aparentemente insignificantes se unem para formar o magnífico coro do destino. \"Quem luta pela liberdade nunca morre, pois suas histórias são contadas para sempre.\"",
+    "icon": "/starrail/assets/icon/light_cone/20014.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20014.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20014.webp"
+  },
+  "20015": {
+    "id": "20015",
+    "name": "Multiplicação",
+    "rarity": 3,
+    "path": "Priest",
+    "desc": "Uma gota de força condensada pelo próprio tempo. Todos os momentos aparentemente insignificantes se unem para formar o magnífico coro do destino. \"Quando a vida perder o sentido, por favor, continue mantendo-a viva.\"",
+    "icon": "/starrail/assets/icon/light_cone/20015.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20015.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20015.webp"
+  },
+  "20016": {
+    "id": "20016",
+    "name": "Morte Mútua",
+    "rarity": 3,
+    "path": "Warrior",
+    "desc": "Uma gota de força condensada pelo próprio tempo. Todos os momentos aparentemente insignificantes se unem para formar o magnífico coro do destino. \"Como fazer o passado de um planeta ser perfeito? Destrua-o imediatamente.\"",
+    "icon": "/starrail/assets/icon/light_cone/20016.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20016.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20016.webp"
+  },
+  "20017": {
+    "id": "20017",
+    "name": "Pioneirismo",
+    "rarity": 3,
+    "path": "Knight",
+    "desc": "Uma gota de força condensada pelo próprio tempo. Todos os momentos aparentemente insignificantes se unem para formar o magnífico coro do destino. \"Não teremos mais que lutar sozinhos. A CPI ficará ao lado de todos para ajudar.\"",
+    "icon": "/starrail/assets/icon/light_cone/20017.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20017.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20017.webp"
+  },
+  "20018": {
+    "id": "20018",
+    "name": "Sombra Oculta",
+    "rarity": 3,
+    "path": "Warlock",
+    "desc": "Uma gota de força condensada pelo próprio tempo. Todos os momentos aparentemente insignificantes se unem para formar o magnífico coro do destino. \"A Inexistência pode nos alcançar, mas ainda há uma chance de que isso não aconteça.\"",
+    "icon": "/starrail/assets/icon/light_cone/20018.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20018.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20018.webp"
+  },
+  "20019": {
+    "id": "20019",
+    "name": "Mediação",
+    "rarity": 3,
+    "path": "Shaman",
+    "desc": "Uma gota de força condensada pelo próprio tempo. Todos os momentos aparentemente insignificantes se unem para formar o magnífico coro do destino. \"O que pode ser mais feliz que expulsar a desarmonia?\"",
+    "icon": "/starrail/assets/icon/light_cone/20019.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20019.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20019.webp"
+  },
+  "20020": {
+    "id": "20020",
+    "name": "Sagacidade",
+    "rarity": 3,
+    "path": "Mage",
+    "desc": "Uma gota de força condensada pelo próprio tempo. Todos os momentos aparentemente insignificantes se unem para formar o magnífico coro do destino. \"Se os Sábios não podem abandonar suas identidades de humanos, devem ser abandonados pela sabedoria.\"",
+    "icon": "/starrail/assets/icon/light_cone/20020.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20020.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20020.webp"
+  },
+  "20021": {
+    "id": "20021",
+    "name": "Queimada",
+    "rarity": 3,
+    "path": "Memory",
+    "desc": "Uma gota de força condensada do próprio tempo. Todos os momentos aparentemente insignificantes se juntam para formar o magnífico coro do destino. \"As pessoas tendem a apagar as desagradáveis lembranças do passado. Essa é a natureza da memória.\"",
+    "icon": "/starrail/assets/icon/light_cone/20021.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20021.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20021.webp"
+  },
+  "20022": {
+    "id": "20022",
+    "name": "Reminiscência",
+    "rarity": 3,
+    "path": "Memory",
+    "desc": "Uma gota de força condensada do próprio tempo. Todos os momentos aparentemente insignificantes se unem para formar o magnífico coro do destino. \"No breve e belo sonho, parecia que a alma antiga retornava às águas coloridas da infância.\"",
+    "icon": "/starrail/assets/icon/light_cone/20022.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20022.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20022.webp"
+  },
+  "20023": {
+    "id": "20023",
+    "name": "Zombaria",
+    "rarity": 3,
+    "path": "Elation",
+    "desc": "Uma gota de força condensada do próprio tempo. Todos os momentos que pareciam insignificantes se entrelaçam para tecer um destino magnífico. \"A origem do riso é uma careta nascida do medo e da intimidação.\"",
+    "icon": "/starrail/assets/icon/light_cone/20023.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20023.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20023.webp"
+  },
+  "20024": {
+    "id": "20024",
+    "name": "Lágrima Persistente",
+    "rarity": 3,
+    "path": "Elation",
+    "desc": "Uma gota de força condensada pelo próprio tempo. Todos os momentos aparentemente insignificantes se unem para formar o magnífico coro do destino. \"O mais profundo sofrimento não derrama lágrimas, assim como a alegria e a dor supremas são uma só.\"",
+    "icon": "/starrail/assets/icon/light_cone/20024.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20024.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20024.webp"
+  },
+  "21000": {
+    "id": "21000",
+    "name": "Conversa Pós-Operatória",
+    "rarity": 4,
+    "path": "Priest",
+    "desc": "\"Você acordou... Obrigada.\" \"Você... salvou minha vida, Natasha. Quem tem que agradecer... sou eu.\" \"Não, eu que te agradeço... por ter aguentado firme até eu terminar a cirurgia.\" A médica e a paciente sorriram cansadas uma para a outra e não disseram mais nada.",
+    "icon": "/starrail/assets/icon/light_cone/21000.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21000.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21000.webp"
+  },
+  "21001": {
+    "id": "21001",
+    "name": "Boa Noite e Durma Bem",
+    "rarity": 4,
+    "path": "Warlock",
+    "desc": "A luz fraca delineia as pegadas na terra, enquanto uma menina murmura meigamente durante o sono. Uma silhueta silenciosa surge atrás dela. \"Ora, ora, ora. Você fica mais bonita sem aqueles óculos — eu sabia.\" A guitarrista observa o rosto adormecido e murmura: \"Boa noite, menina brilhante que se preocupa demais.\"",
+    "icon": "/starrail/assets/icon/light_cone/21001.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21001.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21001.webp"
+  },
+  "21002": {
+    "id": "21002",
+    "name": "Primeiro Dia da Minha Vida Nova",
+    "rarity": 4,
+    "path": "Knight",
+    "desc": "\"Estou tão feliz que eu vi o Pom-Pom de roupinha nova hoje! Adorei!\" \"Hoje é meu aniversário! Continuo a mesma fofura de sempre.\" \"Hoje, ATÉ QUE ENFIM vou ser veterana de alguém! Não é mesmo, {NICKNAME}?\" Batemos um monte de fotos sem nem pensar. Será que é porque queremos capturar a felicidade naquele instante? Ou porque queremos nos capturar naquele instante?",
+    "icon": "/starrail/assets/icon/light_cone/21002.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21002.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21002.webp"
+  },
+  "21003": {
+    "id": "21003",
+    "name": "Apenas o Silêncio Sobrou",
+    "rarity": 4,
+    "path": "Rogue",
+    "desc": "\"A gente não vai descer? É a nossa parada.\" Ele ouviu a risadinha vinda de cima. Seus olhos se mexeram, mas ele sequer olhou para o alto. \"Para deixar claro, a Março sempre diz que você não tem expressão, mas eu discordo.\" \"Há vestígios de uma atualização no banco de dados do trem, mas os resultados não foram salvos.\" \"Então... Que registro está dando problema?\" Ele segurou firme a caneta e olhou para a cena sangrenta desenhada de memória no caderno. \"Entendi. O registro era sobre você...\"",
+    "icon": "/starrail/assets/icon/light_cone/21003.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21003.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21003.webp"
+  },
+  "21004": {
+    "id": "21004",
+    "name": "Memórias do Passado",
+    "rarity": 4,
+    "path": "Shaman",
+    "desc": "Há uma foto antiga na beirada da mesa da residência da Guardiã. Ela, subconscientemente, sempre desvia o olhar quando se pega observando-a. As lembranças do passado ficaram no passado, mas os sonhos ainda perduram no presente.",
+    "icon": "/starrail/assets/icon/light_cone/21004.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21004.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21004.webp"
+  },
+  "21005": {
+    "id": "21005",
+    "name": "As Toupeiras Te Dão Boas-vindas",
+    "rarity": 4,
+    "path": "Warrior",
+    "desc": "\"Toupeiras, toupeiras!\" \"Saindo das trincheiras.\" \"Toupeiras arteiras não temem pedreiras.\" \"Toupeiras, toupeiras!\" \"Mordem suas perneiras!\"",
+    "icon": "/starrail/assets/icon/light_cone/21005.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21005.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21005.webp"
+  },
+  "21006": {
+    "id": "21006",
+    "name": "Meu Próprio Nascimento",
+    "rarity": 4,
+    "path": "Mage",
+    "desc": "A princípio, a pose era a mesma do retrato anterior. Olhando para aquele rosto idêntico ao seu, ela estava convencida de que não era ela. \"Impossível. Como podem dois retratos serem exatamente iguais?\" Ela fez alguns ajustes nas articulações, abriu os olhos e tornou os dedos mais macios. Parecia feliz depois de todas as mudanças. \"Completamente diferente de ontem, está mais parecida comigo hoje.\"",
+    "icon": "/starrail/assets/icon/light_cone/21006.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21006.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21006.webp"
+  },
+  "21007": {
+    "id": "21007",
+    "name": "Sentimento Compartilhado",
+    "rarity": 4,
+    "path": "Priest",
+    "desc": "Quando a médica a encontrou toda ferida, a menina estava agarrada a uma máquina que já não funcionava mais, carregando toda variedade de peças no bolso. Ela levou a menina direto para sua clínica e tratou os ferimentos. Gotas de suor escorriam lentamente nas bochechas da menina, mas ela permaneceu em silêncio, as mãos inquietas mexendo na máquina. Para a médica, o modo como a menina parecia apegada à máquina era similar a como ela mesma se apegava a seus pacientes que precisavam de ajuda. Assim, em vez de tentar confortá-la ou avisar para tomar mais cuidado, a médica só sentou ao seu lado e lhe deu um momento de paz.",
+    "icon": "/starrail/assets/icon/light_cone/21007.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21007.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21007.webp"
+  },
+  "21008": {
+    "id": "21008",
+    "name": "Olhos da Presa",
+    "rarity": 4,
+    "path": "Warlock",
+    "desc": "Na realidade, a maioria das presas não percebe quando o perigo se aproxima. Esta não é exceção. O atirador lentamente centraliza sua mira telescópica em um homem jogando maços e mais maços de notas de dinheiro, parecendo completamente alheio à morte iminente. \"Então é isso que chamam de ganância. Só essa quantia já equivale a vários dos meus contratos... É lógico que alguém quer esse homem morto.\" Como se o pensamento tivesse sido transmitido em voz alta, o homem na mira vira o rosto e olha diretamente para o atirador. \"Eu estava te esperando. Quanto você quer para me ouvir?\"",
+    "icon": "/starrail/assets/icon/light_cone/21008.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21008.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21008.webp"
+  },
+  "21009": {
+    "id": "21009",
+    "name": "A Escolha dos Landau",
+    "rarity": 4,
+    "path": "Knight",
+    "desc": "\"Você não me ouviu? Não se meta lá de novo! O que é que você pode aprender com aqueles plebeus?\" \"Mas eu nunca ouvi as histórias que eles contam sobre Belobog...\" Ela puxou o irmão, sem lhe dar chance de retrucar. \"Vocês dois são Landaus! Um dia, vocês farão escolhas difíceis. Especialmente você, Serval.\" Ela sabia que o irmão não tinha feito nada de errado, mas não conseguiu pensar numa resposta. Foi se deitar com raiva após a discussão, jurando para si mesma: \"Um dia, eu vou ser adulta. E, quando esse dia chegar, eu vou fazer as minhas próprias escolhas...\" \"Minhas próprias escolhas...\"",
+    "icon": "/starrail/assets/icon/light_cone/21009.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21009.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21009.webp"
+  },
+  "21010": {
+    "id": "21010",
+    "name": "Jogo de Espadas",
+    "rarity": 4,
+    "path": "Rogue",
+    "desc": "Um tanto descrente, a garota empunhou a pequena espada, perfurando um inimigo imaginário para tentar se convencer de que aquela coisa tinha utilidade. Como algo tão frágil pode competir com a minha espada de duas mãos? Será que os inimigos ao menos percebem quando são apunhalados? O dono da espada parecia não se importar com o tamanho dela. Afinal, são as estratégias que derrotam os inimigos, não as espadas. Não importa se a espada é pesada ou leve, desde que se use o lado pontiagudo.",
+    "icon": "/starrail/assets/icon/light_cone/21010.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21010.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21010.webp"
+  },
+  "21011": {
+    "id": "21011",
+    "name": "Encontro Planetário",
+    "rarity": 4,
+    "path": "Shaman",
+    "desc": "Ela não fazia ideia do que esperar quando embarcou nessa jornada. Só sabia que finalmente estaria livre dos olhares críticos e das discussões mesquinhas de sua família. Sentiu que enfim havia entendido o significado da poesia. \"Um dia, criaremos asas e esqueceremos como era a sensação de andar.\" A luz nos olhos dela ganhou o brilho das estrelas.",
+    "icon": "/starrail/assets/icon/light_cone/21011.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21011.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21011.webp"
+  },
+  "21012": {
+    "id": "21012",
+    "name": "Um Voto Secreto",
+    "rarity": 4,
+    "path": "Warrior",
+    "desc": "O garoto sempre conferia se suas luvas e cotoveleiras estavam em bom estado antes de sair. Ele dava mais valor às luvas do que a qualquer outra coisa, pois eram apertadas o bastante para esconder seus segredos. Com essa camada de proteção, ninguém podia ver os curativos em sua mão e o ferimento por trás deles. Ele era tratado como uma pessoa normal, recebido igual a todos. Era só isso que ele queria.",
+    "icon": "/starrail/assets/icon/light_cone/21012.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21012.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21012.webp"
+  },
+  "21013": {
+    "id": "21013",
+    "name": "Faça o Mundo Clamar",
+    "rarity": 4,
+    "path": "Mage",
+    "desc": "Do palco, ela acenou para o público, encorajando todos a fazerem suas vozes serem ouvidas. A cantar, gritar, suspirar — qualquer coisa que produza som. Dê voz aos seus pensamentos para que outros possam ajudar. \"Não tenha um coração frio como essa selva de pedra.\" — Faça o mundo clamar.",
+    "icon": "/starrail/assets/icon/light_cone/21013.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21013.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21013.webp"
+  },
+  "21014": {
+    "id": "21014",
+    "name": "Momento Perfeito",
+    "rarity": 4,
+    "path": "Priest",
+    "desc": "Em uma rua movimentada, ele caminha e caminha. A luz do sol segue de perto seus passos. Ele para e pega uma sombrinha para se proteger do sol... e daquele olhar curioso.",
+    "icon": "/starrail/assets/icon/light_cone/21014.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21014.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21014.webp"
+  },
+  "21015": {
+    "id": "21015",
+    "name": "A Determinação Brilha Como Gotas de Suor",
+    "rarity": 4,
+    "path": "Warlock",
+    "desc": "Os holofotes mirados no ringue de boxe são brilhantes, mas não mais do que todo aquele suor escorrendo por suas costas. Há muito tempo ele se determinou a usar seus dois punhos para proteger aqueles que mais ama. Afinal, foram eles que despertaram sua determinação em primeiro lugar. São eles que sempre estiveram do seu lado, seja dentro ou fora do ringue de boxe.",
+    "icon": "/starrail/assets/icon/light_cone/21015.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21015.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21015.webp"
+  },
+  "21016": {
+    "id": "21016",
+    "name": "Tendência do Mercado Universal",
+    "rarity": 4,
+    "path": "Knight",
+    "desc": "O planeta está passando por uma reavaliação... \"Será que este projeto vai provar que cobrar dívidas pendentes é bom para os dois lados?\" \"Mas só precisamos transmitir uma mensagem: a nossa existência.\" \"Se fosse para ter um valor próprio, então isto deveria criar valor para a corporação.\"",
+    "icon": "/starrail/assets/icon/light_cone/21016.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21016.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21016.webp"
+  },
+  "21017": {
+    "id": "21017",
+    "name": "Inscreva-se Para Mais!",
+    "rarity": 4,
+    "path": "Rogue",
+    "desc": "\"Teste, teste, som. Estão me ouvindo?\" Com uma marreta na mão, a garota de cabelos ruivos grita animada olhando para a câmera. \"Já viram o truque em que uma garota linda como eu quebra blocos de concreto com as próprias mãos?\" \"Eu não vim aqui para isso!\" Outra menina, de cabelos escuros, reclamou com a colega, que apenas abriu um sorriso travesso como resposta. \"Por favor, deixa eu quebrar! Todo mundo quer ver o truque!\"",
+    "icon": "/starrail/assets/icon/light_cone/21017.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21017.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21017.webp"
+  },
+  "21018": {
+    "id": "21018",
+    "name": "Dance! Dance! Dance!",
+    "rarity": 4,
+    "path": "Shaman",
+    "desc": "\"Por que a Hook não pode fazer um giro de dança que nem a Clara faz?\" Ela fechou seus pequenos punhos e fez um beicinho fofo, seu rostinho gordinho parecia mais vermelho do que nunca embaixo do seu chapéu de feltro. \"Por favor, Sr. Svarog, você pode ajudar a Hook com isso?\" Sem dizer uma palavra, o Sr. Svarog começou a estender seu braço robótico. \"Eu v-vou vomitar!!! Me põe no chão agora! Por favor!\"",
+    "icon": "/starrail/assets/icon/light_cone/21018.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21018.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21018.webp"
+  },
+  "21019": {
+    "id": "21019",
+    "name": "Sob o Céu Azul",
+    "rarity": 4,
+    "path": "Warrior",
+    "desc": "Sob o céu azul, campos de trigo dançavam. A jovem tecia com cuidado uma coroa de flores para a sua mais amada irmãzinha. Isso foi quando elas ainda tinham a mesma altura. Isso foi quando elas compartilhavam do mesmo sorriso.",
+    "icon": "/starrail/assets/icon/light_cone/21019.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21019.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21019.webp"
+  },
+  "21020": {
+    "id": "21020",
+    "name": "Repouso dos Gênios",
+    "rarity": 4,
+    "path": "Mage",
+    "desc": "Ela apontou para aquele bolo de arroz verde. \"O experimento terminou. Hora de dar um tempo. Eu simplesmente não posso perder esta sobremesa fresquinha.\" Ela viu a marionete franzindo a testa em profunda reflexão. \"Bem, no seu corpo atual, você só pode olhar, mas não pode comer. Vou fazer uma caixa para você quando chegar a hora.\" Ela viu o aristocrata mecânico hesitando com o próprio copo. \"Não se preocupe. É só óleo de máquina. Perfeitamente seguro para você consumir.\"",
+    "icon": "/starrail/assets/icon/light_cone/21020.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21020.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21020.webp"
+  },
+  "21021": {
+    "id": "21021",
+    "name": "Quid Pro Quo",
+    "rarity": 4,
+    "path": "Priest",
+    "desc": "Depois de desfrutar de uma intensa massagem da menina dragão, a garota Vulpe estendeu a mão e beliscou as bochechas gordinhas da garota dragão. A garotinha então fez beicinho, claramente ofendida, mas só conseguiu causar uma risadinha alegre na garota Vulpe. \"Agora isso é o que chamo de toma lá dá cá.\"",
+    "icon": "/starrail/assets/icon/light_cone/21021.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21021.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21021.webp"
+  },
+  "21022": {
+    "id": "21022",
+    "name": "Fermata",
+    "rarity": 4,
+    "path": "Warlock",
+    "desc": "O disco fonográfico está tocando, girando sem parar. Mesmo os sons de todos aqueles gritos roucos não conseguem escapar da onda de calor e são amortecidos por sua tepidez. Ela parecia despreparada e totalmente encantada com as fascinantes melodias: O disco começou com sinceridade e antecipação... ...seguido por uma catarse apaixonada... ...com um clímax após o outro... ...Até que o disco chegou ao fim e aqueles gritos roucos não eram mais perceptíveis. \"Missão cumprida.\"",
+    "icon": "/starrail/assets/icon/light_cone/21022.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21022.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21022.webp"
+  },
+  "21023": {
+    "id": "21023",
+    "name": "Somos Fogo Vivo",
+    "rarity": 4,
+    "path": "Knight",
+    "desc": "Ela está acostumada com as pessoas perdendo seus lares. E ela se acostumou com as pessoas perdendo suas vidas. Mas chorar sozinha era inútil. \"Vista este lenço vermelho, e então compartilharemos a dor um do outro.\" \"Nós somos família. Nós somos a Fogo Vivo.\" No momento em que aquele par de mãos grandes tocou a sua cabeça, ela não conseguiu mais conter suas lágrimas.",
+    "icon": "/starrail/assets/icon/light_cone/21023.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21023.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21023.webp"
+  },
+  "21024": {
+    "id": "21024",
+    "name": "O Rio Corre na Primavera",
+    "rarity": 4,
+    "path": "Rogue",
+    "desc": "O menino fez uma pequena pausa da sua prática de espada. O sol estava queimando seu pescoço já quente. Ele lentamente entrou na água, sentindo o frio tocar seus pés descalços. Quando o sino toca e os pássaros cantam, mesmo as pessoas distantes sabem que a primavera chegou.",
+    "icon": "/starrail/assets/icon/light_cone/21024.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21024.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21024.webp"
+  },
+  "21025": {
+    "id": "21025",
+    "name": "Passado e Futuro",
+    "rarity": 4,
+    "path": "Shaman",
+    "desc": "As asas da pipa de papel nas mãos dela estavam quebradas, lembrando-a brutalmente da trágica morte de seu amado. Ela ajoelhou ao lado do fogo da guerra, os olhos cheios de tristeza. \"Se você é o único que pode nos salvar, então nosso sacrifício seria...\" O tiroteio continuou, pintando o céu de vermelho sem ofuscar sua grandiosidade. Ela olhou para o céu, com os olhos cheios de fúria.",
+    "icon": "/starrail/assets/icon/light_cone/21025.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21025.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21025.webp"
+  },
+  "21026": {
+    "id": "21026",
+    "name": "Au! Hora de Passear!",
+    "rarity": 4,
+    "path": "Warrior",
+    "desc": "Pena que ninguém o viu... Usando o focinho para farejar tudo que é canto e mergulhando num caminho vazio. Pena que ninguém o viu... Retraindo suas garras para colocar a senha e saltar nos braços da liberdade. É sério que ninguém o viu...? Um cão crescido agora consegue passear sozinho pelo espaço!",
+    "icon": "/starrail/assets/icon/light_cone/21026.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21026.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21026.webp"
+  },
+  "21027": {
+    "id": "21027",
+    "name": "A Solenidade do Café da Manhã",
+    "rarity": 4,
+    "path": "Mage",
+    "desc": "Embora a mesa esteja posta... Alguns querem uma xícara de chá. Alguns querem tirar uma foto. Alguns querem ler o jornal. Alguns querem fazer algumas anotações em seu bloco de notas. Alguns querem jogar alguma coisa no celular. \"Ouçam todos, comam enquanto a comida ainda está quente!\"",
+    "icon": "/starrail/assets/icon/light_cone/21027.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21027.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21027.webp"
+  },
+  "21028": {
+    "id": "21028",
+    "name": "O Calor Encurta as Noites Geladas",
+    "rarity": 4,
+    "path": "Priest",
+    "desc": "Acendendo uma luz, ela olhou para a amiga ao seu lado enquanto segurava uma caneca de chocolate quente. Observou-a ler os livros e bilhetes que ela deu de presente. Observou-a dando um raro sorriso. Em noites geladas como essa, até as pequenas coisas afastam o frio.",
+    "icon": "/starrail/assets/icon/light_cone/21028.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21028.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21028.webp"
+  },
+  "21029": {
+    "id": "21029",
+    "name": "Ainda nos Veremos de Novo",
+    "rarity": 4,
+    "path": "Warlock",
+    "desc": "Ela pensava que isso era algum tipo de programa. Até porque... como ele não se cansaria? Mas um programa jamais descartaria a melhor solução para contornar sua armadilha. \"Parece que teremos uma guerra de atrito.\" Ela boceja. \"Hora de dormir. Formas de vida orgânicas devem valorizar o descanso.\" Os arredores escurecem. Ela acorda de repente, mas os resíduos de dados haviam sido apagados e destruídos. Parecia um sonho... mas o sentimento de derrota era real.",
+    "icon": "/starrail/assets/icon/light_cone/21029.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21029.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21029.webp"
+  },
+  "21030": {
+    "id": "21030",
+    "name": "Essa Sou Eu!",
+    "rarity": 4,
+    "path": "Knight",
+    "desc": "A garota ficaria bem em qualquer visual, mas ela não estava satisfeita, a julgar pelas dúzias de pilhas de roupas atrás dela. \"Será que essa vai ser a última roupa de hoje?\" Ela pensou em silêncio para si mesma. Olhando para a garota no espelho, ela parecia estar muito feliz naquele dia. \"Certo! Essa sou eu!\"",
+    "icon": "/starrail/assets/icon/light_cone/21030.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21030.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21030.webp"
+  },
+  "21031": {
+    "id": "21031",
+    "name": "Retorno à Escuridão",
+    "rarity": 4,
+    "path": "Rogue",
+    "desc": "Embora sua irmã estivesse ao seu lado, ela não conseguia ouvir nada. A única coisa que ouvia era a voz no fundo de seu coração, que se tornava mais alta a cada minuto. \"O corpo da Irmãzona está frio.\" \"O corpo da Irmãzona não está se mexendo.\" Uma violenta onda de fúria a dominou tanto que não encontrou tempo para clarear sua mente, ou para se lembrar desse fato negligenciado, mas crucial... \"O corpo da Irmãzona está frio assim há muito tempo.\"",
+    "icon": "/starrail/assets/icon/light_cone/21031.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21031.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21031.webp"
+  },
+  "21032": {
+    "id": "21032",
+    "name": "Esculpindo a Lua, Tecendo as Nuvens",
+    "rarity": 4,
+    "path": "Shaman",
+    "desc": "Ele se apaixona imediatamente pelo recipiente dourado e está prestes a comprá-lo, mas a garota Vulpe o puxa de lado e sussurra: \"Volte à noite, Sr. Benfeitor. Assim tomará a decisão de cabeça fria.\" Como prometido, ele volta à noite. A mesma garota Vulpe abre a porta e sorri. \"Por favor, siga-me, Sr. Benfeitor.\" Um raio do luar brilha na base da placa gravada. O artesão traçou as pétalas com linhas de várias profundidades, e ele não conseguiria ver esses detalhes sem o luar. Ele então finalmente se lembra por que este item é chamado de \"Esculpindo a Lua, Tecendo as Nuvens\".",
+    "icon": "/starrail/assets/icon/light_cone/21032.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21032.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21032.webp"
+  },
+  "21033": {
+    "id": "21033",
+    "name": "Sem Escapatória",
+    "rarity": 4,
+    "path": "Warrior",
+    "desc": "Essa não é a primeira vez que ele vê este homem. O homem se tornou sua própria e inseparável sombra. Não importa quantas vezes ele ataque o homem com sua lança, ele sempre volta. Não é possível perder para o homem, nem vencê-lo de verdade. Ele gostaria de fugir, mas não sabe para onde correr.",
+    "icon": "/starrail/assets/icon/light_cone/21033.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21033.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21033.webp"
+  },
+  "21034": {
+    "id": "21034",
+    "name": "Hoje é Mais um Dia de Paz",
+    "rarity": 4,
+    "path": "Mage",
+    "desc": "Ela conseguiu um novo livro emprestado para o almoço e acabou de descobrir um novo jeito de se divertir. Se trabalhar com calma, provavelmente conseguirá terminar o serviço até o fim do dia. Ela se abaixa com facilidade em um canto. Ninguém deve atrapalhá-la em seu momento de folga — nem mesmo a profetisa Fu. Mas se ela aparecer... \"É só oferecer essa balinha para a profetisa Fu. Ela não vai ficar com raiva se tiver uns docinhos para comer!\"",
+    "icon": "/starrail/assets/icon/light_cone/21034.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21034.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21034.webp"
+  },
+  "21035": {
+    "id": "21035",
+    "name": "O Que É Real?",
+    "rarity": 4,
+    "path": "Priest",
+    "desc": "\"Se todos os relógios estejam mostrando a hora errada...\" \"Se aqueles vinculados a promessas realizassem seus votos através da traição...\" \"Se aqueles que mergulham no reino dos sonhos nunca dormem realmente...\" \"Se os mortos voltam à vida apenas para descobrir que seus nomes foram despojados...\" \"Se... Se...\" Ele sopra a chama, e na escuridão, há apenas o som eterno do relógio.",
+    "icon": "/starrail/assets/icon/light_cone/21035.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21035.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21035.webp"
+  },
+  "21036": {
+    "id": "21036",
+    "name": "Aventura de Sonhópolis",
+    "rarity": 4,
+    "path": "Shaman",
+    "desc": "\"Olá, queridos telespectadores! O Relogin e seus amigos vieram ver vocês novamente!\" \"No episódio anterior, o Chefe Pedreira descobriu que Sonhópolis estava em cima de uma gama de recursos naturais, e seguiu adiante para tomar o controle da cidade. Em resposta, Relogin juntou suas forças com o Irmão Hanu e Pássaro de Origami, e juntos, colocaram o Chefe Pedreira e seus capangas para correr de Sonhópolis.\" \"Mas o Chefe Pedreira não vai ser derrotado assim tão fácil, e dessa vez, ele juntou uma legião de capangas para cumprir sua promessa de transformar Sonhópolis em uma cratera. Nesse episódio, Relogin pode estar diante da maior ameaça que ele já enfrentou!\" \"Quais esquemas Relogin usará para escapar dessa crise? E que novos amigos se juntarão à sua equipe? Fique ligado no último episódio da 'Aventura de Sonhópolis'!\"",
+    "icon": "/starrail/assets/icon/light_cone/21036.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21036.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21036.webp"
+  },
+  "21037": {
+    "id": "21037",
+    "name": "O Último Vencedor",
+    "rarity": 4,
+    "path": "Rogue",
+    "desc": "\"Não acredita em mim?\" Ele olhou de forma intimidadora para o homem diante dele puxando um revólver, esvaziando o cilindro e deixando um único tiro na câmara. \"Parece que terei que te atualizar sobre como faço as coisas se quisermos que nossa cooperação continue amigável.\" Ele deu a arma para seu oponente, girou o cilindro, e ajudou ele a alinhar o cano com seu peito. Ele apertou o gatilho repetidamente, mostrando um pouco mais que um sorriso depois de uma série de cliques vazios. \"A vida é uma grande aposta, e eu sou sempre o último vencedor.\"",
+    "icon": "/starrail/assets/icon/light_cone/21037.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21037.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21037.webp"
+  },
+  "21038": {
+    "id": "21038",
+    "name": "Chamas Distantes",
+    "rarity": 4,
+    "path": "Warrior",
+    "desc": "\"Pacote seguro. Confio em você para cobrir nossa retirada.\" A voz do companheiro dele soou pelo comunicador. Ele olha em volta, assistindo conforme os restos devastados de seus inimigos continuam a passar pela arquitetura complexa dentro da vasta estrutura abandonada. Eles estão se aproximando cada vez mais. \"Por favor, espere.\" Depois de uma pausa de quietude, uma série de explosões apocalípticas soaram aos céus. Ondas de ar deslocado criaram nuvens de poeira através do campo de batalha, e a fumaça se espalha em todas as direções, com a luz branca se estendendo até onde a vista alcança, dividindo a escuridão da noite. \"Você sabe que eles colocaram toda aquela pólvora ali de propósito, certo?\" Com um movimento brusco, ele abriu a capa como se tivesse acabado de dar um passeio. \"Mas é claro.\" \"Então, vamos acendê-la. Tudo o que eu preciso fazer é cumprir o meu papel na partida.\"",
+    "icon": "/starrail/assets/icon/light_cone/21038.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21038.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21038.webp"
+  },
+  "21039": {
+    "id": "21039",
+    "name": "Fios Forjados do Destino",
+    "rarity": 4,
+    "path": "Knight",
+    "desc": "O destino sempre leva as massas adiante sem motivo, e ela espreita na escuridão, esperando para registrar o mais crucial dos instantes. Ordenando, combinando, embaralhando, tirando... Ela simula a mão do destino em como ele manipula todas as variáveis para as massas, procurando a trajetória da verdade debaixo da pele da desordem. Finalmente, quando todos os personagens estão em seus lugares, ela passa as mãos na face das cartas, e reúne verdades profundas e insondáveis. \"Ainda falta uma carta... Então eu adicionarei uma.\"",
+    "icon": "/starrail/assets/icon/light_cone/21039.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21039.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21039.webp"
+  },
+  "21040": {
+    "id": "21040",
+    "name": "O Dia em que o Cosmos Caiu",
+    "rarity": 4,
+    "path": "Mage",
+    "desc": "\"Torta de Queijo Derretido! Você está encarregado de desarmar os vigias do planeta com seu charme!\" \"Pasta de Feijão Fradinho! Você estará encarregada de romper a linha de defesa do planeta!\" \"Ameixa Salgada! Nos traga a cabeça do líder do planeta!\" \"Meu lorde, o que você vai fazer!?\" \"Eu fingirei ser um gatinho adorável para confundir esses humanos estúpidos!\" Naquele dia, as civilizações cósmicas finalmente lembraram do terror de serem controladas por eles.",
+    "icon": "/starrail/assets/icon/light_cone/21040.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21040.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21040.webp"
+  },
+  "21041": {
+    "id": "21041",
+    "name": "É Hora do Show",
+    "rarity": 4,
+    "path": "Warlock",
+    "desc": "— Quem presenciou a sua morte? — Eu! Eu vi com meus dois olhinhos! — Quem pegou o sangue dele? — Eu! Eu usei o meu pires pequenininho! — Quem cavou a cova dele? — Eu! Usando meu cinzel e pá! Os inteligentes usam todas as técnicas em seu arsenal, os soberanos acalmam seu coração com poder, o herói se vê como justo, e o Tolo ri sem parar... \"Agora, vamos dar as boas-vindas à Srta. Sparkle que nos traz a apresentação do ano: Noite Aterrorizante de Penacony!\"",
+    "icon": "/starrail/assets/icon/light_cone/21041.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21041.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21041.webp"
+  },
+  "21042": {
+    "id": "21042",
+    "name": "Promessa Indelével",
+    "rarity": 4,
+    "path": "Warrior",
+    "desc": "O passado desgastado. O dever de proteger a casa de alguém. O sonho de abrir caminho pelo mundo... Estes foram confiados aos jovens não mundanos por um par de mãos ásperas e calejadas. \"Em breve, poderemos ir para um mundo maior.\" O menino alegremente aceitou sua herança. Resguardado pela inocência, ele não conseguia sentir ainda o peso da significância do objeto. \"É claro que, antes desse momento chegar, você precisa proteger bem este lugar, Misha.\" Ele gravou essa promessa fundo em seu coração, se agarrando nisso para todo sempre.",
+    "icon": "/starrail/assets/icon/light_cone/21042.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21042.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21042.webp"
+  },
+  "21043": {
+    "id": "21043",
+    "name": "Concerto para Dois",
+    "rarity": 4,
+    "path": "Knight",
+    "desc": "\"Irmãozão, o quê é isso...?\" \"Já faz muito tempo desde que você cantou com alegria... Eu montei um palco para você. Só é... meio simples\". \"Mas a professora acha que eu não combino com...\" \"Não, eu acho que você soa muito bem! No futuro, seus sonhos com certeza vão se realizar, e você vai se apresentar num palco muito maior...\" ... Muitos anos depois, ela subiu em um palco deslumbrante, olhando para a onda de fãs abaixo, mas se perdeu por um momento... Na longa jornada de perseguir seus sonhos, ela sempre se lembrava daquele olhar confiante e do seu primeiro \"show\". Nenhuma luz glamourosa, nenhuma maquiagem elaborada, só uma criança construindo um palco para encorajar outra criança a perseguir seus sonhos. \"Agora, nossos sonhos se realizaram. Mas... eles ainda são 'nossos' sonhos?\" Ela segurou o microfone. Antes da próxima canção começar, ela não teve sequer tempo de se sentir triste.",
+    "icon": "/starrail/assets/icon/light_cone/21043.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21043.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21043.webp"
+  },
+  "21044": {
+    "id": "21044",
+    "name": "Dança Ilimitada",
+    "rarity": 4,
+    "path": "Warlock",
+    "desc": "O baile desliza graciosamente, sombras e luzes trocando de lugar silenciosamente. Ela pega a mão da outra pessoa, com um sorriso iluminando aqueles olhos indiferentes. \"Bela Vigia... Bem-vinda ao palco da Recordação. Nesta proximidade... você é muito mais encantadora do que se pode perceber.\" O ambiente escurece, um feixe de luz cai do domo acima, traçando seus passos em evolução. \"No entanto, alguns deveriam dançar conosco, mas ainda não chegaram...\" Em um momento de giro, ela se aproxima daquele rosto inexpressivo, agarra aquela mão fria e pergunta suavemente: \"Me diga. O que você fez?\" À medida que seus passos de dança se aceleram, fragmentos do passado invadem sua mente através das pontas dos dedos unidos. Em um passado que se estende cada vez mais, ela ouve o som da chuva e os lamentos justo antes do fim da vida. Então, ela vê seu parceiro de dança segurando um guarda-chuva de papel vermelho-sangue sob a chuva fina. Finalmente, até onde seus olhos podem ver... Um campo de cadáveres afogados balançando no dilúvio. Aterrorizada, ela tenta retirar sua mão, caindo para trás. O ambiente se ilumina novamente, o clamor do banquete ressurgindo. Seu parceiro de dança a apoia gentilmente pela cintura, como se estivesse alheio ao tormento que acabou de se desdobrar. \"Que dança adorável foi essa, Guardiã da Memória. Vamos tentar mais uma vez?\"",
+    "icon": "/starrail/assets/icon/light_cone/21044.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21044.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21044.webp"
+  },
+  "21045": {
+    "id": "21045",
+    "name": "Depois que a Harmonia se Dissipa",
+    "rarity": 4,
+    "path": "Mage",
+    "desc": "O sonho eterno pelo qual ele ansiava desapareceu em um instante. Enquanto caía em direção à terra, ele não sentia tristeza, mas apenas um desejo de fechar os olhos. O antigo caminho trilhado se encontra em ruínas, e a jornada adiante permanece envolta em névoa. \"Depois do despertar, o mundo continua o seu Ciclo de Dor. Como sempre, não há escapatória.\" Ele carrega o passado, dá as costas à sua terra natal e continua avançando em direção a um paraíso que ainda não existe. Então, por que as pessoas dormem? E por que elas acordam? À medida que os planetas passam pela janela, essa resposta exige agora receber um novo significado. \"Talvez... só talvez eu ainda possa...\"",
+    "icon": "/starrail/assets/icon/light_cone/21045.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21045.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21045.webp"
+  },
+  "21046": {
+    "id": "21046",
+    "name": "Prestes a Florescer",
+    "rarity": 4,
+    "path": "Shaman",
+    "desc": "A primeira luz do alvorecer sussurra. Na calmaria do bosque das flores, uma forma inconstante dança, assustando pássaros que alçam voo um após o outro. Silenciosamente recitando técnicas de espada, ela se move com o fluxo, seus movimentos, que outrora eram desajeitados, agora adquirem delicadeza. Onde a espada corta, o ar se parte, pétalas caem como chuva, rodopiando caoticamente conforme descem. Sem que ela percebesse, a fria névoa umedeceu seu cabelo. \"Bela técnica de espada!\" Assustada, ela vira sua espada instintivamente... Às suas costas, {F#uma jovem donzela}{M#um jovem rapaz} de cabelos cinzas abaixa a câmera em suas mãos. \"Belas memórias não desaparecerão com o vento.\"",
+    "icon": "/starrail/assets/icon/light_cone/21046.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21046.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21046.webp"
+  },
+  "21047": {
+    "id": "21047",
+    "name": "Sombreado pela Noite",
+    "rarity": 4,
+    "path": "Rogue",
+    "desc": "\"Pegadas.\" \"Arranhões.\" \"Aromas.\" Depois que tudo foi resolvido de forma apropriada, ele pega uma pena de corvo e graciosamente salta para o telhado. Na enorme cidade, uma sombra salta pelos cantos obscuros. \"Devo me fundir às sombras e cuidar de todos vocês.\"",
+    "icon": "/starrail/assets/icon/light_cone/21047.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21047.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21047.webp"
+  },
+  "21048": {
+    "id": "21048",
+    "name": "Montagem do Sonho",
+    "rarity": 4,
+    "path": "Priest",
+    "desc": "\"A Cidade dos Sonhos, o Criadouro do Pecado, ou a Terra Prometida...\" Extraindo as memórias de muitos, ele examina os momentos espetaculares, interrompendo, reorganizando e juntando-os. \"A maioria das memórias das pessoas não passa de uma coleção de fragmentos triviais e monótonos, onde apenas um punhado de momentos preciosos se destaca, enquanto as existências do resto são totalmente desnecessárias.\" Quadro a quadro, as imagens escapam de suas mãos, sendo tecidas gradualmente numa tapeçaria de brilhantismo. \"Nós não transportamos memórias. Nós só criamos o passado.\"",
+    "icon": "/starrail/assets/icon/light_cone/21048.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21048.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21048.webp"
+  },
+  "21050": {
+    "id": "21050",
+    "name": "Vitória em Um Piscar de Olhos",
+    "rarity": 4,
+    "path": "Memory",
+    "desc": "Os rugidos devoradores dos Titâneos varrem o campo de batalha. Duas figuras rápidas matam a todos que ficam em seu caminho até encerrarem o combate. \"Eu sozinho serei o suficiente para lidar com eles.\" Cada soco desferido pelo guerreiro enviava lanças de sangue através dos corpos dos inimigos. \"Força bruta e nada mais. Veja minha lâmina!\" Uma lâmina de prata pálida corta em arco, e os monstros caem como folhas ao vento. \"Um duelo de velocidade?\" Os dois se lançam na direção um do outro ao mesmo tempo. Uivos de angústia são ouvidos quando as bestas furtivas atrás deles são abatidas de uma só vez. Duas vozes podem ser ouvidas ao mesmo tempo. \"Essa morte foi minha!\"",
+    "icon": "/starrail/assets/icon/light_cone/21050.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21050.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21050.webp"
+  },
+  "21051": {
+    "id": "21051",
+    "name": "Saudações dos Gênios",
+    "rarity": 4,
+    "path": "Memory",
+    "desc": "\"Parabéns. O experimento falhou novamente, não foi?\" \"...\" \"Eu já te disse antes que há falhas no seu método.\" \"...\" \"Eu preciso te contar, tenho feito grandes avanços ultimamente...\" A mulher distante ergue o olhar do seu livro... \"Desculpe. O que você disse?\" Ela acena com a mão. \"Bem, não posso dizer quão grandes são esses avanços. Talvez só afetem metade do cosmos.\" A mulher fecha o livro. \"Então fale, estou ouvindo.\" \"Hunf. Um gênio do meu calibre... não é algo que você vai ouvir assim tão facilmente...\" \"Entendo. Vou fazer uns doces. Podemos conversar e comer ao mesmo tempo.\"",
+    "icon": "/starrail/assets/icon/light_cone/21051.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21051.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21051.webp"
+  },
+  "21052": {
+    "id": "21052",
+    "name": "Suar Para Não Chorar",
+    "rarity": 4,
+    "path": "Memory",
+    "desc": "Estrondos de impactos ecoam pela sala de treinamento, seguidos por um chute barulhento que praticamente dobra o saco de areia ao meio. \"General... esse tipo de treinamento não é um pouco... exagerado?\" Tal foi a pergunta feita por um soldado próximo. Sorrindo, ela balança a cabeça e pendura um novo saco de areia no lugar. \"Isso? Exagerado? De jeito nenhum!\" O suor brilhante reflete o brilho da lua, escorrendo pelo seu corpo como pérolas cristalinas. A memória de uma general há muito falecida ressurge em sua mente... \"Se esforce mais no treinamento, para que você chore menos durante a batalha.\"",
+    "icon": "/starrail/assets/icon/light_cone/21052.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21052.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21052.webp"
+  },
+  "21053": {
+    "id": "21053",
+    "name": "Jornada, Eternamente Pacífica",
+    "rarity": 4,
+    "path": "Knight",
+    "desc": "O menino correu entre as gotas de chuva cintilantes como estrelas, celebrando a chuva abençoada que chegou após uma longa seca. A chuva caiu por um tempo muito, muito longo, e a carroça coberta parou sobre a terra coberta pelo verde que brotava. \"Mamãe! Mana! Nunca mais vamos passar frio ou fome!\" A fogueira dos Avginianos aqueceu a longa noite, enquanto o menino ouvia as histórias de sua irmã mais velha e aguardava o amanhecer. \"Akavasha... Você também seguirá adiante, com a boa sorte abençoada pela Deusa-Mãe, e conquistará aquilo que nós não conseguimos... Que sua jornada seja eternamente pacífica, e seus planos, eternamente ocultos...\" O dourado da luz do sol refletia de seus sonhos para seu lar na vida real, e transações e números voltavam a se espelhar em seus olhos. Ele soltou a mão que antes mantinha cerrada em punho. Era como se ele não tivesse conseguido agarrar em nada... e ainda assim, havia um calor pulsante que insistia em permanecer.",
+    "icon": "/starrail/assets/icon/light_cone/21053.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21053.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21053.webp"
+  },
+  "21054": {
+    "id": "21054",
+    "name": "A Próxima Página da História",
+    "rarity": 4,
+    "path": "Memory",
+    "desc": "A brisa agita os campos de trigo enquanto a garota, segurando um diário em branco, passeia pelas ondas douradas. Além de Aedes Elysiae, em uma pólis tanto desconhecida quanto estranhamente familiar, companheiros de todos os tipos irão cruzar os caminhos, e uma jornada como uma canção, como um sonho, está prestes a começar... \"Dessa vez, junto comigo...\" Na borda do campo, a garota que esperou tanto tempo fecha seu livro e estende uma mão em direção ao \"futuro\"... \"Vamos escrever um novo capítulo da história ♪\"",
+    "icon": "/starrail/assets/icon/light_cone/21054.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21054.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21054.webp"
+  },
+  "21055": {
+    "id": "21055",
+    "name": "Até o Amanhã do Amanhã",
+    "rarity": 4,
+    "path": "Priest",
+    "desc": "\"Até amanhã, Tribios...\" A menina enxugou as lágrimas das bochechas quando sua mãe partiu para um lugar muito, muito distante. Ela esperou por um amanhã após o outro, até crescer e se tornar alguém como sua mãe. Diante da passagem, ela segura firmemente a Chama Primordial, recordando-se das palavras de sua mãe. \"Lá não há nevascas, frio ou chuva...\" \"Mas se não virmos esse lugar amanhã, então...\" Ela cai em direção à terra, deixando para trás sua jovem figura, como uma estrela-cadente no céu. \"Então o veremos depois de amanhã!\"",
+    "icon": "/starrail/assets/icon/light_cone/21055.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21055.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21055.webp"
+  },
+  "21056": {
+    "id": "21056",
+    "name": "Em Busca do Vento",
+    "rarity": 4,
+    "path": "Shaman",
+    "desc": "\"Heh. Essa aqui pode ir para aquela pirralha azarada. Vai calar a boca dos pais dela, que vivem devendo dinheiro, e talvez eles batam menos nela.\" \"Essa pode ir para a vovó que vende balas de conserva para se virar. Ela precisa muito ver um médico por causa das dores... Eu não quero viver num mundo onde eu não possa mais comprar essas balas deliciosas.\" Curvada sobre a mochila, a garota conta meticulosamente as joias lá dentro, e de repente espirra. \"Quem sentiu minha falta?\" \"Aí está você, Cífera.\" Os fios se entrelaçam em suas costas, como se hesitassem por onde começar. \"De agora em diante, quando estiver perseguindo o Vento...\" O fio dourado gelado se enrola em seus pulsos, prendendo-a no lugar. \"Não se esqueça de cuidar de si mesma também.\" Ela corre, fugindo para bem longe. Só ao se virar é que percebe que a ponta de sua capa, antes começando a se desgastar, já havia sido costurada, como se fosse nova.",
+    "icon": "/starrail/assets/icon/light_cone/21056.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21056.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21056.webp"
+  },
+  "21057": {
+    "id": "21057",
+    "name": "A Flor se Recorda",
+    "rarity": 4,
+    "path": "Memory",
+    "desc": "Na primavera, eles plantaram sementes. No verão, irrigaram os campos. No outono, colheram os frutos. No inverno, cantaram enquanto caminhavam na neve. ... A terra que antes era estéril agora floresce com flores, e as borboletas são atraídas pelas risadas que ecoam, pousando nas pontas dos dedos das meninas. \"Mana! Vamos continuar trabalhando juntas para transformar isso num enorme mar de flores!\" \"Veja. Nossa promessa...\" A borboleta voa para a outra margem. A garota, bastante reservada, acaricia suavemente as pétalas quentes da flor, como se sua irmãzinha ainda estivesse ali com ela. \"...Não foi esquecida por mim nem pelas flores que um dia cuidamos.\"",
+    "icon": "/starrail/assets/icon/light_cone/21057.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21057.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21057.webp"
+  },
+  "21058": {
+    "id": "21058",
+    "name": "Um Rastro de Sangue do Passado",
+    "rarity": 4,
+    "path": "Warrior",
+    "desc": "Uma tempestade se forma à distância. Tentáculos se estendem do Mar das Almas, como se quisessem brincar com aquela vida frágil flutuante. Os membros quebrados da besta marinha golpeiam gigantescos jatos de água para o céu, afundando no abismo oceânico após se estilhaçarem como destroços. Dizem que o rugido da batalha durou dez dias e noites, abafando até o trovão e o raio. Dizem que, mesmo que um homem tivesse dez mil vidas, não seria o suficiente para resistir à erosão do Mar das Almas. Então, a coragem dissolve a imaturidade e o orgulho frio molda a timidez. E aquela figura esquelética tropeçou na praia. O primeiro raio de sol da manhã brilha sobre as águas do mar, tingindo-as de vermelho como o sangue do passado.",
+    "icon": "/starrail/assets/icon/light_cone/21058.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21058.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21058.webp"
+  },
+  "21060": {
+    "id": "21060",
+    "name": "Um Sonho Perfumado de Trigo",
+    "rarity": 4,
+    "path": "Mage",
+    "desc": "A brisa sopra os dedos do jovem e envia a carta, ainda molhada de tinta, para o distante além. \"O que será do meu futuro...\" Sonhos crescem asas em sua mente e voam em direção aos limites do céu. Espigas de trigo dançam ao vento e formam ondulações, como se respondessem ao seu desejo juvenil e sincero. \"Mesmo que eu só tenha uma única espada em minhas mãos, quero proteger este lugar, custe o que custar!\" O jovem fez essa promessa silenciosa em sua mente. Uma promessa tão profunda quanto uma marca, eternamente gravada em seu coração.",
+    "icon": "/starrail/assets/icon/light_cone/21060.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21060.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21060.webp"
+  },
+  "21061": {
+    "id": "21061",
+    "name": "Fuga Termal de Férias",
+    "rarity": 4,
+    "path": "Warlock",
+    "desc": "\"Cinny, vamos experimentar aquele novo banho especial que acabou de abrir!\" Depois de concluir suas tarefas médicas em Okhema, a garota seguiu a criança curiosa até o eclético conjunto de piscinas. \"Que tal uma massagem com suco de tomate?\" Fitando as mãos carmesim da atendente, ela abraçou a empolgada Ikinha e recuou... \"Prefiro algo... que dê para beber...\" \"Massagem dromas nas costas, com desconto por tempo limitado!\" Um dromas curioso abaixou a cabeça, seu hálito quente bagunçando os cabelos dela. \"T-talvez da próxima vez!\" \"Banho de ervas, fortalece o corpo e a alma! Quantos no seu grupo?\" Atraída pelo aroma das ervas, ela mergulhou o pé na piscina com hesitação. \"Parece... saudável...\" \"Duu, duu-duu!\" Ikinha flutuava feliz de costas. \"Acho que até você precisava de uma pausa de tudo o que temos feito ultimamente...\" Nesse raro dia de folga, tomando suco de uva, a garota conversava com a criança ruiva sobre tudo: de dicas para dormir a receitas de doces. \"Ai! Ikinha!\" \"Duu...\" \"Segura firme, Ikinha!\"",
+    "icon": "/starrail/assets/icon/light_cone/21061.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21061.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21061.webp"
+  },
+  "21062": {
+    "id": "21062",
+    "name": "Te Vejo no Fim",
+    "rarity": 4,
+    "path": "Rogue",
+    "desc": "Lágrimas involuntárias escorriam pelo seu rosto. No centro do arranjo ritual destruído, pairava não apenas a sombra da morte, mas um abismo de silêncio e vazio. Então, um suspiro tremulou através da escuridão. Uma ondulação das profundezas mais íntimas da \"alma\". \"É você... Irmã...?\" O garoto ergueu sua mão, uma luz fraca cintilando em seus olhos. A silhueta de sua amada permaneceu por apenas um suspiro, mas sua marca gravou-se por milênios em seu coração. \"Entendo... Obrigado... por esta última despedida.\" Ele se levantou lentamente. Os primeiros raios da aurora acariciavam seu rosto resoluto, ainda marcado por lágrimas. \"O caminho da busca é solitário... Nos encontraremos novamente no fim da jornada.\"",
+    "icon": "/starrail/assets/icon/light_cone/21062.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21062.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21062.webp"
+  },
+  "21064": {
+    "id": "21064",
+    "name": "As Aventuras do Cogumelinho Fofinho",
+    "rarity": 4,
+    "path": "Elation",
+    "desc": "\"Marçomelinho, seja bem‑vinda ao reino florido ♥, hihi!\" \"Dan Hengumelinho, não fica tão serinho... dê um sorrisinho!\" \"Cogumelinho Cinzinha, já se apaixonou pelo meu charme irresistível? Maravilha!\" \"E quanto a você, Cogumelinho Corujinha... eu escolho você, está com uma cara deliciosa!\" Corre, corre, os desejos humanos são uma toca de coelho sem fundo. Vem, vem, sorria e se torne parte desse mundo florido! \"Bem‑vindos ao show especial da Sparxie: Todos Podem Virar uma Sparxie Fofinha!\"",
+    "icon": "/starrail/assets/icon/light_cone/21064.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21064.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21064.webp"
+  },
+  "21065": {
+    "id": "21065",
+    "name": "Boa Sorte de Hoje",
+    "rarity": 4,
+    "path": "Elation",
+    "desc": "\"Minha querida caloura, você tem certeza absoluta?\" \"Hunf, sem dúvida!\" \"Dessa vez, a aposta é mais do que apenas um frasco de creme para as mãos.\" \"Um jogo tão fácil... o que poderia dar errado?\" A garota de cabelo rosa se afastou, recusando-se a se incomodar mais. \"Pela maneira como as folhas de chá flutuam, você deveria jogar essa carta.\" A garota comprou muitas cartas e as virou. \"Ah, minha sorte está mudando.\" \"Mais uma vez... isso não pode estar acontecendo...\" ... A garota perdeu a conta de quantos jogos de adivinhação jogou com sua veterana, lembrando-se apenas de como a sua veterana sempre estava disposta a jogar de novo e de novo com ela. Mais tarde, a garota quis fugir do destino profetizado e, apesar da oposição, dirigiu-se à Comissão de Divinação do Luofu. Ao chegar no Luofu, ela, de maneira inesperada, encontrou um delicado marcador de divinação entre as páginas de uma folha de divinação. A caligrafia familiar fez a garota estrangeira derramar lágrimas: \"Quem disse que o destino não tem uma segunda chance? Aqui está meu amuleto da sorte para você!\"",
+    "icon": "/starrail/assets/icon/light_cone/21065.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21065.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21065.webp"
+  },
+  "22000": {
+    "id": "22000",
+    "name": "Antes do Início da Missão do Tutorial",
+    "rarity": 4,
+    "path": "Warlock",
+    "desc": "Falta muito para a ação começar? Você tem a audácia de fazer uma pergunta dessas... Tem algo de errado com a nova recruta? Não. Elio não a escolheu por ser boa em sua área de atuação, mas ela precisa, pelo menos, sobreviver a essa tarefa de principiante. Ela está indo bem. Que alívio. Parece que o Bladezinho também é um agente confiável. ...",
+    "icon": "/starrail/assets/icon/light_cone/22000.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/22000.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/22000.webp"
+  },
+  "22001": {
+    "id": "22001",
+    "name": "Ei, Estou Aqui!",
+    "rarity": 4,
+    "path": "Priest",
+    "desc": "Três garotas passeiam na escuridão, e os arredores parecem criar uma atmosfera sinistra. \"Huohuo, vai logo ou a gente não vai te esperar!\" Ela avançou confiante com o celular na mão, aparentemente sem se deixar afetar pela atmosfera paranormal. \"E-Eu estou aqui!\" Três garotas que estavam adiante responderam timidamente. \"Quê? Então se você estava aí na frente esse tempo todo, quem estava seguindo eu e a Shangshang...\" O final perfeito para essa cena com certeza seria um gritinho agudo.",
+    "icon": "/starrail/assets/icon/light_cone/22001.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/22001.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/22001.webp"
+  },
+  "22002": {
+    "id": "22002",
+    "name": "Pela Jornada do Amanhã",
+    "rarity": 4,
+    "path": "Shaman",
+    "desc": "Os ponteiros da Bússola continuam girando até apontarem para o momento dos sonhos. O sistema Asdana, transbordando de memória, emite um brilho suave fora das janelas do trem. A Prisão da Fronteira dentro está atualmente envolvida nas chamas da guerra. \"Ei, pessoal, como vocês acham que seria o mundo dentro do sonho? Preciso mapeá-lo meticulosamente!\" A garota, guardando seus instrumentos de medição, olha com expectativa para o novo mundo ao alcance. \"Esse lugar é uma bagunça. Não saiam correndo quando chegarmos lá. Não vou deixar que vocês dois sejam sequestrados novamente...\" O homem vestido de caubói resmunga enquanto limpa sua arma, depois caminha até o sofá com uma bebida, sacudindo a cabeça com resignação. \"A Terra dos Sonhos promete possibilidades infinitas. Com certeza faremos nosso nome... Ei, condutor, se nos apaixonarmos por esse lugar e nunca mais voltarmos, você sentiria nossa falta?\" O Inominado vestido de cavalheiro pisca para Pom-Pom, sorrindo. \"'Você não pode fazer piada às custas do condutor assim!' É isso que você quer dizer, condutor?\" O sorriso travesso da garota se espalha por seu rosto. \"Vocês são! Tão! Maldosos!\" Bolhas sobem e descem no copo enquanto o Expresso se enche com risadas alegres. ... As silhuetas juvenis desses Inominados são gradualmente engolidas pela memória. \"Tenha uma... boa... viagem... por favor...\" Quando o condutor vira a cabeça, o Expresso já está vazio. O condutor fica paralisado, a cena assustadoramente familiar, como se já vivida inúmeras vezes antes.",
+    "icon": "/starrail/assets/icon/light_cone/22002.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/22002.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/22002.webp"
+  },
+  "22003": {
+    "id": "22003",
+    "name": "Registro Ninja: Caça ao Som",
+    "rarity": 4,
+    "path": "Warrior",
+    "desc": "No reino do ninjutsu cósmico, constante mudança, Ouçam os ecos da minha caça pela abundância! Sintam o batimento, o chamado ritmado, O som das guitarras e a atmosfera, ambos encantados. Notas de baixo com uma tenra tonalidade, O eletroacústico atiça a minha habilidade. Testemunho do suor, verdade não revelada, A cada reviravolta, uma melodia é fabricada. Meu som ascende, alcançando o céu, Com ferimentos e batalhas, eu cumpro meu papel. \"A Deslumbrante!\" \"A Deslumbrante!\" Uma canção tão ousada. \"A Deslumbrante!\" \"A Deslumbrante!\" Em histórias não contadas, \"A Deslumbrante!\" \"A Deslumbrante!\" Uma história épica ditada! Yo. Yo. Nesse mundo selvagem. Que os corações se acendam. Cantem alto, entoem suas almas e abracemos a loucura!",
+    "icon": "/starrail/assets/icon/light_cone/22003.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/22003.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/22003.webp"
+  },
+  "22004": {
+    "id": "22004",
+    "name": "O Grande Empreendimento Cósmico",
+    "rarity": 4,
+    "path": "Mage",
+    "desc": "Em um salão de exposições virtual feito de dados, representantes trocavam opiniões. Duas figuras circulavam entre as barraquinhas, entregando tudo o que era necessário. \"Hmm, será que você é...?\" \"Eu te vi na TV.\" Conversaram sobre jogos, comida, suas aparências e todas as belezas do universo. Apesar dos encontros raros, eram próximos como velhos amigos. \"Então, pensou sobre minha proposta...\" \"O Expresso não está à venda!\"",
+    "icon": "/starrail/assets/icon/light_cone/22004.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/22004.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/22004.webp"
+  },
+  "22005": {
+    "id": "22005",
+    "name": "O Víveres Eterno",
+    "rarity": 4,
+    "path": "Shaman",
+    "desc": "*BUUM*... Do lado de fora do Labirinto, uma tempestade ruge sem fim. *gorgolejo*... O caldeirão mágico das fadas arde com uma chama eterna. \"Polvilhe as especiarias especiais...\" \"Adicione alguns legumes frescos!\" \"Dessa vez a gente vai conseguir com certeza!\" O enorme caldeirão borbulhou novamente enquanto as fadas observavam ansiosamente. \"Lá vem, lá vem!\" Uma luz brilhante explodiu do fundo da panela... Olhem, todo mundo está se reunindo! ... No banquete perfumado, os convidados ergueram seus copos para brindar a esses tempos maravilhosos: Que este paraíso dos sonhos permaneça sempre aquecido e alegre!",
+    "icon": "/starrail/assets/icon/light_cone/22005.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/22005.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/22005.webp"
+  },
+  "22006": {
+    "id": "22006",
+    "name": "Rumo ao Amanhã Cor-de-Rosa",
+    "rarity": 4,
+    "path": "Memory",
+    "desc": "Uma brisa suave dissipa as nuvens, revelando o rosto do cosmos. O brilho dourado cintila, enquanto epopeias ecoam pelo céu estrelado. \"Estrelas cadentes, encontros, promessas!\" A pequena fada ergue o olhar ao céu, como no primeiro encontro, como numa reunião. \"Mem, esperando. Desbrave, o mundo!\" Os olhos da pequena fada se iluminam com o brilho estelar, cintilando como aquele amanhã rosado.",
+    "icon": "/starrail/assets/icon/light_cone/22006.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/22006.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/22006.webp"
+  },
+  "23000": {
+    "id": "23000",
+    "name": "Noite na Via Láctea",
+    "rarity": 5,
+    "path": "Mage",
+    "desc": "Quando a estrada for uma preocupação, olhe novamente para cima. Quando as estrelas olham com carinho para baixo, o seu coração é acolhido. Cada pensamento e cada sussurro se torna uma experiência de vida que jamais nos deixa.",
+    "icon": "/starrail/assets/icon/light_cone/23000.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23000.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23000.webp"
+  },
+  "23001": {
+    "id": "23001",
+    "name": "Na Noite",
+    "rarity": 5,
+    "path": "Rogue",
+    "desc": "A menina sorri sutilmente. \"Como?\" \"Aqui e agora, eu estou sozinha...\" \"Mas me sinto... rodeada de vida.\"",
+    "icon": "/starrail/assets/icon/light_cone/23001.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23001.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23001.webp"
+  },
+  "23002": {
+    "id": "23002",
+    "name": "Algo Insubstituível",
+    "rarity": 5,
+    "path": "Warrior",
+    "desc": "\"Se chegar o dia em que eu não estarei mais aqui, cuide deste banco de dados, Svarog.\" (Quem é essa... Por que essa mensagem está nos meus registros?) \"Você tem algo insubstituível, Svarog?\" (Insubstituível... peças quebradas... podem ser recuperadas facilmente...) \"Um dia, você certamente encontrará, Svarog.\" (Essas coisas... só causarão problemas...) \"Quando a hora chegar... você precisará deixar este lugar para trás.\"",
+    "icon": "/starrail/assets/icon/light_cone/23002.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23002.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23002.webp"
+  },
+  "23003": {
+    "id": "23003",
+    "name": "Mas a Batalha Não Acabou",
+    "rarity": 5,
+    "path": "Shaman",
+    "desc": "\"Lembre-se: a guerra contra os monstros não será vencida recuando.\" \"Nós somos a última defesa, a muralha de ferro final entre eles e Belobog...\" \"Não podemos recuar em hipótese alguma!\" Ela olha para cima, para a terra gélida e o inverno sem fim à frente. Mais do mesmo. Mas... a figura que ela estava contemplando sumiu.",
+    "icon": "/starrail/assets/icon/light_cone/23003.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23003.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23003.webp"
+  },
+  "23004": {
+    "id": "23004",
+    "name": "Em Nome do Mundo",
+    "rarity": 5,
+    "path": "Warlock",
+    "desc": "\"Welt...\" \"É um... ótimo nome, não acha?\" \"Então...\" \"De agora em diante, seu nome é Welt.\" \"Esse núcleo de Herrscher... e a missão de proteger o mundo...\" \"Você cuidará disso, Welt.\"",
+    "icon": "/starrail/assets/icon/light_cone/23004.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23004.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23004.webp"
+  },
+  "23005": {
+    "id": "23005",
+    "name": "Momento de Vitória",
+    "rarity": 5,
+    "path": "Knight",
+    "desc": "\"Se quiser chorar quando perder, Gepard, pode chorar.\" \"Mas você vai ter que se levantar de novo, mesmo chorando, até me derrotar... nem que leve anos.\" Alguns anos depois, o menino não perdia mais para a irmã, tampouco chorava. Hoje, o destemido Capitão da Guarda Crinalva permanece firme até o fim no campo de batalha... Tudo isso só esperando o momento certo de esmagar seus inimigos.",
+    "icon": "/starrail/assets/icon/light_cone/23005.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23005.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23005.webp"
+  },
+  "23006": {
+    "id": "23006",
+    "name": "Você Só Precisa de Paciência",
+    "rarity": 5,
+    "path": "Warlock",
+    "desc": "\"Será que você ainda está escondendo algo de mim?\" Ela observa os pescoços travados, como se eles tivessem um caroço na garganta. Ela sabe que é temida, que não é necessário mais nada. A essa altura, as palavras não importam. Qualquer coisa dita por ela causa temor... Eles não têm a menor chance contra ela, não têm escolha a não ser revelar o que ela quer ouvir. Como uma aranha esperando na teia, ela só precisa de paciência.",
+    "icon": "/starrail/assets/icon/light_cone/23006.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23006.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23006.webp"
+  },
+  "23007": {
+    "id": "23007",
+    "name": "Chuva Constante",
+    "rarity": 5,
+    "path": "Warlock",
+    "desc": "Ela deixa a proteção da marquise, abre o guarda-chuva e entre em um beco cantarolando uma melodia alegre. A chuva para pouco tempo depois. Ela coça a cabeça e desbloqueia a tela. Após alguns toques, gotas de chuva começam a cair numa área não maior que a de seu guarda-chuva. O tamborilar das gotas se mistura à música do jogo, formando uma sinfonia calma e relaxante. \"Jogar combina muito com essa chuvinha\".",
+    "icon": "/starrail/assets/icon/light_cone/23007.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23007.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23007.webp"
+  },
+  "23008": {
+    "id": "23008",
+    "name": "Ecos do Caixão",
+    "rarity": 5,
+    "path": "Priest",
+    "desc": "Vigiado pelas íris brancas, ele bate no caixão. \"Às vezes, eu sinto que subestimei você propondo esse acordo.\" Ele não recebe resposta, a não ser por um galho cheio de espinhos perfurando a palma de sua mão. Ainda assim, sorri, cerrando o punho em volta dos espinhos. \"Pois é. É assim que as coisas são. Queríamos usar um ao outro, mas acabamos subestimando um ao outro.\"",
+    "icon": "/starrail/assets/icon/light_cone/23008.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23008.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23008.webp"
+  },
+  "23009": {
+    "id": "23009",
+    "name": "O Lado Inacessível",
+    "rarity": 5,
+    "path": "Warrior",
+    "desc": "Ele vinha a este lugar todo ano, trazendo novas espadas consigo todas as vezes. Ele esteve presente nos últimos momentos de vida de todos os donos dessas espadas. Sempre que ele parte, ele pensa angustiado... Quando será que a sua própria espada será trazida até aqui por alguém?",
+    "icon": "/starrail/assets/icon/light_cone/23009.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23009.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23009.webp"
+  },
+  "23010": {
+    "id": "23010",
+    "name": "Antes do Amanhecer",
+    "rarity": 5,
+    "path": "Mage",
+    "desc": "\"Leve essa decisão a sério, general... Pense em como você quer ser lembrado no futuro...\" O general dos Cavaleiros das Nuvens ouve as palavras de seus subordinados com os olhos semicerrados. \"A história fará seu próprio julgamento, mas não tenho interesse em meu legado.\" \"Se eu tiver sucesso, a história afirmará que eu tenho confiança suprema em minha estratégia de mestre.\" \"Mas se eu falhar, a história afirmará que estou negligenciando meus deveres por puro prazer, dando mais atenção a pássaros que ao meu povo.\" Um pássaro desce do ombro do general, e ele estende a mão para pegar a pequena criatura. \"Eu simplesmente tomei minha própria decisão.\"",
+    "icon": "/starrail/assets/icon/light_cone/23010.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23010.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23010.webp"
+  },
+  "23011": {
+    "id": "23011",
+    "name": "Ela Já Fechou Seus Olhos",
+    "rarity": 5,
+    "path": "Knight",
+    "desc": "A dor no centro da testa dela a acompanhará pelo resto de sua vida, mas é apenas uma fração do que ela já suportou no passado. Ela se imaginava presciente até a partida daqueles que a ela eram caros. Agora, ela \"vê\" que o mundo sempre muda e o tempo sempre passa... Mas ela já fechou seus olhos, pois o futuro já foi determinado... Dentro do \"terceiro olho\".",
+    "icon": "/starrail/assets/icon/light_cone/23011.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23011.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23011.webp"
+  },
+  "23012": {
+    "id": "23012",
+    "name": "Sono Profundo",
+    "rarity": 5,
+    "path": "Rogue",
+    "desc": "O garoto continua segurando a espada com força, mesmo dormindo nos ombros do general. O general tenta acordar gentilmente o garoto com tapinhas na bochecha enquanto o garoto murmura. \"General... eu finalmente venci.\" O general para. De repente, percebe que, comparado ao garoto que tenta melhorar a cada dia, ele estagnou há vários anos. \"Você logo ultrapassará a todos, e isso será só o começo...\"",
+    "icon": "/starrail/assets/icon/light_cone/23012.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23012.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23012.webp"
+  },
+  "23013": {
+    "id": "23013",
+    "name": "O Tempo Não Espera por Ninguém",
+    "rarity": 5,
+    "path": "Priest",
+    "desc": "Ela havia passado muitos dias perto da janela. As flores desabrochavam lá fora quando ela fazia medicamentos mais suaves com nepeta e hortelã. A chuva caía lá fora quando ela fazia medicamentos mais fortes com mosla e gengibre. As folhas caíam lá fora quando ela fazia medicamentos azedos com raízes de peônia e ameixas secas. E a neve caía lá fora quando ela fazia medicamentos amargos com escutelária e anemarrena. O tempo não para, mas esta janela e a pessoa perto dela ainda são as mesmas.",
+    "icon": "/starrail/assets/icon/light_cone/23013.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23013.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23013.webp"
+  },
+  "23014": {
+    "id": "23014",
+    "name": "Eu Serei Minha Própria Espada",
+    "rarity": 5,
+    "path": "Warrior",
+    "desc": "A lâmina despedaçada, mergulhando no frio congelante. Todos os instrumentos terrenos são apenas futilidades, e seu valor pode ser discernido com um simples olhar. \"Que utilidade eu tenho para as espadas?\" Ela não tem nenhum apreço, e também não acomoda nada em seu olhar. \"De agora em diante, eu serei minha própria espada.\" Para transcender os precipícios percebidos e alcançar conquistas sem precedentes, é necessário se tornar a \"brasa\" que alimentará seu próprio fogo.",
+    "icon": "/starrail/assets/icon/light_cone/23014.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23014.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23014.webp"
+  },
+  "23015": {
+    "id": "23015",
+    "name": "Mais Claro do que o Sol",
+    "rarity": 5,
+    "path": "Warrior",
+    "desc": "Desde o seu nascimento, tudo o que ele havia visto era apenas uma masmorra escura. Pecados irrelevantes o prenderam àquele lugar, e memórias irrelevantes o dominaram. Ele se contorceu, tentando respirar com cada fibra do seu ser, tentando se agarrar a uma fenda de luz naquele oceano insondável. Até que um dia o general adentrou as profundezas escuras desta prisão, e viu um esplendor brilhando mais forte do que o sol: o olhar de um jovem.",
+    "icon": "/starrail/assets/icon/light_cone/23015.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23015.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23015.webp"
+  },
+  "23016": {
+    "id": "23016",
+    "name": "Inquietante, Extasiante",
+    "rarity": 5,
+    "path": "Rogue",
+    "desc": "Para uma profissional competente da CPI, se sentir \"sobrecarregada\" é absolutamente proibido. Permaneça firme e enfrente tudo o que surgir no seu caminho, seja cansaço ou excesso de trabalho! A menos que... ela fique sobrecarregada por \"eles\". \"Ah, não sejam tão impacientes! Eu só tenho duas mãos!\" Uma garota que acabou de voltar para casa depois de fazer hora extra é encurralada por um grupo de criaturas fofinhas. Elas podem não entender completamente as palavras da garota, simplesmente aninhando suas cabeças redondas perto das mãos dela. Pouco a pouco, a sensação de exaustão desaparece de seu corpo, sendo substituída pelo calor e conforto trazidos ao acariciar os pelos dessas criaturinhas.",
+    "icon": "/starrail/assets/icon/light_cone/23016.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23016.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23016.webp"
+  },
+  "23017": {
+    "id": "23017",
+    "name": "Noite Aterrorizante",
+    "rarity": 5,
+    "path": "Priest",
+    "desc": "A garota se esconde atrás da porta e não ousa dar nem mais um passo adiante. Talvez pelo fato de que o objetivo desta noite já está ao seu alcance, o coração dela está batendo mais rápido. \"Eu não estou com medo, não estou com medo, não estou com medo...\" Na escuridão, o silêncio emite um grito perfurante. A garota está tremendo e aperta com força a \"arma\" em suas mãos, mas não ousa se aproximar do \"alvo\". \"Eu não tenho nada a t-t-temer!\" A cauda às suas costas finalmente se cansou e se ilumina subitamente. \"Agiliza. Você só está pegando uma encomenda!\"",
+    "icon": "/starrail/assets/icon/light_cone/23017.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23017.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23017.webp"
+  },
+  "23018": {
+    "id": "23018",
+    "name": "Um Instante Eternamente Adorado",
+    "rarity": 5,
+    "path": "Mage",
+    "desc": "Certa vez ele ouviu uma balada, cantando em louvor daquele feixe de luz: Rosas florescem para responder SEU sorriso. O crepúsculo brilha para iluminar SEU semblante. A melodia toca, para banir SEU cansaço. Mas a luz, uma vez findada, nunca retorna. Entretanto, ele ainda galopa para longe. Só é preciso esperar, acreditar, e rezar para tudo que pertence à Beleza neste cosmos. Mesmo que tudo não passe de um breve instante antes de um olhar, ele já encontrou a resposta que procurava.",
+    "icon": "/starrail/assets/icon/light_cone/23018.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23018.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23018.webp"
+  },
+  "23019": {
+    "id": "23019",
+    "name": "Meu Passado no Espelho",
+    "rarity": 5,
+    "path": "Shaman",
+    "desc": "Ela costumava amar selar o momento quando as flores de ameixa estavam prestes a murchar e mantê-las próximas a ela. Já faz muito tempo desde então. Muitas formas de vida, turbulentas, doces e tudo que está no meio, floresceram das mãos dela, mas as flores de ameixa ainda murcham em seu tempo predeterminado. Já faz muitos anos desde então. Seu rosto no espelho parece intocado pelo tempo. Entretanto, na escala do cosmos inteiro, será que ela também não estaria destinada a durar por apenas um breve instante? \"Se tudo está condenado à eventual morte, qual seria o propósito da criação?\" Depois de um silêncio que pareceu se estender pela eternidade, os ventos sopram, as pétalas caem, e o reflexo da pessoa no espelho permanece com o viço de sempre. \"Pelo dia em que a flor de ameixa não será mais mantida.\" Ela acaricia a superfície gélida do espelho. Tais monólogos aconteceram tantas vezes que ela já perdeu a conta.",
+    "icon": "/starrail/assets/icon/light_cone/23019.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23019.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23019.webp"
+  },
+  "23020": {
+    "id": "23020",
+    "name": "O Batismo de Pensamento Puro",
+    "rarity": 5,
+    "path": "Rogue",
+    "desc": "A luz vespertina brilha na medida certa, e a fragrância das flores enche o ar. Ainda que ele tente manter seus pensamentos puros, a exaustão cognitiva inevitavelmente atrai partículas da mente, reunidas como grãos de poeira. \"Curar os pensamentos de alguém é tão importante quanto preservar a saúde de alguém.\" O clamor dos tolos desaparece junto com o cansaço enquanto ele afunda na água, permitindo que todos os pensamentos flutuem, deixando sua mente elucidada e organizada. \"A verdade escapa a todos os imundos, e apenas os de pensamento puro poderão se aproximar.\"",
+    "icon": "/starrail/assets/icon/light_cone/23020.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23020.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23020.webp"
+  },
+  "23021": {
+    "id": "23021",
+    "name": "Fuga Terrena",
+    "rarity": 5,
+    "path": "Shaman",
+    "desc": "Assim como fogos de artifício podem piscar, ela também consegue mudar entre dez cores diferentes em um minuto. Quando o show de luzes está perto do fim, ela se senta no alto, e observa com tédio as massas agitadas abaixo de seus pés. Pensamentos fluem e somem, e a malícia circula entre diversos olhos como um caleidoscópio dançante. \"Já me decidi. É assim que a gente vai se divertir hoje!\" Saltitando e pulando, ela plana pela multidão, com sua cauda vermelha dourada aparecendo e desaparecendo da visão. \"Não vai ficar pra trás! Os fogos de artifício mais brilhantes vão começar já, já!\"",
+    "icon": "/starrail/assets/icon/light_cone/23021.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23021.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23021.webp"
+  },
+  "23022": {
+    "id": "23022",
+    "name": "Recordação Reforjada",
+    "rarity": 5,
+    "path": "Warlock",
+    "desc": "Acenda as velas, espalhe as cartas, respire a fragrância... Essas memórias quebradas se tornam rostos na luz dançante. As aparições que emergem das chamas contam de passados recordados com carinho. O tempo é cisalhado. O momento é congelado. Ela torna esses instantes preciosos em cristalizações da eternidade. \"Muito foi perdido, e o pouco que resta... Nós nutrimos essas memórias contra a crueldade do tempo.\"",
+    "icon": "/starrail/assets/icon/light_cone/23022.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23022.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23022.webp"
+  },
+  "23023": {
+    "id": "23023",
+    "name": "Destino Inerentemente Injusto",
+    "rarity": 5,
+    "path": "Knight",
+    "desc": "Com a última carta revelada, desânimo, raiva, aceitação e sangue-frio... Uma cascata de emoções cai na face de seus oponentes. \"Agora que estamos todos aqui, por que não deixamos as coisas mais interessantes?\" Ele aposta todas suas fichas. Aqueles que querem diminuir suas perdas saem da mesa, amaldiçoando e esperando secretamente que ele perca. Vitórias, reputação, sorte... Ele não liga para nenhuma dessas coisas. Ao invés disso, ele se cativa apenas por esses momentos que fazem sua vida estremecer. Afinal de contas, o inferno está a uma escolha do paraíso. As fichas são lançadas, a tristeza preenche o ar e o senso ilusório de satisfação se dissipa em um instante quando a poeira finalmente abaixa. \"Tudo ou nada, eu não tenho o luxo de escolher...\"",
+    "icon": "/starrail/assets/icon/light_cone/23023.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23023.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23023.webp"
+  },
+  "23024": {
+    "id": "23024",
+    "name": "Ao Longo da Margem Transitória",
+    "rarity": 5,
+    "path": "Warlock",
+    "desc": "Fluindo na fronteira estreita entra a \"existência\" e o \"nada\", as marés congelantes batem eternamente contra as margens e trazem todas as coisas ao seu fim. Neste lugar, os afogados pedem ajuda, lamentam com músicas, encontram suas felicidades, aproveitam doces momentos e sofrem uma grande agonia... Tudo isso está refletido na água. Ela não pode vivenciar essas coisas, mas ela pode senti-las. Ainda existem muitos caminhos a caminhar, muitos sons a ouvir e muitas coisas para mudar antes dela chegar ao final. Ela estende sua mão e salva aqueles que estão se afogando das tentações da Inexistência, e uma miragem após a outra explode atrás da imagem dela. Ela continua caminhando neste mundo infinito, tudo por um final que não existe. E está sempre chovendo aqui.",
+    "icon": "/starrail/assets/icon/light_cone/23024.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23024.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23024.webp"
+  },
+  "23025": {
+    "id": "23025",
+    "name": "Onde os Sonhos Deveriam Repousar",
+    "rarity": 5,
+    "path": "Warrior",
+    "desc": "Essa é a fronteira do sistema Asdana. O oceano de Memória ruge com ondas montanhosas e ela, como uma única e minúscula faísca, pode ser encharcada a qualquer momento na tempestade. \"Para alguém que não pode sonhar entrar na Sinestesia do Mundonírico, seria necessário pagar um preço comparável à morte.\" Ela ainda pode ouvir as vozes preocupadas de seus companheiros em seus ouvidos. Ela respira fundo e mergulha na Zona da Memória. À medida que o veículo afunda silenciosamente nas profundezas da Zona da Memória, pequenas fagulhas de luzes de vaga-lumes se dissipam das rachaduras e são imediatamente engolidas pela escuridão sem fim. \"Por que corres em direção à morte?\" No oceano de Memória que se aprofunda cada vez mais, a fraca luz emitida pelas criaturas da Zona da Memória são como olhos distantes que a observam com indiferença. Os sonhos permaneceram muito distantes para ela. Ela observa inutilmente a escuridão sem limites, seu corpo e alma há muito já atingiram o limiar do colapso sob a pressão da Memória. Ainda que ela entenda que sua consciência aos poucos se desvanece, apenas aquelas memórias remanescentes continuam a passar repetidamente pelo seu cérebro... O Enxame que cobria o céu rasgou as defesas da vanguarda à medida que ela avançava em direção ao Enxame envolta em fogo. As cinzas carbonizadas do Enxame desapareceram como neve, sob a qual jazem as carcaças negras dos cavaleiros. Ela nem teve tempo de oferecer um buquê como agradecimento final aos cavaleiros, que pereciam um após o outro. Suas vidas floresciam em um piscar de olhos e se apagavam na mesma velocidade. Como uma linha de código genérico, eles nunca possuíam nomes, apenas números eram concedidos a eles. \"Por que vives?\" No silêncio sepulcral, como chamas dissolvendo no mar, ela é reduzida a um único ponto de fogo, e avança em direção à luz interminavelmente... Ela abre seus olhos depois do que pareceu uma eternidade. Ela vê o \"futuro\" parecendo uma pérola, irradiando uma luz suave e vaga. Lágrimas correm pelo seu rosto... \"Para encontrar... meu próprio 'sonho'...\"",
+    "icon": "/starrail/assets/icon/light_cone/23025.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23025.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23025.webp"
+  },
+  "23026": {
+    "id": "23026",
+    "name": "Luzes Noturnas",
+    "rarity": 5,
+    "path": "Shaman",
+    "desc": "O tempo flui através do espelho, metamorfoseando a outrora inexperiente garotinha numa experiente cantora. Ela observa seu reflexo no espelho. O tempo alterou tudo, exceto seus olhos verdes, que permanecem tão serenos quanto um lago, como se narrassem uma fé inabalável. \"Você parece estar bem animada hoje.\" \"Sim... afinal, há uma 'apresentação' muito importante.\" \"Com certeza. O ensaio do Festival Carismonia está prestes a começar. Por favor, dirija-se à sala de preparação.\" ... Ela sai do camarim, deixando para trás as luzes brilhantes do teatro, desvanecendo-se ao longe. \"Meu palco não é aqui.\" Ela fecha os olhos, permitindo que a noite engula sua silhueta. \"Desde o passado até o presente, minha canção sempre foi para...\" \"Para aqueles que perderam a esperança.\"",
+    "icon": "/starrail/assets/icon/light_cone/23026.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23026.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23026.webp"
+  },
+  "23027": {
+    "id": "23027",
+    "name": "Velejando em Direção a uma Segunda Vida",
+    "rarity": 5,
+    "path": "Rogue",
+    "desc": "Ele sentiu como se tivesse caído em um mar profundo. Tudo o havia abandonado, deixando apenas seus pensamentos vazios se contorcendo e lutando sozinhos. Terror, ansiedade, solidão, escuridão, raiva, esses sentimentos não se dissiparam com seu corpo físico, mas permaneceram na concha mecânica de uma maneira diferente, e eles se tornaram ainda mais pesados do que antes. Ele ouviu o chamado dos mortos, sentiu o cheiro de algo sendo carbonizado, o turbilhão das máquinas zumbia em seus ouvidos, e o novo sangue azul voou em direção ao seu coração sedento... Algumas memórias cruéis ressurgiram conforme o ódio inesquecível se transformou em uma luz fraca na escuridão. Ele seguiu a luz para caminhar em direção ao fim de tudo, utilizando cada grama de sua força para se levantar uma vez mais na superfície. Ele abriu seus olhos e um clarão de fogos de artifício passou voando antes que ele pudesse ouvir os parabéns da médica. \"Bem-vindo ao mundo, novamente.\" Ele cerrou seus punhos com suas mãos que agora eram feitas de ferro frio... Ele não viveria mais para si.",
+    "icon": "/starrail/assets/icon/light_cone/23027.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23027.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23027.webp"
+  },
+  "23028": {
+    "id": "23028",
+    "name": "A Esperança é Inestimável",
+    "rarity": 5,
+    "path": "Mage",
+    "desc": "\"Dama Bonajade, se não fosse por seu fornecimento constante de suprimentos e doações, o orfanato já teria...\" Ela acariciou gentilmente os cabelos das crianças, interrompendo as palavras do diretor. \"Enquanto eu estiver aqui, não há com o que se preocupar... E não precisa dizer essas coisas para as crianças, isso só faz com que elas se preocupem ainda mais.\" As crianças olharam para cima, falando sem parar dos eventos recentes, seus medos e sonhos. \"Dama Bonajade, quando você vai vir de novo?\" \"Não trabalha demais, você tem que descansar bastante...\" \"Dama Bonajade, quando eu crescer, eu quero ser igual você!\" Ela olhou para os olhos cristalinos da criança e parou por um segundo. \"Alguém como eu...\" A criança a entregou uma maça: \"Sim! Alguém que faz as pessoas terem esperança e luz na vida delas!\" Pobreza, deméritos, sofrimento, miséria... ela vagava pelas galáxias, assumindo para si os clamores das pessoas e devolvendo-as todos os seus retornos em medidas equivalentes. A vida existe por conta do desejo, e morre por conta do desejo. Essa é uma lei inescapável, assim como uma invariabilidade da vida. Uma filantropa com objetivos ocultos, uma vilã que barganha almas... ela já recebeu diversas conotações em diferentes mundos, mas somente ela compreende profundamente a moral por trás de suas ações.",
+    "icon": "/starrail/assets/icon/light_cone/23028.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23028.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23028.webp"
+  },
+  "23029": {
+    "id": "23029",
+    "name": "Aquelas Incontáveis Primaveras",
+    "rarity": 5,
+    "path": "Warlock",
+    "desc": "Depois de algumas garoas repentinas, as marés da primavera se erguem e o crescimento verdejante se levanta. \"Quantas primaveras já passaram?\" Ele se lembra daqueles jovens soldados se dirigindo ao campo de batalha pela primeira vez. Ano após ano, os rostos eram todos diferentes, mas ainda assim eles irradiavam exatamente o mesmo vigor e a mesma esperança. O salgueiro murcha conforme aguarda pelo retorno dele. Mas o que ele consegue trazer de volta para casa costuma ser... o gelo que nunca derrete. Os gorjeios dos pássaros permanecem no ar enquanto ele fecha seus olhos, permitindo que a luz do sol recaia sobre sua face através das frestas entre as folhas. \"Infelizmente, aqueles que permanecem são os mais solitários de todos.\"",
+    "icon": "/starrail/assets/icon/light_cone/23029.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23029.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23029.webp"
+  },
+  "23030": {
+    "id": "23030",
+    "name": "Dança ao Pôr do Sol",
+    "rarity": 5,
+    "path": "Warrior",
+    "desc": "\"Uma figura ágil está correndo pelos telhados no crepúsculo resplandecente.\" \"Lili, Guoguo, vamos ver quem chega ao final primeiro!\" Como um pequeno e habilidoso animalzinho, a garota escala os beirais, esquiva dos guardas e se balança no vento enquanto persegue o último raio de sol do dia. A brisa vespertina levemente quente acaricia o rosto da garota e as moribundas luzes do dia tingem o gato com um caleidoscópio de cores. \"Você venceu!\" Ela limpa o suor de sua testa e pega o gato no colo. As estrelas surgem no céu e seu inocente e sorridente rosto surge entre elas, como camadas de nuvens radiantes de um pôr-do-sol fluindo pelo horizonte.",
+    "icon": "/starrail/assets/icon/light_cone/23030.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23030.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23030.webp"
+  },
+  "23031": {
+    "id": "23031",
+    "name": "Eu Me Aventuro para Caçar",
+    "rarity": 5,
+    "path": "Rogue",
+    "desc": "\"Escravos miseráveis e ridículos...\" A legião dos Cidadãos da Abundância chegou destruindo tudo como uma avalanche, com a Lupitoxina correndo em direção aos Cavaleiros Verdejantes como uma onda, tentando despertar o medo oculto no coração dos soldados. Ilusões de medo vieram e abalaram a força de vontade dos guerreiros, os levando a soltar suas lâminas e instaurando a hesitação. Mas a linha de frente permanece firme como uma parede de bronze, impermeável às palavras de desdém dos Borisins. Entre os soldados, uma figura solitária se aproxima. Ela movimenta o corpo lentamente, e as bandeiras atrás dela murmuram sob uma intenção assassina oculta. \"A general... é a general...\" \"General Feixiao...\" \"A Garra de Merlin!\" Esses pequenos aplausos e gritos se fundem em um grito de guerra estrondoso. \"Sempre em vigilância! Triunfando eternamente!\" Ela permanece ali, só. Uma figura solitária, mas imbuída com o poder de um exército inteiro.",
+    "icon": "/starrail/assets/icon/light_cone/23031.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23031.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23031.webp"
+  },
+  "23032": {
+    "id": "23032",
+    "name": "Só a Fragrância Permanece",
+    "rarity": 5,
+    "path": "Priest",
+    "desc": "\"Primeiro, analise os hábitos de trabalho do departamento.\" \"Então, implemente recompensas e penalidades com uma mão firme.\" \"É claro, a parte mais importante é entender os interesses pessoais de cada um o mais rápido possível...\" Mesmo estando aqui para desopilar e esquecer um pouco o trabalho, sua mente logo esqueceu do descanso e voltou a pensar nos estresses e nos problemas subsequentes. Ela acendeu rapidamente o incenso calmante que carregava para todo lugar. \"O mundo é tão belo, e ainda assim eu perco a paciência tão rápido... Melhor não pensar em assuntos dessa natureza enquanto estiver viajando...\"",
+    "icon": "/starrail/assets/icon/light_cone/23032.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23032.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23032.webp"
+  },
+  "23033": {
+    "id": "23033",
+    "name": "Inscrição do Ninjutsu: Destruição Deslumbrante do Mal",
+    "rarity": 5,
+    "path": "Mage",
+    "desc": "Em algum lugar do Reino Ninja, um manto de cinzas sombrio cobre a cidade. \"Hiyaaa!\" Uma jovem atravessa os monstros, sua silhueta vibrante cortando a escuridão como uma pincelada contra uma terra sem luar. No meio da fumaça, os Ninjas do Mal estremecem em agonia e descrença. \"Quem... é você?\" \"Eu sou a Ninja Rappa! Um farol de determinação, defendendo a justiça para o mal erradicar.\" Os Ninjas do Mal trocam olhares hesitantes, com os olhos escancarados enquanto tentam fugir. \"Vilões, estão prontos para seus poemas fúnebres proclamar?\" O shuriken dela dança pelo ar, um turbilhão de luz e metal, devastando os adversários com uma velocidade cegante. \"Técnica secreta: Obliteração Deslumbrante!\" A explosão atrás dela destrói a noite, revelando as feridas da cidade. Com um suspiro profundo, ela se lança na distância iluminada pelo neon, onde as luzes vibrantes gritam como um refrão de heavy metal. \"Que espíritos malignos odiosos. A caça suprema da Ninja Deslumbrante deve continuar...\"",
+    "icon": "/starrail/assets/icon/light_cone/23033.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23033.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23033.webp"
+  },
+  "23034": {
+    "id": "23034",
+    "name": "Uma Ascensão Aterrada",
+    "rarity": 5,
+    "path": "Shaman",
+    "desc": "Essas ilusões e falácias foram destruídas. Ele queria ser o sol do mundo inteiro, mas caiu do céu. \"Agora, você sente o que é dor?\" Outra voz em seu coração falou assim. \"Sim. E é isso que eu mereço sentir.\" Ele caiu no pó e respondeu a si mesmo com seus passos pesados. Ele andou na terra e mais uma vez contemplou a agonia que cobre o reino mortal como uma fonte sem fim. Ele pisou nos espinhos que bloqueavam a estrada e ouviu os chamados da humanidade. Ele experimentou angústia, através da qual obteve tranquilidade. \"Cair era originalmente apenas outro nome para voar.\" E no oitavo dia, ele concedeu a si mesmo sua \"partida\".",
+    "icon": "/starrail/assets/icon/light_cone/23034.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23034.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23034.webp"
+  },
+  "23035": {
+    "id": "23035",
+    "name": "A Longa Estrada Leva para Casa",
+    "rarity": 5,
+    "path": "Warlock",
+    "desc": "\"Quem... é ela?\" A garota acaricia a \"eu\" desconhecida. Ela se lembra de como o fogo naquele dia a engoliu por inteiro, e como seu leque enfeitado com joias se transformou em cinzas. Ela certa vez caminhou por uma estrada sem fim, procurando pela luz à frente. Os sons lá fora a chamavam, levando-a adiante, guiando-a através das camadas da noite. Os sons lá dentro a lembravam daquelas promessas não cumpridas, planos não executados e desejos não realizados... Todos eles ainda estavam esperando por ela. Eles nunca se dissiparam no fogo, mas, em vez disso, brilharam cada vez mais nas chamas. \"Sou eu...\" Ela fica no fim da estrada e não olha mais para trás em suas memórias: \"Sou a \"eu\" original, e também a \"eu\" totalmente nova.\"",
+    "icon": "/starrail/assets/icon/light_cone/23035.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23035.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23035.webp"
+  },
+  "23036": {
+    "id": "23036",
+    "name": "Tempo Tecido em Ouro",
+    "rarity": 5,
+    "path": "Memory",
+    "desc": "\"Este fio é o sacrifício de um soldado.\" \"Este fio, o crescimento de um herói.\" \"Este fio, a prosperidade da pólis.\" ... ... A Confeccionadora puxa os fios usando uma agulha, segurando tudo entre seus dedos. \"O destino de alguns heróis já foi rompido...\" Ela pega outro conjunto de fios dourados e continua seu trabalho. \"Os destinos de certos heróis devem continuar...\" O tear dado pela divindade continuou a trabalhar, e as Confeccionadoras dançavam com graça vibrante. Éons já haviam passado pelo tear, e ela estava há muito acostumada a esperar assim... Pelo bem da transformação do tempo em \"Inspiração\" dourada.",
+    "icon": "/starrail/assets/icon/light_cone/23036.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23036.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23036.webp"
+  },
+  "23037": {
+    "id": "23037",
+    "name": "Ao Véu Inalcançável",
+    "rarity": 5,
+    "path": "Mage",
+    "desc": "\"As cartas da Guilda de Intelectuais já foram processadas.\" \"O Universo Simulado está funcionando normalmente...\" \"As coleções literárias foram reimpressas.\" \"Ei, shhh, não incomode a madame Herta...\" Dentro de uma grande torre na borda do cosmos, marionetes trabalham meticulosamente, lidando com todo tipo de tarefa em antecipação à chegada dela... O tempo passa. Incontáveis pessoas passam pelo tecido do tempo como meteoros no céu noturno da história, brilhando por um instante, antes de retornar ao silêncio. \"Já faz tempo que a madame Herta não aparece...\" \"Ela ainda está pensando...?\" \"Hmmm. Pensava que tudo isso terminaria após descobrir alguns axiomas...\" Ela se espreguiça e seus olhos se afastam dos cálculos, como se outra ideia tivesse surgido em sua mente... \"Nada é inquestionável. Vou buscar a verdade até o fim!\"",
+    "icon": "/starrail/assets/icon/light_cone/23037.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23037.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23037.webp"
+  },
+  "23038": {
+    "id": "23038",
+    "name": "Se o Tempo Fosse Uma Flor",
+    "rarity": 5,
+    "path": "Shaman",
+    "desc": "\"Mamãe, quero ouvir outra história!\" \"Minha querida, que tal conversarmos sobre o tempo hoje?\" \"Tempo... o que é isso?\" \"O tempo, minha querida, é como uma flor.\" \"Como os dentes-de-leão que florescem nos campos?\" \"Sim, assim como os dentes-de-leão. O tempo cresce, floresce e dá frutos. Chamamos suas pétalas de 'momentos'.\" \"E então o que acontece?\" \"Então, ela murcha em mil pedaços, deixando sementes que flutuam por toda parte...\" \"Mamãe, isso significa que ela se torna o 'futuro'?\" \"Adivinhe no que ela se transforma depois disso?\" \"Ele se transforma em várias flores, desabrochando em um mar vibrante de flores, certo?\" A mãe não teve tempo de responder, pois a luz do sol que entrava pela janela aquecia o rosto da garota. Aquela figura gentil desapareceu mais uma vez em seu sonho. Ela abriu os olhos: \"Se o tempo fosse uma flor...\" ela murmurou. \"Certamente se tornaria um mar de flores\", disse a garota, com serenidade. \"Claro que sim!\" Exclamou a garota brincalhona, comemorando sua obra-prima.",
+    "icon": "/starrail/assets/icon/light_cone/23038.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23038.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23038.webp"
+  },
+  "23039": {
+    "id": "23039",
+    "name": "Chamas de Sangue, Incendeiem o Meu Caminho",
+    "rarity": 5,
+    "path": "Warrior",
+    "desc": "O orvalho frio congelado na lâmina, deslizando em listras vermelhas. A região selvagem manchada de ferrugem ainda brilhava com as brasas da batalha, chamas saltando sobre as cinzas. \"Mydeimos, aquela foi realmente uma luta divina!\" Gritou em êxtase um guerreiro de peito nu que limpava sua arma. \"Mydei, um dia, serei tão imbatível quanto você!\" Uma criança olhou para ele com reverência, segurando uma espada quebrada em suas pequenas mãos. \"Príncipe herdeiro, nosso retorno a Castrum Kremnos está à vista.\" Um homem idoso sorriu, erguendo sua xícara em um brinde a ele. Ele assentiu silenciosamente e caminhou até a borda do acampamento. A dor do renascimento ainda percorria sua pele. Amanhã, ele lideraria o Destacamento Kremnoano mais uma vez, migrando para terras estrangeiras. Onde essa peregrinação terminaria, ele não sabia. A única certeza era esta: ele cumpriria o dever de um rei até que o sangue e as chamas o consumissem. À medida que a noite avançava, ele bebeu sozinho o vinho de sangue. Um bardo que passava tocava em suas cordas uma melodia errante que pairava no ar: \"O lar é a terra dos sonhos, não um lugar onde alguém possa alcançar.\"",
+    "icon": "/starrail/assets/icon/light_cone/23039.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23039.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23039.webp"
+  },
+  "23040": {
+    "id": "23040",
+    "name": "O Adeus Mais Belo",
+    "rarity": 5,
+    "path": "Memory",
+    "desc": "Mais uma cerimônia de Partida acontecia. À beira do rio, uma jovem pisava no luar fragmentado enquanto tecia uma coroa de flores de despedida. Antigos lamentos cristalizavam no ar frio, enquanto o rio silencioso fluía para uma terra distante repleta de flores. Pergaminhos manchados de sangue, espadas enferrujadas, lenços bordados com poesias... Ela recebeu seus pertences junto com as histórias de suas vidas. \"Meus olhos são como lentes, eternamente ansiando pelo céu estrelado.\" Em memória do erudito que partiu cedo demais. \"Para a vida e para a morte, o cavaleiro oferece apenas um olhar frio.\" As palavras que o guerreiro inominado manteve por toda a vida. \"A vida é apenas morte brilhando em uma luz cintilante.\" O último verso da poetisa que buscava a eternidade, escrito com sua própria vida. ... \"Todas as flores já brilharam com orgulho...\" Ao som do suave lamento do rio, ela ofereceu poemas aos que partiram, coroas de flores e recordações. \"Se o murchar é inevitável, que nossa despedida seja... ao menos um pouco mais bela.\"",
+    "icon": "/starrail/assets/icon/light_cone/23040.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23040.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23040.webp"
+  },
+  "23041": {
+    "id": "23041",
+    "name": "A Vida Forjada em Chamas",
+    "rarity": 5,
+    "path": "Mage",
+    "desc": "Naquele experimento oculto, várias ilusões surgiam continuamente, arrastando seus passos. Os sussurros sedutores o convidavam a abandonar aquele tema traiçoeiro, pois qual seria o motivo de apostar sua vida? A voz fria e ameaçadora declarou que aqueles que caminham à beira da vida e da morte acabarão por consumir suas vidas nas chamas. Então vieram as acusações furiosas, gritando para lançar o blasfemo, aquele que profanou as divindades, ao mais cruel dos campos de execução. \"A performance da vida também deve chegar ao seu fim.\" Ele fechou os olhos, agarrou a chama divina e deixou a dor afogar sua alma em desvanecimento. Primeiro, seu olhar resoluto. Depois, seu coração pulsante. A alma completa... Ele se lançou voluntariamente àquela chama mais pura e intensa para ser fundido. As vozes borbulharam e depois silenciaram. Na escuridão, a verdade brilhante começou a tomar forma em suas mãos.",
+    "icon": "/starrail/assets/icon/light_cone/23041.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23041.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23041.webp"
+  },
+  "23042": {
+    "id": "23042",
+    "name": "Que o Arco-Íris Permaneça no Céu",
+    "rarity": 5,
+    "path": "Memory",
+    "desc": "\"As emoções são como nuvens, e nós somos o céu que as carregam. Se o céu está nublado, nossas emoções flutuarão por todos os lados.\" A médica escuta com atenção as tristezas do visitante, oferecendo palavras suaves de conforto. \"Por favor, feche os olhos e respire devagar... Imagine-se em um lugar quente e tranquilo...\" Como se infundida com magia, uma radiância arco-íris de sete cores derrama-se de debaixo das asas da criatura alada. \"Uma brisa atravessaria as planícies, carregando o perfume das flores silvestres. Nuvens úmidas passariam, carregadas de luz solar...\" O visitante gradualmente mergulha em um sonho tranquilo, respondendo apenas com o ritmo suave de respirações firmes. Após ver o último paciente, a médica gentilmente fecha a porta da enfermaria. Ao longe, a infinita noite eterna ainda avança, com muitas ruínas erguidas como cicatrizes da terra. \"Na próxima vida, que a aurora brilhe sobre todos...\" Antes de partir, ela faz um desejo ao céu: \"Que o céu eternamente mantenha aquele brilho arco-íris.\"",
+    "icon": "/starrail/assets/icon/light_cone/23042.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23042.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23042.webp"
+  },
+  "23043": {
+    "id": "23043",
+    "name": "Mentiras Dançando ao Vento",
+    "rarity": 5,
+    "path": "Warlock",
+    "desc": "A garota com orelhas de gato estica seus membros no topo do telhado, deslizando pela noite. No tesouro que estava adormecido por mil anos, ela se move sem esforço, reunindo tesouros preciosos em seu abraço antes de desaparecer sem emitir som algum. \"O tolo do destino nunca vai me pegar!\" O vento através das ruínas carrega o cheiro da natureza selvagem, farfalhando sobre seu capuz. Apoiando sua cabeça contra a pedra fria, ela engole um pedaço de ração seca e dura, lançando uma moeda de ouro entre os dedos. Um som distante chega aos seus ouvidos. Na pólis sagrada banhada pela luz da aurora, as multidões ainda se divertem no calor e celebração. \"Quanto tempo mais... um ano, ou dez mil?\" Ela se espreguiça com um bocejo preguiçoso, deixando seus pensamentos inquietos de lado. \"Hah, a Cífera sempre ri por último!\" Uma faixa dourada de raio corta o céu, e sua proclamação permanece no vento. Assim como havia ocorrido mil anos atrás.",
+    "icon": "/starrail/assets/icon/light_cone/23043.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23043.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23043.webp"
+  },
+  "23044": {
+    "id": "23044",
+    "name": "Assim Arde a Alvorada",
+    "rarity": 5,
+    "path": "Warrior",
+    "desc": "Mais uma vez, no fim da jornada, a silhueta do homem foi engolida pelo sol dourado e abrasador. \"Então... aquele sangue dourado, a última esperança de salvação, era mesmo...\" Suas lágrimas não chegaram a cair: evaporaram em meio ao vapor. \"Floquinho de Neve, até amanhã!\" \"Portador, lembra de continuar vivo até o ato final!\" \"Vá... e seja a alvorada de Amphoreus...\" ... Os desejos do povo ecoaram no vazio. O Herói Inominado ruiu, sua morte feroz e trágica exposta ao mundo. \"Se a raiva não puder reduzir este destino distorcido a cinzas...\" Ele escalava até o cume, vezes sem conta, apenas para cair e se estilhaçar, outra e outra vez... \"Então que eu arda junto com ele!\"",
+    "icon": "/starrail/assets/icon/light_cone/23044.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23044.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23044.webp"
+  },
+  "23045": {
+    "id": "23045",
+    "name": "Uma Coroação Sem Gratidão",
+    "rarity": 5,
+    "path": "Warrior",
+    "desc": "Os ouvidos da garota ressoaram na fantasia com as palavras conversadas naquele dia. \"Esta espada não foi difícil de retirar, Merlin.\" \"De fato. Tornar-se o rei que todos desejam não será difícil para você, já que estou te guiando. No entanto, Altria... A dificuldade está em que você nem sempre poderá atender às expectativas de todos.\" \"Eles podem escolher um rei mais adequado até lá. Eu não protestarei.\" \"Mas e se uma pessoa assim nunca existir?\" \"...Então, farei o meu melhor para atender às expectativas de todos.\" Agora, a garota já havia se dado conta de quão profunda seria aquela tragédia. Ela teria escolhido desistir se pudesse voltar ao momento em que tudo começou? O rei não fala e simplesmente segura a espada com força. A pedreira novamente solta um rugido estrondoso enquanto a espada é retirada.",
+    "icon": "/starrail/assets/icon/light_cone/23045.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23045.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23045.webp"
+  },
+  "23046": {
+    "id": "23046",
+    "name": "O Inferno Onde os Ideais Ardem",
+    "rarity": 5,
+    "path": "Rogue",
+    "desc": "As chamas do carma acendem as planícies. Os ideais dos desconhecidos se transformam em cinzas, enquanto os ideais dos outros ardem apaixonadamente. O Guardião atravessa entre balas e pontas de flechas. Ele não pode salvar ninguém aqui. Ele pode salvar todos aqui. Matar uma pessoa para salvar uma pessoa. Matar dez mil para salvar dez mil. O destino de pisotear nossos semelhantes é uma parte da existência contínua da humanidade. O Guardião já havia se acostumado com tudo isso, e seus passos nunca hesitaram. A determinação que cobre suas pernas é como o vento. A determinação que cobre seus braços é como o fogo. Ele ainda busca um milagre que possa trazer salvação.",
+    "icon": "/starrail/assets/icon/light_cone/23046.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23046.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23046.webp"
+  },
+  "23047": {
+    "id": "23047",
+    "name": "Por que o Oceano Canta?",
+    "rarity": 5,
+    "path": "Warlock",
+    "desc": "Ondas surgem à frente, seu rugido ecoando pelo paraíso. Peixes nadam pelos mares vazios, onde a espuma antiga se agita e aquela melodia parece ainda persistir. \"Nobre Princesa, venha banquetear conosco!\" Atendendo ao chamado do mar profundo, ela dançou com a maré negra até que restasse só ela naquele palco grandioso. \"Mestra das espadas dos mares, por que permaneces em silêncio, o que te faz cantar?\" A cada passo sobre a Terra, ela suportava a dor, raramente cantando, somente sua lâmina carmesim entoava o lamento da vida. \"Dux Gladiatorum, venha comigo conquistar os mares estrelados!\" Quando encontrou essa luz flamejante, finalmente empunhou seu arco, acreditando que era o início da celebração. ... \"Helektra... Helektra... quando tua canção acabar, para onde nadarás?\" Quando esperanças vãs se estilhaçam, ela sempre responde às perguntas com uma melodia solitária, que encanta todos que a ouvem... Ou talvez... seja no reino mortal ou no mar profundo, a única verdadeira ouvinte é a própria intérprete.",
+    "icon": "/starrail/assets/icon/light_cone/23047.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23047.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23047.webp"
+  },
+  "23048": {
+    "id": "23048",
+    "name": "Era Gravada pelo Sangue Dourado",
+    "rarity": 5,
+    "path": "Shaman",
+    "desc": "\"Como a história lembrará de Cerydra daqui a mil anos?\" Foi o que lhe perguntaram uma vez. Para alguns, ela foi a eminente \"Imperatriz\". A tirana fria e cruel, a ambiciosa \"Portadora das Chamas\", a governante que incendiou a Antiga Era com sangue e fogo... Outros afirmavam que ela era apenas uma \"peça\" lamentável. Essa soberana abandonada era nada mais que uma prisioneira da ambição, destinada a perder tudo naquele jogo de xadrez contra as divindades. E havia quem dissesse que, nas profundezas de seu coração, mais escuras que o abismo do oceano, ela era apenas uma mortal chamada \"Cerydra\"... Alguém que chorava pelos companheiros caídos, que hesitava e temia diante de seu destino pesado, incapaz de seguir adiante... \"Heh, não há necessidade de a história se lembrar de mim...\" Engolindo a amargura em seu peito, ela prosseguiu pelo Caminho da Perseguição às Chamas, pavimentado com sacrifícios... \"É o nosso sangue dourado em chamas que há de gravá-la!\"",
+    "icon": "/starrail/assets/icon/light_cone/23048.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23048.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23048.webp"
+  },
+  "23049": {
+    "id": "23049",
+    "name": "Ao Brilho Estelar da Noite Eterna",
+    "rarity": 5,
+    "path": "Memory",
+    "desc": "Nas fendas do tempo, só o batimento do coração dela ecoa. Como em muitas noites antes, observando na escuridão e repousando em letargia. Ela valoriza as memórias que lhe foram confiadas. A garota parte de um ponto inicial em branco, pintando cada ponto de parada em que ficou com cores vibrantes. Um aconchegante Expresso, companheiros com personalidades únicas, planetas deslumbrantes e magníficos... como um sonho bonito demais para ser deixado para trás. \"A minha verdadeira jornada começa agora!\" A declaração da garota parece sussurrar bem ao lado do seu ouvido. Ela olha para o céu estrelado distante, enquanto um feixe de luz se aproxima. É o farol do Expresso, como uma estrela-cadente. \"Boa noite, Março... Quando acordar, continue sua jornada de Desbravamento ♭\" Enquanto a maré de Memória surge, ela enterra seu desejo no fundo no coração, aqueles pequenos sussurros e aquela luz ...ela nunca esqueceu.",
+    "icon": "/starrail/assets/icon/light_cone/23049.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23049.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23049.webp"
+  },
+  "23050": {
+    "id": "23050",
+    "name": "Nunca Esqueça Sua Chama",
+    "rarity": 5,
+    "path": "Warlock",
+    "desc": "\"Venha, venha até mim...\" Uma memória vívida, guiada pelas chamas, envolve seu corpo e alma. Os dias passados haviam caído no túmulo, é verdade? \"Shhh, não chore, não resista...\" Ela se grava nos corações alheios, enquanto olhares estranhos se tornam gradualmente familiares. \"Você se lembra agora?\" À medida que as brasas das velhas lembranças se dispersam, seu rosto carrega um traço de fragrância floral intoxicante... \"Eu sou sua memória.\"",
+    "icon": "/starrail/assets/icon/light_cone/23050.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23050.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23050.webp"
+  },
+  "23051": {
+    "id": "23051",
+    "name": "Ainda que o Caminho Seja Longo",
+    "rarity": 5,
+    "path": "Knight",
+    "desc": "Nas terras antigas e ilimitadas, um jovem caminha sozinho em sua missão. Parece retornar aos dias errantes, atravessando ondas turbulentas, enfrentando vento e geada, batalhando contra colossos, lutando contra marés furiosas. Mas nesses momentos de trégua, ele não está só. Embora em mundos diferentes, ele ainda consegue ver a luz adiante... É a luz da esperança de todos os seres vivos. A terra devastada já não pode sustentar nova vida, e as criaturas recém-nascidas se reúnem ao seu redor em busca de conforto e abrigo. São as palavras que seus companheiros deixaram em seu coração, como uma viagem sem fim que os conecta firmemente. Os problemas do seu passado podem agitar-se com o vento, mas o caminho que ele percorreu se tornará a força para sua metamorfose. \"Eu serei o sentinela do caminho do Desbravamento.\" O jovem salta para frente com sua lança, avançando em direção à luz... \"E eu defenderei toda esperança que ameaça desaparecer!\"",
+    "icon": "/starrail/assets/icon/light_cone/23051.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23051.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23051.webp"
+  },
+  "23052": {
+    "id": "23052",
+    "name": "Instante de Eterno Amor",
+    "rarity": 5,
+    "path": "Memory",
+    "desc": "O céu azul reflete um amanhã brilhante. Um passo, dois passos... o caminho da donzela tem sido tão longo, mas felizmente essas histórias preciosas não foram esquecidas pelos ciclos do tempo. Agora, escrita por todos juntos, a epopeia foi concluída, dando boas-vindas ao seu final. Estrelas, flores, pássaros e um belo novo mundo. Gaze, grinaldas, vestidos longos e o vento que carrega bênçãos. A busca de trinta milhões de vidas transformada em um único momento de felicidade, suficiente para superar uma eternidade de palavras. \"Hihi, é uma promessa...\" A garota se vira para dar um sorriso gentil. \"Uma de nós fica no passado, e a outra caminha em direção ao futuro... mas nossos corações nunca estiveram separados. ♪\" Ela se ergue na ponta dos pés e adentra o passado. E a memória, transformando-se em ondulações de devaneios passados, flutua em direção ao amanhã.",
+    "icon": "/starrail/assets/icon/light_cone/23052.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23052.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23052.webp"
+  },
+  "23053": {
+    "id": "23053",
+    "name": "Deslumbramento Por Um Mundo Florido",
+    "rarity": 5,
+    "path": "Elation",
+    "desc": "Quando ela ri, seus fãs riem. Quando ela chora, seus fãs derramam lágrimas. Quando ela se irrita, seus fãs ficam furiosos. \"Fofa, brincalhona, popular. A Sparxie é tudo o que eu quero ser...\" \"Não se deixe enganar, a Sparxie é um veneno, ela é uma mentira...\" \"Eu vou seguir a Sparxinha para sempre, ela me deu coragem para renascer...\" \"A Sparxie deveria desaparecer desse mundo!\" ... Cliques, comentários flutuantes, discussões... Sparxie arde cada vez mais intensamente nos olhos de todos. \"Eu recebi todos os sentimentos de vocês, hihi! Vou devolver eles com a resposta mais apaixonada ♥! Por exemplo...\" Quando a stream chega ao fim, a jovem pisca, como se enxergasse o coração de todos por trás das telas... \"Aqui tá sua chance! Você escolheria se tornar o amorzinho da Sparxie?\"",
+    "icon": "/starrail/assets/icon/light_cone/23053.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23053.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23053.webp"
+  },
+  "23054": {
+    "id": "23054",
+    "name": "Quando Ela Decidiu Ver",
+    "rarity": 5,
+    "path": "Elation",
+    "desc": "Mais uma vez, dentro da Barreira de Reflexão de Deca-Luz, ela observou como o destino se entrelaçava como uma teia cintilante de pérolas, refletindo e sobrepondo-se, com causas e efeitos infinitos. \"O que você vê?\" Seu mestre uma vez lhe perguntou. Alguns profetas viram sua própria insignificância e já não acreditavam que o esforço humano pudesse mudar o destino. Outros viram as grandes marés do futuro, seguindo o fluxo para encontrar soluções ideais. Naquele momento, a jovem contemplou a barreira e viu uma escuridão sem limites. Esse é um futuro há muito predeterminado. Ela também viu o \"brilho estelar\", as possibilidades tênues ainda não devoradas pelo olhar das divindades. Aquele reluzir do brilho estelar uma vez escapou por entre seus dedos, deixando o Fanghu na noite eterna. Ainda assim, ela também havia capturado variáveis fugazes, virando a Felicidade e o Infortúnio do Yuque. \"Um beco sem saída é chamado assim apenas porque ninguém ousa desafiar o destino.\" Ela queria encontrar sua própria resposta, mesmo que isso significasse adentrar o perigo predestinado. \"O que eu vejo não importa. O que importa é o que eu posso fazer.\"",
+    "icon": "/starrail/assets/icon/light_cone/23054.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23054.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23054.webp"
+  },
+  "23056": {
+    "id": "23056",
+    "name": "O Fim de uma Mentira",
+    "rarity": 5,
+    "path": "Rogue",
+    "desc": "\"O que a \"Introdução à Dedução Investigativa' dizia mesmo? A menos que seja absolutamente necessário...\" Presas tecidas em vermelho e negro rastejaram, centímetro a centímetro, por seu ombro. Onde a noite se afoga mais fundo, nuvens de dúvida emergem. Na floresta envolta em sombras, feras cruéis espreitam. \"Este jogo de gato e rato... está na hora de acabar.\" O carmesim se dissipa. O luar ainda reluz prateado pelo céu, e as estrelas repousam em um sono sereno. Esta é mais uma de suas buscas pela verdade, mas as sombras do passado tocam seu ombro, e então, se desfazem no nada. As manobras deste exato momento continuam, até que... \"Até que... o dia em que a retribuição recaia sobre os perversos.\"",
+    "icon": "/starrail/assets/icon/light_cone/23056.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23056.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23056.webp"
+  },
+  "24000": {
+    "id": "24000",
+    "name": "Na Queda de Um Aeon",
+    "rarity": 5,
+    "path": "Warrior",
+    "desc": "Começou com um flash de luz. Um por um, caíram enquanto a ameaça de um suspiro pairava. ELES tiveram que parar de se autorreplicar e correram para se abraçar. Tentando oferecer o direito de reprodução em troca da possibilidade de sobreviver. Seguraram as mãos numa demonstração inédita de união. Mas os Caminhos chegaram a um fim abrupto e encontraram a verdadeira morte.",
+    "icon": "/starrail/assets/icon/light_cone/24000.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/24000.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/24000.webp"
+  },
+  "24001": {
+    "id": "24001",
+    "name": "Percorrendo o Mar Estelar",
+    "rarity": 5,
+    "path": "Rogue",
+    "desc": "Avançando pelo mar de estrelas, navega com a velocidade de um clarão cromático de um arco-íris. Uma jornada de caça às abominações imortais, buscando curas e milagres, em uma jornada de libertação. SUA jornada será semelhante a uma promessa mantida, ad infinitum.",
+    "icon": "/starrail/assets/icon/light_cone/24001.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/24001.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/24001.webp"
+  },
+  "24002": {
+    "id": "24002",
+    "name": "Textura de Memórias",
+    "rarity": 5,
+    "path": "Knight",
+    "desc": "O universo era como uma paisagem árida cheia de lixo. De vez em quando, havia tesouros desconhecidos. Olhavam pelas frestas do passado, escolhendo sementes de memória. Para uma nova vida nascer, sua semente tem que estar morta. Pedras preciosas cor-de-rosa, azul e branco foram encontradas, brilhando gentilmente em SUA sementeira, embora o universo tenha permanecido em enigmático silêncio.",
+    "icon": "/starrail/assets/icon/light_cone/24002.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/24002.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/24002.webp"
+  },
+  "24003": {
+    "id": "24003",
+    "name": "Cura Solitária",
+    "rarity": 5,
+    "path": "Warlock",
+    "desc": "Coisas moldadas pelas mãos secretas sem forma e incorpóreas. Na totalidade do vazio, ainda existe um sonho repentino. Aqueles que cortejam a destruição colherão frutos da ruína, enquanto os que clamam pela vida sobreviverão. Aquele que for extinto ainda pode soltar faíscas, e aquele que já secou pode ser preenchido novamente. Na compaixão pela salvação do caos, o elixir nutre as sombras. Com as costas voltadas para a escuridão entre as estrelas, o conteúdo deste frasco só pode ser contido em vão. \"Por mais paradoxais que sejam esses saberes, neles brilha a totalidade do nosso orgulho\".",
+    "icon": "/starrail/assets/icon/light_cone/24003.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/24003.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/24003.webp"
+  },
+  "24004": {
+    "id": "24004",
+    "name": "Cálculo Ininterrupto",
+    "rarity": 5,
+    "path": "Mage",
+    "desc": "Eternamente suspenso no vazio, Fluxos de dados brilhantes invadem SUA mente. Transformando todo o passado e futuro em símbolos, a Divindade deduzirá o fim através do começo. Conhecimento, respostas, verdades... Em meio à informação, uma luz brilhante surge, E tudo fica claro para a Divindade.",
+    "icon": "/starrail/assets/icon/light_cone/24004.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/24004.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/24004.webp"
+  },
+  "24005": {
+    "id": "24005",
+    "name": "As Cortinas da Memória Nunca Caem",
+    "rarity": 5,
+    "path": "Memory",
+    "desc": "Seja ele agitado, desolado, fugaz ou duradouro... cada planeta e cada instante estão repletos de incontáveis eventos. Essa história condensada derrete com um único toque, fluindo como lágrimas do olhar do mundo: Alguns dizem: \"Quão pesadas devem ser essas lágrimas, os anos acumulados capazes de desvanecer a eternidade.\" Alguns dizem: \"Quão maravilhosas são as histórias que contam, a tristeza tão clara, a alegria tão serena, sem serem prejudicadas nem mesmo por um indício de falsidade.\" O cosmos flui em silêncio e não sai nenhuma palavra de SUA boca, SEUS olhos apenas observam. Observam e esperam que se tornem \"memórias\".",
+    "icon": "/starrail/assets/icon/light_cone/24005.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/24005.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/24005.webp"
+  },
+  "24006": {
+    "id": "24006",
+    "name": "Euforia Repleta de Bênçãos",
+    "rarity": 5,
+    "path": "Elation",
+    "desc": "Sob as pontas dos dedos de gênios, os dados fluem constantemente, sem fim. Máscaras à espreita nas frestas entre \"ocorrências\", observando cada possibilidade esperando para se desdobrar. Análise, extrapolação, respostas, perguntas. Esse não é um palco perfeito para gênios? Celebrações, lágrimas, rugidos, lamentos: as emoções da vida florescem em sua plenitude. A peça silenciosa se torna estrondosa, e bênçãos preenchem a Euforia até a borda. Esse é o ato mais cativante? A resposta permanece a mesma: completamente imprevisível!",
+    "icon": "/starrail/assets/icon/light_cone/24006.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/24006.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/24006.webp"
+  }
+}

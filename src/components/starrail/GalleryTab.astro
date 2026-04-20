@@ -1,0 +1,307 @@
+---
+// src/components/starrail/GalleryTab.astro
+interface Props {
+  char: any
+  lang: string
+  allData: Record<string, any>
+  labels: any
+}
+
+const { char, lang, allData } = Astro.props
+
+const baseDir = `/src/data/starrail/${lang}`
+const avatarsModule = allData[`${baseDir}/avatars.json`] as any
+const avatarsData: Record<string, any> = avatarsModule?.default ?? avatarsModule ?? {}
+
+const toAssetUrl = (rel: string) => {
+  if (!rel) return ''
+  
+  // 1. 경로 정리
+  let cleanPath = rel.replace(/^\//, '').replace(/^starrail\/assets\//, '')
+
+  // 2. 파일명 추출
+  const fileName = cleanPath.split('/').pop() || ''
+
+  // 3. 스탯 아이콘 교정 (Icon...webp)
+  if (fileName.includes('Icon')) {
+    cleanPath = `icon/property/${fileName}`
+  } 
+  // 4. 유물 vs 캐릭터 아이콘 구분 교정
+  else if (cleanPath.includes('icon/character/')) {
+    // 🔍 핵심 수정 부분: 
+    // 숫자 3자리 뒤에 점(.)이 오거나(세트 아이콘: 314.webp) 
+    // 숫자 3자리 뒤에 언더바(_)가 오는 경우(부위 아이콘: 314_0.webp)만 relic으로 변경
+    const isRelic = /^\d{3}[._]/.test(fileName);
+    
+    if (isRelic) {
+      cleanPath = cleanPath.replace('icon/character/', 'icon/relic/')
+    }
+  }
+
+  return `/starrail/assets/${cleanPath}`
+}
+
+const cleanText = (text: string) => {
+  if (!text) return ''
+  return text
+    .replace(/\{RUBY_B#([^}]+)\}([^\{]+)\{RUBY_E\#\}/g, '$1')
+    .replace(/\{F#([^}]*)\}\{M#([^}]*)\}/g, '$2')
+    .replace(/\{NICKNAME\}/g, 'Trailblazer')
+    .trim()
+}
+
+// 기본 이미지들: avatar(아이콘), preview(카드), portrait(전신)
+const images: { label: string; src: string; type: 'square' | 'card' | 'portrait' }[] = []
+
+if (char?.icon) {
+  images.push({ label: lang === 'kr' ? '아이콘' : 'Icon', src: toAssetUrl(char.icon), type: 'square' })
+}
+if (char?.preview) {
+  images.push({ label: lang === 'kr' ? '카드' : 'Card', src: toAssetUrl(char.preview), type: 'card' })
+}
+if (char?.portrait) {
+  images.push({ label: lang === 'kr' ? '전신' : 'Portrait', src: toAssetUrl(char.portrait), type: 'portrait' })
+}
+
+// avatars.json에서 해당 캐릭터 아바타 변형들 (예: 개척자 변형 등)
+// avatars.json 구조: { [avatarId]: { id, name, icon, ... } }
+// 캐릭터 id 기반으로 관련 아바타 필터
+const relatedAvatars = Object.values(avatarsData).filter((av: any) => {
+  if (!av?.id) return false
+  // 아바타 id가 캐릭터 id로 시작하는 경우 (예: 8001 → 800101, 800102...)
+  return String(av.id).startsWith(String(char?.id ?? 'NONE'))
+})
+
+// CV 정보
+const cvLabels: Record<string, string> = {
+  kr: lang === 'kr' ? '성우 (한국어)' : 'Voice (KR)',
+  en: lang === 'kr' ? '성우 (영어)' : 'Voice (EN)',
+  jp: lang === 'kr' ? '성우 (일본어)' : 'Voice (JP)',
+  cn: lang === 'kr' ? '성우 (중국어)' : 'Voice (CN)',
+}
+---
+
+<div class="gallery-tab">
+
+  <!-- 메인 이미지 그리드 -->
+  <div class="gallery-section">
+    <div class="panel-header">
+      <div class="panel-accent"></div>
+      <h2 class="panel-title">{lang === 'kr' ? '일러스트' : 'Artwork'}</h2>
+    </div>
+
+    <div class="art-grid">
+      {images.map(img => (
+        <div class={`art-card art-card--${img.type}`}>
+          <div class="art-label">{img.label}</div>
+          <a href={img.src} target="_blank" rel="noopener noreferrer" class="art-link" aria-label={`View ${img.label} full size`}>
+            <img
+              src={img.src}
+              alt={`${cleanText(char?.name)} — ${img.label}`}
+              class="art-img"
+              loading="lazy"
+              decoding="async"
+            />
+            <div class="art-overlay">
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+            </div>
+          </a>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- 아바타 변형 (개척자 등 변형 캐릭터) -->
+  {relatedAvatars.length > 1 && (
+    <div class="gallery-section">
+      <div class="panel-header">
+        <div class="panel-accent"></div>
+        <h2 class="panel-title">{lang === 'kr' ? '아바타 변형' : 'Avatar Variants'}</h2>
+      </div>
+      <div class="avatar-grid">
+        {relatedAvatars.map((av: any) => (
+          <div class="avatar-card">
+            <div class="avatar-img-wrap">
+              <img
+                src={toAssetUrl(av.icon)}
+                alt={av.name ?? ''}
+                width="64"
+                height="64"
+                loading="lazy"
+                decoding="async"
+                class="avatar-img"
+              />
+            </div>
+            {av.name && <p class="avatar-name">{cleanText(av.name)}</p>}
+          </div>
+        ))}
+      </div>
+    </div>
+  )}
+
+  <!-- 캐릭터 정보 -->
+  <div class="gallery-section">
+    <div class="panel-header">
+      <div class="panel-accent"></div>
+      <h2 class="panel-title">{lang === 'kr' ? '캐릭터 정보' : 'Character Info'}</h2>
+    </div>
+    <div class="info-grid">
+      <div class="info-row">
+        <span class="info-key">{lang === 'kr' ? '이름' : 'Name'}</span>
+        <span class="info-val">{cleanText(char?.name)}</span>
+      </div>
+      {char?.tag && (
+        <div class="info-row">
+          <span class="info-key">{lang === 'kr' ? '태그' : 'Tag'}</span>
+          <span class="info-val">{char.tag}</span>
+        </div>
+      )}
+      {char?.rarity && (
+        <div class="info-row">
+          <span class="info-key">{lang === 'kr' ? '희귀도' : 'Rarity'}</span>
+          <span class="info-val info-val--stars">{'★'.repeat(char.rarity)}</span>
+        </div>
+      )}
+      {char?.max_sp != null && (
+        <div class="info-row">
+          <span class="info-key">{lang === 'kr' ? '최대 에너지' : 'Max Energy'}</span>
+          <span class="info-val">{char.max_sp}</span>
+        </div>
+      )}
+    </div>
+  </div>
+
+</div>
+
+<style>
+.gallery-tab { display: flex; flex-direction: column; gap: 2rem; }
+.gallery-section { display: flex; flex-direction: column; gap: 1rem; }
+
+/* Art grid */
+.art-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  gap: 0.75rem;
+}
+
+.art-card {
+  position: relative;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--c-surface);
+  transition: border-color var(--anim-fast);
+}
+.art-card:hover { border-color: var(--c-accent); }
+
+.art-label {
+  position: absolute;
+  top: 0.5rem; left: 0.5rem;
+  z-index: 2;
+  font-size: 0.58rem;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  padding: 0.15em 0.5em;
+  border-radius: 4px;
+  backdrop-filter: blur(4px);
+}
+
+.art-link {
+  display: block;
+  position: relative;
+  overflow: hidden;
+}
+
+.art-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  transition: transform var(--anim-med);
+}
+.art-card:hover .art-img { transform: scale(1.04); }
+
+.art-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  opacity: 0;
+  transition: opacity var(--anim-fast);
+}
+.art-card:hover .art-overlay { opacity: 1; }
+
+/* Square icon - 정방형 */
+.art-card--square .art-img {
+  aspect-ratio: 1;
+  object-fit: contain;
+  background: var(--c-surface2);
+  padding: 0.5rem;
+}
+
+/* Avatar variants */
+.avatar-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+.avatar-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+  padding: 0.7rem;
+  background: var(--c-surface);
+  min-width: 80px;
+}
+.avatar-img-wrap {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid var(--c-border-hi);
+  background: var(--c-surface2);
+}
+.avatar-img { width: 100%; height: 100%; object-fit: cover; }
+.avatar-name { font-size: 0.62rem; font-weight: 700; text-align: center; color: var(--c-muted); word-break: keep-all; }
+
+/* Info grid */
+.info-grid {
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-lg);
+  background: var(--c-surface);
+  overflow: hidden;
+}
+.info-row {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.6rem 1rem;
+  border-bottom: 1px solid var(--c-border);
+}
+.info-row:last-child { border-bottom: none; }
+.info-key {
+  font-size: 0.65rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  min-width: 80px;
+  flex-shrink: 0;
+}
+.info-val {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--c-text);
+  word-break: keep-all;
+}
+.info-val--stars { color: #fbbf24; }
+</style>

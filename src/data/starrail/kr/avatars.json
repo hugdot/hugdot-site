@@ -1,0 +1,2457 @@
+{
+  "1": {
+    "id": "1",
+    "name": "온명덕",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Wenmingde.webp"
+  },
+  "2": {
+    "id": "2",
+    "name": "Dr. 파고파고",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_DoctorDig.webp"
+  },
+  "3": {
+    "id": "3",
+    "name": "「와일드 파이어」 공식 계정",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "4": {
+    "id": "4",
+    "name": "철위대 금지구역 보도자료",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "5": {
+    "id": "5",
+    "name": "록키",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Rocky.webp"
+  },
+  "6": {
+    "id": "6",
+    "name": "소라 속 웃음",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "7": {
+    "id": "7",
+    "name": "「헤르타•감시 시스템」",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "8": {
+    "id": "8",
+    "name": "아브라함",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Abraham.webp"
+  },
+  "9": {
+    "id": "9",
+    "name": "???",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "10": {
+    "id": "10",
+    "name": "줄리안",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Julian.webp"
+  },
+  "11": {
+    "id": "11",
+    "name": "???",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Julian.webp"
+  },
+  "12": {
+    "id": "12",
+    "name": "올레그",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Oleg.webp"
+  },
+  "13": {
+    "id": "13",
+    "name": "은하열차 패밀리",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Train.webp"
+  },
+  "14": {
+    "id": "14",
+    "name": "???",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "15": {
+    "id": "15",
+    "name": "헤르타 원럽 클럽",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "16": {
+    "id": "16",
+    "name": "무명인사",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "17": {
+    "id": "17",
+    "name": "마스 로봇",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "18": {
+    "id": "18",
+    "name": "무면허 조종사",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "19": {
+    "id": "19",
+    "name": "안다니 똥파리 리차드",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "20": {
+    "id": "20",
+    "name": "빌 게이버",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "21": {
+    "id": "21",
+    "name": "초록빛 바다",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "22": {
+    "id": "22",
+    "name": "레드 피존",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "23": {
+    "id": "23",
+    "name": "바이올렛 설리",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "24": {
+    "id": "24",
+    "name": "파멜라",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Pamela.webp"
+  },
+  "25": {
+    "id": "25",
+    "name": "악당",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "26": {
+    "id": "26",
+    "name": "폭탄 머리야말로 예술",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "27": {
+    "id": "27",
+    "name": "애인&친구 찾기 채팅",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "28": {
+    "id": "28",
+    "name": "얼굴로 방어",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "29": {
+    "id": "29",
+    "name": "레너드",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Leonard.webp"
+  },
+  "30": {
+    "id": "30",
+    "name": "스타 네트워크",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "31": {
+    "id": "31",
+    "name": "단단",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Tantan.webp"
+  },
+  "32": {
+    "id": "32",
+    "name": "노혜",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Luhui.webp"
+  },
+  "33": {
+    "id": "33",
+    "name": "온부서",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Wnfurui.webp"
+  },
+  "34": {
+    "id": "34",
+    "name": "여우족 요정 대청",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Daiqing.webp"
+  },
+  "35": {
+    "id": "35",
+    "name": "???",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "36": {
+    "id": "36",
+    "name": "정육점",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "37": {
+    "id": "37",
+    "name": "「광운 의상점」 자동 응답 서비스",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "38": {
+    "id": "38",
+    "name": "서유",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Xikui.webp"
+  },
+  "39": {
+    "id": "39",
+    "name": "여진",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Yujin.webp"
+  },
+  "40": {
+    "id": "40",
+    "name": "던",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Donne.webp"
+  },
+  "41": {
+    "id": "41",
+    "name": "대청",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "42": {
+    "id": "42",
+    "name": "대호",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Dahao.webp"
+  },
+  "44": {
+    "id": "44",
+    "name": "양목",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Liangmu.webp"
+  },
+  "46": {
+    "id": "46",
+    "name": "경청",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Diting.webp"
+  },
+  "47": {
+    "id": "47",
+    "name": "정연",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Jingyana.webp"
+  },
+  "48": {
+    "id": "48",
+    "name": "에밀리",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Emilie.webp"
+  },
+  "49": {
+    "id": "49",
+    "name": "「스타피스 가전」",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "50": {
+    "id": "50",
+    "name": "정당 권익 회사",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "51": {
+    "id": "51",
+    "name": "청예",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Qingni.webp"
+  },
+  "52": {
+    "id": "52",
+    "name": "안기쁨",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Bukaixin.webp"
+  },
+  "53": {
+    "id": "53",
+    "name": "익명",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "54": {
+    "id": "54",
+    "name": "성결",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Chengjie.webp"
+  },
+  "55": {
+    "id": "55",
+    "name": "재교",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Ziqiao.webp"
+  },
+  "56": {
+    "id": "56",
+    "name": "헤르타, 아를란, {NICKNAME}의 단톡방",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "57": {
+    "id": "57",
+    "name": "???",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "58": {
+    "id": "58",
+    "name": "???",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "59": {
+    "id": "59",
+    "name": "수리 엔지니어",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Engineer.webp"
+  },
+  "60": {
+    "id": "60",
+    "name": "청주",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Qingzu.webp"
+  },
+  "61": {
+    "id": "61",
+    "name": "초록 부용",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Lvfulong.webp"
+  },
+  "62": {
+    "id": "62",
+    "name": "???",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "63": {
+    "id": "63",
+    "name": "큐브 시크릿 서클",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "64": {
+    "id": "64",
+    "name": "???",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "65": {
+    "id": "65",
+    "name": "???",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "66": {
+    "id": "66",
+    "name": "단우",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Danshu.webp"
+  },
+  "67": {
+    "id": "67",
+    "name": "게파드, 서벌, {NICKNAME}의 단톡방",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "68": {
+    "id": "68",
+    "name": "아브라함, {NICKNAME}, 아스타…",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "69": {
+    "id": "69",
+    "name": "레긴",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Regin.webp"
+  },
+  "70": {
+    "id": "70",
+    "name": "문화재 도난 사건 담당 조사팀",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "71": {
+    "id": "71",
+    "name": "철위대 조사원",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_NPCSoldier.webp"
+  },
+  "72": {
+    "id": "72",
+    "name": "AI 자동응답",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Zhangzhang.webp"
+  },
+  "73": {
+    "id": "73",
+    "name": "브로냐, {NICKNAME}, Mar. 7th, 단항의 단톡방",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "74": {
+    "id": "74",
+    "name": "익명",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "75": {
+    "id": "75",
+    "name": "익명",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "76": {
+    "id": "76",
+    "name": "지형사•응급 관리소",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "77": {
+    "id": "77",
+    "name": "브로냐, 게파드, {NICKNAME} 등의 단톡방",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "78": {
+    "id": "78",
+    "name": "금 조각상 거리 부흥팀",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "79": {
+    "id": "79",
+    "name": "명희",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Mingxi.webp"
+  },
+  "80": {
+    "id": "80",
+    "name": "소한",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Xiaohan.webp"
+  },
+  "82": {
+    "id": "82",
+    "name": "종산",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Zhongshan.webp"
+  },
+  "83": {
+    "id": "83",
+    "name": "총명",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_XiaoCong.webp"
+  },
+  "84": {
+    "id": "84",
+    "name": "토드",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Taode.webp"
+  },
+  "86": {
+    "id": "86",
+    "name": "와일더",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Velite.webp"
+  },
+  "87": {
+    "id": "87",
+    "name": "서연 선생",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_MrXiYan.webp"
+  },
+  "88": {
+    "id": "88",
+    "name": "지오반니",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Giovanni.webp"
+  },
+  "89": {
+    "id": "89",
+    "name": "연희",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Yancui.webp"
+  },
+  "90": {
+    "id": "90",
+    "name": "요괴 퇴치팀",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "91": {
+    "id": "91",
+    "name": "왓슨",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Wosen.webp"
+  },
+  "92": {
+    "id": "92",
+    "name": "광진",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Guangjin.webp"
+  },
+  "93": {
+    "id": "93",
+    "name": "≪에테르 배틀≫ 공식 질문 단톡방",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "95": {
+    "id": "95",
+    "name": "생태과 연구원",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_JieZhongKe.webp"
+  },
+  "97": {
+    "id": "97",
+    "name": "팥앙금러버",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "98": {
+    "id": "98",
+    "name": "프로구경러",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "102": {
+    "id": "102",
+    "name": "???",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "103": {
+    "id": "103",
+    "name": "리리차드드",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "104": {
+    "id": "104",
+    "name": "익사이팅",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "105": {
+    "id": "105",
+    "name": "헤르타 순찰대",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "106": {
+    "id": "106",
+    "name": "Dr. 에드워드",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_DreamStore.webp"
+  },
+  "107": {
+    "id": "107",
+    "name": "토파즈, Mar. 7th, {NICKNAME}의 단톡방",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "108": {
+    "id": "108",
+    "name": "???",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "109": {
+    "id": "109",
+    "name": "아젠티, Mar. 7th, 폼폼, {NICKNAME}의 단톡방",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "110": {
+    "id": "110",
+    "name": "요괴 퇴치팀 톡방",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "111": {
+    "id": "111",
+    "name": "월이",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "112": {
+    "id": "112",
+    "name": "시험관",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "113": {
+    "id": "113",
+    "name": "우주정거장-지니어스 클럽 업무 공유 그룹",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "114": {
+    "id": "114",
+    "name": "팥앙금러버, 빌 게이버, 무면허 조종사…",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "115": {
+    "id": "115",
+    "name": "페나코니 팀",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "116": {
+    "id": "116",
+    "name": "좋은꿈 신문사",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_DreamOffice.webp"
+  },
+  "117": {
+    "id": "117",
+    "name": "레슬리•딘 팬 집합!",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "118": {
+    "id": "118",
+    "name": "울시",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Woolsey.webp"
+  },
+  "119": {
+    "id": "119",
+    "name": "시계■■■",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "120": {
+    "id": "120",
+    "name": "시계 식당",
+    "icon": "/starrail/assets/icon/character/UI_Message_DelicayExpress.webp"
+  },
+  "121": {
+    "id": "121",
+    "name": "우마",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Uma.webp"
+  },
+  "122": {
+    "id": "122",
+    "name": "페나코니 명품",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_LuxuryStore.webp"
+  },
+  "123": {
+    "id": "123",
+    "name": "크리스탈 잔",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "124": {
+    "id": "124",
+    "name": "친구",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "125": {
+    "id": "125",
+    "name": "쓰레기통",
+    "icon": "/starrail/assets/icon/character/202002.webp"
+  },
+  "126": {
+    "id": "126",
+    "name": "불타는 쓰레기통",
+    "icon": "/starrail/assets/icon/character/202002.webp"
+  },
+  "127": {
+    "id": "127",
+    "name": "불타는 정열의 쓰레기통",
+    "icon": "/starrail/assets/icon/character/202002.webp"
+  },
+  "128": {
+    "id": "128",
+    "name": "마음이 산산조각 난 쓰레기통",
+    "icon": "/starrail/assets/icon/character/202002.webp"
+  },
+  "129": {
+    "id": "129",
+    "name": "???",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "130": {
+    "id": "130",
+    "name": "꿈 건축 퍼즐 연구팀",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "131": {
+    "id": "131",
+    "name": "좋은꿈 신문사",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_DreamOffice.webp"
+  },
+  "132": {
+    "id": "132",
+    "name": "블루 나이트",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "133": {
+    "id": "133",
+    "name": "시오반",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Sionbhan.webp"
+  },
+  "134": {
+    "id": "134",
+    "name": "티조크 3세",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_DesolaTheSecond.webp"
+  },
+  "135": {
+    "id": "135",
+    "name": "???",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "136": {
+    "id": "136",
+    "name": "사령관",
+    "icon": "/starrail/assets/icon/character/Monster_3002030.webp"
+  },
+  "137": {
+    "id": "137",
+    "name": "스페이드",
+    "icon": "/starrail/assets/icon/character/Monster_3001010.webp"
+  },
+  "138": {
+    "id": "138",
+    "name": "레이디",
+    "icon": "/starrail/assets/icon/character/Monster_3002010.webp"
+  },
+  "139": {
+    "id": "139",
+    "name": "우울이",
+    "icon": "/starrail/assets/icon/character/Monster_3001020.webp"
+  },
+  "140": {
+    "id": "140",
+    "name": "큰일났어! 멍청이들한테 포위되고 말았어!",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "141": {
+    "id": "141",
+    "name": "광고판 탐정",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_AdvertBoard.webp"
+  },
+  "142": {
+    "id": "142",
+    "name": "아케론",
+    "icon": "/starrail/assets/icon/character/1308.webp"
+  },
+  "143": {
+    "id": "143",
+    "name": "1111111111",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "144": {
+    "id": "144",
+    "name": "폭죽은 어디서 봐야 하지",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "145": {
+    "id": "145",
+    "name": "사냥개 하청업자",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "146": {
+    "id": "146",
+    "name": "클락 스튜디오 고객센터",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "147": {
+    "id": "147",
+    "name": "공수 사부",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_MasterGongshu.webp"
+  },
+  "148": {
+    "id": "148",
+    "name": "지드",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Jetta.webp"
+  },
+  "149": {
+    "id": "149",
+    "name": "일 처리는 원칙대로",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "150": {
+    "id": "150",
+    "name": "에이딘",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Aideen.webp"
+  },
+  "151": {
+    "id": "151",
+    "name": "배달원",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "152": {
+    "id": "152",
+    "name": "베이비 트리오",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "153": {
+    "id": "153",
+    "name": "댄시",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Dennis.webp"
+  },
+  "154": {
+    "id": "154",
+    "name": "미카",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Micah.webp"
+  },
+  "155": {
+    "id": "155",
+    "name": "티아나",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Tina.webp"
+  },
+  "156": {
+    "id": "156",
+    "name": "「문자 메시지」 인형",
+    "icon": "/starrail/assets/icon/character/202017.webp"
+  },
+  "157": {
+    "id": "157",
+    "name": "요란 닌자 레인저는 바로 나다",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "158": {
+    "id": "158",
+    "name": "아르페",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Aierfei.webp"
+  },
+  "159": {
+    "id": "159",
+    "name": "음률 닌자 집회",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "160": {
+    "id": "160",
+    "name": "다판치",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Dafanqi.webp"
+  },
+  "161": {
+    "id": "161",
+    "name": "치포",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "162": {
+    "id": "162",
+    "name": "연무 의식 경기 연락 담당",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "163": {
+    "id": "163",
+    "name": "연무 의식 위원회 대표",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_FightFest.webp"
+  },
+  "164": {
+    "id": "164",
+    "name": "전자 쓰레기",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_BandMember02.webp"
+  },
+  "165": {
+    "id": "165",
+    "name": "기타 고수",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_BandMember01.webp"
+  },
+  "166": {
+    "id": "166",
+    "name": "치",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_BandMember03.webp"
+  },
+  "167": {
+    "id": "167",
+    "name": "요란•닌자 레인저",
+    "icon": "/starrail/assets/icon/character/1317.webp"
+  },
+  "168": {
+    "id": "168",
+    "name": "「요란」 팬들 모여라",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "170": {
+    "id": "170",
+    "name": "마메라",
+    "icon": "/starrail/assets/icon/character/1001.webp"
+  },
+  "171": {
+    "id": "171",
+    "name": "나나순이",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Montana.webp"
+  },
+  "172": {
+    "id": "172",
+    "name": "샬레카",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Chaletka.webp"
+  },
+  "173": {
+    "id": "173",
+    "name": "부귀나나",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Richesandhonor.webp"
+  },
+  "174": {
+    "id": "174",
+    "name": "파초꽃짱(노력 ver.)",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Kenebo.webp"
+  },
+  "175": {
+    "id": "175",
+    "name": "종이접기 아카데미 신규 나나방",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "176": {
+    "id": "176",
+    "name": "트리비, 단항, {NICKNAME}의 단톡방",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "177": {
+    "id": "177",
+    "name": "앰포리어스 환영팀",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "179": {
+    "id": "179",
+    "name": "진화 신비학 신도",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "180": {
+    "id": "180",
+    "name": "황금 희생양의 잠꼬대",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "181": {
+    "id": "181",
+    "name": "등불을 든 수색꾼",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "182": {
+    "id": "182",
+    "name": "카스토리스, 아글라이아, {NICKNAME}의 단톡방",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "183": {
+    "id": "183",
+    "name": "「핑크 님프」 토론방",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "184": {
+    "id": "184",
+    "name": "천외 탐험가",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "185": {
+    "id": "185",
+    "name": "자그레우스 나한테 한 푼만",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "186": {
+    "id": "186",
+    "name": "그냥 마네킹이 되고 싶어",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "187": {
+    "id": "187",
+    "name": "열세 번째 티탄",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "188": {
+    "id": "188",
+    "name": "파구사는 아직도 마시는 중",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "189": {
+    "id": "189",
+    "name": "헤카테",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Hekate.webp"
+  },
+  "190": {
+    "id": "190",
+    "name": "데미트리아",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Demetria.webp"
+  },
+  "191": {
+    "id": "191",
+    "name": "약연",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Yueyuan.webp"
+  },
+  "192": {
+    "id": "192",
+    "name": "아글라이아, 카스토리스, {NICKNAME}의 단톡방",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "193": {
+    "id": "193",
+    "name": "의상공",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_AglaeaServant.webp"
+  },
+  "194": {
+    "id": "194",
+    "name": "긴급",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "195": {
+    "id": "195",
+    "name": "설국의 디바",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "196": {
+    "id": "196",
+    "name": "{NICKNAME} 게임 플레이어 단톡방",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "197": {
+    "id": "197",
+    "name": "경기 조직 위원회",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "198": {
+    "id": "198",
+    "name": "컴퍼니 대표",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "199": {
+    "id": "199",
+    "name": "베르기니아",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Virginia.webp"
+  },
+  "200": {
+    "id": "200",
+    "name": "키레네",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Cyrene.webp"
+  },
+  "201": {
+    "id": "201",
+    "name": "케이트(근무 중)",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "202": {
+    "id": "202",
+    "name": "키메라 애호가 협회",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "203": {
+    "id": "203",
+    "name": "오늘은 쓰레기 케이크한테 뭘 먹일까",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "204": {
+    "id": "204",
+    "name": "환태자",
+    "icon": "/starrail/assets/icon/character/WebIcon_Npc_4.webp"
+  },
+  "205": {
+    "id": "205",
+    "name": "달빛 아래의 갈대",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "206": {
+    "id": "206",
+    "name": "프랑켄 Official",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "207": {
+    "id": "207",
+    "name": "꾸리",
+    "icon": "/starrail/assets/icon/character/WebIcon_Npc_3.webp"
+  },
+  "208": {
+    "id": "208",
+    "name": "빌리",
+    "icon": "/starrail/assets/icon/character/WebIcon_Npc_5.webp"
+  },
+  "209": {
+    "id": "209",
+    "name": "쥴리안",
+    "icon": "/starrail/assets/icon/character/WebIcon_Npc_6.webp"
+  },
+  "210": {
+    "id": "210",
+    "name": "AAA ≪주간 너굴≫ 요청 일괄 발송",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "211": {
+    "id": "211",
+    "name": "「노인」",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "212": {
+    "id": "212",
+    "name": "스노우볼 파이낸스",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "213": {
+    "id": "213",
+    "name": "종삼삼 4호기",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Zhongshan.webp"
+  },
+  "214": {
+    "id": "214",
+    "name": "스파키 방송 어시스턴트",
+    "icon": "/starrail/assets/icon/character/1501.webp"
+  },
+  "215": {
+    "id": "215",
+    "name": "A 플라워 엔터테인먼트 조수",
+    "icon": "/starrail/assets/icon/character/1501.webp"
+  },
+  "216": {
+    "id": "216",
+    "name": "이글이글 계정 성장 일지",
+    "icon": "/starrail/assets/icon/character/1501.webp"
+  },
+  "217": {
+    "id": "217",
+    "name": "「별의 궤도 토끼」 자동 광고봇",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "218": {
+    "id": "218",
+    "name": "",
+    "icon": "/starrail/assets/icon/character/1504.webp"
+  },
+  "219": {
+    "id": "219",
+    "name": "",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "1000": {
+    "id": "1000",
+    "name": "폼폼",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Pam.webp"
+  },
+  "1001": {
+    "id": "1001",
+    "name": "Mar. 7th",
+    "icon": "/starrail/assets/icon/character/1001.webp"
+  },
+  "1002": {
+    "id": "1002",
+    "name": "단항",
+    "icon": "/starrail/assets/icon/character/1002.webp"
+  },
+  "1003": {
+    "id": "1003",
+    "name": "히메코",
+    "icon": "/starrail/assets/icon/character/1003.webp"
+  },
+  "1004": {
+    "id": "1004",
+    "name": "웰트",
+    "icon": "/starrail/assets/icon/character/1004.webp"
+  },
+  "1005": {
+    "id": "1005",
+    "name": "카프카",
+    "icon": "/starrail/assets/icon/character/1005.webp"
+  },
+  "1006": {
+    "id": "1006",
+    "name": "은랑",
+    "icon": "/starrail/assets/icon/character/1006.webp"
+  },
+  "1007": {
+    "id": "1007",
+    "name": "스크루룸",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Screwllum.webp"
+  },
+  "1008": {
+    "id": "1008",
+    "name": "아를란",
+    "icon": "/starrail/assets/icon/character/1008.webp"
+  },
+  "1009": {
+    "id": "1009",
+    "name": "아스타",
+    "icon": "/starrail/assets/icon/character/1009.webp"
+  },
+  "1013": {
+    "id": "1013",
+    "name": "헤르타",
+    "icon": "/starrail/assets/icon/character/1013.webp"
+  },
+  "1014": {
+    "id": "1014",
+    "name": "세이버",
+    "icon": "/starrail/assets/icon/character/1014.webp"
+  },
+  "1015": {
+    "id": "1015",
+    "name": "아처",
+    "icon": "/starrail/assets/icon/character/1015.webp"
+  },
+  "1101": {
+    "id": "1101",
+    "name": "브로냐",
+    "icon": "/starrail/assets/icon/character/1101.webp"
+  },
+  "1102": {
+    "id": "1102",
+    "name": "제레",
+    "icon": "/starrail/assets/icon/character/1102.webp"
+  },
+  "1103": {
+    "id": "1103",
+    "name": "서벌",
+    "icon": "/starrail/assets/icon/character/1103.webp"
+  },
+  "1104": {
+    "id": "1104",
+    "name": "게파드",
+    "icon": "/starrail/assets/icon/character/1104.webp"
+  },
+  "1105": {
+    "id": "1105",
+    "name": "나타샤",
+    "icon": "/starrail/assets/icon/character/1105.webp"
+  },
+  "1106": {
+    "id": "1106",
+    "name": "페라",
+    "icon": "/starrail/assets/icon/character/1106.webp"
+  },
+  "1107": {
+    "id": "1107",
+    "name": "클라라",
+    "icon": "/starrail/assets/icon/character/1107.webp"
+  },
+  "1108": {
+    "id": "1108",
+    "name": "삼포",
+    "icon": "/starrail/assets/icon/character/1108.webp"
+  },
+  "1109": {
+    "id": "1109",
+    "name": "후크",
+    "icon": "/starrail/assets/icon/character/1109.webp"
+  },
+  "1110": {
+    "id": "1110",
+    "name": "링스",
+    "icon": "/starrail/assets/icon/character/1110.webp"
+  },
+  "1111": {
+    "id": "1111",
+    "name": "루카",
+    "icon": "/starrail/assets/icon/character/1111.webp"
+  },
+  "1112": {
+    "id": "1112",
+    "name": "토파즈",
+    "icon": "/starrail/assets/icon/character/1112.webp"
+  },
+  "1201": {
+    "id": "1201",
+    "name": "청작",
+    "icon": "/starrail/assets/icon/character/1201.webp"
+  },
+  "1202": {
+    "id": "1202",
+    "name": "정운",
+    "icon": "/starrail/assets/icon/character/1202.webp"
+  },
+  "1203": {
+    "id": "1203",
+    "name": "나찰",
+    "icon": "/starrail/assets/icon/character/1203.webp"
+  },
+  "1204": {
+    "id": "1204",
+    "name": "경원",
+    "icon": "/starrail/assets/icon/character/1204.webp"
+  },
+  "1205": {
+    "id": "1205",
+    "name": "블레이드",
+    "icon": "/starrail/assets/icon/character/1205.webp"
+  },
+  "1206": {
+    "id": "1206",
+    "name": "소상",
+    "icon": "/starrail/assets/icon/character/1206.webp"
+  },
+  "1207": {
+    "id": "1207",
+    "name": "어공",
+    "icon": "/starrail/assets/icon/character/1207.webp"
+  },
+  "1208": {
+    "id": "1208",
+    "name": "부현",
+    "icon": "/starrail/assets/icon/character/1208.webp"
+  },
+  "1209": {
+    "id": "1209",
+    "name": "연경",
+    "icon": "/starrail/assets/icon/character/1209.webp"
+  },
+  "1210": {
+    "id": "1210",
+    "name": "계네빈",
+    "icon": "/starrail/assets/icon/character/1210.webp"
+  },
+  "1211": {
+    "id": "1211",
+    "name": "백로",
+    "icon": "/starrail/assets/icon/character/1211.webp"
+  },
+  "1214": {
+    "id": "1214",
+    "name": "설의",
+    "icon": "/starrail/assets/icon/character/1214.webp"
+  },
+  "1215": {
+    "id": "1215",
+    "name": "한아",
+    "icon": "/starrail/assets/icon/character/1215.webp"
+  },
+  "1217": {
+    "id": "1217",
+    "name": "곽향",
+    "icon": "/starrail/assets/icon/character/1217.webp"
+  },
+  "1218": {
+    "id": "1218",
+    "name": "초구",
+    "icon": "/starrail/assets/icon/character/1218.webp"
+  },
+  "1220": {
+    "id": "1220",
+    "name": "비소",
+    "icon": "/starrail/assets/icon/character/1220.webp"
+  },
+  "1221": {
+    "id": "1221",
+    "name": "운리",
+    "icon": "/starrail/assets/icon/character/1221.webp"
+  },
+  "1222": {
+    "id": "1222",
+    "name": "영사",
+    "icon": "/starrail/assets/icon/character/1222.webp"
+  },
+  "1223": {
+    "id": "1223",
+    "name": "맥택",
+    "icon": "/starrail/assets/icon/character/1223.webp"
+  },
+  "1301": {
+    "id": "1301",
+    "name": "갤러거",
+    "icon": "/starrail/assets/icon/character/1301.webp"
+  },
+  "1302": {
+    "id": "1302",
+    "name": "아젠티",
+    "icon": "/starrail/assets/icon/character/1302.webp"
+  },
+  "1303": {
+    "id": "1303",
+    "name": "완•매",
+    "icon": "/starrail/assets/icon/character/1303.webp"
+  },
+  "1304": {
+    "id": "1304",
+    "name": "어벤츄린",
+    "icon": "/starrail/assets/icon/character/1304.webp"
+  },
+  "1305": {
+    "id": "1305",
+    "name": "Dr. 레이시오",
+    "icon": "/starrail/assets/icon/character/1305.webp"
+  },
+  "1306": {
+    "id": "1306",
+    "name": "스파클",
+    "icon": "/starrail/assets/icon/character/1306.webp"
+  },
+  "1307": {
+    "id": "1307",
+    "name": "블랙 스완",
+    "icon": "/starrail/assets/icon/character/1307.webp"
+  },
+  "1308": {
+    "id": "1308",
+    "name": "아케론",
+    "icon": "/starrail/assets/icon/character/1308.webp"
+  },
+  "1309": {
+    "id": "1309",
+    "name": "로빈",
+    "icon": "/starrail/assets/icon/character/1309.webp"
+  },
+  "1310": {
+    "id": "1310",
+    "name": "반디",
+    "icon": "/starrail/assets/icon/character/1310.webp"
+  },
+  "1312": {
+    "id": "1312",
+    "name": "미샤",
+    "icon": "/starrail/assets/icon/character/1312.webp"
+  },
+  "1313": {
+    "id": "1313",
+    "name": "선데이",
+    "icon": "/starrail/assets/icon/character/1313.webp"
+  },
+  "1314": {
+    "id": "1314",
+    "name": "제이드",
+    "icon": "/starrail/assets/icon/character/1314.webp"
+  },
+  "1315": {
+    "id": "1315",
+    "name": "부트힐",
+    "icon": "/starrail/assets/icon/character/1315.webp"
+  },
+  "1317": {
+    "id": "1317",
+    "name": "라파",
+    "icon": "/starrail/assets/icon/character/1317.webp"
+  },
+  "1321": {
+    "id": "1321",
+    "name": "달리아",
+    "icon": "/starrail/assets/icon/character/1321.webp"
+  },
+  "1401": {
+    "id": "1401",
+    "name": "더 헤르타",
+    "icon": "/starrail/assets/icon/character/1401.webp"
+  },
+  "1402": {
+    "id": "1402",
+    "name": "아글라이아",
+    "icon": "/starrail/assets/icon/character/1402.webp"
+  },
+  "1403": {
+    "id": "1403",
+    "name": "트리비",
+    "icon": "/starrail/assets/icon/character/1403.webp"
+  },
+  "1404": {
+    "id": "1404",
+    "name": "마이데이",
+    "icon": "/starrail/assets/icon/character/1404.webp"
+  },
+  "1405": {
+    "id": "1405",
+    "name": "아낙사",
+    "icon": "/starrail/assets/icon/character/1405.webp"
+  },
+  "1406": {
+    "id": "1406",
+    "name": "사이퍼",
+    "icon": "/starrail/assets/icon/character/1406.webp"
+  },
+  "1407": {
+    "id": "1407",
+    "name": "카스토리스",
+    "icon": "/starrail/assets/icon/character/1407.webp"
+  },
+  "1408": {
+    "id": "1408",
+    "name": "파이논",
+    "icon": "/starrail/assets/icon/character/1408.webp"
+  },
+  "1409": {
+    "id": "1409",
+    "name": "히아킨",
+    "icon": "/starrail/assets/icon/character/1409.webp"
+  },
+  "1410": {
+    "id": "1410",
+    "name": "히실렌스",
+    "icon": "/starrail/assets/icon/character/1410.webp"
+  },
+  "1412": {
+    "id": "1412",
+    "name": "케리드라",
+    "icon": "/starrail/assets/icon/character/1412.webp"
+  },
+  "1413": {
+    "id": "1413",
+    "name": "에버나이트",
+    "icon": "/starrail/assets/icon/character/1413.webp"
+  },
+  "1415": {
+    "id": "1415",
+    "name": "키레네",
+    "icon": "/starrail/assets/icon/character/1415.webp"
+  },
+  "1501": {
+    "id": "1501",
+    "name": "스파키",
+    "icon": "/starrail/assets/icon/character/1501.webp"
+  },
+  "1502": {
+    "id": "1502",
+    "name": "효광",
+    "icon": "/starrail/assets/icon/character/1502.webp"
+  },
+  "1504": {
+    "id": "1504",
+    "name": "",
+    "icon": "/starrail/assets/icon/character/1504.webp"
+  },
+  "200001": {
+    "id": "200001",
+    "name": "없음",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "200101": {
+    "id": "200101",
+    "name": "Mar. 7th•환영",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHeadS1_1001.webp"
+  },
+  "200102": {
+    "id": "200102",
+    "name": "단항•환영",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHeadS1_1002.webp"
+  },
+  "200103": {
+    "id": "200103",
+    "name": "히메코•환영",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHeadS1_1003.webp"
+  },
+  "200104": {
+    "id": "200104",
+    "name": "웰트•환영",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHeadS1_1004.webp"
+  },
+  "200105": {
+    "id": "200105",
+    "name": "개척자•환영",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHeadS1_8001.webp"
+  },
+  "200106": {
+    "id": "200106",
+    "name": "개척자•환영",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHeadS1_8002.webp"
+  },
+  "200107": {
+    "id": "200107",
+    "name": "카프카•저녁 연회",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200107.webp"
+  },
+  "200108": {
+    "id": "200108",
+    "name": "블레이드•저녁 연회",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200108.webp"
+  },
+  "200109": {
+    "id": "200109",
+    "name": "경원•휴식",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200109.webp"
+  },
+  "200110": {
+    "id": "200110",
+    "name": "부현•휴식",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200110.webp"
+  },
+  "200111": {
+    "id": "200111",
+    "name": "브로냐•축제",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200111.webp"
+  },
+  "200112": {
+    "id": "200112",
+    "name": "게파드•축제",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200112.webp"
+  },
+  "200113": {
+    "id": "200113",
+    "name": "경류•원행",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200113.webp"
+  },
+  "200114": {
+    "id": "200114",
+    "name": "연경•원행",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200114.webp"
+  },
+  "200115": {
+    "id": "200115",
+    "name": "완•매•아카데미아",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200115.webp"
+  },
+  "200116": {
+    "id": "200116",
+    "name": "Dr. 레이시오•아카데미아",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200116.webp"
+  },
+  "200117": {
+    "id": "200117",
+    "name": "스파클•환상",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200117.webp"
+  },
+  "200118": {
+    "id": "200118",
+    "name": "삼포•환상",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200118.webp"
+  },
+  "200119": {
+    "id": "200119",
+    "name": "토파즈•명중",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200119.webp"
+  },
+  "200120": {
+    "id": "200120",
+    "name": "어벤츄린•명중",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200120.webp"
+  },
+  "200121": {
+    "id": "200121",
+    "name": "아케론•암습",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200121.webp"
+  },
+  "200122": {
+    "id": "200122",
+    "name": "부트힐•암습",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200122.webp"
+  },
+  "200123": {
+    "id": "200123",
+    "name": "반디•전망",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200123.webp"
+  },
+  "200124": {
+    "id": "200124",
+    "name": "기갑 「샘」•전망",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200124.webp"
+  },
+  "200125": {
+    "id": "200125",
+    "name": "백로•인의(仁醫)",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200125.webp"
+  },
+  "200126": {
+    "id": "200126",
+    "name": "초구•인의(仁醫)",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200126.webp"
+  },
+  "200127": {
+    "id": "200127",
+    "name": "비소•체력 단련",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200127.webp"
+  },
+  "200128": {
+    "id": "200128",
+    "name": "맥택•체력 단련",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200128.webp"
+  },
+  "200129": {
+    "id": "200129",
+    "name": "라파•오프닝",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200129.webp"
+  },
+  "200130": {
+    "id": "200130",
+    "name": "은랑•오프닝",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200130.webp"
+  },
+  "200131": {
+    "id": "200131",
+    "name": "로빈•청춘",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200131.webp"
+  },
+  "200132": {
+    "id": "200132",
+    "name": "선데이•청춘",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200132.webp"
+  },
+  "200133": {
+    "id": "200133",
+    "name": "더 헤르타•티타임",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200133.webp"
+  },
+  "200134": {
+    "id": "200134",
+    "name": "헤르타•티타임",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200134.webp"
+  },
+  "200135": {
+    "id": "200135",
+    "name": "마이데이•맛있는 요리",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200135.webp"
+  },
+  "200136": {
+    "id": "200136",
+    "name": "트리비•맛있는 요리",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200136.webp"
+  },
+  "200137": {
+    "id": "200137",
+    "name": "카스토리스•창의",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200137.webp"
+  },
+  "200138": {
+    "id": "200138",
+    "name": "아낙사•창의",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200138.webp"
+  },
+  "200139": {
+    "id": "200139",
+    "name": "히아킨•단잠",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200139.webp"
+  },
+  "200140": {
+    "id": "200140",
+    "name": "사이퍼•단잠",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200140.webp"
+  },
+  "200141": {
+    "id": "200141",
+    "name": "파이논•패션",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200141.webp"
+  },
+  "200142": {
+    "id": "200142",
+    "name": "아글라이아•패션",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200142.webp"
+  },
+  "200143": {
+    "id": "200143",
+    "name": "히실렌스•정벌",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200143.webp"
+  },
+  "200144": {
+    "id": "200144",
+    "name": "케리드라•정벌",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200144.webp"
+  },
+  "200145": {
+    "id": "200145",
+    "name": "에버나이트•잠복",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200145.webp"
+  },
+  "200146": {
+    "id": "200146",
+    "name": "단항•등황•잠복",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200146.webp"
+  },
+  "200147": {
+    "id": "200147",
+    "name": "키레네•약속을 향해",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200147.webp"
+  },
+  "200148": {
+    "id": "200148",
+    "name": "과거의 물결•약속을 향해",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200148.webp"
+  },
+  "200149": {
+    "id": "200149",
+    "name": "달리아•추억",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200149.webp"
+  },
+  "200150": {
+    "id": "200150",
+    "name": "블랙 스완•추억",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200150.webp"
+  },
+  "200151": {
+    "id": "200151",
+    "name": "효광•흩날리는 춤",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200151.webp"
+  },
+  "200152": {
+    "id": "200152",
+    "name": "스파키•흩날리는 춤",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200152.webp"
+  },
+  "200153": {
+    "id": "200153",
+    "name": "",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200153.webp"
+  },
+  "200154": {
+    "id": "200154",
+    "name": "",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200154.webp"
+  },
+  "201001": {
+    "id": "201001",
+    "name": "Mar. 7th•보존",
+    "icon": "/starrail/assets/icon/character/1001.webp"
+  },
+  "201002": {
+    "id": "201002",
+    "name": "단항",
+    "icon": "/starrail/assets/icon/character/1002.webp"
+  },
+  "201003": {
+    "id": "201003",
+    "name": "히메코",
+    "icon": "/starrail/assets/icon/character/1003.webp"
+  },
+  "201004": {
+    "id": "201004",
+    "name": "웰트",
+    "icon": "/starrail/assets/icon/character/1004.webp"
+  },
+  "201005": {
+    "id": "201005",
+    "name": "카프카",
+    "icon": "/starrail/assets/icon/character/1005.webp"
+  },
+  "201006": {
+    "id": "201006",
+    "name": "은랑",
+    "icon": "/starrail/assets/icon/character/1006.webp"
+  },
+  "201008": {
+    "id": "201008",
+    "name": "아를란",
+    "icon": "/starrail/assets/icon/character/1008.webp"
+  },
+  "201009": {
+    "id": "201009",
+    "name": "아스타",
+    "icon": "/starrail/assets/icon/character/1009.webp"
+  },
+  "201013": {
+    "id": "201013",
+    "name": "헤르타",
+    "icon": "/starrail/assets/icon/character/1013.webp"
+  },
+  "201014": {
+    "id": "201014",
+    "name": "세이버",
+    "icon": "/starrail/assets/icon/character/1014.webp"
+  },
+  "201015": {
+    "id": "201015",
+    "name": "아처",
+    "icon": "/starrail/assets/icon/character/1015.webp"
+  },
+  "201101": {
+    "id": "201101",
+    "name": "브로냐",
+    "icon": "/starrail/assets/icon/character/1101.webp"
+  },
+  "201102": {
+    "id": "201102",
+    "name": "제레",
+    "icon": "/starrail/assets/icon/character/1102.webp"
+  },
+  "201103": {
+    "id": "201103",
+    "name": "서벌",
+    "icon": "/starrail/assets/icon/character/1103.webp"
+  },
+  "201104": {
+    "id": "201104",
+    "name": "게파드",
+    "icon": "/starrail/assets/icon/character/1104.webp"
+  },
+  "201105": {
+    "id": "201105",
+    "name": "나타샤",
+    "icon": "/starrail/assets/icon/character/1105.webp"
+  },
+  "201106": {
+    "id": "201106",
+    "name": "페라",
+    "icon": "/starrail/assets/icon/character/1106.webp"
+  },
+  "201107": {
+    "id": "201107",
+    "name": "클라라",
+    "icon": "/starrail/assets/icon/character/1107.webp"
+  },
+  "201108": {
+    "id": "201108",
+    "name": "삼포",
+    "icon": "/starrail/assets/icon/character/1108.webp"
+  },
+  "201109": {
+    "id": "201109",
+    "name": "후크",
+    "icon": "/starrail/assets/icon/character/1109.webp"
+  },
+  "201110": {
+    "id": "201110",
+    "name": "링스",
+    "icon": "/starrail/assets/icon/character/1110.webp"
+  },
+  "201111": {
+    "id": "201111",
+    "name": "루카",
+    "icon": "/starrail/assets/icon/character/1111.webp"
+  },
+  "201112": {
+    "id": "201112",
+    "name": "토파즈&복순이",
+    "icon": "/starrail/assets/icon/character/1112.webp"
+  },
+  "201201": {
+    "id": "201201",
+    "name": "청작",
+    "icon": "/starrail/assets/icon/character/1201.webp"
+  },
+  "201202": {
+    "id": "201202",
+    "name": "정운",
+    "icon": "/starrail/assets/icon/character/1202.webp"
+  },
+  "201203": {
+    "id": "201203",
+    "name": "나찰",
+    "icon": "/starrail/assets/icon/character/1203.webp"
+  },
+  "201204": {
+    "id": "201204",
+    "name": "경원",
+    "icon": "/starrail/assets/icon/character/1204.webp"
+  },
+  "201205": {
+    "id": "201205",
+    "name": "블레이드",
+    "icon": "/starrail/assets/icon/character/1205.webp"
+  },
+  "201206": {
+    "id": "201206",
+    "name": "소상",
+    "icon": "/starrail/assets/icon/character/1206.webp"
+  },
+  "201207": {
+    "id": "201207",
+    "name": "어공",
+    "icon": "/starrail/assets/icon/character/1207.webp"
+  },
+  "201208": {
+    "id": "201208",
+    "name": "부현",
+    "icon": "/starrail/assets/icon/character/1208.webp"
+  },
+  "201209": {
+    "id": "201209",
+    "name": "연경",
+    "icon": "/starrail/assets/icon/character/1209.webp"
+  },
+  "201210": {
+    "id": "201210",
+    "name": "계네빈",
+    "icon": "/starrail/assets/icon/character/1210.webp"
+  },
+  "201211": {
+    "id": "201211",
+    "name": "백로",
+    "icon": "/starrail/assets/icon/character/1211.webp"
+  },
+  "201212": {
+    "id": "201212",
+    "name": "경류",
+    "icon": "/starrail/assets/icon/character/1212.webp"
+  },
+  "201213": {
+    "id": "201213",
+    "name": "단항•음월",
+    "icon": "/starrail/assets/icon/character/1213.webp"
+  },
+  "201214": {
+    "id": "201214",
+    "name": "설의",
+    "icon": "/starrail/assets/icon/character/1214.webp"
+  },
+  "201215": {
+    "id": "201215",
+    "name": "한아",
+    "icon": "/starrail/assets/icon/character/1215.webp"
+  },
+  "201217": {
+    "id": "201217",
+    "name": "곽향",
+    "icon": "/starrail/assets/icon/character/1217.webp"
+  },
+  "201218": {
+    "id": "201218",
+    "name": "초구",
+    "icon": "/starrail/assets/icon/character/1218.webp"
+  },
+  "201220": {
+    "id": "201220",
+    "name": "비소",
+    "icon": "/starrail/assets/icon/character/1220.webp"
+  },
+  "201221": {
+    "id": "201221",
+    "name": "운리",
+    "icon": "/starrail/assets/icon/character/1221.webp"
+  },
+  "201222": {
+    "id": "201222",
+    "name": "영사",
+    "icon": "/starrail/assets/icon/character/1222.webp"
+  },
+  "201223": {
+    "id": "201223",
+    "name": "맥택",
+    "icon": "/starrail/assets/icon/character/1223.webp"
+  },
+  "201224": {
+    "id": "201224",
+    "name": "Mar. 7th•수렵",
+    "icon": "/starrail/assets/icon/character/1224.webp"
+  },
+  "201225": {
+    "id": "201225",
+    "name": "망귀인",
+    "icon": "/starrail/assets/icon/character/1225.webp"
+  },
+  "201301": {
+    "id": "201301",
+    "name": "갤러거",
+    "icon": "/starrail/assets/icon/character/1301.webp"
+  },
+  "201302": {
+    "id": "201302",
+    "name": "아젠티",
+    "icon": "/starrail/assets/icon/character/1302.webp"
+  },
+  "201303": {
+    "id": "201303",
+    "name": "완•매",
+    "icon": "/starrail/assets/icon/character/1303.webp"
+  },
+  "201304": {
+    "id": "201304",
+    "name": "어벤츄린",
+    "icon": "/starrail/assets/icon/character/1304.webp"
+  },
+  "201305": {
+    "id": "201305",
+    "name": "Dr. 레이시오",
+    "icon": "/starrail/assets/icon/character/1305.webp"
+  },
+  "201306": {
+    "id": "201306",
+    "name": "스파클",
+    "icon": "/starrail/assets/icon/character/1306.webp"
+  },
+  "201307": {
+    "id": "201307",
+    "name": "블랙 스완",
+    "icon": "/starrail/assets/icon/character/1307.webp"
+  },
+  "201308": {
+    "id": "201308",
+    "name": "아케론",
+    "icon": "/starrail/assets/icon/character/1308.webp"
+  },
+  "201309": {
+    "id": "201309",
+    "name": "로빈",
+    "icon": "/starrail/assets/icon/character/1309.webp"
+  },
+  "201310": {
+    "id": "201310",
+    "name": "반디",
+    "icon": "/starrail/assets/icon/character/1310.webp"
+  },
+  "201312": {
+    "id": "201312",
+    "name": "미샤",
+    "icon": "/starrail/assets/icon/character/1312.webp"
+  },
+  "201313": {
+    "id": "201313",
+    "name": "선데이",
+    "icon": "/starrail/assets/icon/character/1313.webp"
+  },
+  "201314": {
+    "id": "201314",
+    "name": "제이드",
+    "icon": "/starrail/assets/icon/character/1314.webp"
+  },
+  "201315": {
+    "id": "201315",
+    "name": "부트힐",
+    "icon": "/starrail/assets/icon/character/1315.webp"
+  },
+  "201317": {
+    "id": "201317",
+    "name": "라파",
+    "icon": "/starrail/assets/icon/character/1317.webp"
+  },
+  "201321": {
+    "id": "201321",
+    "name": "달리아",
+    "icon": "/starrail/assets/icon/character/1321.webp"
+  },
+  "201401": {
+    "id": "201401",
+    "name": "더 헤르타",
+    "icon": "/starrail/assets/icon/character/1401.webp"
+  },
+  "201402": {
+    "id": "201402",
+    "name": "아글라이아",
+    "icon": "/starrail/assets/icon/character/1402.webp"
+  },
+  "201403": {
+    "id": "201403",
+    "name": "트리비",
+    "icon": "/starrail/assets/icon/character/1403.webp"
+  },
+  "201404": {
+    "id": "201404",
+    "name": "마이데이",
+    "icon": "/starrail/assets/icon/character/1404.webp"
+  },
+  "201405": {
+    "id": "201405",
+    "name": "아낙사",
+    "icon": "/starrail/assets/icon/character/1405.webp"
+  },
+  "201406": {
+    "id": "201406",
+    "name": "사이퍼",
+    "icon": "/starrail/assets/icon/character/1406.webp"
+  },
+  "201407": {
+    "id": "201407",
+    "name": "카스토리스",
+    "icon": "/starrail/assets/icon/character/1407.webp"
+  },
+  "201408": {
+    "id": "201408",
+    "name": "파이논",
+    "icon": "/starrail/assets/icon/character/1408.webp"
+  },
+  "201409": {
+    "id": "201409",
+    "name": "히아킨",
+    "icon": "/starrail/assets/icon/character/1409.webp"
+  },
+  "201410": {
+    "id": "201410",
+    "name": "히실렌스",
+    "icon": "/starrail/assets/icon/character/1410.webp"
+  },
+  "201412": {
+    "id": "201412",
+    "name": "케리드라",
+    "icon": "/starrail/assets/icon/character/1412.webp"
+  },
+  "201413": {
+    "id": "201413",
+    "name": "에버나이트",
+    "icon": "/starrail/assets/icon/character/1413.webp"
+  },
+  "201414": {
+    "id": "201414",
+    "name": "단항•등황",
+    "icon": "/starrail/assets/icon/character/1414.webp"
+  },
+  "201415": {
+    "id": "201415",
+    "name": "키레네",
+    "icon": "/starrail/assets/icon/character/1415.webp"
+  },
+  "201501": {
+    "id": "201501",
+    "name": "스파키",
+    "icon": "/starrail/assets/icon/character/1501.webp"
+  },
+  "201502": {
+    "id": "201502",
+    "name": "효광",
+    "icon": "/starrail/assets/icon/character/1502.webp"
+  },
+  "201504": {
+    "id": "201504",
+    "name": "",
+    "icon": "/starrail/assets/icon/character/1504.webp"
+  },
+  "202001": {
+    "id": "202001",
+    "name": "울보 유령",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202001.webp"
+  },
+  "202002": {
+    "id": "202002",
+    "name": "쓰레기통",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202002.webp"
+  },
+  "202003": {
+    "id": "202003",
+    "name": "균균",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202003.webp"
+  },
+  "202004": {
+    "id": "202004",
+    "name": "페피",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202004.webp"
+  },
+  "202005": {
+    "id": "202005",
+    "name": "경청",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202005.webp"
+  },
+  "202006": {
+    "id": "202006",
+    "name": "수배령",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202006.webp"
+  },
+  "202007": {
+    "id": "202007",
+    "name": "폼폼•미식",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202007.webp"
+  },
+  "202008": {
+    "id": "202008",
+    "name": "「디저트 생명체」",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202008.webp"
+  },
+  "202009": {
+    "id": "202009",
+    "name": "{NICKNAME}•별의 궤도",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202009.webp"
+  },
+  "202010": {
+    "id": "202010",
+    "name": "{NICKNAME}•별의 궤도",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202010.webp"
+  },
+  "202011": {
+    "id": "202011",
+    "name": "시계 소년",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202011.webp"
+  },
+  "202012": {
+    "id": "202012",
+    "name": "하누 형제",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202012.webp"
+  },
+  "202013": {
+    "id": "202013",
+    "name": "종이새",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202013.webp"
+  },
+  "202014": {
+    "id": "202014",
+    "name": "카카바샤",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202014.webp"
+  },
+  "202015": {
+    "id": "202015",
+    "name": "햄스터볼 기사",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202015.webp"
+  },
+  "202016": {
+    "id": "202016",
+    "name": "1주년 기념",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202016.webp"
+  },
+  "202017": {
+    "id": "202017",
+    "name": "스파클 인형",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202017.webp"
+  },
+  "202018": {
+    "id": "202018",
+    "name": "「안녕, 테스트하러 와」",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202018.webp"
+  },
+  "202019": {
+    "id": "202019",
+    "name": "연경•꿈나라",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202019.webp"
+  },
+  "202020": {
+    "id": "202020",
+    "name": "꿈세계 시계",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202020.webp"
+  },
+  "202021": {
+    "id": "202021",
+    "name": "미미",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202021.webp"
+  },
+  "202022": {
+    "id": "202022",
+    "name": "트리앤 인형",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202022.webp"
+  },
+  "202023": {
+    "id": "202023",
+    "name": "폴리시아",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202023.webp"
+  },
+  "202024": {
+    "id": "202024",
+    "name": "야누스의 말",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202024.webp"
+  },
+  "202025": {
+    "id": "202025",
+    "name": "도둑 유령",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202025.webp"
+  },
+  "202028": {
+    "id": "202028",
+    "name": "빼미•목욕",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202028.webp"
+  },
+  "202029": {
+    "id": "202029",
+    "name": "Mar. 7th•축제",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_202029.webp"
+  },
+  "202030": {
+    "id": "202030",
+    "name": "황금 약충",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202030.webp"
+  },
+  "202031": {
+    "id": "202031",
+    "name": "「안 보이지」",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202031.webp"
+  },
+  "202033": {
+    "id": "202033",
+    "name": "야구 방망이의 이름으로",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202033.webp"
+  },
+  "202034": {
+    "id": "202034",
+    "name": "반디•나들이",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_202034.webp"
+  },
+  "202035": {
+    "id": "202035",
+    "name": "「팡팡팟!」",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202035.webp"
+  },
+  "202036": {
+    "id": "202036",
+    "name": "{NICKNAME}•집필",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202036.webp"
+  },
+  "202037": {
+    "id": "202037",
+    "name": "{NICKNAME}•집필",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202037.webp"
+  },
+  "202038": {
+    "id": "202038",
+    "name": "아옹아옹",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202038.webp"
+  },
+  "202039": {
+    "id": "202039",
+    "name": "견과의 질주",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202039.webp"
+  },
+  "202040": {
+    "id": "202040",
+    "name": "「점점 커지는 작은 드로마스」",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202040.webp"
+  },
+  "202041": {
+    "id": "202041",
+    "name": "최후의 승자",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202041.webp"
+  },
+  "202042": {
+    "id": "202042",
+    "name": "벽화 위",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202042.webp"
+  },
+  "202043": {
+    "id": "202043",
+    "name": "완•매•즐거운 마음",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_202043.webp"
+  },
+  "202044": {
+    "id": "202044",
+    "name": "2차원 시티 총출동",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202044.webp"
+  },
+  "202045": {
+    "id": "202045",
+    "name": "「개척」 여행 중",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202045.webp"
+  },
+  "202046": {
+    "id": "202046",
+    "name": "대박의 연속",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202046.webp"
+  },
+  "202048": {
+    "id": "202048",
+    "name": "살며시 들어 봐",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202048.webp"
+  },
+  "202049": {
+    "id": "202049",
+    "name": "",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202049.webp"
+  },
+  "208001": {
+    "id": "208001",
+    "name": "{NICKNAME}•파멸",
+    "icon": "/starrail/assets/icon/character/8001.webp"
+  },
+  "208002": {
+    "id": "208002",
+    "name": "{NICKNAME}•파멸",
+    "icon": "/starrail/assets/icon/character/8002.webp"
+  },
+  "208003": {
+    "id": "208003",
+    "name": "{NICKNAME}•보존",
+    "icon": "/starrail/assets/icon/character/8003.webp"
+  },
+  "208004": {
+    "id": "208004",
+    "name": "{NICKNAME}•보존",
+    "icon": "/starrail/assets/icon/character/8004.webp"
+  },
+  "208005": {
+    "id": "208005",
+    "name": "{NICKNAME}•화합",
+    "icon": "/starrail/assets/icon/character/8005.webp"
+  },
+  "208006": {
+    "id": "208006",
+    "name": "{NICKNAME}•화합",
+    "icon": "/starrail/assets/icon/character/8006.webp"
+  },
+  "208007": {
+    "id": "208007",
+    "name": "{NICKNAME}•기억",
+    "icon": "/starrail/assets/icon/character/8007.webp"
+  },
+  "208008": {
+    "id": "208008",
+    "name": "{NICKNAME}•기억",
+    "icon": "/starrail/assets/icon/character/8008.webp"
+  }
+}

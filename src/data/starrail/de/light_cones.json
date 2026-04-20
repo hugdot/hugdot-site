@@ -1,0 +1,1582 @@
+{
+  "20000": {
+    "id": "20000",
+    "name": "Pfeile",
+    "rarity": 3,
+    "path": "Rogue",
+    "desc": "Eine seltene, aus der Zeit destillierte Macht. All die vermeintlich unbedeutenden Momente bilden zusammen den überwältigenden Chor des Schicksals. „Der Blick des Jägers ist am klarsten, wenn er mit dem Pfeil die Bogensehne spannt.“",
+    "icon": "/starrail/assets/icon/light_cone/20000.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20000.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20000.webp"
+  },
+  "20001": {
+    "id": "20001",
+    "name": "Füllhorn",
+    "rarity": 3,
+    "path": "Priest",
+    "desc": "Eine seltene, aus der Zeit destillierte Macht. All die vermeintlich unbedeutenden Momente bilden zusammen den überwältigenden Chor des Schicksals. „Das Leben ist die Existenz von Ordnung, die über einen gewissen Grad hinausgeht. Seine Geburt ist die finale Antwort auf die Totenstille des Universums, die der Ära des Chaos ein Ende setzt.“",
+    "icon": "/starrail/assets/icon/light_cone/20001.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20001.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20001.webp"
+  },
+  "20002": {
+    "id": "20002",
+    "name": "Zusammenbruch des Himmels",
+    "rarity": 3,
+    "path": "Warrior",
+    "desc": "Eine seltene, aus der Zeit destillierte Macht. All die vermeintlich unbedeutenden Momente bilden zusammen den überwältigenden Chor des Schicksals. „So wie sie geboren werden, verschwinden alle Dinge auch irgendwann. Die Zeit zerfrisst alles und verwandelt alle greifbaren Dinge in Staub.“",
+    "icon": "/starrail/assets/icon/light_cone/20002.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20002.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20002.webp"
+  },
+  "20003": {
+    "id": "20003",
+    "name": "Bernstein",
+    "rarity": 3,
+    "path": "Knight",
+    "desc": "Eine seltene, aus der Zeit destillierte Macht. All die vermeintlich unbedeutenden Momente bilden zusammen den überwältigenden Chor des Schicksals. „Nur jene, auf die die Zeit keinen Einfluss hat, können die Zeit auch überleben.“",
+    "icon": "/starrail/assets/icon/light_cone/20003.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20003.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20003.webp"
+  },
+  "20004": {
+    "id": "20004",
+    "name": "Leere",
+    "rarity": 3,
+    "path": "Warlock",
+    "desc": "Eine seltene, aus der Zeit destillierte Macht. All die vermeintlich unbedeutenden Momente bilden zusammen den überwältigenden Chor des Schicksals. „Er starrte in die Leere, wie eine dunkle Sonne am Ende aller Materie. Sie bekundete die Antwort auf alle Fragen: ███ █ ███ ██ Die Antwort ließ sich in keiner menschlichen Sprache ausdrücken, aber wurde doch von allen verstanden.“",
+    "icon": "/starrail/assets/icon/light_cone/20004.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20004.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20004.webp"
+  },
+  "20005": {
+    "id": "20005",
+    "name": "Chor",
+    "rarity": 3,
+    "path": "Shaman",
+    "desc": "Eine seltene, aus der Zeit destillierte Macht. All die vermeintlich unbedeutenden Momente bilden zusammen den überwältigenden Chor des Schicksals. „Gemeinsam schließen sich Finger zur Faust. Das ist die Macht der Vielen. Ich verschreibe mich einem höheren Ziel – uns.“",
+    "icon": "/starrail/assets/icon/light_cone/20005.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20005.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20005.webp"
+  },
+  "20006": {
+    "id": "20006",
+    "name": "Datenbank",
+    "rarity": 3,
+    "path": "Mage",
+    "desc": "Eine seltene, aus der Zeit destillierte Macht. All die vermeintlich unbedeutenden Momente bilden zusammen den überwältigenden Chor des Schicksals. „Das Aussterben der Menschheit ist unvermeidbar. Doch die Bibliothek wird weiterleben: einsam, reglos und vor allen verborgen. Ihre riesige Sammlung ist nutzlos, doch gleichzeitig frei von Verdorbenheit.“",
+    "icon": "/starrail/assets/icon/light_cone/20006.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20006.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20006.webp"
+  },
+  "20007": {
+    "id": "20007",
+    "name": "Wurfpfeil",
+    "rarity": 3,
+    "path": "Rogue",
+    "desc": "Eine seltene, aus der Zeit destillierte Macht. All die vermeintlich unbedeutenden Momente bilden zusammen den überwältigenden Chor des Schicksals. „Die Schlacht hat begonnen. Die Pfeile trachten nach Blut.“",
+    "icon": "/starrail/assets/icon/light_cone/20007.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20007.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20007.webp"
+  },
+  "20008": {
+    "id": "20008",
+    "name": "Feines Obst",
+    "rarity": 3,
+    "path": "Priest",
+    "desc": "Eine seltene, aus der Zeit destillierte Macht. All die vermeintlich unbedeutenden Momente bilden zusammen den überwältigenden Chor des Schicksals. „Alles schmeckt süß für jene, die verzweifelt nach Wasser dürsten.“",
+    "icon": "/starrail/assets/icon/light_cone/20008.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20008.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20008.webp"
+  },
+  "20009": {
+    "id": "20009",
+    "name": "Zerstörtes Zuhause",
+    "rarity": 3,
+    "path": "Warrior",
+    "desc": "Eine seltene, aus der Zeit destillierte Macht. All die vermeintlich unbedeutenden Momente bilden zusammen den überwältigenden Chor des Schicksals. „Absolute Kontrolle erwächst aus der Fähigkeit, totale Zerstörung zu verursachen.“",
+    "icon": "/starrail/assets/icon/light_cone/20009.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20009.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20009.webp"
+  },
+  "20010": {
+    "id": "20010",
+    "name": "Verteidigung",
+    "rarity": 3,
+    "path": "Knight",
+    "desc": "Eine seltene, aus der Zeit destillierte Macht. All die vermeintlich unbedeutenden Momente bilden zusammen den überwältigenden Chor des Schicksals. „Solltest du je daran zweifeln, dass uns diese Mauern zum Sieg führen werden, sieh dir einfach die tapferen Seelen an, die auf ihnen stehen.“",
+    "icon": "/starrail/assets/icon/light_cone/20010.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20010.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20010.webp"
+  },
+  "20011": {
+    "id": "20011",
+    "name": "Schleife",
+    "rarity": 3,
+    "path": "Warlock",
+    "desc": "Eine seltene, aus der Zeit destillierte Macht. All die vermeintlich unbedeutenden Momente bilden zusammen den überwältigenden Chor des Schicksals. „Jene, die vor ihrer Vergangenheit fliehen, fühlen sich mit ihrer Verzweiflung allein. Sobald sie endlich etwas Luft holen, werden sie ihrem zukünftigen Ich in die blutunterlaufenen Augen sehen.“",
+    "icon": "/starrail/assets/icon/light_cone/20011.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20011.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20011.webp"
+  },
+  "20012": {
+    "id": "20012",
+    "name": "Einklang der Zahnräder",
+    "rarity": 3,
+    "path": "Shaman",
+    "desc": "Eine seltene, aus der Zeit destillierte Macht. All die vermeintlich unbedeutenden Momente bilden zusammen den überwältigenden Chor des Schicksals. „Es herrscht Harmonie, wenn jeder inmitten des Maschinenlärmes seinen Beitrag leistet.“",
+    "icon": "/starrail/assets/icon/light_cone/20012.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20012.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20012.webp"
+  },
+  "20013": {
+    "id": "20013",
+    "name": "Generalschlüssel",
+    "rarity": 3,
+    "path": "Mage",
+    "desc": "Eine seltene, aus der Zeit destillierte Macht. All die vermeintlich unbedeutenden Momente bilden zusammen den überwältigenden Chor des Schicksals. „Wissen befindet sich hinter einem verschlossenen Tor. Der Schlüssel zu diesem Tor bleibt jenen, die auf Antworten warten, stets verborgen. Doch für jene, die selbst nach Antworten suchen, ist er stets in greifbarer Nähe.“",
+    "icon": "/starrail/assets/icon/light_cone/20013.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20013.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20013.webp"
+  },
+  "20014": {
+    "id": "20014",
+    "name": "Gegensätzliches",
+    "rarity": 3,
+    "path": "Rogue",
+    "desc": "Eine seltene, aus der Zeit destillierte Macht. All die vermeintlich unbedeutenden Momente bilden zusammen den überwältigenden Chor des Schicksals. „Die Freiheitskämpfer werden nie sterben, denn ihre Geschichten werden für immer erzählt werden.“",
+    "icon": "/starrail/assets/icon/light_cone/20014.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20014.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20014.webp"
+  },
+  "20015": {
+    "id": "20015",
+    "name": "Aufschwung",
+    "rarity": 3,
+    "path": "Priest",
+    "desc": "Eine seltene, aus der Zeit destillierte Macht. All die vermeintlich unbedeutenden Momente bilden zusammen den überwältigenden Chor des Schicksals. „Wenn das Leben seinen Sinn verloren hat, schenke ihm bitte weiterhin Leben.“",
+    "icon": "/starrail/assets/icon/light_cone/20015.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20015.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20015.webp"
+  },
+  "20016": {
+    "id": "20016",
+    "name": "Gemeinsamer Untergang",
+    "rarity": 3,
+    "path": "Warrior",
+    "desc": "Eine seltene, aus der Zeit destillierte Macht. All die vermeintlich unbedeutenden Momente bilden zusammen den überwältigenden Chor des Schicksals. „Wie kann man die Vergangenheit eines Planeten vervollkommnen? Jetzt, sofort, zerreiße ihn in Stücke.“",
+    "icon": "/starrail/assets/icon/light_cone/20016.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20016.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20016.webp"
+  },
+  "20017": {
+    "id": "20017",
+    "name": "Pionierarbeit",
+    "rarity": 3,
+    "path": "Knight",
+    "desc": "Eine seltene, aus der Zeit destillierte Macht. All die vermeintlich unbedeutenden Momente bilden zusammen den überwältigenden Chor des Schicksals. „Die Zeit der Einsamkeit ist vorbei und die Korporation wird jedem hier zur Seite stehen und helfen.“",
+    "icon": "/starrail/assets/icon/light_cone/20017.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20017.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20017.webp"
+  },
+  "20018": {
+    "id": "20018",
+    "name": "Verborgener Schatten",
+    "rarity": 3,
+    "path": "Warlock",
+    "desc": "Eine seltene, aus der Zeit destillierte Macht. All die vermeintlich unbedeutenden Momente bilden zusammen den überwältigenden Chor des Schicksals. „Die Nichtigkeit könnte uns finden, aber die Wahrscheinlichkeit, dass sie es nicht tut, ist nicht gleich null.“",
+    "icon": "/starrail/assets/icon/light_cone/20018.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20018.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20018.webp"
+  },
+  "20019": {
+    "id": "20019",
+    "name": "Vermittlung",
+    "rarity": 3,
+    "path": "Shaman",
+    "desc": "Eine seltene, aus der Zeit destillierte Macht. All die vermeintlich unbedeutenden Momente bilden zusammen den überwältigenden Chor des Schicksals. „Was gibt es Schöneres, als Disharmonien zu bereinigen?“",
+    "icon": "/starrail/assets/icon/light_cone/20019.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20019.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20019.webp"
+  },
+  "20020": {
+    "id": "20020",
+    "name": "Weisheit",
+    "rarity": 3,
+    "path": "Mage",
+    "desc": "Eine seltene, aus der Zeit destillierte Macht. All die vermeintlich unbedeutenden Momente bilden zusammen den überwältigenden Chor des Schicksals. „Sollten die Weisen nicht in der Lage sein, ihre Identität als Mensch aufzugeben, werden sie von der Weisheit verlassen.“",
+    "icon": "/starrail/assets/icon/light_cone/20020.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20020.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20020.webp"
+  },
+  "20021": {
+    "id": "20021",
+    "name": "Brennender Schatten",
+    "rarity": 3,
+    "path": "Memory",
+    "desc": "Eine seltene, aus der Zeit destillierte Macht. All die vermeintlich unbedeutenden Momente bilden zusammen den überwältigenden Chor des Schicksals. „Die Menschen versuchen immer, das Unangenehme der Vergangenheit auszulöschen. Das liegt in der Natur der Erinnerung.“",
+    "icon": "/starrail/assets/icon/light_cone/20021.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20021.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20021.webp"
+  },
+  "20022": {
+    "id": "20022",
+    "name": "Rückblick",
+    "rarity": 3,
+    "path": "Memory",
+    "desc": "Eine seltene, aus der Zeit destillierte Macht. All die vermeintlich unbedeutenden Momente bilden zusammen den überwältigenden Chor des Schicksals. „In dem kurzen, schönen Traum war es, als ob die alte Seele in das bunte Meer der Kindheit zurückkehrte.“",
+    "icon": "/starrail/assets/icon/light_cone/20022.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20022.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20022.webp"
+  },
+  "20023": {
+    "id": "20023",
+    "name": "Höhnisches Lachen",
+    "rarity": 3,
+    "path": "Elation",
+    "desc": "Eine seltene, aus der Zeit destillierte Macht. All die vermeintlich unbedeutenden Momente bilden zusammen den überwältigenden Chor des Schicksals. „Der Ursprung des Lachens ist ein Zähnefletschen aus Furcht und Einschüchterung.“",
+    "icon": "/starrail/assets/icon/light_cone/20023.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20023.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20023.webp"
+  },
+  "20024": {
+    "id": "20024",
+    "name": "Verweilende Träne",
+    "rarity": 3,
+    "path": "Elation",
+    "desc": "Eine seltene, aus der Zeit destillierte Macht. All die vermeintlich unbedeutenden Momente bilden zusammen den überwältigenden Chor des Schicksals. „Die tiefste Trauer kennt keine Tränen, genauso wie höchste Freude und Schmerz dasselbe sind.“",
+    "icon": "/starrail/assets/icon/light_cone/20024.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20024.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20024.webp"
+  },
+  "21000": {
+    "id": "21000",
+    "name": "Ein Gespräch nach der OP",
+    "rarity": 4,
+    "path": "Priest",
+    "desc": "„Du bist wach ... Danke.“ „Du ... hast mir das Leben gerettet, Natasha. Ich sollte dir danken.“ „Nein, ich danke dir ... dafür, dass du durchgehalten hast, bis die Operation beendet war.“ Sie lächeln einander müde an und sagen kein weiteres Wort.",
+    "icon": "/starrail/assets/icon/light_cone/21000.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21000.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21000.webp"
+  },
+  "21001": {
+    "id": "21001",
+    "name": "Gute Nacht, schlaf schön",
+    "rarity": 4,
+    "path": "Warlock",
+    "desc": "Das schwache Licht umrahmt die Staubspuren. Währenddessen ertönen die sanften Worte eines Mädchens, das im Schlaf spricht. Eine stumme Gestalt erscheint hinter ihr. „So, so. Du siehst ohne diese Brille niedlicher aus ... Ich wusste es.“ Die Gitarristin starrt in ihr schlafendes Gesicht und murmelt vor sich hin: „Gute Nacht, kleines Genie, das sich so viele Sorgen macht.“",
+    "icon": "/starrail/assets/icon/light_cone/21001.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21001.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21001.webp"
+  },
+  "21002": {
+    "id": "21002",
+    "name": "Der erste Tag meines neuen Lebens",
+    "rarity": 4,
+    "path": "Knight",
+    "desc": "„Ich bin so froh, dass ich Pom-Pom heute in neuer Kleidung zu Gesicht bekommen habe! Gefällt mir!“ „Heute ist mein Geburtstag! Ich bin noch immer so süß wie eh und je.“ „Heute habe ich endlich, endlich, endlich jemanden, der mir unterstellt ist! Stimmt doch, oder? {NICKNAME}?“ Wir drücken den Auslöser häufig, ohne nachzudenken. Tun wir das, um die Freude dieses Moments einzufangen? Oder um uns selbst in diesem Moment einzufangen?",
+    "icon": "/starrail/assets/icon/light_cone/21002.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21002.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21002.webp"
+  },
+  "21003": {
+    "id": "21003",
+    "name": "Nur die Stille bleibt",
+    "rarity": 4,
+    "path": "Rogue",
+    "desc": "„Sollten wir nicht aussteigen? Das ist unser Halt.“ Von oben war ein Kichern zu hören. Seine Augen bewegten sich, doch er sah nicht nach oben. „Um eines klarzustellen: März sagt immer, du seist ausdruckslos, aber das sehe ich anders.“ „Die Datenbank des Zuges zeigen Anzeichen eines Updates, doch die Ergebnisse wurden nicht gespeichert.“ „Also ... welcher Eintrag hat dir Schwierigkeiten bereitet?“ Seine Finger schlossen sich fester um den Stift in seiner Hand, als er sich die blutige Szene aus dem Notizbuch ins Gedächtnis rief. „Ich verstehe. Es ging um dich ...“",
+    "icon": "/starrail/assets/icon/light_cone/21003.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21003.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21003.webp"
+  },
+  "21004": {
+    "id": "21004",
+    "name": "Erinnerungen an die Vergangenheit",
+    "rarity": 4,
+    "path": "Shaman",
+    "desc": "Ein altes Foto liegt am anderen Ende des Tischs in der Heimstatt der Wächterin. Sie wandte immer unbewusst den Blick ab, wenn sie es zufällig sah. Die Erinnerungen an die Vergangenheit waren schon weit weg, aber die Träume von heute sind noch da.",
+    "icon": "/starrail/assets/icon/light_cone/21004.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21004.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21004.webp"
+  },
+  "21005": {
+    "id": "21005",
+    "name": "Die Maulwürfe heißen dich willkommen",
+    "rarity": 4,
+    "path": "Warrior",
+    "desc": "„Maulwürfe, zu mir.“ „Wir verlassen unser Revier.“ „Schlaue Maulwürfe zusammen treiben alle Gegner von dannen.“ „Maulwürfe, wir bleiben stehen.“ „Beißt euch alle auf die Zehen!“",
+    "icon": "/starrail/assets/icon/light_cone/21005.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21005.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21005.webp"
+  },
+  "21006": {
+    "id": "21006",
+    "name": "Die Geburt des Selbst",
+    "rarity": 4,
+    "path": "Mage",
+    "desc": "Am Anfang hatte es genau die gleiche Pose wie das vorherige Porträt. Als sie das Gesicht betrachtete, das mit ihrem identisch war, war sie überzeugt, dass dies nicht sie war. „Unmöglich. Wie können zwei Porträts genau gleich sein?“ Sie zwickte an den Gelenken, öffnete die Augen und machte die Finger weicher. Sie sah glücklich aus, als alle Änderungen vorgenommen worden waren. „Ganz anders als gestern. So bin ich heute mehr, wie ich bin.“",
+    "icon": "/starrail/assets/icon/light_cone/21006.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21006.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21006.webp"
+  },
+  "21007": {
+    "id": "21007",
+    "name": "Gefühl der Gemeinsamkeit",
+    "rarity": 4,
+    "path": "Priest",
+    "desc": "Die Ärztin fand das verwundete Mädchen, das sich an eine nicht mehr funktionierende Maschine klammerte, die Taschen vollgestopft mit allerlei Ersatzteilen. Sie brachte das Mädchen in ihre Klinik und behandelte die Wunden. Schweißtropfen rannen langsam die Wange des Mädchens herab, doch es blieb stumm und seine Hände griffen noch immer nach der Maschine. Die Art, wie es an der Maschine hing, erinnerte die Ärztin daran, wie sie selbst versuchte, ihren Patienten zu helfen. Also versuchte die Ärztin nicht, das Mädchen zu trösten, und ermahnte es auch nicht, vorsichtiger zu sein. Sie setzte sich stattdessen zu ihm und gewährte ihm einen Moment des Friedens.",
+    "icon": "/starrail/assets/icon/light_cone/21007.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21007.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21007.webp"
+  },
+  "21008": {
+    "id": "21008",
+    "name": "Die Augen der Beute",
+    "rarity": 4,
+    "path": "Warlock",
+    "desc": "Tatsächlich bemerkt es die Beute meistens nicht, wenn Gefahr in Verzug ist. Und diese hier ist keine Ausnahme. Das Zielvisier des Scharfschützen fokussiert langsam einen Mann, der mit Geldscheinen um sich wirft und völlig ahnungslos ob seines bevorstehenden Untergangs zu sein scheint. „So sieht also Habgier aus. All das Geld entspricht jetzt schon der Bezahlung für mehrere meiner Aufträge ... Kein Wunder, dass jemand ihn tot sehen will.“ Als wären diese Worte laut verkündet worden, wandte der Mann im Visier sich plötzlich um und sah dem Scharfschützen direkt in die Augen. „Ich habe dich bereits erwartet. Ist das genug, damit du mir zuhörst?“",
+    "icon": "/starrail/assets/icon/light_cone/21008.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21008.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21008.webp"
+  },
+  "21009": {
+    "id": "21009",
+    "name": "Landaus Wahl",
+    "rarity": 4,
+    "path": "Knight",
+    "desc": "„Hast du mir nicht zugehört? Geh nicht noch mal dorthin! Was können Bauern in einer Gruppe lernen?!“ „Aber ich habe noch nie von den Belobog-Geschichten gehört, die sie erzählen ...“ Sie zog ihren Bruder hinter sich her und nahm ihm so die Möglichkeit, ihr zu widersprechen. „Ihr seid beide Landaus! Eines Tages werdet ihr vor schwierigen Entscheidungen stehen. Besonders du, Serval.“ Sie wusste, dass ihr Bruder nichts Böses getan hatte, doch ihr fiel keine passende Erwiderung ein. Sie ging nach dem Streit wütend schlafen und schwor sich: „Eines Tages werde ich erwachsen sein. Und sobald dieser Tag gekommen ist, werde ich Entscheidungen treffen ...“ „Meine eigenen Entscheidungen ...“",
+    "icon": "/starrail/assets/icon/light_cone/21009.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21009.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21009.webp"
+  },
+  "21010": {
+    "id": "21010",
+    "name": "Schwertkampf",
+    "rarity": 4,
+    "path": "Rogue",
+    "desc": "Mit einem etwas skeptischen Blick schlug das Mädchen mit seinem kleinen Schwert nach dem imaginären Gegner und versuchte, sich selbst davon zu überzeugen, dass dieses Ding nützlich sein könnte. Wie kann etwas so Schwaches meinem Zweihänder das Wasser reichen? Spüren die Gegner überhaupt was, wenn ich sie damit treffe? Dem Besitzer des Schwerts schien die Größe egal zu sein. Am Ende entscheidet die Strategie über den Sieg, nicht das Schwert. Es ist egal, ob schwer oder leicht, solange man das spitze Ende auf den Feind richtet.",
+    "icon": "/starrail/assets/icon/light_cone/21010.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21010.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21010.webp"
+  },
+  "21011": {
+    "id": "21011",
+    "name": "Planetarisches Rendezvous",
+    "rarity": 4,
+    "path": "Shaman",
+    "desc": "Sie hatte keine Ahnung, was auf sie zukommen würde, als sie diese Reise antrat. Sie wusste nur eines: Sie könnte endlich die wertenden Blicke und Streitereien in ihrer Familie hinter sich lassen. Es fühlte sich an, als hätte sie verstanden, was der Dichter zu sagen versuchte. „Eines Tages wuchsen uns Flügel und wir vergaßen, wie es ist zu laufen.“ Ihre Augen begannen zu leuchten wie die funkelnden Sterne.",
+    "icon": "/starrail/assets/icon/light_cone/21011.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21011.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21011.webp"
+  },
+  "21012": {
+    "id": "21012",
+    "name": "Ein geheimes Gelübde",
+    "rarity": 4,
+    "path": "Warrior",
+    "desc": "Der Junge achtete stets darauf, dass seine Handschuhe und Ellbogenschützer in gutem Zustand waren, bevor er loszog. Er hütete seine Handschuhe mehr als alles andere, denn sie waren eng genug, um darin Geheimnisse zu verstecken. Dank dieser Schutzschicht konnte niemand die Bandagen an seiner Hand ausmachen, die zahlreiche Wunden bedeckten. Er wurde behandelt, als wäre er normal, und wurde gegrüßt wie alle anderen. Das war alles, was er sich wünschte.",
+    "icon": "/starrail/assets/icon/light_cone/21012.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21012.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21012.webp"
+  },
+  "21013": {
+    "id": "21013",
+    "name": "Die Welt in Aufruhr versetzen",
+    "rarity": 4,
+    "path": "Mage",
+    "desc": "Sie stand auf der Bühne, winkte ihrem Publikum und ermutigte es, sich Gehör zu verschaffen. Singt, schreit oder seufzt, tut alles, was einen Klang erzeugt. Äußert eure Gedanken, damit euch andere zu Hilfe eilen können. „Lasst nicht zu, dass eure Herzen so kalt werden wie dieser Betondschungel.“ Versetzt die Welt in Aufruhr.",
+    "icon": "/starrail/assets/icon/light_cone/21013.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21013.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21013.webp"
+  },
+  "21014": {
+    "id": "21014",
+    "name": "Perfektes Timing",
+    "rarity": 4,
+    "path": "Priest",
+    "desc": "Auf einer viel befahrenen Straße läuft und läuft er. Das Sonnenlicht folgt seinen Schritten. Er hält an und nimmt einen Schirm, um sich von der Sonne zu schützen ... und vor diesem neugierigen Blick.",
+    "icon": "/starrail/assets/icon/light_cone/21014.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21014.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21014.webp"
+  },
+  "21015": {
+    "id": "21015",
+    "name": "Die Entschlusskraft glitzert als Schweißperlen",
+    "rarity": 4,
+    "path": "Warlock",
+    "desc": "Das Rampenlicht, das auf den Boxring scheint, ist hell, aber nicht heller als all die Schweißperlen, die seinen Rücken herunterrinnen. Er hat sich vor langer Zeit dazu entschieden, seine beiden Fäuste zu verwenden, um diejenigen zu beschützen, die er am meisten liebt. Sie sind schließlich auch diejenigen, die diese Entschlossenheit in ihm geweckt haben. Sie sind diejenigen, die immer für ihn dagewesen sind, sowohl innerhalb als auch außerhalb des Boxrings.",
+    "icon": "/starrail/assets/icon/light_cone/21015.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21015.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21015.webp"
+  },
+  "21016": {
+    "id": "21016",
+    "name": "Trend des universellen Markts",
+    "rarity": 4,
+    "path": "Knight",
+    "desc": "Der Planet wird neu bewertet ... „Wird dieses Projekt zeigen, dass es nützlich ist, ausstehende Schulden einzusammeln?“ „Aber wir müssen nur eine Nachricht übermitteln — unsere Existenz.“ „Wenn das einen Wert an sich hat, dann muss es einen Wert für die Korporation schaffen.“",
+    "icon": "/starrail/assets/icon/light_cone/21016.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21016.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21016.webp"
+  },
+  "21017": {
+    "id": "21017",
+    "name": "Abonniere für mehr!",
+    "rarity": 4,
+    "path": "Rogue",
+    "desc": "„Yo, yo. Was läuft! Könnt ihr mich alle hören?“ Das Mädchen mit den orangen Haaren hebt langsam einen Vorschlaghammer, während sie enthusiastisch in die Kamera schreit. „Schon mal gesehen, wie sich ein hübsches Mädchen einen Betonziegel auf dem Brustkorb zertrümmern lässt?“ „Ich will das nicht!“ Das brünette Mädchen hat es laut gerufen, aber das Mädchen mit den orangenen Haaren lächelt nur verschlagen. „Bitte. Lass mich einfach machen. Das hätten die Leute so gewollt.“",
+    "icon": "/starrail/assets/icon/light_cone/21017.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21017.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21017.webp"
+  },
+  "21018": {
+    "id": "21018",
+    "name": "Tanz! Tanz! Tanz!",
+    "rarity": 4,
+    "path": "Shaman",
+    "desc": "„Warum konnte Hook keinen drehenden Tanzschritt machen, wie Clara?“ Sie ballt ihre winzigen Fäuste und spitzt den Mund, ihr rundes kleines Gesicht sieht runder den je aus, unter ihrer unverkennbaren Fellmütze. „Bitte Herr Svarog, kannst du Hook bitte damit helfen?“ Ohne ein Wort beginnt Herr Svarog, seinen robotischen Arm auszustrecken. „Ich g... glaube ich muss mich übergeben!!! Lass mich runter! Bitte!“",
+    "icon": "/starrail/assets/icon/light_cone/21018.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21018.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21018.webp"
+  },
+  "21019": {
+    "id": "21019",
+    "name": "Unter dem blauen Himmel",
+    "rarity": 4,
+    "path": "Warrior",
+    "desc": "Unter dem blauen Himmel tanzten die Weizenfelder. Das junge Mädchen wob vorsichtig einen Blumenkranz, für ihre geliebte kleine Schwester. Das war zu der Zeit, als sie noch gleich groß waren. Das war zu der Zeit, als sie noch dasselbe Lächeln teilten.",
+    "icon": "/starrail/assets/icon/light_cone/21019.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21019.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21019.webp"
+  },
+  "21020": {
+    "id": "21020",
+    "name": "Die Rast der Genies",
+    "rarity": 4,
+    "path": "Mage",
+    "desc": "Sie zeigte auf den grünen Dango. „Das Experiment ist vorbei. Zeit, eine Pause zu machen. Ich darf dieses frische Dessert nicht verpassen.“ Sie sah das Marionettenmädchen in tiefer Konzentration stirnrunzeln. „Ja, in deinem momentanen Körper kannst du nur zusehen, aber nicht essen. Ich mache dir eine Kiste Neue, wenn es soweit ist.“ Sie sah den traurigen Blick des mechanischen Aristokraten, als der Becher zu seinem Gesicht gehoben wurde. „Keine Sorge, es ist nur Maschinenöl. Das kannst du sicher trinken.“",
+    "icon": "/starrail/assets/icon/light_cone/21020.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21020.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21020.webp"
+  },
+  "21021": {
+    "id": "21021",
+    "name": "Quid pro quo",
+    "rarity": 4,
+    "path": "Priest",
+    "desc": "Nach einer intensiven Massage von dem Drachenmädchen streckte das foxianische Mädchen die Hand aus und kniff spielerisch die kleinen, runden Backen des Drachenmädchens. Das kleine Mädchen spitzte offensichtlich pikiert die Lippen, worauf das foxianische Mädchen nur kicherte. „Das kann man als ein echtes quid pro quo bezeichnen.“",
+    "icon": "/starrail/assets/icon/light_cone/21021.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21021.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21021.webp"
+  },
+  "21022": {
+    "id": "21022",
+    "name": "Fermate",
+    "rarity": 4,
+    "path": "Warlock",
+    "desc": "Der Plattenspieler wird gespielt und dreht sich pausenlos. Sogar die Geräusche der heiseren Schreie können der Hitzewelle nicht entkommen und werden von ihrer Lauheit gedämpft. Sie scheint unvorbereitet völlig von den faszinierenden Melodien verzaubert zu sein: Es begann mit Ernsthaftigkeit und Erwartung, dann leidenschaftlicher Katharsis, mit einem Höhepunkt nach dem anderen, bis die Drehung der Schallplatte zum Ende kam, und die heiseren Schreie nicht mehr zu hören waren. „Mission erfüllt.“",
+    "icon": "/starrail/assets/icon/light_cone/21022.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21022.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21022.webp"
+  },
+  "21023": {
+    "id": "21023",
+    "name": "Wir sind Wildfeuer",
+    "rarity": 4,
+    "path": "Knight",
+    "desc": "Sie gewöhnte sich daran, dass Menschen ihre Heimat verlieren. Und sie gewöhnte sich daran, dass Menschen ihre Leben verlieren. Aber es ist sinnlos zu weinen, wenn man allein ist. „Trage diesen roten Schal, dann werden wir unseren Schmerz teilen.“ „Wir sind eine Familie. Wir sind Wildfeuer.“ In dem Moment, in dem diese großen Hände ihren Kopf hielten, konnte sie ihre Tränen nicht mehr zurückhalten.",
+    "icon": "/starrail/assets/icon/light_cone/21023.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21023.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21023.webp"
+  },
+  "21024": {
+    "id": "21024",
+    "name": "Flüsse plätschern im Frühling",
+    "rarity": 4,
+    "path": "Rogue",
+    "desc": "Der kleine Junge erlaubte sich eine kurze Pause von seinen Schwertübungen. Das Sonnenlicht fiel heiß auf seinen bereits aufgeheizten Nacken. Langsam ging er ins Wasser, dessen Kälte seine bloßen Füße berührte. Wenn die Glocken klingen und die Vögel zwitschern, dann wissen selbst die Menschen von weit weg, dass der Frühling gekommen ist.",
+    "icon": "/starrail/assets/icon/light_cone/21024.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21024.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21024.webp"
+  },
+  "21025": {
+    "id": "21025",
+    "name": "Vergangenheit und Zukunft",
+    "rarity": 4,
+    "path": "Shaman",
+    "desc": "Die Flügel des Papierdrachen in ihren Händen waren zerbrochen, eine brutale Erinnerung an das tragische Ende ihres Geliebten. Sie kniete neben dem Kriegsfeuer, die Augen voller Leid. „Wenn du der einzige übrig bist, der das tun kann, dann wäre unser Opfer ...“ Schüsse erklangen und übergossen den Himmel mit roter Farbe, ohne seine Majestät zu dämpfen. Sie sah auf in den Himmel, die Augen voller Zorn.",
+    "icon": "/starrail/assets/icon/light_cone/21025.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21025.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21025.webp"
+  },
+  "21026": {
+    "id": "21026",
+    "name": "Wuff! Zeit zum Laufen!",
+    "rarity": 4,
+    "path": "Warrior",
+    "desc": "Schade, dass niemand es gesehen hat ... Niemand hat gesehen, wie es seine Nase hochgezogen hat, herumschnüffelte und einem menschenleeren Weg folgte. Schade, dass es niemand gesehen hat ... Niemand hat gesehen, wie es seine Krallen eingezogen hat, das Passwort eingab und in die Umarmung der Freiheit gesprungen ist. Hat es denn immer noch niemand gesehen? ... Ein erwachsenes Hündchen, das schon lange allein im Weltraum herumstreift!",
+    "icon": "/starrail/assets/icon/light_cone/21026.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21026.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21026.webp"
+  },
+  "21027": {
+    "id": "21027",
+    "name": "Die Ernsthaftigkeit des Frühstücks",
+    "rarity": 4,
+    "path": "Mage",
+    "desc": "Auch wenn der Tisch längst gedeckt ist ... Manche wollen erst eine Tasse Tee trinken. Manche wollen erst ein Foto machen. Manche wollen erst die Zeitung lesen. Manche wollen erst eine Seite in ihr Notizbuch schreiben. Manche wollen erst auf ihrem Handy spielen. „Ihr alle, esst, solange das Essen heiß ist!“",
+    "icon": "/starrail/assets/icon/light_cone/21027.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21027.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21027.webp"
+  },
+  "21028": {
+    "id": "21028",
+    "name": "Warme Nächte dauern nicht lange",
+    "rarity": 4,
+    "path": "Priest",
+    "desc": "Sie zündete ein Licht an und betrachtete ihre Freundin, die mit einer Tasse heißer Schokolade in der Hand neben ihr stand. Sie beobachtete, wie sie die Bücher und Notizen las, die sie ihr geschenkt hatte. Sie beobachtete, wie sie ein seltenes Lächeln zeigte. In kalten Nächten wie diesen kann selbst die kleinste Freude die Kälte verjagen.",
+    "icon": "/starrail/assets/icon/light_cone/21028.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21028.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21028.webp"
+  },
+  "21029": {
+    "id": "21029",
+    "name": "Wir werden uns wiedersehen",
+    "rarity": 4,
+    "path": "Warlock",
+    "desc": "Sie hatte einmal gedacht, es sei eine Art Programm. Aber ein Programm würde niemals aktiv die optimale Lösung verwerfen und ihre Falle umgehen. „Es sieht so aus, als würden wir einen Zermürbungskrieg führen.“ Sie gähnt. „Zeit zum Schlafen. Organische Lebensformen sollten Ruhe schätzen.“ Die Umgebung verdunkelt sich. Sie schreckt plötzlich auf, aber die Datenreste sind wie weggefegt und zerstört. Es scheint alles ein Traum gewesen zu sein. Aber das Gefühl der Niederlage ist sehr real.",
+    "icon": "/starrail/assets/icon/light_cone/21029.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21029.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21029.webp"
+  },
+  "21030": {
+    "id": "21030",
+    "name": "Das bin ich!",
+    "rarity": 4,
+    "path": "Knight",
+    "desc": "Dem Mädchen stand jedes Outfit, dennoch war es unzufrieden, dem guten Dutzend von Kleidungsstücken, die sich hinter dem Mädchen stapelten nach zu urteilen. „Wird heute das letzte Mal sein?“ Sie hing still ihren Gedanken nach. Sie betrachtete das Mädchen im Spiegel. Es sah an diesem Tag besonders glücklich aus. „Na gut, das bin ich!“",
+    "icon": "/starrail/assets/icon/light_cone/21030.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21030.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21030.webp"
+  },
+  "21031": {
+    "id": "21031",
+    "name": "Rückkehr in die Dunkelheit",
+    "rarity": 4,
+    "path": "Rogue",
+    "desc": "Obwohl ihre Schwester nahe bei ihrer Seite war, konnte sie nichts hören. Das einzige, was sie hören konnte, war die Stimme in der Tiefe ihres Herzens, die lauter und lauter wurde. „Der Körper meiner Schwester ist kalt.“ „Der Körper meiner Schwester bewegt sich nicht.“ Eine brutale Welle von Zorn überwältigte sie so sehr, dass sie keine Zeit mehr hatte, ihre Gedanken zu klären oder sich an diese wichtige, doch vergessene Tatsache zu erinnern ... „Der Körper meiner Schwester ist schon sehr lange Zeit kalt.“",
+    "icon": "/starrail/assets/icon/light_cone/21031.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21031.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21031.webp"
+  },
+  "21032": {
+    "id": "21032",
+    "name": "Den Mond schnitzen, die Wolken weben",
+    "rarity": 4,
+    "path": "Shaman",
+    "desc": "Er verliebt sich sofort in das goldene Gefäß und will es kaufen, aber das Foxianermädchen zerrt ihn zur Seite und flüstert: „Bitte komm nachts wieder, Wohltäter. Dann kannst du dich entscheiden.“ Wie versprochen, kehrt er nachts zurück. Dasselbe Foxianermädchen öffnet die Tür und lächelt ihn an. „Bitte folge mir, Wohltäter.“ Ein Strahl Mondlicht scheint auf den Boden der angeätzten Platte. Der Kunsthandwerker hatte die Blütenblätter mit unterschiedlich tiefen Linien nachgezeichnet und ohne das Mondlicht wäre er nicht in der Lage, solche Details zu erkennen. Endlich fällt ihm ein, warum dieser Gegenstand „Den Mond schnitzen, die Wolken weben“ heißt.",
+    "icon": "/starrail/assets/icon/light_cone/21032.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21032.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21032.webp"
+  },
+  "21033": {
+    "id": "21033",
+    "name": "Nirgends zu fliehen",
+    "rarity": 4,
+    "path": "Warrior",
+    "desc": "Er sieht diesen Mann nicht zum ersten Mal. Er weiß nicht, wann der Mann zu seinem eigenen Schatten wurde. So oft sein Speer den Mann auch durchbohrt, er kommt stets zurück. Gegen diesen Mann wird er niemals verlieren, doch kann er ihn auch niemals besiegen. Er möchte fliehen, aber es gibt kein Entkommen.",
+    "icon": "/starrail/assets/icon/light_cone/21033.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21033.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21033.webp"
+  },
+  "21034": {
+    "id": "21034",
+    "name": "Heute ist wieder ein friedlicher Tag",
+    "rarity": 4,
+    "path": "Mage",
+    "desc": "Da wäre das neue Buch, das sie sich für das Mittagessen ausgeliehen hat, und sie hat gerade eine neue Art gefunden, Karten zu spielen. Wenn sie langsam arbeitet, sollte der Rest ihrer Arbeit genau bis zum Ende des Tages dauern. In aller Ruhe gleitet sie in eine Ecke. Niemand kann sie in ihrer wunderbaren Auszeit stören, nicht einmal die Wahrsagerin Fu. Nur für den Fall, dass sie doch auftaucht ... „Dann gebe ich diese Milchbonbonkugel der Wahrsagerin Fu. Sie wird sicher nicht wütend, wenn sie Süßigkeiten hat!“",
+    "icon": "/starrail/assets/icon/light_cone/21034.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21034.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21034.webp"
+  },
+  "21035": {
+    "id": "21035",
+    "name": "Sache der Wahrheit",
+    "rarity": 4,
+    "path": "Priest",
+    "desc": "„Wenn alle Uhren die falsche Zeit anzeigten ...“ „Wenn an Versprechen gebundene Menschen ihre Eide brächen ...“ „Wenn in Träumen versunkene Menschen nie wirklich geschlafen hätten ...“ „Wenn die Toten wieder lebendig würden und entdeckten, dass ihre Namen längst gestrichen wurden ...“ „Wenn ... Wenn ...“ Er blies die Flamme aus und in der Dunkelheit blieb nur das unaufhörliche Ticken der Uhr zurück.",
+    "icon": "/starrail/assets/icon/light_cone/21035.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21035.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21035.webp"
+  },
+  "21036": {
+    "id": "21036",
+    "name": "Abenteuer in Traumstadt",
+    "rarity": 4,
+    "path": "Shaman",
+    "desc": "„Hallo, liebe Zuschauer! Clockie und seine Freunde sind wieder da!“ „In der letzten Folge hat Stone entdeckt, dass Traumstadt über eine Menge natürlicher Ressourcen verfügt, und sich bereitgemacht, die Herrschaft über die Stadt an sich zu reißen. Clockie hat sich mit Hanu und Origamivogel zusammengetan, und gemeinsam haben sie Stone und seine heimtückischen Untergebenen aus Traumstadt vertrieben.“ „Aber Stone gab sich nicht geschlagen. Er versammelte eine Bande von Schlägern und schwor, Traumstadt in Grund und Boden zu stampfen. In dieser Folge steht Clockie der größten Gefahr seines Lebens gegenüber!“ „Welchen Plan wird Clockie sich ausdenken, um aus der erneuten Belagerung auszubrechen? Und werden sich seinem Team wieder neue Gefährten anschließen? Viel Spaß mit der neuesten Folge von ‚Abenteuer in Traumstadt‘!“",
+    "icon": "/starrail/assets/icon/light_cone/21036.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21036.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21036.webp"
+  },
+  "21037": {
+    "id": "21037",
+    "name": "Endgültiger Sieger",
+    "rarity": 4,
+    "path": "Rogue",
+    "desc": "„Du vertraust mir nicht?“ Er blickte den Mann vor ihm provozierend an. Dann holte er einen Revolver hervor und entleerte ihn, bis nur eine Kugel übrigblieb. „Sieht aus, als müsste ich dir noch meine Vorgehensweise näherbringen, wenn unsere Zusammenarbeit funktionieren soll.“ Er drückte seinem Gegenüber den Revolver in die Hand, drehte ihn und richtete seinen Lauf auf sich selbst. Er drückte in rascher Folge ab; nach drei leeren Klicks war sein Lächeln unverändert. „Das Leben ist ein großes Glücksspiel, und am Schluss bin immer ich der endgültige Sieger.“",
+    "icon": "/starrail/assets/icon/light_cone/21037.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21037.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21037.webp"
+  },
+  "21038": {
+    "id": "21038",
+    "name": "Feuer in der Ferne",
+    "rarity": 4,
+    "path": "Warrior",
+    "desc": "„Objekt gesichert. Gib uns Rückendeckung.“ Die Stimme seines Kameraden ertönte über das Funkgerät. Er sah sich in dem gewaltigen, verlassenen Gebäude um, sah wie seine übriggebliebenen Gegner die komplexe Struktur durchquerten und immer näher rückten. „Einen Moment.“ Nach einem Augenblick der Stille schoss eine apokalyptische Explosion in den Himmel. Wellen von Luft wirbelten Staub und Rauchwolken in alle Richtungen hoch auf, und ein blendendes Licht erhellte den Nachthimmel, als wäre es Tag. „Dir war klar, dass sie das Schießpulver absichtlich überall dort platziert hatten, oder?“ Mit einem Flattern öffnete er seinen Mantel, als hätte er gerade einen gemächlichen Spaziergang hinter sich. „Natürlich.“ „Um sie anzuzünden, musste ich also nur das Streichholz spielen.“",
+    "icon": "/starrail/assets/icon/light_cone/21038.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21038.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21038.webp"
+  },
+  "21039": {
+    "id": "21039",
+    "name": "Schicksalsfaden",
+    "rarity": 4,
+    "path": "Knight",
+    "desc": "Das Schicksal schleppt stets grundlos die Massen voran und lauert in der Dunkelheit, um den wesentlichsten Moment einzuprägen. Sie sortiert, kombiniert, mischt und zieht seine Karten ... Sie simuliert die Hand des Schicksals, die alle Möglichkeiten der Massen manipuliert, und sucht nach dem wahren Weg unter der Oberfläche des Chaos. Schließlich, wenn alle Figuren an ihrem Platz sind, streicht sie über die verfestigten Karten und setzt jene unergründliche Wahrheit zusammen. „Es fehlt immer noch eine Karte ... Dann füge ich eine hinzu.“",
+    "icon": "/starrail/assets/icon/light_cone/21039.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21039.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21039.webp"
+  },
+  "21040": {
+    "id": "21040",
+    "name": "Tag des kosmischen Kollapses",
+    "rarity": 4,
+    "path": "Mage",
+    "desc": "„Schmelzkäsekuchen! Deine Aufgabe ist, die Beschützer des Planeten außer Gefecht zu setzen!“ „Graubohnenpaste! Deine Aufgabe ist, die Soldaten des Planeten anzugreifen!“ „Salzige Reifpflaume! Deine Aufgabe ist, uns das Oberhaupt des Planeten zu bringen!“ „Herr, was wirst du tun?“ „Meine Aufgabe ist, ein niedliches Kätzchen zu spielen, um diese dummen Menschen zu verwirren!“ An diesem Tag erinnerten sich die galaktischen Zivilisationen endlich an die Angst, von ihnen beherrscht zu werden ...",
+    "icon": "/starrail/assets/icon/light_cone/21040.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21040.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21040.webp"
+  },
+  "21041": {
+    "id": "21041",
+    "name": "Vorhang auf",
+    "rarity": 4,
+    "path": "Warlock",
+    "desc": "– Wer hat seinen Tod gesehen? – Ich, mit meinen kleinen Äuglein! – Wer hat sein Blut genommen? – Ich, mit meinem kleinen Tellerchen! – Wer hat sein Grab gegraben? – Ich, mit meinem Meißel und Spaten! Seht die Findigkeit des Weisen, die Machtgier des Souveräns, die Selbstgerechtigkeit des Helden und das unaufhörliche Lachen des Narren ... „Lasst uns nun Fräulein Sparkle mit dem Auftritt des Jahres willkommen heißen: ‚Penaconys Nacht der Angst‘!“",
+    "icon": "/starrail/assets/icon/light_cone/21041.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21041.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21041.webp"
+  },
+  "21042": {
+    "id": "21042",
+    "name": "Verewigtes Versprechen",
+    "rarity": 4,
+    "path": "Warrior",
+    "desc": "Die verstaubte Vergangenheit; die Verantwortung, das Zuhause zu schützen; der Traum eines Trailblaze durch die Welt ... Raue, große Hände reichten sie einem wenig welterfahrenen Jungen. „Bald können wir in eine größere Welt gehen.“ Der Junge nahm das Erbe freudig an. In seiner Jugend konnte er das Gewicht dieser Sache noch nicht spüren. „Natürlich. Doch davor, Misha, beschütze diesen Ort gut.“ Er verewigte dieses Versprechen tief in seinem Herzen ... und hielt immer daran fest.",
+    "icon": "/starrail/assets/icon/light_cone/21042.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21042.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21042.webp"
+  },
+  "21043": {
+    "id": "21043",
+    "name": "Konzert für zwei",
+    "rarity": 4,
+    "path": "Knight",
+    "desc": "„Bruder, was ist das ...“ „Es ist lange her, dass du fröhlich gesungen hast ... Ich habe eine Bühne für dich errichtet, sie ist nur ... etwas schlicht.“ „Aber der Lehrer meinte, ich wäre nicht dafür geeignet ...“ „Nein, ich finde, es klingt schön! Später wirst du bestimmt deinen Traum erfüllen und auf einer größeren Bühne singen ...“ ... Viele Jahre später stand sie auf der leuchtenden Bühne und blickte herab auf die tosenden Fans. Und doch war sie für einen Moment abgelenkt ... Auf dem langen Weg zu ihrem Traum erinnerte sie sich immer an den vertrauensvollen Blick und ihr erstes „Konzert“. Keine prächtige Beleuchtung, kein luxuriöses Makeup, nur eine Bühne, die ein Kind gebaut hatte, um ein anderes Kind bei dem Erfüllen des Lebenstraums zu unterstützen. „Heute ist unser Traum wahr geworden. Aber ... ist das noch ‚unser‘ Traum ...?“ Sie packte das Mikrofon. Bevor das nächste Lied begann, hatte sie nicht einmal die Zeit, Traurigkeit zu verspüren.",
+    "icon": "/starrail/assets/icon/light_cone/21043.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21043.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21043.webp"
+  },
+  "21044": {
+    "id": "21044",
+    "name": "Grenzenloser Tanz",
+    "rarity": 4,
+    "path": "Warlock",
+    "desc": "Licht und Schatten flackerten still bei flotten Tanzschritten. Sie nahm die Hand ihres Gegenübers und schaute mit einem Lächeln in diese abgestumpften Augen. „Schöne Rangerin ... willkommen auf der Bühne des Gedenkens. Auf diese Entfernung ... bist du bezaubernder, als du zunächst erscheinst.“ Die Umgebung verdunkelte sich. Ein Lichtstrahl strömte von der Kuppel herab und folgte den sich ständig verändernden Tanzschritten der beiden. „Es gibt Menschen, die mit uns tanzen sollten, aber sie sind nicht gekommen ...“ Im Moment einer Drehung näherte sie sich dem ausdruckslosen Gesicht, umklammerte die kalten Hände und fragte leise ... „Sag mir, was hast du getan?“ Inmitten des immer hektischer werdenden Tanzes strömten zerbrochene Fragmente der Vergangenheit durch ihre Fingerspitzen in ihren Geist. Inmitten der sich immer weiter entfernenden Vergangenheit hörte sie das Rauschen des Regens und das Klagen vor dem Verblassen des Lebens. Dann sah sie vor sich die Tänzerin, die einen blutroten Papierschirm im nebligen Regen hielt. Und so weit ihre Augen reichten, sah sie ... Die Leichen unzähliger Ertrunkener, die in den reißenden Fluten versanken und davontrieben. Panisch versuchte sie, ihre Hand zurückzuziehen, und fiel nach hinten. Die Umgebung erhellte sich wieder, der Lärm der Festlichkeit kehrte zurück. Ihre Tanzpartnerin stützte sanft ihre Taille, als wüsste sie nicht, was gerade geschehen war. „Was für ein schöner Tanz, Wahrerin der Erinnerungen. Wie wäre es mit noch einem?“",
+    "icon": "/starrail/assets/icon/light_cone/21044.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21044.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21044.webp"
+  },
+  "21045": {
+    "id": "21045",
+    "name": "Nach dem Fall der Harmonie",
+    "rarity": 4,
+    "path": "Mage",
+    "desc": "Der Wunsch nach einem ewigen Traum verflüchtigte sich in einem Augenblick. Als er zur Erde fiel, war er nicht traurig, sondern sehnte sich nur danach, die Augen zu schließen. Der alte Weg, den er eingeschlagen hat, ist gebrochen, aber die Zukunft ist immer noch in Nebel gehüllt. „Nachdem er aufgewacht war, durchlebte die Welt weiterhin ihren schmerzhaften Kreislauf. Es gab auch weiterhin kein Entkommen ...“ Er trug die Vergangenheit auf seinen Schultern, kehrte seiner Heimat den Rücken zu und machte sich weiter auf den Weg zu einem Paradies, das es noch nicht gab. Warum schlafen also die Menschen? Warum wachen sie auf? Die Sterne fliegen am Fenster vorbei, einer nach dem anderen. Dieser Antwort muss eine neue Bedeutung gegeben werden. „Vielleicht ... Vielleicht kann ich es tun ...“",
+    "icon": "/starrail/assets/icon/light_cone/21045.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21045.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21045.webp"
+  },
+  "21046": {
+    "id": "21046",
+    "name": "Jugend in Erwartung der Entflammung",
+    "rarity": 4,
+    "path": "Shaman",
+    "desc": "Im frühen Morgenlicht tanzt eine Gestalt anmutig durch die stillen Blumen und schreckt einen Vogel nach dem anderen auf. Sie rezitiert im Stillen Schwerttechniken und bewegt sich mit dem Fluss, wobei ihre einst unbeholfenen Bewegungen immer geschickter werden. Wo die Schwertstöße die Luft zerreißen, fallen Blütenblätter wie Regen herab und wirbeln chaotisch umher. Ohne dass sie es bemerkt, hat der kühle Nebel ihr Haar befeuchtet. „Ausgezeichnete Schwertkunst!“ Erschrocken wendet sie instinktiv ihr Schwert ... Hinter ihr senkt {F#eine junge Frau}{M#ein junger Mann} mit grauen Haaren {F#ihre}{M#seine} Kamera. „Schöne Erinnerungen vergehen nicht einfach mit dem Wind.“",
+    "icon": "/starrail/assets/icon/light_cone/21046.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21046.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21046.webp"
+  },
+  "21047": {
+    "id": "21047",
+    "name": "Die Nacht der langen Schatten",
+    "rarity": 4,
+    "path": "Rogue",
+    "desc": "„Fußabdrücke.“ „Kratzspuren.“ „Gerüche.“ Nachdem alles ordnungsgemäß erledigt worden war, hob er eine Krähenfeder auf und sprang leichtfüßig auf das Dach. In der riesigen Stadt huschte die schwarze Gestalt in Winkeln, die niemand beachtete. „Ich werde mich im Schatten auflösen und für euch Wache halten.“",
+    "icon": "/starrail/assets/icon/light_cone/21047.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21047.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21047.webp"
+  },
+  "21048": {
+    "id": "21048",
+    "name": "Traummontage",
+    "rarity": 4,
+    "path": "Priest",
+    "desc": "„Die Stadt der Träume, die Brutstätte der Sünde oder das Verheißene Land ...“ Er entzieht vielen ihre Erinnerungen. Er untersucht die eindrucksvollen Momente, zertrennt sie, ordnet sie neu an und schneidet sie neu zusammen. „Die Erinnerungen der meisten Leute sind nichts als eine Sammlung unbedeutender und monotoner Fragmente, zwischen denen nur eine Handvoll wertvoller Momente herausstechen. Der Rest von ihnen ist völlig unnötig.“ Bild für Bild gleitet durch seine Hand und wird allmählich zu einem glänzenden Meisterwerk. „Wir transportieren keine Erinnerungen. Wir erschaffen bloß die Vergangenheit.“",
+    "icon": "/starrail/assets/icon/light_cone/21048.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21048.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21048.webp"
+  },
+  "21050": {
+    "id": "21050",
+    "name": "Sieg im Handumdrehen",
+    "rarity": 4,
+    "path": "Memory",
+    "desc": "Die mächtigen Kriegsschreie der Titanenwesen hallten über das Schlachtfeld. Zwei blitzschnelle Gestalten schlugen sich einen blutigen Pfad über das Schlachtfeld. „Ich werde alleine mit ihnen fertig!“ Jeder Schlag des Kriegers durchbohrte die Körper der mit blutigen Wunden. „Das ist bloß rohe Gewalt. Sieh dir mein Schwert an!“ Die silberne Klinge wirbelte in einer schönen Kurve durch die Luft und die Monster fielen wie Blätter vom Baum. „Ein Wettbewerb?“ Die beiden stürzten sich gleichzeitig aufeinander ... Schmerzensschreie ertönten, als die heranpirschende Bestie hinter ihnen mit einem Schlag niedergestreckt wurde. Die beiden Stimmen riefen im Chor ... „Ich habe ihm den Todesstoß gegeben!“",
+    "icon": "/starrail/assets/icon/light_cone/21050.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21050.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21050.webp"
+  },
+  "21051": {
+    "id": "21051",
+    "name": "Der Gruß der Genies",
+    "rarity": 4,
+    "path": "Memory",
+    "desc": "„Herzlichen Glückwunsch! Dein Experiment ist wieder schiefgegangen, stimmt’s?“ „...“ „Ich habe dir doch gesagt, dass deine Methode fehlerhaft ist.“ „...“ „Ich sage dir, ich habe kürzlich einen großen Durchbruch erzielt!“ Die unnahbare Frau blickte vom Buch auf. „Tut mir leid, was hast du gesagt?“ Sie winkte mit der Hand. „Nun ja, ich kann nicht sagen, wie groß dieser Durchbruch ist. Er betrifft vielleicht nur die Hälfte des Kosmos.“ Die Frau schloss das Buch. „Nun, dann lass hören.“ „Pff, meine Weisheit ist nicht etwas, was man einfach so hören kann ...“ „Ich verstehe. Ich habe ein paar neue Desserts gebacken. Warum essen wir nicht, während wir reden?“",
+    "icon": "/starrail/assets/icon/light_cone/21051.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21051.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21051.webp"
+  },
+  "21052": {
+    "id": "21052",
+    "name": "Mehr Schwitzen, weniger Weinen",
+    "rarity": 4,
+    "path": "Memory",
+    "desc": "Dröhnende Schläge hallten durch den Trainingsraum, gefolgt von einem donnernden Tritt, der den Sandsack fast in zwei Teile faltete. „Generalin ... ist diese Art von Training nicht ein bisschen übertrieben?“, fragte der Soldat neben ihr. Sie schüttelte lächelnd den Kopf und hing einen neuen Sandsack auf. „Das war erst der Anfang!“ Der Schweiß reflektierte das Mondlicht, als er an ihr herabrann wie kristallklare Perlen. Eine Erinnerung an einen längst gefallenen General tauchte in ihrem Kopf auf ... „Je mehr du beim Training schwitzt, desto weniger wirst du im Kampf weinen.“",
+    "icon": "/starrail/assets/icon/light_cone/21052.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21052.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21052.webp"
+  },
+  "21053": {
+    "id": "21053",
+    "name": "Mögen Reisen für immer friedlich sein",
+    "rarity": 4,
+    "path": "Knight",
+    "desc": "Der Junge rannte zwischen den sternähnlichen Wassertropfen umher und freute sich über den ersehnten Regen, der nach einer langen Dürre gekommen war. Der Regen fiel lange Zeit, und der Planwagen hielt auf dem mit Grün bedeckten Land an. „Mama, Schwesterchen, wir werden nicht mehr hungern oder frieren!“ Das Lagerfeuer der Avginier wärmte die lange Nacht, während der Junge den Geschichten seiner großen Schwester lauschte und auf die Morgendämmerung wartete. „Kakavasha ... Auch du wirst mit deinem Glück, das von der Muttergöttin gesegnet ist, weiterziehen und erreichen, was wir nicht erreichen konnten ... Möge deine Reise für immer friedlich sein und deine Pläne ewig verborgen bleiben ...“ Goldenes Sonnenlicht reflektierte aus seinen Träumen in sein reales Zuhause, und in seinen Augen spiegelten sich erneut Transaktionen und Zahlen. Er lockerte seine zur Faust geballte Hand ... Es war, als ob er vergeblich versucht hätte, irgendetwas festzuhalten ... und doch war da noch eine pulsierende, anhaltende Wärme.",
+    "icon": "/starrail/assets/icon/light_cone/21053.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21053.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21053.webp"
+  },
+  "21054": {
+    "id": "21054",
+    "name": "Die nächste Seite der Geschichte",
+    "rarity": 4,
+    "path": "Memory",
+    "desc": "Die Brise ließ die Weizenfelder wogen, während das Mädchen, das ein leeres Tagebuch in der Hand hielt, durch die goldenen Wellen schlenderte. Jenseits von Aedes Elysiae, in einer Stadt, die sowohl unbekannt als auch unheimlich vertraut schien, kreuzten sich die Wege von Gefährten aller Art, und eine Reise wie ein Lied, wie ein Traum, stand bevor ... „Dieses Mal, komm bitte mit mir ...“ Am Rande des Feldes klappte das Mädchen, das so lange gewartet hatte, ihr Buch zu und streckte die Hand in Richtung „Zukunft“ aus ... „Schreiben wir ein neues Kapitel der Geschichte! ♪“",
+    "icon": "/starrail/assets/icon/light_cone/21054.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21054.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21054.webp"
+  },
+  "21055": {
+    "id": "21055",
+    "name": "Bis zum Übermorgen",
+    "rarity": 4,
+    "path": "Priest",
+    "desc": "„Wir sehen uns morgen, Tribios ...“ Das Mädchen wischte sich die Tränen von den Wangen, als ihre Mutter weit, weit weg ging. Sie wartete ein Morgen nach dem anderen ab, bis sie zu einer Person wie ihre Mutter heranwuchs. Sie stand vor dem Tor und hielt die Kernflamme fest umklammert, als die Worte ihrer Mutter in ihren Ohren erklangen. „Dort gibt es keine Schneestürme, keine Kälte und keinen Regen ...“ „Aber wenn wir dich morgen nicht sehen können, dann ...“ Sie fällt auf die Erde und lässt ihre junge Gestalt zurück, wie eine Sternschnuppe am Himmel. „Dann sehen wir uns übermorgen!“",
+    "icon": "/starrail/assets/icon/light_cone/21055.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21055.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21055.webp"
+  },
+  "21056": {
+    "id": "21056",
+    "name": "Bei der Jagd nach dem Wind",
+    "rarity": 4,
+    "path": "Shaman",
+    "desc": "„Ha. Das hier kann dieser kleine Pechvogel bekommen. Das wird ihre verschuldeten Eltern zum Schweigen bringen, und vielleicht schlagen sie sie dann weniger. Das kann diese Oma haben, die in ihrer Not Gurkenbonbons verkauft. Sie muss wirklich einen Arzt aufsuchen für all ihre Schmerzen. Ich möchte nicht den Tag erleben, an dem ich so leckere Bonbons nicht mehr kaufen kann ...“ Über den Rucksack gebeugt zählte das Mädchen akribisch die Juwelen darin. Plötzlich musste es niesen. „Wer wohl gerade an mich denkt?“ „Da bist du ja, Cifera.“ Die Fäden wickelten sich um ihren Rücken, als wüssten sie nicht, wo sie anfangen sollten. „Von nun an, wenn du dem Wind nachjagst ...“ Die eisigen Goldfäden umschlangen ihre Handgelenke und hielten sie fest. „... solltest du nicht vergessen, auch auf dich selbst aufzupassen.“ Sie rannte los und floh weit weg. Erst als sie sich umdrehte, entdeckte sie, dass der Zipfel ihres Umhangs, der auszufransen begonnen hatte, wieder aussah wie neu.",
+    "icon": "/starrail/assets/icon/light_cone/21056.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21056.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21056.webp"
+  },
+  "21057": {
+    "id": "21057",
+    "name": "Die Blumen werden nicht vergessen",
+    "rarity": 4,
+    "path": "Memory",
+    "desc": "Im Frühjahr säten sie Samen aus. Im Sommer bewässerten sie die Felder. Im Herbst ernteten sie die Früchte. Im Winter wanderten sie durch den Schnee und sangen. ... Das einst karge Land erblüht nun. Schmetterlinge werden vom Lachen angelockt und landen auf den Fingerspitzen der Mädchen. „Schwesterherz! Wir werden diesen Ort weiter gemeinsam in ein riesiges Meer von Blumen verwandeln!“ „Sieh nur, unser Versprechen ...“ Der Schmetterling fliegt ans andere Ufer. Das schweigsame Mädchen streichelt sanft die warmen Blütenblätter, als wäre ihre kleine Schwester noch bei ihr. „Weder ich noch die Blumen, die wir einst besuchten, haben es vergessen.“",
+    "icon": "/starrail/assets/icon/light_cone/21057.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21057.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21057.webp"
+  },
+  "21058": {
+    "id": "21058",
+    "name": "Blutzeichen aus der Vergangenheit",
+    "rarity": 4,
+    "path": "Warrior",
+    "desc": "In der Ferne braute sich ein Sturm zusammen. Tentakel streckten sich aus dem Meer der Seelen empor, als wollten sie mit dem schwimmenden, zerbrechlichen Leben spielen. Die gebrochenen Gliedmaßen des Seeungeheuers schlugen Gischt hoch in den Himmel und zerbrachen wie Trümmer, woraufhin sie tief in den Meeresabgrund sanken. Man sagt, dass das Tosen des Kampfes zehn Tage und Nächte lang anhielt und sogar Blitz und Donner übertönte. Man sagt, selbst wenn ein Mensch zehntausend Leben hätte, könnte er nicht der Erosion des Meeres der Seelen widerstehen. Letztendlich wäscht der Mut die Unreife und die von kaltem Stolz geprägte Schwäche hinfort ... Diese dünne Gestalt stolperte an das Ufer. Der erste Strahl der Morgensonne schien auf das Wasser des Meeres und färbte es rot wie das Blut der Vergangenheit.",
+    "icon": "/starrail/assets/icon/light_cone/21058.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21058.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21058.webp"
+  },
+  "21060": {
+    "id": "21060",
+    "name": "Träume von duftendem Weizen",
+    "rarity": 4,
+    "path": "Mage",
+    "desc": "Der Wind wehte an den Fingerspitzen des Jungen vorbei und schickte den Brief, auf dem die Tinte noch nicht getrocknet war, ins ferne Jenseits. „Wie meine Zukunft wohl aussehen wird ...?“ Träumen wuchsen in seinem Kopf Flügel, und sie flogen hoch gen Himmel. Weizenähren tanzten im Wind und kräuselten sich, wie eine Antwort auf seinen jungenhaften, aufrichtigen Wunsch. „Egal, was passiert, auch wenn ich nur ein Schwert in der Hand habe, will ich diesen Ort um jeden Preis beschützen!“ Der Junge legte in Gedanken dieses stille Gelübde ab ... Ein Gelübde, das wie ein Brandmal für immer tief in sein Herz eingebrannt war.",
+    "icon": "/starrail/assets/icon/light_cone/21060.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21060.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21060.webp"
+  },
+  "21061": {
+    "id": "21061",
+    "name": "Abenteuer der Urlaubsbäder",
+    "rarity": 4,
+    "path": "Warlock",
+    "desc": "„Cinny, lass uns das neue Spezial-Badehaus ausprobieren, das kürzlich eröffnet wurde!“ Nachdem das Mädchen seinen medizinischen Dienst in Okhema beendet hatte, folgte es neugierig dem Kind zu den vielfältigen Becken. „Wie wäre es mit einer Tomatensaft-Massage?“ Als das Mädchen die mit rot beschmierten Hände des Aufsehers sah, packte es den begierigen Kleinen Ika und wich zurück. „Ich bevorzuge das ... als Getränk ...“ „Droma-Rückenstampfmassage, zeitlich begrenztes Angebot!“ Ein neugieriges Droma senkte seinen Kopf und sein heißer Atem zerzauste das Haar des Mädchens. „B... Beim nächsten Mal dann!“ „Kräuterbad, stärkt Körper und Geist! Wie viele seid ihr?“ Angelockt vom Kräuterduft tauchte sie zaghaft einen Fuß in das Becken. „Das ist bestimmt gesund ...“ „Tuut, tuut tuut!“ Der Kleine Ika paddelte fröhlich rücklings durch das Wasser. „Auch er hat sich in letzter Zeit total verausgabt ...“ Während dieser seltenen Auszeit trank das Mädchen Traubensaft und plauderte mit dem rothaarigen Kind über alles Mögliche, von Tipps für ruhigen Schlaf bis hin zu Gebäckrezepten. „Oh nein! K... Kleiner Ika!“ Der Schrei des Kindes brach die Ruhe im Badehaus. „Tuut ...“ „Kleiner Ika, halt durch!“",
+    "icon": "/starrail/assets/icon/light_cone/21061.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21061.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21061.webp"
+  },
+  "21062": {
+    "id": "21062",
+    "name": "Wiedersehen an der Ziellinie",
+    "rarity": 4,
+    "path": "Rogue",
+    "desc": "Ihm liefen unwillkürliche Tränen über die Wangen. Im Herzen der zertrümmerten Ritualaufstellung wartete nicht nur der Schatten des Todes, sondern auch ein Abgrund aus Stille und Leere. Auf einmal ertönte aus der Dunkelheit ein Seufzer; ein Beben aus den Tiefen der Seele. „Bist du es ... Schwester?“ Der Junge hob die Hand und ein schwaches Licht flackerte in seinen Augen. Die Silhouette der geliebten Person verweilte nur für einen Moment, doch ihr Abdruck brannte sich ein Jahrtausend in sein Herz ein. „Ich verstehe ... Danke ... für dieses letzte Lebewohl.“ Er erhob sich langsam. Die ersten Strahlen der Morgendämmerung fielen auf sein entschlossenes Gesicht, auf dem die Tränen noch nicht getrocknet waren. „Der Weg der Suche ist einsam ... Lass uns am Ende der Reise wieder zusammenkommen ...“",
+    "icon": "/starrail/assets/icon/light_cone/21062.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21062.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21062.webp"
+  },
+  "21064": {
+    "id": "21064",
+    "name": "Die Abenteuer des pilzigen Pilzes",
+    "rarity": 4,
+    "path": "Elation",
+    "desc": "„Märzpilzchen, willkommen im geheimnisvollen Blumenreich! ♥“ „Pilz Heng, zieh doch nicht so ein finsteres Gesicht, lächle mal!“ „Graupilz, bist du schon dem Charme der großen Königin verfallen? Fantastisch!“ „Und was Babbelpilz angeht – ich wähle dich, du siehst lecker aus!“ Lauf, lauf, die Gier der Menschen ist ein bodenloser Kaninchenbau ... Komm schon, komm schon, lächle, werde Teil der blumigen Welt ... „Willkommen bei deiner exklusiven Show: Jeder kann zu einer süßen Sparxie werden!“",
+    "icon": "/starrail/assets/icon/light_cone/21064.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21064.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21064.webp"
+  },
+  "21065": {
+    "id": "21065",
+    "name": "Glück des Tages",
+    "rarity": 4,
+    "path": "Elation",
+    "desc": "„Meine liebe jüngere Mitschülerin, bist du dir absolut sicher?“ „Hmpf, ohne Zweifel!“ „Diesmal geht es um mehr als eine Dose Handcreme.“ „Bei einem so simplen Spiel ... wird es doch wohl keine Überraschungen geben?“ Das rosahaarige Mädchen drehte sich um und wollte offenbar nicht weiter gestört werden. „So wie die Teeblätter schwimmen, solltest du eigentlich jene Karte ausspielen.“ Das Mädchen zog ein Los und drehte es um ... „Oh, mein Glück hat sich gewendet.“ „Noch mal, noch mal, das ist absolut unmöglich ...“ ... Das Mädchen hatte vergessen, wie viele Wahrsagespiele es mit seiner älteren Mitschülerin gespielt hatte. Es erinnerte sich nur daran, dass sie immer bereit war, wieder und wieder zu spielen. Später wollte das Mädchen der vorbestimmten Prophezeiung entkommen und reiste trotz aller Hindernisse zur Wahrsagekommission der Luofu. Als es gerade erst auf der Luofu angekommen war, fand es plötzlich in den Seiten eines Wahrsagebuchs einen fein gearbeitetes Glückszeichen. Die vertraute Handschrift ließ dem Mädchen in der Fremde die Tränen in die Augen schießen: „Wer sagt denn, dass das Schicksal keine zweite Möglichkeit hat? Hier, das ist mein Glücksbringer für dich!“",
+    "icon": "/starrail/assets/icon/light_cone/21065.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21065.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21065.webp"
+  },
+  "22000": {
+    "id": "22000",
+    "name": "Bevor das Tutorial beginnt",
+    "rarity": 4,
+    "path": "Warlock",
+    "desc": "„Wann geht es endlich los?“ „Eine ziemlich dreiste Frage ... Stimmt mit der neuen Rekrutin etwas nicht?“ „Nein.“ „Elio hat sie aus anderen Gründen ausgewählt, aber diesen Auftrag sollte auch ein Anfänger überleben.“ „Sie kommt locker damit klar.“ „Dann bin ich ja erleichtert. Bladie scheint sich auch als verlässlicher Kollege herausgestellt zu haben.“ „...“",
+    "icon": "/starrail/assets/icon/light_cone/22000.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/22000.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/22000.webp"
+  },
+  "22001": {
+    "id": "22001",
+    "name": "Hey, ich bin hier",
+    "rarity": 4,
+    "path": "Priest",
+    "desc": "Drei Mädchen schlendern durch die Dunkelheit, und die Umgebung scheint einen Hauch von unheimlicher Atmosphäre zu bekommen. „Huohuo, beeil dich, sonst warten wir nicht auf dich!“ Sie schreitet selbstbewusst mit erhobenem Handy voran, scheinbar unbeeindruckt von der übernatürlichen Atmosphäre. „Ich bin hier drüben!“, antwortet das Mädchen, das vor ihr steht zaghaft. „Hä? Du warst also die ganze Zeit vorne, wer folgt dann Shangshang und mir ...?“ Das perfekte Ende für diese Szene wäre ein schriller Schrei.",
+    "icon": "/starrail/assets/icon/light_cone/22001.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/22001.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/22001.webp"
+  },
+  "22002": {
+    "id": "22002",
+    "name": "Für die Reise von morgen",
+    "rarity": 4,
+    "path": "Shaman",
+    "desc": "Die Zeiger des Kompasses drehten sich unaufhörlich, bis sie auf den Moment der Träume zeigten. Das Asdana-System, voll von Memoria, erstrahlte in einem sanften Licht vor den Fenstern des Zuges. Das Grenzgefängnis darin war derzeit vom Feuer des Krieges verschlungen. „Sagt mal, was denkt ihr, wie die Welt im Traum aussehen würde? Ich muss unbedingt eine detaillierte und vollständige Karte von ihr aufzeichnen!“ Das Mädchen legte die Vermessungsinstrumente beiseite und blickte sehnsüchtig auf die neue Welt in ihrer Reichweite. „Dieser Ort ist ein einziges Chaos. Ihr zwei, lauft nicht weg, wenn wir dort sind. Wenn ihr wieder entführt werdet, wie beim letzten Mal, dann ...“ Der als Cowboy gekleidete Mann polierte seine Waffe zu Ende. Er trug ein Getränk zum Sofa und schüttelte hilflos den Kopf. „Das Land der Träume bietet endlos viele Möglichkeiten. Wir werden auf jeden Fall Großes erreichen ... Schaffner, wenn wir uns in diesen Ort verlieben und nie mehr zurückkommen, wirst du uns dann vermissen?“ Der wie ein Gentleman gekleidete Namenlose blinzelte Pom-Pom zu und lächelte. „Schaffner, du siehst aus, als wolltest du sagen: ‚Solche Witze auf Kosten des Schaffners darfst du nicht machen!‘“ Das Mädchen grinste schelmisch. „Ihr seid so gemein!“ Bläschen tanzten im Glas auf und ab, während sich der Wagen mit Gelächter füllte. ... Die sich entfernenden Gestalten dieser jungen Namenlosen wurden allmählich von Memoria verschluckt. „Habt eine ... gute ... Reise, Pom.“ Als der Schaffner den Kopf drehte, war der Wagen bereits leer. Der Schaffner erstarrte ... Es war, als hätte sich eine solche Szene schon unzählige Male abgespielt.",
+    "icon": "/starrail/assets/icon/light_cone/22002.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/22002.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/22002.webp"
+  },
+  "22003": {
+    "id": "22003",
+    "name": "Ninja-Aufzeichnung: Klangjagd",
+    "rarity": 4,
+    "path": "Warrior",
+    "desc": "Das Kosmische Ninjutsu wandelt sich immer wieder, Hör wie das Echo meiner Klangjagd geht hernieder! Fühl den Rhythmus, den Ruf des Takts, Die Gitarr’ erklingt, die Stimmung packt. In sanften Bassnoten, Elektroakustik wird dargeboten. Mit Fleiß und Schweiß, ja, das ist wahr, Und jeder Drehung das Lied erklingt so wunderbar. Mein Klang steigt auf, höher und immer weiter, Trotz Kampf und blauen Flecken, ich mache weiter. Die Blendenden! Die Blendenden! Ein so kühner Gesang. Die Blendenden! Die Blendenden! In Geschichten noch nie erklang, Die Blendenden! Die Blendenden! Von epischem Belang! Hey. Hey. In dieser wilden Welt. Lass uns die Herzen in Brand setzen. Die Seele aus dem Leib schreien, während wir dem Wahnsinn entgegen hetzen!",
+    "icon": "/starrail/assets/icon/light_cone/22003.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/22003.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/22003.webp"
+  },
+  "22004": {
+    "id": "22004",
+    "name": "Das große kosmische Geschäft",
+    "rarity": 4,
+    "path": "Mage",
+    "desc": "In einer virtuellen Ausstellungshalle, die aus Daten geformt wurde, tauschten die Vertreter der Ausstellung ihre Meinungen aus. Zwei Gestalten bewegten sich zwischen den Ständen und lieferten die benötigten Waren. „Hmm, bist du nicht ...“ „Ich habe dich schon mal im Fernsehen gesehen, Pom.“ Sie unterhielten sich über Spiele, Essen, den Körperbau des jeweils anderen und all die schönen Dinge im Universum. Obwohl sie sich nur selten sahen, standen sie sich so nahe wie alte Freunde ... „Übrigens, möchtest du nicht noch einmal meinen Vorschlag überdenken ...“ „Der Express ist unverkäuflich!“",
+    "icon": "/starrail/assets/icon/light_cone/22004.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/22004.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/22004.webp"
+  },
+  "22005": {
+    "id": "22005",
+    "name": "Wirrgarten-Restaurant für immer",
+    "rarity": 4,
+    "path": "Shaman",
+    "desc": "*groll* ... Außerhalb des Wirrgartens tobt unaufhörlich der Sturm. *gurgel* ... Der magische Kessel der Feen brodelt über nie erlöschendem Feuer. „Eine Prise spezieller Gewürze ...“ „Etwas frisches Gemüse!“ „Diesmal wird uns der Durchbruch gelingen!“ Der große Kessel beginnt erneut zu brodeln, während die Feen gespannt zusehen. „Da, da!“ Ein greller Lichtstrahl schießt vom Boden des Kessels empor ... Seht nur, alle versammeln sich! ... Bei diesem duftenden Festmahl erheben die Gäste ihre Gläser auf diese wunderbaren Zeiten ... Möge dieses traumhafte Paradies für immer warm und voller Freude bleiben!",
+    "icon": "/starrail/assets/icon/light_cone/22005.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/22005.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/22005.webp"
+  },
+  "22006": {
+    "id": "22006",
+    "name": "Flug in einen rosaroten Morgen",
+    "rarity": 4,
+    "path": "Memory",
+    "desc": "Ein sanfter Wind zerstreut die Wolken und enthüllt die Galaxie. Goldener Glanz erstrahlt beim Klang von Epen im Sternenhimmel. „Sternschnuppen, Begegnungen, Versprechen!“ Die kleine Fee blickt zum Himmel auf, wie beim ersten Treffen, wie beim Wiedersehen. „Memi, wartet. Trailblaze, die Welt!“ Die Augen der kleinen Fee werden vom Sternenlicht erhellt – sie funkeln wie das rosarote Morgen.",
+    "icon": "/starrail/assets/icon/light_cone/22006.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/22006.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/22006.webp"
+  },
+  "23000": {
+    "id": "23000",
+    "name": "Nacht auf der Milchstraße",
+    "rarity": 5,
+    "path": "Mage",
+    "desc": "Wenn du dir Sorgen um den Weg machst, schau einfach wieder nach oben. Wenn die Sterne sanft nach unten blicken, würde das Herz schon aufsteigen. Jeder Gedanke und jedes Flüstern, wird zu einer Lebenserfahrung, die dich nie verlassen würde.",
+    "icon": "/starrail/assets/icon/light_cone/23000.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23000.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23000.webp"
+  },
+  "23001": {
+    "id": "23001",
+    "name": "In der Nacht",
+    "rarity": 5,
+    "path": "Rogue",
+    "desc": "Ein junges Mädchen hatte ein leichtes Grinsen auf den Lippen. „Warum?“ „Hier und jetzt bin ich allein ...“ „Doch es fühlt sich ... so lebhaft an.“",
+    "icon": "/starrail/assets/icon/light_cone/23001.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23001.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23001.webp"
+  },
+  "23002": {
+    "id": "23002",
+    "name": "Etwas Unersetzliches",
+    "rarity": 5,
+    "path": "Warrior",
+    "desc": "„Svarog, sollte ich eines Tages mal nicht hier sein, übertrage ich dir die Verantwortung für meine Archive.“ (Wer ... hat eine Nachricht in meinen Unterlagen hinterlassen ...) „Svarog, gibt es etwas, das für dich unersetzlich ist?“ (Unersetzlich ... Wenn etwas kaputt ist, tauscht man einfach die Teile aus ...) „Svarog, eines Tages wirst du es finden.“ (Solche Sachen ... werden nichts als Ärger bereiten ...) „Sobald die Zeit gekommen ist, kannst du von hier verschwinden.“",
+    "icon": "/starrail/assets/icon/light_cone/23002.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23002.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23002.webp"
+  },
+  "23003": {
+    "id": "23003",
+    "name": "Der Kampf ist nicht vorbei",
+    "rarity": 5,
+    "path": "Shaman",
+    "desc": "„Vergiss nicht, wir werden den Krieg mit den Monstern nicht gewinnen können, wenn wir uns nur zurückziehen.“ „Du bist die letzte eiserne Wand und Belobog steht hinter dir ...“ „Du darfst dich unter keinen Umständen zurückziehen!“ Sie blickte nach oben und sah die gefrorene Erde und den endlosen Winter, der vor ihr lag. Alles wie gehabt. Einzig die Gestalt, die sie angestarrt hatte, war verschwunden.",
+    "icon": "/starrail/assets/icon/light_cone/23003.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23003.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23003.webp"
+  },
+  "23004": {
+    "id": "23004",
+    "name": "Im Namen der Welt",
+    "rarity": 5,
+    "path": "Warlock",
+    "desc": "„Welt ...?“ „Ein ... toller Name, nicht wahr?“ „Dann ... „... heißt du also von nun an Welt.“ „Diesen Kern von Herrscher ... und die Mission, die Welt zu beschützen ...“ „Ich überlasse sie dir, Welt.“",
+    "icon": "/starrail/assets/icon/light_cone/23004.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23004.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23004.webp"
+  },
+  "23005": {
+    "id": "23005",
+    "name": "Moment des Sieges",
+    "rarity": 5,
+    "path": "Knight",
+    "desc": "„Wenn du nach deinem Verlust weinen willst, Gepard, dann weine.“ „Aber du musst wieder aufstehen, auch wenn du weinst, bis du mich besiegen kannst ... Auch wenn es Jahre dauert.“ Ein paar Jahre später weinte der Junge nicht mehr und verlor auch nicht mehr gegen seine Schwester. Jetzt, auf dem Schlachtfeld, verteidigt der mutige Hauptmann der Silbermähnen-Wachen bis zum Ende, egal was passiert. Nur, um im richtigen Moment seine Gegner zu vernichten.",
+    "icon": "/starrail/assets/icon/light_cone/23005.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23005.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23005.webp"
+  },
+  "23006": {
+    "id": "23006",
+    "name": "Nur Geduld",
+    "rarity": 5,
+    "path": "Warlock",
+    "desc": "„Gibt es sonst noch etwas, das du mir sagen möchtest?“ Sie sah zu, wie sich sein Hals versteifte, als hätte er einen Klumpen im Rachen. Sie wusste, dass er sie fürchtete und kein weiterer Schritt erforderlich war. An diesem Punkt spielte es keine Rolle mehr, was sie sagte. Alles wäre genug, um Schrecken zu verbreiten ... Niemand hatte eine Chance gegen sie und man hatte keine andere Wahl, als das auszuspucken, was sie hören wollte. Wie eine Spinne, die bereits ihr Netz gelegt hatte. Alles, was sie brauchte, war nur Geduld.",
+    "icon": "/starrail/assets/icon/light_cone/23006.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23006.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23006.webp"
+  },
+  "23007": {
+    "id": "23007",
+    "name": "Unaufhörlicher Regen",
+    "rarity": 5,
+    "path": "Warlock",
+    "desc": "Sie trat unter der Markise hervor, öffnete ihren Regenschirm und rannte eine fröhliche Melodie summend in eine Gasse hinein. Nach einer Weile hörte der Regen auf. Sie kratzte sich am Kopf und wischte ihren Bildschirm frei. Der Regen kam wieder durch den kleinen Raum über ihrem Kopf. Das Geräusch des Regens, der auf den Schirm tropfte, vermischte sich mit den Soundeffekten aus dem Spiel. Alles war ruhig und entspannt. „Regen und Gaming sind eine erstaunlich gute Kombination.“",
+    "icon": "/starrail/assets/icon/light_cone/23007.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23007.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23007.webp"
+  },
+  "23008": {
+    "id": "23008",
+    "name": "Echos des Sarges",
+    "rarity": 5,
+    "path": "Priest",
+    "desc": "Unter den stillen Blicken weißer Schwertlilien klopfte er auf den Sarg. „Manchmal denke ich, ich habe dich unterschätzt, als ich diesen Handel vorgeschlagen habe.“ Die einzige Antwort, die er daraufhin erhielt, ist ein dorniger Ast, der sich in seine Handfläche bohrte. Trotzdem grinste er und umschloss den Dorn fest mit seiner Hand. „So ist es, in der Tat. Wir beide wollten einander ausnutzen, haben uns aber gegenseitig unterschätzt.“",
+    "icon": "/starrail/assets/icon/light_cone/23008.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23008.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23008.webp"
+  },
+  "23009": {
+    "id": "23009",
+    "name": "Unerreichbares Jenseits",
+    "rarity": 5,
+    "path": "Warrior",
+    "desc": "Er besuchte diesen Ort jedes Jahr und brachte immer ein paar neue Schwerter mit. Er hatte gesehen, wie alle Besitzer der Schwerter ihren letzten Atemzug taten. Jedes Mal ging er mit Trauer im Herzen weg ... „Wann wird jemand mein Schwert hierherbringen?“",
+    "icon": "/starrail/assets/icon/light_cone/23009.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23009.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23009.webp"
+  },
+  "23010": {
+    "id": "23010",
+    "name": "Vor der Dämmerung",
+    "rarity": 5,
+    "path": "Mage",
+    "desc": "„Nehmt diese Entscheidung nicht auf die leichte Schulter, General ... Denkt daran, wie man sich an Euch erinnern wird ...“ Der General der Wolkenritter lauschte diesen Worten mit halb geschlossenen Augen. „Die Geschichte wird ihr eigenes Urteil fällen. Mir ist es egal, was andere von mir halten.“ „Bin ich erfolgreich, werde ich für meine meisterhafte Strategie gelobt.“ „Doch wenn ich versage, werde ich für mangelndes Pflichtbewusstsein kritisiert.“ Der Vogel des Generals sprang von seiner Schulter auf seine Hand. „Ich habe mich lediglich geweigert, gegen meine Überzeugung zu handeln.“",
+    "icon": "/starrail/assets/icon/light_cone/23010.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23010.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23010.webp"
+  },
+  "23011": {
+    "id": "23011",
+    "name": "Ihre Augen sind bereits geschlossen",
+    "rarity": 5,
+    "path": "Knight",
+    "desc": "Der Schmerz mitten auf ihrer Stirn wird sie für den Rest ihres Lebens begleiten, aber er ist nichts im Vergleich zu dem, was sie in der Vergangenheit durchmachen musste. Sie hielt sich immer für weitsichtig, bis sie sich von denen verabschieden musste, die ihr nahestanden. Jetzt „sieht“ sie die sich ständig verändernde Welt, die unaufhörlich wechselnden Zeiten ... Aber ihre Augen sind geschlossen, denn die Zukunft ist bereits vorherbestimmt ... im „dritten Auge“.",
+    "icon": "/starrail/assets/icon/light_cone/23011.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23011.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23011.webp"
+  },
+  "23012": {
+    "id": "23012",
+    "name": "Schlafen wie die Toten",
+    "rarity": 5,
+    "path": "Rogue",
+    "desc": "Der Junge hielt das Schwert noch immer fest umklammert, auch wenn er schon an der Schulter des Generals einschlief. Der General tippte dem Jungen sanft auf die Wange und der Junge murmelte im Schlaf. „General ... Endlich habe ich gewonnen.“ Der General hielt inne. Plötzlich wurde ihm klar, dass er im Vergleich zu dem Jungen, der jeden Tag versuchte, besser zu werden, zu viele Jahre durchgemacht hatte und an Stagnation gewöhnt war. „Du wirst bald besser sein als alle anderen. Und das wird erst der Anfang sein ...“",
+    "icon": "/starrail/assets/icon/light_cone/23012.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23012.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23012.webp"
+  },
+  "23013": {
+    "id": "23013",
+    "name": "Die Zeit wartet auf niemanden",
+    "rarity": 5,
+    "path": "Priest",
+    "desc": "Sie hatte viele Tage neben dem Fenster verbracht. Draußen blühten Blumen, als sie sanfte Medizin mit Minze und Nepeta herstellte. Draußen fiel Regen, als sie starke Medizin mit Mosla und Ingwer herstellte. Draußen fielen Blätter, als sie saure Medizin mit Pfingstrosenwurzeln und Trockenpflaumen herstellte. Und draußen fiel Schnee, als sie bittere Medizin mit Helmkraut und Anemarrhena herstellte. Die Zeit wartet auf niemanden, aber dieses Fenster und die Person, die daneben sitzt, bleiben für immer dieselben.",
+    "icon": "/starrail/assets/icon/light_cone/23013.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23013.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23013.webp"
+  },
+  "23014": {
+    "id": "23014",
+    "name": "Eins mit dem Schwert",
+    "rarity": 5,
+    "path": "Warrior",
+    "desc": "Die zerbrochene Klinge stürzt in die klirrende Kälte. Gewöhnliche Metallutensilien sind nutzlose Objekte und ihre Eigenschaften können auf einen Blick bewertet werden. „Was für einen Nutzen bringen mir Schwerter?“ Ihr Blick zeigt keine Verbundenheit und kein Entgegenkommen. „Von jetzt an werde ich mein eigenes Schwert sein.“ Um die sogenannten Grenzen zu überschreiten und einen bisher unerreichten Durchbruch zu erzielen, muss man sich selbst als „Treibstoff“ betrachten, um das bisher Unentdeckte zu verfolgen.",
+    "icon": "/starrail/assets/icon/light_cone/23014.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23014.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23014.webp"
+  },
+  "23015": {
+    "id": "23015",
+    "name": "Heller als die Sonne",
+    "rarity": 5,
+    "path": "Warrior",
+    "desc": "Alles, was er seit seiner Geburt gesehen hatte, war die Finsternis dieses Kerkers. Sünden, die nichts mit ihm zu tun hatten, banden ihn an diesen Ort. Erinnerungen, die er nicht wiedererkannte, überwältigten ihn. Er rang mühevoll nach Atem und versuchte, einen Lichtfetzen in diesem unergründlichen Ozean zu erhaschen. Und dennoch sah er, als der General in dieses lichtlose Gefängnis kam, den strahlenden Blick eines jungen Mannes, heller als die Sonne.",
+    "icon": "/starrail/assets/icon/light_cone/23015.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23015.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23015.webp"
+  },
+  "23016": {
+    "id": "23016",
+    "name": "Besorgt doch glückselig",
+    "rarity": 5,
+    "path": "Rogue",
+    "desc": "Für einen kompetenten Profi der IFK ist es absolut nicht zulässig, von einer Situation überwältigt zu sein. Ganz gleich, ob man müde ist oder unter Druck steht – man muss stramm stehen und sich den Herausforderungen direkt stellen! Es sei denn, man wird von „ihnen“ überwältigt. „Oh, seid nicht ungeduldig! Ich habe nur zwei Hände!“ Ein Mädchen, welches gerade von Überstunden nach Hause zurückgekehrt ist, wird von einer Gruppe von flauschigen Kreaturen zu Boden gedrückt. Sie verstehen wohl nicht ganz ihre Worte und hätscheln ihre runden Köpfe näher an ihre Handfläche. Das Gefühl von Erschöpfung verschwindet allmählich aus ihrem Körper und wird ersetzt von einem Gefühl der Wärme und des Wohlbehagens, welches das Streicheln ihres Fells mit sich bringt.",
+    "icon": "/starrail/assets/icon/light_cone/23016.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23016.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23016.webp"
+  },
+  "23017": {
+    "id": "23017",
+    "name": "Nacht der Angst",
+    "rarity": 5,
+    "path": "Priest",
+    "desc": "Das Mädchen versteckt sich hinter der Tür und traut sich nicht, auch nur einen Schritt näher zu kommen. Vielleicht schlägt sein Herz tatsächlich schneller, weil das Ziel des heutigen Abends bereits in greifbarer Nähe ist. „Ich habe keine Angst, keine Angst, keine Angst ...“ In der Dunkelheit durchdringt ein Schrei die Stille. Das Mädchen zittert und hält die „Waffe“ fest in ihren Händen, traut sich aber immer noch nicht, sich dem „Ziel“ zu nähern. „Es gibt keinen Grund, Angst zu haben!“ Der Schweif hinter ihr hat plötzlich genug und leuchtet hell auf. „Beeil dich. Du holst gerade eine Lieferung ab!“",
+    "icon": "/starrail/assets/icon/light_cone/23017.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23017.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23017.webp"
+  },
+  "23018": {
+    "id": "23018",
+    "name": "Ein unvergesslicher Augenblick",
+    "rarity": 5,
+    "path": "Mage",
+    "desc": "Er hörte einst Lieder, in denen dieses Licht gepriesen wurde: Sicherlich blühen Rosen, nur um auf ihr Lächeln zu antworten. Sicherlich funkelt die Morgendämmerung, nur um ihr Gesicht zu erhellen. Sicherlich erklingen Melodien, nur um ihre müden Augen zu beleben. Dieses Licht ist jedoch verschwunden, und er wird nie wieder zurückkehren – galoppiert weiter auf einen weit entfernten Ort zu. Das Einzige, was man tun kann, ist zu warten, Vertrauen zu haben und dem Kosmos alles über Schönheit zu predigen. Auch wenn alles ein flüchtiger Augenblick sein mag, der für immer in sein Gedächtnis gebrannt worden ist, hat er die Antwort, nach der er sucht, bereits erhalten.",
+    "icon": "/starrail/assets/icon/light_cone/23018.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23018.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23018.webp"
+  },
+  "23019": {
+    "id": "23019",
+    "name": "Das Ich im Spiegel",
+    "rarity": 5,
+    "path": "Shaman",
+    "desc": "Wenn die Pflaumenblüten kurz vor dem Verwelken standen, versiegelte sie diesen Moment gerne und behielt ihn für sich. Seitdem sind viele Jahre vergangen. Viele Lebensformen – wilde, süße und alles dazwischen – sind durch ihre Hände erblüht, aber die Pflaumenblüten verwelken immer noch zu ihren vorbestimmten Zeiten. Seitdem sind viele Jahre vergangen. Ihr Antlitz im Spiegel scheint von der Zeit unberührt zu sein. Aber ist auch sie im großen Plan des Kosmos dazu bestimmt, nur einen flüchtigen Moment zu bestehen? „Wenn alles auf den Untergang ausgerichtet ist, welchem Zweck dient dann die Schöpfung?“ Nach einer scheinbar unendlichen Stille weht der Wind, die Blütenblätter fallen und das Spiegelbild gibt die gleiche Antwort wie immer. „Für den Tag, an dem die Pflaumenblüten nicht mehr aufbewahrt werden.“ Sie streicht mit der Hand über den kalten Spiegel und fragt sich, wie viele Male sie diesen Satz schon gesagt hat.",
+    "icon": "/starrail/assets/icon/light_cone/23019.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23019.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23019.webp"
+  },
+  "23020": {
+    "id": "23020",
+    "name": "Taufe des reinen Denkens",
+    "rarity": 5,
+    "path": "Rogue",
+    "desc": "Die Nachmittagssonne ist genau richtig und die Blumendüfte erfüllen die Luft. Obwohl er versucht, seine Gedanken rein zu halten, zieht kognitiver Stillstand unweigerlich Partikel des Geistes an wie angesammelten Staub. „Die Heilung der Gedanken ist genauso wichtig wie die Erhaltung der Gesundheit.“ Das Geschrei der Narren verklingt mit der Müdigkeit, als er ins Wasser sinkt und alle Gedanken loslässt, seinen Verstand klärt und ordnet. „Die Wahrheit entzieht sich jedem Schmutz und nimmt nur die reinen Gedanken an.“",
+    "icon": "/starrail/assets/icon/light_cone/23020.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23020.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23020.webp"
+  },
+  "23021": {
+    "id": "23021",
+    "name": "Eskapade auf Erden",
+    "rarity": 5,
+    "path": "Shaman",
+    "desc": "Wie das Flackern eines Feuerwerks kann auch sie innerhalb einer Minute zwischen zehn verschiedenen Farben wechseln. Wenn das Feuerwerk sich dem Ende zuneigt, sitzt sie hoch oben und beobachtet gelangweilt die geschäftige Menschenmenge zu ihren Füßen. Ein Gedanke nach dem anderen kommt und geht, und ein verschlagenes Leuchten spielt in den kaleidoskopischen Augen. „Ich habe mich entschieden. So werden wir heute Spaß haben!“ Hüpfend schlängelt sie sich durch die Menge, wobei ihr rotgoldener Schweif immer wieder aufblitzt. „Komm schon! Das schönste Feuerwerk beginnt erst jetzt!“",
+    "icon": "/starrail/assets/icon/light_cone/23021.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23021.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23021.webp"
+  },
+  "23022": {
+    "id": "23022",
+    "name": "Restaurierte Erinnerung",
+    "rarity": 5,
+    "path": "Warlock",
+    "desc": "Das Anzünden der Kerze, das Ausbreiten der Karten, das Einatmen des Dufts ... Diese zerbrochenen Erinnerungen werden im tanzenden Licht zu Gesichtern. Die Erscheinungen aus den Flammen erzählen ihr von nostalgischer Vergangenheit. Die Zeit wird geschnitten, die Momente werden eingefroren; sie verwandelt diese kostbarsten Augenblicke in kristallisierte Ewigkeit. „Zu viel geht verloren, zu wenig bleibt zurück ... Wir pflegen Erinnerungen, um der grausamen Zeit zu widerstehen.“",
+    "icon": "/starrail/assets/icon/light_cone/23022.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23022.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23022.webp"
+  },
+  "23023": {
+    "id": "23023",
+    "name": "Ungerechtes Schicksal",
+    "rarity": 5,
+    "path": "Knight",
+    "desc": "Die letzte Karte war aufgedeckt: Niedergeschlagenheit, Wut, Hilflosigkeit, Ruhe ... Augenblicklich erschienen tausende Emotionen auf den Gesichtern seiner Gegner. „Da wir schon hier sind, warum machen wir die Sache nicht ein bisschen aufregender?“ Er gab alle seine Spielmarken zum Einsatz. Diejenigen, die ihre Verluste akzeptiert hatten, verließen fluchend den Tisch und hofften insgeheim, er würde verlieren. Siege, Ansehen, Glück ... All dies bedeutete ihm nichts. Er war nur besessen von dem Moment, der sein Leben zum Zittern brachte ... Die Unterwelt war nur eine Entscheidung vom Himmel entfernt. Die Chips wurden geworfen, während Klagen ertönten, die sich im Nu verflüchtigten, als sich der Staub endlich legte, genau wie dieses trügerische Gefühl der Zufriedenheit. „Ob ich nun alles habe oder nichts, ich habe nicht die Freiheit der Entscheidung ...“",
+    "icon": "/starrail/assets/icon/light_cone/23023.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23023.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23023.webp"
+  },
+  "23024": {
+    "id": "23024",
+    "name": "Entlang am vorbeiziehenden Ufer",
+    "rarity": 5,
+    "path": "Warlock",
+    "desc": "An der schmalen Grenze zwischen „Existenz“ und „Nichtigkeit“ schwappten die eiskalten Gezeiten unaufhörlich gegen die Ufer und brachten alle Dinge an ihr endgültiges Ende. An diesem Ort spiegelten sich die Hilferufe, die Klagelieder, das Glück, die süßen Momente und die großen Qualen der Ertrunkenen im Wasser wider ... Sie konnte das alles nicht erleben, aber sie konnte es fühlen ... Es gab noch viele Wege zu gehen, viele Geräusche zu hören und viele Dinge zu ändern, bevor sie am Ende ankommen würde. Sie streckte die Hand aus und rettete die Ertrinkenden vor den Verlockungen der Nichtigkeit, und ein Trugbild nach dem anderen zerbrach hinter ihr. Sie durchschritt weiter diese grenzenlose Welt, für ein Ziel, das es nicht gab. ... Und hier regnete es immer.",
+    "icon": "/starrail/assets/icon/light_cone/23024.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23024.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23024.webp"
+  },
+  "23025": {
+    "id": "23025",
+    "name": "Wohin sollen die Träume gehen",
+    "rarity": 5,
+    "path": "Warrior",
+    "desc": "Am Randgebiet von Asdana. Gewaltige Wellen wogten in einem Meer aus Memoria, und sie war ein einsamer Funke, den das Unwetter zu verschlingen drohte. „Wenn jemand überhaupt nicht träumen kann, ist das Betreten der Synästhesie-Traumlandschaft schmerzhafter als der Tod.“ Die besorgten Stimmen ihrer Kameraden hallten in ihren Ohren wider. Sie holte tief Luft und tauchte in den Speicherbereich ein. Das Fahrzeug gelangte lautlos in die Tiefen des Speicherbereichs und die kleinen Funken Sternenlicht, die sich durch seine Risse verflüchtigten, wurden von endloser Dunkelheit verschluckt. „Warum willst du sterben?“ Sie geriet immer tiefer ins Meer der Erinnerungen, und die leuchtenden Speicherbereich-Lebensformen blickten wie ferne Augen gleichgültig auf sie herab. Für sie war der Traum immer noch zu weit entfernt. Sie blickte in die endlose Dunkelheit, ihr Körper und ihre Seele standen längst am Rande des Zusammenbruchs unter dem immensen Druck des Memoria. Selbst als sie bemerkte, dass ihr Bewusstsein sich allmählich auflöste, blieben in ihrem Kopf die Erinnerungen, die sich immer wieder wiederholten ... Der Schwarm, den Himmel und die Sonne bedeckend, durchbrach die Frontlinie. Sie flog flammenumwoben in seine Richtung. Die Asche des Schwarms fiel wie Schnee herab und bedeckte die pechschwarzen Überreste der Ritter. Sie hatte nicht einmal die Gelegenheit, einen Blumenstrauß in der Hand zu halten und ihren gefallenen Kameraden die letzte Ehre zu erweisen. Dies war die letzte Erinnerung an die vielen geopferten Ritter. Ihre Leben blühten in einem Augenblick auf und erloschen wieder, wie eine Reihe von genetischen Codes, die nur Zahlen enthielten und keinen eigenen Namen hatten. „Warum willst du leben?“ In der Totenstille verschwand sie wie eine Flamme im Meer. Nur ein schwacher Funke blieb übrig, der sich auf das Licht zubewegte ... Nach einiger Zeit öffnete sie ihre Augen, und es schien die Zukunft vor ihr zu schimmern, wie eine strahlende Perle im Nebel. Ihr liefen Tränen über die Wangen ... „Um meinen eigenen ‚Traum‘ zu finden ...“",
+    "icon": "/starrail/assets/icon/light_cone/23025.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23025.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23025.webp"
+  },
+  "23026": {
+    "id": "23026",
+    "name": "Schillernde Nacht",
+    "rarity": 5,
+    "path": "Shaman",
+    "desc": "Die Zeit floss durch den Spiegel, und das unerfahrene kleine Mädchen hatte sich bereits in eine fähige Sängerin verwandelt. Sie betrachtete sich selbst im Spiegel. Die Zeit hatte alles verändert, doch ihre grünen Augen waren immer noch ruhig wie ein stiller See, als würden sie von einer unerschütterlichen Überzeugung erzählen. „Du siehst aus, als wärst du in bester Stimmung.“ „Ja ... Immerhin gibt es einen wichtigen Auftritt.“ „In der Tat. Die Probe für das Harmoniefest beginnt gleich. Bitte begib dich in den Vorbereitungsraum.“ ... Sie verließ den Schminkraum und ließ das hell erleuchtete Theater immer weiter hinter sich. „Meine Bühne ist nicht hier.“ Sie schloss die Augen und ließ zu, dass die Nacht ihren Schatten verschlang. „Seit früher schon, bis heute, ist mein Gesang nur für ...“ „Für diejenigen, die die Hoffnung verloren haben.“",
+    "icon": "/starrail/assets/icon/light_cone/23026.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23026.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23026.webp"
+  },
+  "23027": {
+    "id": "23027",
+    "name": "Auf zu einem zweiten Leben",
+    "rarity": 5,
+    "path": "Rogue",
+    "desc": "Er fühlte sich, als sei er in ein tiefes Meer gestürzt. Alles hatte ihn verlassen, nur seine hohlen Gedanken zappelten und kämpften ganz allein. Schrecken, Angst, Einsamkeit, Dunkelheit, Wut ... all dies löste sich nicht mit seinem physischen Körper auf, sondern wurde auf andere Weise in der mechanischen Hülle festgehalten, noch schwerer als zuvor. Er hörte die Rufe der Toten, er roch Verkohltes, der Lärm von Maschinen schwirrte ihm um die Ohren und blaues Blut floss seinem durstigen Herzen entgegen ... Einige grausame Erinnerungen tauchten erneut auf, als der unvergessliche Hass sich in ein schwach schimmerndes Licht in der Dunkelheit verwandelte. Er folgte dem Licht bis zum Ende und tauchte mit all seiner Kraft aus dem Wasser auf. Er öffnete die Augen und ein Funke blitze auf, als er die Glückwünsche der Ärztin hörte ... „Willkommen zurück in dieser Welt.“ Er ballte seine Fäuste, die jetzt eisern und kalt waren ... Er würde nicht mehr für sich selbst leben.",
+    "icon": "/starrail/assets/icon/light_cone/23027.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23027.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23027.webp"
+  },
+  "23028": {
+    "id": "23028",
+    "name": "Doch Hoffnung ist unbezahlbar",
+    "rarity": 5,
+    "path": "Mage",
+    "desc": "„Lady Bonajade, wenn du nicht immer so viele Vorräte und Wohltätigkeitsgelder geliefert hättest, wäre das Waisenhaus wahrscheinlich ...“ Sie tätschelte sanft die Köpfe der Kinder und unterbrach die Direktorin. „Solange ich hier bin, mach dir keine Sorgen um die Zukunft ... Und erzähle den Kindern nichts davon, um ihre Sorgen nicht zu vergrößern.“ Die Kinder hoben ihren Kopf und erzählten ihr von den jüngsten Vorkommnissen, ihren Sorgen und Träumen. „Lady Bonajade, wann kommst du das nächste Mal?“ „Arbeite nicht zu viel und leg dich früh ins Bett ...“ „Frau Bonajade, wenn ich groß bin, will ich so sein wie du!“ Sie starrte, plötzlich verwirrt, in die klaren Augen der Kinder. „So sein wie ich ...“ Das Kind reichte ihr einen Apfel. „Ja! Jemand, der anderen Licht und Hoffnung bringt!“ Armut, Fehler, Sorgen, Leid ... Sie durchquert die Galaxie, nimmt Pfand von Leuten an und gibt ihnen Darlehen von gleichem Wert. Das Leben besteht aus Begierde, beginnt und endet mit Verlangen – es ist ein unwiderrufliches Gesetz und die unvermeidliche Natur des Lebens. Eine Wohltäterin mit verborgenen Zielen, eine bösartige Händlerin, die Seelen als Pfand ansieht ... Die Menschen schreiben ihr die verschiedensten Identitäten zu, doch nur sie selbst versteht die Moral, die hinter diesen Taten steckt.",
+    "icon": "/starrail/assets/icon/light_cone/23028.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23028.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23028.webp"
+  },
+  "23029": {
+    "id": "23029",
+    "name": "Jene unzähligen Frühlinge",
+    "rarity": 5,
+    "path": "Warlock",
+    "desc": "Nach ein paar plötzlichen Regenschauern sprossen die Frühlingsblumen und das grüne Gras empor. „Wie viele Frühlinge hat es schon gegeben?“ Er erinnert sich an die jungen Soldaten, die sich zum ersten Mal auf das Schlachtfeld begeben. Das passiert jedes Jahr. Die Menschen sind unterschiedlich, aber sie sind alle ähnlich lebendig und voller Hoffnung. Die Weide verwelkt, während sie auf die Rückkehr der Person wartet. Am Ende ist das, was sie mit nach Hause bringen ... oft eisiger Frost, der nie schmelzen wird. Die Vögel zwitschern, während er die Augen schließt und das Sonnenlicht durch die Lücken zwischen den Blättern auf sein Gesicht fallen lässt. – „Und deshalb sind diejenigen, die zurückbleiben, am einsamsten.“",
+    "icon": "/starrail/assets/icon/light_cone/23029.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23029.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23029.webp"
+  },
+  "23030": {
+    "id": "23030",
+    "name": "Tanz im Sonnenuntergang",
+    "rarity": 5,
+    "path": "Warrior",
+    "desc": "Eine Gestalt rennt in der leuchtenden Dämmerung über die Dächer. „Lili, Guoguo – mal sehen, wer es zuerst bis zum Ende schafft!“ Wie ein flinkes kleines Tier klettert das Mädchen die Dachrinne hinauf, weicht den Wachen aus und schwingt sich im Wind, während sie dem letzten Rest Tageslicht hinterherjagt. Die warme Abendbrise streicht über das Gesicht des Mädchens und das abklingende Licht des Tages färbt die Katzen in bunte Farben. „Ihr habt gewonnen!“ Sie wischt sich den Schweiß von der Stirn und nimmt die Katzen in die Arme. Die Sterne tauchen am Himmel auf, und ihr unschuldiges, offenes Lächeln blüht zwischen ihnen auf, wie die Schichten der strahlenden Abendwolken, die am Horizont entlang schweben.",
+    "icon": "/starrail/assets/icon/light_cone/23030.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23030.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23030.webp"
+  },
+  "23031": {
+    "id": "23031",
+    "name": "Ich wage die Jagd",
+    "rarity": 5,
+    "path": "Rogue",
+    "desc": "„Erbärmliche, lächerliche Sklaven ...“ Die mächtige Armee der Wesen des Überflusses drängte über die Grenze und Lupitoxin strömte auf die Verdantia-Armee zu wie eine Flutwelle, um die in den Herzen der Soldaten vergrabene Angst zu wecken. Schreckliche Illusionen erschienen, die die Soldaten veranlassten, ihre Waffen fallenzulassen und zu zögern. Doch die Verteidigungslinie war unzerstörbar wie eine bronzene Wand, unbewegt von den verächtlichen Worten der Borisin. Eine einzelne Gestalt trat zwischen den Kriegern hervor. Sie bewegte sich langsam, und die Fahnen hinter ihr rascheln unter der unsichtbaren Tötungsabsicht. „Generalin! Es ist die Generalin!“ „Generalin Feixiao ...!“ „Die Merlinskralle!“ Diese leisen Ausrufe kamen zu einem donnernden Schlachtruf zusammen. „Immer im Höhenflug, ewig siegreich!“ Sie stand allein da; eine einzige Person, die einer ganzen Armee glich.",
+    "icon": "/starrail/assets/icon/light_cone/23031.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23031.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23031.webp"
+  },
+  "23032": {
+    "id": "23032",
+    "name": "Nur ein Duft bleibt zurück",
+    "rarity": 5,
+    "path": "Priest",
+    "desc": "„Erstens: Regelmäßige Arbeitsgewohnheiten neu organisieren.“ „Zweitens: Streng Belohnungen und Bestrafungen einführen.“ „Das Wichtigste ist natürlich, so schnell wie möglich das Geflecht der persönlichen Interessen aller Beteiligten zu durchschauen ...“ Obwohl sie eigentlich hier war, um die Landschaft zu bewundern, machte sie sich unbewusst Gedanken über die Arbeit, was wiederum Stress und Frustration mit sich brachte. Sie zündete schnell den beruhigenden Weihrauch an, den sie immer bei sich trug. „Die Welt ist so schön, und doch bin ich so reizbar ... Am besten denke ich nicht an diese nervigen Dinge, solange ich im Urlaub bin ...“",
+    "icon": "/starrail/assets/icon/light_cone/23032.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23032.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23032.webp"
+  },
+  "23033": {
+    "id": "23033",
+    "name": "Ninja-Kodex: Blendender Schattenbrecher",
+    "rarity": 5,
+    "path": "Mage",
+    "desc": "Irgendwo in der Welt der Ninja hüllt ein düsterer, grauer Schleier die Stadt ein. „Hiyaaa!“ Eine junge Frau stürmt durch die Monster, ihre leuchtende Silhouette zerschneidet die Dunkelheit einer mondlosen Erde wie ein farbiger Strich. Inmitten des Rauchs winden sich die Ninjaschurken vor Schmerz und Unglauben. „Wer ... bist du?“ „Ich bin Ninja Rappa! Ein Herz ohne Furcht, welches das Böse auslöscht und für Gerechtigkeit sorgt.“ Die Ninjaschurken sehen sich mit weit aufgerissenen Augen an und versuchen zu fliehen. „Seid ihr bereit, eure Todesgedichte zu sprechen, ihr Schurken?“ Ihre Shuriken tanzen durch die Luft, ein Feuerwerk aus Licht und Stahl, das ihre Gegner mit seiner blendenden Schnelligkeit überfordert. „Geheime Technik: Blendende Vernichtung!“ Die Explosion hinter ihr erhellt die Nacht und offenbart die Wunden der Stadt. Mit einem tiefen Atemzug stürzt sie sich in die neonbeleuchtete Welt, in der die bunten Lichter wie ein Heavy-Metal-Chor schreien. „Solch widerliche böse Geister. Die Große Jagd der Blendenden Ninja geht weiter ...“",
+    "icon": "/starrail/assets/icon/light_cone/23033.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23033.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23033.webp"
+  },
+  "23034": {
+    "id": "23034",
+    "name": "Flug zurück zur Erde",
+    "rarity": 5,
+    "path": "Shaman",
+    "desc": "Die Illusion war zerbrochen. Er hatte die Sonne aller Dinge sein wollen, doch er war vom Himmel gefallen. „Fühlst du, was Schmerz ist?“ So sprach eine andere Stimme in seinem Herzen. „Es ist genau das, was ich fühlen sollte.“ Er antwortete mit schweren Schritten, als er in den Staub fiel. Er wanderte auf der Erde und sah erneut das Elend, das die Welt der Menschen überschwemmte wie eine immerwährende Wasserquelle. Er durchquerte die Dornen, die ihm den Weg versperrten, er hörte die Schreie der Sterblichen, er durchlebte bittere Enttäuschung und fand schließlich Gelassenheit. „Fallen ist ursprünglich nur ein anderes Wort für Fliegen.“ An diesem achten Tag gewährte er sich selbst die „Abreise“.",
+    "icon": "/starrail/assets/icon/light_cone/23034.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23034.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23034.webp"
+  },
+  "23035": {
+    "id": "23035",
+    "name": "Rückkehr auf langem Wege",
+    "rarity": 5,
+    "path": "Warlock",
+    "desc": "„Wer ... ist das?“ Das Mädchen tastete vorsichtig die eigene ungewohnte Gestalt ab. Sie erinnerte sich daran, wie das Feuer sie an jenem Tag verzehrt hatte, wie der juwelenbesetzte Fächer zu Asche zerfallen war. Sie hatte auf der Suche nach dem Licht einen langen Weg zurückgelegt. Die Stimmen dort draußen riefen sie, führten sie weiter, trugen sie durch die dichte Dunkelheit. Eine innere Stimme erinnerte sie an die unerfüllten Gelübde, die ausstehenden Vereinbarungen, die unerfüllten Träume, die noch auf sie warteten ... Sie war im Feuer nicht ausgelöscht worden, sondern hatte immer heller geleuchtet. „Das bin ich ...“ Sie stand am Endpunkt und blickte nicht mehr zurück ... „Das alte Ich ist auch das neue Ich.“",
+    "icon": "/starrail/assets/icon/light_cone/23035.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23035.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23035.webp"
+  },
+  "23036": {
+    "id": "23036",
+    "name": "In Gold gewebte Zeit",
+    "rarity": 5,
+    "path": "Memory",
+    "desc": "„Dieser Faden ist das Opfer eines Kriegers.“ „Dieser Faden ist das Wachstum eines Helden.“ „Dieser Faden ist der Wohlstand einer Stadt.“ ... Die Kleidermacherin zog mit einer Nadel an den Fäden, die sie zwischen den Fingern hielt. „Das Schicksal einiger Helden wurde bereits durchtrennt ...“ Sie nahm noch ein paar Goldfäden und setzte ihre Reparaturarbeiten fort. „Das Schicksal einiger Helden muss weitergehen ...“ Der von Göttlichkeit erfüllte Webstuhl arbeitete von selbst, während die Kleidermacherinnen mit lebhafter Anmut tanzten. Jahrtausende waren im Webstuhl vergangen, aber sie war solches Warten längst gewohnt ... Warten auf die Inspiration dieser in Gold gewebten Zeit.",
+    "icon": "/starrail/assets/icon/light_cone/23036.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23036.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23036.webp"
+  },
+  "23037": {
+    "id": "23037",
+    "name": "Auf zu unerklärlichen Orten",
+    "rarity": 5,
+    "path": "Mage",
+    "desc": "„Die Briefe der Intelligenzia-Gilde wurden bearbeitet.“ „Die Universum-Simulation läuft normal ...“ „Literarische Sammlungen wurden nachgedruckt.“ „Psst, leise. Störe Frau Herta nicht ...“ ... In einem hohen Turm an der Grenze der Galaxie erledigten die Marionetten methodisch alle möglichen Arbeiten und warteten auf ihre Ankunft. Die Zeit verging wie im Flug. Zahllose Gestalten zogen am Nachthimmel der Geschichte vorbei wie Sternschnuppen, die für einen kurzen Moment erstrahlten, bevor sie wieder in Stille versanken. „Frau Herta ist schon eine ganze Weile nicht mehr aufgetaucht ...“ „Ob sie wohl immer noch nachdenkt ...?“ „Hmpf, glaubst du, man kann einfach so ein paar Grundsätze entdecken und dann ist alles erledigt?“ Sie streckte sich träge und hob den Kopf aus ihren Berechnungen, als wäre ihr eine weitere Idee gekommen ... „Nichts ist unanfechtbar. Ich werde diesen Fragen bis zum Ende nachgehen!“",
+    "icon": "/starrail/assets/icon/light_cone/23037.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23037.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23037.webp"
+  },
+  "23038": {
+    "id": "23038",
+    "name": "Wenn Zeit eine Blume wäre",
+    "rarity": 5,
+    "path": "Shaman",
+    "desc": "„Mama, ich möchte noch eine Geschichte hören!“ „Mein süßes Mädchen, wie wär’s, wenn wir heute über die Zeit reden?“ „Zeit ... was ist das?“ „Zeit, meine Liebe, ist wie eine Blume.“ „Wie der Löwenzahn, der auf den Feldern blüht?“ „Ja, genau wie Löwenzahn. Die Zeit wächst, blüht und trägt Früchte. Wir nennen ihre Blütenblätter ‚Momente‘.“ „Und was passiert dann?“ „Dann verwelkt sie in tausend Stücke und hinterlässt Samen, die überall herumfliegen ...“ „Mama, bedeutet das, dass sie die ‚Zukunft‘ wird?“ „Rate mal, was danach daraus wird?“ „Sie verwandelt sich in so viele Blumen, die zu einem leuchtenden Blütenmeer erblühen, richtig?“ Die Mutter hatte keine Zeit zu antworten, als das Sonnenlicht durch das Fenster das Gesicht des Mädchens wärmte. Die sanfte Gestalt verschwand erneut in ihrem Traum. Sie öffnete die Augen. „Wenn Zeit eine Blume wäre ...“, murmelte sie. „Sie würde ganz sicher zu einem Meer aus Blumen werden“, sagte das ruhige Mädchen. „Natürlich würde sie das!“, rief das verspielte Mädchen und freute sich über ihr Meisterwerk.",
+    "icon": "/starrail/assets/icon/light_cone/23038.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23038.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23038.webp"
+  },
+  "23039": {
+    "id": "23039",
+    "name": "Flamme des Blutes, entzünde meinen Pfad",
+    "rarity": 5,
+    "path": "Warrior",
+    "desc": "Eisiger Tau gefror auf der Klinge und lief in blutroten Streifen herab. In der rostbefleckten Wildnis flackerte noch immer die Glut der Schlacht und Flammen loderten auf der Asche. „Mydeimos, das war ein gottgleicher Kampf!“, rief ein Krieger mit nacktem Oberkörper begeistert, während er seine Waffe sauberwischte. „Mydei, eines Tages werde ich so unbesiegbar sein wie du!“ Ein Kind sah ihn ehrfürchtig an und hielt ein zerbrochenes Schwert in seinen kleinen Händen. „Kronprinz, unsere Rückkehr nach Castrum Kremnos ist in Sicht.“ Ein alter Mann lächelte und hob seine Tasse, um auf ihn anzustoßen. Er nickte stumm und ging zum Rand des Lagers. Der Schmerz der Wiedergeburt lief noch immer über seine Haut. Am nächsten Morgen wird er die Kremnosianische Einheit erneut in fremde Länder führen. Wo diese Wanderung enden würde, wusste er nicht. Die einzige Gewissheit war, dass er die Pflicht eines Königs erfüllen würde, bis ihn Blut und Flammen verzehrten. Als die Nacht hereinbrach, trank er allein den Blutwein. Ein vorbeiziehender Barde zupfte an seinen Saiten, eine wandernde Melodie trieb durch die Luft: „Heimat ist das Land der Träume, kein Ort, den man jemals erreichen kann.“",
+    "icon": "/starrail/assets/icon/light_cone/23039.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23039.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23039.webp"
+  },
+  "23040": {
+    "id": "23040",
+    "name": "Ein noch schönerer Abschied",
+    "rarity": 5,
+    "path": "Memory",
+    "desc": "Eine weitere Abschiedszeremonie war im Gange. Ein junges Mädchen, das durch das gebrochene Mondlicht schritt, flocht am Flussufer einen Abschiedskranz. Alte Klagelieder kristallisierten sich in der kalten Luft, während der ruhige Fluss in ein fernes Land voller Blüten floss. Blutbefleckte Schriftrollen, verrostete Langschwerter, mit Gedichten bestickte Taschentücher ... Sie nahm ihre Erinnerungsstücke zusammen mit ihren Lebensgeschichten entgegen. „Meine Augen sind wie Linsen, die sich immer nach dem Sternenhimmel sehnen.“ – Ein Epitaph, das dem verstorbenen Gelehrten gewidmet ist. „Der Ritter schenkt dem Leben wie dem Tod nur einen kalten Blick.“ – Der Grundsatz, an den sich der namenlose Krieger sein Leben lang gehalten hatte. „Das Leben ist nichts als der Tod, der in schimmerndem Licht erstrahlt.“ – Die letzte Strophe, die der ewig suchende Dichter mit seinem Leben schrieb. ... „Jede Blume blühte einst voller Stolz ...“ Begleitet vom sanften Wehklagen des Flusses bot sie den Verstorbenen Gedichte, Blütenkränze und Andenken an ... „Wenn das Verwelken schon unvermeidlich ist, dann soll unser Abschied wenigstens ... ein bisschen schöner sein.“",
+    "icon": "/starrail/assets/icon/light_cone/23040.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23040.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23040.webp"
+  },
+  "23041": {
+    "id": "23041",
+    "name": "Das Leben sollte in Flammen aufgehen",
+    "rarity": 5,
+    "path": "Mage",
+    "desc": "In diesem verborgenen Experiment drängten verschiedene Illusionen ständig nach vorne und beschwerten seine Schritte. Das Geflüster der Versuchung sagte ihm: „Gib dieses gefährliche Thema auf. Warum solltest du dein Leben aufs Spiel setzen?“ Eine eisige Stimme sagte ihm bedrohlich: „Diejenigen, die am Rande von Leben und Tod wandeln, werden ihr Leben schließlich in Brand setzen.“ Dann waren da noch die wütenden Anschuldigungen, die danach schrien, dass der Sünder, der die Götter verachtet hatte, zu einer grausamen Hinrichtungsstätte gebracht werden sollte. „Auch im Theater des Lebens muss irgendwann der Vorhang fallen.“ Er schloss die Augen, umklammerte die göttliche Kernflamme und ließ den Schmerz seine schwindende Seele ertränken. Zuerst sein entschlossener Blick; dann sein schlagendes Herz; dann die ganze Seele ... Er stürzte sich bereitwillig in diese reinste und intensivste Flamme in der Schmelze ... Die vielen Stimmen kochten über und lösten sich dann in Stille auf. In der Dunkelheit nahm die strahlende Wahrheit in seinen Händen Gestalt an.",
+    "icon": "/starrail/assets/icon/light_cone/23041.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23041.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23041.webp"
+  },
+  "23042": {
+    "id": "23042",
+    "name": "Mögen Regenbögen am Himmel bleiben",
+    "rarity": 5,
+    "path": "Memory",
+    "desc": "„Emotionen sind wie Wolken, und wir sind der Himmel, der sie trägt. Wenn der Himmel bewölkt ist, schwanken unsere Herzen zwischen Licht und Schatten.“ Die Ärztin hört sich die Sorgen des Besuchers aufmerksam an und schenkt ihm sanfte Worte des Trostes. „Schließe deine Augen, atme langsam ... Stell dir vor, du wärst an einem warmen und weichen Ort ...“ Wie von Magie durchdrungen, strömt ein siebenfarbiges Leuchten unter den Schwingen der geflügelten Bestie hervor. „Eine Brise weht über das Land und trägt den Duft von Wildblumen mit sich. Feuchte Wolken ziehen vorbei, voller Sonnenschein ...“ Der Besucher versinkt allmählich in einen friedlichen Traum und reagiert nur mit dem ruhigen Rhythmus gleichmäßiger Atemzüge. Nachdem sie den letzten Patienten untersucht hat, schließt die Ärztin vorsichtig die Tür der Station. In der Ferne wogt noch immer die grenzenlose Nacht, deren Ruinen wie Narben auf der Erde durchziehen. „Möge die Morgendämmerung im nächsten Leben auf alle scheinen ...“ Bevor sie geht, spricht sie ihren Wunsch zum Himmel ... „Möge das Licht der Regenbögen für immer am Himmel bleiben.“",
+    "icon": "/starrail/assets/icon/light_cone/23042.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23042.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23042.webp"
+  },
+  "23043": {
+    "id": "23043",
+    "name": "Vom Winde verwehte Lügen",
+    "rarity": 5,
+    "path": "Warlock",
+    "desc": "Das Mädchen mit den Katzenohren streckt ihre Glieder auf dem Dach aus und schleicht sich in die Nacht. In der Schatzkammer, die tausend Jahre lang geschlummert hat, gleitet sie mühelos umher und sammelt kostbare Schätze in ihren Armen, nur um dann wieder lautlos zu verschwinden. „Das törichte Schicksal kann mich nie einholen!“ Der Wind trägt den Duft der Wildnis durch die Ruinen und bewegt ihre Kapuze. Sie lehnt ihren Kopf an den kalten Stein und schluckt einen Bissen ihrer trockenen Ration, während ihre Finger müßig mit einer Goldmünze spielen. Ein leises Geräusch aus der Ferne erreicht ihre Ohren. In der Heiligen Stadt, die in das Licht der Morgendämmerung getaucht ist, schwelgen die Menschen noch immer in Wärme und Festlichkeit. „Wie lange noch ... ein Jahr oder zehntausend?“ Sie streckt sich träge und schiebt ihre unruhigen Gedanken beiseite. „Ha, Cifera wird immer zuletzt lachen!“ Ein goldener Blitz durchfährt den Himmel, und die Verkündung des Mädchens verweht im Wind ... Genau wie vor tausend Jahren.",
+    "icon": "/starrail/assets/icon/light_cone/23043.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23043.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23043.webp"
+  },
+  "23044": {
+    "id": "23044",
+    "name": "Wie die Morgendämmerung brennt",
+    "rarity": 5,
+    "path": "Warrior",
+    "desc": "Noch einmal, am Ende der Reise, verschlang die sengende goldene Sonne die Silhouette jenes Mannes. „Also, dieses goldene Blut, die letzte Hoffnung auf Erlösung, war wirklich ...“ Seine Tränen hatten keine Chance zu fallen und verflüchtigten sich im Dampf. „Weißschopf, wir sehen uns morgen!“ „Erlöser, denk daran, bis zum letzten Akt zu überleben!“ „Geh und sei die Morgendämmerung von Amphoreus ...“ ... Die Wünsche der Menschen verhallten im Nichts. Der Namenlose Held zerbrach – sein heftiger, tragischer Tod offenbarte sich. „Wenn Wut dieses verdrehte Schicksal nicht zu Asche verbrennen kann ...“ Er erklomm immer wieder den Gipfel, nur um zu fallen und zu zerbrechen, immer und immer wieder ... „Dann lass mich mit ihm gemeinsam in Flammen aufgehen!“",
+    "icon": "/starrail/assets/icon/light_cone/23044.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23044.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23044.webp"
+  },
+  "23045": {
+    "id": "23045",
+    "name": "Eine Krönung ohne Dank",
+    "rarity": 5,
+    "path": "Warrior",
+    "desc": "Das Mädchen hörte in der Fantasie das Nachhallen der Worte von jenem Tag. „Dieses Schwert ließ sich gar nicht schwer ziehen, Merlin.“ „In der Tat. König zu werden, den sich alle wünschen, wird für dich überhaupt nicht schwer sein, solange ich dich leite. Doch Altria ... das Schwierige ist, dass du nicht immer allen Erwartungen gerecht werden kannst.“ „Dann können sie bis dahin einen passenderen König wählen. Dagegen habe ich nichts einzuwenden.“ „Aber was, wenn so jemand niemals existiert?“ „... Dann werde ich mein Bestes geben, um den Erwartungen aller gerecht zu werden.“ Das Mädchen war sich längst bewusst geworden, wie tiefgreifend diese Tragödie sein würde. Hätte sie sich entschieden, aufzugeben, wenn sie in den Moment zurückkehren könnte, in dem alles begann? Der König schweigt und greift fest nach dem Schwert. Der Stein lässt erneut ein donnerndes Dröhnen ertönen, als das Schwert herausgezogen wird.",
+    "icon": "/starrail/assets/icon/light_cone/23045.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23045.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23045.webp"
+  },
+  "23046": {
+    "id": "23046",
+    "name": "Hölle der brennenden Ideale",
+    "rarity": 5,
+    "path": "Rogue",
+    "desc": "Die Flammen des Karmas setzen die Ebenen in Brand. Die Ideale der Unbekannten verwandeln sich in Asche, während jene der Anderen leidenschaftlich brennen. Der Wächter durchquert Kugelhagel und Pfeilsalven. Er kann hier niemanden retten. Er kann hier alle retten. Töte einen, um einen zu retten. Töte Zehntausende, um Zehntausende zu retten. Über unsere Mitmenschen hinwegzutrampeln – dieses Schicksal ist Teil des Fortbestehens der Menschheit. Der Wächter war längst daran gewöhnt, und seine Schritte zögerten nie. Der Entschluss, der seine Beine trägt, ist wie der Wind. Der Entschluss, der seine Arme bewegt, ist wie das Feuer. Er sucht noch immer nach einem Wunder, das die Rettung bringen kann.",
+    "icon": "/starrail/assets/icon/light_cone/23046.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23046.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23046.webp"
+  },
+  "23047": {
+    "id": "23047",
+    "name": "Warum singt der Ozean",
+    "rarity": 5,
+    "path": "Warlock",
+    "desc": "Die Wellen tosten, das Rauschen der Brandung erfüllte den Himmel. Die Fische wanderten durch das leere Meer, wo der Schaum vergangener Tage aufgewühlt wurde und jene Melodie noch immer nachzuhallen schien. „Edle Prinzessin, feiere mit uns das große Fest!“ Um diesem Ruf der Tiefsee zu folgen, tanzte sie mit der Schwarzen Flut, bis sie allein auf der prächtigen Bühne zurückblieb. „Schwertmeisterin des Ozeans, warum schweigst du, wofür singst du?“ Bei jedem ihrer Schritte auf Erden ertrug sie Schmerzen. Sie sang nur selten; einzig ihre blutrote Klinge stimmte das Klagelied des Lebens an. „Dux Gladiorum, komm mit mir. Erobern wir das Sternenmeer!“ Als sie dieses glühende Licht fand, ergriff sie endlich ihren Bogen, in dem Glauben, dies sei der Beginn des Festes. ... „Helektra ... Helektra ... wohin wirst du nach diesem letzten Lied schwimmen?“ Wenn trügerische Hoffnungen zerbrachen, antwortete sie stets mit einer einsamen Melodie auf die Fragen der Menschen und verzauberte dabei alle, die sie hörten ... Oder vielleicht ... ob in der Menschenwelt oder in der Tiefsee, kann nur die Musikerin selbst sich wirklich hören.",
+    "icon": "/starrail/assets/icon/light_cone/23047.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23047.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23047.webp"
+  },
+  "23048": {
+    "id": "23048",
+    "name": "Zeitalter des goldenen Blutes",
+    "rarity": 5,
+    "path": "Shaman",
+    "desc": "„Wie wird die Geschichte sich in tausend Jahren an Cerydra erinnern?“ So wurde sie einst gefragt. Für manche war sie die berüchtigte Imperatorin. Die kalte, grausame Tyrannin, die ehrgeizige Flammengekrönte, die Kaiserin, die die alte Ära mit Blut und Feuer niederbrannte ... Andere widersprachen, sie sei nur eine bemitleidenswerte Spielfigur. Diese von allen verlassene Herrscherin war nichts weiter als eine Gefangene des Ehrgeizes, die in jenem Schachspiel gegen die Götter dazu verdammt war, alles zu verlieren. Und wieder andere sagten, tief in ihrem Herzen, dunkler als die Tiefen des Meeres, war sie nur eine Sterbliche namens Cerydra ... Auch sie trauerte um gefallene Gefährten, auch sie zögerte und fürchtete sich vor ihrer schweren Bestimmung, unfähig, vorwärtszugehen ... „Ha, die Geschichte muss sich nicht an mich erinnern ...“ Sie schluckte die Bitterkeit in ihrem Herzen hinunter und setzte ihren Weg auf jenem von Opfern gepflasterten Pfad der Flammenjagd ... „Es ist unser brennendes goldenes Blut, das sie eingraviert!“",
+    "icon": "/starrail/assets/icon/light_cone/23048.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23048.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23048.webp"
+  },
+  "23049": {
+    "id": "23049",
+    "name": "Auf das Sternenlicht der langen Nacht",
+    "rarity": 5,
+    "path": "Memory",
+    "desc": "In den Ritzen der Zeit hallt nur ihr Herzschlag wider. Wie in jenen zahllosen Tagen und Nächten von einst – wachen im Dunkel und ruhen in der Nacht. Sie hütet die Erinnerungen, die ihr anvertraut wurden. Von einem leeren Ausgangspunkt aus bemalt das Mädchen mit leuchtenden Farben all die Orte, an denen sie verweilte: der heimelig eingerichtete Express, die Gefährten mit ihren Eigenheiten, die strahlend schönen Planeten ... Alles wie ein Traum, der so hinreißend ist, dass man nie erwachen möchte. „Die wahre Reise von 7. März beginnt erst jetzt!“ Das Bekenntnis des Mädchens klingt, als würde es ihr ins Ohr geflüstert. Sie blickt in den fernen Sternenhimmel. Ein Lichtstrahl naht ... Das Licht des Expresses, hell wie eine Sternschnuppe. „Gute Nacht, März ... Wenn du eines Tages erwachst, soll dein Trailblaze weitergehen. ♭“ Die Memoria-Flut steigt auf, und sie verbirgt ihren Wunsch tief in ihrem Herzen. Jene leise Stimme, jenes Leuchten ... Nichts davon hat sie je vergessen.",
+    "icon": "/starrail/assets/icon/light_cone/23049.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23049.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23049.webp"
+  },
+  "23050": {
+    "id": "23050",
+    "name": "Vergiss ihre Flamme niemals",
+    "rarity": 5,
+    "path": "Warlock",
+    "desc": "„Komm, komm zu mir ...“ Eine lebendige Erinnerung, von Flammen geleitet, umhüllt ihren Körper und ihre Seele. Die vergangenen Tage sind ins Grab gesunken. Ist das wahr? „Psst, weine nicht, weigere dich nicht ...“ Sie brennt sich in die Herzen anderer ein, während fremde Blicke allmählich vertraut werden. „Erinnerst du dich jetzt?“ Die Glut der alten Erinnerungen verweht, und ihr Gesicht trägt einen Hauch berauschenden Blütendufts ... „Ich bin deine Erinnerung.“",
+    "icon": "/starrail/assets/icon/light_cone/23050.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23050.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23050.webp"
+  },
+  "23051": {
+    "id": "23051",
+    "name": "Selbst über endlose Lande",
+    "rarity": 5,
+    "path": "Knight",
+    "desc": "In den endlosen, uralten Landen ist ein junger Mann auf einer einsamen Suche. Es ist, als kehrte er zurück in die Tage des Umherirrens: Er durchwatet tosende Wogen, trotzt Sturm und Frost, kämpft gegen gewaltige Bestien und ringt mit den unbändigen Fluten. Doch in den Augenblicken des Atemholens ist er nicht allein. Selbst über endlose Lande kann er das Licht vor sich sehen ... Es ist die Hoffnung aller Lebewesen. Die zerbrochene Erde kann kein neues Leben mehr bewahren. Sie versammeln sich an seiner Seite, Trost und Schutz suchend. Es sind die Worte der Gefährten, die in seinem Herzen zurückgeblieben sind, wie eine nie endende Seeroute, die sie untrennbar verbindet. Auch wenn sich die Sorgen seiner Vergangenheit zuweilen mit dem Wind erheben, wird der Weg, den er gekommen ist, für ihn schließlich zu der Kraft werden, die seine Verwandlung ermöglicht. „Ich werde den Pfad des Trailblaze beschützen.“ Mit erhobenem Speer springt der junge Mann empor, dem Licht entgegen ... „Und ich werde jede Hoffnung verteidigen, die zu verschwinden droht!“",
+    "icon": "/starrail/assets/icon/light_cone/23051.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23051.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23051.webp"
+  },
+  "23052": {
+    "id": "23052",
+    "name": "Liebe, so ewig wie dieser Moment",
+    "rarity": 5,
+    "path": "Memory",
+    "desc": "Der azurblaue Himmel spiegelt eine strahlende Zukunft wider. Ein Schritt, zwei Schritte ... Der Weg des Mädchens war so lang, aber glücklicherweise sind diese geschätzten Geschichten im Laufe der Zeit nicht in Vergessenheit geraten. Nun, gemeinsam von allen geschrieben, ist das Epos vollendet und begrüßt sein Finale. Sterne, Blumen, Vögel und eine wunderschöne neue Welt. Gaze, Kränze, lange Kleider und der segenbringende Wind. Die Suche von dreißig Millionen Leben verwandelte sich in einen einzigen Moment des Glücks, der eine Ewigkeit voller Worte aufwiegen konnte. „Hihi, versprochen ...“ Das Mädchen dreht sich um und lächelt sanft. „Einer von uns bleibt in der Vergangenheit, der andere geht in Richtung Zukunft ... aber unsere Herzen waren nie getrennt. ♪“ Sie stellt sich auf die Zehenspitzen und tritt in die Vergangenheit ein ... Und die Erinnerung, die sich in Wellen der Vergangenheit verwandelt, treibt dem Morgen entgegen.",
+    "icon": "/starrail/assets/icon/light_cone/23052.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23052.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23052.webp"
+  },
+  "23053": {
+    "id": "23053",
+    "name": "Bezaubert von einer blumigen Welt",
+    "rarity": 5,
+    "path": "Elation",
+    "desc": "Wenn sie lacht, lachen die Fans. Wenn sie traurig ist, weinen die Fans. Wenn sie wütend ist, sind die Fans wütend. „Niedlich, witzig, beliebt ... Sparxie ist das, was ich sein möchte ...“ „Lasst euch nicht täuschen. Sparxie ist Gift, eine Lüge ...“ „Ich werde Sparxielein für immer folgen. Sie hat mir den Mut zur Wiedergeburt gegeben ...“ „Sparxie sollte aus dieser Welt verschwinden!“ ... Klicks, Live-Chat, Kommentare ... In den Augen aller lodert „Sparxie“ noch heftiger. „Ich habe eure freundlichen Nachrichten erhalten! Ich werde mich auf die leidenschaftlichste Art revanchieren! ♥ Zum Beispiel ...“ Am Ende des Livestreams zwinkert das Mädchen, als könnte sie in die Herzen aller vor dem Bildschirm blicken ... „Ich gebe dir eine Chance: Würdest du dich dafür entscheiden, Sparxie zu werden?“",
+    "icon": "/starrail/assets/icon/light_cone/23053.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23053.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23053.webp"
+  },
+  "23054": {
+    "id": "23054",
+    "name": "Der Entschluss zu sehen",
+    "rarity": 5,
+    "path": "Elation",
+    "desc": "Wieder einmal betrachtete sie in der Reflexionsbarriere des Dekalichts das Schicksal, das wie ein schimmerndes Perlennetz funkelte, sich überlagerte und spiegelte, durchzogen von endloser Kausalität. „Was siehst du?“ So hatte ihr Meister sie einst gefragt. Manche Wahrsager sahen ihre eigene Bedeutungslosigkeit und glaubten nicht mehr daran, dass menschliche Kraft das Schicksal ändern könnte. Andere sahen die Entwicklung der Zukunft voraus und fanden die optimale Lösung darin, sich ihr zu fügen. Zu jener Zeit starrte das Mädchen zur Barriere und sah grenzenlose Dunkelheit, eine längst vorherbestimmte Zukunft. Sie sah auch „Sternenlicht“ – jene schwachen Möglichkeiten, die noch nicht vom Blick der Götter verschlungen worden waren. Ein Strahl dieses Sternenlichts war ihr einst durch die Finger geglitten und hatte Fanghu eine ewige Nacht hinterlassen. Doch sie hatte auch flüchtige Variablen ergriffen und das Schicksal von Yuque auf den Kopf gestellt. „Eine hoffnungslose Situation wird nur deshalb hoffnungslos genannt, weil niemand bereit ist, dem Schicksal zu trotzen.“ Sie wollte ihre eigene Antwort finden, selbst wenn sie dafür vorherbestimmtes Unheil betreten musste ... „Was ich sehe, ist nicht wichtig. Wichtig ist, was ich tun kann.“",
+    "icon": "/starrail/assets/icon/light_cone/23054.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23054.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23054.webp"
+  },
+  "23056": {
+    "id": "23056",
+    "name": "Das Finale einer Lüge",
+    "rarity": 5,
+    "path": "Rogue",
+    "desc": "„Wie heißt es noch im ‚Handbuch der Detektiv-Deduktion‘? Nur wenn es unvermeidlich ist ...“ Rot und schwarz verflochtene Reißzähne krochen ihm Zoll für Zoll die Schulter hinauf. Wo die Nacht versank, zogen Wolken des Verdachts auf. Im düsteren Wald verbargen sich die Bestien. „Dieses Katz-und-Maus-Spiel sollte ein Ende haben.“ Das Blutrot verblasste, das Mondlicht am Firmament blieb strahlend rein und die Sterne schliefen friedlich. Dies war seine erneute Suche nach der Wahrheit, doch der Schatten der Vergangenheit klopfte ihm auf die Schulter und löste sich dann auf. Das Taktieren in diesem Moment würde andauern, bis ... „Bis ... zu dem Tag, an dem die Strafe das Böse trifft.“",
+    "icon": "/starrail/assets/icon/light_cone/23056.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23056.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23056.webp"
+  },
+  "24000": {
+    "id": "24000",
+    "name": "Der Niedergang eines Äons",
+    "rarity": 5,
+    "path": "Warrior",
+    "desc": "Es begann mit einem Lichtblitz. Einer nach dem anderen fiel, als die Aussicht auf Vernichtung drohend über ihnen schwebte. Sie mussten aufhören, sich selbst zu reproduzieren, und eilten herbei, um sich gegenseitig zu umarmen. Sie versuchten, das Recht auf Reproduktion im Tausch für eine Überlebensmöglichkeit anzubieten. Sie hielten sich in einer beispiellosen Einigkeit an den Händen. ... Aber die Pfade fanden ein jähes Ende, und plötzlich führten sie zum realen Tod.",
+    "icon": "/starrail/assets/icon/light_cone/24000.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/24000.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/24000.webp"
+  },
+  "24001": {
+    "id": "24001",
+    "name": "Fahrt durch das Sternenmeer",
+    "rarity": 5,
+    "path": "Rogue",
+    "desc": "Sie reisen zwischen den Sternenmeeren mit der Schnelligkeit eines Regenbogens. Auf der Jagd nach unsterblichen Ausgeburten sammeln sie Heilmittel und Wunder. Auf der Suche nach Erlösung gleicht ihre Reise einem ungebrochenen Gelübde, bis in die Unendlichkeit.",
+    "icon": "/starrail/assets/icon/light_cone/24001.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/24001.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/24001.webp"
+  },
+  "24002": {
+    "id": "24002",
+    "name": "Textur der Erinnerungen",
+    "rarity": 5,
+    "path": "Knight",
+    "desc": "Das Universum ist wie eine rohe Einöde, in der sich der Müll türmt. Hier und da gibt es noch verborgene Schätze zu finden. Sie schauen durch die Risse der Vergangenheit, wählen Samen der Erinnerung. Wenn neues Leben geboren werden soll, muss sein Samen tot sein. Edelsteine von rosa, blauer und weißer Farbe sind entstanden, sanft funkelnd in ihrem Samenbeet, auch wenn das Universum an seinem rätselhaften Schweigen festhielt.",
+    "icon": "/starrail/assets/icon/light_cone/24002.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/24002.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/24002.webp"
+  },
+  "24003": {
+    "id": "24003",
+    "name": "Einzelne Heilung",
+    "rarity": 5,
+    "path": "Warlock",
+    "desc": "Dinge, die durch Geheimnisse geformt wurden, sind formlos und immateriell. In der Gesamtheit der Leere existiert dennoch ein unerwarteter Traum. Diejenigen, die der Zerstörung huldigen, werden verderbliche Früchte ernten, während diejenigen, die nach dem Leben dürsten, überleben werden. Was erloschen ist, kann noch Funken schlagen, und was vertrocknet ist, kann wieder neu entstehen. Aus Mitgefühl für die Rettung aus dem Chaos nährt das Elixier die Schatten. Mit dem Rücken zur zwischen den Sternen herrschenden Dunkelheit kann die Verkapselung dieses Gefäßes nur vergeblich sein. „Paradox sind diese Erkenntnisse, und sie sind unser ganzer Stolz.“",
+    "icon": "/starrail/assets/icon/light_cone/24003.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/24003.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/24003.webp"
+  },
+  "24004": {
+    "id": "24004",
+    "name": "Unermüdliche Berechnung",
+    "rarity": 5,
+    "path": "Mage",
+    "desc": "Ewig in der Leere hängend strömen flackernde Daten wie eine Flut in den Verstand des Äons. Er nutzt die Vergangenheit und die Zukunft als Symbole und berechnet aus dem Anfang das Ende. Wissen, Antworten, Wahrheiten ... Ein strahlendes Licht erstrahlt aus dem Informationsnebel, und alles wird ihm klar.",
+    "icon": "/starrail/assets/icon/light_cone/24004.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/24004.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/24004.webp"
+  },
+  "24005": {
+    "id": "24005",
+    "name": "Der Vorhang der Erinnerung fällt nie",
+    "rarity": 5,
+    "path": "Memory",
+    "desc": "Ob geschäftig, trostlos, flüchtig oder beständig ... jeder Planet und jeder Augenblick ist voll von zahllosen Ereignissen. Diese komprimierte Geschichte schmilzt bei einer einzigen Berührung und fließt wie Tränen aus den Augen der Welt. Manche sagen: „Wie schwer müssen diese Tränen sein! Die angehäuften Jahre können die Ewigkeit verblassen lassen.“ Manche sagen: „Wie wundersam sind die Geschichten, die sie erzählen, so klarer Kummer, so heitere Freude, ungetrübt durch auch nur einen Hauch von Falschheit.“ Der Kosmos fließt in stiller Ruhe und sie sprechen nicht, sondern beobachten nur. Sie beobachten und warten darauf, dass die Dinge zu „Erinnerungen“ werden.",
+    "icon": "/starrail/assets/icon/light_cone/24005.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/24005.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/24005.webp"
+  },
+  "24006": {
+    "id": "24006",
+    "name": "Hochgefühl voller Segen",
+    "rarity": 5,
+    "path": "Elation",
+    "desc": "Unter den Fingerspitzen der Genies laufen die Daten reibungslos, ohne jemals zu ruhen. Masken verbergen sich in den Spalten der Ereignisse und beobachten jede Möglichkeit, die auf ihre Entfaltung wartet. Analysen, Berechnungen, Antworten, Fragen – besteht daraus nicht die Bühne der Genies? Jubel, Tränen, Gebrüll, Wehklagen ... Die Freuden und Leiden des Lebens entfalten sich in voller Pracht. Das Pantomimespiel wird laut, das Hochgefühl fließt vor Segen über. Ist dies der fesselndste Akt? Die Antwort bleibt immer gleich: unvorhersehbar!",
+    "icon": "/starrail/assets/icon/light_cone/24006.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/24006.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/24006.webp"
+  }
+}

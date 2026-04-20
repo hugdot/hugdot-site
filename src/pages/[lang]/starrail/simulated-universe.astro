@@ -1,0 +1,665 @@
+---
+// src/pages/[lang]/starrail/simulated-universe.astro
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Icon } from 'astro-icon/components'
+
+const allData = import.meta.glob('/src/data/starrail/**/*.json', { eager: true })
+
+export async function getStaticPaths() {
+  const languages = ['kr', 'en', 'jp', 'cn', 'fr', 'de', 'es', 'id', 'pt', 'ru', 'th', 'vi', 'cht']
+  return languages.map((lang) => ({ params: { lang } }))
+}
+
+const { lang } = Astro.params
+
+const toAssetUrl = (rel: string) => {
+  if (!rel) return ''
+  let p = rel.replace(/^\//, '').replace(/^starrail\/assets\//, '')
+  if (p.includes('icon/character/')) p = p.replace('icon/character/', 'icon/avatar/')
+  return `/starrail/assets/${p}`
+}
+
+const baseDir = `/src/data/starrail/${lang}`
+const blessingsRaw: Record<string, any> = (allData[`${baseDir}/simulated_blessings.json`] as any)?.default ?? {}
+const curiosRaw:    Record<string, any> = (allData[`${baseDir}/simulated_curios.json`]    as any)?.default ?? {}
+const blocksRaw:    Record<string, any> = (allData[`${baseDir}/simulated_blocks.json`]    as any)?.default ?? {}
+
+const PATH_ICON: Record<string, string> = {
+  Preservation: '/starrail/assets/icon/path/PreservationSmall.webp',
+  Remembrance:  '/starrail/assets/icon/path/Memory.webp',
+  Nihility:     '/starrail/assets/icon/path/NihilitySmall.webp',
+  Abundance:    '/starrail/assets/icon/path/AbundanceSmall.webp',
+  Hunt:         '/starrail/assets/icon/path/HuntSmall.webp',
+  Destruction:  '/starrail/assets/icon/path/DestructionSmall.webp',
+  Erudition:    '/starrail/assets/icon/path/EruditionSmall.webp',
+  Elation:      '/starrail/assets/icon/path/ElationSmall.webp',
+  Propagation:  '',
+}
+
+const PATH_COLOR: Record<string, string> = {
+  Preservation: '#60a5fa', Remembrance: '#a78bfa', Nihility: '#94a3b8',
+  Abundance: '#4ade80', Hunt: '#f97316', Destruction: '#f87171',
+  Erudition: '#fbbf24', Elation: '#f472b6', Propagation: '#34d399',
+}
+
+const PATH_ORDER = [120, 121, 122, 123, 124, 125, 128, 126, 127]
+
+const allBlessings = Object.values(blessingsRaw).filter((b: any) => b.name?.trim())
+
+const pathGroups = new Map<string, any>()
+for (const b of allBlessings as any[]) {
+  const key = b.path_key ?? 'All'
+  if (key === 'All') continue
+  if (!pathGroups.has(key)) {
+    pathGroups.set(key, {
+      key, name: b.path_name ?? key,
+      pathType: b.path_type ?? 100,
+      icon: PATH_ICON[key] ?? '',
+      color: PATH_COLOR[key] ?? '#7c9dfc',
+      legendary: [], rare: [], common: [],
+    })
+  }
+  const g = pathGroups.get(key)!
+  const cat = (b.category ?? 'Common').toLowerCase()
+  if (cat === 'legendary') g.legendary.push(b)
+  else if (cat === 'rare') g.rare.push(b)
+  else g.common.push(b)
+}
+
+const sortedPaths = PATH_ORDER
+  .map(pt => [...pathGroups.values()].find(g => g.pathType === pt))
+  .filter(Boolean)
+
+const commonBlessings = (allBlessings as any[]).filter(b => (b.path_key ?? 'All') === 'All')
+const curios = Object.values(curiosRaw).filter((c: any) => c.name?.trim()).sort((a: any, b: any) => +a.id - +b.id)
+const blocks = Object.values(blocksRaw).filter((b: any) => b.name?.trim()).sort((a: any, b: any) => +a.id - +b.id)
+
+const totalBlessings = allBlessings.length
+const totalCurios    = curios.length
+const totalBlocks    = blocks.length
+
+// 모달용 전체 블레싱 배열 (JSON으로 넘길 것)
+const blessingList = allBlessings.map((b: any) => ({
+  id:       b.id,
+  name:     b.name,
+  desc:     b.desc,
+  enhanced: b.enhanced_desc ?? '',
+  path:     b.path_name ?? '',
+  pathKey:  b.path_key ?? 'All',
+  category: b.category ?? 'Common',
+  color:    PATH_COLOR[b.path_key] ?? '#7c9dfc',
+}))
+
+const L = lang === 'kr'
+  ? { title:'시뮬레이션 우주', subtitle:'축복, 기물, 구역 정보',
+      tabB:'축복', tabC:'기물', tabD:'구역',
+      search:'이름 검색…', all:'전체', reset:'초기화',
+      showing:'{v}개 표시', total:'전체 {t}개', noMatch:'조건에 맞는 항목이 없습니다.',
+      legendary:'전설', rare:'희귀', common:'일반', commonPath:'공통',
+      enhanced:'강화 효과', lore:'로어', close:'닫기', canEnhance:'강화 가능' }
+  : { title:'Simulated Universe', subtitle:'Blessings, Curios and Domains',
+      tabB:'Blessings', tabC:'Curios', tabD:'Domains',
+      search:'Search…', all:'All', reset:'Reset',
+      showing:'{v} shown', total:'{t} total', noMatch:'No items match.',
+      legendary:'Legendary', rare:'Rare', common:'Common', commonPath:'Common',
+      enhanced:'Enhanced', lore:'Lore', close:'Close', canEnhance:'Enhanceable' }
+---
+
+<DefaultLayout title={`${L.title} | Star Rail DB`} description="Honkai: Star Rail Simulated Universe blessings, curios and domains.">
+<div class="su-page">
+
+  <!-- ── 헤더 ── -->
+  <div class="su-header">
+    <div class="su-wrap">
+      <nav class="breadcrumb">
+        <a href={`/${lang}`}>Home</a><span>/</span>
+        <a href={`/${lang}/starrail`}>Star Rail</a><span>/</span>
+        <span class="cur">{L.title}</span>
+      </nav>
+      <div class="title-row">
+        <div>
+          <h1 class="su-title">{L.title}</h1>
+          <p class="su-sub">{L.subtitle}</p>
+        </div>
+        <div class="su-stats">
+          <div class="stat"><span class="sv">{totalBlessings}</span><span class="sl">{L.tabB}</span></div>
+          <div class="stat"><span class="sv">{totalCurios}</span><span class="sl">{L.tabC}</span></div>
+          <div class="stat"><span class="sv">{totalBlocks}</span><span class="sl">{L.tabD}</span></div>
+        </div>
+      </div>
+      <div class="main-tabs" role="tablist">
+        <button class="mtab mtab--on" data-tab="blessings" role="tab" aria-selected="true">
+          <Icon name="lucide:sparkles" size="0.8rem"/>{L.tabB}<span class="tc">{totalBlessings}</span>
+        </button>
+        <button class="mtab" data-tab="curios" role="tab" aria-selected="false">
+          <Icon name="lucide:gem" size="0.8rem"/>{L.tabC}<span class="tc">{totalCurios}</span>
+        </button>
+        <button class="mtab" data-tab="blocks" role="tab" aria-selected="false">
+          <Icon name="lucide:map" size="0.8rem"/>{L.tabD}<span class="tc">{totalBlocks}</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 블레싱 패널 ── -->
+  <div id="panel-blessings" class="panel su-wrap">
+    <div class="search-bar">
+      <div class="sw"><Icon name="lucide:search" size="0.85rem" class="si"/><input type="search" id="blessSearch" placeholder={L.search} autocomplete="off" class="sinput"/></div>
+      <button class="rbtn" id="blessReset" type="button"><Icon name="lucide:rotate-ccw" size="0.7rem"/>{L.reset}</button>
+      <p class="scount" id="blessCount" aria-live="polite">
+        {L.showing.replace('{v}', String(totalBlessings))} <span class="mu">· {L.total.replace('{t}', String(totalBlessings))}</span>
+      </p>
+    </div>
+
+    <!-- Path 탭 -->
+    <div class="path-nav" role="tablist">
+      <button class="ptab ptab--on" data-ptab="all" role="tab" aria-selected="true">
+        {L.all}<span class="ptc">{totalBlessings}</span>
+      </button>
+      {(sortedPaths as any[]).map(pg => (
+        <button class="ptab" data-ptab={pg.key} role="tab" aria-selected="false" style={`--pc:${pg.color}`}>
+          {pg.icon && <img src={pg.icon} alt={pg.name} width="16" height="16" loading="lazy" class="pticon"/>}
+          {pg.name}<span class="ptc">{pg.legendary.length + pg.rare.length + pg.common.length}</span>
+        </button>
+      ))}
+      {commonBlessings.length > 0 && (
+        <button class="ptab" data-ptab="ALL" role="tab" aria-selected="false">
+          {L.commonPath}<span class="ptc">{commonBlessings.length}</span>
+        </button>
+      )}
+    </div>
+
+    <!-- 블레싱 섹션 -->
+    <div id="bless-sections">
+      {(sortedPaths as any[]).map(pg => (
+        <section class="psec" data-psec={pg.key}>
+          <div class="psec-hd" style={`--pc:${pg.color}`}>
+            {pg.icon && <img src={pg.icon} alt={pg.name} width="24" height="24" loading="lazy" class="psec-icon"/>}
+            <h2 class="psec-name">{pg.name}</h2>
+            <span class="psec-cnt">{pg.legendary.length + pg.rare.length + pg.common.length}</span>
+          </div>
+
+          {pg.legendary.length > 0 && (
+            <div class="rg" data-rg>
+              <p class="rl rl--l">{L.legendary}</p>
+              <div class="bgrid">
+                {pg.legendary.map((b: any) => (
+                  <button class="bc bc--l" data-bc data-id={b.id} data-name={b.name.toLowerCase()} data-pk={b.path_key} aria-label={b.name}>
+                    <div class="bc-top">
+                      <span class="dot dot--l"/>
+                      <p class="bc-name">{b.name}</p>
+                      {b.enhanced_desc && <span class="enh-badge">{L.canEnhance}</span>}
+                    </div>
+                    <p class="bc-simple">{b.simple_desc || b.desc}</p>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+          {pg.rare.length > 0 && (
+            <div class="rg" data-rg>
+              <p class="rl rl--r">{L.rare}</p>
+              <div class="bgrid">
+                {pg.rare.map((b: any) => (
+                  <button class="bc bc--r" data-bc data-id={b.id} data-name={b.name.toLowerCase()} data-pk={b.path_key} aria-label={b.name}>
+                    <div class="bc-top">
+                      <span class="dot dot--r"/>
+                      <p class="bc-name">{b.name}</p>
+                      {b.enhanced_desc && <span class="enh-badge">{L.canEnhance}</span>}
+                    </div>
+                    <p class="bc-simple">{b.simple_desc || b.desc}</p>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+          {pg.common.length > 0 && (
+            <div class="rg" data-rg>
+              <p class="rl rl--c">{L.common}</p>
+              <div class="bgrid">
+                {pg.common.map((b: any) => (
+                  <button class="bc bc--c" data-bc data-id={b.id} data-name={b.name.toLowerCase()} data-pk={b.path_key} aria-label={b.name}>
+                    <div class="bc-top">
+                      <span class="dot dot--c"/>
+                      <p class="bc-name">{b.name}</p>
+                      {b.enhanced_desc && <span class="enh-badge">{L.canEnhance}</span>}
+                    </div>
+                    <p class="bc-simple">{b.simple_desc || b.desc}</p>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+        </section>
+      ))}
+
+      {commonBlessings.length > 0 && (
+        <section class="psec" data-psec="ALL">
+          <div class="psec-hd" style="--pc:#7c9dfc">
+            <h2 class="psec-name">{L.commonPath}</h2>
+            <span class="psec-cnt">{commonBlessings.length}</span>
+          </div>
+          <div class="rg" data-rg>
+            <div class="bgrid">
+              {commonBlessings.map((b: any) => (
+                <button class="bc bc--c" data-bc data-id={b.id} data-name={b.name.toLowerCase()} data-pk="ALL" aria-label={b.name}>
+                  <div class="bc-top">
+                    <span class="dot dot--c"/>
+                    <p class="bc-name">{b.name}</p>
+                    {b.enhanced_desc && <span class="enh-badge">{L.canEnhance}</span>}
+                  </div>
+                  <p class="bc-simple">{b.simple_desc || b.desc}</p>
+                </button>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+    </div>
+
+    <div id="blessEmpty" class="empty hidden"><Icon name="lucide:search-x" size="2.5rem"/><p>{L.noMatch}</p></div>
+  </div>
+
+  <!-- ── 큐리오 패널 ── -->
+  <div id="panel-curios" class="panel su-wrap hidden">
+    <div class="search-bar">
+      <div class="sw"><Icon name="lucide:search" size="0.85rem" class="si"/><input type="search" id="curioSearch" placeholder={L.search} autocomplete="off" class="sinput"/></div>
+      <p class="scount" id="curioCount" aria-live="polite">
+        {L.showing.replace('{v}', String(totalCurios))} <span class="mu">· {L.total.replace('{t}', String(totalCurios))}</span>
+      </p>
+    </div>
+    <div class="cgrid">
+      {(curios as any[]).map(c => (
+        <div class="cc" data-cc data-name={c.name.toLowerCase()}>
+          <div class="cc-hd">
+            {c.icon && <div class="cc-icon"><img src={toAssetUrl(c.icon)} alt={c.name} width="44" height="44" loading="lazy" decoding="async"/></div>}
+            <p class="cc-name">{c.name}</p>
+          </div>
+          <p class="cc-desc">{c.desc}</p>
+          {c.bg_desc && <div class="cc-lore"><span class="ltag">{L.lore}</span><p class="ltext">{c.bg_desc}</p></div>}
+        </div>
+      ))}
+    </div>
+    <div id="curioEmpty" class="empty hidden"><Icon name="lucide:search-x" size="2.5rem"/><p>{L.noMatch}</p></div>
+  </div>
+
+  <!-- ── 구역 패널 ── -->
+  <div id="panel-blocks" class="panel su-wrap hidden">
+    <div class="dgrid">
+      {(blocks as any[]).map(b => (
+        <div class="dc" style={`--bc:${b.color ?? '#7c9dfc'}`}>
+          <div class="dc-hd">
+            {b.icon_board && <div class="dc-icon"><img src={toAssetUrl(b.icon_board)} alt={b.name} width="36" height="36" loading="lazy" decoding="async"/></div>}
+            <p class="dc-name">{b.name}</p>
+          </div>
+          <p class="dc-desc">{b.desc}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- ── 블레싱 상세 모달 ── -->
+  <div id="bless-modal" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal-box">
+      <div class="modal-header" id="modal-header">
+        <div class="modal-title-group">
+          <span class="modal-path-tag" id="modal-path-tag"></span>
+          <span class="modal-cat-tag" id="modal-cat-tag"></span>
+        </div>
+        <h3 class="modal-title" id="modal-title"></h3>
+      </div>
+      <div class="modal-body">
+        <div class="modal-section">
+          <p class="modal-desc" id="modal-desc"></p>
+        </div>
+        <div class="modal-section modal-enhanced hidden" id="modal-enhanced-wrap">
+          <div class="modal-enhanced-header">
+            <Icon name="lucide:zap" size="0.8rem" class="enh-icon"/>
+            <span id="modal-enhanced-label"></span>
+          </div>
+          <p class="modal-desc modal-enhanced-desc" id="modal-enhanced-desc"></p>
+        </div>
+      </div>
+      <button class="modal-close" id="modal-close" aria-label="닫기">
+        <Icon name="lucide:x" size="1rem"/>
+      </button>
+    </div>
+  </div>
+
+</div>
+
+<script is:inline define:vars={{
+  lShowing: L.showing, lTotal: L.total,
+  totalBlessings, totalCurios,
+  blessingList,
+  labelEnhanced: L.enhanced,
+}}>
+;(function () {
+    function init() {
+  // 블레싱 맵 (id → 데이터)
+  var blessMap = {}
+  blessingList.forEach(function(b){ blessMap[b.id] = b })
+
+  
+
+    // ── 메인 탭 ──
+    var mtabs = [].slice.call(document.querySelectorAll('.mtab'))
+    mtabs.forEach(function(btn){
+      btn.addEventListener('click', function(){
+        var t = btn.dataset.tab
+        mtabs.forEach(function(b){ b.classList.toggle('mtab--on',b===btn); b.setAttribute('aria-selected',b===btn?'true':'false') })
+        ;['blessings','curios','blocks'].forEach(function(id){
+          var el=document.getElementById('panel-'+id); if(el) el.classList.toggle('hidden',id!==t)
+        })
+      },{passive:true})
+    })
+
+    // ── Path 탭 ──
+    var ptabs   = [].slice.call(document.querySelectorAll('.ptab'))
+    var psecs   = [].slice.call(document.querySelectorAll('.psec'))
+    var activePk = 'all'
+
+    function switchPk(k){
+      activePk = k
+      ptabs.forEach(function(t){ var on=t.dataset.ptab===k; t.classList.toggle('ptab--on',on); t.setAttribute('aria-selected',on?'true':'false') })
+      psecs.forEach(function(s){ s.style.display = k==='all'||s.dataset.psec===k ? '' : 'none' })
+      applyBS()
+    }
+    ptabs.forEach(function(t){ t.addEventListener('click',function(){ switchPk(t.dataset.ptab||'all') },{passive:true}) })
+
+    // ── 블레싱 검색 ──
+    var bsInput = document.getElementById('blessSearch')
+    var bsCount = document.getElementById('blessCount')
+    var bsEmpty = document.getElementById('blessEmpty')
+    var bsReset = document.getElementById('blessReset')
+    var bcards  = [].slice.call(document.querySelectorAll('[data-bc]'))
+    var rgs     = [].slice.call(document.querySelectorAll('[data-rg]'))
+
+    function applyBS(){
+      var q = bsInput ? bsInput.value.trim().toLowerCase() : ''
+      var v = 0
+      bcards.forEach(function(c){
+        var mp = activePk==='all' || c.dataset.pk===activePk
+        var mq = !q || c.dataset.name.indexOf(q)!==-1
+        var show = mp && mq
+        c.classList.toggle('hidden',!show)
+        if(show) v++
+      })
+      rgs.forEach(function(rg){ var vis=rg.querySelectorAll('[data-bc]:not(.hidden)'); rg.style.display=vis.length===0?'none':'' })
+      psecs.forEach(function(s){
+        if(activePk!=='all'&&s.dataset.psec!==activePk){ s.style.display='none'; return }
+        var vis=s.querySelectorAll('[data-bc]:not(.hidden)')
+        if(activePk==='all') s.style.display=vis.length===0?'none':''
+      })
+      var ss=lShowing.replace('{v}',String(v)), ts=lTotal.replace('{t}',String(totalBlessings))
+      if(bsCount) bsCount.innerHTML=ss+' <span class="mu">· '+ts+'</span>'
+      if(bsEmpty) bsEmpty.classList.toggle('hidden',v!==0)
+    }
+
+    if(bsInput){ bsInput.addEventListener('input',applyBS,{passive:true}); bsInput.addEventListener('search',applyBS,{passive:true}) }
+    if(bsReset){ bsReset.addEventListener('click',function(){ if(bsInput){bsInput.value='';bsInput.focus()} switchPk('all') },{passive:true}) }
+
+    // ── 모달 ──
+    var modal       = document.getElementById('bless-modal')
+    var modalTitle  = document.getElementById('modal-title')
+    var modalDesc   = document.getElementById('modal-desc')
+    var modalPath   = document.getElementById('modal-path-tag')
+    var modalCat    = document.getElementById('modal-cat-tag')
+    var modalEnhW   = document.getElementById('modal-enhanced-wrap')
+    var modalEnhD   = document.getElementById('modal-enhanced-desc')
+    var modalEnhL   = document.getElementById('modal-enhanced-label')
+    var modalClose  = document.getElementById('modal-close')
+    var modalHeader = document.getElementById('modal-header')
+
+    var CAT_COLOR = { Legendary:'#fbbf24', Rare:'#a78bfa', Common:'#60a5fa' }
+
+    function openModal(id){
+      var b = blessMap[id]; if(!b) return
+      if(modalTitle) modalTitle.textContent = b.name
+      if(modalDesc)  modalDesc.textContent  = b.desc
+      if(modalPath){ modalPath.textContent = b.path; modalPath.style.color = b.color; modalPath.style.borderColor = b.color; modalPath.style.background = b.color+'22' }
+      if(modalCat){
+        var cc = CAT_COLOR[b.category] || '#60a5fa'
+        modalCat.textContent = b.category
+        modalCat.style.color = cc; modalCat.style.borderColor = cc; modalCat.style.background = cc+'22'
+      }
+      if(modalHeader) modalHeader.style.setProperty('--mc', b.color)
+      if(b.enhanced && modalEnhW && modalEnhD && modalEnhL){
+        modalEnhD.textContent = b.enhanced
+        modalEnhL.textContent = labelEnhanced
+        modalEnhW.classList.remove('hidden')
+      } else if(modalEnhW) modalEnhW.classList.add('hidden')
+      if(modal) modal.classList.remove('hidden')
+      document.body.style.overflow = 'hidden'
+    }
+
+    function closeModal(){
+      if(modal) modal.classList.add('hidden')
+      document.body.style.overflow = ''
+    }
+
+    bcards.forEach(function(c){
+      c.addEventListener('click', function(){ openModal(c.dataset.id) }, {passive:true})
+    })
+    if(modalClose) modalClose.addEventListener('click', closeModal, {passive:true})
+    if(modal) modal.addEventListener('click', function(e){ if(e.target===modal) closeModal() }, {passive:true})
+    document.addEventListener('keydown', function(e){ if(e.key==='Escape') closeModal() })
+
+    // ── 큐리오 검색 ──
+    var csInput = document.getElementById('curioSearch')
+    var csCount = document.getElementById('curioCount')
+    var csEmpty = document.getElementById('curioEmpty')
+    var ccards  = [].slice.call(document.querySelectorAll('[data-cc]'))
+
+    function applyCS(){
+      var q=csInput?csInput.value.trim().toLowerCase():'', v=0
+      ccards.forEach(function(c){ var show=!q||c.dataset.name.indexOf(q)!==-1; c.classList.toggle('hidden',!show); if(show)v++ })
+      var ss=lShowing.replace('{v}',String(v)),ts=lTotal.replace('{t}',String(totalCurios))
+      if(csCount) csCount.innerHTML=ss+' <span class="mu">· '+ts+'</span>'
+      if(csEmpty) csEmpty.classList.toggle('hidden',v!==0)
+    }
+    if(csInput){ csInput.addEventListener('input',applyCS,{passive:true}); csInput.addEventListener('search',applyCS,{passive:true}) }
+
+    applyBS()
+  }
+  document.addEventListener('DOMContentLoaded', init)
+  document.addEventListener('astro:page-load', init)
+
+})()
+
+</script>
+</DefaultLayout>
+
+<style>
+.su-page { min-height:100vh; background:var(--c-bg); color:var(--foreground-color); font-family:var(--font-body); }
+.su-wrap { max-width:1400px; margin:0 auto; padding:0 1.5rem; }
+
+/* 헤더 */
+.su-header { border-bottom:1px solid var(--c-border); background:var(--c-surface); padding:2rem 0 0; }
+.breadcrumb { display:flex; align-items:center; gap:.4rem; font-size:.68rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--c-muted); margin-bottom:1rem; }
+.breadcrumb a { color:inherit; text-decoration:none; transition:color var(--anim-fast); }
+.breadcrumb a:hover { color:var(--c-accent); }
+.breadcrumb span { opacity:.4; }
+.breadcrumb .cur { color:var(--c-accent); opacity:1; }
+.title-row { display:flex; align-items:flex-end; justify-content:space-between; gap:1rem; flex-wrap:wrap; }
+.su-title { font-family:var(--font-display); font-size:clamp(1.8rem,4vw,2.8rem); font-weight:700; letter-spacing:-.03em; text-transform:uppercase; line-height:1; }
+.su-sub { margin-top:.4rem; font-size:.82rem; color:var(--c-muted); }
+.su-stats { display:flex; gap:.6rem; }
+.stat { display:flex; flex-direction:column; align-items:center; padding:.4rem .8rem; border:1px solid var(--c-border); border-radius:var(--radius-md); background:var(--c-surface2); min-width:64px; text-align:center; }
+.sv { font-family:var(--font-mono); font-size:1.1rem; font-weight:900; color:var(--c-accent); line-height:1; }
+.sl { font-size:.55rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--c-muted); margin-top:.2rem; }
+
+/* 메인 탭 */
+.main-tabs { display:flex; gap:.15rem; margin-top:1.5rem; }
+.mtab { display:inline-flex; align-items:center; gap:.4rem; padding:.6rem 1rem; border:none; border-bottom:2px solid transparent; background:transparent; color:var(--c-muted); font-size:.78rem; font-weight:700; letter-spacing:.04em; cursor:pointer; transition:color var(--anim-fast),border-color var(--anim-fast); white-space:nowrap; }
+.mtab:hover { color:var(--foreground-color); }
+.mtab--on { color:var(--c-accent); border-bottom-color:var(--c-accent); }
+.tc { font-family:var(--font-mono); font-size:.62rem; font-weight:700; background:var(--c-surface2); border-radius:99px; padding:.1em .45em; color:var(--c-muted); }
+.mtab--on .tc { background:var(--c-accent-glow); color:var(--c-accent); }
+
+/* 패널 */
+.panel { padding-top:1.5rem; padding-bottom:3rem; }
+.panel.hidden { display:none; }
+
+/* 검색 바 */
+.search-bar { display:flex; align-items:center; gap:.75rem; flex-wrap:wrap; margin-bottom:1.25rem; }
+.sw { position:relative; display:flex; align-items:center; flex:1; min-width:200px; }
+.si { position:absolute; left:.7rem; color:var(--c-muted); pointer-events:none; }
+.sinput { width:100%; padding:.5rem .75rem .5rem 2.1rem; border:1px solid var(--c-border); border-radius:var(--radius-sm); background:var(--c-surface); color:var(--foreground-color); font-size:.78rem; font-family:var(--font-body); outline:none; transition:border-color var(--anim-fast); }
+.sinput::placeholder { color:var(--c-muted); }
+.sinput:focus { border-color:var(--c-accent); }
+.rbtn { display:inline-flex; align-items:center; gap:.4rem; padding:.4rem .8rem; border:1px solid var(--c-border); border-radius:var(--radius-sm); background:transparent; color:var(--c-muted); font-size:.65rem; font-weight:700; letter-spacing:.06em; text-transform:uppercase; cursor:pointer; transition:border-color var(--anim-fast),color var(--anim-fast); white-space:nowrap; }
+.rbtn:hover { border-color:var(--c-accent); color:var(--c-accent); }
+.scount { font-size:.65rem; font-weight:700; color:var(--c-accent); white-space:nowrap; }
+.mu { color:var(--c-muted); font-weight:500; }
+
+/* Path 탭 */
+.path-nav { display:flex; flex-wrap:wrap; gap:.4rem; margin-bottom:2rem; padding-bottom:1rem; border-bottom:1px solid var(--c-border); }
+.ptab { display:inline-flex; align-items:center; gap:.4rem; padding:.4rem .8rem; border:1px solid var(--c-border); border-radius:var(--radius-sm); background:var(--c-surface2); font-size:.72rem; font-weight:700; color:var(--c-muted); cursor:pointer; transition:border-color var(--anim-fast),color var(--anim-fast),background var(--anim-fast); white-space:nowrap; }
+.ptab:hover { border-color:var(--c-border-hi); color:var(--foreground-color); }
+.ptab--on { border-color:var(--pc,var(--c-accent)); background:color-mix(in srgb,var(--pc,var(--c-accent)) 12%,transparent); color:var(--pc,var(--c-accent)); }
+.pticon { width:16px; height:16px; object-fit:contain; filter:brightness(0) invert(1); opacity:.7; }
+.ptab--on .pticon { opacity:1; filter:none; }
+.ptc { font-family:var(--font-mono); font-size:.58rem; font-weight:700; background:var(--c-bg); border-radius:99px; padding:.1em .4em; color:var(--c-muted); }
+.ptab--on .ptc { background:color-mix(in srgb,var(--pc,var(--c-accent)) 20%,transparent); color:var(--pc,var(--c-accent)); }
+
+/* Path 섹션 */
+.psec { margin-bottom:2.5rem; }
+.psec-hd { display:flex; align-items:center; gap:.75rem; margin-bottom:1.25rem; padding-bottom:.75rem; border-bottom:2px solid var(--pc,var(--c-accent)); }
+.psec-icon { width:24px; height:24px; object-fit:contain; filter:brightness(0) invert(1); }
+.psec-name { font-family:var(--font-display); font-size:1rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:var(--pc,var(--c-accent)); }
+.psec-cnt { font-family:var(--font-mono); font-size:.7rem; font-weight:700; color:var(--c-muted); margin-left:auto; }
+
+/* 등급 그룹 */
+.rg { margin-bottom:1.25rem; }
+.rl { font-size:.62rem; font-weight:900; letter-spacing:.1em; text-transform:uppercase; margin-bottom:.6rem; padding:.2rem .6rem; border-radius:4px; display:inline-block; }
+.rl--l { color:#fbbf24; background:rgba(251,191,36,.1); border:1px solid rgba(251,191,36,.3); }
+.rl--r { color:#a78bfa; background:rgba(167,139,250,.1); border:1px solid rgba(167,139,250,.3); }
+.rl--c { color:#60a5fa; background:rgba(96,165,250,.1); border:1px solid rgba(96,165,250,.3); }
+
+/* 블레싱 그리드 */
+.bgrid { display:grid; grid-template-columns:repeat(2, 1fr); gap:.6rem; }
+
+/* 블레싱 카드 (버튼) */
+.bc {
+  border:1px solid var(--c-border); border-radius:var(--radius-md);
+  background:var(--c-surface); padding:.8rem 1rem;
+  display:flex; flex-direction:column; gap:.4rem;
+  border-left:3px solid transparent;
+  cursor:pointer; text-align:left; width:100%;
+  transition:border-color var(--anim-fast), background var(--anim-fast), transform var(--anim-fast);
+  overflow:hidden;
+}
+.bc:hover { border-color:var(--c-border-hi); background:var(--c-surface2); transform:translateY(-1px); }
+.bc--l { border-left-color:#fbbf24; }
+.bc--r { border-left-color:#a78bfa; }
+.bc--c { border-left-color:#60a5fa; }
+.bc.hidden { display:none; }
+
+.bc-top { display:flex; align-items:center; gap:.5rem; flex-wrap:wrap; }
+.dot { width:6px; height:6px; border-radius:50%; flex-shrink:0; }
+.dot--l { background:#fbbf24; box-shadow:0 0 4px rgba(251,191,36,.5); }
+.dot--r { background:#a78bfa; box-shadow:0 0 4px rgba(167,139,250,.4); }
+.dot--c { background:#60a5fa; }
+.bc-name { font-size:.85rem; font-weight:700; line-height:1.2; flex:1; min-width:0; }
+.enh-badge {
+  font-size:.55rem; font-weight:900; letter-spacing:.06em; text-transform:uppercase;
+  color:#fbbf24; background:rgba(251,191,36,.12); border:1px solid rgba(251,191,36,.35);
+  border-radius:4px; padding:.1em .4em; white-space:nowrap; flex-shrink:0;
+}
+.bc-simple {
+  font-size:.73rem;
+  line-height:1.6;
+  color:var(--foreground-color);
+  opacity:.7;
+  word-break:keep-all;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+
+/* ── 모달 ── */
+.modal-backdrop {
+  position:fixed; inset:0; z-index:9000;
+  background:rgba(0,0,0,.65); backdrop-filter:blur(4px);
+  display:flex; align-items:center; justify-content:center;
+  padding:1rem;
+}
+.modal-backdrop.hidden { display:none; }
+
+.modal-box {
+  position:relative;
+  width:100%; max-width:680px;
+  background:var(--c-surface);
+  border:1px solid var(--c-border);
+  border-radius:var(--radius-lg);
+  overflow:hidden;
+  box-shadow:0 20px 60px rgba(0,0,0,.5);
+}
+
+.modal-header {
+  padding:1.25rem 1.5rem 1rem;
+  border-bottom:1px solid var(--c-border);
+  background:color-mix(in srgb, var(--mc, var(--c-accent)) 8%, var(--c-surface2));
+}
+.modal-title-group { display:flex; align-items:center; gap:.5rem; margin-bottom:.5rem; flex-wrap:wrap; }
+.modal-path-tag, .modal-cat-tag {
+  font-size:.6rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase;
+  border:1px solid; border-radius:4px; padding:.15em .5em;
+}
+.modal-title { font-family:var(--font-display); font-size:1.15rem; font-weight:700; line-height:1.3; }
+
+.modal-body { padding:1.25rem 1.5rem; display:flex; flex-direction:column; gap:1rem; max-height:70vh; overflow-y:auto; overflow-x:hidden; }
+.modal-desc { font-size:.85rem; line-height:1.8; color:var(--foreground-color); opacity:.85; word-break:keep-all; white-space:normal; overflow-wrap:break-word; }
+
+.modal-enhanced { }
+.modal-enhanced-header {
+  display:flex; align-items:center; gap:.5rem; margin-bottom:.6rem;
+  font-size:.65rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase;
+  color:#fbbf24;
+}
+.enh-icon { color:#fbbf24; }
+.modal-enhanced-desc { color:var(--foreground-color); opacity:.8; border-left:2px solid #fbbf24; padding-left:.75rem; }
+
+.modal-close {
+  position:absolute; top:.75rem; right:.75rem;
+  width:32px; height:32px; border-radius:50%;
+  border:1px solid var(--c-border); background:var(--c-surface2);
+  display:flex; align-items:center; justify-content:center;
+  cursor:pointer; color:var(--c-muted);
+  transition:background var(--anim-fast), color var(--anim-fast);
+}
+.modal-close:hover { background:var(--c-border-hi); color:var(--foreground-color); }
+
+/* 큐리오 */
+.cgrid { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px,1fr)); gap:.75rem; }
+.cc { border:1px solid var(--c-border); border-radius:var(--radius-md); background:var(--c-surface); padding:.9rem 1rem; display:flex; flex-direction:column; gap:.5rem; transition:border-color var(--anim-fast); }
+.cc:hover { border-color:var(--c-border-hi); }
+.cc.hidden { display:none; }
+.cc-hd { display:flex; align-items:center; gap:.7rem; }
+.cc-icon { flex-shrink:0; width:44px; height:44px; border-radius:var(--radius-sm); border:1px solid var(--c-border-hi); background:var(--c-surface2); display:flex; align-items:center; justify-content:center; overflow:hidden; padding:3px; }
+.cc-icon img { width:100%; height:100%; object-fit:contain; }
+.cc-name { font-family:var(--font-display); font-size:.88rem; font-weight:700; line-height:1.2; word-break:keep-all; flex:1; }
+.cc-desc { font-size:.76rem; line-height:1.7; color:var(--c-muted); word-break:keep-all; }
+.cc-lore { border-top:1px solid var(--c-border); padding-top:.5rem; display:flex; flex-direction:column; gap:.3rem; }
+.ltag { display:inline-flex; align-self:flex-start; font-size:.55rem; font-weight:900; letter-spacing:.08em; text-transform:uppercase; color:var(--c-accent); background:var(--c-accent-glow); border:1px solid color-mix(in srgb,var(--c-accent) 30%,transparent); border-radius:4px; padding:.1em .45em; }
+.ltext { font-size:.7rem; line-height:1.6; color:var(--c-muted); font-style:italic; word-break:keep-all; }
+
+/* 구역 */
+.dgrid { display:grid; grid-template-columns:repeat(auto-fill, minmax(200px,1fr)); gap:.75rem; }
+.dc { border:1px solid color-mix(in srgb,var(--bc) 25%,transparent); border-radius:var(--radius-md); background:color-mix(in srgb,var(--bc) 6%,var(--c-surface)); padding:.9rem 1rem; display:flex; flex-direction:column; gap:.5rem; transition:border-color var(--anim-fast); }
+.dc:hover { border-color:color-mix(in srgb,var(--bc) 55%,transparent); }
+.dc-hd { display:flex; align-items:center; gap:.6rem; }
+.dc-icon { flex-shrink:0; width:36px; height:36px; border-radius:var(--radius-sm); border:1px solid color-mix(in srgb,var(--bc) 30%,transparent); background:color-mix(in srgb,var(--bc) 12%,transparent); display:flex; align-items:center; justify-content:center; overflow:hidden; padding:3px; }
+.dc-icon img { width:100%; height:100%; object-fit:contain; }
+.dc-name { font-family:var(--font-display); font-size:.88rem; font-weight:700; line-height:1.2; color:var(--bc); word-break:keep-all; }
+.dc-desc { font-size:.75rem; line-height:1.65; color:var(--c-muted); word-break:keep-all; }
+
+.empty { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1rem; padding:5rem 2rem; color:var(--c-muted); text-align:center; border:1px dashed var(--c-border); border-radius:var(--radius-lg); font-size:.85rem; font-weight:600; }
+.empty svg { opacity:.3; }
+.hidden { display:none !important; }
+h1,h2,h3,p { word-break:keep-all; }
+
+@media (prefers-reduced-motion:reduce) { .bc { transition:none; } .bc:hover { transform:none; } }
+</style>

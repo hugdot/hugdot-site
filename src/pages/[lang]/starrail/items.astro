@@ -1,0 +1,469 @@
+---
+// src/pages/[lang]/starrail/items.astro
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Icon } from 'astro-icon/components'
+
+const allData = import.meta.glob('/src/data/starrail/**/*.json', { eager: true })
+
+export async function getStaticPaths() {
+  const languages = ['kr', 'en', 'jp', 'cn', 'fr', 'de', 'es', 'id', 'pt', 'ru', 'th', 'vi', 'cht']
+  return languages.map((lang) => ({ params: { lang } }))
+}
+
+const { lang } = Astro.params
+const baseDir = `/src/data/starrail/${lang}`
+
+const itemsRaw:    Record<string, any> = (allData[`${baseDir}/items.json`]   as any)?.default ?? {}
+const monstersRaw: Record<string, any> = (allData[`${baseDir}/monsters.json`] as any)?.default ?? {}
+const dropSources: Record<string, any> = (allData['/src/data/starrail/item_drop_sources.json'] as any)?.default ?? {}
+
+const toItemIcon = (icon: string) => {
+  if (!icon) return ''
+  let p = icon.replace(/^\//, '').replace(/^starrail\/assets\//, '')
+  if (p.includes('icon/character/')) p = p.replace('icon/character/', 'icon/item/')
+  return `/starrail/assets/${p}`
+}
+
+// 파밍 재료 타입만
+const FARMABLE_TYPES = ['CommonMonsterDrop', 'WeeklyMonsterDrop', 'AvatarRank', 'Material', 'ComposeMaterial', 'TracePath']
+
+const SUBTYPE_LABELS: Record<string, Record<string, string>> = {
+  kr: {
+    CommonMonsterDrop: '일반 드랍',
+    WeeklyMonsterDrop: '주간 보스',
+    AvatarRank:        '돌파 재료',
+    Material:          '재료',
+    ComposeMaterial:   '합성 재료',
+    TracePath:         '행적 재료',
+  },
+  en: {
+    CommonMonsterDrop: 'Monster Drop',
+    WeeklyMonsterDrop: 'Weekly Boss',
+    AvatarRank:        'Ascension',
+    Material:          'Material',
+    ComposeMaterial:   'Synthesis',
+    TracePath:         'Trace',
+  },
+}
+
+const subtypeLabel = SUBTYPE_LABELS[lang] ?? SUBTYPE_LABELS['en']
+
+// 아이템 목록 (파밍 재료만)
+const items = Object.values(itemsRaw)
+  .filter((item: any) => FARMABLE_TYPES.includes(item.sub_type) && item.name?.trim())
+  .map((item: any) => ({
+    id:        item.id,
+    name:      item.name,
+    sub_type:  item.sub_type,
+    type_label: subtypeLabel[item.sub_type] ?? item.sub_type,
+    rarity:    item.rarity ?? 1,
+    icon:      toItemIcon(item.icon ?? ''),
+    come_from: (item.come_from ?? []).filter((s: string) => !s.includes('TextID')),
+    // 드랍 몬스터 (이름 기준 중복 제거)
+    drop_monsters: [...new Map(
+      (dropSources[item.id] ?? []).map((m: any) => {
+        const name = monstersRaw[m.id]?.name ?? m.name
+        return [name, {
+          ...m,
+          name,
+          weaknesses: monstersRaw[m.id]?.weaknesses ?? [],
+        }]
+      })
+    ).values()],
+  }))
+  .sort((a, b) => {
+    // sub_type 순서 → rarity 내림차순 → 이름
+    const typeOrder = FARMABLE_TYPES.indexOf(a.sub_type) - FARMABLE_TYPES.indexOf(b.sub_type)
+    if (typeOrder !== 0) return typeOrder
+    if (b.rarity !== a.rarity) return b.rarity - a.rarity
+    return a.name.localeCompare(b.name)
+  })
+
+// sub_type별 그룹화
+const groups = new Map<string, any[]>()
+for (const item of items) {
+  if (!groups.has(item.sub_type)) groups.set(item.sub_type, [])
+  groups.get(item.sub_type)!.push(item)
+}
+
+const totalItems = items.length
+
+// 속성 아이콘
+const EL_ICON: Record<string, string> = {
+  Physical:  '/starrail/assets/icon/element/Physical.webp',
+  Fire:      '/starrail/assets/icon/element/Fire.webp',
+  Ice:       '/starrail/assets/icon/element/Ice.webp',
+  Thunder:   '/starrail/assets/icon/element/Thunder.webp',
+  Wind:      '/starrail/assets/icon/element/Wind.webp',
+  Quantum:   '/starrail/assets/icon/element/Quantum.webp',
+  Imaginary: '/starrail/assets/icon/element/Imaginary.webp',
+}
+
+const L = lang === 'kr'
+  ? { title:'재료', subtitle:'파밍 재료 및 드랍처 정보', search:'재료 검색…',
+      all:'전체', reset:'초기화', showing:'{v}개 표시', total:'전체 {t}개',
+      noMatch:'조건에 맞는 재료가 없습니다.',
+      dropFrom:'드랍처', comeFrom:'획득처', monsters:'드랍 몬스터',
+      noMonster:'드랍 몬스터 정보 없음', weekly:'주간', normal:'일반', elite:'정예', boss:'보스',
+      weaknesses:'약점' }
+  : { title:'Materials', subtitle:'Farming materials and drop sources', search:'Search materials…',
+      all:'All', reset:'Reset', showing:'{v} shown', total:'{t} total',
+      noMatch:'No materials match.',
+      dropFrom:'Drop Source', comeFrom:'Source', monsters:'Drop Monsters',
+      noMonster:'No monster data', weekly:'Weekly', normal:'Normal', elite:'Elite', boss:'Boss',
+      weaknesses:'Weakness' }
+
+const GRADE_LABEL: Record<string, string> = {
+  Normal: L.normal, Elite: L.elite, Boss: L.boss,
+}
+---
+
+<DefaultLayout title={`${L.title} | Star Rail DB`} description="Honkai: Star Rail farming materials and drop sources.">
+<div class="it-page">
+
+  <!-- 헤더 -->
+  <div class="it-header">
+    <div class="iw">
+      <nav class="bc">
+        <a href={`/${lang}`}>Home</a><span>/</span>
+        <a href={`/${lang}/starrail`}>Star Rail</a><span>/</span>
+        <span class="bc-cur">{L.title}</span>
+      </nav>
+      <div class="hd-row">
+        <div>
+          <h1 class="it-title">{L.title}</h1>
+          <p class="it-sub">{L.subtitle}</p>
+        </div>
+        <div class="hd-stat">
+          <span class="stat-v">{totalItems}</span>
+          <span class="stat-l">{L.title}</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 필터 바 -->
+  <div class="filter-bar iw">
+    <div class="sw">
+      <Icon name="lucide:search" size="0.85rem" class="si"/>
+      <input type="search" id="itemSearch" placeholder={L.search} autocomplete="off" class="sinput"/>
+    </div>
+
+    <!-- 타입 필터 -->
+    <div class="type-tabs" role="tablist">
+      <button class="ttab ttab--on" data-type="all" role="tab">{L.all}</button>
+      {[...groups.keys()].map(type => (
+        <button class="ttab" data-type={type} role="tab">
+          {subtypeLabel[type] ?? type}
+          <span class="ttab-cnt">{groups.get(type)?.length}</span>
+        </button>
+      ))}
+    </div>
+
+    <div class="filter-meta">
+      <p class="scount" id="itemCount" aria-live="polite">
+        {L.showing.replace('{v}', String(totalItems))}
+        <span class="mu">· {L.total.replace('{t}', String(totalItems))}</span>
+      </p>
+      <button class="rbtn" id="itemReset" type="button">
+        <Icon name="lucide:rotate-ccw" size="0.7rem"/>{L.reset}
+      </button>
+    </div>
+  </div>
+
+  <!-- 아이템 섹션 -->
+  <div class="it-body iw" id="itemSections">
+    {[...groups.entries()].map(([type, groupItems]) => (
+      <section class="it-section" data-section={type}>
+        <div class="section-hd">
+          <h2 class="section-title">{subtypeLabel[type] ?? type}</h2>
+          <span class="section-cnt">{groupItems.length}</span>
+        </div>
+
+        <div class="item-grid">
+          {groupItems.map(item => (
+            <div
+              class="item-card"
+              data-item
+              data-name={item.name.toLowerCase()}
+              data-type={item.sub_type}
+              data-rarity={item.rarity}
+            >
+              <!-- 아이콘 + 이름 -->
+              <div class="ic-top">
+                <div class={`ic-icon-wrap r${Math.min(item.rarity, 5)}`}>
+                  {item.icon && (
+                    <img src={item.icon} alt={item.name} width="44" height="44" loading="lazy" decoding="async" class="ic-icon"/>
+                  )}
+                </div>
+                <div class="ic-info">
+                  <p class="ic-name">{item.name}</p>
+                  <span class="ic-type-tag">{item.type_label}</span>
+                </div>
+              </div>
+
+              <!-- 획득처 -->
+              {item.come_from.length > 0 && (
+                <div class="ic-section">
+                  <p class="ic-label">{L.comeFrom}</p>
+                  <div class="ic-tags">
+                    {item.come_from.map((src: string) => (
+                      <span class="ic-tag">{src}</span>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              <!-- 드랍 몬스터 -->
+              {item.drop_monsters.length > 0 && (
+                <div class="ic-section">
+                  <p class="ic-label">{L.monsters} <span class="monster-total">({item.drop_monsters.length})</span></p>
+                  <div class="monster-list">
+                    {item.drop_monsters.slice(0, 5).map((m: any) => (
+                      <div class="monster-row">
+                        <span class={`grade-dot grade-${m.grade.toLowerCase()}`}></span>
+                        <span class="monster-name">{m.name}</span>
+                        <span class="monster-grade">{GRADE_LABEL[m.grade] ?? m.grade}</span>
+                        {m.weaknesses && m.weaknesses.length > 0 && (
+                          <div class="monster-weak">
+                            {m.weaknesses.map((w: any) => (
+                              EL_ICON[w.key] && (
+                                <img src={EL_ICON[w.key]} alt={w.name} width="16" height="16" loading="lazy" title={w.name} class="weak-icon"/>
+                              )
+                            ))}
+                          </div>
+                        )}
+                      </div>
+                    ))}
+                    {item.drop_monsters.length > 5 && (
+                      <div class="more-monsters hidden" data-extra>
+                        {item.drop_monsters.slice(5).map((m: any) => (
+                          <div class="monster-row">
+                            <span class={`grade-dot grade-${m.grade.toLowerCase()}`}></span>
+                            <span class="monster-name">{m.name}</span>
+                            <span class="monster-grade">{GRADE_LABEL[m.grade] ?? m.grade}</span>
+                            {m.weaknesses && m.weaknesses.length > 0 && (
+                              <div class="monster-weak">
+                                {m.weaknesses.map((w: any) => (
+                                  EL_ICON[w.key] && (
+                                    <img src={EL_ICON[w.key]} alt={w.name} width="16" height="16" loading="lazy" title={w.name} class="weak-icon"/>
+                                  )
+                                ))}
+                              </div>
+                            )}
+                          </div>
+                        ))}
+                      </div>
+                    )}
+                    {item.drop_monsters.length > 5 && (
+                      <button class="more-btn" data-more-btn type="button">
+                        +{item.drop_monsters.length - 5}개 더보기
+                      </button>
+                    )}
+                  </div>
+                </div>
+              )}
+
+              {item.drop_monsters.length === 0 && item.come_from.length === 0 && (
+                <p class="no-source">{L.noMonster}</p>
+              )}
+            </div>
+          ))}
+        </div>
+      </section>
+    ))}
+
+    <div id="itemEmpty" class="empty hidden">
+      <Icon name="lucide:search-x" size="2.5rem"/>
+      <p>{L.noMatch}</p>
+    </div>
+  </div>
+
+</div>
+
+<script is:inline define:vars={{ lShowing: L.showing, lTotal: L.total, totalItems }}>
+
+;(function () {
+    function init() {
+
+    var searchInput = document.getElementById('itemSearch')
+    var countEl     = document.getElementById('itemCount')
+    var emptyEl     = document.getElementById('itemEmpty')
+    var resetBtn    = document.getElementById('itemReset')
+    var cards       = [].slice.call(document.querySelectorAll('[data-item]'))
+    var sections    = [].slice.call(document.querySelectorAll('[data-section]'))
+    var ttabs       = [].slice.call(document.querySelectorAll('.ttab'))
+    var activeType  = 'all'
+
+    function applyFilter() {
+      var q = searchInput ? searchInput.value.trim().toLowerCase() : ''
+      var v = 0
+
+      cards.forEach(function(card) {
+        var name = card.dataset.name || ''
+        var type = card.dataset.type || ''
+        var matchType = activeType === 'all' || type === activeType
+        var matchQ    = !q || name.indexOf(q) !== -1
+        var show = matchType && matchQ
+        card.classList.toggle('hidden', !show)
+        if (show) v++
+      })
+
+      // 빈 섹션 숨김
+      sections.forEach(function(sec) {
+        var vis = sec.querySelectorAll('[data-item]:not(.hidden)')
+        sec.classList.toggle('hidden', vis.length === 0)
+      })
+
+      var ss = lShowing.replace('{v}', String(v))
+      var ts = lTotal.replace('{t}', String(totalItems))
+      if (countEl) countEl.innerHTML = ss + ' <span class="mu">· ' + ts + '</span>'
+      if (emptyEl) emptyEl.classList.toggle('hidden', v !== 0)
+    }
+
+    // 타입 탭
+    ttabs.forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        activeType = tab.dataset.type || 'all'
+        ttabs.forEach(function(t) { t.classList.toggle('ttab--on', t === tab) })
+        applyFilter()
+      }, { passive: true })
+    })
+
+    // 검색
+    if (searchInput) {
+      searchInput.addEventListener('input', applyFilter, { passive: true })
+      searchInput.addEventListener('search', applyFilter, { passive: true })
+    }
+
+    // 초기화
+    if (resetBtn) {
+      resetBtn.addEventListener('click', function() {
+        if (searchInput) { searchInput.value = ''; searchInput.focus() }
+        activeType = 'all'
+        ttabs.forEach(function(t) { t.classList.toggle('ttab--on', t.dataset.type === 'all') })
+        applyFilter()
+      }, { passive: true })
+    }
+
+    // 더보기 버튼
+    document.querySelectorAll('[data-more-btn]').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        var sib = btn.parentElement.querySelector('[data-extra]')
+        if (sib) {
+          var isHidden = sib.classList.contains('hidden')
+          sib.classList.toggle('hidden', !isHidden)
+          if (isHidden) {
+            btn.textContent = btn.textContent.replace('더보기', '접기').replace('more', 'less')
+          } else {
+            var orig = btn.textContent.replace('접기', '더보기').replace('less', 'more')
+            btn.textContent = orig
+          }
+        }
+      }, { passive: true })
+    })
+
+    applyFilter()
+  }
+  document.addEventListener('DOMContentLoaded', init)
+  document.addEventListener('astro:page-load', init)
+})()
+</script>
+</DefaultLayout>
+
+<style>
+.it-page { min-height:100vh; background:var(--c-bg); color:var(--foreground-color); }
+.iw { max-width:1400px; margin:0 auto; padding:0 1.5rem; }
+
+/* 헤더 */
+.it-header { border-bottom:1px solid var(--c-border); background:var(--c-surface); padding:2rem 0 1.5rem; }
+.bc { display:flex; align-items:center; gap:.4rem; font-size:.68rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--c-muted); margin-bottom:.75rem; }
+.bc a { color:inherit; text-decoration:none; }
+.bc a:hover { color:var(--c-accent); }
+.bc span { opacity:.4; }
+.bc-cur { color:var(--c-accent); opacity:1 !important; }
+.hd-row { display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; }
+.it-title { font-family:var(--font-display); font-size:clamp(1.8rem,4vw,2.6rem); font-weight:700; letter-spacing:-.03em; text-transform:uppercase; line-height:1; }
+.it-sub { margin-top:.35rem; font-size:.82rem; color:var(--c-muted); }
+.hd-stat { display:flex; flex-direction:column; align-items:center; padding:.4rem .8rem; border:1px solid var(--c-border); border-radius:var(--radius-md); background:var(--c-surface2); min-width:64px; text-align:center; }
+.stat-v { font-family:var(--font-mono); font-size:1.1rem; font-weight:900; color:var(--c-accent); line-height:1; }
+.stat-l { font-size:.55rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; color:var(--c-muted); margin-top:.2rem; }
+
+/* 필터 바 */
+.filter-bar { display:flex; flex-wrap:wrap; align-items:center; gap:.75rem; padding:1.25rem 1.5rem; border-bottom:1px solid var(--c-border); background:var(--c-surface); }
+.sw { position:relative; display:flex; align-items:center; min-width:200px; }
+.si { position:absolute; left:.7rem; color:var(--c-muted); pointer-events:none; }
+.sinput { width:100%; padding:.5rem .75rem .5rem 2.1rem; border:1px solid var(--c-border); border-radius:var(--radius-sm); background:var(--c-bg); color:var(--foreground-color); font-size:.78rem; outline:none; transition:border-color var(--anim-fast); }
+.sinput::placeholder { color:var(--c-muted); }
+.sinput:focus { border-color:var(--c-accent); }
+
+.type-tabs { display:flex; flex-wrap:wrap; gap:.35rem; }
+.ttab { display:inline-flex; align-items:center; gap:.35rem; padding:.35rem .7rem; border:1px solid var(--c-border); border-radius:var(--radius-sm); background:var(--c-surface2); color:var(--c-muted); font-size:.7rem; font-weight:700; cursor:pointer; transition:border-color var(--anim-fast),color var(--anim-fast),background var(--anim-fast); white-space:nowrap; }
+.ttab:hover { border-color:var(--c-border-hi); color:var(--foreground-color); }
+.ttab--on { border-color:var(--c-accent); background:var(--c-accent-glow); color:var(--c-accent); }
+.ttab-cnt { font-family:var(--font-mono); font-size:.58rem; font-weight:700; background:var(--c-bg); border-radius:99px; padding:.1em .4em; color:var(--c-muted); }
+.ttab--on .ttab-cnt { background:color-mix(in srgb,var(--c-accent) 20%,transparent); color:var(--c-accent); }
+
+.filter-meta { display:flex; align-items:center; gap:.6rem; margin-left:auto; }
+.scount { font-size:.65rem; font-weight:700; color:var(--c-accent); white-space:nowrap; }
+.mu { color:var(--c-muted); font-weight:500; }
+.rbtn { display:inline-flex; align-items:center; gap:.4rem; padding:.35rem .7rem; border:1px solid var(--c-border); border-radius:var(--radius-sm); background:transparent; color:var(--c-muted); font-size:.65rem; font-weight:700; cursor:pointer; transition:border-color var(--anim-fast),color var(--anim-fast); white-space:nowrap; }
+.rbtn:hover { border-color:var(--c-accent); color:var(--c-accent); }
+
+/* 바디 */
+.it-body { padding:1.5rem 1.5rem 3rem; display:flex; flex-direction:column; gap:2rem; }
+
+/* 섹션 */
+.it-section { display:flex; flex-direction:column; gap:.75rem; }
+.it-section.hidden { display:none; }
+.section-hd { display:flex; align-items:center; gap:.6rem; padding-bottom:.6rem; border-bottom:2px solid var(--c-accent); }
+.section-title { font-family:var(--font-display); font-size:1rem; font-weight:700; letter-spacing:.04em; text-transform:uppercase; color:var(--c-accent); }
+.section-cnt { font-family:var(--font-mono); font-size:.7rem; font-weight:700; color:var(--c-muted); margin-left:auto; }
+
+/* 아이템 그리드 */
+.item-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px,1fr)); gap:.6rem; }
+
+.item-card { border:1px solid var(--c-border); border-radius:var(--radius-md); background:var(--c-surface); padding:.85rem 1rem; display:flex; flex-direction:column; gap:.65rem; transition:border-color var(--anim-fast); }
+.item-card:hover { border-color:var(--c-border-hi); }
+.item-card.hidden { display:none; }
+
+.ic-top { display:flex; align-items:center; gap:.75rem; }
+.ic-icon-wrap { flex-shrink:0; width:48px; height:48px; border-radius:var(--radius-sm); border:1px solid var(--c-border-hi); display:flex; align-items:center; justify-content:center; overflow:hidden; padding:3px; }
+.ic-icon-wrap.r1 { background:linear-gradient(135deg,#1a1a2e,#16213e); }
+.ic-icon-wrap.r2 { background:linear-gradient(135deg,#1a2e1a,#16213e); }
+.ic-icon-wrap.r3 { background:linear-gradient(135deg,#1a2240,#16213e); }
+.ic-icon-wrap.r4 { background:linear-gradient(135deg,#2a1f3d,#1a1428); }
+.ic-icon-wrap.r5 { background:linear-gradient(135deg,#2d1f0a,#1a1428); }
+.ic-icon { width:100%; height:100%; object-fit:contain; }
+.ic-info { flex:1; min-width:0; }
+.ic-name { font-size:.88rem; font-weight:700; line-height:1.2; word-break:keep-all; }
+.ic-type-tag { display:inline-block; margin-top:.2rem; font-size:.58rem; font-weight:900; letter-spacing:.06em; text-transform:uppercase; color:var(--c-accent); background:var(--c-accent-glow); border:1px solid color-mix(in srgb,var(--c-accent) 30%,transparent); border-radius:4px; padding:.1em .45em; }
+
+.ic-section { display:flex; flex-direction:column; gap:.35rem; padding-top:.5rem; border-top:1px solid var(--c-border); }
+.ic-label { font-size:.6rem; font-weight:900; letter-spacing:.1em; text-transform:uppercase; color:var(--c-muted); }
+.ic-tags { display:flex; flex-wrap:wrap; gap:.3rem; }
+.ic-tag { font-size:.65rem; font-weight:600; color:var(--c-muted); background:transparent; border:none; border-radius:4px; padding:.15em 0; word-break:keep-all; }
+
+/* 몬스터 목록 */
+.monster-list { display:flex; flex-direction:column; gap:.3rem; }
+.monster-row { display:flex; align-items:center; gap:.5rem; }
+.grade-dot { width:7px; height:7px; border-radius:50%; flex-shrink:0; }
+.grade-normal { background:#60a5fa; }
+.grade-elite  { background:#a78bfa; }
+.grade-boss   { background:#fbbf24; box-shadow:0 0 4px rgba(251,191,36,.4); }
+.monster-name { font-size:.72rem; font-weight:600; flex:1; min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; word-break:keep-all; }
+.monster-grade { font-size:.58rem; font-weight:700; color:var(--c-muted); flex-shrink:0; }
+.monster-weak { display:flex; gap:.2rem; flex-shrink:0; }
+.weak-icon { width:16px; height:16px; object-fit:contain; }
+
+.no-source { font-size:.72rem; color:var(--c-muted); font-style:italic; }
+.monster-total { font-size:.6rem; font-weight:500; color:var(--c-muted); }
+.more-monsters { display:flex; flex-direction:column; gap:.3rem; }
+.more-btn { align-self:flex-start; margin-top:.25rem; padding:.2rem .6rem; border:1px solid var(--c-border); border-radius:var(--radius-sm); background:transparent; color:var(--c-muted); font-size:.65rem; font-weight:700; cursor:pointer; transition:border-color var(--anim-fast),color var(--anim-fast); }
+.more-btn:hover { border-color:var(--c-accent); color:var(--c-accent); }
+
+.empty { display:flex; flex-direction:column; align-items:center; justify-content:center; gap:1rem; padding:5rem 2rem; color:var(--c-muted); text-align:center; border:1px dashed var(--c-border); border-radius:var(--radius-lg); font-size:.85rem; font-weight:600; }
+.empty svg { opacity:.3; }
+.hidden { display:none !important; }
+h1,h2,p { word-break:keep-all; }
+</style>

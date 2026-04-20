@@ -1,0 +1,291 @@
+---
+// src/pages/[lang]/simulated-universe.astro
+import DefaultLayout from '../../layouts/DefaultLayout.astro'
+import { Icon } from 'astro-icon/components'
+import { Heading } from 'accessible-astro-components'
+
+export async function getStaticPaths() {
+  const languages = ['kr', 'en', 'jp', 'cn', 'fr', 'de', 'es', 'id', 'pt', 'ru', 'th', 'vi', 'cht']
+  return languages.map((lang) => ({ params: { lang } }))
+}
+
+const { lang } = Astro.params
+
+// 타입 정의
+interface PathInfo {
+  id: string;
+  name: string;
+  text: string;
+  desc: string;
+  icon: string;
+  icon_middle: string;
+  icon_small: string;
+}
+
+interface Blessing {
+  id: string;
+  name: string;
+  desc: string;
+  enhanced_desc?: string;
+}
+
+interface Curio {
+  id: string;
+  name: string;
+  desc: string;
+  bg_desc?: string;
+  icon: string;
+}
+
+const cleanText = (text: string) => {
+  if (!text) return ''
+  return text.replace(/\{RUBY_B#([^}]+)\}([^\{]+)\{RUBY_E\#\}/g, '$1').trim()
+}
+
+const toAssetUrl = (rel: string) =>
+  !rel ? '' : rel.startsWith('/') ? rel : `/assets/${rel.replace(/^\//, '')}`
+
+// 데이터 로드 변수 타입 지정
+let pathsData: Record<string, PathInfo> = {}
+let blessingsData: Record<string, Blessing> = {}
+let curiosData: Record<string, Curio> = {}
+
+try {
+  const pathsModule = await import(`../../data/${lang}/paths.json`)
+  const blessingsModule = await import(`../../data/${lang}/simulated_blessings.json`)
+  const curiosModule = await import(`../../data/${lang}/simulated_curios.json`)
+  
+  pathsData = pathsModule.default
+  blessingsData = blessingsModule.default
+  curiosData = curiosModule.default
+} catch (e) {
+  console.error("Data loading error:", e)
+}
+
+// 인덱스 시그니처가 있는 타입 정의
+const pathMap: Record<string, string> = {
+  "6120": "Knight", "6150": "Knight", "6160": "Knight",
+  "6121": "Memory", "6151": "Memory", "6161": "Memory",
+  "6122": "Warlock", "6152": "Warlock", "6162": "Warlock",
+  "6123": "Priest", "6153": "Priest", "6163": "Priest",
+  "6124": "Rogue", "6154": "Rogue", "6164": "Rogue",
+  "6125": "Warrior", "6155": "Warrior", "6165": "Warrior",
+  "6126": "Elation", "6156": "Elation", "6166": "Elation",
+  "6127": "Warrior", "6157": "Warrior", "6167": "Warrior",
+  "6128": "Mage", "6158": "Mage", "6168": "Mage",
+  "6169": "Shaman"
+}
+
+// id 매개변수 타입 추가 (string)
+const getPathByBlessingId = (id: string): string => {
+  const prefix = id.substring(0, 4)
+  return pathMap[prefix] || ""
+}
+
+const labels = lang === 'kr' ? {
+  title: '시뮬레이션 우주',
+  subtitle: '축복, 기물 등 시뮬레이션 우주의 모든 데이터를 확인하세요.',
+  tabBlessings: '축복',
+  tabCurios: '기물',
+  search: '이름 또는 효과 검색…',
+  filterPath: '운명의 길',
+  enhanced: '강화',
+  normal: '일반',
+  noMatch: '검색 결과가 없습니다.',
+} : {
+  title: 'Simulated Universe',
+  subtitle: 'Explore all blessings, curios, and data from the Simulated Universe.',
+  tabBlessings: 'Blessings',
+  tabCurios: 'Curios',
+  search: 'Search name or effect…',
+  filterPath: 'Paths',
+  enhanced: 'Enhanced',
+  normal: 'Normal',
+  noMatch: 'No results found.',
+}
+---
+
+<DefaultLayout title={`${labels.title} | Star Rail DB`}>
+  <section class="py-12 bg-zinc-50 dark:bg-black min-h-screen">
+    <div class="container">
+      <!-- 헤더 섹션 -->
+      <div class="mb-10 flex flex-col gap-8">
+        <div class="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
+          <div class="max-w-2xl space-y-3">
+            <div class="flex items-center gap-2 text-xs font-bold tracking-widest uppercase opacity-40">
+              <a href={`/${lang}`} class="hover:text-[var(--action-color)] transition-colors">Home</a>
+              <Icon name="lucide:chevron-right" size="0.6rem" />
+              <span class="text-[var(--action-color)]">{labels.title}</span>
+            </div>
+            <Heading level="h1" size="h2" class="leading-none tracking-tighter uppercase italic">{labels.title}</Heading>
+            <p class="text-sm leading-relaxed opacity-70">{labels.subtitle}</p>
+          </div>
+
+          <div class="flex w-full flex-col gap-4 md:max-w-md">
+            <div class="relative w-full">
+              <div class="pointer-events-none absolute inset-y-0 left-4 flex items-center opacity-40">
+                <Icon name="lucide:search" size="1rem" />
+              </div>
+              <input type="search" id="simSearch" placeholder={labels.search}
+                class="w-full rounded-2xl border border-[var(--border-color-subtle)] bg-black/5 py-3 pr-4 pl-12 text-sm font-medium transition-all outline-none focus:border-[var(--action-color)] focus:ring-1 focus:ring-[var(--action-color)]" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 메인 탭 메뉴 -->
+      <div class="flex gap-2 mb-8 p-1.5 rounded-2xl bg-black/5 dark:bg-white/5 w-fit">
+        <button class="tab-btn px-6 py-2.5 rounded-xl text-sm font-black uppercase tracking-tight transition-all aria-selected:bg-white aria-selected:shadow-sm dark:aria-selected:bg-zinc-800" 
+          data-tab="blessings" aria-selected="true">{labels.tabBlessings}</button>
+        <button class="tab-btn px-6 py-2.5 rounded-xl text-sm font-black uppercase tracking-tight transition-all aria-selected:bg-white aria-selected:shadow-sm dark:aria-selected:bg-zinc-800" 
+          data-tab="curios" aria-selected="false">{labels.tabCurios}</button>
+      </div>
+
+      <!-- 필터 바 -->
+      <div id="path-filter-bar" class="mb-10 p-5 rounded-3xl border border-[var(--border-color-subtle)] bg-black/[0.02] dark:bg-white/[0.02]">
+        <p class="mb-4 text-[10px] font-black uppercase tracking-widest opacity-40">{labels.filterPath}</p>
+        <div class="flex flex-wrap gap-2">
+          <button class="path-filter-btn flex h-12 w-12 items-center justify-center rounded-xl border border-[var(--border-color-subtle)] bg-white dark:bg-zinc-900 transition-all aria-pressed:border-[var(--action-color)] aria-pressed:ring-2 aria-pressed:ring-[var(--action-color)]" 
+            data-path="all" aria-pressed="true" title="All">
+            <Icon name="lucide:layout-grid" size="1.2rem" class="opacity-40" />
+          </button>
+          {Object.entries(pathsData).map(([id, path]: [string, PathInfo]) => (
+            <button class="path-filter-btn flex h-12 w-12 items-center justify-center rounded-xl border border-[var(--border-color-subtle)] bg-white dark:bg-zinc-900 transition-all aria-pressed:border-[var(--action-color)] aria-pressed:ring-2 aria-pressed:ring-[var(--action-color)]" 
+              data-path={id} aria-pressed="false" title={path.name}>
+              <img src={toAssetUrl(path.icon_small)} alt={path.name} class="h-7 w-7 object-contain dark:invert-0 invert opacity-40" />
+            </button>
+          ))}
+        </div>
+      </div>
+
+      <!-- 축복 컨테이너 -->
+      <div id="blessings-panel" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {(Object.values(blessingsData) as Blessing[]).map((blessing) => {
+          const pathId = getPathByBlessingId(blessing.id)
+          const path = pathsData[pathId]
+          return (
+            <div class="sim-card blessing-card group p-5 rounded-3xl border border-[var(--border-color-subtle)] bg-white dark:bg-zinc-900 transition-all hover:border-[var(--action-color)]"
+                 data-name={blessing.name.toLowerCase()} data-desc={blessing.desc.toLowerCase()} data-path={pathId}>
+              <div class="flex items-start justify-between gap-4 mb-4">
+                <h3 class="text-lg font-black tracking-tight dark:text-white leading-tight">{blessing.name}</h3>
+                {path && <img src={toAssetUrl(path.icon_small)} alt="" class="w-6 h-6 dark:invert-0 invert opacity-20" />}
+              </div>
+              
+              <div class="space-y-3">
+                <div class="relative p-4 rounded-2xl bg-zinc-50 dark:bg-black/20 border border-black/5">
+                  <span class="absolute -top-2 left-3 px-2 py-0.5 rounded-md bg-zinc-200 dark:bg-zinc-800 text-[8px] font-black uppercase opacity-60">{labels.normal}</span>
+                  <p class="text-[13px] leading-relaxed opacity-80">{cleanText(blessing.desc)}</p>
+                </div>
+                {blessing.enhanced_desc && (
+                  <div class="relative p-4 rounded-2xl bg-amber-500/[0.03] border border-amber-500/20">
+                    <span class="absolute -top-2 left-3 px-2 py-0.5 rounded-md bg-amber-500 text-white text-[8px] font-black uppercase">{labels.enhanced}</span>
+                    <p class="text-[13px] leading-relaxed text-amber-900 dark:text-amber-200/80 font-medium italic">{cleanText(blessing.enhanced_desc)}</p>
+                  </div>
+                )}
+              </div>
+            </div>
+          )
+        })}
+      </div>
+
+      <!-- 기물 컨테이너 -->
+      <div id="curios-panel" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+        {(Object.values(curiosData) as Curio[]).map((curio) => (
+          <div class="sim-card curio-card group flex flex-col p-6 rounded-3xl border border-[var(--border-color-subtle)] bg-white dark:bg-zinc-900 transition-all hover:border-[var(--action-color)]"
+               data-name={curio.name.toLowerCase()} data-desc={curio.desc.toLowerCase()}>
+            <div class="flex items-center gap-4 mb-5">
+              <div class="w-16 h-16 rounded-2xl bg-black/[0.03] dark:bg-white/[0.03] border border-[var(--border-color-subtle)] flex items-center justify-center p-2">
+                <img src={toAssetUrl(curio.icon)} alt={curio.name} class="w-full h-full object-contain group-hover:scale-110 transition-transform" />
+              </div>
+              <h3 class="text-md font-black tracking-tight dark:text-white leading-tight">{curio.name}</h3>
+            </div>
+            <p class="text-[13px] leading-relaxed opacity-80 mb-4 flex-grow">{cleanText(curio.desc)}</p>
+            {curio.bg_desc && (
+              <div class="mt-auto pt-4 border-t border-dashed border-[var(--border-color-subtle)]">
+                <p class="text-[11px] leading-relaxed opacity-40 italic line-clamp-2">{cleanText(curio.bg_desc)}</p>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+
+      <!-- 검색 결과 없음 -->
+      <div id="sim-empty" class="hidden flex flex-col items-center justify-center py-32 opacity-30">
+        <Icon name="lucide:search-x" size="3rem" class="mb-4" />
+        <p class="font-bold dark:text-white">{labels.noMatch}</p>
+      </div>
+    </div>
+  </section>
+
+  <script is:inline>
+    // 스크립트 로직 동일
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('simSearch');
+      const tabBtns = document.querySelectorAll('.tab-btn');
+      const pathFilterBtns = document.querySelectorAll('.path-filter-btn');
+      const filterBar = document.getElementById('path-filter-bar');
+      const empty = document.getElementById('sim-empty');
+      
+      const panels = {
+        blessings: document.getElementById('blessings-panel'),
+        curios: document.getElementById('curios-panel')
+      };
+
+      let activeTab = 'blessings';
+      let activePath = 'all';
+
+      function applyFilters() {
+        const q = searchInput.value.trim().toLowerCase();
+        let visibleCount = 0;
+        const currentCards = Array.from(panels[activeTab].querySelectorAll('.sim-card'));
+        
+        currentCards.forEach(card => {
+          const name = card.dataset.name || "";
+          const desc = card.dataset.desc || "";
+          const path = card.dataset.path || "";
+
+          const matchQ = !q || name.includes(q) || desc.includes(q);
+          const matchP = activeTab === 'curios' || activePath === 'all' || path === activePath;
+
+          const show = matchQ && matchP;
+          card.classList.toggle('hidden', !show);
+          if (show) visibleCount++;
+        });
+
+        empty.classList.toggle('hidden', visibleCount !== 0);
+      }
+
+      tabBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          activeTab = btn.dataset.tab;
+          tabBtns.forEach(b => b.setAttribute('aria-selected', b === btn));
+          Object.keys(panels).forEach(k => panels[k].classList.toggle('hidden', k !== activeTab));
+          filterBar.classList.toggle('hidden', activeTab === 'curios');
+          applyFilters();
+        });
+      });
+
+      pathFilterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+          activePath = btn.dataset.path;
+          pathFilterBtns.forEach(b => b.setAttribute('aria-pressed', b === btn));
+          applyFilters();
+        });
+      });
+
+      searchInput.addEventListener('input', applyFilters);
+    });
+  </script>
+</DefaultLayout>
+
+<style>
+  .sim-card { transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.2s ease; }
+  .sim-card:hover { transform: translateX(4px); }
+  h1, h2, h3 { word-break: keep-all; }
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>

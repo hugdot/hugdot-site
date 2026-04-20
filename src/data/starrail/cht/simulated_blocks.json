@@ -1,0 +1,130 @@
+{
+  "1": {
+    "id": "1",
+    "name": "空白",
+    "desc": "空白區域，在這個區域中不會發生任何事件。",
+    "icon": "/starrail/assets/icon/character/RogueDlcEmptyIcon.webp",
+    "icon_board": "/starrail/assets/icon/block/SceneNaviRogueDlcEmptyIcon.webp",
+    "color": "#ffffffd9"
+  },
+  "2": {
+    "id": "2",
+    "name": "整備",
+    "desc": "整備區域，在這個區域中可以進行祝福強化、角色下載與角色重置。",
+    "icon": "/starrail/assets/icon/character/RogueIntensifyIcon.webp",
+    "icon_board": "/starrail/assets/icon/block/SceneNaviRogueIntensifyIcon.webp",
+    "color": "#80e5edff"
+  },
+  "3": {
+    "id": "3",
+    "name": "戰鬥",
+    "desc": "戰鬥區域，在這個區域中戰勝敵人可以獲得祝福。",
+    "icon": "/starrail/assets/icon/character/RogueFoeIcon.webp",
+    "icon_board": "/starrail/assets/icon/block/SceneNaviRogueFoeIcon.webp",
+    "color": "#ffffffd9"
+  },
+  "4": {
+    "id": "4",
+    "name": "戰鬥•蟲群",
+    "desc": "特殊戰鬥區域，在這個區域中戰勝蟲群敵人可以獲得「繁育」祝福。",
+    "icon": "/starrail/assets/icon/character/RogueDlcMonsterIcon.webp",
+    "icon_board": "/starrail/assets/icon/block/SceneNaviRogueDlcFoeEliteIcon.webp",
+    "color": "#c979ffff"
+  },
+  "5": {
+    "id": "5",
+    "name": "菁英",
+    "desc": "菁英區域，在這個區域中戰勝菁英敵人有機率獲得1個一至三星祝福。",
+    "icon": "/starrail/assets/icon/character/RogueFoeEliteIcon.webp",
+    "icon_board": "/starrail/assets/icon/block/SceneNaviRogueFoeEliteIcon.webp",
+    "color": "#ffffffd9"
+  },
+  "6": {
+    "id": "6",
+    "name": "冒險",
+    "desc": "冒險區域，在這個區域中完成各種挑戰可以獲得獎勵。",
+    "icon": "/starrail/assets/icon/character/RogueDlcGameIcon.webp",
+    "icon_board": "/starrail/assets/icon/block/SceneNaviRogueDlcGameIcon.webp",
+    "color": "#f3dbb5ff"
+  },
+  "7": {
+    "id": "7",
+    "name": "獎勵",
+    "desc": "獎勵區域，在這個區域中可以透過選擇獲得不同的獎勵。",
+    "icon": "/starrail/assets/icon/character/RogueDlcGiftIcon.webp",
+    "icon_board": "/starrail/assets/icon/block/SceneNaviRogueDlcRewardIcon.webp",
+    "color": "#f3dbb5ff"
+  },
+  "8": {
+    "id": "8",
+    "name": "事件",
+    "desc": "事件區域，在這個區域中可以透過選擇達成不同的結果。",
+    "icon": "/starrail/assets/icon/character/RogueRandomIcon.webp",
+    "icon_board": "/starrail/assets/icon/block/SceneNaviRogueRandomIcon.webp",
+    "color": "#ffffffd9"
+  },
+  "9": {
+    "id": "9",
+    "name": "事件•蟲群",
+    "desc": "特殊事件區域，在這個區域中做的選擇會提高蟲群警戒值。蟲群警戒值越高，這個區域中的事件會變得越危險。",
+    "icon": "/starrail/assets/icon/character/RogueDlcRandomIcon.webp",
+    "icon_board": "/starrail/assets/icon/block/SceneNaviRogueDlcRandomIcon.webp",
+    "color": "#c979ffff"
+  },
+  "11": {
+    "id": "11",
+    "name": "頭目",
+    "desc": "特殊頭目區域，在這個區域中戰勝蟲群•真蟄蟲（完整）可以完成本次模擬宇宙。",
+    "icon": "/starrail/assets/icon/character/RogueBossIcon.webp",
+    "icon_board": "/starrail/assets/icon/block/SceneNaviRogueBossIcon.webp",
+    "color": "#ffffffff"
+  },
+  "12": {
+    "id": "12",
+    "name": "頭目•蟲群",
+    "desc": "交易區域，在這個區域中可以消耗宇宙碎片購買祝福和奇物。",
+    "icon": "/starrail/assets/icon/character/RogueDlcBossIcon.webp",
+    "icon_board": "/starrail/assets/icon/block/SceneNaviRogueDlcBossIcon.webp",
+    "color": "#ffffffff"
+  },
+  "13": {
+    "id": "13",
+    "name": "交易",
+    "desc": "",
+    "icon": "/starrail/assets/icon/character/RogueDealIcon.webp",
+    "icon_board": "/starrail/assets/icon/block/SceneNaviRogueDealIcon.webp",
+    "color": "#80e5edff"
+  },
+  "14": {
+    "id": "14",
+    "name": "",
+    "desc": "",
+    "icon": null,
+    "icon_board": null,
+    "color": null
+  },
+  "15": {
+    "id": "15",
+    "name": "頭目",
+    "desc": "異化信標，帶有該信標的區域中敵人將變成「錯誤」的敵人。戰鬥勝利後獲得額外的宇宙碎片。",
+    "icon": "/starrail/assets/icon/character/RogueNousDlcBossIcon.webp",
+    "icon_board": "/starrail/assets/icon/block/SceneNaviRogueNousDlcBossIcon.webp",
+    "color": "#ffffffff"
+  },
+  "16": {
+    "id": "16",
+    "name": "自我認知",
+    "desc": "",
+    "icon": "/starrail/assets/icon/character/RogueNousEventIcon.webp",
+    "icon_board": "/starrail/assets/icon/block/SceneNaviRogueNousEventIcon.webp",
+    "color": "#83ffd3"
+  },
+  "17": {
+    "id": "17",
+    "name": "事件•異常",
+    "desc": "祝福撲滿信標，帶有該信標的區域中戰鬥會出現撲滿，消滅撲滿可獲得額外的祝福。",
+    "icon": "/starrail/assets/icon/character/RogueNousSpEventIcon.webp",
+    "icon_board": "/starrail/assets/icon/block/SceneNaviRogueNousSpEventIcon.webp",
+    "color": "#c979ff"
+  }
+}

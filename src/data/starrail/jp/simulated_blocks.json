@@ -1,0 +1,130 @@
+{
+  "1": {
+    "id": "1",
+    "name": "空白",
+    "desc": "空白エリア。このエリアでは何も起こらない。",
+    "icon": "/starrail/assets/icon/character/RogueDlcEmptyIcon.webp",
+    "icon_board": "/starrail/assets/icon/block/SceneNaviRogueDlcEmptyIcon.webp",
+    "color": "#ffffffd9"
+  },
+  "2": {
+    "id": "2",
+    "name": "休憩",
+    "desc": "休憩エリア。このエリアでは祝福の強化、キャラクターのダウンロードとリセットが行える。",
+    "icon": "/starrail/assets/icon/character/RogueIntensifyIcon.webp",
+    "icon_board": "/starrail/assets/icon/block/SceneNaviRogueIntensifyIcon.webp",
+    "color": "#80e5edff"
+  },
+  "3": {
+    "id": "3",
+    "name": "戦闘",
+    "desc": "戦闘エリア。このエリアで敵を倒すと祝福を獲得できる。",
+    "icon": "/starrail/assets/icon/character/RogueFoeIcon.webp",
+    "icon_board": "/starrail/assets/icon/block/SceneNaviRogueFoeIcon.webp",
+    "color": "#ffffffd9"
+  },
+  "4": {
+    "id": "4",
+    "name": "戦闘・スウォーム",
+    "desc": "特殊な戦闘エリア。このエリアでスウォームを倒すと「繁殖」の祝福を獲得できる。",
+    "icon": "/starrail/assets/icon/character/RogueDlcMonsterIcon.webp",
+    "icon_board": "/starrail/assets/icon/block/SceneNaviRogueDlcFoeEliteIcon.webp",
+    "color": "#c979ffff"
+  },
+  "5": {
+    "id": "5",
+    "name": "精鋭",
+    "desc": "精鋭エネミーエリア。このエリアで精鋭エネミーを倒すと、★1～3の祝福を1個獲得できる。",
+    "icon": "/starrail/assets/icon/character/RogueFoeEliteIcon.webp",
+    "icon_board": "/starrail/assets/icon/block/SceneNaviRogueFoeEliteIcon.webp",
+    "color": "#ffffffd9"
+  },
+  "6": {
+    "id": "6",
+    "name": "挑戦",
+    "desc": "挑戦エリア。このエリアで様々な挑戦をクリアするとボーナスを獲得できる。",
+    "icon": "/starrail/assets/icon/character/RogueDlcGameIcon.webp",
+    "icon_board": "/starrail/assets/icon/block/SceneNaviRogueDlcGameIcon.webp",
+    "color": "#f3dbb5ff"
+  },
+  "7": {
+    "id": "7",
+    "name": "ボーナス",
+    "desc": "ボーナスエリア。このエリアでは、選択することで様々なボーナスを獲得できる。",
+    "icon": "/starrail/assets/icon/character/RogueDlcGiftIcon.webp",
+    "icon_board": "/starrail/assets/icon/block/SceneNaviRogueDlcRewardIcon.webp",
+    "color": "#f3dbb5ff"
+  },
+  "8": {
+    "id": "8",
+    "name": "イベント",
+    "desc": "イベントエリア。このエリアでは、選択することで異なる結果が発生する。",
+    "icon": "/starrail/assets/icon/character/RogueRandomIcon.webp",
+    "icon_board": "/starrail/assets/icon/block/SceneNaviRogueRandomIcon.webp",
+    "color": "#ffffffd9"
+  },
+  "9": {
+    "id": "9",
+    "name": "イベント・スウォーム",
+    "desc": "特殊イベントエリア。このエリアでの選択はスウォームの警戒値を上げる。スウォームの警戒値が高いほど、このエリアでのイベントが危険なものになる。",
+    "icon": "/starrail/assets/icon/character/RogueDlcRandomIcon.webp",
+    "icon_board": "/starrail/assets/icon/block/SceneNaviRogueDlcRandomIcon.webp",
+    "color": "#c979ffff"
+  },
+  "11": {
+    "id": "11",
+    "name": "ボス",
+    "desc": "特殊なボスエリア。このエリアでスウォーム・真蟄虫（スペック）を倒すと、模擬宇宙をクリアできる。",
+    "icon": "/starrail/assets/icon/character/RogueBossIcon.webp",
+    "icon_board": "/starrail/assets/icon/block/SceneNaviRogueBossIcon.webp",
+    "color": "#ffffffff"
+  },
+  "12": {
+    "id": "12",
+    "name": "ボス・スウォーム",
+    "desc": "取引エリア。このエリア内では宇宙の欠片を消費して祝福や奇物を購入できる。",
+    "icon": "/starrail/assets/icon/character/RogueDlcBossIcon.webp",
+    "icon_board": "/starrail/assets/icon/block/SceneNaviRogueDlcBossIcon.webp",
+    "color": "#ffffffff"
+  },
+  "13": {
+    "id": "13",
+    "name": "取引",
+    "desc": "",
+    "icon": "/starrail/assets/icon/character/RogueDealIcon.webp",
+    "icon_board": "/starrail/assets/icon/block/SceneNaviRogueDealIcon.webp",
+    "color": "#80e5edff"
+  },
+  "14": {
+    "id": "14",
+    "name": "",
+    "desc": "",
+    "icon": null,
+    "icon_board": null,
+    "color": null
+  },
+  "15": {
+    "id": "15",
+    "name": "ボス",
+    "desc": "異化ビーコン。このビーコンがあるエリアの敵は、「バグ」の敵になる。戦闘に勝利すると追加の宇宙の欠片を獲得できる。",
+    "icon": "/starrail/assets/icon/character/RogueNousDlcBossIcon.webp",
+    "icon_board": "/starrail/assets/icon/block/SceneNaviRogueNousDlcBossIcon.webp",
+    "color": "#ffffffff"
+  },
+  "16": {
+    "id": "16",
+    "name": "自己認識",
+    "desc": "",
+    "icon": "/starrail/assets/icon/character/RogueNousEventIcon.webp",
+    "icon_board": "/starrail/assets/icon/block/SceneNaviRogueNousEventIcon.webp",
+    "color": "#83ffd3"
+  },
+  "17": {
+    "id": "17",
+    "name": "イベント・異常",
+    "desc": "祝福プーマンのビーコン。このビーコンがあるエリア内での戦闘では、プーマンが出現する。プーマンを倒すと追加の祝福を獲得できる。",
+    "icon": "/starrail/assets/icon/character/RogueNousSpEventIcon.webp",
+    "icon_board": "/starrail/assets/icon/block/SceneNaviRogueNousSpEventIcon.webp",
+    "color": "#c979ff"
+  }
+}

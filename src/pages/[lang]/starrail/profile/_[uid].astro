@@ -1,0 +1,86 @@
+---
+import DefaultLayout from '../../../layouts/DefaultLayout.astro';
+import { StarRail } from 'starrail.js';
+import { calculateRelicScore, getRank } from '../../../utils/relicScoring';
+
+const { lang, uid } = Astro.params;
+const client = new StarRail({ defaultLanguage: lang as any });
+
+let userData: any = null;
+let error = null;
+
+try {
+  userData = await client.fetchUser(uid!);
+} catch (e: any) {
+  error = e.message;
+}
+
+// 로컬 DB 로드 (현재 가지고 계신 파일들)
+const charModule = await import(`../../../data/${lang}/characters.json`);
+const relicSetModule = await import(`../../../data/${lang}/relic_sets.json`);
+const charactersDb = charModule.default;
+---
+
+<DefaultLayout title={`Profile ${uid} | Star Rail DB`}>
+  <section class="py-12 bg-zinc-50 dark:bg-black min-h-screen">
+    <div class="container max-w-6xl">
+      {error && <div class="p-10 text-center bg-red-500/10 rounded-3xl border border-red-500/20 text-red-500">{error}</div>}
+
+      {userData && (
+        <div class="space-y-12">
+          <!-- 헤더: 유저 정보 -->
+          <div class="flex items-center gap-6 p-8 rounded-3xl border border-[var(--border-color-subtle)] bg-white dark:bg-zinc-900 shadow-sm">
+            <div class="h-20 w-20 rounded-2xl bg-[var(--action-color)] flex items-center justify-center text-3xl font-black text-white">
+              {userData.level}
+            </div>
+            <div>
+              <h1 class="text-3xl font-black italic tracking-tighter uppercase">{userData.nickname}</h1>
+              <p class="opacity-50 font-mono">UID: {uid} · {userData.worldLevel} World Level</p>
+            </div>
+          </div>
+
+          <!-- 캐릭터 그리드 -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {userData.characters.map((char: any) => {
+              const dbInfo = charactersDb[char.characterData.id];
+              
+              return (
+                <div class="group relative overflow-hidden rounded-3xl border border-[var(--border-color-subtle)] bg-white dark:bg-zinc-900 p-6 transition-all hover:border-[var(--action-color)]">
+                  <div class="flex gap-6">
+                    <!-- 캐릭터 이미지 -->
+                    <div class="w-32 shrink-0">
+                      <img src={`/assets/${dbInfo.preview}`} alt="" class="w-full h-auto drop-shadow-2xl" />
+                    </div>
+                    
+                    <!-- 스탯 및 유물 정보 -->
+                    <div class="flex-1 space-y-4">
+                      <div class="flex justify-between items-start">
+                        <h2 class="text-xl font-black uppercase italic">{dbInfo.name} <span class="text-sm opacity-50 not-italic">Lv.{char.level}</span></h2>
+                        <div class="text-[10px] font-black bg-black/5 px-2 py-1 rounded-lg">E{char.rank}</div>
+                      </div>
+
+                      <!-- 유물 점수 요약 -->
+                      <div class="grid grid-cols-3 gap-2">
+                        {char.relics.map((relic: any) => {
+                          const score = calculateRelicScore(relic.substats);
+                          const rank = getRank(score);
+                          return (
+                            <div class="bg-black/[0.02] dark:bg-white/[0.02] p-2 rounded-xl border border-dashed border-[var(--border-color-subtle)] text-center">
+                              <p class="text-[8px] font-black opacity-30 uppercase">{relic.type}</p>
+                              <p class={`text-sm font-mono font-bold ${rank.color}`}>{rank.label}</p>
+                              <p class="text-[9px] opacity-40">{score}</p>
+                            </div>
+                          )
+                        })}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      )}
+    </div>
+  </section>
+</DefaultLayout>

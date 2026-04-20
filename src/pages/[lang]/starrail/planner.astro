@@ -1,0 +1,598 @@
+---
+// src/pages/[lang]/starrail/planner.astro
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Icon } from 'astro-icon/components'
+
+const allData = import.meta.glob('/src/data/starrail/**/*.json', { eager: true })
+
+export async function getStaticPaths() {
+  const languages = ['kr', 'en', 'jp', 'cn', 'fr', 'de', 'es', 'id', 'pt', 'ru', 'th', 'vi', 'cht']
+  return languages.map((lang) => ({ params: { lang } }))
+}
+
+const { lang } = Astro.params
+const baseDir = `/src/data/starrail/${lang}`
+
+const cleanText = (text: string) => {
+  if (!text) return ''
+  return text.replace(/\{RUBY_B#([^}]+)\}([^\{]+)\{RUBY_E\#\}/g,'$1').replace(/\{[^}]*\}/g,'').replace(/<[^>]*>/g,'').trim()
+}
+const toItemIcon = (icon: string) => {
+  if (!icon) return ''
+  let p = icon.replace(/^\//, '').replace(/^starrail\/assets\//, '')
+  if (p.includes('icon/character/')) p = p.replace('icon/character/', 'icon/item/')
+  return `/starrail/assets/${p}`
+}
+const toSkillIcon = (icon: string) => {
+  if (!icon) return ''
+  let p = icon.replace(/^\//, '').replace(/^starrail\/assets\//, '')
+  const fn = p.split('/').pop() || ''
+  if (/^\d{4}/.test(fn) && fn.includes('_')) return `/starrail/assets/icon/skill/${fn}`
+  return `/starrail/assets/${p}`
+}
+
+// ── 데이터 로드 ──
+const charsRaw:   Record<string, any> = (allData[`${baseDir}/characters.json`]            as any)?.default ?? {}
+const promoRaw:   Record<string, any> = (allData[`${baseDir}/character_promotions.json`]  as any)?.default ?? {}
+const treeRaw:    Record<string, any> = (allData[`${baseDir}/character_skill_trees.json`] as any)?.default ?? {}
+const skillsRaw:  Record<string, any> = (allData[`${baseDir}/character_skills.json`]      as any)?.default ?? {}
+const pathsRaw:   Record<string, any> = (allData[`${baseDir}/paths.json`]                 as any)?.default ?? {}
+const itemsRaw:   Record<string, any> = (allData[`${baseDir}/items.json`]                 as any)?.default ?? {}
+const lcRaw:      Record<string, any> = (allData[`${baseDir}/light_cones.json`]           as any)?.default ?? {}
+const lcPromoRaw: Record<string, any> = (allData[`${baseDir}/light_cone_promotions.json`] as any)?.default ?? {}
+
+// ── 캐릭터 목록 ──
+const characters = Object.entries(charsRaw)
+  .filter(([id, d]: [string, any]) => {
+    if (id.startsWith('800')) return true
+    return d.name && d.name.trim() !== '' && !d.name.includes('{NICKNAME}')
+  })
+  .map(([id, d]: [string, any]) => {
+    let name = cleanText(d.name ?? '')
+    if (id.startsWith('800')) {
+      const pathName = pathsRaw[d.path]?.text || pathsRaw[d.path]?.name || d.path
+      name = `${lang === 'kr' ? '개척자' : 'Trailblazer'} · ${pathName}`
+    }
+    return { id, name, rarity: Number(d.rarity) || 5, element: d.element ?? '', skillTrees: d.skill_trees ?? [] }
+  })
+  .sort((a, b) => b.rarity - a.rarity || a.name.localeCompare(b.name))
+
+// ── 캐릭터 플래너 데이터 ──
+const plannerData: Record<string, any> = {}
+for (const char of characters) {
+  const promo   = promoRaw[char.id]
+  const majorRe = new RegExp(`^${char.id}81\\d{2}$`)
+  const minorRe = new RegExp(`^${char.id}82\\d{2}$`)
+  const ascMats = (promo?.materials ?? []).map((step: any[]) => (step ?? []).map((m: any) => ({ id: m.id, num: m.num })))
+  const skills: { name: string; icon: string; maxLv: number; mats: any[][] }[] = []
+  const seen = new Set<string>()
+  for (const tid of char.skillTrees) {
+    const node = treeRaw[tid]
+    if (!node || majorRe.test(tid) || minorRe.test(tid)) continue
+    if (!node.level_up_skills?.length) continue
+    const sid = node.level_up_skills[0].id
+    if (seen.has(sid)) continue
+    seen.add(sid)
+    const sk = skillsRaw[sid]
+    const mats = (node.levels ?? []).filter((lv: any) => lv.materials?.length).map((lv: any) => lv.materials.map((m: any) => ({ id: m.id, num: m.num })))
+    skills.push({ name: cleanText(sk?.name ?? ''), icon: toSkillIcon(node.icon ?? ''), maxLv: mats.length + 1, mats })
+  }
+  const traceMats: any[][] = []
+  for (const tid of char.skillTrees) {
+    const node = treeRaw[tid]
+    if (!node || (!majorRe.test(tid) && !minorRe.test(tid))) continue
+    for (const lv of node.levels ?? []) {
+      if (lv.materials?.length) traceMats.push(lv.materials.map((m: any) => ({ id: m.id, num: m.num })))
+    }
+  }
+  plannerData[char.id] = { ascMats, skills, traceMats }
+}
+
+// ── 광추 목록 ──
+const lightCones = Object.entries(lcRaw)
+  .filter(([, d]: [string, any]) => d.name && d.name.trim() !== '')
+  .map(([id, d]: [string, any]) => ({
+    id, name: cleanText(d.name ?? ''), rarity: Number(d.rarity) || 3,
+    path: d.path ?? '', icon: d.icon ?? `/starrail/assets/icon/light_cone/${id}.webp`,
+  }))
+  .sort((a, b) => b.rarity - a.rarity || a.name.localeCompare(b.name))
+
+// ── 광추 플래너 데이터 ──
+const lcPlannerData: Record<string, any> = {}
+for (const lc of lightCones) {
+  const promo = lcPromoRaw[lc.id]
+  const ascMats = (promo?.materials ?? []).map((step: any[]) => (step ?? []).map((m: any) => ({ id: m.id, num: m.num })))
+  lcPlannerData[lc.id] = { ascMats }
+}
+
+// ── 아이템 맵 ──
+const itemsMap: Record<string, any> = {}
+for (const [id, item] of Object.entries(itemsRaw) as any[]) {
+  itemsMap[id] = { name: cleanText(item.name ?? ''), icon: toItemIcon(item.icon ?? ''), rarity: item.rarity ?? 1, come_from: item.come_from ?? [] }
+}
+itemsMap['2'] = { name: lang === 'kr' ? '크레딧' : 'Credits', icon: '/starrail/assets/icon/item/2.webp', rarity: 1, come_from: [] }
+
+const L = lang === 'kr'
+  ? { title:'돌파 계획', subtitle:'캐릭터 돌파 · 스킬 · 광추 재료 계획',
+      tabChar:'캐릭터', tabLC:'광추',
+      searchChar:'캐릭터 검색…', searchLC:'광추 검색…',
+      selected:'선택됨', noSelected:'왼쪽에서 선택하세요',
+      result:'필요 재료', noResult:'항목을 선택하고 목표를 설정하면 재료가 계산됩니다.',
+      asc:'돌파', skills:'스킬', traces:'행적 포함', from:'획득처', clear:'전체 초기화' }
+  : { title:'Planner', subtitle:'Character ascension · skills · light cone material planner',
+      tabChar:'Characters', tabLC:'Light Cones',
+      searchChar:'Search character…', searchLC:'Search light cone…',
+      selected:'Selected', noSelected:'Select from the left',
+      result:'Required Materials', noResult:'Select items and set goals to calculate.',
+      asc:'Ascension', skills:'Skills', traces:'Include Traces', from:'Source', clear:'Clear All' }
+
+const charList = characters.map(c => ({ id: c.id, name: c.name, rarity: c.rarity, element: c.element, icon: `/starrail/assets/icon/character/${c.id}.webp`, elIcon: c.element ? `/starrail/assets/icon/element/${c.element}.webp` : '' }))
+const lcList = lightCones.map(lc => ({ id: lc.id, name: lc.name, rarity: lc.rarity, path: lc.path, icon: lc.icon }))
+---
+
+<DefaultLayout title={`${L.title} | Star Rail DB`} description="Honkai: Star Rail ascension and skill material planner.">
+<div class="pl-page">
+
+  <!-- 헤더 -->
+  <div class="pl-header">
+    <div class="pw">
+      <nav class="bc">
+        <a href={`/${lang}`}>Home</a><span>/</span>
+        <a href={`/${lang}/starrail`}>Star Rail</a><span>/</span>
+        <span class="bc-cur">{L.title}</span>
+      </nav>
+      <div class="hd-row">
+        <div><h1 class="pl-title">{L.title}</h1><p class="pl-sub">{L.subtitle}</p></div>
+        <button class="clear-btn" id="clearAll" type="button">
+          <Icon name="lucide:trash-2" size="0.8rem"/>{L.clear}
+        </button>
+      </div>
+
+      <!-- 메인 탭 -->
+      <div class="main-tabs">
+        <button class="mtab mtab--on" data-mode="char" type="button">
+          <Icon name="lucide:users" size="0.8rem"/>{L.tabChar}
+        </button>
+        <button class="mtab" data-mode="lc" type="button">
+          <Icon name="lucide:zap" size="0.8rem"/>{L.tabLC}
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="pl-body pw">
+
+    <!-- 왼쪽 -->
+    <div class="pl-left">
+      <!-- 캐릭터 검색 -->
+      <div class="sw" id="charSearchWrap">
+        <Icon name="lucide:search" size="0.85rem" class="si"/>
+        <input type="search" id="charSearch" placeholder={L.searchChar} autocomplete="off" class="sinput"/>
+      </div>
+      <!-- 광추 검색 -->
+      <div class="sw hidden" id="lcSearchWrap">
+        <Icon name="lucide:search" size="0.85rem" class="si"/>
+        <input type="search" id="lcSearch" placeholder={L.searchLC} autocomplete="off" class="sinput"/>
+      </div>
+
+      <!-- 캐릭터 그리드 -->
+      <div class="cgrid" id="charGrid">
+        {characters.map(c => (
+          <button class="cbtn" data-cid={c.id} data-cname={c.name.toLowerCase()} title={c.name} type="button">
+            <div class={`cimg-wrap r${c.rarity}`}>
+              <img src={`/starrail/assets/icon/character/${c.id}.webp`} alt={c.name} width="56" height="56" loading="lazy" class="cimg"/>
+              {c.element && <img src={`/starrail/assets/icon/element/${c.element}.webp`} alt="" width="14" height="14" loading="lazy" class="cel"/>}
+            </div>
+            <p class="cname">{c.name}</p>
+          </button>
+        ))}
+      </div>
+
+      <!-- 광추 그리드 -->
+      <div class="cgrid hidden" id="lcGrid">
+        {lightCones.map(lc => (
+          <button class="cbtn lc-btn" data-lcid={lc.id} data-lcname={lc.name.toLowerCase()} title={lc.name} type="button">
+            <div class={`cimg-wrap r${lc.rarity}`}>
+              <img src={lc.icon} alt={lc.name} width="56" height="56" loading="lazy" class="cimg lc-img"/>
+            </div>
+            <p class="cname">{lc.name}</p>
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <!-- 오른쪽 -->
+    <div class="pl-right">
+      <div class="section">
+        <p class="slabel">{L.selected}</p>
+        <div id="selList"><p class="empty" id="noSelMsg">{L.noSelected}</p></div>
+      </div>
+      <div class="section">
+        <p class="slabel">{L.result}</p>
+        <div id="resultArea"><p class="empty">{L.noResult}</p></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline define:vars={{ charList, lcList, plannerData, lcPlannerData, itemsMap, L, lang }}>
+;(function(){
+  var mode = 'char' // 'char' | 'lc'
+  var selChar = {}, selLC = {}
+  try { var sc=localStorage.getItem('hsr-pl-char-'+lang); if(sc) selChar=JSON.parse(sc) } catch(e){}
+  try { var sl=localStorage.getItem('hsr-pl-lc-'+lang); if(sl) selLC=JSON.parse(sl) } catch(e){}
+
+  function saveChar(){ try{localStorage.setItem('hsr-pl-char-'+lang,JSON.stringify(selChar))}catch(e){} }
+  function saveLC(){   try{localStorage.setItem('hsr-pl-lc-'+lang,  JSON.stringify(selLC))}catch(e){} }
+
+  var inventory = {}
+  try { var iv=localStorage.getItem('hsr-inventory'); if(iv) inventory=JSON.parse(iv) } catch(e){}
+  function saveInventory(){ try{localStorage.setItem('hsr-inventory',JSON.stringify(inventory))}catch(e){} }
+
+  // ── 재료 계산 ──
+  function calcChar(){
+    var tot={}
+    function add(id,num){ var info=itemsMap[id]; if(!info) return; if(!tot[id]) tot[id]={name:info.name,icon:info.icon,rarity:info.rarity,come_from:info.come_from,num:0}; tot[id].num+=num }
+    Object.keys(selChar).forEach(function(cid){
+      var s=selChar[cid]; var pd=plannerData[cid]; if(!pd) return
+      if(s.asc){ var c=s.asc.cur||0,t=s.asc.tgt||0; for(var i=c;i<t&&i<pd.ascMats.length;i++) pd.ascMats[i].forEach(function(m){add(m.id,m.num)}) }
+      if(s.skills) s.skills.forEach(function(sk,idx){ var skill=pd.skills[idx]; if(!skill) return; var c=(sk.cur||1)-1,t=(sk.tgt||1)-1; for(var i=c;i<t&&i<skill.mats.length;i++) skill.mats[i].forEach(function(m){add(m.id,m.num)}) })
+      if(s.trace&&pd.traceMats) pd.traceMats.forEach(function(step){step.forEach(function(m){add(m.id,m.num)})})
+    })
+    return tot
+  }
+
+  function calcLC(){
+    var tot={}
+    function add(id,num){ var info=itemsMap[id]; if(!info) return; if(!tot[id]) tot[id]={name:info.name,icon:info.icon,rarity:info.rarity,come_from:info.come_from,num:0}; tot[id].num+=num }
+    Object.keys(selLC).forEach(function(lid){
+      var s=selLC[lid]; var pd=lcPlannerData[lid]; if(!pd) return
+      if(s.asc){ var c=s.asc.cur||0,t=s.asc.tgt||0; for(var i=c;i<t&&i<pd.ascMats.length;i++) pd.ascMats[i].forEach(function(m){add(m.id,m.num)}) }
+    })
+    return tot
+  }
+
+  // ── 버튼 상태 ──
+  function updCharBtns(){ document.querySelectorAll('.cbtn:not(.lc-btn)').forEach(function(b){ b.classList.toggle('cbtn--on',!!selChar[b.dataset.cid]) }) }
+  function updLCBtns(){   document.querySelectorAll('.lc-btn').forEach(function(b){            b.classList.toggle('cbtn--on',!!selLC[b.dataset.lcid])  }) }
+
+  // ── select 헬퍼 ──
+  function mkSel(mn,mx,val,cb){
+    var el=document.createElement('select'); el.className='nsel'
+    for(var i=mn;i<=mx;i++){var o=document.createElement('option');o.value=i;o.textContent=i;if(i===val)o.selected=true;el.appendChild(o)}
+    el.addEventListener('change',function(){cb(parseInt(el.value))}); return el
+  }
+
+  // ── 재료 결과 렌더 ──
+  function renderResult(){
+  var area=document.getElementById('resultArea'); if(!area) return
+  var tot=mode==='char' ? calcChar() : calcLC()
+  var keys=Object.keys(tot)
+  if(!keys.length){ area.innerHTML='<p class="empty">'+L.noResult+'</p>'; return }
+  keys.sort(function(a,b){ if(a==='2')return -1;if(b==='2')return 1;return (tot[b].rarity-tot[a].rarity)||a.localeCompare(b) })
+  var grid=document.createElement('div'); grid.className='mat-grid'
+  keys.forEach(function(id){
+    var m=tot[id]
+    var have=inventory[id]||0
+    var need=Math.max(0,m.num-have)
+    var done=need===0
+
+    var card=document.createElement('div'); card.className='mat-card r'+Math.min(m.rarity,5)+(done?' mat-card--done':'')
+    var top=document.createElement('div'); top.className='mat-top'
+    var iw=document.createElement('div'); iw.className='mat-iw'
+    if(m.icon){var img=document.createElement('img');img.src=m.icon;img.alt=m.name;img.width=44;img.height=44;img.loading='lazy';img.className='mat-img';iw.appendChild(img)}
+    top.appendChild(iw)
+    var info=document.createElement('div'); info.className='mat-info'
+    var mn=document.createElement('p'); mn.className='mat-name'; mn.textContent=m.name; info.appendChild(mn)
+
+    // 필요량
+    var mnum=document.createElement('p'); mnum.className='mat-num'+(done?' mat-num--done':'')
+    mnum.textContent='필요: × '+m.num.toLocaleString(); info.appendChild(mnum)
+
+    // 보유/부족 행
+    var invRow=document.createElement('div'); invRow.className='inv-row'
+    var invLbl=document.createElement('span'); invLbl.className='inv-lbl'; invLbl.textContent='보유'
+    var invInput=document.createElement('input'); invInput.type='number'; invInput.min='0'; invInput.className='inv-input'
+    invInput.value=have; invInput.dataset.id=id
+    invInput.addEventListener('input',function(){
+      var v=parseInt(invInput.value)||0
+      inventory[id]=v; saveInventory()
+      // 해당 카드의 부족 수량만 업데이트
+      var need=Math.max(0,m.num-v)
+      var done=need===0
+      var needEl=card.querySelector('.need-lbl')
+      if(needEl){
+        needEl.textContent=done ? '✓ 완료' : '부족: × '+need.toLocaleString()
+        needEl.className='need-lbl'+(done?' need-lbl--done':'')
+      }
+      card.classList.toggle('mat-card--done', done)
+      var mnumEl=card.querySelector('.mat-num')
+      if(mnumEl) mnumEl.className='mat-num'+(done?' mat-num--done':'')
+    })
+    var needLbl=document.createElement('span'); needLbl.className='need-lbl'+(done?' need-lbl--done':'')
+    needLbl.textContent=done ? '✓ 완료' : '부족: × '+need.toLocaleString()
+    invRow.appendChild(invLbl); invRow.appendChild(invInput); invRow.appendChild(needLbl)
+    info.appendChild(invRow)
+
+    top.appendChild(info); card.appendChild(top)
+    if(m.come_from&&m.come_from.length){
+      var fr=document.createElement('div'); fr.className='mat-from'
+      var lbl=document.createElement('span'); lbl.className='from-lbl'; lbl.textContent=L.from; fr.appendChild(lbl)
+      m.come_from.forEach(function(f){var s=document.createElement('span');s.className='from-tag';s.textContent=f;fr.appendChild(s)})
+      card.appendChild(fr)
+    }
+    grid.appendChild(card)
+  })
+  area.innerHTML=''; area.appendChild(grid)
+}
+
+  // ── 캐릭터 선택 목록 렌더 ──
+  function renderCharSel(){
+    var list=document.getElementById('selList'); var noMsg=document.getElementById('noSelMsg'); if(!list) return
+    list.querySelectorAll('.scard').forEach(function(e){e.remove()})
+    var ids=Object.keys(selChar)
+    if(!ids.length){ if(noMsg) noMsg.style.display=''; renderResult(); return }
+    if(noMsg) noMsg.style.display='none'
+    ids.forEach(function(cid){
+      var ch=charList.find(function(c){return c.id===cid}); var s=selChar[cid]; var pd=plannerData[cid]; if(!ch||!pd) return
+      var card=document.createElement('div'); card.className='scard'
+      // 헤더
+      var hd=document.createElement('div'); hd.className='scard-hd'
+      var img=document.createElement('img'); img.src=ch.icon; img.alt=ch.name; img.width=36; img.height=36; img.className='sc-img'; hd.appendChild(img)
+      var nm=document.createElement('p'); nm.className='sc-name'; nm.textContent=ch.name; hd.appendChild(nm)
+      var rb=document.createElement('button'); rb.className='rm-btn'; rb.type='button'; rb.innerHTML='&times;'
+      rb.addEventListener('click',function(){delete selChar[cid];saveChar();updCharBtns();renderCharSel()})
+      hd.appendChild(rb); card.appendChild(hd)
+      // 바디
+      var body=document.createElement('div'); body.className='scard-body'
+      // 돌파
+      var arow=document.createElement('div'); arow.className='srow'
+      var albl=document.createElement('span'); albl.className='srow-lbl'; albl.textContent=L.asc; arow.appendChild(albl)
+      var actl=document.createElement('div'); actl.className='srow-ctl'
+      var acs=mkSel(0,6,s.asc?.cur||0,function(v){if(!selChar[cid].asc)selChar[cid].asc={cur:0,tgt:6};selChar[cid].asc.cur=v;if(selChar[cid].asc.tgt<v)selChar[cid].asc.tgt=v;saveChar();renderResult()})
+      acs.className+=' cur-sel'
+      var arr=document.createElement('span'); arr.className='arr'; arr.textContent='→'
+      var ats=mkSel(0,6,s.asc?.tgt??6,function(v){if(!selChar[cid].asc)selChar[cid].asc={cur:0,tgt:6};selChar[cid].asc.tgt=v;if(selChar[cid].asc.cur>v)selChar[cid].asc.cur=v;saveChar();renderResult()})
+      actl.appendChild(acs); actl.appendChild(arr); actl.appendChild(ats); arow.appendChild(actl); body.appendChild(arow)
+      // 스킬
+      pd.skills.forEach(function(skill,idx){
+        if(!selChar[cid].skills) selChar[cid].skills=[]
+        if(!selChar[cid].skills[idx]) selChar[cid].skills[idx]={cur:1,tgt:skill.maxLv}
+        var srow=document.createElement('div'); srow.className='srow'
+        var slbl=document.createElement('div'); slbl.className='srow-lbl skill-lbl'
+        if(skill.icon){var si=document.createElement('img');si.src=skill.icon;si.alt=skill.name;si.width=18;si.height=18;si.className='sk-icon';slbl.appendChild(si)}
+        var sn=document.createElement('span'); sn.className='sk-name'; sn.textContent=skill.name; slbl.appendChild(sn)
+        srow.appendChild(slbl)
+        var sctl=document.createElement('div'); sctl.className='srow-ctl'
+        var scs=mkSel(1,skill.maxLv,selChar[cid].skills[idx].cur,function(v){selChar[cid].skills[idx].cur=v;if(selChar[cid].skills[idx].tgt<v)selChar[cid].skills[idx].tgt=v;saveChar();renderResult()})
+        scs.className+=' cur-sel'
+        var sarr=document.createElement('span'); sarr.className='arr'; sarr.textContent='→'
+        var sts=mkSel(1,skill.maxLv,selChar[cid].skills[idx].tgt,function(v){selChar[cid].skills[idx].tgt=v;if(selChar[cid].skills[idx].cur>v)selChar[cid].skills[idx].cur=v;saveChar();renderResult()})
+        sctl.appendChild(scs); sctl.appendChild(sarr); sctl.appendChild(sts); srow.appendChild(sctl); body.appendChild(srow)
+      })
+      // 행적
+      if(pd.traceMats.length){
+        var trow=document.createElement('div'); trow.className='srow'
+        var tlbl=document.createElement('span'); tlbl.className='srow-lbl'; tlbl.textContent=L.traces; trow.appendChild(tlbl)
+        var chk=document.createElement('input'); chk.type='checkbox'; chk.className='trace-chk'; chk.checked=!!s.trace
+        chk.addEventListener('change',function(){selChar[cid].trace=chk.checked;saveChar();renderResult()})
+        trow.appendChild(chk); body.appendChild(trow)
+      }
+      card.appendChild(body); list.appendChild(card)
+    })
+    renderResult()
+  }
+
+  // ── 광추 선택 목록 렌더 ──
+  function renderLCSel(){
+    var list=document.getElementById('selList'); var noMsg=document.getElementById('noSelMsg'); if(!list) return
+    list.querySelectorAll('.scard').forEach(function(e){e.remove()})
+    var ids=Object.keys(selLC)
+    if(!ids.length){ if(noMsg) noMsg.style.display=''; renderResult(); return }
+    if(noMsg) noMsg.style.display='none'
+    ids.forEach(function(lid){
+      var lc=lcList.find(function(l){return l.id===lid}); var s=selLC[lid]; var pd=lcPlannerData[lid]; if(!lc||!pd) return
+      var card=document.createElement('div'); card.className='scard'
+      // 헤더
+      var hd=document.createElement('div'); hd.className='scard-hd'
+      var img=document.createElement('img'); img.src=lc.icon; img.alt=lc.name; img.width=36; img.height=36; img.className='sc-img lc-img'; hd.appendChild(img)
+      var nm=document.createElement('p'); nm.className='sc-name'; nm.textContent=lc.name; hd.appendChild(nm)
+      var rb=document.createElement('button'); rb.className='rm-btn'; rb.type='button'; rb.innerHTML='&times;'
+      rb.addEventListener('click',function(){delete selLC[lid];saveLC();updLCBtns();renderLCSel()})
+      hd.appendChild(rb); card.appendChild(hd)
+      // 바디: 돌파만
+      var body=document.createElement('div'); body.className='scard-body'
+      var arow=document.createElement('div'); arow.className='srow'
+      var albl=document.createElement('span'); albl.className='srow-lbl'; albl.textContent=L.asc; arow.appendChild(albl)
+      var actl=document.createElement('div'); actl.className='srow-ctl'
+      var acs=mkSel(0,6,s.asc?.cur||0,function(v){if(!selLC[lid].asc)selLC[lid].asc={cur:0,tgt:6};selLC[lid].asc.cur=v;if(selLC[lid].asc.tgt<v)selLC[lid].asc.tgt=v;saveLC();renderResult()})
+      acs.className+=' cur-sel'
+      var arr=document.createElement('span'); arr.className='arr'; arr.textContent='→'
+      var ats=mkSel(0,6,s.asc?.tgt??6,function(v){if(!selLC[lid].asc)selLC[lid].asc={cur:0,tgt:6};selLC[lid].asc.tgt=v;if(selLC[lid].asc.cur>v)selLC[lid].asc.cur=v;saveLC();renderResult()})
+      actl.appendChild(acs); actl.appendChild(arr); actl.appendChild(ats); arow.appendChild(actl); body.appendChild(arow)
+      card.appendChild(body); list.appendChild(card)
+    })
+    renderResult()
+  }
+
+  function renderSel(){ if(mode==='char') renderCharSel(); else renderLCSel() }
+
+  // ── 모드 전환 ──
+  function switchMode(m){
+    mode=m
+    var mtabs=document.querySelectorAll('.mtab')
+    mtabs.forEach(function(t){ t.classList.toggle('mtab--on', t.dataset.mode===m) })
+    // 그리드/검색 전환
+    var cg=document.getElementById('charGrid'), lg=document.getElementById('lcGrid')
+    var csw=document.getElementById('charSearchWrap'), lsw=document.getElementById('lcSearchWrap')
+    if(m==='char'){ cg&&cg.classList.remove('hidden'); lg&&lg.classList.add('hidden'); csw&&csw.classList.remove('hidden'); lsw&&lsw.classList.add('hidden') }
+    else {          cg&&cg.classList.add('hidden'); lg&&lg.classList.remove('hidden'); csw&&csw.classList.add('hidden'); lsw&&lsw.classList.remove('hidden') }
+    renderSel()
+  }
+
+  // ── 이벤트 ──
+  function init(){
+    // 메인 탭
+    document.querySelectorAll('.mtab').forEach(function(btn){
+      btn.addEventListener('click',function(){ switchMode(btn.dataset.mode) },{passive:true})
+    })
+
+    // 캐릭터 버튼
+    document.querySelectorAll('.cbtn:not(.lc-btn)').forEach(function(btn){
+      btn.addEventListener('click',function(){
+        var cid=btn.dataset.cid; var pd=plannerData[cid]; if(!pd) return
+        if(selChar[cid]){ delete selChar[cid] } else { selChar[cid]={ asc:{cur:0,tgt:6}, skills:pd.skills.map(function(sk){return{cur:1,tgt:sk.maxLv}}), trace:true } }
+        saveChar(); updCharBtns(); renderCharSel()
+      },{passive:true})
+    })
+
+    // 광추 버튼
+    document.querySelectorAll('.lc-btn').forEach(function(btn){
+      btn.addEventListener('click',function(){
+        var lid=btn.dataset.lcid; var pd=lcPlannerData[lid]; if(!pd) return
+        if(selLC[lid]){ delete selLC[lid] } else { selLC[lid]={ asc:{cur:0,tgt:6} } }
+        saveLC(); updLCBtns(); renderLCSel()
+      },{passive:true})
+    })
+
+    // 캐릭터 검색
+    var csi=document.getElementById('charSearch')
+    if(csi) csi.addEventListener('input',function(){
+      var q=csi.value.trim().toLowerCase()
+      document.querySelectorAll('.cbtn:not(.lc-btn)').forEach(function(b){ b.classList.toggle('hidden',q!==''&&b.dataset.cname.indexOf(q)===-1) })
+    },{passive:true})
+
+    // 광추 검색
+    var lsi=document.getElementById('lcSearch')
+    if(lsi) lsi.addEventListener('input',function(){
+      var q=lsi.value.trim().toLowerCase()
+      document.querySelectorAll('.lc-btn').forEach(function(b){ b.classList.toggle('hidden',q!==''&&b.dataset.lcname.indexOf(q)===-1) })
+    },{passive:true})
+
+    // 전체 초기화
+    var cb=document.getElementById('clearAll')
+    if(cb) cb.addEventListener('click',function(){
+      if(mode==='char'){ selChar={}; saveChar(); updCharBtns(); renderCharSel() }
+      else {             selLC={}; saveLC(); updLCBtns(); renderLCSel() }
+    },{passive:true})
+
+    // 초기 렌더
+    updCharBtns(); updLCBtns(); renderSel()
+  }
+  document.addEventListener('DOMContentLoaded', init)
+  document.addEventListener('astro:page-load', init)
+  
+})()
+
+</script>
+</DefaultLayout>
+
+<style is:global>
+.pl-page { min-height:100vh; background:var(--c-bg); color:var(--foreground-color); }
+.pw { max-width:1400px; margin:0 auto; padding:0 1.5rem; }
+
+/* 헤더 */
+.pl-header { border-bottom:1px solid var(--c-border); background:var(--c-surface); padding:2rem 0 0; }
+.bc { display:flex; align-items:center; gap:.4rem; font-size:.68rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--c-muted); margin-bottom:.75rem; }
+.bc a { color:inherit; text-decoration:none; }
+.bc a:hover { color:var(--c-accent); }
+.bc span { opacity:.4; }
+.bc-cur { color:var(--c-accent); opacity:1 !important; }
+.hd-row { display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap; }
+.pl-title { font-family:var(--font-display); font-size:clamp(1.8rem,4vw,2.6rem); font-weight:700; letter-spacing:-.03em; text-transform:uppercase; line-height:1; }
+.pl-sub { margin-top:.35rem; font-size:.82rem; color:var(--c-muted); }
+.clear-btn { display:inline-flex; align-items:center; gap:.4rem; padding:.45rem .9rem; border:1px solid var(--c-border); border-radius:var(--radius-sm); background:transparent; color:var(--c-muted); font-size:.72rem; font-weight:700; cursor:pointer; transition:border-color var(--anim-fast),color var(--anim-fast); }
+.clear-btn:hover { border-color:#f87171; color:#f87171; }
+.inv-row { display:flex; align-items:center; gap:.4rem; margin-top:.25rem; flex-wrap:wrap; }
+.inv-lbl { font-size:.62rem; font-weight:700; color:var(--c-muted); flex-shrink:0; }
+.inv-input { width:90px; padding:.2rem .4rem; border:1px solid var(--c-border); border-radius:var(--radius-sm); background:var(--c-surface2); color:var(--foreground-color); font-size:.75rem; font-family:var(--font-mono); font-weight:700; outline:none; transition:border-color var(--anim-fast); }
+.inv-input:focus { border-color:var(--c-accent); }
+.need-lbl { font-size:.72rem; font-weight:700; color:#f87171; font-family:var(--font-mono); }
+.need-lbl--done { color:#4ade80; }
+.mat-card--done { opacity:.6; }
+.mat-num--done { color:var(--c-muted); text-decoration:line-through; }
+
+/* 메인 탭 */
+.main-tabs { display:flex; gap:.15rem; margin-top:1.25rem; }
+.mtab { display:inline-flex; align-items:center; gap:.4rem; padding:.55rem 1rem; border:none; border-bottom:2px solid transparent; background:transparent; color:var(--c-muted); font-size:.78rem; font-weight:700; letter-spacing:.04em; cursor:pointer; transition:color var(--anim-fast),border-color var(--anim-fast); white-space:nowrap; }
+.mtab:hover { color:var(--foreground-color); }
+.mtab--on { color:var(--c-accent); border-bottom-color:var(--c-accent); }
+
+/* 바디 */
+.pl-body { display:grid; grid-template-columns:260px 1fr; gap:1.5rem; padding-top:1.5rem; padding-bottom:3rem; align-items:start; }
+@media(max-width:900px){ .pl-body{grid-template-columns:1fr} }
+
+/* 왼쪽 */
+.pl-left { position:sticky; top:72px; display:flex; flex-direction:column; gap:.6rem; max-height:calc(100vh - 120px); }
+@media(max-width:900px){ .pl-left{position:static;max-height:none} }
+.sw { position:relative; flex-shrink:0; }
+.si { position:absolute; left:.7rem; top:50%; transform:translateY(-50%); color:var(--c-muted); pointer-events:none; }
+.sinput { width:100%; padding:.5rem .75rem .5rem 2.1rem; border:1px solid var(--c-border); border-radius:var(--radius-sm); background:var(--c-surface); color:var(--foreground-color); font-size:.78rem; outline:none; transition:border-color var(--anim-fast); }
+.sinput::placeholder { color:var(--c-muted); }
+.sinput:focus { border-color:var(--c-accent); }
+.cgrid { display:grid; grid-template-columns:repeat(3,1fr); gap:.35rem; overflow-y:auto; flex:1; padding-bottom:.5rem; }
+.cgrid::-webkit-scrollbar { width:3px; }
+.cgrid::-webkit-scrollbar-thumb { background:var(--c-border-hi); border-radius:99px; }
+.cbtn { display:flex; flex-direction:column; align-items:center; gap:.25rem; padding:.35rem .2rem; border:2px solid transparent; border-radius:var(--radius-sm); background:var(--c-surface); cursor:pointer; transition:border-color var(--anim-fast),background var(--anim-fast); }
+.cbtn:hover { background:var(--c-surface2); }
+.cbtn--on { border-color:var(--c-accent); background:var(--c-accent-glow); }
+.cbtn.hidden { display:none; }
+.cimg-wrap { position:relative; width:64px; height:64px; border-radius:6px; overflow:hidden; }
+.cimg-wrap.r5 { background:linear-gradient(135deg,#1a1428,#2a1f3d); }
+.cimg-wrap.r4 { background:linear-gradient(135deg,#141428,#1f1f3d); }
+.cimg-wrap.r3 { background:linear-gradient(135deg,#0d1a22,#1a2d3d); }
+.cimg { width:100%; height:100%; object-fit:contain; }
+.lc-img { object-fit:cover; }
+.cel { position:absolute; top:2px; left:2px; width:14px; height:14px; object-fit:contain; filter:drop-shadow(0 1px 2px rgba(0,0,0,.6)); }
+.cname { font-size:.58rem; font-weight:700; text-align:center; color:var(--foreground-color); opacity:.7; line-height:1.2; word-break:keep-all; max-width:70px; overflow:hidden; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; }
+.cbtn--on .cname { color:var(--c-accent); }
+
+/* 오른쪽 */
+.pl-right { display:flex; flex-direction:column; gap:1.5rem; min-width:0; }
+.section { display:flex; flex-direction:column; gap:.6rem; }
+.slabel { font-size:.6rem; font-weight:900; letter-spacing:.12em; text-transform:uppercase; color:var(--c-muted); }
+.empty { font-size:.82rem; color:var(--c-muted); padding:2rem; text-align:center; border:1px dashed var(--c-border); border-radius:var(--radius-md); }
+
+/* 선택 카드 */
+.scard { border:1px solid var(--c-border); border-radius:var(--radius-lg); background:var(--c-surface); overflow:hidden; margin-bottom:.5rem; }
+.scard:last-child { margin-bottom:0; }
+.scard-hd { display:flex; align-items:center; gap:.7rem; padding:.65rem 1rem; background:var(--c-surface2); border-bottom:1px solid var(--c-border); }
+.sc-img { width:36px; height:36px; border-radius:6px; object-fit:contain; background:var(--c-bg); flex-shrink:0; }
+.sc-img.lc-img { object-fit:cover; }
+.sc-name { flex:1; font-size:.88rem; font-weight:700; font-family:var(--font-display); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.rm-btn { width:26px; height:26px; border-radius:50%; border:1px solid var(--c-border); background:transparent; color:var(--c-muted); font-size:1.1rem; line-height:1; cursor:pointer; display:flex; align-items:center; justify-content:center; flex-shrink:0; transition:background var(--anim-fast),color var(--anim-fast),border-color var(--anim-fast); }
+.rm-btn:hover { background:#f87171; border-color:#f87171; color:#fff; }
+.scard-body { display:flex; flex-direction:column; }
+.srow { display:flex; align-items:center; gap:.75rem; padding:.55rem 1rem; border-bottom:1px solid var(--c-border); flex-wrap:wrap; }
+.srow:last-child { border-bottom:none; }
+.srow-lbl { font-size:.7rem; font-weight:700; color:var(--c-muted); min-width:52px; flex-shrink:0; }
+.skill-lbl { display:flex; align-items:center; gap:.4rem; flex:1; min-width:0; }
+.sk-icon { width:18px; height:18px; border-radius:3px; background:#12122a; object-fit:contain; flex-shrink:0; }
+.sk-name { font-size:.7rem; font-weight:600; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.srow-ctl { display:flex; align-items:center; gap:.4rem; margin-left:auto; flex-shrink:0; }
+.arr { color:var(--c-muted); font-size:.8rem; }
+.trace-chk { width:16px; height:16px; accent-color:var(--c-accent); cursor:pointer; }
+.nsel { padding:.3rem .5rem; border:1px solid var(--c-border); border-radius:var(--radius-sm); background:var(--c-surface); color:var(--foreground-color); font-size:.78rem; font-weight:700; cursor:pointer; outline:none; min-width:44px; transition:border-color var(--anim-fast); }
+.nsel:focus { border-color:var(--c-accent); }
+.nsel.cur-sel { color:var(--c-muted); }
+
+/* 재료 그리드 */
+.mat-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:.6rem; }
+.mat-card { border:1px solid var(--c-border); border-radius:var(--radius-md); background:var(--c-surface); overflow:hidden; border-top:3px solid; }
+.mat-card.r1 { border-top-color:#94a3b8; }
+.mat-card.r2 { border-top-color:#4ade80; }
+.mat-card.r3 { border-top-color:#60a5fa; }
+.mat-card.r4 { border-top-color:#a78bfa; }
+.mat-card.r5 { border-top-color:#fbbf24; }
+.mat-top { display:flex; align-items:center; gap:.65rem; padding:.65rem .75rem; }
+.mat-iw { flex-shrink:0; width:48px; height:48px; border-radius:var(--radius-sm); border:1px solid var(--c-border-hi); background:var(--c-surface2); display:flex; align-items:center; justify-content:center; overflow:hidden; padding:3px; }
+.mat-img { width:100%; height:100%; object-fit:contain; }
+.mat-info { flex:1; min-width:0; }
+.mat-name { font-size:.8rem; font-weight:700; word-break:keep-all; line-height:1.3; }
+.mat-num { font-family:var(--font-mono); font-size:.95rem; font-weight:900; color:var(--c-accent); margin-top:.15rem; }
+.mat-from { padding:.45rem .75rem; border-top:1px solid var(--c-border); background:var(--c-surface2); display:flex; flex-wrap:wrap; gap:.3rem; align-items:flex-start; }
+.from-lbl { font-size:.58rem; font-weight:900; letter-spacing:.06em; text-transform:uppercase; color:var(--c-muted); flex-shrink:0; margin-top:.15rem; }
+.from-tag { font-size:.65rem; font-weight:600; color:var(--c-muted); background:transparent; border:none; padding:.15em 0; }
+
+.hidden { display:none !important; }
+</style>

@@ -1,0 +1,3050 @@
+{
+  "1": {
+    "id": "1",
+    "name": "Qlipoth",
+    "type": "La Conservación",
+    "image": "/starrail/assets/image/simulated_event/HoshinoKami_001.webp"
+  },
+  "2": {
+    "id": "2",
+    "name": "Fuli",
+    "type": "La Reminiscencia",
+    "image": "/starrail/assets/image/simulated_event/HoshinoKami_006.webp"
+  },
+  "3": {
+    "id": "3",
+    "name": "IX",
+    "type": "La Nihilidad",
+    "image": "/starrail/assets/image/simulated_event/HoshinoKami_004.webp"
+  },
+  "4": {
+    "id": "4",
+    "name": "Yaoshi",
+    "type": "La Abundancia",
+    "image": "/starrail/assets/image/simulated_event/HoshinoKami_003.webp"
+  },
+  "5": {
+    "id": "5",
+    "name": "Lan",
+    "type": "La Cacería",
+    "image": "/starrail/assets/image/simulated_event/HoshinoKami_005.webp"
+  },
+  "6": {
+    "id": "6",
+    "name": "Nanook",
+    "type": "La Destrucción",
+    "image": "/starrail/assets/image/simulated_event/HoshinoKami_002.webp"
+  },
+  "7": {
+    "id": "7",
+    "name": "Aha",
+    "type": "La Exultación",
+    "image": "/starrail/assets/image/simulated_event/HoshinoKami_007.webp"
+  },
+  "8": {
+    "id": "8",
+    "name": "Herta",
+    "type": "Miembro n.º 83 del Círculo de Genios",
+    "image": "/starrail/assets/image/simulated_event/HoshinoKami_Herta.webp"
+  },
+  "9": {
+    "id": "9",
+    "name": "Ruan Mei",
+    "type": "Miembro n.º 81 del Círculo de Genios",
+    "image": "/starrail/assets/image/simulated_event/HoshinoKami_Herta2.webp"
+  },
+  "10": {
+    "id": "10",
+    "name": "Ena",
+    "type": "Orden",
+    "image": "/starrail/assets/image/simulated_event/HoshinoKami_011.webp"
+  },
+  "11": {
+    "id": "11",
+    "name": "Xipe",
+    "type": "La Armonía",
+    "image": "/starrail/assets/image/simulated_event/HoshinoKami_008.webp"
+  },
+  "12": {
+    "id": "12",
+    "name": "Oroboros",
+    "type": "La Voracidad",
+    "image": "/starrail/assets/image/simulated_event/HoshinoKami_010.webp"
+  },
+  "13": {
+    "id": "13",
+    "name": "Tornillum",
+    "type": "Miembro n.º 76 del Círculo de Genios",
+    "image": "/starrail/assets/image/simulated_event/HoshinoKami_Herta3.webp"
+  },
+  "14": {
+    "id": "14",
+    "name": "Tayzzyronth",
+    "type": "La Propagación",
+    "image": "/starrail/assets/image/simulated_event/HoshinoKami_009.webp"
+  },
+  "15": {
+    "id": "15",
+    "name": "Stephen Lloyd",
+    "type": "Miembro n.º 84 del Círculo de Genios",
+    "image": "/starrail/assets/image/simulated_event/HoshinoKami_Herta4.webp"
+  },
+  "16": {
+    "id": "16",
+    "name": "Stephen Lloyd",
+    "type": "Miembro n.º 84 del Círculo de Genios",
+    "image": "/starrail/assets/image/simulated_event/HoshinoKami_Herta5.webp"
+  },
+  "17": {
+    "id": "17",
+    "name": "Nous",
+    "type": "La Erudición",
+    "image": "/starrail/assets/image/simulated_event/HoshinoKami_012.webp"
+  },
+  "18": {
+    "id": "18",
+    "name": "HooH",
+    "type": "El Equilibrio",
+    "image": "/starrail/assets/image/simulated_event/HoshinoKami_014.webp"
+  },
+  "19": {
+    "id": "19",
+    "name": "Mythus",
+    "type": "El Enigma",
+    "image": "/starrail/assets/image/simulated_event/HoshinoKami_013.webp"
+  },
+  "20": {
+    "id": "20",
+    "name": "Polka Kakamond",
+    "type": "Miembro n.º 4 del Círculo de Genios",
+    "image": "/starrail/assets/image/simulated_event/HoshinoKami_Herta6.webp"
+  },
+  "139": {
+    "id": "139",
+    "name": "Comienzo: Corporación para la Paz Interastral",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_08.webp"
+  },
+  "140": {
+    "id": "140",
+    "name": "Declarado orgánico: asociados I",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_09.webp"
+  },
+  "141": {
+    "id": "141",
+    "name": "Expansión perceptiva: asociados II",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_09.webp"
+  },
+  "142": {
+    "id": "142",
+    "name": "Orgánico supremo: condolencias rojizas I",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_12.webp"
+  },
+  "143": {
+    "id": "143",
+    "name": "Orgánico supremo: condolencias rojizas II",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_12.webp"
+  },
+  "144": {
+    "id": "144",
+    "name": "Declarado inorgánico: oro líquido I",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_10.webp"
+  },
+  "145": {
+    "id": "145",
+    "name": "Expansión perceptiva: oro líquido II",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_10.webp"
+  },
+  "146": {
+    "id": "146",
+    "name": "Inorgánico supremo: trono del universo I",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_10.webp"
+  },
+  "147": {
+    "id": "147",
+    "name": "Expansión perceptiva: trono del universo II",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_09.webp"
+  },
+  "148": {
+    "id": "148",
+    "name": "Inorgánico supremo: condolencias rojizas III",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_12.webp"
+  },
+  "149": {
+    "id": "149",
+    "name": "Comienzo: el Imperio de las máquinas",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_07.webp"
+  },
+  "150": {
+    "id": "150",
+    "name": "Orgánico supremo: especias mentales I",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_08.webp"
+  },
+  "151": {
+    "id": "151",
+    "name": "Expansión perceptiva: especias mentales II",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_08.webp"
+  },
+  "152": {
+    "id": "152",
+    "name": "Declarado orgánico: malos pensamientos I",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_07.webp"
+  },
+  "153": {
+    "id": "153",
+    "name": "Expansión perceptiva: malos pensamientos II",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_07.webp"
+  },
+  "154": {
+    "id": "154",
+    "name": "Declarado inorgánico: padre sufridor I",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_11.webp"
+  },
+  "155": {
+    "id": "155",
+    "name": "Expansión perceptiva: padre sufridor II",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_11.webp"
+  },
+  "156": {
+    "id": "156",
+    "name": "Inorgánico supremo: tres revelaciones divinas I",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_08.webp"
+  },
+  "157": {
+    "id": "157",
+    "name": "Orgánico supremo: tres revelaciones divinas II",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_11.webp"
+  },
+  "158": {
+    "id": "158",
+    "name": "Inorgánico supremo: tres revelaciones divinas III",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_07.webp"
+  },
+  "159": {
+    "id": "159",
+    "name": "Arquitectos",
+    "type": "Ecuación",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_01.webp"
+  },
+  "160": {
+    "id": "160",
+    "name": "Jardín de los Recuerdos",
+    "type": "Ecuación",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_01.webp"
+  },
+  "161": {
+    "id": "161",
+    "name": "Autodestructor",
+    "type": "Ecuación",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_01.webp"
+  },
+  "162": {
+    "id": "162",
+    "name": "Buscadores de Elixires",
+    "type": "Ecuación",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_01.webp"
+  },
+  "163": {
+    "id": "163",
+    "name": "Vigilantes de la Galaxia",
+    "type": "Ecuación",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_01.webp"
+  },
+  "164": {
+    "id": "164",
+    "name": "Legión Antimateria",
+    "type": "Ecuación",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_01.webp"
+  },
+  "165": {
+    "id": "165",
+    "name": "Bufones Enmascarados",
+    "type": "Ecuación",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_01.webp"
+  },
+  "166": {
+    "id": "166",
+    "name": "Progenie del Rey del Enjambre",
+    "type": "Ecuación",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_01.webp"
+  },
+  "167": {
+    "id": "167",
+    "name": "Academia de Ecología Astral",
+    "type": "Ecuación",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_01.webp"
+  },
+  "168": {
+    "id": "168",
+    "name": "Especialista en restauración urbana",
+    "type": "Ecuación",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_01.webp"
+  },
+  "169": {
+    "id": "169",
+    "name": "Cazador taciturno",
+    "type": "Ecuación",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_01.webp"
+  },
+  "170": {
+    "id": "170",
+    "name": "Sociedad Autodidacta",
+    "type": "Ecuación",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_01.webp"
+  },
+  "171": {
+    "id": "171",
+    "name": "Borisin",
+    "type": "Ecuación",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_01.webp"
+  },
+  "172": {
+    "id": "172",
+    "name": "Caballero Fundido",
+    "type": "Ecuación",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_01.webp"
+  },
+  "173": {
+    "id": "173",
+    "name": "Monitoreo a larga distancia",
+    "type": "Ecuación",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_01.webp"
+  },
+  "174": {
+    "id": "174",
+    "name": "Médico amonestador",
+    "type": "Ecuación",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_01.webp"
+  },
+  "175": {
+    "id": "175",
+    "name": "Progenie nutredesastres",
+    "type": "Ecuación",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_01.webp"
+  },
+  "176": {
+    "id": "176",
+    "name": "Erudito inútil",
+    "type": "Ecuación",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_01.webp"
+  },
+  "177": {
+    "id": "177",
+    "name": "Ladrón fantasma",
+    "type": "Ecuación",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_01.webp"
+  },
+  "178": {
+    "id": "178",
+    "name": "Mausoleo de Cicatrices",
+    "type": "Ecuación",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_01.webp"
+  },
+  "179": {
+    "id": "179",
+    "name": "Agregador",
+    "type": "Ecuación",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_01.webp"
+  },
+  "180": {
+    "id": "180",
+    "name": "Mesías biónico",
+    "type": "Ecuación",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_01.webp"
+  },
+  "181": {
+    "id": "181",
+    "name": "Erudito de la extinción",
+    "type": "Ecuación",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_01.webp"
+  },
+  "182": {
+    "id": "182",
+    "name": "Reenfundados I",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_10.webp"
+  },
+  "183": {
+    "id": "183",
+    "name": "Reenfundados II",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_10.webp"
+  },
+  "184": {
+    "id": "184",
+    "name": "Reenfundados III",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_10.webp"
+  },
+  "185": {
+    "id": "185",
+    "name": "Los recordados I",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_10.webp"
+  },
+  "186": {
+    "id": "186",
+    "name": "Los recordados II",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_10.webp"
+  },
+  "187": {
+    "id": "187",
+    "name": "Los recordados III",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_10.webp"
+  },
+  "188": {
+    "id": "188",
+    "name": "Mundo mecánico I",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_10.webp"
+  },
+  "189": {
+    "id": "189",
+    "name": "Mundo mecánico II",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_10.webp"
+  },
+  "190": {
+    "id": "190",
+    "name": "Mundo mecánico III",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_10.webp"
+  },
+  "191": {
+    "id": "191",
+    "name": "Verdades impresas I",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_10.webp"
+  },
+  "192": {
+    "id": "192",
+    "name": "Verdades impresas II",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_10.webp"
+  },
+  "193": {
+    "id": "193",
+    "name": "Verdades impresas III",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_10.webp"
+  },
+  "194": {
+    "id": "194",
+    "name": "Gran mentira I",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_10.webp"
+  },
+  "195": {
+    "id": "195",
+    "name": "Gran mentira II",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_10.webp"
+  },
+  "196": {
+    "id": "196",
+    "name": "Gran mentira III",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_10.webp"
+  },
+  "197": {
+    "id": "197",
+    "name": "Apagando fuegos I",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_10.webp"
+  },
+  "198": {
+    "id": "198",
+    "name": "Apagando fuegos II",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_10.webp"
+  },
+  "199": {
+    "id": "199",
+    "name": "Apagando fuegos III",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_10.webp"
+  },
+  "200": {
+    "id": "200",
+    "name": "Genio y profecía I",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_13.webp"
+  },
+  "201": {
+    "id": "201",
+    "name": "Genio y profecía II",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_13.webp"
+  },
+  "202": {
+    "id": "202",
+    "name": "El Congreso del Mañana I",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_13.webp"
+  },
+  "203": {
+    "id": "203",
+    "name": "El Congreso del Mañana II",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_13.webp"
+  },
+  "204": {
+    "id": "204",
+    "name": "El Congreso del Mañana III",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_13.webp"
+  },
+  "205": {
+    "id": "205",
+    "name": "Bancarrota omnipotente I",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_13.webp"
+  },
+  "206": {
+    "id": "206",
+    "name": "Bancarrota omnipotente II",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_13.webp"
+  },
+  "207": {
+    "id": "207",
+    "name": "Bancarrota omnipotente III",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_13.webp"
+  },
+  "208": {
+    "id": "208",
+    "name": "Virus Antiorgánico I",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_13.webp"
+  },
+  "209": {
+    "id": "209",
+    "name": "Virus Antiorgánico II",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_13.webp"
+  },
+  "210": {
+    "id": "210",
+    "name": "Virus Antiorgánico III",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_13.webp"
+  },
+  "211": {
+    "id": "211",
+    "name": "Protesta de Izmael I",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_13.webp"
+  },
+  "212": {
+    "id": "212",
+    "name": "Protesta de Izmael II",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_13.webp"
+  },
+  "213": {
+    "id": "213",
+    "name": "Protesta de Izmael III",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_13.webp"
+  },
+  "214": {
+    "id": "214",
+    "name": "Colapso cognitivo I",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_13.webp"
+  },
+  "215": {
+    "id": "215",
+    "name": "Colapso cognitivo II",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_13.webp"
+  },
+  "216": {
+    "id": "216",
+    "name": "Colapso cognitivo III",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_13.webp"
+  },
+  "217": {
+    "id": "217",
+    "name": "Espía celestial I",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_13.webp"
+  },
+  "218": {
+    "id": "218",
+    "name": "Espía celestial II",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_13.webp"
+  },
+  "219": {
+    "id": "219",
+    "name": "Espía celestial III",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_13.webp"
+  },
+  "220": {
+    "id": "220",
+    "name": "Expectativas Eónicas",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_13.webp"
+  },
+  "221": {
+    "id": "221",
+    "name": "Región desconocida I",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_13.webp"
+  },
+  "222": {
+    "id": "222",
+    "name": "Región desconocida II",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_13.webp"
+  },
+  "223": {
+    "id": "223",
+    "name": "Rastreador relativo",
+    "type": "Ecuación",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_01.webp"
+  },
+  "224": {
+    "id": "224",
+    "name": "Gusano formaestrellas",
+    "type": "Ecuación",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_01.webp"
+  },
+  "225": {
+    "id": "225",
+    "name": "Coloso desalmado",
+    "type": "Ecuación",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_01.webp"
+  },
+  "226": {
+    "id": "226",
+    "name": "Herborista",
+    "type": "Ecuación",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_01.webp"
+  },
+  "227": {
+    "id": "227",
+    "name": "Mariposa posada en la rama",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_02.webp"
+  },
+  "228": {
+    "id": "228",
+    "name": "Mariposa que pasó volando frente a la ventana",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_02.webp"
+  },
+  "229": {
+    "id": "229",
+    "name": "Mariposa que se marchó en silencio",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_02.webp"
+  },
+  "230": {
+    "id": "230",
+    "name": "Cuando el fruto del destino cayó",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_02.webp"
+  },
+  "231": {
+    "id": "231",
+    "name": "Cuando el destino se detuvo",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_02.webp"
+  },
+  "232": {
+    "id": "232",
+    "name": "Cuando el destino reveló su guía",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_02.webp"
+  },
+  "233": {
+    "id": "233",
+    "name": "Himno del cielo y la tierra",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_02.webp"
+  },
+  "234": {
+    "id": "234",
+    "name": "Canción de la lluvia y la nieve",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_02.webp"
+  },
+  "235": {
+    "id": "235",
+    "name": "Vals del mar y el viento",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_02.webp"
+  },
+  "236": {
+    "id": "236",
+    "name": "El dios que gastó bromas a los dioses",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_02.webp"
+  },
+  "237": {
+    "id": "237",
+    "name": "El dios que gastó bromas a los mortales",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_02.webp"
+  },
+  "238": {
+    "id": "238",
+    "name": "El dios del desorden sin hogar",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_02.webp"
+  },
+  "239": {
+    "id": "239",
+    "name": "Guerra que nunca terminó",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_02.webp"
+  },
+  "240": {
+    "id": "240",
+    "name": "Guerra que sigue activa",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_02.webp"
+  },
+  "241": {
+    "id": "241",
+    "name": "Guerra en la que se perdió la gloria",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_02.webp"
+  },
+  "242": {
+    "id": "242",
+    "name": "Nana para dormir",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_02.webp"
+  },
+  "243": {
+    "id": "243",
+    "name": "Nana para prevenir al mundo",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_02.webp"
+  },
+  "244": {
+    "id": "244",
+    "name": "Nana para regresar a casa",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_02.webp"
+  },
+  "245": {
+    "id": "245",
+    "name": "Ave gigante que cubre la tierra",
+    "type": "Secreto",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_02.webp"
+  },
+  "246": {
+    "id": "246",
+    "name": "Conocimiento que trasciende los océanos",
+    "type": "Secreto",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_02.webp"
+  },
+  "247": {
+    "id": "247",
+    "name": "Alabado sea el deudo perfecto",
+    "type": "Secreto",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_02.webp"
+  },
+  "248": {
+    "id": "248",
+    "name": "Alabada sea su sabiduría",
+    "type": "Secreto",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_02.webp"
+  },
+  "249": {
+    "id": "249",
+    "name": "Lamento por su indiferencia",
+    "type": "Secreto",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_02.webp"
+  },
+  "250": {
+    "id": "250",
+    "name": "Maravillado por su bendición",
+    "type": "Secreto",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_02.webp"
+  },
+  "251": {
+    "id": "251",
+    "name": "Pasos de gigante",
+    "type": "Secreto",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_02.webp"
+  },
+  "252": {
+    "id": "252",
+    "name": "Misión de gigante",
+    "type": "Secreto",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_02.webp"
+  },
+  "253": {
+    "id": "253",
+    "name": "Enemigo de gigante",
+    "type": "Secreto",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_02.webp"
+  },
+  "254": {
+    "id": "254",
+    "name": "Profecía dorada",
+    "type": "Secreto",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_02.webp"
+  },
+  "255": {
+    "id": "255",
+    "name": "Profecía platino",
+    "type": "Secreto",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_02.webp"
+  },
+  "256": {
+    "id": "256",
+    "name": "Profecía de plomo y hierro",
+    "type": "Secreto",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_02.webp"
+  },
+  "257": {
+    "id": "257",
+    "name": "Ley que todo lo controla",
+    "type": "Secreto",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_02.webp"
+  },
+  "258": {
+    "id": "258",
+    "name": "Ley que regula la virtud humana",
+    "type": "Secreto",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_02.webp"
+  },
+  "259": {
+    "id": "259",
+    "name": "Ley que regula a los dioses",
+    "type": "Secreto",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_02.webp"
+  },
+  "260": {
+    "id": "260",
+    "name": "Lo más pesado",
+    "type": "Secreto",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_02.webp"
+  },
+  "261": {
+    "id": "261",
+    "name": "Lo más testarudo",
+    "type": "Secreto",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_02.webp"
+  },
+  "262": {
+    "id": "262",
+    "name": "Lo más gentil",
+    "type": "Secreto",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_02.webp"
+  },
+  "263": {
+    "id": "263",
+    "name": "¿Lloran los Eones por las desgracias?",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_03.webp"
+  },
+  "264": {
+    "id": "264",
+    "name": "¿Lloran los Eones por las cosas sin sentido?",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_03.webp"
+  },
+  "265": {
+    "id": "265",
+    "name": "¿Lloran los Eones por el tiempo?",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_03.webp"
+  },
+  "266": {
+    "id": "266",
+    "name": "¿Lloran los Eones por el aburrimiento?",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_03.webp"
+  },
+  "267": {
+    "id": "267",
+    "name": "¿Lloran los Eones por la nostalgia?",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_03.webp"
+  },
+  "268": {
+    "id": "268",
+    "name": "¿Lloran los Eones por sí mismos?",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventTourn_03.webp"
+  },
+  "398": {
+    "id": "398",
+    "name": "La idea de Stephen Lloyd",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "10000": {
+    "id": "10000",
+    "name": "Área de descanso",
+    "type": "Reposo",
+    "image": "/starrail/assets/image/simulated_event/HoshinoKami_Herta.webp"
+  },
+  "10001": {
+    "id": "10001",
+    "name": "Área de descanso",
+    "type": "Reposo",
+    "image": "/starrail/assets/image/simulated_event/HoshinoKami_Herta.webp"
+  },
+  "10002": {
+    "id": "10002",
+    "name": "Área de descanso",
+    "type": "Reposo",
+    "image": "/starrail/assets/image/simulated_event/HoshinoKami_Herta.webp"
+  },
+  "10101": {
+    "id": "10101",
+    "name": "Mineros nómadas",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "10201": {
+    "id": "10201",
+    "name": "Historiador Espurio",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Historian.webp"
+  },
+  "10202": {
+    "id": "10202",
+    "name": "Historiador Espurio",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Historian.webp"
+  },
+  "10301": {
+    "id": "10301",
+    "name": "Jim Hulk y Jim Hall",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "10401": {
+    "id": "10401",
+    "name": "Teletienda",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "10501": {
+    "id": "10501",
+    "name": "Incineradores",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "10601": {
+    "id": "10601",
+    "name": "Arte interactivo",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "10701": {
+    "id": "10701",
+    "name": "Mundo de píxeles",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Pixel.webp"
+  },
+  "10801": {
+    "id": "10801",
+    "name": "Muñeco de Aha",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Toy.webp"
+  },
+  "10901": {
+    "id": "10901",
+    "name": "Dispensador de deuda",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Bond.webp"
+  },
+  "10902": {
+    "id": "10902",
+    "name": "Dispensador de deuda",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Bond.webp"
+  },
+  "11001": {
+    "id": "11001",
+    "name": "Estatua",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "11101": {
+    "id": "11101",
+    "name": "Nido de insectos",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "11201": {
+    "id": "11201",
+    "name": "Ruan Mei",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Bonus.webp"
+  },
+  "11301": {
+    "id": "11301",
+    "name": "Los tres cerditos",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_ThreePig.webp"
+  },
+  "11401": {
+    "id": "11401",
+    "name": "Oscuridad infinita",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "11501": {
+    "id": "11501",
+    "name": "Los Arquitectos",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "11601": {
+    "id": "11601",
+    "name": "Yesca del Autodestructor",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "11701": {
+    "id": "11701",
+    "name": "Comerciante galáctico (I)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_profiteer.webp"
+  },
+  "11702": {
+    "id": "11702",
+    "name": "Engaño galáctico (II)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_profiteer.webp"
+  },
+  "11703": {
+    "id": "11703",
+    "name": "Altruismo galáctico (III)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_profiteer.webp"
+  },
+  "11801": {
+    "id": "11801",
+    "name": "Sueños de sociedad",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "11901": {
+    "id": "11901",
+    "name": "Saleo (I)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Twin.webp"
+  },
+  "11902": {
+    "id": "11902",
+    "name": "Sal (II)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Twin.webp"
+  },
+  "11903": {
+    "id": "11903",
+    "name": "Leo (III)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Twin.webp"
+  },
+  "12001": {
+    "id": "12001",
+    "name": "Cazarrecompensas",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "12101": {
+    "id": "12101",
+    "name": "Objeto erróneo",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "13301": {
+    "id": "13301",
+    "name": "Somos vaqueros",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Battle.webp"
+  },
+  "13302": {
+    "id": "13302",
+    "name": "Somos vaqueros",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Battle.webp"
+  },
+  "13401": {
+    "id": "13401",
+    "name": "Piedra, papel o tijera",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Battle.webp"
+  },
+  "13402": {
+    "id": "13402",
+    "name": "Piedra, papel o tijera",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Battle.webp"
+  },
+  "13501": {
+    "id": "13501",
+    "name": "Nildis",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "13502": {
+    "id": "13502",
+    "name": "Nildis",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "13503": {
+    "id": "13503",
+    "name": "Nildis",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "13601": {
+    "id": "13601",
+    "name": "Taberna",
+    "type": "Encuentro",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Battle.webp"
+  },
+  "13602": {
+    "id": "13602",
+    "name": "Taberna",
+    "type": "Encuentro",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Battle.webp"
+  },
+  "13603": {
+    "id": "13603",
+    "name": "Taberna",
+    "type": "Encuentro",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Battle.webp"
+  },
+  "13701": {
+    "id": "13701",
+    "name": "Rey Demonio Cíclico",
+    "type": "Encuentro",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Battle.webp"
+  },
+  "13702": {
+    "id": "13702",
+    "name": "Rey Demonio Cíclico",
+    "type": "Encuentro",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Battle.webp"
+  },
+  "13703": {
+    "id": "13703",
+    "name": "Rey Demonio Cíclico",
+    "type": "Encuentro",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Battle.webp"
+  },
+  "13704": {
+    "id": "13704",
+    "name": "Rey Demonio Cíclico",
+    "type": "Encuentro",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Battle.webp"
+  },
+  "13705": {
+    "id": "13705",
+    "name": "Rey Demonio Cíclico",
+    "type": "Encuentro",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Battle.webp"
+  },
+  "13801": {
+    "id": "13801",
+    "name": "¡Intercambiemos regalos!",
+    "type": "Intercambio",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Trade.webp"
+  },
+  "13901": {
+    "id": "13901",
+    "name": "Pide un deseo",
+    "type": "Intercambio",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Trade.webp"
+  },
+  "14001": {
+    "id": "14001",
+    "name": "Terminal de venta de robots",
+    "type": "Intercambio",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Trade.webp"
+  },
+  "110003": {
+    "id": "110003",
+    "name": "Tienda de objetos raros de Herta",
+    "type": "Intercambio",
+    "image": "/starrail/assets/image/simulated_event/HoshinoKami_Herta.webp"
+  },
+  "110004": {
+    "id": "110004",
+    "name": "Tienda de bendiciones de Tornillum",
+    "type": "Intercambio",
+    "image": "/starrail/assets/image/simulated_event/HoshinoKami_Herta3.webp"
+  },
+  "110005": {
+    "id": "110005",
+    "name": "Tienda de Herta",
+    "type": "Intercambio",
+    "image": "/starrail/assets/image/simulated_event/HoshinoKami_Herta.webp"
+  },
+  "110006": {
+    "id": "110006",
+    "name": "Tienda de Tornillum",
+    "type": "Intercambio",
+    "image": "/starrail/assets/image/simulated_event/HoshinoKami_Herta3.webp"
+  },
+  "110007": {
+    "id": "110007",
+    "name": "Tienda de ecuaciones de Ruan Mei",
+    "type": "Intercambio",
+    "image": "/starrail/assets/image/simulated_event/HoshinoKami_Herta2.webp"
+  },
+  "110101": {
+    "id": "110101",
+    "name": "Mineros nómadas",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "110201": {
+    "id": "110201",
+    "name": "Historiadores Espurios",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Historian.webp"
+  },
+  "110301": {
+    "id": "110301",
+    "name": "Jim Hulk y Jim Hall",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "110401": {
+    "id": "110401",
+    "name": "Teletienda",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "110501": {
+    "id": "110501",
+    "name": "Incineradores",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "110601": {
+    "id": "110601",
+    "name": "Arte interactivo",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "110701": {
+    "id": "110701",
+    "name": "Mundo de píxeles",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Pixel.webp"
+  },
+  "110801": {
+    "id": "110801",
+    "name": "Muñeco de Aha",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Toy.webp"
+  },
+  "110901": {
+    "id": "110901",
+    "name": "Dispensador de deuda",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Bond.webp"
+  },
+  "111001": {
+    "id": "111001",
+    "name": "Estatua",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "111101": {
+    "id": "111101",
+    "name": "Nido de insectos",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "111201": {
+    "id": "111201",
+    "name": "Ruan Mei",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Bonus.webp"
+  },
+  "111301": {
+    "id": "111301",
+    "name": "Los tres cerditos",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_ThreePig.webp"
+  },
+  "111401": {
+    "id": "111401",
+    "name": "Oscuridad infinita",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "111501": {
+    "id": "111501",
+    "name": "Los Arquitectos",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "111601": {
+    "id": "111601",
+    "name": "Yesca del Autodestructor",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "111701": {
+    "id": "111701",
+    "name": "Comerciante galáctico (I)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_profiteer.webp"
+  },
+  "111702": {
+    "id": "111702",
+    "name": "Engaño galáctico (II)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_profiteer.webp"
+  },
+  "111703": {
+    "id": "111703",
+    "name": "Altruismo galáctico (III)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_profiteer.webp"
+  },
+  "111801": {
+    "id": "111801",
+    "name": "Sueños de sociedad",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "111901": {
+    "id": "111901",
+    "name": "Saleo (I)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Twin.webp"
+  },
+  "111902": {
+    "id": "111902",
+    "name": "Sal (II)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Twin.webp"
+  },
+  "111903": {
+    "id": "111903",
+    "name": "Leo (III)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Twin.webp"
+  },
+  "112001": {
+    "id": "112001",
+    "name": "Cazarrecompensas",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "112101": {
+    "id": "112101",
+    "name": "Objeto erróneo",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "112201": {
+    "id": "112201",
+    "name": "Caballeros de la Belleza al rescate",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_1.webp"
+  },
+  "112301": {
+    "id": "112301",
+    "name": "Crescendo cósmico",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "112401": {
+    "id": "112401",
+    "name": "Yu Qingtu, miembro n.º 55 del Círculo de Genios",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_7.webp"
+  },
+  "112501": {
+    "id": "112501",
+    "name": "Horda de bestias: catástrofe voraz",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_3.webp"
+  },
+  "112601": {
+    "id": "112601",
+    "name": "Reparador de objetos raros",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Toy.webp"
+  },
+  "112701": {
+    "id": "112701",
+    "name": "El truco del actor",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_profiteer.webp"
+  },
+  "112801": {
+    "id": "112801",
+    "name": "La experiencia de la doble lotería",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Bond.webp"
+  },
+  "112901": {
+    "id": "112901",
+    "name": "Ruan Mei II",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_5.webp"
+  },
+  "113001": {
+    "id": "113001",
+    "name": "¡El gran desafío perfecto!",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Toy.webp"
+  },
+  "113301": {
+    "id": "113301",
+    "name": "Somos vaqueros",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Battle.webp"
+  },
+  "113302": {
+    "id": "113302",
+    "name": "Somos vaqueros",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Battle.webp"
+  },
+  "113401": {
+    "id": "113401",
+    "name": "Piedra, papel o tijera",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Battle.webp"
+  },
+  "113402": {
+    "id": "113402",
+    "name": "Piedra, papel o tijera",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Battle.webp"
+  },
+  "113501": {
+    "id": "113501",
+    "name": "Nildis",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "113502": {
+    "id": "113502",
+    "name": "Nildis",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "113503": {
+    "id": "113503",
+    "name": "Nildis",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "113601": {
+    "id": "113601",
+    "name": "Taberna",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Battle.webp"
+  },
+  "113602": {
+    "id": "113602",
+    "name": "Taberna",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Battle.webp"
+  },
+  "113603": {
+    "id": "113603",
+    "name": "Taberna",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Battle.webp"
+  },
+  "113701": {
+    "id": "113701",
+    "name": "Rey Demonio Cíclico",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Battle.webp"
+  },
+  "113702": {
+    "id": "113702",
+    "name": "Rey Demonio Cíclico",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Battle.webp"
+  },
+  "113703": {
+    "id": "113703",
+    "name": "Rey Demonio Cíclico",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Battle.webp"
+  },
+  "113704": {
+    "id": "113704",
+    "name": "Rey Demonio Cíclico",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Battle.webp"
+  },
+  "113705": {
+    "id": "113705",
+    "name": "Rey Demonio Cíclico",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Battle.webp"
+  },
+  "113801": {
+    "id": "113801",
+    "name": "¡Intercambiemos regalos!",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Trade.webp"
+  },
+  "113901": {
+    "id": "113901",
+    "name": "Pide un deseo",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Trade.webp"
+  },
+  "114001": {
+    "id": "114001",
+    "name": "Terminal de venta de robots",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Trade.webp"
+  },
+  "114101": {
+    "id": "114101",
+    "name": "El fanático del reloj de cuco I",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Twin.webp"
+  },
+  "114102": {
+    "id": "114102",
+    "name": "El fanático del reloj de cuco II",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Twin.webp"
+  },
+  "114103": {
+    "id": "114103",
+    "name": "El fanático del reloj de cuco III",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Twin.webp"
+  },
+  "114201": {
+    "id": "114201",
+    "name": "La saga del ascenso de la Corporación I",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Bond.webp"
+  },
+  "114202": {
+    "id": "114202",
+    "name": "La saga del ascenso de la Corporación II",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Bond.webp"
+  },
+  "114203": {
+    "id": "114203",
+    "name": "La saga del ascenso de la Corporación III",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Bond.webp"
+  },
+  "114204": {
+    "id": "114204",
+    "name": "La saga del ascenso de la Corporación IV",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Bond.webp"
+  },
+  "114301": {
+    "id": "114301",
+    "name": "El banco de la Corporación I",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Bond.webp"
+  },
+  "114302": {
+    "id": "114302",
+    "name": "El banco de la Corporación II",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Bond.webp"
+  },
+  "114401": {
+    "id": "114401",
+    "name": "Soledad, gusanos espaciales y el Universo Simulado I",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_2.webp"
+  },
+  "114402": {
+    "id": "114402",
+    "name": "Soledad, gusanos espaciales y el Universo Simulado II",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_2.webp"
+  },
+  "114501": {
+    "id": "114501",
+    "name": "Gran rebuscador de la basura",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "114601": {
+    "id": "114601",
+    "name": "Rey de la Arena: Tayzzyronth (I)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_01.webp"
+  },
+  "114701": {
+    "id": "114701",
+    "name": "Rey de la Arena: Tayzzyronth (II)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_01.webp"
+  },
+  "114801": {
+    "id": "114801",
+    "name": "Rey de la Arena: Tayzzyronth (III)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_01.webp"
+  },
+  "114901": {
+    "id": "114901",
+    "name": "Rey de la Arena: Tayzzyronth (IV)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_01.webp"
+  },
+  "115001": {
+    "id": "115001",
+    "name": "Rey de la Arena: Tayzzyronth (V)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_01.webp"
+  },
+  "115101": {
+    "id": "115101",
+    "name": "Rey de la Arena: Tayzzyronth (VI)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_01.webp"
+  },
+  "115201": {
+    "id": "115201",
+    "name": "Rey de la Arena: Tayzzyronth (VII)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_01.webp"
+  },
+  "115301": {
+    "id": "115301",
+    "name": "Rey de la Arena: Tayzzyronth (VIII)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_01.webp"
+  },
+  "115401": {
+    "id": "115401",
+    "name": "Rey de la Arena: Tayzzyronth (IX)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_01.webp"
+  },
+  "115501": {
+    "id": "115501",
+    "name": "Galaxia de Insectiria: saga de la masacre (I)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_02.webp"
+  },
+  "115601": {
+    "id": "115601",
+    "name": "Galaxia de Insectiria: saga de la masacre (II)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_02.webp"
+  },
+  "115701": {
+    "id": "115701",
+    "name": "Galaxia de Insectiria: saga de la masacre (III)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_02.webp"
+  },
+  "115801": {
+    "id": "115801",
+    "name": "Galaxia de Insectiria: saga de la masacre (IV)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_02.webp"
+  },
+  "115901": {
+    "id": "115901",
+    "name": "Galaxia de Insectiria: saga de la masacre (V)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_02.webp"
+  },
+  "116001": {
+    "id": "116001",
+    "name": "Galaxia de Insectiria: saga de la masacre (VI)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_02.webp"
+  },
+  "116101": {
+    "id": "116101",
+    "name": "Cazarrecompensas: crónica de la depuración carmesí (I)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_02.webp"
+  },
+  "116201": {
+    "id": "116201",
+    "name": "Cazarrecompensas: crónica de la depuración carmesí (II)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_02.webp"
+  },
+  "116301": {
+    "id": "116301",
+    "name": "Cazarrecompensas: crónica de la depuración carmesí (III)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_02.webp"
+  },
+  "116401": {
+    "id": "116401",
+    "name": "Cazarrecompensas: crónica de la depuración carmesí (IV)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_02.webp"
+  },
+  "116501": {
+    "id": "116501",
+    "name": "Cazarrecompensas: crónica de la depuración carmesí (V)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_02.webp"
+  },
+  "116601": {
+    "id": "116601",
+    "name": "Cazarrecompensas: crónica de la depuración carmesí (VI)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_02.webp"
+  },
+  "116701": {
+    "id": "116701",
+    "name": "Tragedia e insectos: el ocaso de las estrellas (I)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_03.webp"
+  },
+  "116801": {
+    "id": "116801",
+    "name": "Tragedia e insectos: el ocaso de las estrellas (II)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_03.webp"
+  },
+  "116901": {
+    "id": "116901",
+    "name": "Tragedia e insectos: el ocaso de las estrellas (III)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_03.webp"
+  },
+  "117001": {
+    "id": "117001",
+    "name": "Tragedia e insectos: el ocaso de las estrellas (IV)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_03.webp"
+  },
+  "117101": {
+    "id": "117101",
+    "name": "Tragedia e insectos: el ocaso de las estrellas (V)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_03.webp"
+  },
+  "117201": {
+    "id": "117201",
+    "name": "Tragedia e insectos: el ocaso de las estrellas (VI)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_03.webp"
+  },
+  "117301": {
+    "id": "117301",
+    "name": "Círculo de Genios: experimentos cotidianos (I)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_01.webp"
+  },
+  "117401": {
+    "id": "117401",
+    "name": "Círculo de Genios: experimentos cotidianos (II)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_01.webp"
+  },
+  "117501": {
+    "id": "117501",
+    "name": "Círculo de Genios: experimentos cotidianos (III)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_01.webp"
+  },
+  "117601": {
+    "id": "117601",
+    "name": "Góndola: ¡ayudando a los dioses! (I)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_05.webp"
+  },
+  "117701": {
+    "id": "117701",
+    "name": "Góndola: ¡ayudando a los dioses! (II)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_05.webp"
+  },
+  "117801": {
+    "id": "117801",
+    "name": "Góndola: ¡ayudando a los dioses! (III)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_05.webp"
+  },
+  "117901": {
+    "id": "117901",
+    "name": "Góndola: ¡ayudando a los dioses! (IV)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_05.webp"
+  },
+  "118001": {
+    "id": "118001",
+    "name": "Góndola: ¡ayudando a los dioses! (V)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_05.webp"
+  },
+  "118101": {
+    "id": "118101",
+    "name": "Góndola: ¡ayudando a los dioses! (VI)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_05.webp"
+  },
+  "118201": {
+    "id": "118201",
+    "name": "Coro del Firmamento: crónicas sobre anomalías (I)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_04.webp"
+  },
+  "118301": {
+    "id": "118301",
+    "name": "Coro del Firmamento: crónicas sobre anomalías (II)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_04.webp"
+  },
+  "118401": {
+    "id": "118401",
+    "name": "Coro del Firmamento: crónicas sobre anomalías (III)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_04.webp"
+  },
+  "118501": {
+    "id": "118501",
+    "name": "Los Arquitectos: anales de la fortificación (I)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_06.webp"
+  },
+  "118601": {
+    "id": "118601",
+    "name": "Los Arquitectos: anales de la fortificación (II)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_06.webp"
+  },
+  "118701": {
+    "id": "118701",
+    "name": "Los Arquitectos: anales de la fortificación (III)",
+    "type": "Secretos",
+    "image": "/starrail/assets/image/simulated_event/RoguePicEventDLC_06.webp"
+  },
+  "118801": {
+    "id": "118801",
+    "name": "Enjambre: Cacique dormido (primer pretoriano)",
+    "type": "El Enjambre",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_4.webp"
+  },
+  "118802": {
+    "id": "118802",
+    "name": "Enjambre: Cacique dormido (segundo pretoriano)",
+    "type": "El Enjambre",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_4.webp"
+  },
+  "118803": {
+    "id": "118803",
+    "name": "Enjambre: Cacique dormido (tercer pretoriano)",
+    "type": "El Enjambre",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_4.webp"
+  },
+  "118901": {
+    "id": "118901",
+    "name": "Propagación: Cacique dormido (primer pretoriano)",
+    "type": "El Enjambre",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_4.webp"
+  },
+  "118902": {
+    "id": "118902",
+    "name": "Propagación: Cacique dormido (segundo pretoriano)",
+    "type": "El Enjambre",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_4.webp"
+  },
+  "118903": {
+    "id": "118903",
+    "name": "Propagación: Cacique dormido (tercer pretoriano)",
+    "type": "El Enjambre",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_4.webp"
+  },
+  "119001": {
+    "id": "119001",
+    "name": "Enjambre: Exploración del nido (primer pretoriano)",
+    "type": "El Enjambre",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_4.webp"
+  },
+  "119002": {
+    "id": "119002",
+    "name": "Enjambre: Exploración del nido (segundo pretoriano)",
+    "type": "El Enjambre",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_4.webp"
+  },
+  "119003": {
+    "id": "119003",
+    "name": "Enjambre: Exploración del nido (tercer pretoriano)",
+    "type": "El Enjambre",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_4.webp"
+  },
+  "119101": {
+    "id": "119101",
+    "name": "Propagación: Exploración del nido (primer pretoriano)",
+    "type": "El Enjambre",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_4.webp"
+  },
+  "119102": {
+    "id": "119102",
+    "name": "Propagación: Exploración del nido (segundo pretoriano)",
+    "type": "El Enjambre",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_4.webp"
+  },
+  "119201": {
+    "id": "119201",
+    "name": "Enjambre: Mente de zona (primer pretoriano)",
+    "type": "El Enjambre",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_4.webp"
+  },
+  "119202": {
+    "id": "119202",
+    "name": "Enjambre: Mente de zona (segundo pretoriano)",
+    "type": "El Enjambre",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_4.webp"
+  },
+  "119203": {
+    "id": "119203",
+    "name": "Enjambre: Mente de zona (tercer pretoriano)",
+    "type": "El Enjambre",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_4.webp"
+  },
+  "119301": {
+    "id": "119301",
+    "name": "Reflexiones de la bailarina universal",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_profiteer.webp"
+  },
+  "119401": {
+    "id": "119401",
+    "name": "Mundo de píxeles: Mecanismo invisible",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Pixel.webp"
+  },
+  "119501": {
+    "id": "119501",
+    "name": "Espejo de la Trascendencia",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "119502": {
+    "id": "119502",
+    "name": "Espejo de la Trascendencia",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "119503": {
+    "id": "119503",
+    "name": "Espejo de la Trascendencia",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "119504": {
+    "id": "119504",
+    "name": "Espejo de la Trascendencia",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "219701": {
+    "id": "219701",
+    "name": "Ruan Mei (infinita)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Bonus.webp"
+  },
+  "320101": {
+    "id": "320101",
+    "name": "Peluquería cognitiva de Ciudad Mecánica - Mecanillum",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_10.webp"
+  },
+  "320201": {
+    "id": "320201",
+    "name": "Peluquería cognitiva de Ciudad Mecánica - Sociedad del Conocimiento",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_8.webp"
+  },
+  "320301": {
+    "id": "320301",
+    "name": "Peluquería cognitiva de Ciudad Mecánica - Círculo de Genios",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_9.webp"
+  },
+  "320401": {
+    "id": "320401",
+    "name": "Hacker de objetos raros",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "320501": {
+    "id": "320501",
+    "name": "Máquina de producción de lacre",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "320601": {
+    "id": "320601",
+    "name": "Dispositivo de inversión de la Paz Interastral",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Bond.webp"
+  },
+  "320701": {
+    "id": "320701",
+    "name": "Centro comercial mecánico de la Paz Interastral (I)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Bond.webp"
+  },
+  "320801": {
+    "id": "320801",
+    "name": "Centro comercial mecánico de la Paz Interastral (II)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Bond.webp"
+  },
+  "320901": {
+    "id": "320901",
+    "name": "Código de trampa (I)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "320902": {
+    "id": "320902",
+    "name": "Código de trampa (II)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "410101": {
+    "id": "410101",
+    "name": "Mineros nómadas",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "410201": {
+    "id": "410201",
+    "name": "Historiador Espurio",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Historian.webp"
+  },
+  "410301": {
+    "id": "410301",
+    "name": "Jim Hulk y Jim Hall",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "410401": {
+    "id": "410401",
+    "name": "Teletienda",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "410501": {
+    "id": "410501",
+    "name": "Incineradores",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "410601": {
+    "id": "410601",
+    "name": "Arte interactivo",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "410701": {
+    "id": "410701",
+    "name": "Mundo de píxeles",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Pixel.webp"
+  },
+  "410801": {
+    "id": "410801",
+    "name": "Muñeco de Aha",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Toy.webp"
+  },
+  "410901": {
+    "id": "410901",
+    "name": "Dispensador de deuda",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Bond.webp"
+  },
+  "411001": {
+    "id": "411001",
+    "name": "Estatua",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "411101": {
+    "id": "411101",
+    "name": "Nido de insectos",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "411201": {
+    "id": "411201",
+    "name": "Ruan Mei",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Bonus.webp"
+  },
+  "411301": {
+    "id": "411301",
+    "name": "Los tres cerditos",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_ThreePig.webp"
+  },
+  "411401": {
+    "id": "411401",
+    "name": "Oscuridad infinita",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "411501": {
+    "id": "411501",
+    "name": "Arquitectos",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "411601": {
+    "id": "411601",
+    "name": "Yesca del Autodestructor",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "411701": {
+    "id": "411701",
+    "name": "Comerciante galáctico (I)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_profiteer.webp"
+  },
+  "411702": {
+    "id": "411702",
+    "name": "Engaño galáctico (II)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_profiteer.webp"
+  },
+  "411703": {
+    "id": "411703",
+    "name": "Altruismo galáctico (III)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_profiteer.webp"
+  },
+  "411801": {
+    "id": "411801",
+    "name": "Sueños de sociedad",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "411901": {
+    "id": "411901",
+    "name": "Saleo (I)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Twin.webp"
+  },
+  "411902": {
+    "id": "411902",
+    "name": "Sal (II)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Twin.webp"
+  },
+  "411903": {
+    "id": "411903",
+    "name": "Leo (III)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Twin.webp"
+  },
+  "412001": {
+    "id": "412001",
+    "name": "Cazarrecompensas",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "412201": {
+    "id": "412201",
+    "name": "Caballeros de la Belleza al rescate",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_1.webp"
+  },
+  "412301": {
+    "id": "412301",
+    "name": "Crescendo cósmico",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "412401": {
+    "id": "412401",
+    "name": "Yu Qingtu, miembro n.º 55 del Círculo de Genios",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_7.webp"
+  },
+  "412501": {
+    "id": "412501",
+    "name": "Horda de bestias: catástrofe voraz",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_3.webp"
+  },
+  "412601": {
+    "id": "412601",
+    "name": "Reparador de objetos raros",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Toy.webp"
+  },
+  "412701": {
+    "id": "412701",
+    "name": "El truco del actor",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_profiteer.webp"
+  },
+  "412801": {
+    "id": "412801",
+    "name": "La experiencia de la doble lotería",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Bond.webp"
+  },
+  "412802": {
+    "id": "412802",
+    "name": "La experiencia de la megalotería",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Bond.webp"
+  },
+  "412901": {
+    "id": "412901",
+    "name": "Ruan Mei II",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_5.webp"
+  },
+  "413001": {
+    "id": "413001",
+    "name": "¡El gran desafío perfecto!",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Toy.webp"
+  },
+  "413301": {
+    "id": "413301",
+    "name": "Somos vaqueros",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Battle.webp"
+  },
+  "413401": {
+    "id": "413401",
+    "name": "Piedra, papel o tijera",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Battle.webp"
+  },
+  "413501": {
+    "id": "413501",
+    "name": "Nildis",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "413601": {
+    "id": "413601",
+    "name": "Taberna",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Battle.webp"
+  },
+  "413701": {
+    "id": "413701",
+    "name": "Rey Demonio Cíclico",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Battle.webp"
+  },
+  "413801": {
+    "id": "413801",
+    "name": "¡Intercambiemos regalos!",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Trade.webp"
+  },
+  "413901": {
+    "id": "413901",
+    "name": "Pide un deseo",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Trade.webp"
+  },
+  "414001": {
+    "id": "414001",
+    "name": "Terminal de venta de robots",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Trade.webp"
+  },
+  "414101": {
+    "id": "414101",
+    "name": "El fanático del reloj de cuco I",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Twin.webp"
+  },
+  "414102": {
+    "id": "414102",
+    "name": "El fanático del reloj de cuco II",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Twin.webp"
+  },
+  "414103": {
+    "id": "414103",
+    "name": "El fanático del reloj de cuco III",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Twin.webp"
+  },
+  "414201": {
+    "id": "414201",
+    "name": "La saga del ascenso de la Corporación I",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Bond.webp"
+  },
+  "414202": {
+    "id": "414202",
+    "name": "La saga del ascenso de la Corporación II",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Bond.webp"
+  },
+  "414203": {
+    "id": "414203",
+    "name": "La saga del ascenso de la Corporación III",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Bond.webp"
+  },
+  "414204": {
+    "id": "414204",
+    "name": "La saga del ascenso de la Corporación IV",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Bond.webp"
+  },
+  "414301": {
+    "id": "414301",
+    "name": "El banco de la Corporación I",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Bond.webp"
+  },
+  "414302": {
+    "id": "414302",
+    "name": "El banco de la Corporación II",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Bond.webp"
+  },
+  "414401": {
+    "id": "414401",
+    "name": "Soledad, gusanos espaciales y el Universo Simulado I",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_2.webp"
+  },
+  "414402": {
+    "id": "414402",
+    "name": "Soledad, gusanos espaciales y el Universo Simulado II",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_2.webp"
+  },
+  "414501": {
+    "id": "414501",
+    "name": "Gran rebuscador de la basura",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "418801": {
+    "id": "418801",
+    "name": "Enjambre: Cacique dormido (primer pretoriano)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_4.webp"
+  },
+  "418802": {
+    "id": "418802",
+    "name": "Enjambre: Cacique dormido (segundo pretoriano)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_4.webp"
+  },
+  "418803": {
+    "id": "418803",
+    "name": "Enjambre: Cacique dormido (tercer pretoriano)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_4.webp"
+  },
+  "419001": {
+    "id": "419001",
+    "name": "Enjambre: Exploración del nido (primer pretoriano)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_4.webp"
+  },
+  "419002": {
+    "id": "419002",
+    "name": "Enjambre: Exploración del nido (segundo pretoriano)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_4.webp"
+  },
+  "419003": {
+    "id": "419003",
+    "name": "Enjambre: Exploración del nido (tercer pretoriano)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_4.webp"
+  },
+  "419201": {
+    "id": "419201",
+    "name": "Enjambre: Mente de zona (primer pretoriano)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_4.webp"
+  },
+  "419202": {
+    "id": "419202",
+    "name": "Enjambre: Mente de zona (segundo pretoriano)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_4.webp"
+  },
+  "419203": {
+    "id": "419203",
+    "name": "Enjambre: Mente de zona (tercer pretoriano)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_4.webp"
+  },
+  "419301": {
+    "id": "419301",
+    "name": "Reflexiones de la bailarina universal",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_profiteer.webp"
+  },
+  "419401": {
+    "id": "419401",
+    "name": "Mundo de píxeles: Mecanismo invisible",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Pixel.webp"
+  },
+  "419501": {
+    "id": "419501",
+    "name": "Espejo de la Trascendencia",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "420101": {
+    "id": "420101",
+    "name": "Peluquería cognitiva de Ciudad Mecánica - Mecanillum",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_10.webp"
+  },
+  "420201": {
+    "id": "420201",
+    "name": "Peluquería cognitiva de Ciudad Mecánica - Sociedad del Conocimiento",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_8.webp"
+  },
+  "420301": {
+    "id": "420301",
+    "name": "Peluquería cognitiva de Ciudad Mecánica - Círculo de Genios",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_9.webp"
+  },
+  "420401": {
+    "id": "420401",
+    "name": "Hacker de objetos raros",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "420501": {
+    "id": "420501",
+    "name": "Máquina de producción de lacre",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "420601": {
+    "id": "420601",
+    "name": "Dispositivo de inversión de la Paz Interastral",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Bond.webp"
+  },
+  "420701": {
+    "id": "420701",
+    "name": "Centro comercial mecánico de la Paz Interastral (I)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Bond.webp"
+  },
+  "420801": {
+    "id": "420801",
+    "name": "Centro comercial mecánico de la Paz Interastral (II)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Bond.webp"
+  },
+  "420901": {
+    "id": "420901",
+    "name": "Código de trampa (I)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "420902": {
+    "id": "420902",
+    "name": "Código de trampa (II)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "421001": {
+    "id": "421001",
+    "name": "Alimentación peligrosa",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_13.webp"
+  },
+  "421101": {
+    "id": "421101",
+    "name": "El heliobus de regreso",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_14.webp"
+  },
+  "421201": {
+    "id": "421201",
+    "name": "Coliseo culinario",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_15.webp"
+  },
+  "421301": {
+    "id": "421301",
+    "name": "Guerras ternarias",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_16.webp"
+  },
+  "421401": {
+    "id": "421401",
+    "name": "Competición armoniosa",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_18.webp"
+  },
+  "421501": {
+    "id": "421501",
+    "name": "Legado imperial",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_12.webp"
+  },
+  "421601": {
+    "id": "421601",
+    "name": "Adivinación",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_11.webp"
+  },
+  "421701": {
+    "id": "421701",
+    "name": "Ruan Mei III",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_17.webp"
+  },
+  "421801": {
+    "id": "421801",
+    "name": "Inconsistencia semántica",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Battle.webp"
+  },
+  "421901": {
+    "id": "421901",
+    "name": "Pan de piña",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_19.webp"
+  },
+  "422001": {
+    "id": "422001",
+    "name": "Simios como tú",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_21.webp"
+  },
+  "422101": {
+    "id": "422101",
+    "name": "Sinfonía de la basura",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_20.webp"
+  },
+  "422201": {
+    "id": "422201",
+    "name": "Ceremonia de pesca",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_22.webp"
+  },
+  "422301": {
+    "id": "422301",
+    "name": "Lava",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_18.webp"
+  },
+  "422401": {
+    "id": "422401",
+    "name": "Descuento especial",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_18.webp"
+  },
+  "422501": {
+    "id": "422501",
+    "name": "Vida metálica",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "422601": {
+    "id": "422601",
+    "name": "Una pizca de color",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_profiteer.webp"
+  },
+  "422701": {
+    "id": "422701",
+    "name": "Unidad de creación",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Bond.webp"
+  },
+  "422801": {
+    "id": "422801",
+    "name": "Banco del tiempo (I)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Trade.webp"
+  },
+  "422811": {
+    "id": "422811",
+    "name": "Banco del tiempo (II)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Trade.webp"
+  },
+  "423001": {
+    "id": "423001",
+    "name": "Tentación roja",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_18.webp"
+  },
+  "423101": {
+    "id": "423101",
+    "name": "Dificultad de elección (I)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Twin.webp"
+  },
+  "423102": {
+    "id": "423102",
+    "name": "Dificultad de elección (II)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Twin.webp"
+  },
+  "423501": {
+    "id": "423501",
+    "name": "Mercadillo",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_22.webp"
+  },
+  "423601": {
+    "id": "423601",
+    "name": "Producto de colaboración",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Toy.webp"
+  },
+  "424201": {
+    "id": "424201",
+    "name": "La estrategia del océano azul",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_18.webp"
+  },
+  "424301": {
+    "id": "424301",
+    "name": "Informe mayoritario",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Twin.webp"
+  },
+  "424401": {
+    "id": "424401",
+    "name": "El gran secreto",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_29.webp"
+  },
+  "424501": {
+    "id": "424501",
+    "name": "Templo del Silencio",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_27.webp"
+  },
+  "424601": {
+    "id": "424601",
+    "name": "Futuro falso",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_11.webp"
+  },
+  "424701": {
+    "id": "424701",
+    "name": "Hackers y marineros",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_28.webp"
+  },
+  "424801": {
+    "id": "424801",
+    "name": "Primera batalla de la calle comercial",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_29.webp"
+  },
+  "424901": {
+    "id": "424901",
+    "name": "La vida es como la verdura (I)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_30.webp"
+  },
+  "424902": {
+    "id": "424902",
+    "name": "La vida es como la verdura (II)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_30.webp"
+  },
+  "424903": {
+    "id": "424903",
+    "name": "La vida es como la verdura (III)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_30.webp"
+  },
+  "510004": {
+    "id": "510004",
+    "name": "Stephen",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/HoshinoKami_Herta4.webp"
+  },
+  "510005": {
+    "id": "510005",
+    "name": "Ruan Mei",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/HoshinoKami_Herta2.webp"
+  },
+  "519401": {
+    "id": "519401",
+    "name": "Mundo de píxeles: Mecanismo invisible",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Pixel.webp"
+  },
+  "523801": {
+    "id": "523801",
+    "name": "Rápido y a motor",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_25.webp"
+  },
+  "523901": {
+    "id": "523901",
+    "name": "Incubadora",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_23.webp"
+  },
+  "524001": {
+    "id": "524001",
+    "name": "Artesano remendón (I)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_24.webp"
+  },
+  "524002": {
+    "id": "524002",
+    "name": "Artesano remendón (II)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_24.webp"
+  },
+  "524101": {
+    "id": "524101",
+    "name": "El barco de los Bufones",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_26.webp"
+  },
+  "625001": {
+    "id": "625001",
+    "name": "Susurrador",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_32.webp"
+  },
+  "625101": {
+    "id": "625101",
+    "name": "Deudo impostor",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_34.webp"
+  },
+  "625201": {
+    "id": "625201",
+    "name": "Dispositivo de observación de estrellas",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_31.webp"
+  },
+  "625301": {
+    "id": "625301",
+    "name": "Dado de Doros",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_34.webp"
+  },
+  "625401": {
+    "id": "625401",
+    "name": "Fuga del espejo",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_32.webp"
+  },
+  "625501": {
+    "id": "625501",
+    "name": "La medida del éxito",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "625601": {
+    "id": "625601",
+    "name": "Transacción corrupta",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_33.webp"
+  },
+  "625701": {
+    "id": "625701",
+    "name": "La voz del mar",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_33.webp"
+  },
+  "625801": {
+    "id": "625801",
+    "name": "Oración apresurada",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_31.webp"
+  },
+  "625901": {
+    "id": "625901",
+    "name": "El nacimiento de un héroe I",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_32.webp"
+  },
+  "625902": {
+    "id": "625902",
+    "name": "El nacimiento de un héroe II",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_32.webp"
+  },
+  "625903": {
+    "id": "625903",
+    "name": "El nacimiento de un héroe III",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_32.webp"
+  },
+  "626001": {
+    "id": "626001",
+    "name": "Divergencia vital I",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_34.webp"
+  },
+  "626002": {
+    "id": "626002",
+    "name": "Divergencia vital II",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_34.webp"
+  },
+  "626101": {
+    "id": "626101",
+    "name": "Juego de tablero",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_31.webp"
+  },
+  "626201": {
+    "id": "626201",
+    "name": "Momento oportuno",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_34.webp"
+  },
+  "626301": {
+    "id": "626301",
+    "name": "Coliseo del león",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_35.webp"
+  },
+  "626401": {
+    "id": "626401",
+    "name": "Colección de mutaciones",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_Normal.webp"
+  },
+  "626501": {
+    "id": "626501",
+    "name": "Balanza de los deseos",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_32.webp"
+  },
+  "626601": {
+    "id": "626601",
+    "name": "El \"Nube de Azúcar\"",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_38.webp"
+  },
+  "626701": {
+    "id": "626701",
+    "name": "El camino del sabio I",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_36.webp"
+  },
+  "626702": {
+    "id": "626702",
+    "name": "El camino del sabio II",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_36.webp"
+  },
+  "626703": {
+    "id": "626703",
+    "name": "El camino del sabio III",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_36.webp"
+  },
+  "626801": {
+    "id": "626801",
+    "name": "Misión de transporte",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_34.webp"
+  },
+  "626901": {
+    "id": "626901",
+    "name": "Las puertas del laberinto",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_37.webp"
+  },
+  "627001": {
+    "id": "627001",
+    "name": "Cirene",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_39.webp"
+  },
+  "627101": {
+    "id": "627101",
+    "name": "Comerciante de lacre I",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_37.webp"
+  },
+  "627102": {
+    "id": "627102",
+    "name": "Comerciante de lacre II",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_37.webp"
+  },
+  "627201": {
+    "id": "627201",
+    "name": "Síntesis de lacre",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_36.webp"
+  },
+  "627301": {
+    "id": "627301",
+    "name": "Quimera en el trabajo",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_42.webp"
+  },
+  "627401": {
+    "id": "627401",
+    "name": "Tesoro divino I",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_32.webp"
+  },
+  "627402": {
+    "id": "627402",
+    "name": "Tesoro divino II",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_32.webp"
+  },
+  "627403": {
+    "id": "627403",
+    "name": "Tesoro divino III",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_32.webp"
+  },
+  "627501": {
+    "id": "627501",
+    "name": "Incendio del Mes de la Puerta",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_43.webp"
+  },
+  "627601": {
+    "id": "627601",
+    "name": "Práctica con la espada",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_34.webp"
+  },
+  "627701": {
+    "id": "627701",
+    "name": "Viaje al inframundo",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_33.webp"
+  },
+  "700103": {
+    "id": "700103",
+    "name": "Mantenimiento del paisaje urbano (zona)",
+    "type": "Forja",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_46.webp"
+  },
+  "700108": {
+    "id": "700108",
+    "name": "Mantenimiento del paisaje urbano (carta de Tawot)",
+    "type": "Forja",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_46.webp"
+  },
+  "727801": {
+    "id": "727801",
+    "name": "Archienemigos (I)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_12.webp"
+  },
+  "727802": {
+    "id": "727802",
+    "name": "Archienemigos (II)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_12.webp"
+  },
+  "727803": {
+    "id": "727803",
+    "name": "Archienemigos (III)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_12.webp"
+  },
+  "727901": {
+    "id": "727901",
+    "name": "Bebidas de la taberna",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_44.webp"
+  },
+  "728001": {
+    "id": "728001",
+    "name": "Comerciante de las vacaciones",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_46.webp"
+  },
+  "728101": {
+    "id": "728101",
+    "name": "Enlace enigmático",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_45.webp"
+  },
+  "728201": {
+    "id": "728201",
+    "name": "Bajo la fabuluna (cenizas)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_47.webp"
+  },
+  "728202": {
+    "id": "728202",
+    "name": "Bajo la fabuluna (en el cuadro)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_47.webp"
+  },
+  "728203": {
+    "id": "728203",
+    "name": "Bajo la fabuluna (actualidad)",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_47.webp"
+  },
+  "728301": {
+    "id": "728301",
+    "name": "Humor recién salido de la fábrica",
+    "type": "Evento",
+    "image": "/starrail/assets/image/simulated_event/PicRogueEvent_2.webp"
+  }
+}

@@ -1,0 +1,311 @@
+---
+// src/components/starrail/RelicSetsTab.astro
+interface Props {
+  char: any
+  lang: string
+  allData: Record<string, any>
+  labels: any
+  propertiesMap: Record<string, any>
+}
+
+const { char, lang, allData, labels, propertiesMap } = Astro.props
+
+const baseDir = `/src/data/starrail/${lang}`
+
+const relicSetsModule = allData[`${baseDir}/relic_sets.json`] as any
+const relicsModule    = allData[`${baseDir}/relics.json`] as any
+
+const relicSetsData: Record<string, any> = relicSetsModule?.default ?? relicSetsModule ?? {}
+const relicsData:    Record<string, any> = relicsModule?.default    ?? relicsModule    ?? {}
+
+const toAssetUrl = (rel: string) => {
+  if (!rel) return ''
+  
+  // 1. 경로 정리
+  let cleanPath = rel.replace(/^\//, '').replace(/^starrail\/assets\//, '')
+
+  // 2. 파일명 추출
+  const fileName = cleanPath.split('/').pop() || ''
+
+  // 3. 스탯 아이콘 교정 (Icon...webp)
+  if (fileName.includes('Icon')) {
+    cleanPath = `icon/property/${fileName}`
+  } 
+  // 4. 유물 vs 캐릭터 아이콘 구분 교정
+  else if (cleanPath.includes('icon/character/')) {
+    // 🔍 핵심 수정 부분: 
+    // 숫자 3자리 뒤에 점(.)이 오거나(세트 아이콘: 314.webp) 
+    // 숫자 3자리 뒤에 언더바(_)가 오는 경우(부위 아이콘: 314_0.webp)만 relic으로 변경
+    const isRelic = /^\d{3}[._]/.test(fileName);
+    
+    if (isRelic) {
+      cleanPath = cleanPath.replace('icon/character/', 'icon/relic/')
+    }
+  }
+
+  return `/starrail/assets/${cleanPath}`
+}
+// 각 세트의 아이콘: 세트에 속한 첫 번째 유물의 icon을 사용
+// relics.json의 각 유물에 set_id 필드 존재
+const setIconMap: Record<string, string> = {}
+for (const relic of Object.values(relicsData)) {
+  const r = relic as any
+  if (r.set_id && !setIconMap[r.set_id] && r.icon) {
+    setIconMap[r.set_id] = toAssetUrl(r.icon)
+  }
+}
+
+// 세트 효과 수치 포매팅
+const formatPropValue = (type: string, value: number): string => {
+  const meta = propertiesMap[type]
+  const isPercent = meta?.percent || meta?.ratio
+  if (isPercent) {
+    const pct = value * 100
+    const rounded = Math.round(pct * 10) / 10
+    return `${Number.isInteger(rounded) ? Math.round(rounded) : rounded}%`
+  }
+  return String(Math.round(value))
+}
+
+// 모든 세트 목록 (id 오름차순 정렬)
+const allSets = Object.values(relicSetsData)
+  .sort((a: any, b: any) => a.id.localeCompare(b.id))
+
+// 세트를 Cavern Relics(100번대)와 Planar Ornaments(300번대)로 분리
+const cavernSets  = allSets.filter((s: any) => String(s.id).startsWith('1'))
+const planarSets  = allSets.filter((s: any) => String(s.id).startsWith('3'))
+---
+
+<div class="relic-tab">
+
+  <!-- Cavern Relics (4pc 세트) -->
+  <div class="relic-section">
+    <div class="relic-section-header">
+      <span class="relic-section-label">{lang === 'kr' ? '유물 세트' : 'Cavern Relics'}</span>
+      <span class="relic-section-count">{cavernSets.length}</span>
+    </div>
+    <div class="relic-grid">
+      {cavernSets.map((set: any) => (
+        <div class="relic-card">
+          <div class="relic-card-header">
+            <div class="relic-icon-wrap">
+              {setIconMap[set.id]
+                ? <img src={setIconMap[set.id]} alt={set.name} width="40" height="40" loading="lazy" decoding="async" class="relic-icon" />
+                : <span class="relic-icon-placeholder">?</span>
+              }
+            </div>
+            <h3 class="relic-set-name">{set.name}</h3>
+          </div>
+
+          <div class="relic-effects">
+            {set.desc.map((effectText: string, eIdx: number) => {
+              const pieceCount = eIdx === 0 ? 2 : 4
+              const props = set.properties[eIdx] ?? []
+              return (
+                <div class="relic-effect">
+                  <span class="relic-pc-badge">{pieceCount}pc</span>
+                  <div class="relic-effect-body">
+                    {props.length > 0 && (
+                      <div class="relic-props">
+                        {props.map((p: any) => {
+                          const propMeta = propertiesMap[p.type]
+                          return (
+                            <span class="relic-prop-chip">
+                              {propMeta?.icon && (
+                                <img src={toAssetUrl(propMeta.icon)} alt="" width="12" height="12" loading="lazy" decoding="async" class="relic-prop-icon" />
+                              )}
+                              <span class="relic-prop-name">{propMeta?.name ?? p.type}</span>
+                              <span class="relic-prop-val">+{formatPropValue(p.type, p.value)}</span>
+                            </span>
+                          )
+                        })}
+                      </div>
+                    )}
+                    <p class="relic-effect-text">{effectText}</p>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <!-- Planar Ornaments (2pc 세트) -->
+  <div class="relic-section">
+    <div class="relic-section-header">
+      <span class="relic-section-label">{lang === 'kr' ? '장식품 세트' : 'Planar Ornaments'}</span>
+      <span class="relic-section-count">{planarSets.length}</span>
+    </div>
+    <div class="relic-grid">
+      {planarSets.map((set: any) => (
+        <div class="relic-card">
+          <div class="relic-card-header">
+            <div class="relic-icon-wrap">
+              {setIconMap[set.id]
+                ? <img src={setIconMap[set.id]} alt={set.name} width="40" height="40" loading="lazy" decoding="async" class="relic-icon" />
+                : <span class="relic-icon-placeholder">?</span>
+              }
+            </div>
+            <h3 class="relic-set-name">{set.name}</h3>
+          </div>
+
+          <div class="relic-effects">
+            {set.desc.map((effectText: string, eIdx: number) => {
+              const props = set.properties[eIdx] ?? []
+              return (
+                <div class="relic-effect">
+                  <span class="relic-pc-badge">2pc</span>
+                  <div class="relic-effect-body">
+                    {props.length > 0 && (
+                      <div class="relic-props">
+                        {props.map((p: any) => {
+                          const propMeta = propertiesMap[p.type]
+                          return (
+                            <span class="relic-prop-chip">
+                              {propMeta?.icon && (
+                                <img src={toAssetUrl(propMeta.icon)} alt="" width="12" height="12" loading="lazy" decoding="async" class="relic-prop-icon" />
+                              )}
+                              <span class="relic-prop-name">{propMeta?.name ?? p.type}</span>
+                              <span class="relic-prop-val">+{formatPropValue(p.type, p.value)}</span>
+                            </span>
+                          )
+                        })}
+                      </div>
+                    )}
+                    <p class="relic-effect-text">{effectText}</p>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+</div>
+
+<style>
+.relic-tab { display: flex; flex-direction: column; gap: 2.5rem; }
+
+.relic-section-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+.relic-section-label {
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+.relic-section-count {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--c-accent);
+  background: var(--c-accent-glow);
+  border-radius: 99px;
+  padding: 0.1em 0.5em;
+}
+
+.relic-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+}
+@media (min-width: 640px) {
+  .relic-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+.relic-card {
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-lg);
+  background: var(--c-surface);
+  padding: 0.9rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: border-color var(--anim-fast);
+  content-visibility: auto;
+  contain-intrinsic-size: 0 160px;
+}
+.relic-card:hover { border-color: var(--c-border-hi); }
+
+.relic-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+.relic-icon-wrap {
+  width: 40px; height: 40px;
+  flex-shrink: 0;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--c-border-hi);
+  background: var(--c-surface2);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+  padding: 3px;
+}
+.relic-icon { width: 100%; height: 100%; object-fit: contain; }
+.relic-icon-placeholder {
+  font-size: 1rem;
+  color: var(--c-muted);
+}
+.relic-set-name {
+  font-family: var(--font-display);
+  font-size: 0.88rem;
+  font-weight: 700;
+  line-height: 1.3;
+  word-break: keep-all;
+  flex: 1;
+}
+
+.relic-effects { display: flex; flex-direction: column; gap: 0.55rem; }
+
+.relic-effect {
+  display: flex;
+  gap: 0.6rem;
+  align-items: flex-start;
+}
+.relic-pc-badge {
+  flex-shrink: 0;
+  font-family: var(--font-mono);
+  font-size: 0.58rem;
+  font-weight: 900;
+  color: var(--c-accent);
+  background: var(--c-accent-glow);
+  border: 1px solid color-mix(in srgb, var(--c-accent) 30%, transparent);
+  border-radius: 4px;
+  padding: 0.15em 0.4em;
+  margin-top: 0.1rem;
+  line-height: 1.4;
+}
+.relic-effect-body { flex: 1; min-width: 0; display: flex; flex-direction: column; gap: 0.3rem; }
+
+.relic-props { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+.relic-prop-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  background: var(--c-surface2);
+  border-radius: 4px;
+  padding: 0.15rem 0.45rem;
+}
+.relic-prop-icon { width: 12px; height: 12px; object-fit: contain; opacity: 0.8; filter: invert(1); }
+:root[data-theme='light'] .relic-prop-icon, .light .relic-prop-icon { filter: none; }
+.relic-prop-name { font-size: 0.6rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--c-muted); }
+.relic-prop-val { font-family: var(--font-mono); font-size: 0.65rem; font-weight: 700; color: var(--c-accent); }
+
+.relic-effect-text {
+  font-size: 0.75rem;
+  line-height: 1.7;
+  color: var(--c-muted);
+  word-break: keep-all;
+}
+</style>

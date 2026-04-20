@@ -1,0 +1,713 @@
+---
+// src/pages/[lang]/starrail/achievements.astro
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Icon } from 'astro-icon/components'
+
+const allData = import.meta.glob('/src/data/starrail/**/*.json', { eager: true })
+
+export async function getStaticPaths() {
+  const languages = ['kr', 'en', 'jp', 'cn', 'fr', 'de', 'es', 'id', 'pt', 'ru', 'th', 'vi', 'cht']
+  return languages.map((lang) => ({ params: { lang } }))
+}
+
+const { lang } = Astro.params
+
+// ── 데이터 로드 ──
+const achModule = allData[`/src/data/starrail/${lang}/achievements.json`] as any
+const achRaw: Record<string, any> = achModule?.default ?? achModule ?? {}
+
+// 정렬: series_id → priority 순
+const achievements = Object.values(achRaw)
+  .filter((a: any) => a.title && a.title.trim() !== '')
+  .sort((a: any, b: any) => {
+    const sid = parseInt(a.series_id) - parseInt(b.series_id)
+    if (sid !== 0) return sid
+    return (b.priority ?? 0) - (a.priority ?? 0)
+  })
+
+// 카테고리 목록 (series_id 기준)
+const seriesMap = new Map<string, string>()
+for (const a of achievements as any[]) {
+  if (!seriesMap.has(a.series_id)) {
+    seriesMap.set(a.series_id, a.series_name ?? `Series ${a.series_id}`)
+  }
+}
+const seriesList = [...seriesMap.entries()].sort((a, b) => parseInt(a[0]) - parseInt(b[0]))
+
+// 전체 통계
+const totalCount  = achievements.length
+const totalPoints = (achievements as any[]).reduce((s: number, a: any) => s + (a.points ?? 1), 0)
+const hiddenCount = (achievements as any[]).filter((a: any) => a.hide).length
+
+const labels = lang === 'kr'
+  ? {
+      title:      '업적',
+      subtitle:   '붕괴: 스타레일의 모든 업적',
+      search:     '업적 이름 검색…',
+      filterAll:  '전체',
+      reset:      '초기화',
+      showing:    '{v}개 표시',
+      total:      '전체 {t}개',
+      noMatch:    '조건에 맞는 업적이 없습니다.',
+      filterSeries:'카테고리',
+      filterRarity:'난이도',
+      showHidden: '숨김 업적 표시',
+      hidden:     '숨김',
+      points:     '포인트',
+      totalPoints:'총 포인트',
+      rHigh:      '어려움',
+      rMid:       '보통',
+      rLow:       '쉬움',
+    }
+  : {
+      title:      'Achievements',
+      subtitle:   'All achievements in Honkai: Star Rail',
+      search:     'Search achievement…',
+      filterAll:  'All',
+      reset:      'Reset',
+      showing:    '{v} shown',
+      total:      '{t} total',
+      noMatch:    'No achievements match your filters.',
+      filterSeries:'Category',
+      filterRarity:'Difficulty',
+      showHidden: 'Show hidden',
+      hidden:     'Hidden',
+      points:     'pts',
+      totalPoints:'Total Points',
+      rHigh:      'Hard',
+      rMid:       'Medium',
+      rLow:       'Easy',
+    }
+---
+
+<DefaultLayout
+  title={`${labels.title} | Star Rail DB`}
+  description="Honkai: Star Rail full achievement list with categories and difficulty."
+>
+  <div class="ach-page">
+
+    <!-- ── 헤더 ── -->
+    <div class="ach-header">
+      <div class="ach-header-inner">
+        <nav class="breadcrumb">
+          <a href={`/${lang}`}>Home</a>
+          <span class="sep">/</span>
+          <a href={`/${lang}/starrail`}>Star Rail</a>
+          <span class="sep">/</span>
+          <span class="current">{labels.title}</span>
+        </nav>
+        <div class="ach-title-row">
+          <div>
+            <h1 class="ach-title">{labels.title}</h1>
+            <p class="ach-subtitle">{labels.subtitle}</p>
+          </div>
+          <!-- 통계 뱃지 -->
+          <div class="ach-stats">
+            <div class="ach-stat-chip">
+              <span class="ach-stat-val" id="ach-count-badge">{totalCount}</span>
+              <span class="ach-stat-label">{labels.total.replace('{t}', '')}</span>
+            </div>
+            <div class="ach-stat-chip ach-stat-chip--points">
+              <span class="ach-stat-val">{totalPoints}</span>
+              <span class="ach-stat-label">{labels.totalPoints}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ach-body">
+
+      <!-- ── 필터 사이드바 ── -->
+      <aside class="filter-panel">
+
+        <!-- 검색 -->
+        <div class="filter-group">
+          <div class="search-wrap">
+            <Icon name="lucide:search" size="0.85rem" class="search-icon" />
+            <input
+              type="search"
+              id="achSearch"
+              placeholder={labels.search}
+              autocomplete="off"
+              class="search-input"
+            />
+          </div>
+        </div>
+
+        <!-- 카테고리 -->
+        <div class="filter-group">
+          <p class="filter-label">{labels.filterSeries}</p>
+          <div class="filter-chips">
+            <button class="fchip fchip--active" data-series-filter="all" aria-pressed="true">
+              {labels.filterAll}
+            </button>
+            {seriesList.map(([sid, name]) => (
+              <button class="fchip" data-series-filter={sid} aria-pressed="false">
+                {name}
+              </button>
+            ))}
+          </div>
+        </div>
+
+        <!-- 난이도 -->
+        <div class="filter-group">
+          <p class="filter-label">{labels.filterRarity}</p>
+          <div class="filter-chips">
+            <button class="fchip fchip--active" data-rarity-filter="all" aria-pressed="true">
+              {labels.filterAll}
+            </button>
+            <button class="fchip fchip--high" data-rarity-filter="High" aria-pressed="false">
+              {labels.rHigh}
+            </button>
+            <button class="fchip fchip--mid" data-rarity-filter="Mid" aria-pressed="false">
+              {labels.rMid}
+            </button>
+            <button class="fchip fchip--low" data-rarity-filter="Low" aria-pressed="false">
+              {labels.rLow}
+            </button>
+          </div>
+        </div>
+
+        <!-- 숨김 업적 토글 -->
+        <div class="filter-group">
+          <label class="toggle-label">
+            <input type="checkbox" id="showHidden" class="toggle-checkbox" />
+            <span class="toggle-track">
+              <span class="toggle-thumb"></span>
+            </span>
+            <span class="toggle-text">{labels.showHidden}</span>
+            <span class="hidden-count">({hiddenCount})</span>
+          </label>
+        </div>
+
+        <!-- 초기화 -->
+        <button class="reset-btn" id="ach-filter-reset" type="button">
+          <Icon name="lucide:rotate-ccw" size="0.75rem" />
+          {labels.reset}
+        </button>
+
+        <!-- 결과 수 -->
+        <p class="filter-result" id="ach-count-line" aria-live="polite">
+          {labels.showing.replace('{v}', String(totalCount))}
+          <span class="filter-result-total">· {labels.total.replace('{t}', String(totalCount))}</span>
+        </p>
+
+      </aside>
+
+      <!-- ── 업적 목록 ── -->
+      <div class="ach-list-wrap">
+        <div id="ach-list" class="ach-list">
+          {(achievements as any[]).map((a: any) => (
+            <div
+              class={`ach-card ${a.hide ? 'ach-card--hidden' : ''}`}
+              data-ach-card
+              data-name={a.title.toLowerCase()}
+              data-series={a.series_id}
+              data-rarity={a.rarity ?? 'Low'}
+              data-hidden={a.hide ? 'true' : 'false'}
+            >
+              <!-- 왼쪽: 난이도 바 -->
+              <div class={`ach-rarity-bar ach-rarity-bar--${(a.rarity ?? 'Low').toLowerCase()}`}></div>
+
+              <!-- 내용 -->
+              <div class="ach-content">
+                <div class="ach-top">
+                  <span class="ach-series-tag">{a.series_name}</span>
+                  {a.hide && (
+                    <span class="ach-hidden-tag">
+                      <Icon name="lucide:eye-off" size="0.65rem" />
+                      {labels.hidden}
+                    </span>
+                  )}
+                </div>
+                <p class="ach-title-text">{a.title}</p>
+                <p class="ach-desc">
+                  {a.hide && !a.hide_desc ? '???' : (a.hide_desc || a.desc)}
+                </p>
+              </div>
+
+              <!-- 오른쪽: 포인트 -->
+              <div class={`ach-points ach-points--${(a.rarity ?? 'Low').toLowerCase()}`}>
+                <span class="ach-points-val">{a.points ?? 1}</span>
+                <span class="ach-points-label">{labels.points}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- 검색 결과 없음 -->
+        <div id="ach-filter-empty" class="filter-empty hidden" role="status">
+          <Icon name="lucide:search-x" size="2.5rem" />
+          <p>{labels.noMatch}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script is:inline define:vars={{ labelShowing: labels.showing, labelTotal: labels.total, totalCount }}>
+  ;(function () {
+    function init() {
+
+      var cards      = Array.prototype.slice.call(document.querySelectorAll('[data-ach-card]'))
+      var search     = document.getElementById('achSearch')
+      var countLine  = document.getElementById('ach-count-line')
+      var countBadge = document.getElementById('ach-count-badge')
+      var empty      = document.getElementById('ach-filter-empty')
+      var resetBtn   = document.getElementById('ach-filter-reset')
+      var showHidden = document.getElementById('showHidden')
+      var seriesBtns = Array.prototype.slice.call(document.querySelectorAll('[data-series-filter]'))
+      var rarityBtns = Array.prototype.slice.call(document.querySelectorAll('[data-rarity-filter]'))
+
+      var activeSeries = 'all'
+      var activeRarity = 'all'
+      var isShowHidden = false
+
+      function updateBtns(btns, activeVal, attr) {
+        btns.forEach(function (btn) {
+          var v = btn.getAttribute(attr) || 'all'
+          var on = v === activeVal
+          btn.setAttribute('aria-pressed', on ? 'true' : 'false')
+          btn.classList.toggle('fchip--active', on)
+        })
+      }
+
+      function apply() {
+        var q = search ? search.value.trim().toLowerCase() : ''
+        var visible = 0
+        cards.forEach(function (card) {
+          var name   = card.getAttribute('data-name')   || ''
+          var series = card.getAttribute('data-series') || ''
+          var rarity = card.getAttribute('data-rarity') || ''
+          var hidden = card.getAttribute('data-hidden') === 'true'
+
+          // 숨김 업적 필터
+          if (hidden && !isShowHidden) { card.classList.add('hidden'); return }
+
+          var show =
+            (activeSeries === 'all' || series === activeSeries) &&
+            (activeRarity === 'all' || rarity === activeRarity) &&
+            (!q || name.indexOf(q) !== -1)
+
+          card.classList.toggle('hidden', !show)
+          if (show) visible++
+        })
+
+        var showStr = labelShowing.replace('{v}', String(visible))
+        var totStr  = labelTotal.replace('{t}', String(totalCount))
+        if (countLine)  countLine.innerHTML  = showStr + ' <span class="filter-result-total">· ' + totStr + '</span>'
+        if (countBadge) countBadge.textContent = String(visible)
+        if (empty) empty.classList.toggle('hidden', visible !== 0)
+      }
+
+      seriesBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          activeSeries = btn.getAttribute('data-series-filter') || 'all'
+          updateBtns(seriesBtns, activeSeries, 'data-series-filter'); apply()
+        }, { passive: true })
+      })
+
+      rarityBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          activeRarity = btn.getAttribute('data-rarity-filter') || 'all'
+          updateBtns(rarityBtns, activeRarity, 'data-rarity-filter'); apply()
+        }, { passive: true })
+      })
+
+      if (showHidden) {
+        showHidden.addEventListener('change', function () {
+          isShowHidden = showHidden.checked; apply()
+        }, { passive: true })
+      }
+
+      if (search) {
+        search.addEventListener('input',  apply, { passive: true })
+        search.addEventListener('search', apply, { passive: true })
+      }
+
+      if (resetBtn) {
+        resetBtn.addEventListener('click', function () {
+          activeSeries = 'all'; activeRarity = 'all'; isShowHidden = false
+          if (search) { search.value = ''; search.focus() }
+          if (showHidden) showHidden.checked = false
+          updateBtns(seriesBtns, 'all', 'data-series-filter')
+          updateBtns(rarityBtns, 'all', 'data-rarity-filter')
+          apply()
+        }, { passive: true })
+      }
+
+      apply()
+    }
+    document.addEventListener('DOMContentLoaded', init)
+    document.addEventListener('astro:page-load', init)
+  })()
+  </script>
+</DefaultLayout>
+
+<style>
+/* ── 페이지 ── */
+.ach-page {
+  min-height: 100vh;
+  background: var(--c-bg);
+  color: var(--foreground-color);
+  font-family: var(--font-body);
+}
+
+/* ── 헤더 ── */
+.ach-header {
+  border-bottom: 1px solid var(--c-border);
+  background: var(--c-surface);
+  padding: 2rem 0 1.5rem;
+}
+.ach-header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+.breadcrumb a { color: inherit; text-decoration: none; transition: color var(--anim-fast); }
+.breadcrumb a:hover { color: var(--c-accent); }
+.breadcrumb .sep { opacity: 0.4; }
+.breadcrumb .current { color: var(--c-accent); }
+
+.ach-title-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.ach-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.ach-subtitle {
+  margin-top: 0.4rem;
+  font-size: 0.82rem;
+  color: var(--c-muted);
+}
+
+/* 통계 뱃지 */
+.ach-stats { display: flex; gap: 0.75rem; flex-wrap: wrap; }
+.ach-stat-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+  background: var(--c-surface2);
+  min-width: 80px;
+  text-align: center;
+}
+.ach-stat-chip--points { border-color: color-mix(in srgb, #fbbf24 30%, transparent); }
+.ach-stat-val {
+  font-family: var(--font-mono);
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--c-accent);
+  line-height: 1;
+}
+.ach-stat-chip--points .ach-stat-val { color: #fbbf24; }
+.ach-stat-label {
+  font-size: 0.58rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  margin-top: 0.2rem;
+}
+
+/* ── 바디 ── */
+.ach-body {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .ach-body { grid-template-columns: 1fr; }
+}
+
+/* ── 필터 패널 ── */
+.filter-panel {
+  position: sticky;
+  top: 72px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  max-height: calc(100vh - 100px);
+  overflow-y: auto;
+}
+@media (max-width: 900px) { .filter-panel { position: static; max-height: none; } }
+
+.filter-group { display: flex; flex-direction: column; gap: 0.6rem; }
+.filter-label {
+  font-size: 0.6rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+
+.search-wrap { position: relative; display: flex; align-items: center; }
+.search-icon { position: absolute; left: 0.7rem; color: var(--c-muted); pointer-events: none; }
+.search-input {
+  width: 100%;
+  padding: 0.5rem 0.75rem 0.5rem 2.1rem;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-sm);
+  background: var(--c-surface2);
+  color: var(--foreground-color);
+  font-size: 0.78rem;
+  font-family: var(--font-body);
+  outline: none;
+  transition: border-color var(--anim-fast);
+}
+.search-input::placeholder { color: var(--c-muted); }
+.search-input:focus { border-color: var(--c-accent); }
+
+.filter-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.fchip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-sm);
+  background: var(--c-surface2);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  color: var(--c-muted);
+  cursor: pointer;
+  transition: border-color var(--anim-fast), color var(--anim-fast), background var(--anim-fast);
+  min-height: 28px;
+}
+.fchip:hover { border-color: var(--c-border-hi); color: var(--foreground-color); }
+.fchip--active { border-color: var(--c-accent); background: var(--c-accent-glow); color: var(--c-accent); }
+.fchip--high { }
+.fchip--high.fchip--active { border-color: #fbbf24; background: rgba(251,191,36,0.1); color: #fbbf24; }
+.fchip--mid.fchip--active  { border-color: #a78bfa; background: rgba(167,139,250,0.1); color: #a78bfa; }
+.fchip--low.fchip--active  { border-color: #60a5fa; background: rgba(96,165,250,0.1); color: #60a5fa; }
+
+/* 숨김 업적 토글 */
+.toggle-label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  user-select: none;
+}
+.toggle-checkbox { display: none; }
+.toggle-track {
+  width: 36px; height: 20px;
+  border-radius: 99px;
+  background: var(--c-surface2);
+  border: 1px solid var(--c-border);
+  position: relative;
+  transition: background var(--anim-fast), border-color var(--anim-fast);
+  flex-shrink: 0;
+}
+.toggle-thumb {
+  position: absolute;
+  top: 2px; left: 2px;
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  background: var(--c-muted);
+  transition: transform var(--anim-fast), background var(--anim-fast);
+}
+.toggle-checkbox:checked + .toggle-track {
+  background: var(--c-accent-glow);
+  border-color: var(--c-accent);
+}
+.toggle-checkbox:checked + .toggle-track .toggle-thumb {
+  transform: translateX(16px);
+  background: var(--c-accent);
+}
+.toggle-text {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--c-muted);
+}
+.hidden-count {
+  font-size: 0.62rem;
+  color: var(--c-muted);
+  opacity: 0.6;
+  font-family: var(--font-mono);
+}
+
+.reset-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--c-muted);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color var(--anim-fast), color var(--anim-fast);
+  align-self: flex-start;
+}
+.reset-btn:hover { border-color: var(--c-accent); color: var(--c-accent); }
+
+.filter-result { font-size: 0.65rem; font-weight: 700; color: var(--c-accent); letter-spacing: 0.04em; }
+.filter-result-total { color: var(--c-muted); font-weight: 500; }
+
+/* ── 업적 목록 ── */
+.ach-list-wrap { min-width: 0; }
+.ach-list { display: flex; flex-direction: column; gap: 0.4rem; }
+
+/* ── 업적 카드 ── */
+.ach-card {
+  display: flex;
+  align-items: stretch;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+  background: var(--c-surface);
+  overflow: hidden;
+  transition: border-color var(--anim-fast);
+  content-visibility: auto;
+  contain-intrinsic-size: 0 72px;
+}
+.ach-card:hover { border-color: var(--c-border-hi); }
+.ach-card--hidden { opacity: 0.6; }
+
+/* 난이도 왼쪽 바 */
+.ach-rarity-bar {
+  width: 3px;
+  flex-shrink: 0;
+}
+.ach-rarity-bar--high { background: #fbbf24; }
+.ach-rarity-bar--mid  { background: #a78bfa; }
+.ach-rarity-bar--low  { background: #60a5fa; }
+
+/* 내용 */
+.ach-content {
+  flex: 1;
+  min-width: 0;
+  padding: 0.65rem 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+.ach-top {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+.ach-series-tag {
+  font-size: 0.58rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  opacity: 0.7;
+}
+.ach-hidden-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.55rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  border: 1px solid var(--c-border);
+  border-radius: 4px;
+  padding: 0.1em 0.4em;
+}
+.ach-title-text {
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.3;
+  word-break: keep-all;
+  color: var(--foreground-color);
+}
+.ach-desc {
+  font-size: 0.72rem;
+  color: var(--c-muted);
+  line-height: 1.5;
+  word-break: keep-all;
+}
+
+/* 포인트 */
+.ach-points {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 1rem;
+  border-left: 1px solid var(--c-border);
+  min-width: 56px;
+  gap: 0.1rem;
+}
+.ach-points-val {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 900;
+  line-height: 1;
+}
+.ach-points-label {
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+.ach-points--high .ach-points-val { color: #fbbf24; }
+.ach-points--mid  .ach-points-val { color: #a78bfa; }
+.ach-points--low  .ach-points-val { color: #60a5fa; }
+
+/* 검색 결과 없음 */
+.filter-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 5rem 2rem;
+  color: var(--c-muted);
+  text-align: center;
+  border: 1px dashed var(--c-border);
+  border-radius: var(--radius-lg);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.filter-empty svg { opacity: 0.3; }
+.hidden { display: none !important; }
+
+h1, p { word-break: keep-all; }
+</style>

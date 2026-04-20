@@ -1,0 +1,582 @@
+{
+  "MaxHP": {
+    "type": "MaxHP",
+    "name": "生命值",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": false,
+    "order": 1,
+    "icon": "/starrail/assets/icon/character/IconMaxHP.webp"
+  },
+  "Attack": {
+    "type": "Attack",
+    "name": "攻擊力",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": false,
+    "order": 2,
+    "icon": "/starrail/assets/icon/character/IconAttack.webp"
+  },
+  "Defence": {
+    "type": "Defence",
+    "name": "防禦力",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": false,
+    "order": 3,
+    "icon": "/starrail/assets/icon/character/IconDefence.webp"
+  },
+  "Speed": {
+    "type": "Speed",
+    "name": "速度",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": false,
+    "order": 4,
+    "icon": "/starrail/assets/icon/character/IconSpeed.webp"
+  },
+  "CriticalChance": {
+    "type": "CriticalChance",
+    "name": "暴擊率",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": false,
+    "order": 5,
+    "icon": "/starrail/assets/icon/character/IconCriticalChance.webp"
+  },
+  "CriticalDamage": {
+    "type": "CriticalDamage",
+    "name": "暴擊傷害",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": false,
+    "order": 6,
+    "icon": "/starrail/assets/icon/character/IconCriticalDamage.webp"
+  },
+  "BreakDamageAddedRatio": {
+    "type": "BreakDamageAddedRatio",
+    "name": "擊破特攻",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": false,
+    "order": 7,
+    "icon": "/starrail/assets/icon/character/IconBreakUp.webp"
+  },
+  "BreakDamageAddedRatioBase": {
+    "type": "BreakDamageAddedRatioBase",
+    "name": "擊破特攻",
+    "field": "break_dmg",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 8,
+    "icon": "/starrail/assets/icon/character/IconBreakUp.webp"
+  },
+  "HealRatio": {
+    "type": "HealRatio",
+    "name": "治療量加成",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": true,
+    "order": 9,
+    "icon": "/starrail/assets/icon/character/IconHealRatio.webp"
+  },
+  "MaxSP": {
+    "type": "MaxSP",
+    "name": "能量上限",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": false,
+    "order": 10,
+    "icon": "/starrail/assets/icon/character/IconEnergyLimit.webp"
+  },
+  "SpecialMaxSP": {
+    "type": "SpecialMaxSP",
+    "name": "",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": false,
+    "order": 11,
+    "icon": "/starrail/assets/icon/character/IconEnergy_1308.webp"
+  },
+  "SPRatio": {
+    "type": "SPRatio",
+    "name": "能量恢復效率",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": true,
+    "order": 12,
+    "icon": "/starrail/assets/icon/character/IconEnergyRecovery.webp"
+  },
+  "StatusProbability": {
+    "type": "StatusProbability",
+    "name": "效果命中",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": true,
+    "order": 13,
+    "icon": "/starrail/assets/icon/character/IconStatusProbability.webp"
+  },
+  "StatusResistance": {
+    "type": "StatusResistance",
+    "name": "效果抗性",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": true,
+    "order": 14,
+    "icon": "/starrail/assets/icon/character/IconStatusResistance.webp"
+  },
+  "CriticalChanceBase": {
+    "type": "CriticalChanceBase",
+    "name": "暴擊率",
+    "field": "crit_rate",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 15,
+    "icon": "/starrail/assets/icon/character/IconCriticalChance.webp"
+  },
+  "CriticalDamageBase": {
+    "type": "CriticalDamageBase",
+    "name": "暴擊傷害",
+    "field": "crit_dmg",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 16,
+    "icon": "/starrail/assets/icon/character/IconCriticalDamage.webp"
+  },
+  "HealRatioBase": {
+    "type": "HealRatioBase",
+    "name": "治療量加成",
+    "field": "heal_rate",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 17,
+    "icon": "/starrail/assets/icon/character/IconHealRatio.webp"
+  },
+  "StanceBreakAddedRatio": {
+    "type": "StanceBreakAddedRatio",
+    "name": "",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": false,
+    "order": 18,
+    "icon": null
+  },
+  "SPRatioBase": {
+    "type": "SPRatioBase",
+    "name": "能量恢復效率",
+    "field": "sp_rate",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 19,
+    "icon": "/starrail/assets/icon/character/IconEnergyRecovery.webp"
+  },
+  "StatusProbabilityBase": {
+    "type": "StatusProbabilityBase",
+    "name": "效果命中",
+    "field": "effect_hit",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 20,
+    "icon": "/starrail/assets/icon/character/IconStatusProbability.webp"
+  },
+  "StatusResistanceBase": {
+    "type": "StatusResistanceBase",
+    "name": "效果抗性",
+    "field": "effect_res",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 21,
+    "icon": "/starrail/assets/icon/character/IconStatusResistance.webp"
+  },
+  "ElationDamageAddedRatio": {
+    "type": "ElationDamageAddedRatio",
+    "name": "歡愉度",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": false,
+    "order": 22,
+    "icon": "/starrail/assets/icon/character/IconJoy.webp"
+  },
+  "ElationDamageAddedRatioBase": {
+    "type": "ElationDamageAddedRatioBase",
+    "name": "歡愉度",
+    "field": "elation_dmg",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 23,
+    "icon": "/starrail/assets/icon/character/IconJoy.webp"
+  },
+  "PhysicalAddedRatio": {
+    "type": "PhysicalAddedRatio",
+    "name": "物理屬性傷害提高",
+    "field": "physical_dmg",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 24,
+    "icon": "/starrail/assets/icon/character/IconPhysicalAddedRatio.webp"
+  },
+  "PhysicalResistance": {
+    "type": "PhysicalResistance",
+    "name": "物理屬性抗性提高",
+    "field": "physical_res",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 25,
+    "icon": "/starrail/assets/icon/character/IconPhysicalResistanceDelta.webp"
+  },
+  "FireAddedRatio": {
+    "type": "FireAddedRatio",
+    "name": "火屬性傷害提高",
+    "field": "fire_dmg",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 26,
+    "icon": "/starrail/assets/icon/character/IconFireAddedRatio.webp"
+  },
+  "FireResistance": {
+    "type": "FireResistance",
+    "name": "火屬性抗性提高",
+    "field": "fire_res",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 27,
+    "icon": "/starrail/assets/icon/character/IconFireResistanceDelta.webp"
+  },
+  "IceAddedRatio": {
+    "type": "IceAddedRatio",
+    "name": "冰屬性傷害提高",
+    "field": "ice_dmg",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 28,
+    "icon": "/starrail/assets/icon/character/IconIceAddedRatio.webp"
+  },
+  "IceResistance": {
+    "type": "IceResistance",
+    "name": "冰屬性抗性提高",
+    "field": "ice_res",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 29,
+    "icon": "/starrail/assets/icon/character/IconIceResistanceDelta.webp"
+  },
+  "ThunderAddedRatio": {
+    "type": "ThunderAddedRatio",
+    "name": "雷屬性傷害提高",
+    "field": "thunder_dmg",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 30,
+    "icon": "/starrail/assets/icon/character/IconThunderAddedRatio.webp"
+  },
+  "ThunderResistance": {
+    "type": "ThunderResistance",
+    "name": "雷屬性抗性提高",
+    "field": "thunder_res",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 31,
+    "icon": "/starrail/assets/icon/character/IconThunderResistanceDelta.webp"
+  },
+  "WindAddedRatio": {
+    "type": "WindAddedRatio",
+    "name": "風屬性傷害提高",
+    "field": "wind_dmg",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 32,
+    "icon": "/starrail/assets/icon/character/IconWindAddedRatio.webp"
+  },
+  "WindResistance": {
+    "type": "WindResistance",
+    "name": "風屬性抗性提高",
+    "field": "wind_res",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 33,
+    "icon": "/starrail/assets/icon/character/IconWindResistanceDelta.webp"
+  },
+  "QuantumAddedRatio": {
+    "type": "QuantumAddedRatio",
+    "name": "量子屬性傷害提高",
+    "field": "quantum_dmg",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 34,
+    "icon": "/starrail/assets/icon/character/IconQuantumAddedRatio.webp"
+  },
+  "QuantumResistance": {
+    "type": "QuantumResistance",
+    "name": "量子屬性抗性提高",
+    "field": "quantum_res",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 35,
+    "icon": "/starrail/assets/icon/character/IconQuantumResistanceDelta.webp"
+  },
+  "ImaginaryAddedRatio": {
+    "type": "ImaginaryAddedRatio",
+    "name": "虛數屬性傷害提高",
+    "field": "imaginary_dmg",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 36,
+    "icon": "/starrail/assets/icon/character/IconImaginaryAddedRatio.webp"
+  },
+  "ImaginaryResistance": {
+    "type": "ImaginaryResistance",
+    "name": "虛數屬性抗性提高",
+    "field": "imaginary_res",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 37,
+    "icon": "/starrail/assets/icon/character/IconImaginaryResistanceDelta.webp"
+  },
+  "BaseHP": {
+    "type": "BaseHP",
+    "name": "基礎生命值",
+    "field": "hp",
+    "affix": true,
+    "ratio": false,
+    "percent": false,
+    "order": 38,
+    "icon": "/starrail/assets/icon/character/IconMaxHP.webp"
+  },
+  "HPDelta": {
+    "type": "HPDelta",
+    "name": "生命值",
+    "field": "hp",
+    "affix": true,
+    "ratio": false,
+    "percent": false,
+    "order": 39,
+    "icon": "/starrail/assets/icon/character/IconMaxHP.webp"
+  },
+  "HPAddedRatio": {
+    "type": "HPAddedRatio",
+    "name": "生命值",
+    "field": "hp",
+    "affix": true,
+    "ratio": true,
+    "percent": true,
+    "order": 40,
+    "icon": "/starrail/assets/icon/character/IconMaxHP.webp"
+  },
+  "BaseAttack": {
+    "type": "BaseAttack",
+    "name": "基礎攻擊力",
+    "field": "atk",
+    "affix": true,
+    "ratio": false,
+    "percent": false,
+    "order": 41,
+    "icon": "/starrail/assets/icon/character/IconAttack.webp"
+  },
+  "AttackDelta": {
+    "type": "AttackDelta",
+    "name": "攻擊力",
+    "field": "atk",
+    "affix": true,
+    "ratio": false,
+    "percent": false,
+    "order": 42,
+    "icon": "/starrail/assets/icon/character/IconAttack.webp"
+  },
+  "AttackAddedRatio": {
+    "type": "AttackAddedRatio",
+    "name": "攻擊力",
+    "field": "atk",
+    "affix": true,
+    "ratio": true,
+    "percent": true,
+    "order": 43,
+    "icon": "/starrail/assets/icon/character/IconAttack.webp"
+  },
+  "BaseDefence": {
+    "type": "BaseDefence",
+    "name": "基礎防禦力",
+    "field": "def",
+    "affix": true,
+    "ratio": false,
+    "percent": false,
+    "order": 44,
+    "icon": "/starrail/assets/icon/character/IconDefence.webp"
+  },
+  "DefenceDelta": {
+    "type": "DefenceDelta",
+    "name": "防禦力",
+    "field": "def",
+    "affix": true,
+    "ratio": false,
+    "percent": false,
+    "order": 45,
+    "icon": "/starrail/assets/icon/character/IconDefence.webp"
+  },
+  "DefenceAddedRatio": {
+    "type": "DefenceAddedRatio",
+    "name": "防禦力",
+    "field": "def",
+    "affix": true,
+    "ratio": true,
+    "percent": true,
+    "order": 46,
+    "icon": "/starrail/assets/icon/character/IconDefence.webp"
+  },
+  "BaseSpeed": {
+    "type": "BaseSpeed",
+    "name": "速度",
+    "field": "spd",
+    "affix": true,
+    "ratio": false,
+    "percent": false,
+    "order": 47,
+    "icon": "/starrail/assets/icon/character/IconSpeed.webp"
+  },
+  "HealTakenRatio": {
+    "type": "HealTakenRatio",
+    "name": "受治療量提高",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": true,
+    "order": 48,
+    "icon": "/starrail/assets/icon/character/IconHealRatio.webp"
+  },
+  "PhysicalResistanceDelta": {
+    "type": "PhysicalResistanceDelta",
+    "name": "物理屬性抗性提高",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": true,
+    "order": 49,
+    "icon": "/starrail/assets/icon/character/IconPhysicalResistanceDelta.webp"
+  },
+  "FireResistanceDelta": {
+    "type": "FireResistanceDelta",
+    "name": "火屬性抗性提高",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": true,
+    "order": 50,
+    "icon": "/starrail/assets/icon/character/IconFireResistanceDelta.webp"
+  },
+  "IceResistanceDelta": {
+    "type": "IceResistanceDelta",
+    "name": "冰屬性抗性提高",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": true,
+    "order": 51,
+    "icon": "/starrail/assets/icon/character/IconIceResistanceDelta.webp"
+  },
+  "ThunderResistanceDelta": {
+    "type": "ThunderResistanceDelta",
+    "name": "雷屬性抗性提高",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": true,
+    "order": 52,
+    "icon": "/starrail/assets/icon/character/IconThunderResistanceDelta.webp"
+  },
+  "WindResistanceDelta": {
+    "type": "WindResistanceDelta",
+    "name": "風屬性抗性提高",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": true,
+    "order": 53,
+    "icon": "/starrail/assets/icon/character/IconWindResistanceDelta.webp"
+  },
+  "QuantumResistanceDelta": {
+    "type": "QuantumResistanceDelta",
+    "name": "量子屬性抗性提高",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": true,
+    "order": 54,
+    "icon": "/starrail/assets/icon/character/IconQuantumResistanceDelta.webp"
+  },
+  "ImaginaryResistanceDelta": {
+    "type": "ImaginaryResistanceDelta",
+    "name": "虛數屬性抗性提高",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": true,
+    "order": 55,
+    "icon": "/starrail/assets/icon/character/IconImaginaryResistanceDelta.webp"
+  },
+  "SpeedDelta": {
+    "type": "SpeedDelta",
+    "name": "速度",
+    "field": "spd",
+    "affix": true,
+    "ratio": false,
+    "percent": false,
+    "order": 57,
+    "icon": "/starrail/assets/icon/character/IconSpeed.webp"
+  },
+  "SpeedAddedRatio": {
+    "type": "SpeedAddedRatio",
+    "name": "速度",
+    "field": "spd",
+    "affix": true,
+    "ratio": true,
+    "percent": true,
+    "order": 100,
+    "icon": "/starrail/assets/icon/character/IconSpeed.webp"
+  },
+  "AllDamageTypeAddedRatio": {
+    "type": "AllDamageTypeAddedRatio",
+    "name": "傷害提高",
+    "field": "all_dmg",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 101,
+    "icon": "/starrail/assets/icon/character/IconAttack.webp"
+  }
+}

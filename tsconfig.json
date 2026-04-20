@@ -2,7 +2,14 @@
   "extends": "astro/tsconfigs/strict",
   "compilerOptions": {
     "types": ["@cloudflare/workers-types"],
+    // 1. 에러 메시지 가이드에 따라 6.0으로 지정해서 경고를 끕니다.
+    "ignoreDeprecations": "6.0",
     "baseUrl": ".",
+    
+    // 2. JSON 모듈 인식을 위한 필수 설정
+    "resolveJsonModule": true,
+    "allowJs": true,
+
     "paths": {
       "@components/*": ["src/components/*"],
       "@layouts/*": ["src/layouts/*"],

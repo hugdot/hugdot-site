@@ -1,0 +1,403 @@
+---
+// src/components/starrail/LightConesTab.astro
+interface Props {
+  char: any
+  lang: string
+  allData: Record<string, any>
+  labels: any
+}
+
+const { char, lang, allData, labels } = Astro.props
+
+const baseDir = `/src/data/starrail/${lang}`
+
+const lcModule       = allData[`${baseDir}/light_cones.json`] as any
+const lcRanksModule  = allData[`${baseDir}/light_cone_ranks.json`] as any
+const lcPromoModule  = allData[`${baseDir}/light_cone_promotions.json`] as any
+
+const lcData:      Record<string, any> = lcModule?.default      ?? lcModule      ?? {}
+const lcRanksData: Record<string, any> = lcRanksModule?.default ?? lcRanksModule ?? {}
+const lcPromoData: Record<string, any> = lcPromoModule?.default ?? lcPromoModule ?? {}
+
+// 캐릭터 Path와 동일한 광추만 필터링 + 희귀도 내림차순 정렬
+const matchingCones = Object.values(lcData)
+  .filter((lc: any) => lc.path === char?.path)
+  .sort((a: any, b: any) => b.rarity - a.rarity)
+
+const toAssetUrl = (rel: string) => {
+  if (!rel) return ''
+  
+  // 1. 경로 정리 (슬래시 및 중복 제거)
+  let cleanPath = rel.replace(/^\//, '').replace(/^starrail\/assets\//, '')
+
+  // 2. 파일명 추출
+  const fileName = cleanPath.split('/').pop() || ''
+
+  // 3. 스탯 아이콘 교정 (Icon...webp)
+  if (fileName.includes('Icon')) {
+    cleanPath = `icon/property/${fileName}`
+  } 
+  // 4. 유물 vs 캐릭터 아이콘 구분 교정
+  else if (cleanPath.includes('icon/character/')) {
+    // 파일명이 숫자 3자리(유물 세트)인 경우만 relic 폴더로 변경
+    // 카프카(1005)처럼 4자리인 경우는 캐릭터 폴더에 그대로 둡니다.
+    const isRelicSet = /^\d{3}\.webp$/.test(fileName);
+    if (isRelicSet) {
+      cleanPath = cleanPath.replace('icon/character/', 'icon/relic/')
+    }
+  }
+
+  return `/starrail/assets/${cleanPath}`
+}
+
+const cleanText = (text: string) => {
+  if (!text) return ''
+  return text
+    .replace(/\{RUBY_B#([^}]+)\}([^\{]+)\{RUBY_E\#\}/g, '$1')
+    .replace(/\{F#([^}]*)\}\{M#([^}]*)\}/g, '$2')
+    .replace(/\{NICKNAME\}/g, 'Trailblazer')
+    .trim()
+}
+
+const wrapHl = (val: string) => `<span class="hl-num">${val}</span>`
+
+const formatLcDesc = (desc: string, paramRow: number[] | undefined): string => {
+  const row = paramRow ?? []
+  if (!desc) return ''
+  let t = desc
+    .replace(/\{RUBY_B#([^}]+)\}([^\{]+)\{RUBY_E\#\}/g, '$1')
+    .replace(/\{F#([^}]*)\}\{M#([^}]*)\}/g, '$2')
+    .replace(/\{NICKNAME\}/g, 'Trailblazer')
+  t = t.replace(/#(\d+)\[(i|f1|f)\](%?)/g, (_m, nStr, fmt, pct) => {
+    const idx = parseInt(nStr, 10) - 1
+    const v = row[idx]
+    if (v === undefined || Number.isNaN(v)) return '…'
+    let res = ''
+    if (pct) {
+      if (fmt === 'f1') { const x = v * 100; const r = Math.round(x); res = (Math.abs(x - r) < 0.06 ? String(r) : x.toFixed(1)) + '%' }
+      else res = Math.round(v * 100) + '%'
+    } else {
+      if (fmt === 'f1' || fmt === 'f') {
+        const x = v > 0 && v <= 1 ? v * 100 : v
+        const r = Math.round(x)
+        res = Math.abs(x - r) < 0.01 ? String(r) : (Math.round(x * 10) / 10).toString()
+      } else {
+        const asInt = Math.abs(v - Math.round(v)) < 1e-9
+        res = asInt || Math.abs(v) > 1 ? String(Math.round(v)) : String(Math.round(v * 100))
+      }
+    }
+    return wrapHl(res)
+  })
+  return t.trim()
+}
+
+// 광추 스탯 계산: values[승급단계].stat.base + stat.step * (level - 1)
+// 광추는 최대 레벨 80, 승급 6단계 → 마지막 values 사용
+const getLcMaxStats = (lcId: string) => {
+  const promo = lcPromoData[lcId]
+  if (!promo?.values?.length) return null
+  const last = promo.values[promo.values.length - 1]
+  // 최대 레벨은 희귀도별로 다름 (5★→80, 4★→80, 3★→40)
+  // 모두 마지막 승급 단계 기준으로 최대치 표시
+  return {
+    hp:  Math.round(last.hp.base  + last.hp.step  * 79),
+    atk: Math.round(last.atk.base + last.atk.step * 79),
+    def: Math.round(last.def.base + last.def.step * 79),
+  }
+}
+
+// 광추별 interactive JSON 준비 (클라이언트 슬라이더용)
+const conesJson = JSON.stringify(
+  matchingCones.map((lc: any) => {
+    const rank = lcRanksData[lc.id]
+    return {
+      id: lc.id,
+      desc: rank?.desc ?? '',
+      params: rank?.params ?? [],
+      maxSuperimpose: rank?.params?.length ?? 5,
+    }
+  })
+)
+---
+
+<div class="lc-tab">
+  {matchingCones.length === 0 ? (
+    <p class="empty-msg">No light cones found for this path.</p>
+  ) : (
+    <div class="lc-list">
+      {matchingCones.map((lc: any, cIdx: number) => {
+        const rank = lcRanksData[lc.id]
+        const stats = getLcMaxStats(lc.id)
+        const maxSI = rank?.params?.length ?? 5
+        const initDesc = formatLcDesc(rank?.desc ?? '', rank?.params?.[maxSI - 1])
+
+        return (
+          <div class="lc-card" data-lc-idx={cIdx}>
+            {/* 희귀도 배지 */}
+            <div class="lc-rarity-badge" data-rarity={lc.rarity}>
+              {'★'.repeat(lc.rarity)}
+            </div>
+
+            <div class="lc-card-inner">
+              {/* 이미지 */}
+              <div class="lc-img-wrap">
+                <img
+                  src={toAssetUrl(lc.preview)}
+                  alt={lc.name}
+                  class="lc-img"
+                  loading="lazy"
+                  decoding="async"
+                  width="120"
+                  height="160"
+                />
+              </div>
+
+              {/* 정보 */}
+              <div class="lc-info">
+                <div class="lc-name-row">
+                  <h3 class="lc-name">{lc.name}</h3>
+                </div>
+
+                {/* 최대 스탯 */}
+                {stats && (
+                  <div class="lc-stats-row">
+                    <span class="lc-stat"><span class="lc-stat-label">HP</span><span class="lc-stat-val" style="color:#f87171">{stats.hp}</span></span>
+                    <span class="lc-stat"><span class="lc-stat-label">ATK</span><span class="lc-stat-val" style="color:#fbbf24">{stats.atk}</span></span>
+                    <span class="lc-stat"><span class="lc-stat-label">DEF</span><span class="lc-stat-val" style="color:#60a5fa">{stats.def}</span></span>
+                  </div>
+                )}
+
+                {/* 중첩 슬라이더 */}
+                {rank && (
+                  <label class="si-control" for={`si-range-${cIdx}`}>
+                    <span class="si-label">중첩</span>
+                    <span class="si-val" id={`si-val-${cIdx}`}>{maxSI}</span>
+                    <input
+                      id={`si-range-${cIdx}`}
+                      type="range"
+                      min="1"
+                      max={maxSI}
+                      value={maxSI}
+                      class="range-input lc-si-range"
+                      data-lc-idx={cIdx}
+                    />
+                  </label>
+                )}
+
+                {/* 패시브 스킬명 */}
+                {rank?.skill && (
+                  <p class="lc-skill-name">{rank.skill}</p>
+                )}
+
+                {/* 패시브 설명 */}
+                {rank?.desc && (
+                  <p
+                    class="lc-desc"
+                    id={`lc-desc-${cIdx}`}
+                    set:html={initDesc}
+                  />
+                )}
+              </div>
+            </div>
+          </div>
+        )
+      })}
+    </div>
+  )}
+</div>
+
+<script is:inline define:vars={{ conesJson }}>
+;(function () {
+  var cones = []
+  try { cones = conesJson ? JSON.parse(conesJson) : [] } catch (e) {}
+
+  function hl(val) {
+    return '<span class="hl-num">' + val + '</span>'
+  }
+
+  function fmtDesc(desc, row) {
+    row = row || []
+    if (!desc) return ''
+    var t = desc
+      .replace(/\{RUBY_B#([^}]+)\}([^{]+)\{RUBY_E#\}/g, '$1')
+      .replace(/\{F#([^}]*)\}\{M#([^}]*)\}/g, '$2')
+      .replace(/\{NICKNAME\}/g, 'Trailblazer')
+    t = t.replace(/#(\d+)\[(i|f1|f)\](%?)/g, function (_m, nStr, fmt, pct) {
+      var idx = parseInt(nStr, 10) - 1
+      var v = row[idx]
+      if (v === undefined || isNaN(v)) return '…'
+      var res = ''
+      if (pct) {
+        if (fmt === 'f1') { var x = v * 100; var r = Math.round(x); res = (Math.abs(x - r) < 0.06 ? String(r) : x.toFixed(1)) + '%' }
+        else res = Math.round(v * 100) + '%'
+      } else {
+        if (fmt === 'f1' || fmt === 'f') {
+          var x2 = v > 0 && v <= 1 ? v * 100 : v; var r2 = Math.round(x2)
+          res = Math.abs(x2 - r2) < 0.01 ? String(r2) : (Math.round(x2 * 10) / 10).toString()
+        } else {
+          res = (Math.abs(v - Math.round(v)) < 1e-9 || Math.abs(v) > 1) ? String(Math.round(v)) : String(Math.round(v * 100))
+        }
+      }
+      return hl(res)
+    })
+    return t.trim()
+  }
+
+  function init() {
+    document.querySelectorAll('.lc-si-range').forEach(function (input) {
+      var idx = parseInt(input.getAttribute('data-lc-idx'), 10)
+      var cone = cones[idx]
+      if (!cone) return
+
+      input.addEventListener('input', function () {
+        var si = parseInt(input.value, 10) || 1
+        var valEl = document.getElementById('si-val-' + idx)
+        if (valEl) valEl.textContent = String(si)
+        var paramIdx = Math.max(0, Math.min(si - 1, (cone.params.length || 1) - 1))
+        var row = cone.params[paramIdx] || []
+        var descEl = document.getElementById('lc-desc-' + idx)
+        if (descEl) descEl.innerHTML = fmtDesc(cone.desc, row)
+      }, { passive: true })
+    })
+  }
+  document.addEventListener('DOMContentLoaded', init)
+  document.addEventListener('astro:page-load', init)
+})()
+</script>
+
+<style>
+.lc-tab { width: 100%; }
+.empty-msg { color: var(--c-muted); font-size: 0.8rem; }
+
+.lc-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.lc-card {
+  position: relative;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-lg);
+  background: var(--c-surface);
+  overflow: hidden;
+  transition: border-color var(--anim-fast);
+  content-visibility: auto;
+  contain-intrinsic-size: 0 180px;
+}
+.lc-card:hover { border-color: var(--c-border-hi); }
+
+.lc-rarity-badge {
+  position: absolute;
+  top: 0.6rem; right: 0.8rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.05em;
+  z-index: 2;
+}
+.lc-rarity-badge[data-rarity="5"] { color: #f59e0b; text-shadow: 0 0 8px rgba(245,158,11,0.5); }
+.lc-rarity-badge[data-rarity="4"] { color: #a78bfa; text-shadow: 0 0 8px rgba(167,139,250,0.5); }
+.lc-rarity-badge[data-rarity="3"] { color: #60a5fa; }
+
+.lc-card-inner {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem 1.1rem;
+}
+
+.lc-img-wrap {
+  flex-shrink: 0;
+  width: 72px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--c-border-hi);
+  background: var(--c-surface2);
+  align-self: flex-start;
+}
+.lc-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.lc-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.lc-name-row { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+.lc-name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  word-break: keep-all;
+}
+
+.lc-stats-row {
+  display: flex;
+  gap: 0.8rem;
+  flex-wrap: wrap;
+}
+.lc-stat {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: var(--c-surface2);
+  border-radius: var(--radius-sm);
+  padding: 0.2rem 0.5rem;
+}
+.lc-stat-label {
+  font-size: 0.6rem;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+.lc-stat-val {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+}
+
+.si-control {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.si-label {
+  font-size: 0.62rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  white-space: nowrap;
+}
+.si-val {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--c-accent);
+  min-width: 1.2ch;
+}
+
+.lc-skill-name {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--c-accent);
+  letter-spacing: 0.03em;
+}
+
+.lc-desc {
+  font-size: 0.78rem;
+  line-height: 1.8;
+  color: var(--c-muted);
+  white-space: pre-line;
+  word-break: keep-all;
+}
+</style>

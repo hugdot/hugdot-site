@@ -1,0 +1,817 @@
+---
+// src/pages/[lang]/starrail/light-cones.astro
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Icon } from 'astro-icon/components'
+import { terminalBaseStat } from '@utils/characterLevelStats'
+
+const allData = import.meta.glob('/src/data/starrail/**/*.json', { eager: true })
+
+export async function getStaticPaths() {
+  const languages = ['kr', 'en', 'jp', 'cn', 'fr', 'de', 'es', 'id', 'pt', 'ru', 'th', 'vi', 'cht']
+  return languages.map((lang) => ({ params: { lang } }))
+}
+
+const { lang } = Astro.params
+
+const cleanText = (text: string) => {
+  if (!text) return ''
+  return text
+    .replace(/\{RUBY_B#([^}]+)\}([^\{]+)\{RUBY_E\#\}/g, '$1')
+    .replace(/\{F#([^}]*)\}\{M#([^}]*)\}/g, '$2')
+    .replace(/\{NICKNAME\}/g, 'Trailblazer')
+    .trim()
+}
+
+const wrapHl = (val: string) => `<span class="hl-num">${val}</span>`
+
+const formatLcDesc = (desc: string, params: number[]) => {
+  if (!desc || !params) return desc || ''
+  let t = cleanText(desc)
+  t = t.replace(/#(\d+)\[(i|f1|f)\](%?)/g, (_, nStr, fmt, pct) => {
+    const idx = parseInt(nStr, 10) - 1
+    const v = params[idx]
+    if (v === undefined || Number.isNaN(v)) return '…'
+    let res = ''
+    if (pct) {
+      if (fmt === 'f1') {
+        const x = v * 100; const r = Math.round(x)
+        res = (Math.abs(x - r) < 0.06 ? String(r) : x.toFixed(1)) + '%'
+      } else res = Math.round(v * 100) + '%'
+    } else {
+      if (fmt === 'f1' || fmt === 'f') {
+        const x = v > 0 && v <= 1 ? v * 100 : v; const r = Math.round(x)
+        res = Math.abs(x - r) < 0.01 ? String(r) : (Math.round(x * 10) / 10).toString()
+      } else res = String(Math.round(v))
+    }
+    return wrapHl(res)
+  })
+  return t
+}
+
+const toAssetUrl = (rel: string) => {
+  if (!rel) return ''
+  let p = rel.replace(/^\//, '').replace(/^starrail\/assets\//, '')
+  if (p.includes('icon/character/')) p = p.replace('icon/character/', 'icon/light_cone/')
+  return `/starrail/assets/${p}`
+}
+
+let lightCones: any[] = []
+let pathsData: Record<string, any> = {}
+
+try {
+  const baseDir = `/src/data/starrail/${lang}`
+  const lcModule    = allData[`${baseDir}/light_cones.json`]            as any
+  const promoModule = allData[`${baseDir}/light_cone_promotions.json`]  as any
+  const rankModule  = allData[`${baseDir}/light_cone_ranks.json`]       as any
+  const pathsModule = allData[`${baseDir}/paths.json`]                  as any
+
+  pathsData       = pathsModule?.default || {}
+  const lcRaw     = lcModule?.default    || {}
+  const promoRaw  = promoModule?.default || {}
+  const rankRaw   = rankModule?.default  || {}
+
+  lightCones = Object.entries(lcRaw)
+    .map(([id, data]: [string, any]) => {
+      const promo    = promoRaw[id]
+      const rank     = rankRaw[id]
+      const maxPromo = promo?.values ? promo.values[promo.values.length - 1] : null
+      return {
+        id,
+        ...data,
+        hp:        maxPromo?.hp  ? terminalBaseStat(maxPromo.hp,  80) : 0,
+        atk:       maxPromo?.atk ? terminalBaseStat(maxPromo.atk, 80) : 0,
+        def:       maxPromo?.def ? terminalBaseStat(maxPromo.def, 80) : 0,
+        skillName: cleanText(rank?.skill || ''),
+        skillDesc: rank ? formatLcDesc(rank.desc, rank.params?.[rank.params.length - 1] ?? rank.params?.[0] ?? []) : '',
+      }
+    })
+    .filter((lc) => lc.name && lc.name.trim() !== '' && !lc.name.includes('{NICKNAME}'))
+    .sort((a, b) => b.rarity - a.rarity || cleanText(a.name).localeCompare(cleanText(b.name)))
+} catch (e) {
+  console.error('Error loading light cones:', e)
+}
+
+const pathOptionsMap = new Map<string, { id: string; title: string; iconUrl: string }>()
+for (const lc of lightCones) {
+  if (!pathOptionsMap.has(lc.path)) {
+    const pRow = pathsData[lc.path]
+    const title   = pRow?.text || pRow?.name || lc.path
+    const iconUrl = pRow?.icon_small
+      ? toAssetUrl(pRow.icon_small)
+      : `/starrail/assets/icon/path/${lc.path}Small.webp`
+    pathOptionsMap.set(lc.path, { id: lc.path, title, iconUrl })
+  }
+}
+const pathOptions = [...pathOptionsMap.values()]
+const totalCount  = lightCones.length
+
+const labels = lang === 'kr'
+  ? {
+      title: '광추',
+      subtitle: '붕괴: 스타레일의 모든 광추',
+      search: '광추 이름 검색…',
+      filterAll: '전체',
+      reset: '초기화',
+      showing: '{v}개 표시',
+      total: '전체 {t}개',
+      noMatch: '조건에 맞는 광추가 없습니다.',
+      filterPath: '운명의 길',
+      filterRarity: '희귀도',
+      passive: '패시브',
+    }
+  : {
+      title: 'Light Cones',
+      subtitle: 'All light cones in Honkai: Star Rail',
+      search: 'Search by name…',
+      filterAll: 'All',
+      reset: 'Reset',
+      showing: '{v} shown',
+      total: '{t} total',
+      noMatch: 'No light cones match your filters.',
+      filterPath: 'Path',
+      filterRarity: 'Rarity',
+      passive: 'Passive',
+    }
+---
+
+<DefaultLayout
+  title={`${labels.title} | Star Rail DB`}
+  description="Honkai: Star Rail light cone list with stats and passive skills."
+>
+  <div class="lc-page">
+
+    <!-- ── 헤더 ── -->
+    <div class="lc-header">
+      <div class="lc-header-inner">
+        <nav class="breadcrumb" aria-label="breadcrumb">
+          <a href={`/${lang}`}>Home</a>
+          <span class="sep" aria-hidden="true">/</span>
+          <a href={`/${lang}/starrail`}>Star Rail</a>
+          <span class="sep" aria-hidden="true">/</span>
+          <span class="current">{labels.title}</span>
+        </nav>
+        <div class="lc-title-row">
+          <div>
+            <h1 class="lc-title">{labels.title}</h1>
+            <p class="lc-subtitle">{labels.subtitle}</p>
+          </div>
+          <p class="lc-count-badge" id="lc-count-badge">{totalCount}</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="lc-body">
+
+      <!-- ── 필터 사이드바 ── -->
+      <aside class="filter-panel" aria-label="Filters">
+
+        <!-- 검색 -->
+        <div class="filter-group">
+          <div class="search-wrap">
+            <Icon name="lucide:search" size="0.85rem" class="search-icon" />
+            <input
+              type="search"
+              id="lcSearch"
+              placeholder={labels.search}
+              autocomplete="off"
+              class="search-input"
+            />
+          </div>
+        </div>
+
+        <!-- 희귀도 -->
+        <div class="filter-group">
+          <p class="filter-label">{labels.filterRarity}</p>
+          <div class="filter-chips">
+            <button class="fchip fchip--active" data-rarity-filter="all" aria-pressed="true">
+              {labels.filterAll}
+            </button>
+            <button class="fchip" data-rarity-filter="5" aria-pressed="false">
+              <span class="rarity-star">5★</span>
+            </button>
+            <button class="fchip" data-rarity-filter="4" aria-pressed="false">
+              <span class="rarity-star rarity-star--4">4★</span>
+            </button>
+            <button class="fchip" data-rarity-filter="3" aria-pressed="false">
+              <span class="rarity-star rarity-star--3">3★</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 운명의 길 -->
+        {pathOptions.length > 0 && (
+          <div class="filter-group">
+            <p class="filter-label">{labels.filterPath}</p>
+            <div class="filter-icons">
+              <button class="ficon-btn ficon-btn--active" data-path-filter="" aria-pressed="true" aria-label={labels.filterAll}>
+                <span class="ficon-all">{labels.filterAll}</span>
+              </button>
+              {pathOptions.map(p => (
+                <button
+                  class="ficon-btn"
+                  data-path-filter={p.id}
+                  aria-pressed="false"
+                  aria-label={p.title}
+                  title={p.title}
+                >
+                  <img src={p.iconUrl} alt={p.title} width="22" height="22" loading="lazy" class="path-filter-icon" />
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <!-- 초기화 -->
+        <button class="reset-btn" id="lc-filter-reset" type="button">
+          <Icon name="lucide:rotate-ccw" size="0.75rem" />
+          {labels.reset}
+        </button>
+
+        <!-- 결과 수 -->
+        <p class="filter-result" id="lc-count-line" aria-live="polite">
+          {labels.showing.replace('{v}', String(totalCount))}
+          <span class="filter-result-total">· {labels.total.replace('{t}', String(totalCount))}</span>
+        </p>
+
+      </aside>
+
+      <!-- ── 광추 목록 ── -->
+      <div class="lc-list-wrap">
+        <div id="lc-container" class="lc-list">
+          {lightCones.map((lc) => {
+            const pRow     = pathsData[lc.path]
+            const pathIcon = pRow?.icon_small
+              ? toAssetUrl(pRow.icon_small)
+              : `/starrail/assets/icon/path/${lc.path}Small.webp`
+            const pathTitle = pRow?.text || pRow?.name || lc.path
+
+            return (
+              <div
+                class="lc-card"
+                data-lc-card
+                data-name={cleanText(lc.name).toLowerCase()}
+                data-rarity={String(lc.rarity)}
+                data-path={lc.path}
+              >
+                <!-- 이미지 컬럼 -->
+                <div class="lc-img-col">
+                  <div class="lc-img-wrap" data-rarity={lc.rarity}>
+                    <img
+                      src={toAssetUrl(lc.icon)}
+                      alt={cleanText(lc.name)}
+                      class="lc-img"
+                      loading="lazy"
+                      decoding="async"
+                      width="96"
+                      height="128"
+                    />
+                    <span class="lc-rarity-badge" data-rarity={lc.rarity}>
+                      {lc.rarity}★
+                    </span>
+                  </div>
+
+                  <!-- 경로 칩 -->
+                  <div class="lc-path-chip">
+                    <img src={pathIcon} alt={pathTitle} width="14" height="14" loading="lazy" class="lc-path-icon" />
+                    <span class="lc-path-label">{pathTitle}</span>
+                  </div>
+                </div>
+
+                <!-- 정보 컬럼 -->
+                <div class="lc-info-col">
+                  <!-- 이름 + 스탯 -->
+                  <div class="lc-top">
+                    <h2 class="lc-name">{cleanText(lc.name)}</h2>
+                    <div class="lc-stats">
+                      <div class="lc-stat">
+                        <span class="lc-stat-label">HP</span>
+                        <span class="lc-stat-val" style="color:#f87171">{Math.floor(lc.hp)}</span>
+                      </div>
+                      <div class="lc-stat-divider"></div>
+                      <div class="lc-stat">
+                        <span class="lc-stat-label">ATK</span>
+                        <span class="lc-stat-val" style="color:#fbbf24">{Math.floor(lc.atk)}</span>
+                      </div>
+                      <div class="lc-stat-divider"></div>
+                      <div class="lc-stat">
+                        <span class="lc-stat-label">DEF</span>
+                        <span class="lc-stat-val" style="color:#60a5fa">{Math.floor(lc.def)}</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- 패시브 -->
+                  {lc.skillDesc && (
+                    <div class="lc-passive">
+                      <div class="lc-passive-header">
+                        <div class="lc-passive-bar"></div>
+                        <span class="lc-passive-skill">{lc.skillName || labels.passive}</span>
+                      </div>
+                      <p class="lc-passive-desc" set:html={lc.skillDesc} />
+                    </div>
+                  )}
+                </div>
+              </div>
+            )
+          })}
+        </div>
+
+        <!-- 검색 결과 없음 -->
+        <div id="lc-filter-empty" class="filter-empty hidden" role="status">
+          <Icon name="lucide:search-x" size="2.5rem" />
+          <p>{labels.noMatch}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script is:inline define:vars={{ labelShowing: labels.showing, labelTotal: labels.total, totalCount }}>
+  ;(function () {
+    function init() {
+      var cards      = Array.prototype.slice.call(document.querySelectorAll('[data-lc-card]'))
+      var search     = document.getElementById('lcSearch')
+      var countLine  = document.getElementById('lc-count-line')
+      var countBadge = document.getElementById('lc-count-badge')
+      var empty      = document.getElementById('lc-filter-empty')
+      var resetBtn   = document.getElementById('lc-filter-reset')
+      var rarityBtns = Array.prototype.slice.call(document.querySelectorAll('[data-rarity-filter]'))
+      var pathBtns   = Array.prototype.slice.call(document.querySelectorAll('[data-path-filter]'))
+
+      var activeRarity = 'all'
+      var activePath   = ''
+
+      function updateRarity() {
+        rarityBtns.forEach(function (btn) {
+          var v = btn.getAttribute('data-rarity-filter') || 'all'
+          var on = v === activeRarity
+          btn.setAttribute('aria-pressed', on ? 'true' : 'false')
+          btn.classList.toggle('fchip--active', on)
+        })
+      }
+      function updatePath() {
+        pathBtns.forEach(function (btn) {
+          var v = btn.getAttribute('data-path-filter') || ''
+          var on = v === activePath
+          btn.setAttribute('aria-pressed', on ? 'true' : 'false')
+          btn.classList.toggle('ficon-btn--active', on)
+        })
+      }
+
+      function apply() {
+        var q = search ? search.value.trim().toLowerCase() : ''
+        var visible = 0
+        cards.forEach(function (card) {
+          var name = card.getAttribute('data-name') || ''
+          var r    = card.getAttribute('data-rarity') || ''
+          var p    = card.getAttribute('data-path') || ''
+          var show =
+            (activeRarity === 'all' || r === activeRarity) &&
+            (!activePath || p === activePath) &&
+            (!q || name.indexOf(q) !== -1)
+          card.classList.toggle('hidden', !show)
+          if (show) visible++
+        })
+        var showStr = labelShowing.replace('{v}', String(visible))
+        var totStr  = labelTotal.replace('{t}', String(totalCount))
+        if (countLine)  countLine.innerHTML  = showStr + ' <span class="filter-result-total">· ' + totStr + '</span>'
+        if (countBadge) countBadge.textContent = String(visible)
+        if (empty) empty.classList.toggle('hidden', visible !== 0)
+      }
+
+      rarityBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          activeRarity = btn.getAttribute('data-rarity-filter') || 'all'
+          updateRarity(); apply()
+        }, { passive: true })
+      })
+
+      pathBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var v = btn.getAttribute('data-path-filter') || ''
+          activePath = activePath === v ? '' : v
+          updatePath(); apply()
+        }, { passive: true })
+      })
+
+      if (search) {
+        search.addEventListener('input',  apply, { passive: true })
+        search.addEventListener('search', apply, { passive: true })
+      }
+
+      if (resetBtn) {
+        resetBtn.addEventListener('click', function () {
+          activeRarity = 'all'; activePath = ''
+          if (search) { search.value = ''; search.focus() }
+          updateRarity(); updatePath(); apply()
+        }, { passive: true })
+      }
+
+      apply()
+    }
+    document.addEventListener('DOMContentLoaded', init)
+    document.addEventListener('astro:page-load', init)
+
+  })()
+  </script>
+</DefaultLayout>
+
+<style is:global>
+.hl-num {
+  color: var(--c-accent) !important;
+  font-family: var(--font-mono) !important;
+  font-weight: 700 !important;
+  font-size: 0.95em;
+}
+/* ── 페이지 ── */
+.lc-page {
+  min-height: 100vh;
+  background: var(--c-bg);
+  color: var(--foreground-color);
+  font-family: var(--font-body);
+}
+
+/* ── 헤더 ── */
+.lc-header {
+  border-bottom: 1px solid var(--c-border);
+  background: var(--c-surface);
+  padding: 2rem 0 1.5rem;
+}
+.lc-header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+.breadcrumb a { color: inherit; text-decoration: none; transition: color var(--anim-fast); }
+.breadcrumb a:hover { color: var(--c-accent); }
+.breadcrumb .sep { opacity: 0.4; }
+.breadcrumb .current { color: var(--c-accent); }
+
+.lc-title-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.lc-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.lc-subtitle {
+  margin-top: 0.4rem;
+  font-size: 0.82rem;
+  color: var(--c-muted);
+}
+.lc-count-badge {
+  font-family: var(--font-mono);
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--c-accent);
+  opacity: 0.5;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* ── 바디 ── */
+.lc-body {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .lc-body { grid-template-columns: 1fr; }
+}
+
+/* ── 필터 패널 ── */
+.filter-panel {
+  position: sticky;
+  top: 72px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+}
+@media (max-width: 900px) { .filter-panel { position: static; } }
+
+.filter-group { display: flex; flex-direction: column; gap: 0.6rem; }
+.filter-label {
+  font-size: 0.6rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+
+.search-wrap { position: relative; display: flex; align-items: center; }
+.search-icon { position: absolute; left: 0.7rem; color: var(--c-muted); pointer-events: none; }
+.search-input {
+  width: 100%;
+  padding: 0.5rem 0.75rem 0.5rem 2.1rem;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-sm);
+  background: var(--c-surface2);
+  color: var(--foreground-color);
+  font-size: 0.78rem;
+  font-family: var(--font-body);
+  outline: none;
+  transition: border-color var(--anim-fast);
+}
+.search-input::placeholder { color: var(--c-muted); }
+.search-input:focus { border-color: var(--c-accent); }
+
+.filter-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.fchip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-sm);
+  background: var(--c-surface2);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--c-muted);
+  cursor: pointer;
+  transition: border-color var(--anim-fast), color var(--anim-fast), background var(--anim-fast);
+  min-height: 32px;
+}
+.fchip:hover { border-color: var(--c-border-hi); color: var(--foreground-color); }
+.fchip--active { border-color: var(--c-accent); background: var(--c-accent-glow); color: var(--c-accent); }
+
+.rarity-star       { color: #fbbf24; }
+.rarity-star--4    { color: #a78bfa; }
+.rarity-star--3    { color: #60a5fa; }
+
+.filter-icons { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+.ficon-btn {
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-sm);
+  background: var(--c-surface2);
+  cursor: pointer;
+  transition: border-color var(--anim-fast), background var(--anim-fast);
+  overflow: hidden; padding: 4px;
+}
+.ficon-btn:hover { border-color: var(--c-border-hi); background: var(--c-surface); }
+.ficon-btn--active { border-color: var(--c-accent); background: var(--c-accent-glow); box-shadow: 0 0 0 1px var(--c-accent); }
+.ficon-all { font-size: 0.58rem; font-weight: 900; color: var(--c-muted); letter-spacing: 0.04em; }
+.ficon-btn--active .ficon-all { color: var(--c-accent); }
+.ficon-btn img { width: 100%; height: 100%; object-fit: contain; }
+.path-filter-icon { filter: brightness(0) invert(1); }
+
+.reset-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--c-muted);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color var(--anim-fast), color var(--anim-fast);
+  align-self: flex-start;
+}
+.reset-btn:hover { border-color: var(--c-accent); color: var(--c-accent); }
+
+.filter-result { font-size: 0.65rem; font-weight: 700; color: var(--c-accent); letter-spacing: 0.04em; }
+.filter-result-total { color: var(--c-muted); font-weight: 500; }
+
+/* ── 광추 목록 ── */
+.lc-list-wrap { min-width: 0; }
+.lc-list { display: flex; flex-direction: column; gap: 0.75rem; }
+
+/* ── 광추 카드 ── */
+.lc-card {
+  display: flex;
+  gap: 1rem;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-lg);
+  background: var(--c-surface);
+  padding: 1rem;
+  overflow: hidden;
+  transition: border-color var(--anim-fast);
+  content-visibility: auto;
+  contain-intrinsic-size: 0 160px;
+}
+.lc-card:hover { border-color: var(--c-border-hi); }
+
+/* 이미지 컬럼 */
+.lc-img-col {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.lc-img-wrap {
+  position: relative;
+  width: 72px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--c-border-hi);
+}
+.lc-img-wrap[data-rarity="5"] { background: linear-gradient(160deg, #1a1428, #2a1f3d); }
+.lc-img-wrap[data-rarity="4"] { background: linear-gradient(160deg, #141428, #1f1f3d); }
+.lc-img-wrap[data-rarity="3"] { background: linear-gradient(160deg, #0f1a28, #1a2a3d); }
+
+.lc-img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.lc-rarity-badge {
+  position: absolute;
+  bottom: 3px; right: 3px;
+  font-size: 0.58rem;
+  font-weight: 900;
+  background: rgba(0,0,0,0.6);
+  backdrop-filter: blur(4px);
+  border-radius: 4px;
+  padding: 0.1em 0.3em;
+  letter-spacing: 0.02em;
+}
+.lc-rarity-badge[data-rarity="5"] { color: #fbbf24; }
+.lc-rarity-badge[data-rarity="4"] { color: #a78bfa; }
+.lc-rarity-badge[data-rarity="3"] { color: #60a5fa; }
+
+.lc-path-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  background: var(--c-surface2);
+  border: 1px solid var(--c-border);
+  border-radius: 6px;
+  padding: 0.2rem 0.45rem;
+  width: 100%;
+  justify-content: center;
+}
+.lc-path-icon {
+  width: 12px; height: 12px;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: 0.6;
+  flex-shrink: 0;
+}
+.lc-path-label {
+  font-size: 0.58rem;
+  font-weight: 700;
+  color: var(--c-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 정보 컬럼 */
+.lc-info-col {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.lc-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.lc-name {
+  font-family: var(--font-display);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  line-height: 1.2;
+  word-break: keep-all;
+  flex: 1;
+  min-width: 0;
+}
+
+.lc-stats {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: var(--c-surface2);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-sm);
+  padding: 0.4rem 0.75rem;
+  flex-shrink: 0;
+}
+.lc-stat { display: flex; flex-direction: column; align-items: center; gap: 0.1rem; }
+.lc-stat-label {
+  font-size: 0.58rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+.lc-stat-val {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+.lc-stat-divider {
+  width: 1px; height: 1.5rem;
+  background: var(--c-border-hi);
+}
+
+/* 패시브 */
+.lc-passive {
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+  background: var(--c-surface2);
+  overflow: hidden;
+}
+.lc-passive-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--c-border);
+}
+.lc-passive-bar {
+  width: 3px; height: 0.9rem;
+  background: var(--c-accent);
+  border-radius: 99px;
+  flex-shrink: 0;
+}
+.lc-passive-skill {
+  font-size: 0.68rem;
+  font-weight: 700;
+  color: var(--c-accent);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.lc-passive-desc {
+  padding: 0.65rem 0.75rem;
+  font-size: 0.78rem;
+  line-height: 1.75;
+  color: var(--c-muted);
+  white-space: pre-line;
+  word-break: keep-all;
+}
+
+/* 검색 결과 없음 */
+.filter-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 5rem 2rem;
+  color: var(--c-muted);
+  text-align: center;
+  border: 1px dashed var(--c-border);
+  border-radius: var(--radius-lg);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.filter-empty svg { opacity: 0.3; }
+.hidden { display: none !important; }
+
+@media (max-width: 600px) {
+  .lc-card { flex-direction: column; }
+  .lc-img-col { flex-direction: row; align-items: flex-start; }
+  .lc-img-wrap { width: 56px; }
+  .lc-stats { flex-wrap: wrap; gap: 0.5rem; }
+}
+
+h1, h2, h3, p { word-break: keep-all; }
+</style>

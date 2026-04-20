@@ -1,158 +1,71 @@
 ---
-import DefaultLayout from '@layouts/DefaultLayout.astro'
-import Hero from '@components/Hero.astro'
-import { Heading } from 'accessible-astro-components'
-import { Icon } from 'astro-icon/components'
-import { tools, getToolHref } from '../data/tools/'
-
-// 1. SEO 데이터 동적 임포트: src/data/seo/en 폴더의 모든 JSON을 가져옴
-const seoFiles = import.meta.glob('/src/data/seo/en/*.json', { eager: true });
-
-// 2. 파일 경로에서 slug를 추출하여 매핑 객체 생성
-const seoDataMap = Object.entries(seoFiles).reduce((acc, [path, content]: [string, any]) => {
-  const fileName = path.split('/').pop()?.replace('.json', '');
-  if (fileName) acc[fileName] = content;
-  return acc;
-}, {} as Record<string, any>);
-
-const categoryConfigs = {
-  text: { id: 'text-tools', label: 'Text Tools', icon: 'lucide:type', href: '#text-tools', desc: 'Securely process strings, format code, and analyze text data right in your browser.' },
-  image: { id: 'image-tools', label: 'Image Tools', icon: 'lucide:image', href: '#image-tools', desc: 'Compress, convert, and watermark your photos without ever uploading them to a server.' },
-  pdf: { id: 'pdf-tools', label: 'PDF Tools', icon: 'lucide:file-text', href: '#pdf-tools', desc: 'Merge, split, and edit PDF documents with 100% on-device privacy protection.' },
-  generator: { id: 'generators', label: 'Generators', icon: 'lucide:wand', href: '#generators', desc: 'Create QR codes, strong passwords, and placeholder data instantly and securely.' },
-  sns: { id: 'sns-tools', label: 'SNS Tools', icon: 'lucide:share-2', href: '#sns-tools', desc: 'Optimize your social media content with specialized formatting and filtering tools.' },
-  calculator: { id: 'calculators', label: 'Calculators', icon: 'lucide:calculator', href: '#calculators', desc: 'Perform complex calculations and data conversions with zero server-side logging.' },
-}
-
-const categories = Object.entries(categoryConfigs)
-  .map(([key, config]) => ({
-    ...config,
-    tools: tools
-      .filter((t) => t.category === key && t.available && !t.excludeFromLauncher)
-      .map((t) => {
-        // 3. JSON 데이터 병합: t.slug와 일치하는 JSON 파일의 metaDescription 사용
-        const seo = seoDataMap[t.id] || seoDataMap[t.slug] || {};
-        const toolDesc = seo.metaDescription || seo.introSummary;
-
-        return {
-          label: t.label,
-          href: getToolHref(t.category, t.slug),
-          // 데이터가 너무 길면 디자인을 위해 자르고, 없으면 기본 문구 출력
-          description: toolDesc 
-            ? (toolDesc.length > 95 ? toolDesc.substring(0, 92) + '...' : toolDesc)
-            : `${t.label} utility for your daily digital tasks.`,
-        };
-      }),
-  }))
-  .filter((cat) => cat.tools.length > 0)
+// src/pages/index.astro
+// 브라우저 언어 감지 후 해당 언어 홈으로 리다이렉트
+// Astro SSG이므로 클라이언트 JS로 처리
 ---
 
-<DefaultLayout title="HugDot | Private On-Device Utility Factory" useTitleTemplate={false}>
-  <Hero />
-
-  <section class="container my-12">
-    <div class="rounded-2xl bg-[var(--background-color-subtle)] border border-[var(--border-color-subtle)] p-8 shadow-sm">
-      <div class="max-w-3xl">
-        <Heading level="h2" class="text-2xl font-bold mb-4 text-[var(--action-color)]">
-          Your Data Stays on Your Device. Always.
-        </Heading>
-        <p class="text-lg opacity-80 leading-relaxed">
-          Welcome to <strong>HugDot</strong>, a comprehensive library of browser-based utilities designed for privacy and speed. 
-          Unlike traditional online tools, our 30+ utilities run entirely within your browser using WASM technology. 
-          <strong>No personal information or files ever leave your device.</strong>
-        </p>
-      </div>
-    </div>
-  </section>
-
-  <section class="my-16">
-    <div class="container">
-      <Heading level="h2" class="mb-8 text-center text-2xl font-bold">Tool Categories</Heading>
-      <ul class="grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6">
-        {
-          categories.map((cat) => (
-            <li>
-              <a
-                href={cat.href}
-                class="category-card flex flex-col items-center gap-3 rounded-xl border border-[var(--border-color-subtle)] p-6 text-center text-[var(--foreground-color)] no-underline transition-all hover:border-[var(--action-color)] hover:shadow-md"
-              >
-                <Icon aria-hidden="true" name={cat.icon} size="2rem" class="text-[var(--action-color)]" />
-                <span class="text-sm font-semibold">{cat.label}</span>
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
-  </section>
-
-  <section id="tools" class="my-16 scroll-mt-8">
-    <div class="container flex flex-col gap-24">
-      {
-        categories.map((category) => (
-          <div id={category.id} class="space-y-6 scroll-mt-24">
-            <div class="mb-6 flex items-center justify-between border-b border-[var(--border-color-subtle)] pb-6">
-              <div class="flex flex-col gap-2">
-                <div class="flex items-center gap-3">
-                  <Icon aria-hidden="true" name={category.icon} size="1.5rem" class="text-[var(--action-color)]" />
-                  <Heading level="h2" size="h4">
-                    {category.label}
-                  </Heading>
-                </div>
-                <p class="text-sm opacity-70">{category.desc}</p>
-              </div>
-              <a href="#top" class="text-sm text-[var(--action-color)] underline-offset-4 hover:underline whitespace-nowrap">
-                Top ↑
-              </a>
-            </div>
-            
-            <ul class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              {category.tools.map((tool) => (
-                <li>
-                  <a
-                    href={tool.href}
-                    class="tool-card flex h-full flex-col gap-2 rounded-xl border border-[var(--border-color-subtle)] p-5 text-[var(--foreground-color)] no-underline transition-all hover:border-[var(--action-color)] hover:shadow-md"
-                    data-tool-name={tool.label.toLowerCase()}
-                  >
-                    <span class="font-semibold text-lg">{tool.label}</span>
-                    <span class="text-sm opacity-60 leading-snug">{tool.description}</span>
-                    <span class="mt-auto pt-2 text-xs font-medium text-[var(--action-color)]">Open Tool →</span>
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        ))
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HugDot | Game Database</title>
+    <meta name="description" content="Honkai: Star Rail Game Database" />
+    <!-- 기본 리다이렉트 (JS 비활성화 대비) -->
+    <meta http-equiv="refresh" content="0;url=/kr/starrail" />
+    <style>
+      body {
+        margin: 0;
+        background: #09090f;
+        color: #e2e4f0;
+        font-family: sans-serif;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
       }
-    </div>
-  </section>
+    </style>
+  </head>
+  <body>
+    <script is:inline>
+    ;(function () {
+      var langMap = {
+        'ko': 'kr', 'ko-KR': 'kr',
+        'en': 'en', 'en-US': 'en', 'en-GB': 'en',
+        'ja': 'jp', 'ja-JP': 'jp',
+        'zh': 'cn', 'zh-CN': 'cn', 'zh-SG': 'cn',
+        'zh-TW': 'cht', 'zh-HK': 'cht',
+        'fr': 'fr', 'fr-FR': 'fr',
+        'de': 'de', 'de-DE': 'de',
+        'es': 'es', 'es-ES': 'es', 'es-MX': 'es',
+        'id': 'id', 'id-ID': 'id',
+        'pt': 'pt', 'pt-BR': 'pt', 'pt-PT': 'pt',
+        'ru': 'ru', 'ru-RU': 'ru',
+        'th': 'th', 'th-TH': 'th',
+        'vi': 'vi', 'vi-VN': 'vi',
+      }
 
-  <section class="py-16 bg-[var(--background-color-subtle)] border-t border-[var(--border-color-subtle)]">
-    <div class="container text-center max-w-2xl">
-      <Heading level="h2" class="text-xl font-bold mb-4 text-[var(--action-color)]">Why HugDot?</Heading>
-      <p class="text-sm opacity-70 leading-relaxed">
-        HugDot is a solo-entrepreneur project dedicated to making digital tools accessible and private. 
-        Whether you're batch watermarking or converting HEIC files, 
-        our platform ensures your workflow is fast and secure without any server-side storage.
-      </p>
-    </div>
-  </section>
-</DefaultLayout>
+      var supported = ['kr','en','jp','cn','cht','fr','de','es','id','pt','ru','th','vi']
 
-<style>
-  .tool-card,
-  .category-card {
-    color: var(--foreground-color) !important;
-    text-decoration: none !important;
-  }
+      function detectLang() {
+        var langs = navigator.languages || [navigator.language || 'en']
+        for (var i = 0; i < langs.length; i++) {
+          var l = langs[i]
+          // 정확히 매칭
+          if (langMap[l]) return langMap[l]
+          // 앞 2자리로 매칭
+          var short = l.split('-')[0]
+          if (langMap[short]) return langMap[short]
+        }
+        return 'en'
+      }
 
-  .tool-card:where(:hover, :focus-visible),
-  .category-card:where(:hover, :focus-visible) {
-    color: var(--foreground-color) !important;
-    transform: translateY(-2px);
-  }
+      // localStorage에 저장된 언어 우선
+      var saved = localStorage.getItem('hd-lang')
+      var lang = (saved && supported.includes(saved)) ? saved : detectLang()
 
-  html {
-    scroll-behavior: smooth;
-  }
-</style>
+      window.location.replace('/' + lang + '/starrail')
+    })()
+    </script>
+  </body>
+</html>

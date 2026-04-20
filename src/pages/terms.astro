@@ -1,36 +1,72 @@
 ---
 import DefaultLayout from '@layouts/DefaultLayout.astro'
-import PageHeader from '@components/PageHeader.astro'
-import { Heading } from 'accessible-astro-components'
-
 ---
 
-<DefaultLayout title="Terms of Service | HugDot">
-  <PageHeader 
-    title="Terms of Service" 
-    subtitle="Last updated: April 2026" 
-    bgType="gradient" 
-  />
+<DefaultLayout
+  title="Terms of Service | HugDot"
+  description="Terms of Service for HugDot game database."
+>
+<div class="pp-page">
+  <div class="pw">
 
-  <section class="my-16 container">
-    <div class="space-content max-w-1xl mx-auto">
-      <Heading level="h2">1. Acceptance of Terms</Heading>
-      <p>By accessing and using HugDot (hugdot.com), you accept and agree to be bound by the terms and provision of this agreement.</p>
-
-      <Heading level="h2">2. Description of Service</Heading>
-      <p>HugDot provides various browser-based utility tools. These services are provided "as-is" and "as-available" without any warranty of any kind.</p>
-
-      <Heading level="h2">3. User Responsibility & Privacy</Heading>
-      <p>Users are responsible for the data they process using our tools. While we prioritize privacy through on-device processing, we recommend not processing highly sensitive personal information.</p>
-
-      <Heading level="h2">4. Intellectual Property</Heading>
-      <p>The code, design, and original content of HugDot are the intellectual property of In-ae Hyun and are protected by applicable copyright and trademark law.</p>
-
-      <Heading level="h2">5. Limitation of Liability</Heading>
-      <p>In no event shall HugDot or its operator be liable for any damages (including, without limitation, damages for loss of data or profit) arising out of the use or inability to use the tools on HugDot.</p>
-
-      <Heading level="h2">6. Governing Law</Heading>
-      <p>Any claim relating to HugDot's website shall be governed by the laws of the Republic of Korea without regard to its conflict of law provisions.</p>
+    <div class="pp-header">
+      <h1 class="pp-title">Terms of Service</h1>
+      <p class="pp-date">Last updated: April 2026</p>
     </div>
-  </section>
+
+    <div class="pp-sections">
+
+      <div class="pp-section">
+        <h2>1. Acceptance of Terms</h2>
+        <p>By accessing and using HugDot (hugdot.com), you accept and agree to be bound by the terms and provisions of this agreement.</p>
+      </div>
+
+      <div class="pp-section">
+        <h2>2. Description of Service</h2>
+        <p>HugDot provides a free game database covering characters, items, skills, and planning tools for gacha RPGs. These services are provided "as-is" and "as-available" without any warranty of any kind.</p>
+      </div>
+
+      <div class="pp-section">
+        <h2>3. Game Content & Intellectual Property</h2>
+        <p>All game data, images, and assets displayed on HugDot are the property of their respective owners (HoYoverse, Kuro Games, etc.). HugDot is a fan-made, non-commercial database and is not affiliated with or endorsed by any game publisher.</p>
+      </div>
+
+      <div class="pp-section">
+        <h2>4. User Responsibility</h2>
+        <p>Users are responsible for how they use the information provided on this site. HugDot makes no guarantees about the accuracy or completeness of game data, as games are updated frequently.</p>
+      </div>
+
+      <div class="pp-section">
+        <h2>5. Limitation of Liability</h2>
+        <p>In no event shall HugDot or its operator be liable for any damages arising out of the use or inability to use this site or its content.</p>
+      </div>
+
+      <div class="pp-section">
+        <h2>6. Governing Law</h2>
+        <p>Any claim relating to HugDot's website shall be governed by the laws of the Republic of Korea without regard to its conflict of law provisions.</p>
+      </div>
+
+      <div class="pp-section">
+        <h2>7. Contact</h2>
+        <p>If you have any questions about these Terms, please contact us through the <a href="/contact">Contact page</a>.</p>
+      </div>
+
+    </div>
+  </div>
+</div>
 </DefaultLayout>
+
+<style>
+.pp-page { min-height:100vh; background:var(--c-bg); color:var(--foreground-color); padding:4rem 0 6rem; }
+.pw { max-width:720px; margin:0 auto; padding:0 1.5rem; }
+.pp-header { margin-bottom:2.5rem; }
+.pp-title { font-family:var(--font-display); font-size:clamp(1.8rem,4vw,2.8rem); font-weight:700; letter-spacing:-.02em; margin-bottom:.4rem; }
+.pp-date { font-size:.75rem; color:var(--c-muted); }
+.pp-sections { display:flex; flex-direction:column; }
+.pp-section { padding:1.5rem 0; border-bottom:1px solid var(--c-border); }
+.pp-section:last-child { border-bottom:none; }
+.pp-section h2 { font-size:.95rem; font-weight:700; color:var(--c-accent); margin-bottom:.6rem; }
+.pp-section p { font-size:.82rem; color:var(--c-muted); line-height:1.85; word-break:keep-all; }
+.pp-section a { color:var(--c-accent); text-decoration:underline; text-underline-offset:3px; }
+.pp-section a:hover { opacity:.8; }
+</style>

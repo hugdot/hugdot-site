@@ -1,0 +1,2297 @@
+---
+// src/pages/[lang]/starrail/characters/[id].astro
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Icon } from 'astro-icon/components'
+import { Heading } from 'accessible-astro-components'
+import { maxCharacterLevel, terminalBaseStat } from '@utils/characterLevelStats'
+import LightConesTab from '@components/starrail/LightConesTab.astro'
+import RelicSetsTab from '@components/starrail/RelicSetsTab.astro'
+import SkillMatsTab from '@components/starrail/SkillMatsTab.astro'
+import GalleryTab from '@components/starrail/GalleryTab.astro'
+
+const allData = import.meta.glob('/src/data/starrail/**/*.json', { eager: true })
+
+const toAssetUrl = (rel: string) => {
+  if (!rel) return ''
+
+  // 1. 경로 정리 (슬래시 및 중복 제거)
+  let cleanPath = rel.replace(/^\//, '').replace(/^starrail\/assets\//, '')
+
+  // 2. 🔍 파일명 추출
+  const fileName = cleanPath.split('/').pop() || ''
+
+  // 3. 🔍 스탯 아이콘 교정 (Icon으로 시작하는 모든 파일)
+  if (fileName.includes('Icon')) {
+    cleanPath = `icon/property/${fileName}`
+  }
+  // 4. 🔍 유물 아이콘 교정
+  else if (cleanPath.includes('icon/character/')) {
+    cleanPath = cleanPath.replace('icon/character/', 'icon/relic/')
+  }
+
+  return `/starrail/assets/${cleanPath}`
+}
+
+export async function getStaticPaths() {
+  const languages = ['kr', 'en', 'jp', 'cn', 'fr', 'de', 'es', 'id', 'pt', 'ru', 'th', 'vi', 'cht']
+  const allData = import.meta.glob('/src/data/starrail/**/*.json', { eager: true })
+  const krCharModule = allData['/src/data/starrail/kr/characters.json'] as any
+  const charData = krCharModule?.default || krCharModule
+  const validIds = Object.entries(charData)
+    .filter(([id, data]: [string, any]) => {
+      if (id.startsWith('800')) return true
+      return data.name && data.name.trim() !== '' && !data.name.includes('{NICKNAME}')
+    })
+    .map(([id]) => id)
+  return languages.flatMap((lang) => validIds.map((id) => ({ params: { lang, id } })))
+}
+
+const { lang, id } = Astro.params
+
+const cleanText = (text: string) => {
+  if (!text) return ''
+  return text
+    .replace(/\{RUBY_B#([^}]+)\}([^\{]+)\{RUBY_E\#\}/g, '$1')
+    .replace(/\{F#([^}]*)\}\{M#([^}]*)\}/g, '$2')
+    .replace(/\{NICKNAME\}/g, 'Trailblazer')
+    .trim()
+}
+
+const wrapHighlight = (val: string) => `<span class="hl-num">${val}</span>`
+
+const formatGameDesc = (desc: string, paramRow: number[] | undefined) => {
+  const row = paramRow ?? []
+  if (!desc) return ''
+  let t = desc.replace(/\{RUBY_B#([^}]+)\}([^\{]+)\{RUBY_E\#\}/g, '$1')
+  t = t.replace(/\{F#([^}]*)\}\{M#([^}]*)\}/g, '$2')
+  t = t.replace(/\{NICKNAME\}/g, 'Trailblazer')
+  t = t.replace(/#(\d+)\[(i|f1|f)\](%?)/g, (_m, nStr, fmt, pct) => {
+    const idx = parseInt(String(nStr), 10) - 1
+    const v = row[idx]
+    if (v === undefined || Number.isNaN(v)) return '…'
+    let res = ''
+    if (pct) {
+      if (fmt === 'f1') {
+        const x = v * 100
+        const rounded = Math.round(x)
+        res = (Math.abs(x - rounded) < 0.06 ? String(rounded) : x.toFixed(1)) + '%'
+      } else {
+        res = Math.round(v * 100) + '%'
+      }
+    } else {
+      if (fmt === 'f1' || fmt === 'f') {
+        const x = v > 0 && v <= 1 ? v * 100 : v
+        const rounded = Math.round(x)
+        res = Math.abs(x - rounded) < 0.01 ? String(rounded) : (Math.round(x * 10) / 10).toString()
+      } else {
+        const asInt = Math.abs(v - Math.round(v)) < 1e-9
+        res = asInt || Math.abs(v) > 1 ? String(Math.round(v)) : String(Math.round(v * 100))
+      }
+    }
+    return wrapHighlight(res)
+  })
+  return t.trim()
+}
+
+const aggregateMaterialRows = (rows: { id: string; num: number }[][]) => {
+  const map = new Map<string, number>()
+  for (const row of rows) {
+    for (const m of row) {
+      map.set(m.id, (map.get(m.id) || 0) + m.num)
+    }
+  }
+  return [...map.entries()]
+    .map(([mid, num]) => ({ id: mid, num }))
+    .sort((a, b) => (a.id === '2' ? -1 : b.id === '2' ? 1 : a.id.localeCompare(b.id)))
+}
+
+const sumMinorTraceProps = (
+  trees: Record<string, any>,
+  treeIds: string[],
+  charId: string,
+): { type: string; value: number }[] => {
+  const minorPrefix = new RegExp(`^${charId}82\\d{2}$`)
+  const sums = new Map<string, number>()
+  for (const tid of treeIds) {
+    if (!minorPrefix.test(tid)) continue
+    const node = trees[tid]
+    if (!node?.levels) continue
+    for (const lv of node.levels) {
+      for (const p of lv.properties || []) {
+        sums.set(p.type, (sums.get(p.type) || 0) + (p.value || 0))
+      }
+    }
+  }
+  return [...sums.entries()].map(([type, value]) => ({ type, value }))
+}
+
+const labels =
+  lang === 'kr'
+    ? {
+        intro: '소개',
+        rarity: '희귀도',
+        path: '운명의 길',
+        element: '속성',
+        resource: '전투 자원',
+        skills: '전투 스킬',
+        maxLv: '최대 레벨',
+        targeting: '범위',
+        majorTraces: '주요 행적',
+        minorTraces: '특성 행적',
+        eidolons: '성혼',
+        stats80: '기본 스탯',
+        lightCones: '광추',
+        relics: '유물',
+        skillMats: '행적 재료',
+        gallery: '갤러리',
+        charLevel: '캐릭터 레벨',
+        skillLevel: '스킬 레벨',
+        ascensionMats: '승급 재료 (누적)',
+        ascensionStep: '승급 단계',
+        statsCurveNote: '중간 레벨 HP·ATK·DEF는 Lv.1과 최대 레벨 사이를 선형 보간한 값입니다.',
+        nav: {
+          skills: '스킬',
+          traces: '행적',
+          eidolons: '성혼',
+          stats: '스탯',
+          lightCones: '광추',
+          relics: '유물',
+          skillMats: '재료',
+          gallery: '갤러리',
+        },
+      }
+    : {
+        intro: 'Introduction',
+        rarity: 'Rarity',
+        path: 'Path',
+        element: 'Element',
+        resource: 'Combat resource',
+        skills: 'Skills',
+        maxLv: 'Max Lv',
+        targeting: 'Targeting',
+        majorTraces: 'Major Traces',
+        minorTraces: 'Minor Traces',
+        eidolons: 'Eidolons',
+        stats80: 'Base Stats',
+        lightCones: 'Light Cones',
+        relics: 'Relics',
+        skillMats: 'Skill Mats',
+        gallery: 'Gallery',
+        charLevel: 'Character Level',
+        skillLevel: 'Skill Level',
+        ascensionMats: 'Ascension Materials (cumulative)',
+        ascensionStep: 'Ascension Step',
+        statsCurveNote: 'HP, ATK, DEF between Lv.1 and max level are linearly interpolated.',
+        footnote: 'Data is processed locally based on official resources.',
+        nav: {
+          skills: 'Skills',
+          traces: 'Traces',
+          eidolons: 'Eidolons',
+          stats: 'Stats',
+          lightCones: 'Light Cones',
+          relics: 'Relics',
+          skillMats: 'Skill Mats',
+          gallery: 'Gallery',
+        },
+      }
+
+const skillTypeOrder: Record<string, number> = {
+  Normal: 0,
+  BPSkill: 1,
+  Ultra: 2,
+  Talent: 3,
+  Maze: 4,
+}
+
+let char: any = null
+let activeSkills: any[] = []
+let eidolons: any[] = []
+let promotion: any = null
+let descriptions: any = {}
+let statsArray: any[] = []
+let majorTraces: any[] = []
+let minorTraceSummary: { type: string; value: number; name: string; icon?: string }[] = []
+let ascensionMaterials: { id: string; num: number; name: string; icon: string }[] = []
+let characterBio = ''
+let itemsMap: Record<string, any> = {}
+let propertiesMap: Record<string, any> = {}
+let pathsData: Record<string, any> = {}
+let maxCharLevel = 80
+let statsCurveJson = ''
+let skillsInteractiveJson = ''
+let ascensionTiersJson = ''
+let ascensionTierCount = 0
+
+try {
+  const baseDir = `/src/data/starrail/${lang}`
+  const charModule = allData[`${baseDir}/characters.json`] as any
+  const pathsModule = allData[`${baseDir}/paths.json`] as any
+  const skillModule = allData[`${baseDir}/character_skills.json`] as any
+  const rankModule = allData[`${baseDir}/character_ranks.json`] as any
+  const descModule = allData[`${baseDir}/descriptions.json`] as any
+  const promoModule = allData[`${baseDir}/character_promotions.json`] as any
+  const skillTreeModule = allData[`${baseDir}/character_skill_trees.json`] as any
+  const itemsModule = allData[`${baseDir}/items.json`] as any
+  const propsModule = allData[`${baseDir}/properties.json`] as any
+
+  char = charModule?.default?.[id as string]
+  pathsData = pathsModule?.default
+  descriptions = descModule?.default
+  itemsMap = itemsModule?.default
+  propertiesMap = propsModule?.default
+
+  if (char) {
+    const pathData = descriptions?.[char.path]
+    const officialPathName = pathData?.title || pathData?.name || char.path
+
+    if (id?.startsWith('800')) {
+      const baseName = lang === 'kr' ? '개척자' : 'Trailblazer'
+      char.name = `${baseName} • ${officialPathName}`
+    } else {
+      const rawName = cleanText(char.name)
+      for (const v of Object.values(descriptions)) {
+        if (v && typeof v === 'object' && 'title' in v && 'desc' in v && v.title === rawName) {
+          characterBio = cleanText(String((v as any).desc))
+          break
+        }
+      }
+    }
+
+    const rawSkills = (char.skills || []).map((sId: string) => skillModule.default[sId]).filter((s: any) => s && s.name)
+    const uniqueByName = rawSkills.filter(
+      (skill: any, index: number, self: any[]) => index === self.findIndex((t: any) => t.name === skill.name),
+    )
+    let ultimateKept = false
+    activeSkills = uniqueByName
+      .filter((s: any) => {
+        if (s.type === 'MazeNormal') return false
+        if (s.type === 'Ultra') {
+          if (ultimateKept) return false
+          ultimateKept = true
+        }
+        return true
+      })
+      .sort((a: any, b: any) => (skillTypeOrder[a.type] ?? 99) - (skillTypeOrder[b.type] ?? 99))
+
+    eidolons = (char.ranks || []).map((rId: string) => rankModule.default[rId]).filter(Boolean)
+
+    const trees = skillTreeModule.default
+    const majorRe = new RegExp(`^${id}81\\d{2}$`)
+    majorTraces = (char.skill_trees || [])
+      .filter((tid: string) => majorRe.test(tid))
+      .map((tid: string) => trees[tid])
+      .filter((n: any) => n && n.name && n.desc)
+      .sort((a: any, b: any) => (a.levels?.[0]?.promotion ?? 0) - (b.levels?.[0]?.promotion ?? 0))
+
+    const minorSums = sumMinorTraceProps(trees, char.skill_trees || [], id as string)
+    minorTraceSummary = minorSums
+      .map((row) => {
+        const prop = propertiesMap[row.type]
+        return { ...row, name: prop?.name || row.type, icon: prop?.icon }
+      })
+      .filter((row) => row.value !== 0)
+
+    promotion = promoModule.default[id as string]
+    maxCharLevel = maxCharacterLevel(char.rarity)
+
+    if (promotion?.values?.length) {
+      const v0 = promotion.values[0]
+      const maxPromo = promotion.values[promotion.values.length - 1]
+      const hp = terminalBaseStat(maxPromo.hp, maxCharLevel)
+      const atk = terminalBaseStat(maxPromo.atk, maxCharLevel)
+      const def = terminalBaseStat(maxPromo.def, maxCharLevel)
+      const spd =
+        maxPromo.spd?.step && maxPromo.spd.step !== 0
+          ? terminalBaseStat(maxPromo.spd, maxCharLevel)
+          : (maxPromo.spd?.base ?? 0)
+      const taunt = maxPromo.taunt?.base ?? maxPromo.taunt ?? 0
+      const critRate = (maxPromo.crit_rate?.base ?? 0) * 100
+      const critDmg = (maxPromo.crit_dmg?.base ?? 0) * 100
+
+      statsArray = [
+        { key: 'hp', label: 'HP', val: hp, icon: 'lucide:heart', color: '#f87171' },
+        { key: 'atk', label: 'ATK', val: atk, icon: 'lucide:swords', color: '#fbbf24' },
+        { key: 'def', label: 'DEF', val: def, icon: 'lucide:shield', color: '#60a5fa' },
+        { key: 'spd', label: 'SPD', val: spd, icon: 'lucide:zap', color: '#34d399' },
+        { key: 'taunt', label: 'Taunt', val: taunt, icon: 'lucide:target', color: '#a78bfa' },
+        { key: 'critRate', label: 'CRIT Rate', val: critRate, icon: 'lucide:crosshair', color: '#fb923c', suffix: '%' },
+        { key: 'critDmg', label: 'CRIT DMG', val: critDmg, icon: 'lucide:flame', color: '#f43f5e', suffix: '%' },
+      ]
+
+      statsCurveJson = JSON.stringify({
+        maxLevel: maxCharLevel,
+        hpStart: v0.hp.base,
+        hpEnd: hp,
+        atkStart: v0.atk.base,
+        atkEnd: atk,
+        defStart: v0.def.base,
+        defEnd: def,
+        spd,
+        taunt,
+        critRate,
+        critDmg,
+      })
+    }
+
+    skillsInteractiveJson = JSON.stringify(
+      activeSkills.map((s: any) => ({
+        desc: s.desc || '',
+        params: s.params || [],
+        maxLevel: Math.max(1, s.max_level || 1),
+      })),
+    )
+
+    if (promotion?.materials?.length) {
+      ascensionMaterials = aggregateMaterialRows(promotion.materials).map((m) => {
+        const item = itemsMap[m.id]
+        let finalIcon = item?.icon || ''
+        if (finalIcon.includes('icon/character/')) finalIcon = finalIcon.replace('icon/character/', 'icon/item/')
+        return { ...m, name: item?.name || `Item ${m.id}`, icon: finalIcon ? toAssetUrl(finalIcon) : '' }
+      })
+
+      const tiers: { step: number; items: { name: string; num: number; icon: string }[] }[] = []
+      const matRows = promotion.materials as { id: string; num: number }[][]
+      for (let i = 0; i < matRows.length; i++) {
+        const agg = aggregateMaterialRows(matRows.slice(0, i + 1))
+        tiers.push({
+          step: i + 1,
+          items: agg.map((m) => {
+            const item = itemsMap[m.id]
+            let rawIcon = item?.icon || ''
+            if (m.id === '2') rawIcon = 'icon/item/2.webp'
+            else if (rawIcon.includes('icon/character/')) rawIcon = rawIcon.replace('icon/character/', 'icon/item/')
+            return {
+              name: item?.name || `Item ${m.id}`,
+              num: m.num,
+              icon: rawIcon && rawIcon.includes('.') ? toAssetUrl(rawIcon) : '',
+            }
+          }),
+        })
+      }
+      ascensionTiersJson = JSON.stringify(tiers)
+      ascensionTierCount = tiers.length
+    }
+  }
+} catch (e) {
+  console.error(`Error loading data for ${lang}/${id}:`, e)
+}
+
+const elementInfo = descriptions?.[char?.element] || { name: char?.element }
+const pathInfo = descriptions?.[char?.path] || { title: char?.path }
+const pRow = char ? pathsData[char.path] : null
+
+const elementIconUrl = toAssetUrl(`icon/element/${char?.element}.webp`)
+const pathIconUrl = pRow?.icon_small
+  ? toAssetUrl(pRow.icon_small)
+  : pRow?.name
+    ? toAssetUrl(`icon/path/${pRow.name}Small.webp`)
+    : toAssetUrl(`icon/path/${char?.path}.webp`)
+
+const rarityCount = char?.rarity ?? 0
+
+const skillParamIndex = (skill: any) =>
+  Math.max(0, Math.min((skill.params?.length || 1) - 1, (skill.max_level || 1) - 1))
+
+// 섹션 가시성 플래그 (서버사이드 - 초기 탭 결정용)
+const hasSections = {
+  skills: activeSkills.length > 0,
+  traces: majorTraces.length > 0 || minorTraceSummary.length > 0,
+  eidolons: eidolons.length > 0,
+  stats: statsArray.length > 0,
+  lightCones: true, // 광추는 항상 존재
+  relics: true, // 유물 세트도 항상 존재
+  skillMats: (char?.skill_trees?.length ?? 0) > 0,
+  gallery: !!(char?.preview || char?.portrait || char?.icon),
+}
+---
+
+<DefaultLayout
+  title={`${cleanText(char?.name)} | Star Rail DB`}
+  description={`${cleanText(char?.name)} — ${pathInfo.title} · ${elementInfo.name}. Skills, traces, stats, and eidolons.`}
+  useTitleTemplate={false}
+>
+  <!-- ══════════════════════════════════════════════
+       HERO SECTION
+  ══════════════════════════════════════════════ -->
+  <div class="char-page">
+    <!-- Ambient background glow (CSS only, no JS, GPU-composited) -->
+    <div class="ambient-bg" aria-hidden="true">
+      <div class="ambient-orb orb-1"></div>
+      <div class="ambient-orb orb-2"></div>
+    </div>
+
+    <div class="page-inner">
+      <!-- ── BREADCRUMB ── -->
+      <nav class="breadcrumb" aria-label="breadcrumb">
+        <a href={`/${lang}`}>Home</a>
+        <span class="sep" aria-hidden="true">/</span>
+        <a href={`/${lang}/starrail/characters`}>Characters</a>
+        <span class="sep" aria-hidden="true">/</span>
+        <span class="current">{cleanText(char?.name)}</span>
+      </nav>
+
+      <!-- ── HERO GRID ── -->
+      <div class="hero-grid">
+        <!-- LEFT: Portrait -->
+        <div class="portrait-col">
+          <div class="portrait-frame">
+            <!-- Rarity bar on the left edge -->
+            <div class="rarity-bar" aria-hidden="true">
+              {
+                Array.from({ length: rarityCount }).map((_, i) => (
+                  <span class="rarity-pip" style={`animation-delay:${i * 60}ms`}>
+                    ★
+                  </span>
+                ))
+              }
+            </div>
+
+            <img
+              src={toAssetUrl(char?.preview)}
+              alt={cleanText(char?.name)}
+              class="portrait-img"
+              loading="eager"
+              decoding="async"
+              width="400"
+              height="560"
+            />
+
+            <!-- Element badge overlay -->
+            <div class="element-badge">
+              <img src={elementIconUrl} alt={elementInfo.name} width="28" height="28" loading="lazy" decoding="async" />
+            </div>
+          </div>
+
+          <!-- Bio card (below portrait on mobile) -->
+          {
+            characterBio && (
+              <div class="bio-card">
+                <span class="section-eyebrow">{labels.intro}</span>
+                <p class="bio-text">{characterBio}</p>
+              </div>
+            )
+          }
+        </div>
+
+        <!-- RIGHT: Identity -->
+        <div class="identity-col">
+          <!-- Tag watermark -->
+          <span class="tag-watermark" aria-hidden="true">{char?.tag}</span>
+
+          <!-- Name -->
+          <h1 class="char-name">{cleanText(char?.name)}</h1>
+
+          <!-- Chips row -->
+          <div class="chips-row">
+            <div class="chip">
+              <img src={elementIconUrl} alt="" width="18" height="18" loading="lazy" decoding="async" />
+              <span>{elementInfo.name}</span>
+            </div>
+            <div class="chip">
+              <img src={pathIconUrl} alt="" class="path-icon" width="18" height="18" loading="lazy" decoding="async" />
+              <span>{pathInfo.title}</span>
+            </div>
+            {
+              rarityCount > 0 && (
+                <div class="chip chip-rarity">
+                  <span class="rarity-stars" aria-label={`${rarityCount}-star`}>
+                    {'★'.repeat(rarityCount)}
+                  </span>
+                </div>
+              )
+            }
+            {
+              char?.max_sp != null && (
+                <div class="chip chip-sp">
+                  <Icon name="lucide:bolt" size="0.8rem" />
+                  <span>SP {char.max_sp}</span>
+                </div>
+              )
+            }
+          </div>
+
+          <!-- Stats quick card (always visible on desktop) -->
+          {
+            statsArray.length > 0 && statsCurveJson && (
+              <div class="stats-card" id="stats-card">
+                <div class="stats-card-header">
+                  <span class="section-eyebrow">{labels.stats80}</span>
+                  <label class="lv-control" for="char-level-range">
+                    <span class="lv-label">{labels.charLevel}</span>
+                    <span class="lv-val" id="char-level-value">
+                      {maxCharLevel}
+                    </span>
+                    <input
+                      id="char-level-range"
+                      type="range"
+                      min="1"
+                      max={maxCharLevel}
+                      value={maxCharLevel}
+                      class="range-input"
+                    />
+                  </label>
+                </div>
+                <div class="stats-grid">
+                  {statsArray.map((stat) => (
+                    <div class="stat-row">
+                      <span class="stat-icon" style={`color:${stat.color}`}>
+                        <Icon name={stat.icon} size="0.85rem" />
+                      </span>
+                      <span class="stat-label">{stat.label}</span>
+                      <span
+                        class="stat-val"
+                        id={`stat-out-${stat.key}`}
+                        data-suffix={stat.suffix || ''}
+                        style={`color:${stat.color}`}
+                      >
+                        {stat.suffix
+                          ? `${stat.val % 1 === 0 ? Math.round(stat.val) : stat.val.toFixed(1)}${stat.suffix}`
+                          : Math.floor(stat.val)}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+                <p class="stats-note">{labels.statsCurveNote}</p>
+              </div>
+            )
+          }
+
+          <!-- Ascension card (desktop) -->
+          {
+            ascensionMaterials.length > 0 && ascensionTiersJson && ascensionTierCount > 0 && (
+              <div class="asc-card" id="asc-card">
+                <div class="asc-header">
+                  <span class="section-eyebrow">{labels.ascensionMats}</span>
+                  <label class="lv-control" for="ascension-range">
+                    <span class="lv-label">{labels.ascensionStep}</span>
+                    <span class="lv-val" id="ascension-step-value">
+                      {ascensionTierCount}
+                    </span>
+                    <input
+                      id="ascension-range"
+                      type="range"
+                      min="1"
+                      max={ascensionTierCount}
+                      value={ascensionTierCount}
+                      class="range-input"
+                    />
+                  </label>
+                </div>
+                <ul class="mat-list" id="ascension-mats-list">
+                  {ascensionMaterials.map((m) => (
+                    <li class="mat-row">
+                      <div class="mat-icon-wrap">
+                        {m.icon ? (
+                          <img
+                            src={m.icon}
+                            alt={m.name}
+                            width="36"
+                            height="36"
+                            loading="lazy"
+                            decoding="async"
+                            class="mat-icon-img"
+                          />
+                        ) : (
+                          <Icon name="lucide:package" size="1.2rem" class="mat-placeholder" />
+                        )}
+                      </div>
+                      <span class="mat-name">{m.name}</span>
+                      <span class="mat-num">×{m.num}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )
+          }
+        </div>
+      </div>
+
+      <!-- ══════════════════════════════════════════════
+           STICKY TAB NAV
+      ══════════════════════════════════════════════ -->
+      <div class="tab-nav-wrap" id="tab-nav">
+        <nav class="tab-nav" role="tablist" aria-label="Character sections">
+          {
+            hasSections.skills && (
+              <button class="tab-btn active" role="tab" aria-selected="true" data-tab="skills" id="tab-btn-skills">
+                <Icon name="lucide:sparkles" size="0.85rem" />
+                <span>{labels.nav.skills}</span>
+              </button>
+            )
+          }
+          {
+            hasSections.traces && (
+              <button class="tab-btn" role="tab" aria-selected="false" data-tab="traces" id="tab-btn-traces">
+                <Icon name="lucide:git-branch" size="0.85rem" />
+                <span>{labels.nav.traces}</span>
+              </button>
+            )
+          }
+          {
+            hasSections.eidolons && (
+              <button class="tab-btn" role="tab" aria-selected="false" data-tab="eidolons" id="tab-btn-eidolons">
+                <Icon name="lucide:hexagon" size="0.85rem" />
+                <span>{labels.nav.eidolons}</span>
+              </button>
+            )
+          }
+          {
+            hasSections.stats && (
+              <button
+                class="tab-btn tab-btn-mobile-stats"
+                role="tab"
+                aria-selected="false"
+                data-tab="stats-mobile"
+                id="tab-btn-stats-mobile"
+              >
+                <Icon name="lucide:bar-chart-2" size="0.85rem" />
+                <span>{labels.nav.stats}</span>
+              </button>
+            )
+          }
+          {
+            hasSections.lightCones && (
+              <button class="tab-btn" role="tab" aria-selected="false" data-tab="lightcones" id="tab-btn-lightcones">
+                <Icon name="lucide:zap" size="0.85rem" />
+                <span>{labels.nav.lightCones}</span>
+              </button>
+            )
+          }
+          {
+            hasSections.relics && (
+              <button class="tab-btn" role="tab" aria-selected="false" data-tab="relics" id="tab-btn-relics">
+                <Icon name="lucide:gem" size="0.85rem" />
+                <span>{labels.nav.relics}</span>
+              </button>
+            )
+          }
+          {
+            hasSections.skillMats && (
+              <button class="tab-btn" role="tab" aria-selected="false" data-tab="skillmats" id="tab-btn-skillmats">
+                <Icon name="lucide:package" size="0.85rem" />
+                <span>{labels.nav.skillMats}</span>
+              </button>
+            )
+          }
+          {
+            hasSections.gallery && (
+              <button class="tab-btn" role="tab" aria-selected="false" data-tab="gallery" id="tab-btn-gallery">
+                <Icon name="lucide:image" size="0.85rem" />
+                <span>{labels.nav.gallery}</span>
+              </button>
+            )
+          }
+        </nav>
+      </div>
+
+      <!-- ══════════════════════════════════════════════
+           TAB PANELS
+      ══════════════════════════════════════════════ -->
+      <div class="tab-panels">
+        <!-- ── SKILLS PANEL ── -->
+        {
+          hasSections.skills && (
+            <section class="tab-panel" id="panel-skills" role="tabpanel" aria-labelledby="tab-btn-skills">
+              <div class="panel-header">
+                <div class="panel-accent" aria-hidden="true" />
+                <h2 class="panel-title">{labels.skills}</h2>
+              </div>
+              <div class="skills-list">
+                {activeSkills.map((skill, sIdx) => (
+                  <div class="skill-card" data-skill-card={sIdx}>
+                    <div class="skill-icon-wrap border border-white/10 bg-white/5 shadow-lg">
+                      <img
+                        src={toAssetUrl(skill.icon)}
+                        alt={cleanText(skill.name)}
+                        class="skill-icon"
+                        width="52"
+                        height="52"
+                        loading="lazy"
+                        decoding="async"
+                      />
+                    </div>
+                    <div class="skill-body">
+                      <div class="skill-meta">
+                        <h3 class="skill-name">{cleanText(skill.name)}</h3>
+                        <div class="skill-tags">
+                          {skill.type_text && <span class="tag">{skill.type_text}</span>}
+                          {skill.effect_text && <span class="tag">{skill.effect_text}</span>}
+                          <span class="tag">
+                            {labels.maxLv} {skill.max_level ?? '—'}
+                          </span>
+                        </div>
+                      </div>
+                      <label class="lv-control skill-lv-ctrl" for={`skill-lv-${sIdx}`}>
+                        <span class="lv-label">{labels.skillLevel}</span>
+                        <span class="lv-val" id={`skill-lv-label-${sIdx}`}>
+                          {Math.max(1, skill.max_level ?? 1)}
+                        </span>
+                        <input
+                          id={`skill-lv-${sIdx}`}
+                          type="range"
+                          class="range-input skill-level-range"
+                          min="1"
+                          max={Math.max(1, skill.max_level ?? 1)}
+                          value={Math.max(1, skill.max_level ?? 1)}
+                          data-skill-index={sIdx}
+                        />
+                      </label>
+                      {skill.simple_desc && <p class="skill-simple">{cleanText(skill.simple_desc)}</p>}
+                      <p
+                        class="skill-desc skill-desc-out"
+                        id={`skill-desc-${sIdx}`}
+                        set:html={formatGameDesc(skill.desc, skill.params?.[skillParamIndex(skill)])}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )
+        }
+
+        <!-- ── TRACES PANEL ── -->
+        {
+          hasSections.traces && (
+            <section class="tab-panel hidden" id="panel-traces" role="tabpanel" aria-labelledby="tab-btn-traces">
+              {majorTraces.length > 0 && (
+                <div class="sub-section">
+                  <div class="panel-header">
+                    <div class="panel-accent" aria-hidden="true" />
+                    <h2 class="panel-title">{labels.majorTraces}</h2>
+                  </div>
+                  <div class="traces-list">
+                    {majorTraces.map((trace: any) => (
+                      <div class="trace-card">
+                        <div class="trace-icon-wrap">
+                          <img
+                            src={toAssetUrl(trace.icon)}
+                            alt={cleanText(trace.name)}
+                            class="trace-icon"
+                            width="44"
+                            height="44"
+                            loading="lazy"
+                            decoding="async"
+                          />
+                          <span class="trace-unlock">A{trace.levels?.[0]?.promotion ?? '?'}</span>
+                        </div>
+                        <div class="trace-body">
+                          <h3 class="trace-name">{cleanText(trace.name)}</h3>
+                          <p class="trace-desc" set:html={formatGameDesc(trace.desc, trace.params?.[0])} />
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              {minorTraceSummary.length > 0 && (
+                <div class="sub-section">
+                  <div class="panel-header">
+                    <div class="panel-accent" aria-hidden="true" />
+                    <h2 class="panel-title">{labels.minorTraces}</h2>
+                  </div>
+                  <div class="minor-grid">
+                    {minorTraceSummary.map((row) => {
+                      const meta = propertiesMap[row.type]
+                      const asPercent = meta?.percent || meta?.ratio
+                      let display: string
+                      if (asPercent) {
+                        const pct = row.value * 100
+                        const rounded = Math.round(pct * 10) / 10
+                        const s =
+                          Number.isInteger(rounded) || Math.abs(rounded - Math.round(rounded)) < 0.05
+                            ? String(Math.round(rounded))
+                            : rounded.toFixed(1)
+                        display = `+${s}%`
+                      } else {
+                        display = `+${row.value}`
+                      }
+                      return (
+                        <div class="minor-chip">
+                          {row.icon ? (
+                            <img
+                              src={toAssetUrl(row.icon)}
+                              alt=""
+                              width="22"
+                              height="22"
+                              loading="lazy"
+                              decoding="async"
+                              class="minor-icon"
+                            />
+                          ) : (
+                            <Icon name="lucide:plus" size="1rem" class="minor-icon-fallback" />
+                          )}
+                          <div>
+                            <p class="minor-type">{row.name}</p>
+                            <p class="minor-val">{display}</p>
+                          </div>
+                        </div>
+                      )
+                    })}
+                  </div>
+                </div>
+              )}
+            </section>
+          )
+        }
+
+        <!-- ── EIDOLONS PANEL ── -->
+        {
+          hasSections.eidolons && (
+            <section class="tab-panel hidden" id="panel-eidolons" role="tabpanel" aria-labelledby="tab-btn-eidolons">
+              <div class="panel-header">
+                <div class="panel-accent" aria-hidden="true" />
+                <h2 class="panel-title">{labels.eidolons}</h2>
+              </div>
+              <div class="eidolons-grid">
+                {eidolons.map((eidolon, index) => (
+                  <div class="eidolon-card">
+                    <span class="eidolon-rank">E{index + 1}</span>
+                    <div class="eidolon-body">
+                      <p class="eidolon-name">{cleanText(eidolon.name)}</p>
+                      <p
+                        class="eidolon-desc"
+                        set:html={formatGameDesc(
+                          eidolon.desc,
+                          Array.isArray(eidolon.params?.[0]) ? eidolon.params[0] : eidolon.params,
+                        )}
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+          )
+        }
+
+        <!-- ── STATS MOBILE PANEL (mobile only, desktop shows inline) ── -->
+        {
+          hasSections.stats && (
+            <section
+              class="tab-panel stats-mobile-panel hidden"
+              id="panel-stats-mobile"
+              role="tabpanel"
+              aria-labelledby="tab-btn-stats-mobile"
+            >
+              <div class="panel-header">
+                <div class="panel-accent" aria-hidden="true" />
+                <h2 class="panel-title">{labels.stats80}</h2>
+              </div>
+
+              {statsArray.length > 0 && statsCurveJson && (
+                <div class="stats-panel-inner">
+                  <label class="lv-control" for="char-level-range-m">
+                    <span class="lv-label">{labels.charLevel}</span>
+                    <span class="lv-val" id="char-level-value-m">
+                      {maxCharLevel}
+                    </span>
+                    <input
+                      id="char-level-range-m"
+                      type="range"
+                      min="1"
+                      max={maxCharLevel}
+                      value={maxCharLevel}
+                      class="range-input"
+                    />
+                  </label>
+                  <div class="stats-grid-m">
+                    {statsArray.map((stat) => (
+                      <div class="stat-row">
+                        <span class="stat-icon" style={`color:${stat.color}`}>
+                          <Icon name={stat.icon} size="0.85rem" />
+                        </span>
+                        <span class="stat-label">{stat.label}</span>
+                        <span
+                          class="stat-val"
+                          id={`stat-out-m-${stat.key}`}
+                          data-suffix={stat.suffix || ''}
+                          style={`color:${stat.color}`}
+                        >
+                          {stat.suffix
+                            ? `${stat.val % 1 === 0 ? Math.round(stat.val) : stat.val.toFixed(1)}${stat.suffix}`
+                            : Math.floor(stat.val)}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                  <p class="stats-note">{labels.statsCurveNote}</p>
+                </div>
+              )}
+
+              {ascensionMaterials.length > 0 && ascensionTiersJson && ascensionTierCount > 0 && (
+                <div class="asc-panel-inner">
+                  <div class="panel-header" style="margin-top:2rem">
+                    <div class="panel-accent" aria-hidden="true" />
+                    <h2 class="panel-title">{labels.ascensionMats}</h2>
+                  </div>
+                  <label class="lv-control" for="ascension-range-m">
+                    <span class="lv-label">{labels.ascensionStep}</span>
+                    <span class="lv-val" id="ascension-step-value-m">
+                      {ascensionTierCount}
+                    </span>
+                    <input
+                      id="ascension-range-m"
+                      type="range"
+                      min="1"
+                      max={ascensionTierCount}
+                      value={ascensionTierCount}
+                      class="range-input"
+                    />
+                  </label>
+                  <ul class="mat-list" id="ascension-mats-list-m">
+                    {ascensionMaterials.map((m) => (
+                      <li class="mat-row">
+                        <div class="mat-icon-wrap">
+                          {m.icon ? (
+                            <img
+                              src={m.icon}
+                              alt={m.name}
+                              width="36"
+                              height="36"
+                              loading="lazy"
+                              decoding="async"
+                              class="mat-icon-img"
+                            />
+                          ) : (
+                            <Icon name="lucide:package" size="1.2rem" class="mat-placeholder" />
+                          )}
+                        </div>
+                        <span class="mat-name">{m.name}</span>
+                        <span class="mat-num">×{m.num}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+            </section>
+          )
+        }
+        {/* ── LIGHT CONES PANEL ── */}
+        {
+          hasSections.lightCones && (
+            <section
+              class="tab-panel hidden"
+              id="panel-lightcones"
+              role="tabpanel"
+              aria-labelledby="tab-btn-lightcones"
+            >
+              <div class="panel-header">
+                <div class="panel-accent" aria-hidden="true" />
+                <h2 class="panel-title">{labels.nav.lightCones}</h2>
+              </div>
+              <LightConesTab char={char} lang={lang} allData={allData} labels={labels} />
+            </section>
+          )
+        }
+
+        {/* ── RELICS PANEL ── */}
+        {
+          hasSections.relics && (
+            <section class="tab-panel hidden" id="panel-relics" role="tabpanel" aria-labelledby="tab-btn-relics">
+              <div class="panel-header">
+                <div class="panel-accent" aria-hidden="true" />
+                <h2 class="panel-title">{labels.nav.relics}</h2>
+              </div>
+              <RelicSetsTab char={char} lang={lang} allData={allData} labels={labels} propertiesMap={propertiesMap} />
+            </section>
+          )
+        }
+
+        {/* ── SKILL MATS PANEL ── */}
+        {
+          hasSections.skillMats && (
+            <section class="tab-panel hidden" id="panel-skillmats" role="tabpanel" aria-labelledby="tab-btn-skillmats">
+              <div class="panel-header">
+                <div class="panel-accent" aria-hidden="true" />
+                <h2 class="panel-title">{labels.nav.skillMats}</h2>
+              </div>
+              <SkillMatsTab char={char} lang={lang} allData={allData} labels={labels} itemsMap={itemsMap} />
+            </section>
+          )
+        }
+
+        {/* ── GALLERY PANEL ── */}
+        {
+          hasSections.gallery && (
+            <section class="tab-panel hidden" id="panel-gallery" role="tabpanel" aria-labelledby="tab-btn-gallery">
+              <div class="panel-header">
+                <div class="panel-accent" aria-hidden="true" />
+                <h2 class="panel-title">{labels.nav.gallery}</h2>
+              </div>
+              <GalleryTab char={char} lang={lang} allData={allData} labels={labels} />
+            </section>
+          )
+        }
+      </div><!-- /tab-panels -->
+    </div><!-- /page-inner -->
+  </div><!-- /char-page -->
+
+  <!-- ══════════════════════════════════════════════
+       INLINE SCRIPT — MINIMAL, PASSIVE, rAF-GUARDED
+  ══════════════════════════════════════════════ -->
+  <script is:inline define:vars={{ statsCurveJson, skillsInteractiveJson, ascensionTiersJson }}>
+    ;(function () {
+      'use strict'
+
+      /* ── tiny helpers ── */
+      function hl(val) {
+        return '<span class="hl-num">' + val + '</span>'
+      }
+
+      function fmtDesc(desc, row) {
+        row = row || []
+        if (!desc) return ''
+        var t = desc
+          .replace(/\{RUBY_B#([^}]+)\}([^{]+)\{RUBY_E#\}/g, '$1')
+          .replace(/\{F#([^}]*)\}\{M#([^}]*)\}/g, '$2')
+          .replace(/\{NICKNAME\}/g, 'Trailblazer')
+        t = t.replace(/#(\d+)\[(i|f1|f)\](%?)/g, function (_m, nStr, fmt, pct) {
+          var idx = parseInt(nStr, 10) - 1
+          var v = row[idx]
+          if (v === undefined || isNaN(v)) return '…'
+          var res = ''
+          if (pct) {
+            if (fmt === 'f1') {
+              var x = v * 100
+              var r = Math.round(x)
+              res = (Math.abs(x - r) < 0.06 ? String(r) : x.toFixed(1)) + '%'
+            } else res = Math.round(v * 100) + '%'
+          } else {
+            if (fmt === 'f1' || fmt === 'f') {
+              var x2 = v > 0 && v <= 1 ? v * 100 : v
+              var r2 = Math.round(x2)
+              res = Math.abs(x2 - r2) < 0.01 ? String(r2) : (Math.round(x2 * 10) / 10).toString()
+            } else {
+              res =
+                Math.abs(v - Math.round(v)) < 1e-9 || Math.abs(v) > 1
+                  ? String(Math.round(v))
+                  : String(Math.round(v * 100))
+            }
+          }
+          return hl(res)
+        })
+        return t.trim()
+      }
+
+      function lin(a, b, L, maxL) {
+        return maxL <= 1 ? a : a + ((b - a) * (L - 1)) / (maxL - 1)
+      }
+
+      /* rAF-debounced setter */
+      var rafPending = false
+      var rafCallbacks = []
+      function schedRaf(fn) {
+        rafCallbacks.push(fn)
+        if (!rafPending) {
+          rafPending = true
+          requestAnimationFrame(function () {
+            rafPending = false
+            var cbs = rafCallbacks.splice(0)
+            for (var i = 0; i < cbs.length; i++) cbs[i]()
+          })
+        }
+      }
+
+      function setText(id, val, suffix) {
+        schedRaf(function () {
+          var el = document.getElementById(id)
+          if (!el) return
+          var s = suffix !== undefined ? suffix : el.getAttribute('data-suffix') || ''
+          if (s) {
+            var n = Math.round(val * 10) / 10
+            el.textContent = (Math.abs(n - Math.round(n)) < 0.05 ? Math.round(n) : n.toFixed(1)) + s
+          } else {
+            el.textContent = String(Math.floor(val))
+          }
+        })
+      }
+
+      function setTextPair(keys, val, suffix) {
+        setText(keys[0], val, suffix)
+        if (keys[1]) setText(keys[1], val, suffix)
+      }
+
+      /* ── TAB SWITCHING ── */
+      function initTabs() {
+        var nav = document.getElementById('tab-nav')
+        if (!nav) return
+        var btns = nav.querySelectorAll('.tab-btn')
+        var panels = document.querySelectorAll('.tab-panel')
+
+        btns.forEach(function (btn) {
+          btn.addEventListener(
+            'click',
+            function () {
+              var target = btn.getAttribute('data-tab')
+              btns.forEach(function (b) {
+                b.classList.remove('active')
+                b.setAttribute('aria-selected', 'false')
+              })
+              btn.classList.add('active')
+              btn.setAttribute('aria-selected', 'true')
+              panels.forEach(function (p) {
+                var show = p.id === 'panel-' + target
+                p.classList.toggle('hidden', !show)
+              })
+            },
+            { passive: true },
+          )
+        })
+      }
+
+      /* ── STAT CURVE ── */
+      function initStats(curve, suffix) {
+        var prefix = suffix ? 'm-' : ''
+        var rangeId = suffix ? 'char-level-range-m' : 'char-level-range'
+        var range = document.getElementById(rangeId)
+        if (!curve || !range) return
+        var maxL = curve.maxLevel
+
+        function apply() {
+          var L = parseInt(range.value, 10) || 1
+          schedRaf(function () {
+            var lv = document.getElementById(suffix ? 'char-level-value-m' : 'char-level-value')
+            if (lv) lv.textContent = String(L)
+          })
+          setText('stat-out-' + prefix + 'hp', lin(curve.hpStart, curve.hpEnd, L, maxL), '')
+          setText('stat-out-' + prefix + 'atk', lin(curve.atkStart, curve.atkEnd, L, maxL), '')
+          setText('stat-out-' + prefix + 'def', lin(curve.defStart, curve.defEnd, L, maxL), '')
+          setText('stat-out-' + prefix + 'spd', curve.spd, '')
+          setText('stat-out-' + prefix + 'taunt', curve.taunt, '')
+          setText('stat-out-' + prefix + 'critRate', curve.critRate, '%')
+          setText('stat-out-' + prefix + 'critDmg', curve.critDmg, '%')
+        }
+        range.addEventListener('input', apply, { passive: true })
+        range.addEventListener('change', apply, { passive: true })
+        apply()
+      }
+
+      /* ── SKILLS ── */
+      function initSkills(skills) {
+        document.querySelectorAll('.skill-level-range').forEach(function (input) {
+          var idx = parseInt(input.getAttribute('data-skill-index'), 10)
+          if (isNaN(idx) || !skills[idx]) return
+          var s = skills[idx]
+          function apply() {
+            var lv = parseInt(input.value, 10) || 1
+            schedRaf(function () {
+              var label = document.getElementById('skill-lv-label-' + idx)
+              if (label) label.textContent = String(lv)
+              var maxPi = s.params && s.params.length ? s.params.length - 1 : 0
+              var pi = Math.max(0, Math.min(lv - 1, maxPi))
+              var row = s.params && s.params.length ? s.params[pi] : []
+              var out = document.getElementById('skill-desc-' + idx)
+              if (out) out.innerHTML = fmtDesc(s.desc, row)
+            })
+          }
+          input.addEventListener('input', apply, { passive: true })
+          input.addEventListener('change', apply, { passive: true })
+        })
+      }
+
+      /* ── ASCENSION ── */
+      function initAscension(tiers, listId, stepValId, rangeId) {
+        var range = document.getElementById(rangeId)
+        var list = document.getElementById(listId)
+        var stepVal = document.getElementById(stepValId)
+        if (!range || !list || !tiers.length) return
+
+        function render(step) {
+          var t = tiers[step - 1]
+          if (!t || !t.items) return
+          schedRaf(function () {
+            if (stepVal) stepVal.textContent = String(step)
+            list.replaceChildren()
+            t.items.forEach(function (it) {
+              var li = document.createElement('li')
+              li.className = 'mat-row'
+              var wrap = document.createElement('div')
+              wrap.className = 'mat-icon-wrap'
+              if (it.icon) {
+                var img = document.createElement('img')
+                img.src = it.icon
+                img.alt = it.name
+                img.width = 36
+                img.height = 36
+                img.loading = 'lazy'
+                img.decoding = 'async'
+                img.className = 'mat-icon-img'
+                wrap.appendChild(img)
+              }
+              var name = document.createElement('span')
+              name.className = 'mat-name'
+              name.textContent = it.name
+              var num = document.createElement('span')
+              num.className = 'mat-num'
+              num.textContent = '×' + it.num
+              li.appendChild(wrap)
+              li.appendChild(name)
+              li.appendChild(num)
+              list.appendChild(li)
+            })
+          })
+        }
+
+        range.addEventListener(
+          'input',
+          function () {
+            render(parseInt(range.value, 10) || 1)
+          },
+          { passive: true },
+        )
+        range.addEventListener(
+          'change',
+          function () {
+            render(parseInt(range.value, 10) || 1)
+          },
+          { passive: true },
+        )
+        render(parseInt(range.value, 10) || tiers.length)
+      }
+
+      /* ── STICKY NAV ── */
+      function initStickyNav() {
+        var nav = document.getElementById('tab-nav')
+        if (!nav) return
+        var sentinel = document.createElement('div')
+        sentinel.style.cssText = 'height:1px;pointer-events:none'
+        nav.parentNode.insertBefore(sentinel, nav)
+        var io = new IntersectionObserver(
+          function (entries) {
+            nav.classList.toggle('stuck', !entries[0].isIntersecting)
+          },
+          { threshold: 0 },
+        )
+        io.observe(sentinel)
+      }
+
+      /* ── BOOT ── */
+      
+        function init() {
+          initTabs()
+          initStickyNav()
+
+          var curve = null
+          try {
+            curve = statsCurveJson ? JSON.parse(statsCurveJson) : null
+          } catch (e) {}
+          initStats(curve, '') /* desktop */
+          initStats(curve, 'm') /* mobile panel */
+
+          var skills = []
+          try {
+            skills = skillsInteractiveJson ? JSON.parse(skillsInteractiveJson) : []
+          } catch (e) {}
+          initSkills(skills)
+
+          var tiers = []
+          try {
+            tiers = ascensionTiersJson ? JSON.parse(ascensionTiersJson) : []
+          } catch (e) {}
+          initAscension(tiers, 'ascension-mats-list', 'ascension-step-value', 'ascension-range')
+          initAscension(tiers, 'ascension-mats-list-m', 'ascension-step-value-m', 'ascension-range-m')
+        }
+        document.addEventListener('DOMContentLoaded', init)
+        document.addEventListener('astro:page-load', init)
+ 
+    })()
+  </script>
+</DefaultLayout>
+
+<style>
+  /* ══════════════════════════════════════════════════════════
+   DESIGN SYSTEM — SF 터미널 × 동양 미학 크로스오버
+   모든 애니메이션: transform/opacity (GPU compositor only)
+   content-visibility: auto → 저사양 기기 렌더 절약
+══════════════════════════════════════════════════════════ */
+
+  /* ── Google Fonts (선택적 — Astro font 설정에서 처리 시 제거) ── */
+  @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Noto+Sans+KR:wght@400;700;900&family=JetBrains+Mono:wght@400;700&display=swap');
+
+  /* ── Design tokens ── */
+  :root {
+    --c-bg: #09090f;
+    --c-surface: #0f101a;
+    --c-surface2: #161724;
+    --c-border: rgba(255, 255, 255, 0.07);
+    --c-border-hi: rgba(255, 255, 255, 0.16);
+    --c-text: #e2e4f0;
+    --c-muted: rgba(226, 228, 240, 0.45);
+    --c-accent: var(--action-color, #7c9dfc);
+    --c-accent-glow: color-mix(in srgb, var(--c-accent) 30%, transparent);
+
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 22px;
+    --radius-xl: 32px;
+
+    --font-display: 'Rajdhani', 'Noto Sans KR', sans-serif;
+    --font-body: 'Noto Sans KR', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    --anim-fast: 140ms cubic-bezier(0.4, 0, 0.2, 1);
+    --anim-med: 260ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  /* Light mode overrides */
+  :root[data-theme='light'],
+  .light {
+    --c-bg: #f2f3f7;
+    --c-surface: #ffffff;
+    --c-surface2: #eaecf5;
+    --c-border: rgba(0, 0, 0, 0.08);
+    --c-border-hi: rgba(0, 0, 0, 0.18);
+    --c-text: #18192a;
+    --c-muted: rgba(24, 25, 42, 0.5);
+    --c-accent-glow: color-mix(in srgb, var(--c-accent) 18%, transparent);
+  }
+
+  /* ── Page shell ── */
+  .char-page {
+    position: relative;
+    background: var(--c-bg);
+    min-height: 100vh;
+    overflow-x: hidden;
+    color: var(--c-text);
+    font-family: var(--font-body);
+  }
+
+  .page-inner {
+    margin: 0 auto;
+    padding: 1.5rem 1rem 4rem;
+    max-width: 1100px;
+  }
+  @media (min-width: 768px) {
+    .page-inner {
+      padding: 2rem 2rem 5rem;
+    }
+  }
+
+  /* ── Ambient background (CSS only, no JS, only opacity/transform) ── */
+  .ambient-bg {
+    position: fixed;
+    z-index: 0;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+  .ambient-orb {
+    position: absolute;
+    opacity: 0;
+    filter: blur(80px);
+    animation: orb-fade 1.4s ease forwards;
+    border-radius: 50%;
+  }
+  .orb-1 {
+    top: -200px;
+    left: -150px;
+    animation-delay: 0.1s;
+    background: radial-gradient(circle, color-mix(in srgb, var(--c-accent) 20%, transparent), transparent 70%);
+    width: 600px;
+    height: 600px;
+  }
+  .orb-2 {
+    right: -100px;
+    bottom: 10%;
+    animation-delay: 0.4s;
+    background: radial-gradient(circle, color-mix(in srgb, #a78bfa 15%, transparent), transparent 70%);
+    width: 400px;
+    height: 400px;
+  }
+  @keyframes orb-fade {
+    to {
+      opacity: 1;
+    }
+  }
+
+  .page-inner {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── Breadcrumb ── */
+  .breadcrumb {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    margin-bottom: 2rem;
+    color: var(--c-muted);
+    font-weight: 700;
+    font-size: 0.68rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .breadcrumb a {
+    transition: color var(--anim-fast);
+    color: inherit;
+    text-decoration: none;
+  }
+  .breadcrumb a:hover {
+    color: var(--c-accent);
+  }
+  .breadcrumb .sep {
+    opacity: 0.4;
+  }
+  .breadcrumb .current {
+    color: var(--c-accent);
+  }
+
+  /* ── Hero grid ── */
+  .hero-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  @media (min-width: 768px) {
+    .hero-grid {
+      grid-template-columns: 240px 1fr;
+      align-items: start;
+      gap: 2.5rem;
+    }
+  }
+
+  /* ── Portrait column ── */
+  .portrait-col {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .portrait-frame {
+    position: relative;
+    /* GPU-only: no layout-triggering props */
+    contain: layout paint;
+    box-shadow: 0 0 40px -10px var(--c-accent-glow);
+    border: 1px solid var(--c-border-hi);
+    border-radius: var(--radius-xl);
+    background: linear-gradient(160deg, var(--c-surface2), var(--c-surface));
+    overflow: hidden;
+  }
+
+  .portrait-img {
+    display: block;
+    /* subtle scale on load via CSS — no JS */
+    animation: img-reveal 0.6s ease both;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  @keyframes img-reveal {
+    from {
+      transform: scale(1.04);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  .rarity-bar {
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 0.6rem;
+    flex-direction: column;
+    gap: 0.15rem;
+    transform: translateY(-50%);
+    z-index: 2;
+  }
+  .rarity-pip {
+    display: block;
+    opacity: 0;
+    animation: pip-in 0.4s ease forwards;
+    color: #fbbf24;
+    font-size: 0.7rem;
+    text-shadow: 0 0 6px rgba(251, 191, 36, 0.6);
+  }
+  @keyframes pip-in {
+    to {
+      opacity: 1;
+    }
+  }
+
+  .element-badge {
+    display: flex;
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(6px);
+    border: 1px solid var(--c-border-hi);
+    border-radius: var(--radius-md);
+    background: rgba(0, 0, 0, 0.55);
+    width: 40px;
+    height: 40px;
+  }
+  .element-badge img {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+  }
+
+  /* ── Bio card ── */
+  .bio-card {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 120px;
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    background: var(--c-surface);
+    padding: 1.1rem 1.2rem;
+  }
+  .bio-text {
+    margin-top: 0.5rem;
+    color: var(--c-muted);
+    font-size: 0.78rem;
+    line-height: 1.8;
+    white-space: pre-line;
+    word-break: keep-all;
+  }
+
+  /* ── Identity column ── */
+  .identity-col {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .tag-watermark {
+    position: absolute;
+    top: -0.5rem;
+    right: 0;
+    opacity: 0.04;
+    pointer-events: none;
+    color: var(--c-text);
+    font-weight: 900;
+    font-size: clamp(3rem, 8vw, 6rem);
+    line-height: 1;
+    font-family: var(--font-display);
+    letter-spacing: -0.04em;
+    user-select: none;
+    text-transform: uppercase;
+  }
+
+  .char-name {
+    animation: name-in 0.5s 0.1s ease both;
+    color: var(--c-text);
+    font-weight: 700;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+    line-height: 1.1;
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+    text-transform: uppercase;
+    word-break: keep-all;
+  }
+  @keyframes name-in {
+    from {
+      transform: translateY(8px);
+      opacity: 0;
+    }
+    to {
+      transform: none;
+      opacity: 1;
+    }
+  }
+
+  /* ── Chips ── */
+  .chips-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition:
+      border-color var(--anim-fast),
+      color var(--anim-fast);
+    border: 1px solid var(--c-border-hi);
+    border-radius: var(--radius-sm);
+    background: var(--c-surface);
+    padding: 0.3rem 0.7rem;
+    color: var(--c-muted);
+    font-weight: 700;
+    font-size: 0.7rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .chip img {
+    width: 16px;
+    height: 16px;
+    object-fit: contain;
+  }
+  .chip:hover {
+    border-color: var(--c-accent);
+    color: var(--c-text);
+  }
+  .path-icon {
+    { filter: brightness(0) invert(1); };
+  }
+  :root[data-theme='light'] .path-icon,
+  .light .path-icon {
+    filter: none;
+  }
+  .chip-rarity {
+    border-color: transparent;
+    background: rgba(251, 191, 36, 0.08);
+  }
+  .rarity-stars {
+    color: #fbbf24;
+    letter-spacing: 0.02em;
+  }
+  .chip-sp {
+    border-color: transparent;
+    background: var(--c-accent-glow);
+    color: var(--c-accent);
+  }
+
+  /* ── Stats card (desktop identity column) ── */
+  .stats-card,
+  .asc-card {
+    content-visibility: auto;
+    contain-intrinsic-size: 0 260px;
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    background: var(--c-surface);
+    padding: 1.1rem 1.2rem;
+  }
+
+  .stats-card-header,
+  .asc-header {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1rem;
+    margin-bottom: 0.9rem;
+  }
+
+  /* ── Level/ascension control ── */
+  .lv-control {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .lv-label {
+    color: var(--c-muted);
+    font-weight: 700;
+    font-size: 0.65rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .lv-val {
+    min-width: 2ch;
+    color: var(--c-accent);
+    font-weight: 700;
+    font-size: 0.75rem;
+    font-family: var(--font-mono);
+  }
+  .range-input {
+    flex: 1;
+    /* iOS needs explicit appearance */
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+    outline: none;
+    border-radius: 99px;
+    background: var(--c-border-hi);
+    min-width: 80px;
+    height: 3px;
+    accent-color: var(--c-accent);
+  }
+  .range-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    cursor: pointer;
+    box-shadow: 0 0 0 3px var(--c-accent-glow);
+    border-radius: 50%;
+    background: var(--c-accent);
+    width: 14px;
+    height: 14px;
+  }
+
+  /* ── Stats grid ── */
+  .stats-grid,
+  .stats-grid-m {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+  .stat-row {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: background var(--anim-fast);
+    border-radius: var(--radius-sm);
+    background: var(--c-surface2);
+    padding: 0.45rem 0.6rem;
+  }
+  .stat-row:hover {
+    background: color-mix(in srgb, var(--c-accent) 8%, var(--c-surface2));
+  }
+  .stat-icon {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+  }
+  .stat-label {
+    flex: 1;
+    color: var(--c-muted);
+    font-weight: 700;
+    font-size: 0.68rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .stat-val {
+    font-weight: 700;
+    font-size: 0.85rem;
+    font-family: var(--font-mono);
+  }
+
+  .stats-note {
+    opacity: 0.7;
+    margin-top: 0.6rem;
+    color: var(--c-muted);
+    font-size: 0.62rem;
+    line-height: 1.5;
+  }
+
+  /* ── Ascension material list ── */
+  .mat-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 0.5rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .mat-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  .mat-icon-wrap {
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--c-border-hi);
+    border-radius: var(--radius-sm);
+    background: var(--c-surface2);
+    padding: 3px;
+    width: 38px;
+    height: 38px;
+    overflow: hidden;
+  }
+  .mat-icon-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  .mat-placeholder {
+    color: var(--c-muted);
+  }
+  .mat-name {
+    flex: 1;
+    font-weight: 600;
+    font-size: 0.76rem;
+    line-height: 1.4;
+    word-break: keep-all;
+  }
+  .mat-num {
+    flex-shrink: 0;
+    color: var(--c-muted);
+    font-size: 0.68rem;
+    font-family: var(--font-mono);
+  }
+
+  /* ── Section eyebrow ── */
+  .section-eyebrow {
+    display: block;
+    color: var(--c-muted);
+    font-weight: 900;
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+
+  /* ══════════════════════════════════════════════
+   STICKY TAB NAV
+══════════════════════════════════════════════ */
+  .tab-nav-wrap {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    transition:
+      background var(--anim-med),
+      box-shadow var(--anim-med);
+    margin: 0 -1rem 1.5rem;
+    background: transparent;
+    padding: 0 1rem;
+  }
+  .tab-nav-wrap.stuck {
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    box-shadow: 0 1px 0 var(--c-border);
+    background: color-mix(in srgb, var(--c-bg) 85%, transparent);
+  }
+  @media (min-width: 768px) {
+    .tab-nav-wrap {
+      margin: 0 -2rem 2rem;
+      padding: 0 2rem;
+    }
+  }
+
+  .tab-nav {
+    display: flex;
+    gap: 0.25rem;
+    padding: 0.5rem 0;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  .tab-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition:
+      color var(--anim-fast),
+      border-color var(--anim-fast),
+      background var(--anim-fast);
+    cursor: pointer;
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-sm);
+    background: var(--c-surface);
+    padding: 0.45rem 1rem;
+    /* Touch target ≥ 44px */
+    min-height: 36px;
+    color: var(--c-muted);
+    font-weight: 700;
+    font-size: 0.72rem;
+    font-family: var(--font-display);
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .tab-btn:hover {
+    border-color: var(--c-border-hi);
+    color: var(--c-text);
+  }
+  .tab-btn.active {
+    border-color: var(--c-accent);
+    background: var(--c-accent-glow);
+    color: var(--c-accent);
+  }
+
+  /* On mobile, hide the "Stats" tab content from the desktop sidebar by toggling.
+   The stats-mobile panel tab is hidden on desktop. */
+  @media (min-width: 768px) {
+    .tab-btn-mobile-stats {
+      display: none;
+    }
+  }
+
+  /* ══════════════════════════════════════════════
+   TAB PANELS
+══════════════════════════════════════════════ */
+  .tab-panels {
+    position: relative;
+  }
+
+  .tab-panel {
+    content-visibility: auto;
+    animation: panel-in 0.22s ease both;
+  }
+  .tab-panel.hidden {
+    display: none;
+  }
+
+  @keyframes panel-in {
+    from {
+      transform: translateY(6px);
+      opacity: 0;
+    }
+    to {
+      transform: none;
+      opacity: 1;
+    }
+  }
+
+  /* ── Panel header ── */
+  .panel-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.2rem;
+  }
+  .panel-accent {
+    flex-shrink: 0;
+    border-radius: 99px;
+    background: var(--c-accent);
+    width: 3px;
+    height: 1.4rem;
+  }
+  .panel-title {
+    font-weight: 700;
+    font-size: 1.1rem;
+    line-height: 1;
+    font-family: var(--font-display);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  /* ── Sub-section ── */
+  .sub-section {
+    margin-bottom: 2.5rem;
+  }
+
+  /* ══════════════════════════════════════════════
+   SKILLS
+══════════════════════════════════════════════ */
+  .skills-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .skill-card {
+    display: flex;
+    gap: 1rem;
+    content-visibility: auto;
+    transition: border-color var(--anim-fast);
+    contain-intrinsic-size: 0 160px;
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    background: var(--c-surface);
+    padding: 1rem 1.1rem;
+  }
+  .skill-card:hover {
+    border-color: var(--c-border-hi);
+  }
+
+  .skill-icon-wrap {
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    transition: transform var(--anim-fast);
+    box-shadow: inset 0 0 12px rgba(0, 0, 0, 0.4);
+    border: 1px solid var(--c-border-hi);
+    border-radius: var(--radius-md);
+    background: #1a1a2e;
+    padding: 5px;
+    width: 56px;
+    height: 56px;
+    overflow: hidden;
+  }
+  .skill-card:hover .skill-icon-wrap {
+    transform: rotate(6deg) scale(1.05);
+  }
+  .skill-icon {
+    filter: none;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+
+  .skill-body {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    gap: 0.6rem;
+    min-width: 0;
+  }
+
+  .skill-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+  .skill-name {
+    font-weight: 700;
+    font-size: 1rem;
+    line-height: 1.1;
+    font-family: var(--font-display);
+    letter-spacing: 0.02em;
+    word-break: keep-all;
+  }
+  .skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+  .tag {
+    border: 1px solid var(--c-border);
+    border-radius: 4px;
+    padding: 0.15rem 0.4rem;
+    color: var(--c-muted);
+    font-weight: 800;
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .skill-lv-ctrl {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .skill-simple {
+    color: var(--c-muted);
+    font-weight: 600;
+    font-size: 0.72rem;
+    line-height: 1.5;
+    word-break: keep-all;
+  }
+
+  .skill-desc {
+    color: var(--c-muted);
+    font-size: 0.8rem;
+    line-height: 1.8;
+    white-space: pre-line;
+    word-break: keep-all;
+  }
+
+  /* Highlight spans injected by JS/server */
+  :global(.hl-num) {
+    display: inline-block;
+    vertical-align: baseline;
+    border-radius: 5px;
+    background: color-mix(in srgb, var(--c-accent) 15%, transparent);
+    padding: 0.05em 0.4em;
+    color: var(--c-accent);
+    font-weight: 700;
+    font-size: 0.88em;
+    line-height: 1.4;
+    font-family: var(--font-mono);
+  }
+
+  /* ══════════════════════════════════════════════
+   TRACES
+══════════════════════════════════════════════ */
+  .traces-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .trace-card {
+    display: flex;
+    gap: 1rem;
+    content-visibility: auto;
+    transition: border-color var(--anim-fast);
+    contain-intrinsic-size: 0 120px;
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    background: var(--c-surface);
+    padding: 0.9rem 1rem;
+  }
+  .trace-card:hover {
+    border-color: var(--c-accent);
+  }
+
+  .trace-icon-wrap {
+    position: relative;
+    flex-shrink: 0;
+    width: 46px;
+    height: 46px;
+  }
+  .trace-icon {
+    filter: invert(1);
+    border: 1px solid var(--c-border-hi);
+    border-radius: var(--radius-sm);
+    background: var(--c-surface2);
+    padding: 5px;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+  :root[data-theme='light'] .trace-icon,
+  .light .trace-icon {
+    filter: none;
+  }
+  .trace-unlock {
+    position: absolute;
+    right: -6px;
+    bottom: -4px;
+    border-radius: 4px;
+    background: var(--c-accent);
+    padding: 0.1em 0.35em;
+    color: #fff;
+    font-weight: 900;
+    font-size: 0.55rem;
+    line-height: 1.4;
+    letter-spacing: 0.05em;
+  }
+
+  .trace-body {
+    flex: 1;
+    min-width: 0;
+  }
+  .trace-name {
+    margin-bottom: 0.35rem;
+    font-weight: 700;
+    font-size: 0.95rem;
+    font-family: var(--font-display);
+    word-break: keep-all;
+  }
+  .trace-desc {
+    color: var(--c-muted);
+    font-size: 0.78rem;
+    line-height: 1.75;
+    white-space: pre-line;
+    word-break: keep-all;
+  }
+
+  /* ── Minor traces ── */
+  .minor-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 0.6rem;
+  }
+  .minor-chip {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-md);
+    background: var(--c-surface2);
+    padding: 0.6rem 0.8rem;
+  }
+  .minor-icon {
+    opacity: 0.8;
+    filter: invert(1);
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+  }
+  :root[data-theme='light'] .minor-icon,
+  .light .minor-icon {
+    filter: none;
+  }
+  .minor-icon-fallback {
+    color: var(--c-muted);
+  }
+  .minor-type {
+    color: var(--c-muted);
+    font-weight: 700;
+    font-size: 0.62rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .minor-val {
+    color: var(--c-accent);
+    font-weight: 700;
+    font-size: 0.85rem;
+    font-family: var(--font-mono);
+  }
+
+  /* ══════════════════════════════════════════════
+   EIDOLONS
+══════════════════════════════════════════════ */
+  .eidolons-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+  }
+  @media (min-width: 600px) {
+    .eidolons-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .eidolon-card {
+    display: flex;
+    gap: 0.8rem;
+    content-visibility: auto;
+    transition: border-color var(--anim-fast);
+    contain-intrinsic-size: 0 100px;
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-md);
+    background: var(--c-surface);
+    padding: 0.9rem;
+  }
+  .eidolon-card:hover {
+    border-color: var(--c-accent);
+  }
+  .eidolon-rank {
+    display: flex;
+    flex-shrink: 0;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    background: var(--c-accent);
+    width: 28px;
+    height: 28px;
+    color: #fff;
+    font-weight: 700;
+    font-size: 0.65rem;
+    font-family: var(--font-mono);
+  }
+  .eidolon-body {
+    flex: 1;
+    min-width: 0;
+  }
+  .eidolon-name {
+    margin-bottom: 0.3rem;
+    font-weight: 700;
+    font-size: 0.85rem;
+    word-break: keep-all;
+  }
+  .eidolon-desc {
+    color: var(--c-muted);
+    font-size: 0.72rem;
+    line-height: 1.7;
+    white-space: pre-line;
+    word-break: keep-all;
+  }
+
+  /* ══════════════════════════════════════════════
+   MOBILE STATS PANEL
+══════════════════════════════════════════════ */
+  .stats-panel-inner,
+  .asc-panel-inner {
+    margin-bottom: 1.5rem;
+    border: 1px solid var(--c-border);
+    border-radius: var(--radius-lg);
+    background: var(--c-surface);
+    padding: 1.1rem 1.2rem;
+  }
+
+  /* Hide mobile stats panel on desktop (stats shown in identity col) */
+  @media (min-width: 768px) {
+    .stats-mobile-panel {
+      display: none !important;
+    }
+  }
+
+  /* ══════════════════════════════════════════════
+   PERFORMANCE: reduce motion
+══════════════════════════════════════════════ */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* ── Typography enforcement ── */
+  h1,
+  h2,
+  h3,
+  h4 {
+    word-break: keep-all;
+  }
+</style>

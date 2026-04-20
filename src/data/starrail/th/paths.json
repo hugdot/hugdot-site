@@ -1,0 +1,83 @@
+{
+  "Warrior": {
+    "id": "Warrior",
+    "text": "Destruction",
+    "name": "ทำลายล้าง",
+    "desc": "มีความสามารถในการสร้าง DMG และอยู่รอดที่ไม่ธรรมดา และสามารถปรับตัวให้เข้ากับสภาพการต่อสู้แบบต่างๆ ได้",
+    "icon": "/starrail/assets/icon/character/Destruction.webp",
+    "icon_middle": "/starrail/assets/icon/path/DestructionMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/DestructionSmall.webp"
+  },
+  "Rogue": {
+    "id": "Rogue",
+    "text": "The Hunt",
+    "name": "ล่าสังหาร",
+    "desc": "มีความสามารถในการโจมตีเดี่ยวที่ไม่ธรรมดา และเป็นกำลังหลักในการเอาชนะศัตรูระดับสูง",
+    "icon": "/starrail/assets/icon/character/Hunt.webp",
+    "icon_middle": "/starrail/assets/icon/path/HuntMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/HuntSmall.webp"
+  },
+  "Mage": {
+    "id": "Mage",
+    "text": "Erudition",
+    "name": "ปัญญา",
+    "desc": "มีความสามารถในการโจมตีกลุ่มที่โดดเด่น สามารถจัดการกับศัตรูได้หลายตัวในคราวเดียว",
+    "icon": "/starrail/assets/icon/character/Erudition.webp",
+    "icon_middle": "/starrail/assets/icon/path/EruditionMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/EruditionSmall.webp"
+  },
+  "Shaman": {
+    "id": "Shaman",
+    "text": "Harmony",
+    "name": "ประสาน",
+    "desc": "สามารถสร้างเอฟเฟกต์ Buff ให้กับฝ่ายตัวเอง เพื่อยกระดับพลังต่อสู้โดยรวมให้กับทีม",
+    "icon": "/starrail/assets/icon/character/Harmony.webp",
+    "icon_middle": "/starrail/assets/icon/path/HarmonyMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/HarmonySmall.webp"
+  },
+  "Warlock": {
+    "id": "Warlock",
+    "text": "Nihility",
+    "name": "ลบล้าง",
+    "desc": "สามารถสร้างเอฟเฟกต์ Debuff แก่ฝ่ายศัตรู เพื่อลดพลังต่อสู้ของศัตรูและชิงความได้เปรียบ",
+    "icon": "/starrail/assets/icon/character/Nihility.webp",
+    "icon_middle": "/starrail/assets/icon/path/NihilityMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/NihilitySmall.webp"
+  },
+  "Knight": {
+    "id": "Knight",
+    "text": "Preservation",
+    "name": "อนุรักษ์",
+    "desc": "มีความสามารถในการป้องกันที่แข็งแกร่ง และสามารถปกป้องเพื่อนร่วมทีมได้ด้วยวิธีการต่างๆ",
+    "icon": "/starrail/assets/icon/character/Preservation.webp",
+    "icon_middle": "/starrail/assets/icon/path/PreservationMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/PreservationSmall.webp"
+  },
+  "Priest": {
+    "id": "Priest",
+    "text": "Abundance",
+    "name": "เฟื่องฟู",
+    "desc": "สามารถรักษาฝ่ายตัวเอง และฟื้นฟูพลังให้กับทีมได้",
+    "icon": "/starrail/assets/icon/character/Abundance.webp",
+    "icon_middle": "/starrail/assets/icon/path/AbundanceMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/AbundanceSmall.webp"
+  },
+  "Memory": {
+    "id": "Memory",
+    "text": "Remembrance",
+    "name": "ความทรงจำ",
+    "desc": "สามารถอัญเชิญภูตความทรงจำที่มีทักษะพิเศษ เพื่อมาต่อสู้เคียงบ่าเคียงไหล่กับทีมได้",
+    "icon": "/starrail/assets/icon/character/Remembrance.webp",
+    "icon_middle": "/starrail/assets/icon/path/RemembranceMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/RemembranceSmall.webp"
+  },
+  "Elation": {
+    "id": "Elation",
+    "text": "Elation",
+    "name": "ปิติสุข",
+    "desc": "ใช้วิธีของตัวเองสร้าง เรื่องขำขัน ต่างๆ นานา เพื่อดึงดูดให้เทพดารา Aha มาฉลองสุดเหวี่ยงด้วยกัน",
+    "icon": "/starrail/assets/icon/character/Elation.webp",
+    "icon_middle": "/starrail/assets/icon/path/ElationMiddle.webp",
+    "icon_small": "/starrail/assets/icon/path/ElationSmall.webp"
+  }
+}

@@ -1,0 +1,2457 @@
+{
+  "1": {
+    "id": "1",
+    "name": "温明徳",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Wenmingde.webp"
+  },
+  "2": {
+    "id": "2",
+    "name": "Dr.クック",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_DoctorDig.webp"
+  },
+  "3": {
+    "id": "3",
+    "name": "「地炎」公式",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "4": {
+    "id": "4",
+    "name": "シルバーメイン禁区広報",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "5": {
+    "id": "5",
+    "name": "ロキ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Rocky.webp"
+  },
+  "6": {
+    "id": "6",
+    "name": "巻貝の笑い声",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "7": {
+    "id": "7",
+    "name": "「ヘルタ・全景システム」",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "8": {
+    "id": "8",
+    "name": "エイブラハム",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Abraham.webp"
+  },
+  "9": {
+    "id": "9",
+    "name": "？？？",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "10": {
+    "id": "10",
+    "name": "ジュリアン",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Julian.webp"
+  },
+  "11": {
+    "id": "11",
+    "name": "？？？",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Julian.webp"
+  },
+  "12": {
+    "id": "12",
+    "name": "オレグ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Oleg.webp"
+  },
+  "13": {
+    "id": "13",
+    "name": "星穹列車♡ファミリー",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Train.webp"
+  },
+  "14": {
+    "id": "14",
+    "name": "？？？",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "15": {
+    "id": "15",
+    "name": "ミス・ヘルタ単推し協会",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "16": {
+    "id": "16",
+    "name": "名乗るほどの者ではない",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "17": {
+    "id": "17",
+    "name": "マーシーロボット",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "18": {
+    "id": "18",
+    "name": "無免許飛行船運行",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "19": {
+    "id": "19",
+    "name": "お喋り茶",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "20": {
+    "id": "20",
+    "name": "ビルゲイヴァー",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "21": {
+    "id": "21",
+    "name": "緑色の莫大",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "22": {
+    "id": "22",
+    "name": "赤毛のキジバト",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "23": {
+    "id": "23",
+    "name": "パープルシェルリ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "24": {
+    "id": "24",
+    "name": "パメラ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Pamela.webp"
+  },
+  "25": {
+    "id": "25",
+    "name": "人を滅ぼしたい",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "26": {
+    "id": "26",
+    "name": "アフロこそ芸術",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "27": {
+    "id": "27",
+    "name": "お見合い✧♡デート専用チャット",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "28": {
+    "id": "28",
+    "name": "必殺技を顔面で受ける",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "29": {
+    "id": "29",
+    "name": "レオナード",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Leonard.webp"
+  },
+  "30": {
+    "id": "30",
+    "name": "スペースネットワーク",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "31": {
+    "id": "31",
+    "name": "檀",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Tantan.webp"
+  },
+  "32": {
+    "id": "32",
+    "name": "芦慧",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Luhui.webp"
+  },
+  "33": {
+    "id": "33",
+    "name": "温符瑞",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Wnfurui.webp"
+  },
+  "34": {
+    "id": "34",
+    "name": "狐仙女黛青",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Daiqing.webp"
+  },
+  "35": {
+    "id": "35",
+    "name": "？？？",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "36": {
+    "id": "36",
+    "name": "肉屋",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "37": {
+    "id": "37",
+    "name": "「広雲袖」カスタマーサービス",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "38": {
+    "id": "38",
+    "name": "夕葵",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Xikui.webp"
+  },
+  "39": {
+    "id": "39",
+    "name": "予衿",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Yujin.webp"
+  },
+  "40": {
+    "id": "40",
+    "name": "ダン",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Donne.webp"
+  },
+  "41": {
+    "id": "41",
+    "name": "阿青",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "42": {
+    "id": "42",
+    "name": "大毫",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Dahao.webp"
+  },
+  "44": {
+    "id": "44",
+    "name": "梁沐",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Liangmu.webp"
+  },
+  "46": {
+    "id": "46",
+    "name": "諦聴",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Diting.webp"
+  },
+  "47": {
+    "id": "47",
+    "name": "浄硯",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Jingyana.webp"
+  },
+  "48": {
+    "id": "48",
+    "name": "エミリア",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Emilie.webp"
+  },
+  "49": {
+    "id": "49",
+    "name": "「スターピースデンキ」",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "50": {
+    "id": "50",
+    "name": "正当な権益会",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "51": {
+    "id": "51",
+    "name": "晴霓",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Qingni.webp"
+  },
+  "52": {
+    "id": "52",
+    "name": "イライーラ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Bukaixin.webp"
+  },
+  "53": {
+    "id": "53",
+    "name": "匿名",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "54": {
+    "id": "54",
+    "name": "チェンジェ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Chengjie.webp"
+  },
+  "55": {
+    "id": "55",
+    "name": "梓橋",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Ziqiao.webp"
+  },
+  "56": {
+    "id": "56",
+    "name": "ヘルタ、アーラン、{NICKNAME}のグループチャット",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "57": {
+    "id": "57",
+    "name": "？？？",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "58": {
+    "id": "58",
+    "name": "？？？",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "59": {
+    "id": "59",
+    "name": "メンテナンスエンジニア",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Engineer.webp"
+  },
+  "60": {
+    "id": "60",
+    "name": "青鏃",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Qingzu.webp"
+  },
+  "61": {
+    "id": "61",
+    "name": "緑芙蓉",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Lvfulong.webp"
+  },
+  "62": {
+    "id": "62",
+    "name": "？？？",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "63": {
+    "id": "63",
+    "name": "立方秘社",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "64": {
+    "id": "64",
+    "name": "？？？",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "65": {
+    "id": "65",
+    "name": "？？？",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "66": {
+    "id": "66",
+    "name": "丹枢",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Danshu.webp"
+  },
+  "67": {
+    "id": "67",
+    "name": "ジェパード、セーバル、{NICKNAME}",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "68": {
+    "id": "68",
+    "name": "エイブラハム、{NICKNAME}、アスター…",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "69": {
+    "id": "69",
+    "name": "レギン",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Regin.webp"
+  },
+  "70": {
+    "id": "70",
+    "name": "文化財窃盗事件特別調査チーム",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "71": {
+    "id": "71",
+    "name": "シルバーメインの調査員",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_NPCSoldier.webp"
+  },
+  "72": {
+    "id": "72",
+    "name": "AI返事",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Zhangzhang.webp"
+  },
+  "73": {
+    "id": "73",
+    "name": "ブローニャ、{NICKNAME}、三月なのか、丹恒のグループチャット",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "74": {
+    "id": "74",
+    "name": "匿名",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "75": {
+    "id": "75",
+    "name": "匿名",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "76": {
+    "id": "76",
+    "name": "地衡司・応急中心",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "77": {
+    "id": "77",
+    "name": "ブローニャ、ジェパード、{NICKNAME}とかのグループ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "78": {
+    "id": "78",
+    "name": "金人巷復興隊",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "79": {
+    "id": "79",
+    "name": "明輝",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Mingxi.webp"
+  },
+  "80": {
+    "id": "80",
+    "name": "霄翰",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Xiaohan.webp"
+  },
+  "82": {
+    "id": "82",
+    "name": "鐘珊",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Zhongshan.webp"
+  },
+  "83": {
+    "id": "83",
+    "name": "聡",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_XiaoCong.webp"
+  },
+  "84": {
+    "id": "84",
+    "name": "トッド",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Taode.webp"
+  },
+  "86": {
+    "id": "86",
+    "name": "ワイルダー",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Velite.webp"
+  },
+  "87": {
+    "id": "87",
+    "name": "シエン先生",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_MrXiYan.webp"
+  },
+  "88": {
+    "id": "88",
+    "name": "ジョヴァンニ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Giovanni.webp"
+  },
+  "89": {
+    "id": "89",
+    "name": "燕翠",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Yancui.webp"
+  },
+  "90": {
+    "id": "90",
+    "name": "怪異退治隊",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "91": {
+    "id": "91",
+    "name": "ワトソン",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Wosen.webp"
+  },
+  "92": {
+    "id": "92",
+    "name": "広進",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Guangjin.webp"
+  },
+  "93": {
+    "id": "93",
+    "name": "『エーテル戦線』公式peacecordサーバー",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "95": {
+    "id": "95",
+    "name": "界種課スタッフ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_JieZhongKe.webp"
+  },
+  "97": {
+    "id": "97",
+    "name": "こしあん単推し",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "98": {
+    "id": "98",
+    "name": "ゴシップ専門家",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "102": {
+    "id": "102",
+    "name": "？？？",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "103": {
+    "id": "103",
+    "name": "チャリティー",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "104": {
+    "id": "104",
+    "name": "ナイスボート",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "105": {
+    "id": "105",
+    "name": "ヘルタピケ隊",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "106": {
+    "id": "106",
+    "name": "Dr.エドワード",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_DreamStore.webp"
+  },
+  "107": {
+    "id": "107",
+    "name": "トパーズ、三月なのか、{NICKNAME}",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "108": {
+    "id": "108",
+    "name": "？？？",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "109": {
+    "id": "109",
+    "name": "アルジェンティ、三月なのか、パム、{NICKNAME}",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "110": {
+    "id": "110",
+    "name": "怪異退治隊連絡用",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "111": {
+    "id": "111",
+    "name": "阿月",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "112": {
+    "id": "112",
+    "name": "試験管",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "113": {
+    "id": "113",
+    "name": "宇宙ステーション-天才クラブ事務共有グループ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "114": {
+    "id": "114",
+    "name": "こしあん単推し、ビルゲイヴァー、無免許飛行船運行",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "115": {
+    "id": "115",
+    "name": "ピノコニー小隊",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "116": {
+    "id": "116",
+    "name": "スウィート・ドリーム新聞社",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_DreamOffice.webp"
+  },
+  "117": {
+    "id": "117",
+    "name": "レスリー・ディーンファン大集合！",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "118": {
+    "id": "118",
+    "name": "ウールシ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Woolsey.webp"
+  },
+  "119": {
+    "id": "119",
+    "name": "クロッ■■■",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "120": {
+    "id": "120",
+    "name": "クロックレストラン",
+    "icon": "/starrail/assets/icon/character/UI_Message_DelicayExpress.webp"
+  },
+  "121": {
+    "id": "121",
+    "name": "ウーマ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Uma.webp"
+  },
+  "122": {
+    "id": "122",
+    "name": "ピノコニー高級品店",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_LuxuryStore.webp"
+  },
+  "123": {
+    "id": "123",
+    "name": "クリスタルグラス",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "124": {
+    "id": "124",
+    "name": "古い友人",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "125": {
+    "id": "125",
+    "name": "ゴミ箱",
+    "icon": "/starrail/assets/icon/character/202002.webp"
+  },
+  "126": {
+    "id": "126",
+    "name": "灼熱のゴミ箱",
+    "icon": "/starrail/assets/icon/character/202002.webp"
+  },
+  "127": {
+    "id": "127",
+    "name": "燃える情熱のゴミ箱",
+    "icon": "/starrail/assets/icon/character/202002.webp"
+  },
+  "128": {
+    "id": "128",
+    "name": "心の張り裂けたゴミ箱",
+    "icon": "/starrail/assets/icon/character/202002.webp"
+  },
+  "129": {
+    "id": "129",
+    "name": "？？？",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "130": {
+    "id": "130",
+    "name": "ドリームメイクパズル研究チーム",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "131": {
+    "id": "131",
+    "name": "スウィート・ドリーム新聞社",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_DreamOffice.webp"
+  },
+  "132": {
+    "id": "132",
+    "name": "サー・アズール",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "133": {
+    "id": "133",
+    "name": "シヴォーン",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Sionbhan.webp"
+  },
+  "134": {
+    "id": "134",
+    "name": "ティソク三世",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_DesolaTheSecond.webp"
+  },
+  "135": {
+    "id": "135",
+    "name": "？？？",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "136": {
+    "id": "136",
+    "name": "コマンダー",
+    "icon": "/starrail/assets/icon/character/Monster_3002030.webp"
+  },
+  "137": {
+    "id": "137",
+    "name": "スペード",
+    "icon": "/starrail/assets/icon/character/Monster_3001010.webp"
+  },
+  "138": {
+    "id": "138",
+    "name": "マダム",
+    "icon": "/starrail/assets/icon/character/Monster_3002010.webp"
+  },
+  "139": {
+    "id": "139",
+    "name": "メランコリー",
+    "icon": "/starrail/assets/icon/character/Monster_3001020.webp"
+  },
+  "140": {
+    "id": "140",
+    "name": "しまった！アホな連中に取り囲まれた！",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "141": {
+    "id": "141",
+    "name": "看板探偵",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_AdvertBoard.webp"
+  },
+  "142": {
+    "id": "142",
+    "name": "黄泉",
+    "icon": "/starrail/assets/icon/character/1308.webp"
+  },
+  "143": {
+    "id": "143",
+    "name": "ああああああああああ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "144": {
+    "id": "144",
+    "name": "花火はどこから見るべきか",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "145": {
+    "id": "145",
+    "name": "ハウンドの運営者",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "146": {
+    "id": "146",
+    "name": "クラークフィルムカスタマーサービス",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "147": {
+    "id": "147",
+    "name": "公輸先生",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_MasterGongshu.webp"
+  },
+  "148": {
+    "id": "148",
+    "name": "ジード",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Jetta.webp"
+  },
+  "149": {
+    "id": "149",
+    "name": "公正公平",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "150": {
+    "id": "150",
+    "name": "エディオン",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Aideen.webp"
+  },
+  "151": {
+    "id": "151",
+    "name": "配達員",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "152": {
+    "id": "152",
+    "name": "ベイビートリオ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "153": {
+    "id": "153",
+    "name": "ダンシー",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Dennis.webp"
+  },
+  "154": {
+    "id": "154",
+    "name": "ミカ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Micah.webp"
+  },
+  "155": {
+    "id": "155",
+    "name": "ティナ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Tina.webp"
+  },
+  "156": {
+    "id": "156",
+    "name": "「メッセージ」人形",
+    "icon": "/starrail/assets/icon/character/202017.webp"
+  },
+  "157": {
+    "id": "157",
+    "name": "繚乱忍侠拙者参上",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "158": {
+    "id": "158",
+    "name": "エルフィー",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Aierfei.webp"
+  },
+  "159": {
+    "id": "159",
+    "name": "音忍集会",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "160": {
+    "id": "160",
+    "name": "ダファンキー",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Dafanqi.webp"
+  },
+  "161": {
+    "id": "161",
+    "name": "チポ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "162": {
+    "id": "162",
+    "name": "演武典礼連絡係",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "163": {
+    "id": "163",
+    "name": "演武典礼委員会代表",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_FightFest.webp"
+  },
+  "164": {
+    "id": "164",
+    "name": "デジタルゴミ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_BandMember02.webp"
+  },
+  "165": {
+    "id": "165",
+    "name": "ギターマスター",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_BandMember01.webp"
+  },
+  "166": {
+    "id": "166",
+    "name": "チ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_BandMember03.webp"
+  },
+  "167": {
+    "id": "167",
+    "name": "繚乱・忍侠",
+    "icon": "/starrail/assets/icon/character/1317.webp"
+  },
+  "168": {
+    "id": "168",
+    "name": "集え「繚乱」ファン",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "170": {
+    "id": "170",
+    "name": "なのカメラ",
+    "icon": "/starrail/assets/icon/character/1001.webp"
+  },
+  "171": {
+    "id": "171",
+    "name": "バナちゃん単推し",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Montana.webp"
+  },
+  "172": {
+    "id": "172",
+    "name": "チャリカ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Chaletka.webp"
+  },
+  "173": {
+    "id": "173",
+    "name": "黄金バナ屋",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Richesandhonor.webp"
+  },
+  "174": {
+    "id": "174",
+    "name": "バナ花ちゃん（努力中）",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Kenebo.webp"
+  },
+  "175": {
+    "id": "175",
+    "name": "折り紙大学フレッシュバナナグループ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "176": {
+    "id": "176",
+    "name": "トリビー、丹恒、{NICKNAME}のグループチャット",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "177": {
+    "id": "177",
+    "name": "オンパロス受付グループ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "179": {
+    "id": "179",
+    "name": "進化神秘学の信者",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "180": {
+    "id": "180",
+    "name": "黄金のスケープゴートの世迷言",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "181": {
+    "id": "181",
+    "name": "灯り掲げて人探し",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "182": {
+    "id": "182",
+    "name": "キャストリス、アグライア、{NICKNAME}のグループチャット",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "183": {
+    "id": "183",
+    "name": "「霞空のメイデン」議論グループ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "184": {
+    "id": "184",
+    "name": "天外の探検家",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "185": {
+    "id": "185",
+    "name": "ザグレウスが金をくれた",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "186": {
+    "id": "186",
+    "name": "マネキンだけになりたい",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "187": {
+    "id": "187",
+    "name": "13柱目のタイタン",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "188": {
+    "id": "188",
+    "name": "ファジェイナはまだ飲んでる",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "189": {
+    "id": "189",
+    "name": "ヘカテー",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Hekate.webp"
+  },
+  "190": {
+    "id": "190",
+    "name": "デメテル",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Demetria.webp"
+  },
+  "191": {
+    "id": "191",
+    "name": "躍淵",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Yueyuan.webp"
+  },
+  "192": {
+    "id": "192",
+    "name": "アグライア、キャストリス、{NICKNAME}のグループチャット",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "193": {
+    "id": "193",
+    "name": "ラフトラ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_AglaeaServant.webp"
+  },
+  "194": {
+    "id": "194",
+    "name": "緊急",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "195": {
+    "id": "195",
+    "name": "雪国の歌姫",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "196": {
+    "id": "196",
+    "name": "{NICKNAME}のゲームを遊ぶ会",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "197": {
+    "id": "197",
+    "name": "大会委員会",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "198": {
+    "id": "198",
+    "name": "カンパニー代表",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "199": {
+    "id": "199",
+    "name": "ヴァージニア",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Virginia.webp"
+  },
+  "200": {
+    "id": "200",
+    "name": "キュレネ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Cyrene.webp"
+  },
+  "201": {
+    "id": "201",
+    "name": "ケイト（勤務中）",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "202": {
+    "id": "202",
+    "name": "キメラ愛好家協会",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "203": {
+    "id": "203",
+    "name": "ゴミケーキ、今日のおやつは？",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "204": {
+    "id": "204",
+    "name": "化け太子",
+    "icon": "/starrail/assets/icon/character/WebIcon_Npc_4.webp"
+  },
+  "205": {
+    "id": "205",
+    "name": "月下の葦",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "206": {
+    "id": "206",
+    "name": "フランケンOfficial",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "207": {
+    "id": "207",
+    "name": "タヌッツァー",
+    "icon": "/starrail/assets/icon/character/WebIcon_Npc_3.webp"
+  },
+  "208": {
+    "id": "208",
+    "name": "ぽこ吉",
+    "icon": "/starrail/assets/icon/character/WebIcon_Npc_5.webp"
+  },
+  "209": {
+    "id": "209",
+    "name": "ジュリダヌ",
+    "icon": "/starrail/assets/icon/character/WebIcon_Npc_6.webp"
+  },
+  "210": {
+    "id": "210",
+    "name": "AAA『週刊タヌキ』リクエスト販売",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "211": {
+    "id": "211",
+    "name": "「老人」",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "212": {
+    "id": "212",
+    "name": "雪だるま式複利金融",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "213": {
+    "id": "213",
+    "name": "鐘柵柵4号機",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Zhongshan.webp"
+  },
+  "214": {
+    "id": "214",
+    "name": "火花の配信アシスタント",
+    "icon": "/starrail/assets/icon/character/1501.webp"
+  },
+  "215": {
+    "id": "215",
+    "name": "A花たんのエンタメアシスタント",
+    "icon": "/starrail/assets/icon/character/1501.webp"
+  },
+  "216": {
+    "id": "216",
+    "name": "花ちゃん爆売れ日記",
+    "icon": "/starrail/assets/icon/character/1501.webp"
+  },
+  "217": {
+    "id": "217",
+    "name": "「星軌の兎」自動広告マシーン",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "218": {
+    "id": "218",
+    "name": "不死途",
+    "icon": "/starrail/assets/icon/character/1504.webp"
+  },
+  "219": {
+    "id": "219",
+    "name": "超常現象管理局",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "1000": {
+    "id": "1000",
+    "name": "パム",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Pam.webp"
+  },
+  "1001": {
+    "id": "1001",
+    "name": "三月なのか",
+    "icon": "/starrail/assets/icon/character/1001.webp"
+  },
+  "1002": {
+    "id": "1002",
+    "name": "丹恒",
+    "icon": "/starrail/assets/icon/character/1002.webp"
+  },
+  "1003": {
+    "id": "1003",
+    "name": "姫子",
+    "icon": "/starrail/assets/icon/character/1003.webp"
+  },
+  "1004": {
+    "id": "1004",
+    "name": "ヴェルト",
+    "icon": "/starrail/assets/icon/character/1004.webp"
+  },
+  "1005": {
+    "id": "1005",
+    "name": "カフカ",
+    "icon": "/starrail/assets/icon/character/1005.webp"
+  },
+  "1006": {
+    "id": "1006",
+    "name": "銀狼",
+    "icon": "/starrail/assets/icon/character/1006.webp"
+  },
+  "1007": {
+    "id": "1007",
+    "name": "スクリューガム",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Screwllum.webp"
+  },
+  "1008": {
+    "id": "1008",
+    "name": "アーラン",
+    "icon": "/starrail/assets/icon/character/1008.webp"
+  },
+  "1009": {
+    "id": "1009",
+    "name": "アスター",
+    "icon": "/starrail/assets/icon/character/1009.webp"
+  },
+  "1013": {
+    "id": "1013",
+    "name": "ヘルタ",
+    "icon": "/starrail/assets/icon/character/1013.webp"
+  },
+  "1014": {
+    "id": "1014",
+    "name": "セイバー",
+    "icon": "/starrail/assets/icon/character/1014.webp"
+  },
+  "1015": {
+    "id": "1015",
+    "name": "アーチャー",
+    "icon": "/starrail/assets/icon/character/1015.webp"
+  },
+  "1101": {
+    "id": "1101",
+    "name": "ブローニャ",
+    "icon": "/starrail/assets/icon/character/1101.webp"
+  },
+  "1102": {
+    "id": "1102",
+    "name": "ゼーレ",
+    "icon": "/starrail/assets/icon/character/1102.webp"
+  },
+  "1103": {
+    "id": "1103",
+    "name": "セーバル",
+    "icon": "/starrail/assets/icon/character/1103.webp"
+  },
+  "1104": {
+    "id": "1104",
+    "name": "ジェパード",
+    "icon": "/starrail/assets/icon/character/1104.webp"
+  },
+  "1105": {
+    "id": "1105",
+    "name": "ナターシャ",
+    "icon": "/starrail/assets/icon/character/1105.webp"
+  },
+  "1106": {
+    "id": "1106",
+    "name": "ペラ",
+    "icon": "/starrail/assets/icon/character/1106.webp"
+  },
+  "1107": {
+    "id": "1107",
+    "name": "クラーラ",
+    "icon": "/starrail/assets/icon/character/1107.webp"
+  },
+  "1108": {
+    "id": "1108",
+    "name": "サンポ",
+    "icon": "/starrail/assets/icon/character/1108.webp"
+  },
+  "1109": {
+    "id": "1109",
+    "name": "フック",
+    "icon": "/starrail/assets/icon/character/1109.webp"
+  },
+  "1110": {
+    "id": "1110",
+    "name": "リンクス",
+    "icon": "/starrail/assets/icon/character/1110.webp"
+  },
+  "1111": {
+    "id": "1111",
+    "name": "ルカ",
+    "icon": "/starrail/assets/icon/character/1111.webp"
+  },
+  "1112": {
+    "id": "1112",
+    "name": "トパーズ",
+    "icon": "/starrail/assets/icon/character/1112.webp"
+  },
+  "1201": {
+    "id": "1201",
+    "name": "青雀",
+    "icon": "/starrail/assets/icon/character/1201.webp"
+  },
+  "1202": {
+    "id": "1202",
+    "name": "停雲",
+    "icon": "/starrail/assets/icon/character/1202.webp"
+  },
+  "1203": {
+    "id": "1203",
+    "name": "羅刹",
+    "icon": "/starrail/assets/icon/character/1203.webp"
+  },
+  "1204": {
+    "id": "1204",
+    "name": "景元",
+    "icon": "/starrail/assets/icon/character/1204.webp"
+  },
+  "1205": {
+    "id": "1205",
+    "name": "刃",
+    "icon": "/starrail/assets/icon/character/1205.webp"
+  },
+  "1206": {
+    "id": "1206",
+    "name": "素裳",
+    "icon": "/starrail/assets/icon/character/1206.webp"
+  },
+  "1207": {
+    "id": "1207",
+    "name": "御空",
+    "icon": "/starrail/assets/icon/character/1207.webp"
+  },
+  "1208": {
+    "id": "1208",
+    "name": "符玄",
+    "icon": "/starrail/assets/icon/character/1208.webp"
+  },
+  "1209": {
+    "id": "1209",
+    "name": "彦卿",
+    "icon": "/starrail/assets/icon/character/1209.webp"
+  },
+  "1210": {
+    "id": "1210",
+    "name": "桂乃芬",
+    "icon": "/starrail/assets/icon/character/1210.webp"
+  },
+  "1211": {
+    "id": "1211",
+    "name": "白露",
+    "icon": "/starrail/assets/icon/character/1211.webp"
+  },
+  "1214": {
+    "id": "1214",
+    "name": "雪衣",
+    "icon": "/starrail/assets/icon/character/1214.webp"
+  },
+  "1215": {
+    "id": "1215",
+    "name": "寒鴉",
+    "icon": "/starrail/assets/icon/character/1215.webp"
+  },
+  "1217": {
+    "id": "1217",
+    "name": "フォフォ",
+    "icon": "/starrail/assets/icon/character/1217.webp"
+  },
+  "1218": {
+    "id": "1218",
+    "name": "椒丘",
+    "icon": "/starrail/assets/icon/character/1218.webp"
+  },
+  "1220": {
+    "id": "1220",
+    "name": "飛霄",
+    "icon": "/starrail/assets/icon/character/1220.webp"
+  },
+  "1221": {
+    "id": "1221",
+    "name": "雲璃",
+    "icon": "/starrail/assets/icon/character/1221.webp"
+  },
+  "1222": {
+    "id": "1222",
+    "name": "霊砂",
+    "icon": "/starrail/assets/icon/character/1222.webp"
+  },
+  "1223": {
+    "id": "1223",
+    "name": "モゼ",
+    "icon": "/starrail/assets/icon/character/1223.webp"
+  },
+  "1301": {
+    "id": "1301",
+    "name": "ギャラガー",
+    "icon": "/starrail/assets/icon/character/1301.webp"
+  },
+  "1302": {
+    "id": "1302",
+    "name": "アルジェンティ",
+    "icon": "/starrail/assets/icon/character/1302.webp"
+  },
+  "1303": {
+    "id": "1303",
+    "name": "ルアン・メェイ",
+    "icon": "/starrail/assets/icon/character/1303.webp"
+  },
+  "1304": {
+    "id": "1304",
+    "name": "アベンチュリン",
+    "icon": "/starrail/assets/icon/character/1304.webp"
+  },
+  "1305": {
+    "id": "1305",
+    "name": "Dr.レイシオ",
+    "icon": "/starrail/assets/icon/character/1305.webp"
+  },
+  "1306": {
+    "id": "1306",
+    "name": "花火",
+    "icon": "/starrail/assets/icon/character/1306.webp"
+  },
+  "1307": {
+    "id": "1307",
+    "name": "ブラックスワン",
+    "icon": "/starrail/assets/icon/character/1307.webp"
+  },
+  "1308": {
+    "id": "1308",
+    "name": "黄泉",
+    "icon": "/starrail/assets/icon/character/1308.webp"
+  },
+  "1309": {
+    "id": "1309",
+    "name": "ロビン",
+    "icon": "/starrail/assets/icon/character/1309.webp"
+  },
+  "1310": {
+    "id": "1310",
+    "name": "ホタル",
+    "icon": "/starrail/assets/icon/character/1310.webp"
+  },
+  "1312": {
+    "id": "1312",
+    "name": "ミーシャ",
+    "icon": "/starrail/assets/icon/character/1312.webp"
+  },
+  "1313": {
+    "id": "1313",
+    "name": "サンデー",
+    "icon": "/starrail/assets/icon/character/1313.webp"
+  },
+  "1314": {
+    "id": "1314",
+    "name": "ジェイド",
+    "icon": "/starrail/assets/icon/character/1314.webp"
+  },
+  "1315": {
+    "id": "1315",
+    "name": "ブートヒル",
+    "icon": "/starrail/assets/icon/character/1315.webp"
+  },
+  "1317": {
+    "id": "1317",
+    "name": "乱破",
+    "icon": "/starrail/assets/icon/character/1317.webp"
+  },
+  "1321": {
+    "id": "1321",
+    "name": "ダリア",
+    "icon": "/starrail/assets/icon/character/1321.webp"
+  },
+  "1401": {
+    "id": "1401",
+    "name": "マダム・ヘルタ",
+    "icon": "/starrail/assets/icon/character/1401.webp"
+  },
+  "1402": {
+    "id": "1402",
+    "name": "アグライア",
+    "icon": "/starrail/assets/icon/character/1402.webp"
+  },
+  "1403": {
+    "id": "1403",
+    "name": "トリビー",
+    "icon": "/starrail/assets/icon/character/1403.webp"
+  },
+  "1404": {
+    "id": "1404",
+    "name": "モーディス",
+    "icon": "/starrail/assets/icon/character/1404.webp"
+  },
+  "1405": {
+    "id": "1405",
+    "name": "アナイクス",
+    "icon": "/starrail/assets/icon/character/1405.webp"
+  },
+  "1406": {
+    "id": "1406",
+    "name": "サフェル",
+    "icon": "/starrail/assets/icon/character/1406.webp"
+  },
+  "1407": {
+    "id": "1407",
+    "name": "キャストリス",
+    "icon": "/starrail/assets/icon/character/1407.webp"
+  },
+  "1408": {
+    "id": "1408",
+    "name": "ファイノン",
+    "icon": "/starrail/assets/icon/character/1408.webp"
+  },
+  "1409": {
+    "id": "1409",
+    "name": "ヒアンシー",
+    "icon": "/starrail/assets/icon/character/1409.webp"
+  },
+  "1410": {
+    "id": "1410",
+    "name": "セイレンス",
+    "icon": "/starrail/assets/icon/character/1410.webp"
+  },
+  "1412": {
+    "id": "1412",
+    "name": "ケリュドラ",
+    "icon": "/starrail/assets/icon/character/1412.webp"
+  },
+  "1413": {
+    "id": "1413",
+    "name": "長夜月",
+    "icon": "/starrail/assets/icon/character/1413.webp"
+  },
+  "1415": {
+    "id": "1415",
+    "name": "キュレネ",
+    "icon": "/starrail/assets/icon/character/1415.webp"
+  },
+  "1501": {
+    "id": "1501",
+    "name": "火花",
+    "icon": "/starrail/assets/icon/character/1501.webp"
+  },
+  "1502": {
+    "id": "1502",
+    "name": "爻光",
+    "icon": "/starrail/assets/icon/character/1502.webp"
+  },
+  "1504": {
+    "id": "1504",
+    "name": "不死途",
+    "icon": "/starrail/assets/icon/character/1504.webp"
+  },
+  "200001": {
+    "id": "200001",
+    "name": "なし",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "200101": {
+    "id": "200101",
+    "name": "三月なのか・歓迎",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHeadS1_1001.webp"
+  },
+  "200102": {
+    "id": "200102",
+    "name": "丹恒・歓迎",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHeadS1_1002.webp"
+  },
+  "200103": {
+    "id": "200103",
+    "name": "姫子・歓迎",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHeadS1_1003.webp"
+  },
+  "200104": {
+    "id": "200104",
+    "name": "ヴェルト・歓迎",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHeadS1_1004.webp"
+  },
+  "200105": {
+    "id": "200105",
+    "name": "開拓者・歓迎",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHeadS1_8001.webp"
+  },
+  "200106": {
+    "id": "200106",
+    "name": "開拓者・歓迎",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHeadS1_8002.webp"
+  },
+  "200107": {
+    "id": "200107",
+    "name": "カフカ・夜宴",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200107.webp"
+  },
+  "200108": {
+    "id": "200108",
+    "name": "刃・夜宴",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200108.webp"
+  },
+  "200109": {
+    "id": "200109",
+    "name": "景元・余暇",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200109.webp"
+  },
+  "200110": {
+    "id": "200110",
+    "name": "符玄・余暇",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200110.webp"
+  },
+  "200111": {
+    "id": "200111",
+    "name": "ブローニャ・祭典",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200111.webp"
+  },
+  "200112": {
+    "id": "200112",
+    "name": "ジェパード・祭典",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200112.webp"
+  },
+  "200113": {
+    "id": "200113",
+    "name": "鏡流・遠行",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200113.webp"
+  },
+  "200114": {
+    "id": "200114",
+    "name": "彦卿・遠行",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200114.webp"
+  },
+  "200115": {
+    "id": "200115",
+    "name": "ルアン・メェイ・教学",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200115.webp"
+  },
+  "200116": {
+    "id": "200116",
+    "name": "Dr.レイシオ・教学",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200116.webp"
+  },
+  "200117": {
+    "id": "200117",
+    "name": "花火・イリュージョン",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200117.webp"
+  },
+  "200118": {
+    "id": "200118",
+    "name": "サンポ・イリュージョン",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200118.webp"
+  },
+  "200119": {
+    "id": "200119",
+    "name": "トパーズ・命中",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200119.webp"
+  },
+  "200120": {
+    "id": "200120",
+    "name": "アベンチュリン・命中",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200120.webp"
+  },
+  "200121": {
+    "id": "200121",
+    "name": "黄泉・奇襲",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200121.webp"
+  },
+  "200122": {
+    "id": "200122",
+    "name": "ブートヒル・奇襲",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200122.webp"
+  },
+  "200123": {
+    "id": "200123",
+    "name": "ホタル・未来図",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200123.webp"
+  },
+  "200124": {
+    "id": "200124",
+    "name": "装甲「サム」・未来図",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200124.webp"
+  },
+  "200125": {
+    "id": "200125",
+    "name": "白露・仁医",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200125.webp"
+  },
+  "200126": {
+    "id": "200126",
+    "name": "椒丘・仁医",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200126.webp"
+  },
+  "200127": {
+    "id": "200127",
+    "name": "飛霄・体錬",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200127.webp"
+  },
+  "200128": {
+    "id": "200128",
+    "name": "モゼ・体錬",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200128.webp"
+  },
+  "200129": {
+    "id": "200129",
+    "name": "乱破・開幕",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200129.webp"
+  },
+  "200130": {
+    "id": "200130",
+    "name": "銀狼・開幕",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200130.webp"
+  },
+  "200131": {
+    "id": "200131",
+    "name": "ロビン・青春",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200131.webp"
+  },
+  "200132": {
+    "id": "200132",
+    "name": "サンデー・青春",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200132.webp"
+  },
+  "200133": {
+    "id": "200133",
+    "name": "マダム・ヘルタ・ティータイム",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200133.webp"
+  },
+  "200134": {
+    "id": "200134",
+    "name": "ヘルタ・ティータイム",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200134.webp"
+  },
+  "200135": {
+    "id": "200135",
+    "name": "モーディス・佳肴",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200135.webp"
+  },
+  "200136": {
+    "id": "200136",
+    "name": "トリビー・佳肴",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200136.webp"
+  },
+  "200137": {
+    "id": "200137",
+    "name": "キャストリス・巧技",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200137.webp"
+  },
+  "200138": {
+    "id": "200138",
+    "name": "アナイクス・巧技",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200138.webp"
+  },
+  "200139": {
+    "id": "200139",
+    "name": "ヒアンシー・いい夢を",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200139.webp"
+  },
+  "200140": {
+    "id": "200140",
+    "name": "サフェル・いい夢を",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200140.webp"
+  },
+  "200141": {
+    "id": "200141",
+    "name": "ファイノン・トレンド",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200141.webp"
+  },
+  "200142": {
+    "id": "200142",
+    "name": "アグライア・トレンド",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200142.webp"
+  },
+  "200143": {
+    "id": "200143",
+    "name": "セイレンス・征伐",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200143.webp"
+  },
+  "200144": {
+    "id": "200144",
+    "name": "ケリュドラ・征伐",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200144.webp"
+  },
+  "200145": {
+    "id": "200145",
+    "name": "長夜月・潜伏",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200145.webp"
+  },
+  "200146": {
+    "id": "200146",
+    "name": "丹恒・騰荒・潜伏",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200146.webp"
+  },
+  "200147": {
+    "id": "200147",
+    "name": "キュレネ・約束の場所へ",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200147.webp"
+  },
+  "200148": {
+    "id": "200148",
+    "name": "過去のさざ波・約束の場所へ",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200148.webp"
+  },
+  "200149": {
+    "id": "200149",
+    "name": "ダリア・追憶",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200149.webp"
+  },
+  "200150": {
+    "id": "200150",
+    "name": "ブラックスワン・追憶",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200150.webp"
+  },
+  "200151": {
+    "id": "200151",
+    "name": "爻光・舞い踊る",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200151.webp"
+  },
+  "200152": {
+    "id": "200152",
+    "name": "火花・舞い踊る",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200152.webp"
+  },
+  "200153": {
+    "id": "200153",
+    "name": "不死途・疾駆",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200153.webp"
+  },
+  "200154": {
+    "id": "200154",
+    "name": "ジェイド・疾駆",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200154.webp"
+  },
+  "201001": {
+    "id": "201001",
+    "name": "三月なのか・存護",
+    "icon": "/starrail/assets/icon/character/1001.webp"
+  },
+  "201002": {
+    "id": "201002",
+    "name": "丹恒",
+    "icon": "/starrail/assets/icon/character/1002.webp"
+  },
+  "201003": {
+    "id": "201003",
+    "name": "姫子",
+    "icon": "/starrail/assets/icon/character/1003.webp"
+  },
+  "201004": {
+    "id": "201004",
+    "name": "ヴェルト",
+    "icon": "/starrail/assets/icon/character/1004.webp"
+  },
+  "201005": {
+    "id": "201005",
+    "name": "カフカ",
+    "icon": "/starrail/assets/icon/character/1005.webp"
+  },
+  "201006": {
+    "id": "201006",
+    "name": "銀狼",
+    "icon": "/starrail/assets/icon/character/1006.webp"
+  },
+  "201008": {
+    "id": "201008",
+    "name": "アーラン",
+    "icon": "/starrail/assets/icon/character/1008.webp"
+  },
+  "201009": {
+    "id": "201009",
+    "name": "アスター",
+    "icon": "/starrail/assets/icon/character/1009.webp"
+  },
+  "201013": {
+    "id": "201013",
+    "name": "ヘルタ",
+    "icon": "/starrail/assets/icon/character/1013.webp"
+  },
+  "201014": {
+    "id": "201014",
+    "name": "セイバー",
+    "icon": "/starrail/assets/icon/character/1014.webp"
+  },
+  "201015": {
+    "id": "201015",
+    "name": "アーチャー",
+    "icon": "/starrail/assets/icon/character/1015.webp"
+  },
+  "201101": {
+    "id": "201101",
+    "name": "ブローニャ",
+    "icon": "/starrail/assets/icon/character/1101.webp"
+  },
+  "201102": {
+    "id": "201102",
+    "name": "ゼーレ",
+    "icon": "/starrail/assets/icon/character/1102.webp"
+  },
+  "201103": {
+    "id": "201103",
+    "name": "セーバル",
+    "icon": "/starrail/assets/icon/character/1103.webp"
+  },
+  "201104": {
+    "id": "201104",
+    "name": "ジェパード",
+    "icon": "/starrail/assets/icon/character/1104.webp"
+  },
+  "201105": {
+    "id": "201105",
+    "name": "ナターシャ",
+    "icon": "/starrail/assets/icon/character/1105.webp"
+  },
+  "201106": {
+    "id": "201106",
+    "name": "ペラ",
+    "icon": "/starrail/assets/icon/character/1106.webp"
+  },
+  "201107": {
+    "id": "201107",
+    "name": "クラーラ",
+    "icon": "/starrail/assets/icon/character/1107.webp"
+  },
+  "201108": {
+    "id": "201108",
+    "name": "サンポ",
+    "icon": "/starrail/assets/icon/character/1108.webp"
+  },
+  "201109": {
+    "id": "201109",
+    "name": "フック",
+    "icon": "/starrail/assets/icon/character/1109.webp"
+  },
+  "201110": {
+    "id": "201110",
+    "name": "リンクス",
+    "icon": "/starrail/assets/icon/character/1110.webp"
+  },
+  "201111": {
+    "id": "201111",
+    "name": "ルカ",
+    "icon": "/starrail/assets/icon/character/1111.webp"
+  },
+  "201112": {
+    "id": "201112",
+    "name": "トパーズ&カブ",
+    "icon": "/starrail/assets/icon/character/1112.webp"
+  },
+  "201201": {
+    "id": "201201",
+    "name": "青雀",
+    "icon": "/starrail/assets/icon/character/1201.webp"
+  },
+  "201202": {
+    "id": "201202",
+    "name": "停雲",
+    "icon": "/starrail/assets/icon/character/1202.webp"
+  },
+  "201203": {
+    "id": "201203",
+    "name": "羅刹",
+    "icon": "/starrail/assets/icon/character/1203.webp"
+  },
+  "201204": {
+    "id": "201204",
+    "name": "景元",
+    "icon": "/starrail/assets/icon/character/1204.webp"
+  },
+  "201205": {
+    "id": "201205",
+    "name": "刃",
+    "icon": "/starrail/assets/icon/character/1205.webp"
+  },
+  "201206": {
+    "id": "201206",
+    "name": "素裳",
+    "icon": "/starrail/assets/icon/character/1206.webp"
+  },
+  "201207": {
+    "id": "201207",
+    "name": "御空",
+    "icon": "/starrail/assets/icon/character/1207.webp"
+  },
+  "201208": {
+    "id": "201208",
+    "name": "符玄",
+    "icon": "/starrail/assets/icon/character/1208.webp"
+  },
+  "201209": {
+    "id": "201209",
+    "name": "彦卿",
+    "icon": "/starrail/assets/icon/character/1209.webp"
+  },
+  "201210": {
+    "id": "201210",
+    "name": "桂乃芬",
+    "icon": "/starrail/assets/icon/character/1210.webp"
+  },
+  "201211": {
+    "id": "201211",
+    "name": "白露",
+    "icon": "/starrail/assets/icon/character/1211.webp"
+  },
+  "201212": {
+    "id": "201212",
+    "name": "鏡流",
+    "icon": "/starrail/assets/icon/character/1212.webp"
+  },
+  "201213": {
+    "id": "201213",
+    "name": "丹恒・飲月",
+    "icon": "/starrail/assets/icon/character/1213.webp"
+  },
+  "201214": {
+    "id": "201214",
+    "name": "雪衣",
+    "icon": "/starrail/assets/icon/character/1214.webp"
+  },
+  "201215": {
+    "id": "201215",
+    "name": "寒鴉",
+    "icon": "/starrail/assets/icon/character/1215.webp"
+  },
+  "201217": {
+    "id": "201217",
+    "name": "フォフォ",
+    "icon": "/starrail/assets/icon/character/1217.webp"
+  },
+  "201218": {
+    "id": "201218",
+    "name": "椒丘",
+    "icon": "/starrail/assets/icon/character/1218.webp"
+  },
+  "201220": {
+    "id": "201220",
+    "name": "飛霄",
+    "icon": "/starrail/assets/icon/character/1220.webp"
+  },
+  "201221": {
+    "id": "201221",
+    "name": "雲璃",
+    "icon": "/starrail/assets/icon/character/1221.webp"
+  },
+  "201222": {
+    "id": "201222",
+    "name": "霊砂",
+    "icon": "/starrail/assets/icon/character/1222.webp"
+  },
+  "201223": {
+    "id": "201223",
+    "name": "モゼ",
+    "icon": "/starrail/assets/icon/character/1223.webp"
+  },
+  "201224": {
+    "id": "201224",
+    "name": "三月なのか・巡狩",
+    "icon": "/starrail/assets/icon/character/1224.webp"
+  },
+  "201225": {
+    "id": "201225",
+    "name": "帰忘の流離人",
+    "icon": "/starrail/assets/icon/character/1225.webp"
+  },
+  "201301": {
+    "id": "201301",
+    "name": "ギャラガー",
+    "icon": "/starrail/assets/icon/character/1301.webp"
+  },
+  "201302": {
+    "id": "201302",
+    "name": "アルジェンティ",
+    "icon": "/starrail/assets/icon/character/1302.webp"
+  },
+  "201303": {
+    "id": "201303",
+    "name": "ルアン・メェイ",
+    "icon": "/starrail/assets/icon/character/1303.webp"
+  },
+  "201304": {
+    "id": "201304",
+    "name": "アベンチュリン",
+    "icon": "/starrail/assets/icon/character/1304.webp"
+  },
+  "201305": {
+    "id": "201305",
+    "name": "Dr.レイシオ",
+    "icon": "/starrail/assets/icon/character/1305.webp"
+  },
+  "201306": {
+    "id": "201306",
+    "name": "花火",
+    "icon": "/starrail/assets/icon/character/1306.webp"
+  },
+  "201307": {
+    "id": "201307",
+    "name": "ブラックスワン",
+    "icon": "/starrail/assets/icon/character/1307.webp"
+  },
+  "201308": {
+    "id": "201308",
+    "name": "黄泉",
+    "icon": "/starrail/assets/icon/character/1308.webp"
+  },
+  "201309": {
+    "id": "201309",
+    "name": "ロビン",
+    "icon": "/starrail/assets/icon/character/1309.webp"
+  },
+  "201310": {
+    "id": "201310",
+    "name": "ホタル",
+    "icon": "/starrail/assets/icon/character/1310.webp"
+  },
+  "201312": {
+    "id": "201312",
+    "name": "ミーシャ",
+    "icon": "/starrail/assets/icon/character/1312.webp"
+  },
+  "201313": {
+    "id": "201313",
+    "name": "サンデー",
+    "icon": "/starrail/assets/icon/character/1313.webp"
+  },
+  "201314": {
+    "id": "201314",
+    "name": "ジェイド",
+    "icon": "/starrail/assets/icon/character/1314.webp"
+  },
+  "201315": {
+    "id": "201315",
+    "name": "ブートヒル",
+    "icon": "/starrail/assets/icon/character/1315.webp"
+  },
+  "201317": {
+    "id": "201317",
+    "name": "乱破",
+    "icon": "/starrail/assets/icon/character/1317.webp"
+  },
+  "201321": {
+    "id": "201321",
+    "name": "ダリア",
+    "icon": "/starrail/assets/icon/character/1321.webp"
+  },
+  "201401": {
+    "id": "201401",
+    "name": "マダム・ヘルタ",
+    "icon": "/starrail/assets/icon/character/1401.webp"
+  },
+  "201402": {
+    "id": "201402",
+    "name": "アグライア",
+    "icon": "/starrail/assets/icon/character/1402.webp"
+  },
+  "201403": {
+    "id": "201403",
+    "name": "トリビー",
+    "icon": "/starrail/assets/icon/character/1403.webp"
+  },
+  "201404": {
+    "id": "201404",
+    "name": "モーディス",
+    "icon": "/starrail/assets/icon/character/1404.webp"
+  },
+  "201405": {
+    "id": "201405",
+    "name": "アナイクス",
+    "icon": "/starrail/assets/icon/character/1405.webp"
+  },
+  "201406": {
+    "id": "201406",
+    "name": "サフェル",
+    "icon": "/starrail/assets/icon/character/1406.webp"
+  },
+  "201407": {
+    "id": "201407",
+    "name": "キャストリス",
+    "icon": "/starrail/assets/icon/character/1407.webp"
+  },
+  "201408": {
+    "id": "201408",
+    "name": "ファイノン",
+    "icon": "/starrail/assets/icon/character/1408.webp"
+  },
+  "201409": {
+    "id": "201409",
+    "name": "ヒアンシー",
+    "icon": "/starrail/assets/icon/character/1409.webp"
+  },
+  "201410": {
+    "id": "201410",
+    "name": "セイレンス",
+    "icon": "/starrail/assets/icon/character/1410.webp"
+  },
+  "201412": {
+    "id": "201412",
+    "name": "ケリュドラ",
+    "icon": "/starrail/assets/icon/character/1412.webp"
+  },
+  "201413": {
+    "id": "201413",
+    "name": "長夜月",
+    "icon": "/starrail/assets/icon/character/1413.webp"
+  },
+  "201414": {
+    "id": "201414",
+    "name": "丹恒・騰荒",
+    "icon": "/starrail/assets/icon/character/1414.webp"
+  },
+  "201415": {
+    "id": "201415",
+    "name": "キュレネ",
+    "icon": "/starrail/assets/icon/character/1415.webp"
+  },
+  "201501": {
+    "id": "201501",
+    "name": "火花",
+    "icon": "/starrail/assets/icon/character/1501.webp"
+  },
+  "201502": {
+    "id": "201502",
+    "name": "爻光",
+    "icon": "/starrail/assets/icon/character/1502.webp"
+  },
+  "201504": {
+    "id": "201504",
+    "name": "不死途",
+    "icon": "/starrail/assets/icon/character/1504.webp"
+  },
+  "202001": {
+    "id": "202001",
+    "name": "ウーウーボ",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202001.webp"
+  },
+  "202002": {
+    "id": "202002",
+    "name": "ゴミ箱",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202002.webp"
+  },
+  "202003": {
+    "id": "202003",
+    "name": "キキ",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202003.webp"
+  },
+  "202004": {
+    "id": "202004",
+    "name": "ペペ",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202004.webp"
+  },
+  "202005": {
+    "id": "202005",
+    "name": "諦聴",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202005.webp"
+  },
+  "202006": {
+    "id": "202006",
+    "name": "指名手配書",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202006.webp"
+  },
+  "202007": {
+    "id": "202007",
+    "name": "パム・美食",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202007.webp"
+  },
+  "202008": {
+    "id": "202008",
+    "name": "「お菓子生命体」",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202008.webp"
+  },
+  "202009": {
+    "id": "202009",
+    "name": "{NICKNAME}・星軌",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202009.webp"
+  },
+  "202010": {
+    "id": "202010",
+    "name": "{NICKNAME}・星軌",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202010.webp"
+  },
+  "202011": {
+    "id": "202011",
+    "name": "クロックボーイ",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202011.webp"
+  },
+  "202012": {
+    "id": "202012",
+    "name": "ブラザーハヌ",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202012.webp"
+  },
+  "202013": {
+    "id": "202013",
+    "name": "折り紙の小鳥",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202013.webp"
+  },
+  "202014": {
+    "id": "202014",
+    "name": "カカワーシャ",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202014.webp"
+  },
+  "202015": {
+    "id": "202015",
+    "name": "ハムスターボールの騎士",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202015.webp"
+  },
+  "202016": {
+    "id": "202016",
+    "name": "一周年記念",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202016.webp"
+  },
+  "202017": {
+    "id": "202017",
+    "name": "花火の人形",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202017.webp"
+  },
+  "202018": {
+    "id": "202018",
+    "name": "「じゃあテストよろしく」",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202018.webp"
+  },
+  "202019": {
+    "id": "202019",
+    "name": "彦卿・夢見",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202019.webp"
+  },
+  "202020": {
+    "id": "202020",
+    "name": "夢境の迷い時計",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202020.webp"
+  },
+  "202021": {
+    "id": "202021",
+    "name": "ミュリオン",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202021.webp"
+  },
+  "202022": {
+    "id": "202022",
+    "name": "トリアン人形",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202022.webp"
+  },
+  "202023": {
+    "id": "202023",
+    "name": "ボリュシア",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202023.webp"
+  },
+  "202024": {
+    "id": "202024",
+    "name": "ヤーヌスの木馬",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202024.webp"
+  },
+  "202025": {
+    "id": "202025",
+    "name": "シーフ",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202025.webp"
+  },
+  "202028": {
+    "id": "202028",
+    "name": "ミスターフク郎・入浴",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202028.webp"
+  },
+  "202029": {
+    "id": "202029",
+    "name": "三月なのか・祭日",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_202029.webp"
+  },
+  "202030": {
+    "id": "202030",
+    "name": "黄金のエンドモ",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202030.webp"
+  },
+  "202031": {
+    "id": "202031",
+    "name": "「見えない」",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202031.webp"
+  },
+  "202033": {
+    "id": "202033",
+    "name": "バットの名のもとに",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202033.webp"
+  },
+  "202034": {
+    "id": "202034",
+    "name": "ホタル・旅行",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_202034.webp"
+  },
+  "202035": {
+    "id": "202035",
+    "name": "「ポンポンパンッ！」",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202035.webp"
+  },
+  "202036": {
+    "id": "202036",
+    "name": "{NICKNAME}・執筆者",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202036.webp"
+  },
+  "202037": {
+    "id": "202037",
+    "name": "{NICKNAME}・執筆者",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202037.webp"
+  },
+  "202038": {
+    "id": "202038",
+    "name": "ガオガオ～",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202038.webp"
+  },
+  "202039": {
+    "id": "202039",
+    "name": "ナッツ・スピード",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202039.webp"
+  },
+  "202040": {
+    "id": "202040",
+    "name": "「ちび地獣すくすく！」",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202040.webp"
+  },
+  "202041": {
+    "id": "202041",
+    "name": "最後の勝者",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202041.webp"
+  },
+  "202042": {
+    "id": "202042",
+    "name": "壁画に刻まれて",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202042.webp"
+  },
+  "202043": {
+    "id": "202043",
+    "name": "ルアン・メェイ・堪能",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_202043.webp"
+  },
+  "202044": {
+    "id": "202044",
+    "name": "あつまれ二次元シティ",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202044.webp"
+  },
+  "202045": {
+    "id": "202045",
+    "name": "漫遊する「開拓」",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202045.webp"
+  },
+  "202046": {
+    "id": "202046",
+    "name": "好運の連続",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202046.webp"
+  },
+  "202048": {
+    "id": "202048",
+    "name": "ふわりと聞く",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202048.webp"
+  },
+  "202049": {
+    "id": "202049",
+    "name": "はたらくアッハ",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202049.webp"
+  },
+  "208001": {
+    "id": "208001",
+    "name": "{NICKNAME}・壊滅",
+    "icon": "/starrail/assets/icon/character/8001.webp"
+  },
+  "208002": {
+    "id": "208002",
+    "name": "{NICKNAME}・壊滅",
+    "icon": "/starrail/assets/icon/character/8002.webp"
+  },
+  "208003": {
+    "id": "208003",
+    "name": "{NICKNAME}・存護",
+    "icon": "/starrail/assets/icon/character/8003.webp"
+  },
+  "208004": {
+    "id": "208004",
+    "name": "{NICKNAME}・存護",
+    "icon": "/starrail/assets/icon/character/8004.webp"
+  },
+  "208005": {
+    "id": "208005",
+    "name": "{NICKNAME}・調和",
+    "icon": "/starrail/assets/icon/character/8005.webp"
+  },
+  "208006": {
+    "id": "208006",
+    "name": "{NICKNAME}・調和",
+    "icon": "/starrail/assets/icon/character/8006.webp"
+  },
+  "208007": {
+    "id": "208007",
+    "name": "{NICKNAME}・記憶",
+    "icon": "/starrail/assets/icon/character/8007.webp"
+  },
+  "208008": {
+    "id": "208008",
+    "name": "{NICKNAME}・記憶",
+    "icon": "/starrail/assets/icon/character/8008.webp"
+  }
+}

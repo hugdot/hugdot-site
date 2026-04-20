@@ -1,0 +1,1582 @@
+{
+  "20000": {
+    "id": "20000",
+    "name": "Arrows",
+    "rarity": 3,
+    "path": "Rogue",
+    "desc": "พลังอันแสนเบาบางที่สะสมจากกาลเวลา และสานต่อจนเกิดเป็นโชคชะตาอันยิ่งใหญ่ในชั่วพริบตา \"ช่วงเวลาที่ลูกศรอยู่บนสายธนูและน้าวคันธนู คือเวลาที่ดวงตาของนักล่าจะมองเห็นได้ชัดเจนที่สุด\"",
+    "icon": "/starrail/assets/icon/light_cone/20000.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20000.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20000.webp"
+  },
+  "20001": {
+    "id": "20001",
+    "name": "Cornucopia",
+    "rarity": 3,
+    "path": "Priest",
+    "desc": "พลังอันแสนเบาบางที่สะสมจากกาลเวลา และสานต่อจนเกิดเป็นโชคชะตาอันยิ่งใหญ่ในชั่วพริบตา \"ชีวิตคือการอยู่เหนือระเบียบของเกณฑ์ที่กำหนด การเกิดของมันคือคำตอบสุดท้ายสำหรับจักรวาลอันสงบนิ่ง และนี่คือการประกาศว่ายุคแห่งความโกลาหลในสมัยโบราณได้ผ่านไปแล้ว\"",
+    "icon": "/starrail/assets/icon/light_cone/20001.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20001.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20001.webp"
+  },
+  "20002": {
+    "id": "20002",
+    "name": "Collapsing Sky",
+    "rarity": 3,
+    "path": "Warrior",
+    "desc": "พลังอันแสนเบาบางที่สะสมจากกาลเวลา และสานต่อจนเกิดเป็นโชคชะตาอันยิ่งใหญ่ในชั่วพริบตา \"การหายไปของสรรพสิ่งทั้งหลาย ล้วนเป็นเรื่องธรรมชาติเช่นเดียวกับการถือกำเนิด ภายใต้การชะล้างของกาลเวลา สิ่งที่จับต้องได้ทั้งหมดจะถูกแผดเผาเป็นเถ้าถ่าน\"",
+    "icon": "/starrail/assets/icon/light_cone/20002.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20002.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20002.webp"
+  },
+  "20003": {
+    "id": "20003",
+    "name": "Amber",
+    "rarity": 3,
+    "path": "Knight",
+    "desc": "พลังอันแสนเบาบางที่สะสมจากกาลเวลา และสานต่อจนเกิดเป็นโชคชะตาอันยิ่งใหญ่ในชั่วพริบตา \"มีเพียงสิ่งที่ไม่ถูกจำกัดด้วยเวลาเท่านั้น ที่จะสามารถมีชีวิตอยู่ท่ามกลางห้วงแห่งกาลเวลาได้\"",
+    "icon": "/starrail/assets/icon/light_cone/20003.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20003.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20003.webp"
+  },
+  "20004": {
+    "id": "20004",
+    "name": "Void",
+    "rarity": 3,
+    "path": "Warlock",
+    "desc": "พลังอันแสนเบาบางที่สะสมจากกาลเวลา และสานต่อจนเกิดเป็นโชคชะตาอันยิ่งใหญ่ในชั่วพริบตา \"เขาจ้องมองไปในความว่างเปล่า มันเหมือนกับดวงอาทิตย์อันมืดมิดที่อยู่เหนือทุกสิ่ง และเหมือนกับปากที่เอ่ยตอบทุกข้อสงสัย... ซึ่งเอื้อนเอ่ยว่า: ███ █ ███ ██ คำตอบนี้ไม่สามารถอธิบายได้ด้วยภาษามนุษย์ แต่ทุกคนกลับเข้าใจ\"",
+    "icon": "/starrail/assets/icon/light_cone/20004.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20004.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20004.webp"
+  },
+  "20005": {
+    "id": "20005",
+    "name": "Chorus",
+    "rarity": 3,
+    "path": "Shaman",
+    "desc": "พลังอันแสนเบาบางที่สะสมจากกาลเวลา และสานต่อจนเกิดเป็นโชคชะตาอันยิ่งใหญ่ในชั่วพริบตา \"นิ้วมือรวมกันเป็นกำปั้น เมื่อผู้คนร่วมใจย่อมกลายเป็นพลังอันแข็งแกร่ง ฉันอุทิศตัวเองเพื่อผลลัพธ์ที่สูงกว่า นั่นก็คือ... พวกเรา\"",
+    "icon": "/starrail/assets/icon/light_cone/20005.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20005.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20005.webp"
+  },
+  "20006": {
+    "id": "20006",
+    "name": "Data Bank",
+    "rarity": 3,
+    "path": "Mage",
+    "desc": "พลังอันแสนเบาบางที่สะสมจากกาลเวลา และสานต่อจนเกิดเป็นโชคชะตาอันยิ่งใหญ่ในชั่วพริบตา \"ถึงมนุษย์จะสูญพันธุ์แต่ห้องสมุดจะคงอยู่ต่อไป: โดดเดี่ยวท่ามกลางแสงตะเกียง ไร้จุดสิ้นสุด และหยุดการเคลื่อนไหว หนังสือล้ำค่าถูกเก็บไว้อย่างเงียบๆ ไม่ถูกใช้งานและไม่เกิดการสึกหรอ\"",
+    "icon": "/starrail/assets/icon/light_cone/20006.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20006.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20006.webp"
+  },
+  "20007": {
+    "id": "20007",
+    "name": "Darting Arrow",
+    "rarity": 3,
+    "path": "Rogue",
+    "desc": "พลังอันแสนเบาบางที่สะสมจากกาลเวลา และสานต่อจนเกิดเป็นโชคชะตาอันยิ่งใหญ่ในชั่วพริบตา \"สงครามเริ่มต้นขึ้นแล้ว ได้เวลาหาเป้าหมายต่อไปให้กับลูกธนูเสียที\"",
+    "icon": "/starrail/assets/icon/light_cone/20007.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20007.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20007.webp"
+  },
+  "20008": {
+    "id": "20008",
+    "name": "Fine Fruit",
+    "rarity": 3,
+    "path": "Priest",
+    "desc": "พลังอันแสนเบาบางที่สะสมจากกาลเวลา และสานต่อจนเกิดเป็นโชคชะตาอันยิ่งใหญ่ในชั่วพริบตา \"เมื่อเกิดความกระหาย ทุกสิ่งอย่างย่อมหอมหวาน\"",
+    "icon": "/starrail/assets/icon/light_cone/20008.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20008.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20008.webp"
+  },
+  "20009": {
+    "id": "20009",
+    "name": "Shattered Home",
+    "rarity": 3,
+    "path": "Warrior",
+    "desc": "พลังอันแสนเบาบางที่สะสมจากกาลเวลา และสานต่อจนเกิดเป็นโชคชะตาอันยิ่งใหญ่ในชั่วพริบตา \"ผู้ที่สามารถทำลายบางสิ่งบางอย่างได้ คือผู้ที่ควบคุมมันได้อย่างแท้จริง\"",
+    "icon": "/starrail/assets/icon/light_cone/20009.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20009.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20009.webp"
+  },
+  "20010": {
+    "id": "20010",
+    "name": "Defense",
+    "rarity": 3,
+    "path": "Knight",
+    "desc": "พลังอันแสนเบาบางที่สะสมจากกาลเวลา และสานต่อจนเกิดเป็นโชคชะตาอันยิ่งใหญ่ในชั่วพริบตา \"ผู้คนที่แข็งแกร่งหลังกำแพงเมือง ได้พิสูจน์ให้เห็นแล้วว่าการป้องกันก็เป็นอีกหนทางหนึ่ง ที่สามารถนำชัยชนะมาให้ได้เช่นเดียวกัน\"",
+    "icon": "/starrail/assets/icon/light_cone/20010.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20010.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20010.webp"
+  },
+  "20011": {
+    "id": "20011",
+    "name": "Loop",
+    "rarity": 3,
+    "path": "Warlock",
+    "desc": "พลังอันแสนเบาบางที่สะสมจากกาลเวลา และสานต่อจนเกิดเป็นโชคชะตาอันยิ่งใหญ่ในชั่วพริบตา \"ผู้ที่หนีความตายพยายามสลัดภาพหลอนในอดีตออก เขาคิดว่าความเจ็บปวดนี้คงไม่มีใครเข้าใจมันได้ จนกระทั่งเขาเงยหน้าขึ้นมอง และเห็นตัวตนในอนาคตของเขากำลังเบิกตามองด้วยสายตาอันน่าสะพรึง\"",
+    "icon": "/starrail/assets/icon/light_cone/20011.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20011.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20011.webp"
+  },
+  "20012": {
+    "id": "20012",
+    "name": "Meshing Cogs",
+    "rarity": 3,
+    "path": "Shaman",
+    "desc": "พลังอันแสนเบาบางที่สะสมจากกาลเวลา และสานต่อจนเกิดเป็นโชคชะตาอันยิ่งใหญ่ในชั่วพริบตา \"ไม่มีเสียงใดสอดประสานกันได้ดีไปกว่านี้แล้ว ทุกคนยืนประจำอยู่ในที่ของตน หุ่นยนต์ใหญ่พลันเคลื่อนไหวไปตามเสียง\"",
+    "icon": "/starrail/assets/icon/light_cone/20012.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20012.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20012.webp"
+  },
+  "20013": {
+    "id": "20013",
+    "name": "Passkey",
+    "rarity": 3,
+    "path": "Mage",
+    "desc": "พลังอันแสนเบาบางที่สะสมจากกาลเวลา และสานต่อจนเกิดเป็นโชคชะตาอันยิ่งใหญ่ในชั่วพริบตา \"ความรู้จะคงอยู่ ณ หลังประตูบานนั้นเสมอ และกุญแจที่ใช้สำหรับไขประตู ก็ไม่ได้มอบให้ใครเป็นพิเศษ ผู้ใดที่ต้องการมันมากที่สุด ผู้นั้นย่อมมีโอกาสได้ถือครอง\"",
+    "icon": "/starrail/assets/icon/light_cone/20013.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20013.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20013.webp"
+  },
+  "20014": {
+    "id": "20014",
+    "name": "Adversarial",
+    "rarity": 3,
+    "path": "Rogue",
+    "desc": "พลังอันแสนเบาบางที่สะสมจากกาลเวลา และสานต่อจนเกิดเป็นโชคชะตาอันยิ่งใหญ่ในชั่วพริบตา \"ผู้ที่ต่อสู้เพื่ออิสรภาพจะไม่มีวันตาย เรื่องราวของพวกเขาจะถูกถ่ายทอดไปชั่วกาล\"",
+    "icon": "/starrail/assets/icon/light_cone/20014.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20014.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20014.webp"
+  },
+  "20015": {
+    "id": "20015",
+    "name": "Multiplication",
+    "rarity": 3,
+    "path": "Priest",
+    "desc": "พลังอันแสนเบาบางที่สะสมจากกาลเวลา และสานต่อจนเกิดเป็นโชคชะตาอันยิ่งใหญ่ในชั่วพริบตา \"เมื่อชีวิตสูญสิ้นความหมาย โปรดมอบชีวิตให้มันต่อไป\"",
+    "icon": "/starrail/assets/icon/light_cone/20015.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20015.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20015.webp"
+  },
+  "20016": {
+    "id": "20016",
+    "name": "Mutual Demise",
+    "rarity": 3,
+    "path": "Warrior",
+    "desc": "พลังอันแสนเบาบางที่สะสมจากกาลเวลา และสานต่อจนเกิดเป็นโชคชะตาอันยิ่งใหญ่ในชั่วพริบตา \"จะทำให้อดีตของดวงดาวสมบูรณ์แบบขึ้นได้อย่างไร? ฉีกทึ้งมัน ตอนนี้ ในทันที\"",
+    "icon": "/starrail/assets/icon/light_cone/20016.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20016.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20016.webp"
+  },
+  "20017": {
+    "id": "20017",
+    "name": "Pioneering",
+    "rarity": 3,
+    "path": "Knight",
+    "desc": "พลังอันแสนเบาบางที่สะสมจากกาลเวลา และสานต่อจนเกิดเป็นโชคชะตาอันยิ่งใหญ่ในชั่วพริบตา \"คืนวันที่ไร้หนทางได้สิ้นสุดลงแล้ว องค์กรจะยื่นมือช่วยเหลือและอยู่เคียงข้างทุกคน\"",
+    "icon": "/starrail/assets/icon/light_cone/20017.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20017.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20017.webp"
+  },
+  "20018": {
+    "id": "20018",
+    "name": "Hidden Shadow",
+    "rarity": 3,
+    "path": "Warlock",
+    "desc": "พลังอันแสนเบาบางที่สะสมจากกาลเวลา และสานต่อจนเกิดเป็นโชคชะตาอันยิ่งใหญ่ในชั่วพริบตา \"ลบล้างอาจจะตามหาพวกเราจนเจอ แต่ก็เป็นไปได้อย่างยิ่งว่า เขาอาจหาไม่เจอ\"",
+    "icon": "/starrail/assets/icon/light_cone/20018.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20018.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20018.webp"
+  },
+  "20019": {
+    "id": "20019",
+    "name": "Mediation",
+    "rarity": 3,
+    "path": "Shaman",
+    "desc": "พลังอันแสนเบาบางที่สะสมจากกาลเวลา และสานต่อจนเกิดเป็นโชคชะตาอันยิ่งใหญ่ในชั่วพริบตา \"มีเรื่องอะไรที่น่ายินดีไปกว่า การขจัดความขัดแย้งได้อีกเหรอ?\"",
+    "icon": "/starrail/assets/icon/light_cone/20019.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20019.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20019.webp"
+  },
+  "20020": {
+    "id": "20020",
+    "name": "Sagacity",
+    "rarity": 3,
+    "path": "Mage",
+    "desc": "พลังอันแสนเบาบางที่สะสมจากกาลเวลา และสานต่อจนเกิดเป็นโชคชะตาอันยิ่งใหญ่ในชั่วพริบตา \"หากผู้มีปัญญาไม่อาจละทิ้งความเป็นมนุษย์ได้ ก็จะถูกปัญญาทอดทิ้ง\"",
+    "icon": "/starrail/assets/icon/light_cone/20020.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20020.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20020.webp"
+  },
+  "20021": {
+    "id": "20021",
+    "name": "Shadowburn",
+    "rarity": 3,
+    "path": "Memory",
+    "desc": "พลังอันแสนเบาบางที่สะสมจากกาลเวลา และสานต่อจนเกิดเป็นโชคชะตาอันยิ่งใหญ่ ในชั่วพริบตา \"ผู้คนมักจะพยายามกำจัดอดีต ที่เลวร้ายเหล่านั้น นี่แหละคือแก่นแท้ของความทรงจำ\"",
+    "icon": "/starrail/assets/icon/light_cone/20021.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20021.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20021.webp"
+  },
+  "20022": {
+    "id": "20022",
+    "name": "Reminiscence",
+    "rarity": 3,
+    "path": "Memory",
+    "desc": "พลังอันแสนเบาบางที่สะสมจากกาลเวลา และสานต่อจนเกิดเป็นโชคชะตาอันยิ่งใหญ่ ในชั่วพริบตา \"จิตวิญญาณที่โรยรา อยู่ในความฝันอันแสนสั้น ราวกับได้กลับไปยังทะเลหลากสีสันในวัยเด็ก\"",
+    "icon": "/starrail/assets/icon/light_cone/20022.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20022.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20022.webp"
+  },
+  "20023": {
+    "id": "20023",
+    "name": "Sneering",
+    "rarity": 3,
+    "path": "Elation",
+    "desc": "พลังอันแสนเบาบางที่สะสมจากกาลเวลา และสานต่อจนเกิดเป็นโชคชะตาอันยิ่งใหญ่ ในชั่วพริบตา \"ต้นกำเนิดของรอยยิ้ม คือการแยกเขี้ยวยิงฟัน ที่เกิดจากความหวาดกลัวและการข่มขู่\"",
+    "icon": "/starrail/assets/icon/light_cone/20023.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20023.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20023.webp"
+  },
+  "20024": {
+    "id": "20024",
+    "name": "Lingering Tear",
+    "rarity": 3,
+    "path": "Elation",
+    "desc": "พลังอันแสนเบาบางที่สะสมจากกาลเวลา และสานต่อจนเกิดเป็นโชคชะตาอันยิ่งใหญ่ในชั่วพริบตา \"ความโศกเศร้าที่ล้ำลึกที่สุดนั้น ไร้ซึ่งน้ำตา เช่นเดียวกับความสุขขั้นสุด ที่ไม่ได้แตกต่างอะไร จากความเจ็บปวดแสนสาหัส\"",
+    "icon": "/starrail/assets/icon/light_cone/20024.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/20024.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/20024.webp"
+  },
+  "21000": {
+    "id": "21000",
+    "name": "Post-Op Conversation",
+    "rarity": 4,
+    "path": "Priest",
+    "desc": "\"เธอฟื้นแล้ว... ขอบคุณมากนะ\" \"คุณ... ช่วยชีวิตฉันเอาไว้... คุณ Natasha คนที่ควรขอบคุณ... คือฉันต่างหาก\" \"ไม่หรอก ฉันสิต้องขอบคุณเธอ... ที่อดทนจนฉันผ่าตัดเสร็จ\" หมอและคนไข้ยิ้มให้กันอย่างเหนื่อยล้า และไม่เอ่ยอะไรอีก",
+    "icon": "/starrail/assets/icon/light_cone/21000.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21000.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21000.webp"
+  },
+  "21001": {
+    "id": "21001",
+    "name": "Good Night and Sleep Well",
+    "rarity": 4,
+    "path": "Warlock",
+    "desc": "แสงสลัวอันเงียบสงัดได้เผยให้เห็นเป็นเส้นทางของแนวฝุ่น สาวน้อยละเมอออกมาในขณะที่ยังหลับสนิท ทันใดนั้นก็มีเงาปรากฏขึ้นด้านหลังของเธอเงียบๆ \"ว้าววว พอไม่ใส่แว่นแล้วดูน่ารักกว่าเดิมอีกนะเนี่ย\" มือกีตาร์จ้องมองไปที่ใบหน้าที่กำลังหลับพริ้ม พลางพึมพำกับตัวเองว่า: \"ฝันดีนะ สาวน้อยอัจฉริยะผู้ชอบวิตกกังวลไปกับทุกสิ่ง\"",
+    "icon": "/starrail/assets/icon/light_cone/21001.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21001.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21001.webp"
+  },
+  "21002": {
+    "id": "21002",
+    "name": "Day One of My New Life",
+    "rarity": 4,
+    "path": "Knight",
+    "desc": "\"วันนี้ Pom-Pom เปลี่ยนชุดใหม่ด้วย ดีใจจัง~ ชอบมากเลย~\" \"วันนี้เป็นวันเกิดของฉัน และในปีนี้ฉันก็ยังน่ารักเหมือนเดิม\" \"ในที่สุด...ในที่สุดวันนี้ฉันก็มีรุ่นน้องแล้ว! ใช่มั้ย {NICKNAME}?\" การกดชัตเตอร์รัวๆ โดยไม่ได้คิดอะไร เป็นการทำเพื่อเก็บภาพแห่งความสุขในตอนนั้น? หรือเพื่อเก็บภาพของตัวเองในตอนนั้นกันแน่นะ?",
+    "icon": "/starrail/assets/icon/light_cone/21002.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21002.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21002.webp"
+  },
+  "21003": {
+    "id": "21003",
+    "name": "Only Silence Remains",
+    "rarity": 4,
+    "path": "Rogue",
+    "desc": "\"ถึงสถานีแล้ว ไม่ลงเหรอ?\" เสียงหัวเราะดังมาจากเหนือศีรษะ เขากลอกตาเล็กน้อยแต่ไม่ได้แหงนหน้าขึ้นไปมอง \"ขอพูดก่อนว่า March มักจะบอกว่านายดูเป็นคนไร้อารมณ์ แต่ฉันกลับไม่คิดอย่างนั้น\" \"คลังเอกสารของรถไฟมีร่องรอยของการอัปเดต แต่กลับไม่ได้บันทึกผลลัพธ์เอาไว้\" \"ถ้างั้น... รายการไหนที่ทำให้นายกลุ้มใจงั้นเหรอ?\" เขาจับปากกาไว้แน่น ในขณะที่ดูฉากโศกนาฏกรรมที่เขาวาดขึ้นมาจากความทรงจำ \"อย่างนี้นี่เอง เพราะว่ามันเป็นเรื่องเกี่ยวกับตัวของนายเองสินะ...\"",
+    "icon": "/starrail/assets/icon/light_cone/21003.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21003.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21003.webp"
+  },
+  "21004": {
+    "id": "21004",
+    "name": "Memories of the Past",
+    "rarity": 4,
+    "path": "Shaman",
+    "desc": "ภาพเก่าที่วางอยู่ห่างๆ บนโต๊ะในที่พำนัก บางครั้งสายตาของเธอก็จับจ้องไปที่ภาพนั้น แต่เธอเองก็มักจะพยายามหลีกเลี่ยงอยู่เสมอ แม้ภาพในความทรงจำจะเป็นอดีตอันแสนไกลไปแล้ว แต่ความฝันในวันนี้ ก็ยังคงวนเวียนอยู่ในใจเช่นเคย",
+    "icon": "/starrail/assets/icon/light_cone/21004.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21004.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21004.webp"
+  },
+  "21005": {
+    "id": "21005",
+    "name": "The Moles Welcome You",
+    "rarity": 4,
+    "path": "Warrior",
+    "desc": "\"แก๊งตัวตุ่น แก๊งตัวตุ่น\" \"ตัววุ่นจะออกเดินทางไป\" \"ตัวตุ่นสุดฉลาดไม่เกรงกลัวผู้ใด\" \"แก๊งตัวตุ่น แก๊งตัวตุ่น\" \"แก๊งตัวตุ่นสู่การผจญภัย!\"",
+    "icon": "/starrail/assets/icon/light_cone/21005.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21005.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21005.webp"
+  },
+  "21006": {
+    "id": "21006",
+    "name": "The Birth of the Self",
+    "rarity": 4,
+    "path": "Mage",
+    "desc": "ตอนแรกมันมีท่าทางแบบเดียวกับภาพก่อนหน้านี้เลย เธอมองไปยังใบหน้าที่คล้ายคลึงกับตัวเองราวกับถอดแบบกันออกมา และแน่ใจว่านี่ไม่ใช่เธอแน่นอน \"ในโลกนี้จะมีภาพที่เหมือนกันเป๊ะถึงสองชิ้นเลยเหรอ?\" เธอบิดข้อต่อ บอกให้มันลืมตาขึ้น และสั่งให้นิ้วมือแข็งกระด้างเปลี่ยนเป็นอ่อนนุ่มยิ่งขึ้น เธอหยุดคำสั่งอย่างพึงพอใจ \"มันต่างจากเมื่อวานโดยสิ้นเชิง นี่สิถึงจะเป็นตัวฉันในวันนี้\"",
+    "icon": "/starrail/assets/icon/light_cone/21006.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21006.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21006.webp"
+  },
+  "21007": {
+    "id": "21007",
+    "name": "Shared Feeling",
+    "rarity": 4,
+    "path": "Priest",
+    "desc": "เมื่อคุณหมอพบตัวเด็กสาว เธอก็ได้รับบาดเจ็บแล้ว แต่ยังคงกอดหุ่นยนต์ที่หยุดทำงานเอาไว้แน่น ในกระเป๋าของเธอเต็มไปด้วยอะไหล่ชนิดต่างๆ ที่หามาได้ คุณหมอพาเด็กสาวกลับไปทำแผลที่คลินิก เหงื่อหยดลงจากแก้ม แม้เด็กสาวจะไม่พูดอะไร แต่มือกลับไม่อยู่นิ่ง คุณหมอรู้ดีว่า ตอนนี้ในสายตาของเด็กสาวมีเพียงหุ่นยนต์ตัวนั้น ราวกับว่าตนกำลังเผชิญหน้ากับคนไข้ที่รอคอยการรักษา เพราะอย่างนั้น เธอจึงไม่ได้เอ่ยปากปลอบโยน และไม่ได้ตักเตือนเด็กสาวให้ระวังตัวเช่นกัน เธอทำเพียงแค่นั่งเงียบๆ อยู่ข้างๆ เท่านั้น",
+    "icon": "/starrail/assets/icon/light_cone/21007.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21007.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21007.webp"
+  },
+  "21008": {
+    "id": "21008",
+    "name": "Eyes of the Prey",
+    "rarity": 4,
+    "path": "Warlock",
+    "desc": "ความจริงแล้ว เหยื่อส่วนใหญ่จะไม่รู้เลยว่าตัวเองกำลังตกอยู่ในอันตราย เหยื่อที่อยู่ตรงหน้านี้ก็เช่นกัน เป้าเล็งขยับช้าๆ ไปยังชายที่โปรยธนบัตรลงมากองแล้วกองเล่า \"ดูจากความโลภของเขาแล้ว เงินพวกนี้เยอะพอๆ กับเงินจากสัญญาจ้างหลายฉบับของฉันเลย... มิน่าล่ะ ถึงมีใครบางคนอยากจะกำจัดเขาทิ้ง\" ชายคนนั้นหันกลับมามอง ราวกับว่าได้ยินเสียงทอดถอนใจของเขา \"รออยู่นานเลยล่ะ เงินพวกนี้เพียงพอจะให้เธอยอมฟังเงื่อนไขของฉันก่อน แล้วค่อยตัดสินใจได้หรือเปล่า?\"",
+    "icon": "/starrail/assets/icon/light_cone/21008.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21008.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21008.webp"
+  },
+  "21009": {
+    "id": "21009",
+    "name": "Landau's Choice",
+    "rarity": 4,
+    "path": "Knight",
+    "desc": "\"ไม่ได้ยินรึไง พรุ่งนี้ห้ามไป! เอาแต่ขลุกอยู่กับคนธรรมดาพวกนั้น จะไปเรียนรู้เรื่องดีๆ ได้ยังไง!\" \"แต่เรื่องของ Belobog ที่พวกเขาเล่าให้ฟัง ผมไม่เคยได้ยินมาก่อนเลยนะ...\" เธอดึงน้องชายที่กำลังแก้ต่างให้มาหลบด้านหลังของตน \"พวกเธอเป็นสมาชิกของ Landau สักวันก็จะต้องตัดสินใจด้วยตัวเอง โดยเฉพาะเธอ Serval\" เธอรู้ดีว่าน้องชายของเธอไม่ได้ทำผิดอะไร แต่เธอเองก็ไม่รู้ว่าจะโต้เถียงอย่างไรเช่นกัน หลังจากที่อารมณ์เสียมาทั้งวัน เธอก็แอบตัดสินใจไว้แล้ว \"เมื่อฉันโตขึ้น สักวันฉันจะต้องเลือกได้...\" \"เลือกทางเลือกของฉันเอง\"",
+    "icon": "/starrail/assets/icon/light_cone/21009.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21009.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21009.webp"
+  },
+  "21010": {
+    "id": "21010",
+    "name": "Swordplay",
+    "rarity": 4,
+    "path": "Rogue",
+    "desc": "หญิงสาวยกดาบเล่มบางในมือขึ้นมาอย่างงุนงง ดาบของเธอต้องถือประคองด้วยสองมือถึงจะกวัดแกว่งมันได้ จึงสงสัยว่าดาบแบบนี้ก็ถือเป็นดาบเหรอ? แล้วดาบแบบนี้ฟาดฟันศัตรูได้ด้วยเหรอ? เจ้าของดาบไม่ได้สนใจเรื่องนี้สักเท่าไหร่ อย่างไรก็ตาม... การจะกำจัดศัตรูได้หรือไม่ ล้วนไม่ได้ขึ้นอยู่กับดาบ แต่ขึ้นอยู่กับใจต่างหาก ต่อให้ดาบที่ใช้จะเป็นดาบเล่มหนาหรือเล่มบาง ก็ไม่ได้มีความแตกต่างอะไร",
+    "icon": "/starrail/assets/icon/light_cone/21010.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21010.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21010.webp"
+  },
+  "21011": {
+    "id": "21011",
+    "name": "Planetary Rendezvous",
+    "rarity": 4,
+    "path": "Shaman",
+    "desc": "แม้จะอยู่ระหว่างทางแล้ว แต่เธอก็ยังไม่รู้อะไรเกี่ยวกับการเดินทางครั้งนี้เลย สิ่งเดียวที่รู้คือ เธอได้ลาจากเสียงวิพากษ์วิจารณ์ และการทะเลาะเบาะแว้งในครอบครัวเสียที กระทั่งมองไกลออกไปนอกหน้าต่าง เธอก็เข้าใจถึงความหมายของกวีบทนั้นได้อย่างลึกซึ้ง \"วันใดวันหนึ่งในภายภาคหน้า เราจะหยุดก้าวเท้า แล้วกางปีกบิน\" แสงเจิดจ้าที่เปล่งประกายอยู่ในดวงตาของเธอ ก็คือเงาสะท้อนของดวงดาว",
+    "icon": "/starrail/assets/icon/light_cone/21011.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21011.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21011.webp"
+  },
+  "21012": {
+    "id": "21012",
+    "name": "A Secret Vow",
+    "rarity": 4,
+    "path": "Warrior",
+    "desc": "ก่อนจะออกไปทุกครั้ง เด็กหนุ่มจะตรวจเช็กสนับศอกและถุงมืออย่างละเอียดทุกครั้ง นั่นเป็นถุงมือที่เขารักที่สุด ซึ่งสามารถเก็บซ่อนความลับมากมายเอาไว้ได้ เมื่อเป็นเช่นนี้ ก็จะไม่มีใครเห็นผ้าพันแผล และบาดแผลที่มือของเขาแล้ว ทุกคนปฏิบัติต่อเขาเฉกเช่นคนธรรมดาคนนึง และทักทายเขาตามปกติ ซึ่งเท่านี้ก็เพียงพอสำหรับเขาแล้ว",
+    "icon": "/starrail/assets/icon/light_cone/21012.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21012.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21012.webp"
+  },
+  "21013": {
+    "id": "21013",
+    "name": "Make the World Clamor",
+    "rarity": 4,
+    "path": "Mage",
+    "desc": "เธอยืนอยู่บนเวทีพร้อมกับโบกมือไปมา หวังว่าทุกคนจะเปล่งเสียงร้องตามกันถ้วนหน้า ไม่ว่าจะเป็นการร้องเพลง ร้องตะโกน ร้องคร่ำครวญ หรือรูปแบบไหนก็ตาม ขอเพียงส่งเสียงของตัวเองออกมา และเมื่อมีคนได้ยิน ก็จะมีคนเข้าร่วมเอง \"อย่าปล่อยให้จิตใจหมางเมิน จนเยือกเย็นเหมือนกับเมืองแห่งนี้\" ...อย่าปล่อยให้โลกเงียบสงัด",
+    "icon": "/starrail/assets/icon/light_cone/21013.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21013.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21013.webp"
+  },
+  "21014": {
+    "id": "21014",
+    "name": "Perfect Timing",
+    "rarity": 4,
+    "path": "Priest",
+    "desc": "บนถนนที่แสนคึกคัก เขาเดินไปท่ามกลางแสงแดดที่สาดส่องมา เขาหยุดเดิน และหยิบร่มขึ้นมาบังแดด ...พร้อมทั้งบดบังสายตาที่จ้องมองมาด้วย",
+    "icon": "/starrail/assets/icon/light_cone/21014.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21014.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21014.webp"
+  },
+  "21015": {
+    "id": "21015",
+    "name": "Resolution Shines As Pearls of Sweat",
+    "rarity": 4,
+    "path": "Warlock",
+    "desc": "แสงไฟบนสังเวียนสว่างไสว แต่ก็ไม่สว่างเท่าเหงื่อที่ไหลลงมาบนหลัง เขามุ่งมั่นที่จะปกป้องคนสำคัญด้วยกำปั้นทั้งสองนี้ และพวกเขาก็คือผู้ที่ทำให้เขากล้าตัดสินใจ ...พวกเขาคือผู้ที่คอยอยู่เบื้องหลังเขาเสมอ ไม่ว่าจะบนหรือล่างสังเวียนก็ตาม",
+    "icon": "/starrail/assets/icon/light_cone/21015.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21015.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21015.webp"
+  },
+  "21016": {
+    "id": "21016",
+    "name": "Trend of the Universal Market",
+    "rarity": 4,
+    "path": "Knight",
+    "desc": "ดวงดาวกำลังถูกคำนวณมูลค่าใหม่... \"โครงการนี้แสดงให้เห็นว่า การทวงหนี้นั้น มีประโยชน์ซึ่งกันและกันใช่หรือไม่?\" \"แต่สิ่งที่เราต้องการจะสื่อมีเพียงสิ่งเดียว ก็คือการประกาศถึงการมีอยู่ของเรา\" \"หากมันอยากมีคุณค่าในตัวเอง ก็ต้องเพิ่มคุณค่าให้กับองค์กรด้วย\"",
+    "icon": "/starrail/assets/icon/light_cone/21016.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21016.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21016.webp"
+  },
+  "21017": {
+    "id": "21017",
+    "name": "Subscribe for More!",
+    "rarity": 4,
+    "path": "Rogue",
+    "desc": "\"เฮ้ เฮ้...! ผู้ชมทุกท่าน สัญญาณชัดเจนดีรึเปล่า?\" สาวผมสีส้มค่อยๆ ยกค้อนขึ้นพร้อมทั้งตะโกนใส่กล้องอย่างกระตือรือร้น \"ทุกคน...มีใครเคยเห็นผู้หญิงทำการแสดงทุบหินบนอกบ้าง?!\" \"ที่ฉันมาเป็นอัศวิน Cloud Knight ไม่ใช่เพื่อมาทำอะไรแบบนี้หรอกนะ!\" หญิงสาวผมสีน้ำตาลที่มึนงงจนเห็นดาวลอยอยู่โอดครวญ ส่วนหญิงสาวผมสีส้มก็พลันยิ้มอย่างมีเลศนัย \"ขอร้องล่ะ... การได้ช่วยเหลือคนอื่น ก็ถือเป็นความสุขอย่างนึงนะ!\"",
+    "icon": "/starrail/assets/icon/light_cone/21017.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21017.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21017.webp"
+  },
+  "21018": {
+    "id": "21018",
+    "name": "Dance! Dance! Dance!",
+    "rarity": 4,
+    "path": "Shaman",
+    "desc": "\"ทำไม Hook ถึงเต้นหมุนๆ แบบ Clara ไม่ได้ล่ะ...\" เธอกำหมัดแน่นและบ่นพึมพำ ใบหน้ากลมๆ ที่อยู่ใต้หมวกขนเริ่มแดงขึ้น \"คุณ Svarog พอจะช่วย Hook ได้มั้ย?\" หุ่นยนต์ผู้เคร่งครึมยื่นแขนกลของเขาออกมา \"จะ...จะเป็นลมแล้ว!! อ๊ากก...ปล่อยฉันลงเดี๋ยวนี้นะ!\"",
+    "icon": "/starrail/assets/icon/light_cone/21018.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21018.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21018.webp"
+  },
+  "21019": {
+    "id": "21019",
+    "name": "Under the Blue Sky",
+    "rarity": 4,
+    "path": "Warrior",
+    "desc": "ทุ่งข้าวสาลีแกว่งไกวอยู่ใต้ท้องฟ้าสีคราม เด็กสาวกำลังถักมงกุฎดอกไม้อย่างพิถีพิถัน แล้วสวมมันไว้ที่หน้าผาก ของน้องสาวผู้เป็นที่รัก ในตอนนั้น พวกเธอยังสูงพอๆ กัน และในตอนนั้น พวกเธอยังคงมีรอยยิ้มแบบเดียวกัน",
+    "icon": "/starrail/assets/icon/light_cone/21019.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21019.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21019.webp"
+  },
+  "21020": {
+    "id": "21020",
+    "name": "Geniuses' Repose",
+    "rarity": 4,
+    "path": "Mage",
+    "desc": "เธอสั่งดังโงะสีเขียวมา \"การทดลองจบแล้ว ได้เวลาพักผ่อนสักที ฉันจะพลาดขนมที่เพิ่งออกจากเตาไม่ได้เด็ดขาด\" เธอมองดูหุ่นเชิดสาวขมวดคิ้วอย่างครุ่นคิด \"ใช้ร่างนี้มองดูเฉยๆ ก่อนก็แล้วกัน ไว้ฉันจะทำกล่องใหม่ให้\" เธอเห็นจักรกลชั้นสูงแสดงสีหน้าที่ลำบากใจ ในขณะที่ยกแก้วขึ้น \"วางใจเถอะ นี่คือน้ำมันเครื่องน่ะ\"",
+    "icon": "/starrail/assets/icon/light_cone/21020.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21020.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21020.webp"
+  },
+  "21021": {
+    "id": "21021",
+    "name": "Quid Pro Quo",
+    "rarity": 4,
+    "path": "Priest",
+    "desc": "หลังจากเพลิดเพลินกับการนวดจากสาวน้อยมังกรแล้ว สาวน้อยมนุษย์จิ้งจอกก็ยื่นมือออกมา แล้วบีบแก้มอวบๆ ของสาวน้อยเข้าให้ พอเห็นสาวน้อยเบะปากทำหน้ามุ่ย เธอก็หัวเราะอย่างชอบใจ \"นี่ก็คือการแลกเปลี่ยนอย่างเท่าเทียมไงล่ะ\"",
+    "icon": "/starrail/assets/icon/light_cone/21021.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21021.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21021.webp"
+  },
+  "21022": {
+    "id": "21022",
+    "name": "Fermata",
+    "rarity": 4,
+    "path": "Warlock",
+    "desc": "เครื่องเล่นแผ่นเสียงกำลังหมุนวนไป เสียงตะโกนที่แหบพร่านั้นเต็มไปด้วยความร้อนรุ่ม เธอดูคล้ายจะไม่ได้เตรียมตัวและมัวเมาไปกับท่วงทำนองอันน่าหลงใหล: มันเริ่มด้วยความจริงใจและความคาดหวัง ตามมาด้วยการระบายอารมณ์ที่รุนแรง มีจังหวะไคลแมกซ์ครั้งแล้วครั้งเล่า... จนกระทั่งแผ่นเสียงหยุดหมุน แล้วเสียงแหบแห้งนั้นก็หยุดลง \"เสร็จสิ้นภารกิจ\"",
+    "icon": "/starrail/assets/icon/light_cone/21022.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21022.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21022.webp"
+  },
+  "21023": {
+    "id": "21023",
+    "name": "We Are Wildfire",
+    "rarity": 4,
+    "path": "Knight",
+    "desc": "เธอชินกับการที่ผู้คนสูญเสียบ้านไป และเคยชินกับการที่ผู้คนต้องสูญเสียชีวิตไป แต่การร้องไห้นั้นไม่มีประโยชน์อะไรเมื่ออยู่ตัวคนเดียว \"สวมผ้าพันคอสีแดงผืนนี้ เพื่อแบ่งปันความเจ็บปวดของกันและกัน\" \"เราคือครอบครัวเดียวกัน... เราคือ Wildfire\" ในขณะที่ฝ่ามือกว้างลูบศีรษะของเธอ เธอก็ไม่อาจกลั้นน้ำตาได้อีกต่อไป",
+    "icon": "/starrail/assets/icon/light_cone/21023.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21023.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21023.webp"
+  },
+  "21024": {
+    "id": "21024",
+    "name": "River Flows in Spring",
+    "rarity": 4,
+    "path": "Rogue",
+    "desc": "เด็กหนุ่มหยุดพักจากการฝึกดาบของเขา เป็นเวลาชั่วครู่ แสงแดดส่องกระทบบริเวณคออุ่นๆ ของเขา เขาค่อยๆ ลงไปในน้ำ ถึงแม้จะรู้สึกเย็น ตอนที่เท้าสัมผัสโดนผิวน้ำ แต่พอเสียงระฆังดังขึ้น และนกพลันร้องเจื้อยแจ้ว แม้แต่ผู้คนที่อยู่ห่างไกล ก็ยังรู้ว่าฤดูใบไม้ผลิได้มาเยือนแล้ว",
+    "icon": "/starrail/assets/icon/light_cone/21024.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21024.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21024.webp"
+  },
+  "21025": {
+    "id": "21025",
+    "name": "Past and Future",
+    "rarity": 4,
+    "path": "Shaman",
+    "desc": "ปีกของว่าวที่หักอยู่ในมือของเธอนั้น ทำให้พลันนึกถึงการจากไปของผู้ที่มีค่าที่สุดของเธอ เธอคุกเข่าลงท่ามกลางเปลวไฟแห่งสงคราม และดวงตาเต็มไปด้วยความโศกเศร้า \"ถ้าคุณเป็นเพียงคนเดียวที่สามารถช่วยได้ แล้วการเสียสละของพวกเราล่ะ...\" เปลวไฟที่โหมกระหน่ำได้แต่งแต้มจนท้องฟ้ากลายเป็นสีแดง และยังคงยิ่งใหญ่ดังเดิม เธอแหงนหน้าขึ้นมองท้องฟ้า ในดวงตาเต็มไปด้วยความโกรธแค้น",
+    "icon": "/starrail/assets/icon/light_cone/21025.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21025.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21025.webp"
+  },
+  "21026": {
+    "id": "21026",
+    "name": "Woof! Walk Time!",
+    "rarity": 4,
+    "path": "Warrior",
+    "desc": "น่าเสียดายที่ไม่มีใครเห็น... เห็นว่ามันทำจมูกฟุดฟิด และดมไปรอบๆ ก่อนก้าวเข้าสู่เส้นทางเล็กๆ ที่ไร้ผู้คน น่าเสียดายที่ไม่มีใครเห็น... เห็นว่ามันเก็บกรงเล็บ และใส่รหัสผ่าน ก่อนกระโจนเข้าสู่อ้อมแขนแห่งอิสรภาพ ทั้งยังไม่มีใครได้เห็นว่า... หมาน้อยโตเต็มวัยตัวหนึ่ง ได้เรียนรู้การก้าวเข้าสู่ห้วงอวกาศอันกว้างใหญ่ด้วยตนเองแล้ว!",
+    "icon": "/starrail/assets/icon/light_cone/21026.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21026.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21026.webp"
+  },
+  "21027": {
+    "id": "21027",
+    "name": "The Seriousness of Breakfast",
+    "rarity": 4,
+    "path": "Mage",
+    "desc": "แม้ว่าอาหารบนโต๊ะจะถูกจัดวางเรียบร้อยแล้ว... แต่บางคนก็ต้องการดื่มชาก่อน บางคนก็ต้องการถ่ายภาพก่อน บางคนก็ต้องการอ่านหนังสือพิมพ์สักฉบับก่อน บางคนก็ต้องการเขียนบันทึกก่อน บางคนก็ต้องการเล่นโทรศัพท์ก่อน \"พวกเธอทั้งหมด กินอาหารตอนที่มันยังร้อนๆ อยู่สิ!\"",
+    "icon": "/starrail/assets/icon/light_cone/21027.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21027.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21027.webp"
+  },
+  "21028": {
+    "id": "21028",
+    "name": "Warmth Shortens Cold Nights",
+    "rarity": 4,
+    "path": "Priest",
+    "desc": "จุดตะเกียง ถือช็อกโกแลตอุ่นๆ สักแก้ว แล้วมองไปที่เพื่อนข้างกาย มองดูเธออ่านบันทึกและหนังสือที่ตนส่งไปให้ มองดูเธอเผยรอยยิ้มที่ปกติไม่เคยได้เห็น ในค่ำคืนอันหนาวเหน็บ ความสุขเพียงเล็กๆ น้อยๆ ก็สามารถขจัดความหนาวเย็นไปได้",
+    "icon": "/starrail/assets/icon/light_cone/21028.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21028.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21028.webp"
+  },
+  "21029": {
+    "id": "21029",
+    "name": "We Will Meet Again",
+    "rarity": 4,
+    "path": "Warlock",
+    "desc": "เธอเคยสงสัยว่ามันคือโปรแกรมบางอย่าง ไม่อย่างนั้นทำไมถึงได้ไม่รู้จักเหน็ดเหนื่อยบ้างล่ะ แต่โปรแกรมก็ไม่น่าจะทิ้งวิธีแก้ปัญหาที่ดีที่สุด แล้วอ้อมผ่านกับดักของเธอไปได้นี่นา \"ดูเหมือนว่า พวกเราจะเจอกับสงครามที่ยืดเยื้อแล้วสินะ\" เธออ้าปากหาว \"รีบนอนเถอะ สิ่งมีชีวิตอินทรีย์ควรรู้จักถนอมความฝันเอาไว้นะ\" บรรยากาศรอบข้างเริ่มมืดลง จู่ๆ เธอก็สะดุ้งตื่น แต่ข้อมูลที่ตกค้างอยู่ก็ได้ถูกกวาดล้างและเผาทำลายไปแล้ว ราวกับฝันตื่นหนึ่ง ...ยกเว้นก็แต่รสชาติแห่งความล้มเหลวเท่านั้น ที่ยังคงเหมือนจริง",
+    "icon": "/starrail/assets/icon/light_cone/21029.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21029.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21029.webp"
+  },
+  "21030": {
+    "id": "21030",
+    "name": "This Is Me!",
+    "rarity": 4,
+    "path": "Knight",
+    "desc": "ไม่ว่าหญิงสาวจะสวมอะไรก็ดูดีทั้งนั้น แต่เหมือนว่าเธอจะยังไม่พอใจเท่าไหร่ กองเสื้อผ้าข้างหลังวางซ้อนกันไม่ต่ำกว่าสิบตัวแล้ว \"นี่จะเป็นชุดสุดท้ายของวันนี้รึเปล่านะ?\" เธอครุ่นคิดอยู่เงียบๆ แล้วเงยหน้ามองหญิงสาวในกระจก วันนี้เธอดูมีความสุขเป็นพิเศษ \"เอาล่ะ! นี่แหละตัวฉัน!\"",
+    "icon": "/starrail/assets/icon/light_cone/21030.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21030.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21030.webp"
+  },
+  "21031": {
+    "id": "21031",
+    "name": "Return to Darkness",
+    "rarity": 4,
+    "path": "Rogue",
+    "desc": "ถึงแม้จะมีพี่สาวอยู่ข้างกาย แต่เธอกลับไม่ได้ยินเสียงอะไรทั้งนั้น มีเพียงเสียงจากก้นบึ้งหัวใจ ที่นับวันก็ยิ่งดังขึ้นเรื่อยๆ \"ตัวของพี่เย็นจัง\" \"ตัวของพี่ไม่ขยับเลย\" กระแสความโกรธเกรี้ยวท่วมท้นตัวเธออย่างไม่ลดละ เธอนึกได้ช้าไป... \"ร่างกายของพี่ เย็นเฉียบมาตั้งนานแล้ว\"",
+    "icon": "/starrail/assets/icon/light_cone/21031.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21031.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21031.webp"
+  },
+  "21032": {
+    "id": "21032",
+    "name": "Carve the Moon, Weave the Clouds",
+    "rarity": 4,
+    "path": "Shaman",
+    "desc": "เขาถูกใจเครื่องทองชิ้นนั้นตั้งแต่ครั้งแรกที่เห็น และกำลังจะซื้อ แต่สาวน้อยมนุษย์จิ้งจอกกลับดึงเขาไปที่มุมหนึ่ง แล้วเอ่ยกระซิบว่า: \"ผู้มีพระคุณโปรดมาที่ร้านตอนค่ำๆ ดีกว่า แล้วค่อยตัดสินใจในตอนนั้นก็ยังไม่สาย\" เมื่อถึงยามค่ำ เขาก็มาตามนัด ผู้ที่มาเปิดประตูให้ยังคงเป็นสาวน้อยมนุษย์จิ้งจอก เธอยิ้มแป้น \"ผู้มีพระคุณ ตามฉันมาได้เลย\" เขาเห็นเพียงแสงจันทร์ที่ส่องลงมา ยังลายสลักดอกไม้ที่ก้นจาน ช่างฝีมือได้ใช้ประโยชน์จากความตื้นลึกของเส้นสาย มาทำให้กลีบดอกไม้ดูมีมิติ หากไม่ได้อยู่ใต้แสงจันทร์ ก็จะไม่มีทางได้เห็นมันชัดขนาดนี้ เขาจึงนึกขึ้นได้ว่า เพราะอะไรของชิ้นนี้จึงมีชื่อว่า \"สลักจันทร์เฉือนเมฆา\"",
+    "icon": "/starrail/assets/icon/light_cone/21032.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21032.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21032.webp"
+  },
+  "21033": {
+    "id": "21033",
+    "name": "Nowhere to Run",
+    "rarity": 4,
+    "path": "Warrior",
+    "desc": "เขาไม่ได้เจอหน้าผู้ชายคนนี้เป็นครั้งแรก ไม่รู้ว่าตั้งแต่เมื่อไหร่ ที่ผู้ชายคนนี้เป็นเหมือนเงาตามติดตัวเขา ไม่ว่าจะใช้หอกทิ่มแทงสักกี่หน ก็มักจะมาปรากฏตัวได้อีกครั้งเสมอ เขาจะแพ้ไม่ได้ แต่ก็ไม่อาจเอาชนะได้เช่นกัน เขาอยากจะหนี แต่ก็ไม่มีที่ให้หนีเช่นกัน",
+    "icon": "/starrail/assets/icon/light_cone/21033.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21033.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21033.webp"
+  },
+  "21034": {
+    "id": "21034",
+    "name": "Today Is Another Peaceful Day",
+    "rarity": 4,
+    "path": "Mage",
+    "desc": "เธอเพิ่งจะเรียนรู้วิธีการเล่นหมากหยกแบบใหม่ แถมยังมีหนังสือที่เพิ่งไปยืมมาตอนพักกลางวันอีก พอลองคำนวณดูแล้ว ถ้าทำงานแบบช้าๆ งานที่เหลือก็จะเสร็จในเวลาเลิกงานพอดี เธอจึงไปแอบอยู่ในมุมหนึ่งอย่างไม่รีบร้อน เวลาว่างแสนสบายอย่างนี้ ไม่มีใครมารบกวนเธอได้แน่นอน ...ต่อให้เป็นผู้พยากรณ์สูงสุดก็เถอะ นอกจากว่ามันจะบังเอิญเกิดขึ้น และถ้ามันเกิดขึ้นละก็... \"แค่ให้ลูกอมรสนมเม็ดนี้กับท่านผู้พยากรณ์สูงสุด พอได้กินขนมหวานๆ เธอก็จะหายโกรธแล้ว!\"",
+    "icon": "/starrail/assets/icon/light_cone/21034.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21034.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21034.webp"
+  },
+  "21035": {
+    "id": "21035",
+    "name": "What Is Real?",
+    "rarity": 4,
+    "path": "Priest",
+    "desc": "\"หากนาฬิกาทุกเรือนบอกเวลาผิด...\" \"หากคนที่ให้คำสัญญา ทรยศต่อคำมั่นที่ให้ไว้...\" \"หากผู้ที่เข้าสู่โลกแห่งความฝัน ไม่เคยหลับใหลอย่างแท้จริง...\" \"หากผู้ล่วงลับกลับมามีชีวิตอีกครั้ง และพบว่าชื่อของพวกเขาถูกลิดรอน...\" \"หากว่า... ถ้าหาก...\" เขาเป่าเปลวไฟให้มอดดับ ท่ามกลางความมืดมิด หลงเหลือเพียงเสียงนาฬิกาที่ไม่หยุดเดินชั่วนิรันดร์",
+    "icon": "/starrail/assets/icon/light_cone/21035.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21035.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21035.webp"
+  },
+  "21036": {
+    "id": "21036",
+    "name": "Dreamville Adventure",
+    "rarity": 4,
+    "path": "Shaman",
+    "desc": "\"คุณผู้ชมที่รัก เจ้าหนูนาฬิกาและผองเพื่อน ได้กลับมาพบทุกคนอีกครั้งแล้ว!\" \"ในตอนที่แล้ว หัวหน้า Stone ได้พบว่า เมืองฝันหวานมีทรัพยากรมากมายซ่อนอยู่ จึงคิดแย่งชิงอำนาจปกครองเมืองฝันหวาน เจ้าหนูนาฬิกาได้ร่วมมือกับลูกพี่ Hanu และนกกระดาษ เพื่อขับไล่หัวหน้า Stone และลูกน้องที่น่ารังเกียจของเขา ออกไปจากเมืองฝันหวานแห่งนี้\" \"หัวหน้า Stone ไม่พอใจเป็นอย่างยิ่ง จึงได้รวบรวมกลุ่มอันธพาล และสาบานว่า จะทำลายเมืองฝันหวานให้ราบเป็นหน้ากลอง เจ้าหนูนาฬิกากำลังพบกับวิกฤตที่ใหญ่ที่สุด เท่าที่เคยเผชิญมา!\" \"เจ้าหนูนาฬิกาจะใช้กลยุทธ์แบบไหน เพื่อฝ่าฟันวิกฤตนี้ไป? และจะมีเพื่อนใหม่คนไหน มาเข้าร่วมทีมของเขาบ้าง? โปรดติดตามได้ในตอนใหม่ของ 'การผจญภัยในเมืองฝันหวาน'!\"",
+    "icon": "/starrail/assets/icon/light_cone/21036.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21036.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21036.webp"
+  },
+  "21037": {
+    "id": "21037",
+    "name": "Final Victor",
+    "rarity": 4,
+    "path": "Rogue",
+    "desc": "\"นายไม่เชื่อฉันเหรอ?\" เขาจ้องมองชายที่อยู่ตรงหน้าด้วยท่าทียียวน ก่อนจะชักปืนออกมา แล้วรัวกระสุนจนเหลือเพียงนัดเดียว \"ดูท่าทาง ถ้าอยากจะร่วมมือกันให้ราบรื่น ฉันคงต้องอธิบายสไตล์การทำงานของฉัน ให้นายฟังสักหน่อยแล้ว\" เขายัดปืนใส่มือของอีกฝ่าย หมุนลูกโม่ แล้วหันปากกระบอกปืนมาที่ตัวเอง เขาเหนี่ยวไกยิงอย่างต่อเนื่อง หลังจากเสียงว่างเปล่าดังขึ้นสามครั้ง เขาก็เผยรอยยิ้มออกมา \"ชีวิตคือการเดิมพันครั้งใหญ่ และฉันจะเป็นผู้ชนะคนสุดท้ายเสมอ\"",
+    "icon": "/starrail/assets/icon/light_cone/21037.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21037.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21037.webp"
+  },
+  "21038": {
+    "id": "21038",
+    "name": "Flames Afar",
+    "rarity": 4,
+    "path": "Warrior",
+    "desc": "\"ได้ของมาแล้ว ที่เหลือก็ฝากด้วยนะ\" เสียงของพวกเดียวกัน ดังมาจากเครื่องมือสื่อสาร เขามองไปรอบๆ ในอาคารขนาดใหญ่ที่ถูกทิ้งร้าง ศัตรูที่หลงเหลืออยู่ ยังคงเดินผ่านโครงสร้างที่สลับซับซ้อน และใกล้เข้ามาหาเขามากขึ้นเรื่อยๆ \"รอเดี๋ยว\" หลังจากเงียบไปครู่หนึ่ง ก็เกิดระเบิดรุนแรงราวกับหายนะวันสิ้นโลกขึ้น คลื่นลมพัดพาฝุ่นและหมอกควัน ให้กระจัดกระจายไปทั่วทุกที่ แสงอันเจิดจ้าทำให้ท้องฟ้ายามค่ำคืน สว่างไสวราวกับเวลากลางวัน \"รู้อยู่แล้วสินะว่าข้างในนั้น มีแต่ดินปืนที่พวกเขาตั้งใจวางเอาไว้?\" เสื้อคลุมของเขาแผ่สยาย ราวกับเพิ่งเดินเล่นอย่างสบายอกสบายใจมา \"แน่นอนสิ\" \"ส่วนเรื่องจุดไฟ ฉันก็แค่ทำหน้าที่เป็นไม้ขีดไฟให้เท่านั้นเอง\"",
+    "icon": "/starrail/assets/icon/light_cone/21038.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21038.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21038.webp"
+  },
+  "21039": {
+    "id": "21039",
+    "name": "Destiny's Threads Forewoven",
+    "rarity": 4,
+    "path": "Knight",
+    "desc": "โชคชะตามักจะชักนำผู้คนโดยไร้เหตุผล ส่วนเธอก็ได้แฝงตัวอยู่ในความมืดมิด เพื่อรอจารึกช่วงเวลาที่สำคัญที่สุด เรียงลำดับ จับคู่ ล้างไพ่ จับไพ่... เธอจำลองเป็นมือแห่งโชคชะตา เพื่อควบคุมความเป็นไปได้ต่างๆ ของผู้คน และค้นหาเส้นทางที่แท้จริง ภายใต้รูปลักษณ์ที่แสนจะยุ่งเหยิง ในที่สุด เมื่อตัวละครทั้งหมดอยู่ในตำแหน่งของตัวเอง เธอก็กวาดมือผ่านหน้าไพ่ที่หยุดนิ่ง และปะติดปะต่อความจริง ที่ทั้งลึกซึ้งและไม่อาจหยั่งรู้ได้ออกมา \"ยังขาดไปอีกใบหนึ่ง... ถ้างั้น ฉันจะเติมให้เองแล้วกัน\"",
+    "icon": "/starrail/assets/icon/light_cone/21039.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21039.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21039.webp"
+  },
+  "21040": {
+    "id": "21040",
+    "name": "The Day The Cosmos Fell",
+    "rarity": 4,
+    "path": "Mage",
+    "desc": "\"ชีสลาวา! รับผิดชอบทำให้ผู้คุ้มกันดวงดาวสลบ!\" \"ถั่วกวนสีตุ่น! รับผิดชอบโจมตีพวกทหารของดาว!\" \"บ๊วยอบเกลือ! รับผิดชอบพาตัวผู้นำของดาวมา!\" \"แล้วท่านจะทำอะไร!\" \"ฉันจะแกล้งทำตัวเป็นลูกแมวบ้องแบ๊ว เพื่อหลอกล่อมนุษย์โง่เง่าพวกนี้ไงล่ะ!\" และแล้วในวันนั้น อารยธรรมของกาแล็กซี ก็ได้จดจำความกลัวที่ถูกพวกมันครอบงำไว้...",
+    "icon": "/starrail/assets/icon/light_cone/21040.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21040.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21040.webp"
+  },
+  "21041": {
+    "id": "21041",
+    "name": "It's Showtime",
+    "rarity": 4,
+    "path": "Warlock",
+    "desc": "...ใครเป็นคนพบเห็นว่าเขาตาย? ...ฉัน! ฉันเห็นด้วยตาเล็กๆ ของฉันเอง! ...ใครเอาเลือดของเขาไป? ...ฉัน! ฉันใช้จานเล็กๆ ของฉันเอง! ...ใครเป็นคนขุดหลุมศพให้เขา? ...ฉัน! ฉันใช้สิ่วและพลั่วของฉันเอง! จงดูนักปราชญ์ที่ครุ่นคิดอย่างสุดความสามารถ ราชาผู้กระหายอำนาจ ฮีโร่ที่มองว่าตนชอบธรรม และคนเขลาที่หัวเราะไม่หยุด... \"ตอนนี้ ขอเชิญคุณ Sparkle ทำการแสดงโชว์สุดยิ่งใหญ่แห่งปี ให้พวกเราได้ชม... 'ค่ำคืนสุดสะพรึงของ Penacony'\"!",
+    "icon": "/starrail/assets/icon/light_cone/21041.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21041.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21041.webp"
+  },
+  "21042": {
+    "id": "21042",
+    "name": "Indelible Promise",
+    "rarity": 4,
+    "path": "Warrior",
+    "desc": "อดีตที่คละคลุ้งไปด้วยฝุ่น หน้าที่ในการปกป้องบ้านเกิด และความฝันที่จะบุกเบิกโลก... ...มือใหญ่โตและหยาบกระด้างคู่หนึ่ง ยื่นสิ่งเหล่านี้ให้กับเด็กหนุ่ม ผู้ที่ไม่รู้เรื่องราวทางโลกนัก \"อีกไม่นาน พวกเราก็จะได้ไปสู่โลก ที่กว้างใหญ่กว่านี้แล้วสินะ\" เด็กชายรับมรดกตกทอดมาด้วยความดีใจ เขาในวัยเด็ก ไม่รู้ด้วยซ้ำว่าของสิ่งนี้หนักอึ้งแค่ไหน \"แน่นอนอยู่แล้ว แต่ก่อนที่จะถึงตอนนั้น Misha ต้องคอยปกป้องที่นี่ให้ดีนะ\" เขาจดจำคำสัญญานั้นไว้ลึกๆ ในใจ และยึดมั่นในสัญญานั้นตลอดไป",
+    "icon": "/starrail/assets/icon/light_cone/21042.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21042.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21042.webp"
+  },
+  "21043": {
+    "id": "21043",
+    "name": "Concert for Two",
+    "rarity": 4,
+    "path": "Knight",
+    "desc": "\"พี่ชาย นี่มัน...\" \"ไม่ได้ร้องเพลงอย่างมีความสุขมานานแล้วสินะ... ฉันจัดเวทีไว้ให้แล้ว แต่มัน... อาจดูเรียบง่ายหน่อยนะ\" \"แต่อาจารย์บอกว่าฉันไม่เหมาะ...\" \"ไม่หรอก ฉันว่าเธอร้องเพราะมาก! ในอนาคต เธอจะทำความฝันของตัวเองให้เป็นจริงได้แน่นอน และยืนร้องเพลงอยู่บนเวทีที่ยิ่งใหญ่กว่านี้...\" ... หลายปีผ่านไป เธอที่ยืนอยู่บนเวทีอันเจิดจรัส และเหม่อมองไปยังแฟนคลับ ที่อลหม่านอยู่เบื้องล่าง... บนเส้นทางการไล่ตามความฝันที่แสนยาวนาน เธอมักจะนึกถึงสายตาที่เต็มไปด้วยความเชื่อมั่นคู่นั้น และ \"คอนเสิร์ต\" แรกของตัวเองอยู่เสมอ ไม่มีแสงไฟที่สว่างไสว ไม่มีเครื่องสำอางอันงดงาม มีเพียงเวทีที่เด็กน้อยคนหนึ่งสร้างขึ้น เพื่อเป็นกำลังใจให้เด็กอีกคนได้ไล่ตามความฝัน \"ตอนนี้ ความฝันของพวกเราต่างก็เป็นจริงแล้ว แต่... นั่นจะยังเป็นความฝันของ \"พวกเรา\" อยู่ไหมนะ...\" เธอกุมไมค์ไว้แน่น ก่อนที่เพลงต่อไปจะเริ่มขึ้น เธอแทบไม่มีเวลาให้นึกเสียใจด้วยซ้ำ",
+    "icon": "/starrail/assets/icon/light_cone/21043.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21043.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21043.webp"
+  },
+  "21044": {
+    "id": "21044",
+    "name": "Boundless Choreo",
+    "rarity": 4,
+    "path": "Warlock",
+    "desc": "แสงและเงาเปลี่ยนไปตามท่วงท่าการเต้นรำ เธอจับมืออีกฝ่าย แล้วยิ้มเมื่อมองไปยังดวงตาที่เย็นชาคู่นั้น \"คุณ Ranger แสนสวย... ยินดีต้อนรับสู่เวทีแห่ง 'ความทรงจำ' พออยู่ในระยะนี้แล้ว... คุณมีเสน่ห์มากกว่าที่เห็นเสียอีก\" บริเวณโดยรอบค่อยๆ มืดลง แสงสาดส่องลงมาจากโดม และเปลี่ยนไปตามจังหวะการเต้นรำของคนทั้งสอง \"มีคนบางคนที่ควรจะเต้นรำกับเราในตอนนี้ แต่พวกเขาก็ไม่เคยมาถึงเลย...\" ในขณะที่หมุนตัว เธอขยับเข้าหาใบหน้าที่ไร้ความรู้สึกนั้น และจับมือที่เย็นเฉียบเอาไว้แน่น พร้อมเอ่ยถามเบาๆ ว่า... \"บอกฉันได้มั้ย ว่าคุณทำอะไรลงไป?\" ขณะที่การเต้นรำเริ่มเร็วขึ้นเรื่อยๆ เศษเสี้ยวของอดีตที่แตกสลาย ก็ได้แล่นเข้าสู่สมองของเธอผ่านปลายนิ้ว ในอดีตอันไกลโพ้น เธอได้ยินเสียงฝน และได้ยินเสียงคร่ำครวญก่อนสิ้นลม จากนั้นเธอก็เห็นคู่เต้นรำตรงหน้า ถือร่มกระดาษสีแดงเลือดท่ามกลางสายฝน และในที่ที่สายตาของเธอทอดมองไป... ศพของผู้จมน้ำจำนวนนับไม่ถ้วน กำลังลอยอยู่ในน้ำ เธอพยายามจะดึงมือออกด้วยความตื่นตระหนก แล้วถอยกลับ บริเวณโดยรอบกลับมาสว่างขึ้น และเสียงของงานเลี้ยงที่แสนครึกครื้น ก็พลันดังขึ้นอีกครั้ง คู่เต้นรำโอบเอวของเธอเบาๆ ราวกับไม่รู้ว่าเพิ่งเกิดอะไรขึ้น \"Memokeeper ช่างเป็นการเต้นรำที่งดงามมากจริงๆ อยากจะเต้นอีกสักรอบมั้ย?\"",
+    "icon": "/starrail/assets/icon/light_cone/21044.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21044.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21044.webp"
+  },
+  "21045": {
+    "id": "21045",
+    "name": "After the Charmony Fall",
+    "rarity": 4,
+    "path": "Mage",
+    "desc": "ฝันแสนหวานชั่วนิรันดร์ที่ใฝ่หา ได้หายไปในชั่วพริบตา ยามเขาร่วงหล่นสู่พื้น เขาไม่ได้เศร้าแต่อย่างใด เพียงแค่อยากหลับตาลงเท่านั้น เส้นทางเก่าที่เขาก้าวเดินถูกทำลายลง และทางข้างหน้า ก็ยังคงปกคลุมไปด้วยม่านหมอก \"หลังจากที่ตื่นขึ้นมา โลกก็ยังคงวนเวียน อยู่ในวัฏจักรแห่งความเจ็บปวด อย่างไม่มีทางหนีรอดได้เหมือนแต่ก่อน...\" เขาแบกอดีตไว้บนบ่า หันหลังให้กับบ้านเกิด และก้าวไปสู่สรวงสวรรค์ที่ไม่มีอยู่จริงต่อ เพราะงั้นแล้ว เหตุใดผู้คนถึงต้องหลับใหล? ทำไมผู้คนถึงต้องตื่นขึ้น? ...ดาวดวงแล้วดวงเล่า เคลื่อนผ่านนอกหน้าต่างไป ในตอนนี้ คำตอบของมัน คงจำเป็นต้องได้รับการตีความหมายใหม่ \"บางที... บางทีฉันอาจจะยัง...\"",
+    "icon": "/starrail/assets/icon/light_cone/21045.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21045.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21045.webp"
+  },
+  "21046": {
+    "id": "21046",
+    "name": "Poised to Bloom",
+    "rarity": 4,
+    "path": "Shaman",
+    "desc": "ท่ามกลางแสงแห่งรุ่งอรุณ ในป่าดอกไม้อันเงียบงัน เงาร่างเคลื่อนไหวไปมา จนทำให้หมู่วิหคตกใจบินหนี เธอเอ่ยกระบวนท่าดาบเงียบๆ และเคลื่อนไหวไปตามกระแส กระบวนท่าที่เคยงุ่มง่าม เริ่มมีความชำนาญมากขึ้น เมื่อปราณดาบพุ่งผ่านไปที่ใด ดอกไม้ก็ร่วงหล่นดุจสายฝน ท่ามกลางมวลอากาศอันยุ่งเหยิง หมอกเย็นๆ ก็ทำให้ปอยผมของเธอเปียกชุ่มโดยไม่รู้ตัว \"วิชาดาบสุดยอดมาก!\" เธอตกใจและหมุนดาบในมือไปตามแรง... ด้านหลังของเธอ {F#เด็กสาว}{M#เด็กหนุ่ม}ผมสีเทาวางกล้องในมือลง \"ความทรงจำที่งดงาม จะไม่จางหายไปกับสายลม\"",
+    "icon": "/starrail/assets/icon/light_cone/21046.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21046.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21046.webp"
+  },
+  "21047": {
+    "id": "21047",
+    "name": "Shadowed by Night",
+    "rarity": 4,
+    "path": "Rogue",
+    "desc": "\"รอยเท้า\" \"รอยข่วน\" \"กลิ่น\" หลังจากจัดการทุกอย่างแล้ว เขาก็หยิบขนนกออกมา และกระโดดขึ้นไปบนหลังคาอย่างแผ่วเบา ในเมืองกว้างใหญ่ เงาสีดำสนิท เคลื่อนผ่านมุมที่ไม่มีใครสังเกตเห็น \"ฉันจะหลอมละลายเข้าไปในเงามืด และคอยเฝ้ามองทุกคน\"",
+    "icon": "/starrail/assets/icon/light_cone/21047.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21047.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21047.webp"
+  },
+  "21048": {
+    "id": "21048",
+    "name": "Dream's Montage",
+    "rarity": 4,
+    "path": "Priest",
+    "desc": "\"เมืองแห่งความฝัน แหล่งเพาะพันธุ์แห่งบาป หรืออาจเป็นดินแดนแห่งสัญญา...\" เขารวบรวมความทรงจำของสรรพสิ่ง และสอดส่องชิ้นส่วนที่น่าทึ่งเหล่านั้น ก่อนจะทำให้ยุ่งเหยิง ประกอบขึ้นใหม่ แล้วเชื่อมโยงเข้าด้วยกัน \"ความทรงจำของคนส่วนใหญ่ มักจะยิบย่อยและไม่น่าสนใจ ในหนึ่งชีวิตจะมีช่วงเวลาล้ำค่า แค่ไม่กี่ช่วงเวลาเท่านั้น ส่วนอื่นๆ ล้วนไม่จำเป็นต้องมีอยู่\" ภาพต่างๆ ไหลผ่านมือของเขาเฟรมแล้วเฟรมเล่า ก่อนจะค่อยๆ กลายเป็นภาพที่แสนตระการตา... \"พวกเราไม่เคลื่อนย้ายความทรงจำ พวกเราแค่สร้างอดีตเท่านั้น\"",
+    "icon": "/starrail/assets/icon/light_cone/21048.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21048.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21048.webp"
+  },
+  "21050": {
+    "id": "21050",
+    "name": "Victory In a Blink",
+    "rarity": 4,
+    "path": "Memory",
+    "desc": "เสียงแผดคำรามของบริวารไททัน ดังสนั่นโหมซัดสมรภูมิ ร่างดั่งสายฟ้าทั้งสอง กำลังไล่ล่าฟาดฟัน จนเกิดเป็นเส้นทางนองเลือด \"แค่ฉันคนเดียว ก็โค่นพวกมันทั้งหมดได้เหลือเฟือ\" ทุกๆ หมัดที่นักรบปล่อยออกไป เป็นดั่งหนามเลือดที่ทิ่มแทงร่างของศัตรู \"ก็แค่ใช้กำลังเอง คอยดูดาบของฉันให้ดีเถอะ!\" ดาบสีเงินตวัดจนเกิดเส้นโค้งสวยงาม เหล่าสัตว์ประหลาดร่วงระนาวราวกับใบไม้ \"ประชันความเร็วกันมั้ยล่ะ?\" ทั้งสองพุ่งเข้าโจมตีพร้อมกัน... เสียงร้องโหยหวนดังขึ้น จากนั้น สัตว์ประหลาดที่ลอบจู่โจมจากด้านหลัง ก็สิ้นลมในทันที ทั้งสองเสียงดังขึ้นพร้อมกัน... \"ฉันต่างหาก ที่เป็นคนมอบการโจมตีครั้งสุดท้ายให้กับมัน!\"",
+    "icon": "/starrail/assets/icon/light_cone/21050.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21050.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21050.webp"
+  },
+  "21051": {
+    "id": "21051",
+    "name": "Geniuses' Greetings",
+    "rarity": 4,
+    "path": "Memory",
+    "desc": "\"ยินดีด้วยนะ การทดลองล้มเหลวอีกแล้วล่ะสิ?\" \"...\" \"ฉันบอกไปตั้งนานแล้วไงว่า วิธีของเธอน่ะ มีข้อผิดพลาด\" \"...\" \"จะบอกอะไรให้นะ ช่วงนี้ฉันก้าวหน้าครั้งใหญ่ด้วยละ~\" หญิงสาวผู้เย็นชา เงยหน้าขึ้นจากหนังสือ... \"ขอโทษที เธอว่าอะไรนะ?\" เจ้าตัวโบกไม้โบกมือ \"ก็ไม่ได้เจ๋งอะไรนักหรอก แค่อาจส่งผลกระทบ ต่อครึ่งกาแล็กซีเลยก็ว่าได้มั้ง\" หญิงสาวปิดหนังสือลง \"ไหนลองเล่าให้ฟังหน่อยสิ\" \"ฮึ ความรู้จากอัจฉริยะแบบฉันเนี่ย... ไม่ใช่สิ่งที่จะได้ยินได้ฟังกันง่ายๆ หรอกนะ...\" \"เข้าใจแล้ว ฉันเพิ่งทำขนมมาใหม่ๆ กินไปคุยไปเถอะ\"",
+    "icon": "/starrail/assets/icon/light_cone/21051.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21051.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21051.webp"
+  },
+  "21052": {
+    "id": "21052",
+    "name": "Sweat Now, Cry Less",
+    "rarity": 4,
+    "path": "Memory",
+    "desc": "เสียงชกต่อยดังก้องไปทั่วห้องฝึกซ้อม ก่อนจะตามมาด้วยเสียงเตะดังสนั่น กระสอบทรายแทบจะหักเป็นสองท่อน \"ท่านนายพลฝึกซ้อมแบบนี้ จะไม่หนักไปหน่อยเหรอ?\"...ทหารที่อยู่ข้างๆ เอ่ยถาม เธอยิ้มแล้วส่ายหัว พลางแขวนกระสอบทรายอันใหม่ \"นี่ยังไม่ทันจะถึงไหนเลย!\" หยาดเหงื่อส่องสะท้อนกับแสงจันทร์ ราวกับไข่มุกแวววาวที่ไหลริน คำเตือนของนายพลผู้ล่วงลับ ผุดขึ้นมาในความคิดเธอ...\"เวลาฝึกซ้อม ต้องให้เหงื่อออกเยอะๆ เข้าไว้ เพื่อที่เวลาต่อสู้ จะได้เสียน้ำตาน้อยลง\"",
+    "icon": "/starrail/assets/icon/light_cone/21052.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21052.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21052.webp"
+  },
+  "21053": {
+    "id": "21053",
+    "name": "Journey, Forever Peaceful",
+    "rarity": 4,
+    "path": "Knight",
+    "desc": "เด็กชายวิ่งอยู่ท่ามกลางละอองฝน ที่เหมือนกับดวงดาว และส่งเสียงแห่งความสุข ให้กับหยาดฝนที่ตกลงมา หลังจากแล้งมาอย่างยาวนาน ฝนตกอยู่เนิ่นนาน กองคาราวานใหญ่หยุดอยู่บนพื้นดิน ที่ปกคลุมไปด้วยสีเขียวชอุ่ม \"ท่านแม่ พี่สาว พวกเราจะไม่หิวโหย และหนาวเหน็บอีกต่อไปแล้ว!\" กองไฟของชาว Avgin ทำให้ค่ำคืนที่เนิ่นนานอบอุ่นขึ้นมา เด็กชายฟังพี่สาวเล่าเรื่องราว พร้อมกับรอคอยรุ่งอรุณ \"Kakavasha นายจะต้องนำพรแห่งความโชคดี ที่เทพพระมารดามอบให้ ไปทำในสิ่งที่พวกเราทำไม่ได้... ขอให้การเดินทางของนายราบรื่น และแผนการไม่ถูกเปิดเผยตลอดไป...\" แสงสีทองจากความฝัน สะท้อนไปยังที่พักอาศัยในโลกความจริง การแลกเปลี่ยนและตัวเลข สะท้อนอยู่ในดวงตาของเขาอีกครั้ง เขาคลายมือที่กำไว้แน่น... ราวกับไม่สามารถคว้าอะไรไว้ได้เลย แต่ยังรู้สึกถึงความอบอุ่นที่ยังคงสั่นไหวอยู่",
+    "icon": "/starrail/assets/icon/light_cone/21053.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21053.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21053.webp"
+  },
+  "21054": {
+    "id": "21054",
+    "name": "The Story's Next Page",
+    "rarity": 4,
+    "path": "Memory",
+    "desc": "สายลมแผ่วเบาพัดผ่านทุ่งข้าวสาลี เด็กสาวถือสมุดที่ว่างเปล่าเดินอยู่ท่ามกลางทุ่งข้าวนั้น นอกเหนือจาก Elysiae แล้ว ในเมืองที่ทั้งแปลกหน้าแต่ก็คุ้นเคยนี้ เพื่อนๆ มากมายต่างมาบรรจบกัน การเดินทางที่เหมือนกับบทเพลงและความฝันกำลังจะเริ่มขึ้น... \"คราวนี้ มาด้วยกันกับฉัน...\" ที่ปลายทุ่งข้าวสาลี เด็กสาวที่รอคอยมาเนิ่นนานได้ปิดหนังสือลง และยื่นมือไปยัง \"อนาคต\"... \"มาเขียนเรื่องราวบทใหม่กันเถอะ♪\"",
+    "icon": "/starrail/assets/icon/light_cone/21054.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21054.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21054.webp"
+  },
+  "21055": {
+    "id": "21055",
+    "name": "Unto Tomorrow's Morrow",
+    "rarity": 4,
+    "path": "Priest",
+    "desc": "\"ไว้เจอกันพรุ่งนี้นะ Tribios\" เมื่อถึงเวลาที่แม่ต้องออกเดินทางไกล เด็กสาวเช็ดน้ำตาบนใบหน้าของเธอ เธอรอคอยวันพรุ่งนี้ วันแล้ววันเล่า จนกระทั่งเธอเติบโตมาเป็นเหมือนกับแม่ เธอยืนอยู่หน้าประตู ในมือกำเชื้อไฟเอาไว้แน่น ทันใดนั้นคำพูดของแม่ก็ดังขึ้นข้างหู \"ที่นั่นไม่มีพายุหิมะ ความหนาวเหน็บ หรือสายฝนที่โหมกระหน่ำ...\" \"แต่ถ้าพรุ่งนี้ไม่ได้เจอกัน...\" เธอร่วงลงสู่พื้น เหลือไว้เพียงเงา ดั่งดาวตกที่พุ่งผ่านท้องฟ้า... \"งั้นก็ไว้เจอกันวันพรุ่งนี้ของวันพรุ่งนี้นะ!\"",
+    "icon": "/starrail/assets/icon/light_cone/21055.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21055.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21055.webp"
+  },
+  "21056": {
+    "id": "21056",
+    "name": "In Pursuit of the Wind",
+    "rarity": 4,
+    "path": "Shaman",
+    "desc": "\"ฮืม เม็ดนี้ให้เจ้าเด็กดวงซวยนั่น น่าจะพอปิดปากพ่อแม่ที่เป็นหนี้ ให้ลงโทษเธอน้อยลงได้บ้าง\" \"ส่วนเม็ดนี้ให้คุณยาย ที่ขายลูกอมแตงกวาดอง จะได้เอาไปรักษาอาการป่วย ฉันไม่อยากให้มีวันที่ต้องอดกิน ลูกอมแสนอร่อยนั่นเลย...\" เด็กสาวงอตัว และนับอัญมณีในถุงผ้าทีละเม็ด จากนั้นก็จามไปทีนึง \"ใครกำลังคิดถึงฉันอยู่เนี่ย?\" \"Cifera อยู่ที่นี่สินะ\" เส้นด้ายที่พันอยู่ด้านหลังเธอ เหมือนกำลังลังเลว่าจะเริ่มจากตรงไหนดี \"จากนี้ไป ตอนที่ไล่ตามสายลม...\" ด้ายทองเย็นยะเยือกพันรอบข้อมือของเธอ จนเธอไม่อาจขยับตัว \"ก็อย่าลืมดูแลตัวเองด้วยล่ะ\" เธอวิ่งหนีไปไกล และเมื่อหันกลับมามองถึงพบว่า ชายเสื้อที่ขาดรุ่ยกลับถูกเย็บอย่างเรียบร้อย ราวกับชุดใหม่",
+    "icon": "/starrail/assets/icon/light_cone/21056.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21056.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21056.webp"
+  },
+  "21057": {
+    "id": "21057",
+    "name": "The Flower Remembers",
+    "rarity": 4,
+    "path": "Memory",
+    "desc": "ในยามวสันตฤดู พวกเธอจะหว่านเมล็ดพันธุ์ ในยามคิมหันต์ฤดู พวกเธอจะรดน้ำทุ่งบุปผา ในยามสารทฤดู พวกเธอจะเก็บเกี่ยวพืชผล ในค่ำคืนเหมันต์ พวกเธอจะขับขานบทเพลง และก้าวไปบนผืนหิมะ ... ดินแดนที่เคยแห้งแล้ง กลับอุดมสมบูรณ์ และเต็มไปด้วยดอกไม้บานสะพรั่ง ผีเสื้อถูกดึงดูดโดยเสียงหัวเราะ ที่เหมือนกับกระดิ่งเงิน และหยุดลงที่ปลายนิ้ว \"พี่สาว ในอนาคตเราก็จะช่วยกัน เปลี่ยนที่นี่ให้กลายเป็นทุ่งดอกไม้ที่ยิ่งใหญ่!\" \"ดูสิ คำสัญญาของเรา...\" ผีเสื้อบินไปยังอีกฟากฝั่ง หญิงสาวผู้เงียบงัน ลูบไล้กลีบดอกไม้ที่อบอุ่นเบาๆ ราวกับว่าน้องสาวยังคงอยู่เคียงข้าง \"ทั้งฉัน...และดอกไม้ที่พวกเราดูแล... ต่างก็ไม่เคยลืมเลือนเลย\"",
+    "icon": "/starrail/assets/icon/light_cone/21057.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21057.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21057.webp"
+  },
+  "21058": {
+    "id": "21058",
+    "name": "A Trail of Bygone Blood",
+    "rarity": 4,
+    "path": "Warrior",
+    "desc": "พายุกำลังก่อตัวขึ้นอยู่ที่ไกลๆ หนวดของมันยื่นขึ้นมาจากทะเลอนธการ ราวกับหยอกล้อสิ่งมีชีวิตอ่อนแอที่ลอยคออยู่ เศษแขนขาของอสูรทะเล ฟาดใส่เกลียวคลื่นจนพุ่งสูงเสียดฟ้า จากนั้นก็แตกกระจาย และจมลงสู่ก้นทะเลดั่งก้อนหิน พวกเขาเล่าว่า เสียงคำรามห้ำหั่น กินเวลานานถึงสิบวันสิบคืน และกลบได้แม้กระทั่งเสียงอสนี พวกเขาเล่าว่า ต่อให้มีชีวิตนับหมื่นชีวิต ก็ไม่พอที่จะต้านทาน การกัดกร่อนของทะเลอนธการ จนกระทั่งความกล้าหาญ ได้ชำระล้างความเปราะบาง และความเย่อหยิ่งแสนเย็นชา ได้ชำระล้างความอ่อนแอไปจนหมดสิ้น ร่างบอบบางนั่นเดินโซเซไปยังชายฝั่ง ขณะที่แสงตะวันยามเช้า สาดส่องลงมาบนผืนทะเล ราวกับเลือดที่ไหลรินในวันวาน",
+    "icon": "/starrail/assets/icon/light_cone/21058.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21058.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21058.webp"
+  },
+  "21060": {
+    "id": "21060",
+    "name": "A Dream Scented in Wheat",
+    "rarity": 4,
+    "path": "Mage",
+    "desc": "สายลมแผ่วเบาพัดผ่านปลายนิ้วของเด็กหนุ่ม พร้อมกับจดหมายที่หมึกยังไม่ทันแห้งดี ให้ลอยออกไปไกล \"อนาคตของฉันจะเป็นยังไงนะ...\" ความฝันปรากฏขึ้นในหัวและลอยขึ้นสู่ท้องฟ้า ข้าวสาลีปลิวไปตามลม จนเกิดเป็นระลอกคลื่น ราวกับกำลังตอบสนองต่อเสียงในใจ ที่ทั้งไร้เดียงสาและจริงใจนั้น \"ไม่ว่าจะเกิดอะไรขึ้น ถึงฉันจะมีแค่ดาบเพียงเล่มเดียว ฉันก็อยากปกป้องโลกใบนี้ให้ได้!\" เด็กหนุ่มสาบานในใจอย่างเงียบๆ... คำสาบานนั้นเปรียบเสมือนตราประทับ ที่ตราตรึงอยู่ในใจเสมอ",
+    "icon": "/starrail/assets/icon/light_cone/21060.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21060.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21060.webp"
+  },
+  "21061": {
+    "id": "21061",
+    "name": "Holiday Thermae Escapade",
+    "rarity": 4,
+    "path": "Warlock",
+    "desc": "\"Hyacine น้อย เราไปลองสระอาบน้ำสุดพิเศษ ที่เพิ่งเปิดใหม่กันเถอะ!\" เด็กสาวทำการตรวจรักษาที่ Okhema เสร็จแล้ว และเดินเข้าไปในสระน้ำหลากหลายรูปแบบ พร้อมกับเด็กน้อยด้วยความอยากรู้อยากเห็น \"ลองนวดด้วยน้ำผลไม้ดูมั้ย\" เมื่อมองไปยังมือสีแดงสดคู่นั้น เด็กสาวก็อุ้ม Ica น้อยที่กระโดดโลดเต้น แล้วถอยหลังกลับ... \"ฉันชอบ... แบบที่เป็นเครื่องดื่มมากกว่า...\" \"อสูรธรณีเหยียบหลัง ลดราคาพิเศษในเวลาจำกัดนะ!\" เจ้าอสูรที่อยากรู้อยากเห็นก้มหน้าลงมา จนลมหายใจของมันเป่ารดผมของเด็กสาว \"ไว้คะ...คราวหน้าไม่พลาดแน่นอน!\" \"สระน้ำสมุนไพร ช่วยให้ร่างกายแข็งแรง มากันกี่คนเอ่ย?\" เด็กสาวลองก้าวลงไปในสระน้ำ พลางดมกลิ่นหอมของสมุนไพร \"นี่น่าจะดีต่อสุขภาพนะ...\" \"ปรุ๊ด ปรุ๊ดๆ!\" Ica น้อยว่ายน้ำท่ากรรเชียงอย่างมีความสุข \"หลายวันมานี้ มันคงจะเหนื่อยน่าดูเลย...\" ในวันหยุดที่หาได้ยากยิ่งนี้ เด็กสาวดื่มน้ำองุ่น ใช้เวลาอยู่กับเด็กน้อยผมแดง... และพูดคุยตั้งแต่เรื่องเคล็ดลับการนอนหลับ ไปจนถึงวิธีทำขนม \"ไม่นะ Ica...Ica น้อย!\" เสียงกรี๊ดของเด็กน้อย ทำลายความสงบของสระอาบน้ำ \"ปรุ๊ด...\" \"Ica น้อยอดทนไว้นะ!\"",
+    "icon": "/starrail/assets/icon/light_cone/21061.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21061.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21061.webp"
+  },
+  "21062": {
+    "id": "21062",
+    "name": "See You at the End",
+    "rarity": 4,
+    "path": "Rogue",
+    "desc": "น้ำตาแห่งความไม่ยินยอมไหลลงอาบแก้ม นอกจากเงาของความตาย ที่หลงเหลืออยู่ในใจกลางของค่ายกล ที่แตกสลายแล้ว ยังมีความเงียบงัน และความว่างเปล่าอันไม่มีที่สิ้นสุดด้วย ทันใดนั้นก็มีเสียงถอนหายใจดังขึ้น ท่ามกลางความมืดมิด นั่นคือแรงสั่นสะเทือนของ \"จิตวิญญาณ\" \"นั่นพี่ใช่มั้ย? พี่สาว...\" เด็กชายยกมือขึ้น แสงสว่างวาบผ่านดวงตาของเขา เงาร่างอันที่เป็นรักนั้น หยุดนิ่งเพียงชั่วครู่ แต่กลับเหมือนหยุดอยู่ในใจของเขานับพันปี \"ผมเข้าใจแล้ว... ขอบคุณที่มาบอกลากันเป็นครั้งสุดท้ายนะ\" เขาค่อยๆ ลุกขึ้น แสงแดดยามเช้าสาดส่องบนใบหน้าอันมุ่งมั่น และน้ำตาที่ยังไม่แห้งเหือดของเขา \"เส้นทางแห่งการแสวงหานั้น เป็นเส้นทางที่โดดเดี่ยว ขอให้เราได้พบกันอีกครั้ง ที่จุดสิ้นสุดของการเดินทาง...\"",
+    "icon": "/starrail/assets/icon/light_cone/21062.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21062.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21062.webp"
+  },
+  "21064": {
+    "id": "21064",
+    "name": "Mushy Shroomy's Adventures",
+    "rarity": 4,
+    "path": "Elation",
+    "desc": "\"เจ้าเห็ดมีนา ยินดีต้อนรับสู่แดนลับแห่งสปาร์ก~♥~\" \"เจ้าเห็ดตัน อย่าทำหน้าตึงสิยิ้มหน่อย!\" \"เจ้าเห็ดเทา ดูท่าทางคงหลงใหลในเสน่ห์ของฉัน เข้าแล้วสินะ? เยี่ยมไปเลย!\" \"ส่วนเจ้าเห็ดกุ๊กกุ๊ก... นายนั่นแหละ ดูน่าอร่อยจังเลยนะ~\" รีบวิ่ง รีบวิ่ง ความปรารถนาของมนุษย์ เหมือนโพรงกระต่ายที่เติมไม่เคยเต็ม... มาสิ มาสิ ยิ้มหน่อย มาเป็นหนึ่งในสมาชิกของโลกแห่งสปาร์กกัน... \"ยินดีต้อนรับสู่รายการพิเศษของคุณ: ทุกคนล้วนสามารถกลายเป็น Sparxie สุดน่ารักได้!\"",
+    "icon": "/starrail/assets/icon/light_cone/21064.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21064.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21064.webp"
+  },
+  "21065": {
+    "id": "21065",
+    "name": "Today's Good Luck",
+    "rarity": 4,
+    "path": "Elation",
+    "desc": "\"รุ่นน้อง แน่ใจใช่มั้ย?\" \"อื้ม ไม่ผิดแน่นอน!\" \"การเดิมพันครั้งนี้ ไม่ใช่แค่ครีมทามือขวดเดียวนะ\" \"เกมที่ง่ายซะขนาดนี้... ยังจะมีตัวแปรอะไรได้อีก?\" เด็กสาวผมสีชมพูหันหลังกลับ และปฏิเสธไม่ให้ถูกรบกวนอีก \"ดูจากการลอยของใบชาแล้ว รุ่นน้อง เธอควรใช้ไพ่ใบนั้นนะ\" หญิงสาวจั่วไพ่ แล้วเปิดออกมา... \"อ่า ช่วงมือขึ้นของฉันมาแล้วล่ะ\" \"อีกรอบๆ เป็นไปไม่ได้เด็ดขาด...\" ... เด็กสาวลืมไปแล้วว่า เคยเล่นเกมพยากรณ์กับรุ่นพี่มาแล้วกี่ครั้ง เธอจำได้แค่ว่า รุ่นพี่เต็มใจเล่นกับเธอใหม่อีกรอบเสมอ ต่อมา เด็กสาวต้องการหลบหนีจากคำพยากรณ์ ที่โชคชะตากำหนดไว้ เธอจึงไปที่ Divination Commission แห่ง Luofu โดยไม่สนใจการทัดทานใดๆ ครั้งแรกที่มาถึง Luofu เธอก็พบใบทำนายสุดประณีต ที่คั่นอยู่ในหนังสือพยากรณ์ ลายมือที่คุ้นเคย ทำให้หญิงสาวที่จากบ้านมาต่างเมือง พลันน้ำตาคลอเบ้า: \"ใครบอกว่าโชคชะตา ไม่มีความเป็นไปได้อย่างที่สอง? เครื่องรางเปลี่ยนโชคชะตานี้ ฉันให้เธอนะ~\"",
+    "icon": "/starrail/assets/icon/light_cone/21065.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/21065.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/21065.webp"
+  },
+  "22000": {
+    "id": "22000",
+    "name": "Before the Tutorial Mission Starts",
+    "rarity": 4,
+    "path": "Warlock",
+    "desc": "\"อีกนานมั้ยถึงจะเริ่มลงมือ\" \"ที่ถามฉันแบบนี้... หรือว่าเกิดเรื่องอะไรกับคนที่มาใหม่รึเปล่า?\" \"เปล่าหรอก\" \"ถึง Elio จะรับเธอมาเพราะเหตุผลอื่นก็ตาม แต่อย่างน้อยๆ เธอก็ต้องผ่านภารกิจมือใหม่ไปให้ได้\" \"เธอดูผ่อนคลายพอสมควรเลย\" \"ถ้าอย่างงั้นฉันก็ค่อยโล่งใจหน่อย ท่าทาง Bladie ก็ดูจะเป็นรุ่นพี่ที่เชื่อถือได้เลยทีเดียวนะ\" \"...\"",
+    "icon": "/starrail/assets/icon/light_cone/22000.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/22000.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/22000.webp"
+  },
+  "22001": {
+    "id": "22001",
+    "name": "Hey, Over Here",
+    "rarity": 4,
+    "path": "Priest",
+    "desc": "เด็กสาวสามคนเดินอยู่ท่ามกลางค่ำคืนที่มืดมิด และบรรยากาศโดยรอบ ก็ชวนให้รู้สึกขนลุกขึ้นไปอีก \"Huohuo เดินเร็วๆ สิ ไม่งั้นพวกเราจะไม่รอแล้วนะ!\" เธอถือโทรศัพท์มือถือแล้วก้าวเดินไปข้างหน้า ราวกับว่าบรรยากาศเหนือธรรมชาตินี้ ไม่มีผลอะไรต่อเธอทั้งนั้น \"ฉะ...ฉันอยู่ตรงนี้!\" เด็กสาวที่ยืนอยู่ข้างหน้า เอ่ยตอบด้วยท่าทีกล้าๆ กลัวๆ \"อ้าว? เธออยู่ข้างหน้าหรอกเหรอ ถ้างั้นคนที่อยู่ข้างหลังฉันกับ Shangshang...\" และตอนจบที่สมบูรณ์แบบของสถานการณ์นี้ ก็ต้องเป็นเสียงกรีดร้องของเด็กสาวอยู่แล้ว",
+    "icon": "/starrail/assets/icon/light_cone/22001.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/22001.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/22001.webp"
+  },
+  "22002": {
+    "id": "22002",
+    "name": "For Tomorrow's Journey",
+    "rarity": 4,
+    "path": "Shaman",
+    "desc": "เข็มของเข็มทิศหมุนอย่างต่อเนื่อง สุดท้ายก็ชี้ไปยังช่วงเวลาแห่งความฝัน ที่นอกหน้าต่าง ระบบดวงดาว Asdana ที่เต็มไปด้วยสสารความทรงจำ กำลังส่องแสงสลัว ส่วนเรือนจำชายขอบที่อยู่ที่นั่น ก็ยังคงเต็มไปด้วยไฟสงคราม \"พวกนายคิดว่า โลกในความฝันจะหน้าตาเป็นยังไง? ฉันจะตั้งใจวาดแผนที่ให้ละเอียดเลย\" หญิงสาวเก็บเครื่องมือวาดแผนที่ แล้วมองดูโลกใหม่ที่อยู่ไม่ไกลเกินเอื้อม ด้วยความตั้งตารออย่างใจจดใจจ่อ \"ที่นั่นวุ่นวายมาก พอไปถึงแล้วก็อย่าเพ่นพ่านไปทั่วล่ะ ถ้าถูกลักพาตัวแบบครั้งที่แล้วอีกล่ะก็ ฉัน...\" พอทำความสะอาดอาวุธเสร็จ ชายในชุดคาวบอยก็หยิบแก้วเครื่องดื่ม เดินไปที่โซฟา พลางส่ายหัวอย่างระอา \"ดินแดนแห่งความฝัน มีความเป็นไปได้ไม่มีที่สิ้นสุด เราต้องทำการใหญ่ได้แน่นอน... กัปตันรถไฟ ถ้าพวกเราเกิดหลงรักที่นี่ แล้วไม่กลับมาอีก เธอจะคิดถึงพวกเรามั้ย?\" ผู้มาเยือนนิรนามในชุดภูมิฐานขยิบตาให้ Pom-Pom พร้อมรอยยิ้ม \"อย่ามาล้อกัปตันรถไฟเล่นแบบนี้นะปอม! กัปตันรถไฟ เธออยากจะพูดอย่างนี้ใช่มั้ยล่ะ?\" หญิงสาวยิ้มอย่างเจ้าเล่ห์ \"พวกเธอนี่นะ! บ้าจริงเชียว!\" ฟองฟู่ลอยอยู่ในเครื่องดื่ม ตู้รถไฟเปี่ยมไปด้วยเสียงหัวเราะ ... แผ่นหลังของผู้มาเยือนนิรนามหนุ่มสาว ค่อยๆ ถูกสสารความทรงจำกลืนกิน \"เดินทางปลอดภัยนะ... ปอม...\" เมื่อหันกลับไป ตู้รถไฟก็ว่างเปล่าเสียแล้ว กัปตันรถไฟนิ่งไป... เหตุการณ์แบบนี้ เขาเหมือนจะเคยเจอมานับครั้งไม่ถ้วนแล้ว",
+    "icon": "/starrail/assets/icon/light_cone/22002.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/22002.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/22002.webp"
+  },
+  "22003": {
+    "id": "22003",
+    "name": "Ninja Record: Sound Hunt",
+    "rarity": 4,
+    "path": "Warrior",
+    "desc": "วิชานินจาแห่งกาแล็กซี พลิกแพลงพันเปลี่ยน ท่วงทำนองแห่งการล่า แผดเสียงคำราม จงฟัง... กีตาร์ดีดบรรเลงท่วงทำนอง เบสสั่นพ้องตามจังหวะหัวใจ เมื่อดนตรีอิเล็กทรอนิกส์ดังทันใด ทั้งเวทีพลันลุกขึ้นเป็นไฟ! หยาดเหงื่อไม่ลวงหลอก บันทึกบอกความพลิกแพลง แปรเป็นเสียงสะท้อนสุดรุนแรง แห่งตัวโน้ตบนคีย์บอร์ด จอมวุ่นกู่ร้องทำนองเพลง ไม่เกี่ยงบรรเลงลวดลาย ถึงจะสะบักสะบอมไปทั้งกาย \"จอมวุ่น!\"\"จอมวุ่น!\"\"จอมวุ่น!\" เฮ้ ท่าน โลกนี้ไม่สมประกอบ มาร้องเพลงที่ชอบ ไม่ต้องไปสนใจใครหรอก!",
+    "icon": "/starrail/assets/icon/light_cone/22003.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/22003.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/22003.webp"
+  },
+  "22004": {
+    "id": "22004",
+    "name": "The Great Cosmic Enterprise",
+    "rarity": 4,
+    "path": "Mage",
+    "desc": "ในสถานที่จัดงานเสมือนจริง ที่สร้างขึ้นจากข้อมูล เหล่าตัวแทนบูธ ต่างก็มาพูดคุยแลกเปลี่ยนความเห็นกัน ร่างสองร่างเดินไปมาระหว่างบูธ และส่งมอบทุกสิ่งที่แต่ละฝ่ายต้องการ \"เอ๋ หรือว่าคุณคือ...\" \"ฉันเคยเห็นคุณในทีวีมาก่อนด้วยปอม\" พวกเขาพูดคุยถึงเกม อาหาร รูปร่างของกันและกัน รวมถึงสิ่งดีๆ ทั้งหลายในจักรวาล ทั้งๆ ที่เจอกันไม่บ่อย แต่กลับสนิทสนมกันราวกับเพื่อนเก่า... \"จริงสิ อยากลองพิจารณา ข้อเสนอของผมดูหน่อยมั้ย...\" \"รถไฟไม่ใช่ของซื้อของขายนะปอม!\"",
+    "icon": "/starrail/assets/icon/light_cone/22004.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/22004.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/22004.webp"
+  },
+  "22005": {
+    "id": "22005",
+    "name": "The Forever Victual",
+    "rarity": 4,
+    "path": "Shaman",
+    "desc": "เปรี้ยงงง... ที่นอกแดนวงกต พายุโหมกระหน่ำอย่างไม่หยุดยั้ง ปุดๆ... เปลวไฟใต้หม้อวิเศษของเหล่าภูต ก็ไม่เคยมอดดับ \"โรยเครื่องเทศพิเศษลงไป...\" \"ตามด้วยผักสด!\" \"คราวนี้ต้องสำเร็จแน่นอน!\" หม้อส่งเสียงเดือดปุดๆ อีกครั้ง เหล่าภูตจ้องมองอย่างไม่วางตา \"มาแล้ว มาแล้ว!\" แสงสว่างจ้าพุ่งออกมาจากใต้หม้อ... ดูสิ ทุกคนมารวมตัวกันแล้ว! ... ในงานเลี้ยงที่อบอวลไปด้วยกลิ่นหอม แขกเหรื่อต่างชูแก้ว เพื่อฉลองให้กับช่วงเวลาที่แสนวิเศษ... ขอให้แดนสวรรค์ในความฝันนี้ อบอุ่นและมีความสุขตลอดไป!",
+    "icon": "/starrail/assets/icon/light_cone/22005.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/22005.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/22005.webp"
+  },
+  "22006": {
+    "id": "22006",
+    "name": "Fly Into a Pink Tomorrow",
+    "rarity": 4,
+    "path": "Memory",
+    "desc": "สายลมโชยอ่อนพัดพาก้อนเมฆไป เผยให้เห็นรูปร่างหน้าตาแห่งดาราจักร แสงสีทองส่องประกาย มหากาพย์จะถูกขับขานในห้วงดารา \"ดาวตก พบเจอ สัญญา!\" ภูตน้อยแหงนมองท้องฟ้า เหมือนการพบกันครั้งแรก และเหมือนการกลับมาพบกันอีกครา \"Mem รอคอย บุกเบิก โลก!\" ดวงตาของภูตน้อย สะท้อนแสงจากดวงดาว... เป็นประกายระยิบระยับ ราวกับวันพรุ่งนี้ที่เป็นสีชมพู",
+    "icon": "/starrail/assets/icon/light_cone/22006.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/22006.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/22006.webp"
+  },
+  "23000": {
+    "id": "23000",
+    "name": "Night on the Milky Way",
+    "rarity": 5,
+    "path": "Mage",
+    "desc": "หากกังวลเส้นทางใต้ฝ่าเท้า ก็แค่เงยหน้าขึ้นอีกครั้ง เมื่อดวงดาวจ้องมองมาอย่างอ่อนโยน จิตใจก็จะล่องลอยไปกับสายลม ทุกความคิด ทุกเสียงกระซิบ ล้วนกลายเป็นประสบการณ์ในชีวิต ที่จะไม่สูญหายไปอีก",
+    "icon": "/starrail/assets/icon/light_cone/23000.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23000.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23000.webp"
+  },
+  "23001": {
+    "id": "23001",
+    "name": "In the Night",
+    "rarity": 5,
+    "path": "Rogue",
+    "desc": "หญิงสาวเผยรอยยิ้มบางๆ ที่เกินกว่าจะมองเห็นได้อย่างชัดเจน \"ทำไมกันนะ?\" \"ทั้งๆ ที่ตอนนี้ เวลานี้ ณ ที่แห่งนี้ ฉันอยู่ตัวคนเดียวแท้ๆ...\" \"แต่ทำไมกลับรู้สึกถึง...ความครึกครื้นและมีชีวิตชีวาเช่นนี้ล่ะ\"",
+    "icon": "/starrail/assets/icon/light_cone/23001.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23001.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23001.webp"
+  },
+  "23002": {
+    "id": "23002",
+    "name": "Something Irreplaceable",
+    "rarity": 5,
+    "path": "Warrior",
+    "desc": "\"Svarog ถ้าวันหนึ่งฉันไม่อยู่แล้ว ข้อมูลนี้ก็ฝากคุณด้วยนะ\" (ใครกัน... ทำไมในบันทึกของฉันถึงมีเสียงนี้อยู่ด้วย...) \"Svarog คุณคิดว่ามีสิ่งไหน ที่ไม่สามารถถูกแทนที่ได้มั้ย?\" (ไม่สามารถแทนที่ได้... ชิ้นส่วนที่พังเสียหาย... ก็ต้องเปลี่ยนใหม่เท่านั้น...) \"Svarog สักวันหนึ่ง คุณจะค้นพบสิ่งนั้นเอง\" (ของแบบนั้น... คงยุ่งยากน่าดู...) \"หากถึงเวลานั้นแล้ว... คุณก็ไปจากที่นี่เถอะ\"",
+    "icon": "/starrail/assets/icon/light_cone/23002.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23002.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23002.webp"
+  },
+  "23003": {
+    "id": "23003",
+    "name": "But the Battle Isn't Over",
+    "rarity": 5,
+    "path": "Shaman",
+    "desc": "\"จำไว้ว่า ในการต่อสู้กับมอนสเตอร์พวกนั้น ไม่สามารถเอาชนะได้ด้วยการล่าถอย\" \"ข้างหลังเราก็คือ Belobog และเราก็คือกำแพงเหล็กป้องกันด่านสุดท้าย...\" \"เราจะไม่หันหลังกลับโดยเด็ดขาด!\" เธอเงยหน้าขึ้น ภาพข้างหน้าคือความหนาวเหน็บ พื้นดินที่กลายเป็นน้ำแข็ง และพายุหิมะที่ไม่มีที่สิ้นสุด ทุกอย่างยังคงเหมือนเดิม มีเพียงแผ่นหลังที่เธอเคยเฝ้ามองมาตลอดเท่านั้นที่หายไป",
+    "icon": "/starrail/assets/icon/light_cone/23003.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23003.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23003.webp"
+  },
+  "23004": {
+    "id": "23004",
+    "name": "In the Name of the World",
+    "rarity": 5,
+    "path": "Warlock",
+    "desc": "\"Welt... งั้นเหรอ?\" \"ชื่อนี้...เจ๋งใช่มั้ยล่ะ?\" \"งั้น...\" \"ตั้งแต่นี้เป็นต้นไป นายชื่อ Welt ก็แล้วกัน\" \"ทั้งเรื่องคอร์แฮชเชอร์... และภารกิจในการปกป้องโลกนี้...\" \"คงต้องรบกวนนายแล้วล่ะนะ Welt\"",
+    "icon": "/starrail/assets/icon/light_cone/23004.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23004.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23004.webp"
+  },
+  "23005": {
+    "id": "23005",
+    "name": "Moment of Victory",
+    "rarity": 5,
+    "path": "Knight",
+    "desc": "\"Gepard ถ้าแพ้แล้วอยากจะร้องไห้ ก็ร้องออกมาเถอะ\" \"แต่ต่อให้ร้องไห้ก็จงลุกขึ้นมา จนกว่าจะเอาชนะฉันได้... ไม่ว่าจะต้องใช้เวลาอีกห้าหรือสิบปีก็ตาม\" หลายปีต่อมา หนุ่มน้อยไม่ร้องไห้อีกแล้ว และไม่พ่ายแพ้ให้กับพี่สาวอีกต่อไป ทุกวันนี้ ไม่ว่าสภาพในสนามรบจะเป็นอย่างไร กัปตันแห่งกองกำลัง Silvermane ผู้กล้าหาญ ก็ยังคงยืนหยัดจนถึงที่สุด เพื่อหาจังหวะที่จะทำลายศัตรูให้ราบเป็นหน้ากลอง",
+    "icon": "/starrail/assets/icon/light_cone/23005.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23005.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23005.webp"
+  },
+  "23006": {
+    "id": "23006",
+    "name": "Patience Is All You Need",
+    "rarity": 5,
+    "path": "Warlock",
+    "desc": "\"หรือว่า คุณมีอะไรที่ยังไม่ได้บอกฉันงั้นเหรอ?\" เธอเห็นอีกฝ่ายเกร็งคอเสียจนแข็งทื่อ และเสียงกลืนน้ำลายก็ดังอย่างชัดเจน คนๆ นี้แสดงออกว่ากลัวเธออย่างเห็นได้ชัด เพราะฉะนั้น เธอจึงไม่จำเป็นต้องออกแรงอะไรเลย ที่จริงแล้วไม่ว่าเธอจะพูดอะไรก็ตาม แค่เปล่งวาจาออกมา ความน่าเกรงขามก็จะก่อตัวขึ้นทันที... อีกฝ่ายจะลนลาน และพูดทุกสิ่งที่เธอต้องการออกมาหมด ส่วนเธอก็แค่รอเท่านั้น เหมือนกับแมงมุมที่ชักใยคอยให้เหยื่อมาติดกับ",
+    "icon": "/starrail/assets/icon/light_cone/23006.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23006.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23006.webp"
+  },
+  "23007": {
+    "id": "23007",
+    "name": "Incessant Rain",
+    "rarity": 5,
+    "path": "Warlock",
+    "desc": "เธอเดินออกจากใต้ชายคา พร้อมหยิบร่มออกมากาง พลางฮัมเพลงเบาๆ แล้วเดินไปยังมุมหนึ่งของตรอกแคบ ไม่นาน ฝนก็หยุดตก เธอเกาหัวด้วยความงุนงงพลางปัดหน้าจอ แต่แล้วฝนก็ตกลงบนพื้นที่เล็กๆ เหนือศีรษะของเธออีกครั้ง เมื่อได้ฟังเสียงฝนโปรยปรายตกกระทบร่ม เคล้ากับเสียงประกอบในเกม เธอก็อารมณ์ดีขึ้นเป็นเท่าตัว \"เล่นเกมในวันที่ฝนตกนี่แหละ มันส์ที่สุดแล้ว\"",
+    "icon": "/starrail/assets/icon/light_cone/23007.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23007.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23007.webp"
+  },
+  "23008": {
+    "id": "23008",
+    "name": "Echoes of the Coffin",
+    "rarity": 5,
+    "path": "Priest",
+    "desc": "เขาเคาะโลงที่ตั้งอยู่ข้างดอกไอริสสีขาว \"การได้ทำธุรกิจกับเธอ บางครั้งก็ทำให้ฉันรู้สึกว่า ฉันดูถูกเธอเกินไป\" ไร้ซึ่งเสียงตอบกลับ มีเพียงหนามแหลมที่ทะลุฝ่ามือของเขา เขายิ้มและกำหนามเอาไว้แน่น \"แบบนี้นี่เอง เราทุกคนต่างต้องการใช้ประโยชน์ จากกันและกัน แต่เราต่างก็ดูถูกฝ่ายตรงข้าม เช่นเดียวกัน\"",
+    "icon": "/starrail/assets/icon/light_cone/23008.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23008.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23008.webp"
+  },
+  "23009": {
+    "id": "23009",
+    "name": "The Unreachable Side",
+    "rarity": 5,
+    "path": "Warrior",
+    "desc": "เขามาที่นี่ทุกปีพร้อมกับดาบเล่มใหม่หลายเล่ม เขาเคยเห็นใบหน้าในชั่วขณะสุดท้าย ของเจ้าของดาบเหล่านั้นมาแล้วทั้งสิ้น ทุกครั้งที่เดินจากไป เขาก็จะคิดอย่างโศกเศร้าเสมอว่า... เมื่อไหร่จะมีคนนำดาบของเขามาที่นี่บ้างนะ",
+    "icon": "/starrail/assets/icon/light_cone/23009.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23009.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23009.webp"
+  },
+  "23010": {
+    "id": "23010",
+    "name": "Before Dawn",
+    "rarity": 5,
+    "path": "Mage",
+    "desc": "\"ท่านนายพล โปรดตระหนักให้ดีด้วยว่า... ประวัติศาสตร์ข้างหน้าจะจดจำท่านไว้อย่างไร...\" นายพลแห่ง Cloud Knight หลับตาลง และฟังการรายงานจากลูกน้องของเขา \"ประวัติศาสตร์จะต้องตัดสินอยู่แล้ว แต่ฉันไม่สนใจหรอกว่าประวัติศาสตร์จะบันทึกเรื่องของฉันไว้แบบไหน\" \"หากทำสำเร็จ ตอนนี้ฉันคงจะเป็นคนที่วางแผนได้รอบคอบถี่ถ้วน และมีชีวิตสงบสุข\" \"แต่ถ้าหากล้มเหลว ตอนนี้ฉันคงจะเป็นพวกรักความสบาย เข้าข้างแต่ฝ่ายตัวเอง\" นกน้อยกระโดดลงจากไหล่ของเขามาอยู่บนฝ่ามือ \"ฉันก็แค่ทำสิ่งที่ตัดสินใจเอาไว้แล้วก็เท่านั้น\"",
+    "icon": "/starrail/assets/icon/light_cone/23010.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23010.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23010.webp"
+  },
+  "23011": {
+    "id": "23011",
+    "name": "She Already Shut Her Eyes",
+    "rarity": 5,
+    "path": "Knight",
+    "desc": "ความเจ็บปวดที่กลางหน้าผากของเธอ จะอยู่กับเธอไปตลอดชีวิต แต่มันก็ยังไม่ได้สักเศษเสี้ยว ของสิ่งที่เธอเคยพบเจอในอดีต เธอคิดว่าตัวเองสามารถล่วงรู้ทุกสิ่งได้ จนกระทั่งเพื่อนเก่าได้จากไป บัดนี้เธอ \"มองเห็น\" โลกที่เปลี่ยนแปลง และเวลาที่เปลี่ยนไปอยู่เสมอ... แต่เธอก็ได้ปิดดวงตาทั้งสองลง เพราะอนาคตได้ถูกกำหนดไว้ ...ใน \"ตาที่สาม\"",
+    "icon": "/starrail/assets/icon/light_cone/23011.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23011.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23011.webp"
+  },
+  "23012": {
+    "id": "23012",
+    "name": "Sleep Like the Dead",
+    "rarity": 5,
+    "path": "Rogue",
+    "desc": "แม้จะนอนหลับอย่างเป็นสุขอยู่บนบ่าของท่านนายพล แต่มือของเด็กชายก็ยังกุมดาบเอาไว้แน่น เขาตบแก้มของเด็กชายเบาๆ และได้ยินเสียงพึมพำออกมา \"ท่านนายพล...ในที่สุด...ผมก็ชนะแล้ว...\" เขานิ่งงัน ทันใดนั้นก็นึกได้ว่า เมื่อเทียบกับเด็กชายที่พยายามเติบโตอยู่ทุกวันแล้ว ตัวเขาได้ผ่านวันเวลาอันยาวนานมาก่อน และเคยชินกับ \"ความคงที่ไม่ผันแปร\" ได้นานแล้ว \"อีกไม่นาน นายก็จะอยู่เหนือกว่าทุกคน ต่อจากนั้นต่างหาก ถึงจะเป็นจุดเริ่มต้นที่แท้จริง...\"",
+    "icon": "/starrail/assets/icon/light_cone/23012.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23012.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23012.webp"
+  },
+  "23013": {
+    "id": "23013",
+    "name": "Time Waits for No One",
+    "rarity": 5,
+    "path": "Priest",
+    "desc": "เธอเคยใช้เวลาอยู่ข้างหน้าต่างหลายวัน ยามที่เตรียมยารสอ่อนที่มี Mint และ Nepeta เป็นส่วนประกอบ ดอกไม้ก็จะเบ่งบานที่นอกหน้าต่าง ยามที่เตรียมยารสเผ็ดร้อนที่มี Mosla และ Ginger เป็นส่วนประกอบ ฝนก็จะตกที่นอกหน้าต่าง ยามที่เตรียมยารสเปรี้ยวที่มี Peony Root และ Dry Plum ใบไม้ก็จะร่วงหล่นที่นอกหน้าต่าง ยามที่เตรียมยารสขมเย็นที่มี Skullcap และ Anemarrhena เป็นส่วนประกอบ หิมะก็จะโปรยปรายอยู่นอกหน้าต่าง กาลเวลาเคลื่อนคล้อย คืนวันผันแปร แต่หน้าต่างบานนี้และคนที่นั่งอยู่ข้างๆ ยังคงเป็นเช่นเดิม",
+    "icon": "/starrail/assets/icon/light_cone/23013.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23013.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23013.webp"
+  },
+  "23014": {
+    "id": "23014",
+    "name": "I Shall Be My Own Sword",
+    "rarity": 5,
+    "path": "Warrior",
+    "desc": "ตัวดาบแตกร้าว และร่วงลงสู่ความหนาวเย็นเฉือนกระดูก อุปกรณ์จากเหล็กทั่วๆ ไปล้วนแต่ไร้ประโยชน์ ขีดจำกัดของพวกมัน สามารถประเมินได้ในพริบตาเดียว \"ฉันจะต้องการดาบไปเพื่ออะไร?\" เธอไร้ซึ่งความอาวรณ์ และในแววตาก็ไม่มีความรู้สึกใดๆ \"นับตั้งแต่นี้เป็นต้นไป ตัวฉันจะเป็นดั่งดาบของตัวเอง\" หากต้องการก้าวข้ามขีดจำกัดที่ว่านั่น ก็ต้องคิดถึงการทะลวงขีดจำกัดที่ไม่มีใครก้าวผ่านไปได้ ...นั่นก็คือการมองว่าตนเป็น \"เชื้อเพลิง\" ท่อนหนึ่ง",
+    "icon": "/starrail/assets/icon/light_cone/23014.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23014.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23014.webp"
+  },
+  "23015": {
+    "id": "23015",
+    "name": "Brighter Than the Sun",
+    "rarity": 5,
+    "path": "Warrior",
+    "desc": "ตั้งแต่เขาเกิดมา สิ่งที่มองเห็นเบื้องหน้า ก็มีเพียงคุกใต้ดินที่ไร้แสงสว่าง บาปที่ไม่เกี่ยวข้องได้ผูกมัดเขาไว้ที่นี่ และความทรงจำที่ไม่เกี่ยวข้อง ก็ท่วมท้นจนตัวเขาจมดิ่ง เขาพยายามดิ้นรน และหายใจสุดกำลังเท่าที่จะทำได้ เขาพยายามไขว่คว้าเศษเสี้ยวของแสง ในมหาสมุทรอันไร้ขอบเขต จนกระทั่งที่ท่านนายพล ได้ก้าวเข้ามายังคุกอันไร้แสงแห่งนี้ เขามองเห็นแววตาของชายหนุ่ม ที่เปล่งประกายเจิดจ้ายิ่งกว่าแสงอาทิตย์",
+    "icon": "/starrail/assets/icon/light_cone/23015.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23015.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23015.webp"
+  },
+  "23016": {
+    "id": "23016",
+    "name": "Worrisome, Blissful",
+    "rarity": 5,
+    "path": "Rogue",
+    "desc": "สำหรับเจ้าหน้าที่ผู้เพียบพร้อม จากองค์กรคนหนึ่ง \"ความเครียด\" เป็นเรื่องที่ห้ามเกิดขึ้นโดยเด็ดขาด ไม่ว่าจะเผชิญหน้ากับความกดดัน หรือว่าจะเหนื่อยล้าเพียงใด ก็ควรยืดตัวตรงแล้วรับมันเอาไว้ให้ได้! เว้นแต่ว่า... จะถูก \"พวกมัน\" กดไว้เท่านั้น \"นี่ๆ อย่าใจร้อนสิ! ฉันมีแค่สองมือนะ!\" สาวน้อยที่เพิ่งทำโอทีเสร็จแล้วกลับบ้าน กลับถูกสิ่งมีชีวิตขนปุกปุยฝูงหนึ่ง ห้อมล้อมอยู่ที่พื้น พวกมันอาจฟังคำพูดของเธอไม่เข้าใจทั้งหมด เอาแต่จะใช้หัวกระปุ๊กลุก ไถกับฝ่ามือของเธอลูกเดียว ความเหนื่อยล้าเริ่มจางหายไปจากร่างกาย และสิ่งที่เข้ามาแทนที่ ก็คือความอบอุ่นสบายใจจากขนฟูๆ ที่นุ่มมือนั่นเอง",
+    "icon": "/starrail/assets/icon/light_cone/23016.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23016.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23016.webp"
+  },
+  "23017": {
+    "id": "23017",
+    "name": "Night of Fright",
+    "rarity": 5,
+    "path": "Priest",
+    "desc": "เด็กสาวซ่อนตัวอยู่หลังประตู ไม่กล้าก้าวไปข้างหน้าแม้แต่ก้าวเดียว บางทีอาจเป็นเพราะ เป้าหมายของคืนนี้อยู่ตรงหน้าแล้ว หัวใจของเธอเลยเต้นเร็วขึ้น \"ไม่กลัว ไม่กลัว ฉันไม่กลัว...\" ความเงียบส่งเสียงกรีดร้อง ท่ามกลางความมืดมิด หญิงสาวตัวสั่นและคว้า \"อาวุธ\" ในมือเอาไว้แน่น แต่ก็ยังไม่กล้าเข้าใกล้ \"เป้าหมาย\" อยู่ดี \"ไม่มีอะไรต้องกะ...กะ...กลัว!\" ในที่สุดหางที่อยู่ข้างหลังก็ทนไม่ไหวอีกต่อไป และสว่างวาบขึ้นมากะทันหัน \"เร็วเข้าสิ เธอแค่ไปหยิบพัสดุเองนะ!\"",
+    "icon": "/starrail/assets/icon/light_cone/23017.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23017.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23017.webp"
+  },
+  "23018": {
+    "id": "23018",
+    "name": "An Instant Before A Gaze",
+    "rarity": 5,
+    "path": "Mage",
+    "desc": "เขาเคยได้ยินเพลงพื้นบ้าน ที่ร้องเกี่ยวกับแสงนั้นโดยเฉพาะ: ดอกกุหลาบแย้มบาน เพื่อขานรับรอยยิ้มของท่าน แสงอรุณพร่างพราย ส่องประกายสู่ใบหน้าของท่าน ท่วงทำนองขับขาน มุ่งสลายความเหนื่อยล้าในดวงตาท่าน แต่เมื่อแสงนั้นจากไปไม่หวนกลับ เขายังคงมุ่งลับสู่แดนไกล สิ่งเดียวที่ทำได้คือเฝ้ารอ มีศรัทธา และประกาศทุกสิ่งของความงาม ไปทั่วทั้งจักรวาล แม้ว่าทุกอย่างจะคงอยู่เพียงชั่วขณะ แต่เขาก็ได้พบคำตอบที่ต้องการแล้ว",
+    "icon": "/starrail/assets/icon/light_cone/23018.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23018.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23018.webp"
+  },
+  "23019": {
+    "id": "23019",
+    "name": "Past Self in Mirror",
+    "rarity": 5,
+    "path": "Shaman",
+    "desc": "เธอชอบที่จะผนึกช่วงเวลาที่ดอกบ๊วยใกล้จะเหี่ยวเฉา แล้วนำมาเก็บไว้กับตัว หลายปีผ่านไป... เสียงเอะอะ ความอ่อนหวาน และสิ่งมีชีวิตต่างๆ ก็ถูกสร้างขึ้นด้วยมือของเธอ หากแต่ดอกบ๊วย ยังคงร่วงหล่นตามเวลาเดิม หลายปีผ่านไป... รูปร่างหน้าตาของเธอในกระจก ยังคงไม่เปลี่ยนแปลง แต่ในระดับมิติจักรวาล เธอสามารถรักษาความสดชื่นไว้ ได้เพียงแค่ช่วงเวลาสั้นๆ ใช่หรือไม่? \"หากทุกสิ่งไม่อาจหลีกหนีความตายได้พ้น แล้วการสร้างสรรค์จะไปมีความหมายอะไร?\" ไม่รู้ว่าความเงียบผ่านไปนานแค่ไหน ลมโชยพัดผ่านดอกไม้ให้ร่วงหล่น และคำตอบของคนในกระจก ก็ยังคงเหมือนเดิม \"เผื่อว่าสักวันหนึ่ง เราจะไม่เก็บรักษาดอกบ๊วยอีกต่อไป\" เธอค่อยๆ ลูบกระจกที่เย็นเฉียบ ไม่รู้ว่ากี่ครั้งแล้ว ที่เธอพึมพำกับตัวเองเช่นนี้",
+    "icon": "/starrail/assets/icon/light_cone/23019.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23019.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23019.webp"
+  },
+  "23020": {
+    "id": "23020",
+    "name": "Baptism of Pure Thought",
+    "rarity": 5,
+    "path": "Rogue",
+    "desc": "แสงแดดยามบ่ายช่างอ่อนโยน กลิ่นหอมของดอกไม้และใบไม้ลอยตลบอบอวล แม้ว่าเขาจะพยายามรักษาความคิดให้สะอาด และบริสุทธิ์อยู่เสมอ แต่บางครั้งความคิดของเขาก็เต็มไปด้วยฝุ่น อันเนื่องมาจากความเหนื่อยล้า และความสับสนอย่างเลี่ยงไม่ได้ \"การรักษาความคิดนั้นสำคัญพอๆ กับการรักษาสุขภาพ\" เสียงอันวุ่นวายของคนเขลา หายไปพร้อมกับความเหนื่อยล้า เขาแช่ตัวลงในน้ำ และปล่อยให้ความคิดล่องลอยไป ไม่นานจิตใจก็ค่อยๆ แจ่มใสและเป็นระเบียบขึ้น \"ความจริงจะขจัดมลทินออกไป และหลงเหลือไว้เพียงความบริสุทธิ์เท่านั้น ที่จะสามารถเข้าถึงได้\"",
+    "icon": "/starrail/assets/icon/light_cone/23020.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23020.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23020.webp"
+  },
+  "23021": {
+    "id": "23021",
+    "name": "Earthly Escapade",
+    "rarity": 5,
+    "path": "Shaman",
+    "desc": "เธอสามารถเปลี่ยนสีสัน ได้หลายสิบสีในหนึ่งนาที ราวกับดอกไม้ไฟที่แปรเปลี่ยนในชั่วพริบตา เมื่อการแสดงดอกไม้ไฟกำลังจะสิ้นสุด เธอนั่งอยู่บนที่สูง และจ้องมองฝูงชนที่พลุกพล่านอยู่เบื้องล่าง อย่างเบื่อหน่าย ความคิดหลั่งไหลแล้วจางหายไป ประกายเจ้าเล่ห์ฉายอยู่ในแววตาของเธอ ราวกับเป็นกล้องสลับลาย \"ฉันตัดสินใจแล้ว วันนี้ก็จะเล่นแบบนี้แหละ!\" เธอกระโดดโลดเต้น หางสีแดงเหลือบทองของเธอ สะบัดไปมาท่ามกลางฝูงชน \"ตามมาให้ดีล่ะ ดอกไม้ไฟที่สวยที่สุด กำลังจะเริ่มแล้ว!\"",
+    "icon": "/starrail/assets/icon/light_cone/23021.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23021.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23021.webp"
+  },
+  "23022": {
+    "id": "23022",
+    "name": "Reforged Remembrance",
+    "rarity": 5,
+    "path": "Warlock",
+    "desc": "จุดเทียน กางไพ่ และดมกลิ่นหอม... ความทรงจำที่แตกสลายเหล่านี้ กลายเป็นใบหน้าท่ามกลางแสงที่สั่นไหว วิญญาณที่โผล่พ้นออกมาจากเปลวไฟ ได้เล่าเรื่องอันน่าหลงใหลในอดีตให้เธอฟัง ช่วงเวลาถูกตัดทอนและแช่แข็งเอาไว้ เธอเปลี่ยนช่วงเวลาอันแสนล้ำค่าเหล่านี้ ให้กลายเป็นผลึกคริสตัลชั่วนิรันดร์ \"สูญเสียมากเกินไป และหลงเหลืออยู่น้อยเกินไป... พวกเราหล่อเลี้ยงความทรงจำ เพื่อต่อต้านช่วงเวลาอันโหดร้าย\"",
+    "icon": "/starrail/assets/icon/light_cone/23022.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23022.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23022.webp"
+  },
+  "23023": {
+    "id": "23023",
+    "name": "Inherently Unjust Destiny",
+    "rarity": 5,
+    "path": "Knight",
+    "desc": "ไพ่ใบสุดท้ายถูกเปิดออก ทั้งความเศร้า ความโกรธ ความสิ้นหวัง และความสงบ... จู่ๆ อารมณ์ต่างๆ นับร้อยนับพัน ก็ปรากฏขึ้นบนใบหน้าของอีกฝ่าย \"ไหนๆ ก็ไหนๆ แล้ว ทำไมไม่ทำอะไรที่มันน่าตื่นเต้นขึ้นอีกหน่อยล่ะ?\" เขาเดิมพันด้วยชิปทั้งหมดที่มี และบรรดาผู้ที่ยอมรับในความโชคร้าย ต่างก็ก่นด่าและพากันออกไป โดยแอบหวังว่าเขาจะพ่ายแพ้ ไม่ว่าจะเป็นชัยชนะ ชื่อเสียง หรือโชค... เขาไม่เคยสนใจเรื่องเหล่านั้นเลย เขาหลงใหลแค่ช่วงเวลา ที่ทำให้ชีวิตสั่นสะเทือนได้เท่านั้น... นรกอยู่ห่างจากสวรรค์ เพียงแค่การตัดสินใจในครั้งเดียว ชิปถูกโยนลงไป พร้อมกับเสียงคร่ำครวญที่ดังขึ้น และความพึงพอใจที่จอมปลอมนี้ ก็จะสลายไปในทันทีที่เศษฝุ่นจางหาย \"ถ้าไม่กินเรียบ ก็กลับบ้านมือเปล่า แต่ฉันไม่ได้มีอิสระที่จะเลือกเลย...\"",
+    "icon": "/starrail/assets/icon/light_cone/23023.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23023.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23023.webp"
+  },
+  "23024": {
+    "id": "23024",
+    "name": "Along the Passing Shore",
+    "rarity": 5,
+    "path": "Warlock",
+    "desc": "ระหว่างช่องว่างของการ \"มี\" และ \"ไม่มี\" นั้น กระแสน้ำที่เยือกเย็นได้ไหลบ่า เลียบชายฝั่งทั้งสองอยู่ตลอด และนำพาทุกสิ่งไปสู่จุดสิ้นสุด ผู้ที่จมน้ำบริเวณนี้ ต่างร้องตะโกนขอความช่วยเหลือ เสียงร่ำร้องแสนโศก เปี่ยมสุข หอมหวาน และขมขื่นสะท้อนอยู่ในเงาน้ำ... เธอไม่สามารถสัมผัสถึงสิ่งเหล่านี้ แต่เธอกลับรู้สึกได้... ก่อนที่จะไปถึงจุดสิ้นสุดนั้น ยังมีถนนหลายสายให้เดิน มีเสียงมากมายให้ฟัง และมีหลายสิ่งที่ต้องเปลี่ยนแปลง เธอยื่นมือออกไปช่วยผู้ที่จมน้ำ จากการล่อลวงของลบล้าง เงาลวงตาแตกสลายอยู่ข้างหลังเธอ เงาแล้วเงาเล่า ที่สุดแล้ว เธอยังคงเดินต่อไปในโลกที่ไร้ขอบเขตนี้ เพื่อไปสู่จุดจบที่ไม่มีอยู่จริง ...และที่นี่ ฝนจะโปรยปรายไปตลอดกาล",
+    "icon": "/starrail/assets/icon/light_cone/23024.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23024.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23024.webp"
+  },
+  "23025": {
+    "id": "23025",
+    "name": "Whereabouts Should Dreams Rest",
+    "rarity": 5,
+    "path": "Warrior",
+    "desc": "บริเวณชายขอบของระบบดวงดาว Asdana ทะเลแห่งความทรงจำถาโถมด้วยคลื่นลูกใหญ่ เธอเปรียบเสมือนสะเก็ดไฟ ที่อาจมอดดับในสายลมแรงกล้าได้ทุกเมื่อ \"การที่ผู้ซึ่งไม่อาจฝัน จะเข้าสู่แดนฝันสังเคราะห์นั้น ราคาที่ต้องจ่ายมันเทียบเท่ากับ 'ความตาย' เลยนะ\" เสียงเป็นกังวลของพวกพ้อง ยังคงก้องอยู่ที่ข้างหู เธอสูดหายใจเข้าลึกๆ แล้วเข้าสู่เขตแดนความทรงจำ เมื่ออุปกรณ์จมลงสู่ส่วนลึก ของเขตแดนความทรงจำ ประกายแสงเรืองรองหลากหลายจุด ได้ส่องแสงลอดผ่านรอยแยก แต่ก็ถูกความมืดอันไร้ขอบเขต กลืนกินหายไปแทบจะทันที \"ทำไมถึงรีบร้อนมุ่งสู่ความตาย?\" ท่ามกลางทะเลแห่งความทรงจำที่ลึกลงไป แสงเรืองรองจากสิ่งมีชีวิต ในเขตแดนความทรงจำ เป็นเหมือนดวงตาอันห่างไกล ที่เฝ้ามองเธออย่างเฉยเมย ความฝัน ยังคงเป็นสิ่งที่ไกลเกินเอื้อมสำหรับเธอ เธอจ้องมองไปยังความมืดอันไม่มีที่สิ้นสุด ภายใต้แรงกดดันอันหนักหน่วง ของสสารความทรงจำ ร่างกายและจิตวิญญาณของเธอ ก็เป็นอันถึงจุดแหลกสลาย แม้ว่าเธอจะรับรู้ได้ว่า สติของตนค่อยๆ พร่าเลือน แต่ภายในหัวของเธอ ความทรงจำที่หลงเหลือเหล่านั้น ยังคงฉายอยู่ซ้ำแล้วซ้ำเล่า... ฝูง Swarm ที่ปกคลุมท้องฟ้าและดวงอาทิตย์ ได้ทะลวงผ่านแนวหน้า เธอผู้ถูกห่อหุ้มด้วยเปลวไฟ พุ่งทะยานไปยังฝูง Swarm และเถ้าถ่านของ Swarm ก็โปรยปรายราวกับหิมะ ส่วนด้านล่าง ล้วนเต็มไปด้วยเศษซาก สีดำเกรียมของเหล่าอัศวิน เธอไม่มีเวลาแม้แต่จะถือช่อดอกไม้ เพื่อไว้อาลัยเป็นครั้งสุดท้าย ให้กับเหล่าอัศวินคนแล้วคนเล่าที่พลีชีพ ชีวิตของพวกเขาเบ่งบานชั่วครู่แล้วดับไป เหมือนกับรหัสพันธุกรรมที่มีเพียงตัวเลข แต่ไม่เคยมีชื่อของตัวเอง \"ทำไมถึงยังมีชีวิตอยู่?\" ท่ามกลางความเงียบสงัดราวกับความตาย เธอเป็นเหมือนเปลวไฟ ที่หลอมละลายลงสู่ทะเล หลงเหลือเพียงประกายไฟอันริบหรี่ ที่เคลื่อนเข้าหาแสงสว่างข้างหน้า... ไม่รู้ว่าผ่านไปนานแค่ไหนแล้ว เธอลืมตาขึ้น และเหมือนจะมองเห็น \"อนาคต\" ที่เปล่งประกายเลือนรางราวกับไข่มุก น้ำตาของเธอค่อยๆ ไหลอาบแก้ม... \"เพื่อตามหา... 'ความฝัน' ที่เป็นของฉัน...\"",
+    "icon": "/starrail/assets/icon/light_cone/23025.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23025.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23025.webp"
+  },
+  "23026": {
+    "id": "23026",
+    "name": "Flowing Nightglow",
+    "rarity": 5,
+    "path": "Shaman",
+    "desc": "เมื่อเวลาผ่านไปในกระจก เด็กสาวที่ไม่ประสา ก็ได้กลายมาเป็นนักร้องผู้มากความสามารถ เธอมองดูตัวเองในกระจก กาลเวลาเปลี่ยนแปลงทุกสิ่ง แต่ดวงตาสีเขียวของเธอ ยังคงสงบนิ่งเหมือนกับทะเลสาบ ราวกับจะบ่งบอกถึงศรัทธาที่ไม่แปรเปลี่ยน \"วันนี้ดูอารมณ์ดีจัง\" \"ใช่แล้ว... ก็เพราะมี 'การแสดง' ที่สำคัญมากน่ะ\" \"อื้ม การซ้อมของเทศกาลดนตรีประสานเสียง กำลังจะเริ่มแล้ว เชิญคุณไปที่ห้องเตรียมตัวได้เลย\" ... เธอเดินออกจากห้องแต่งตัว และค่อยๆ ทิ้งโรงละครอันเจิดจรัสไว้เบื้องหลัง \"ที่นี่ไม่ใช่เวทีของฉัน\" เธอหลับตาลง และปล่อยให้ราตรีกลืนกินเงาของเธอไป \"ตั้งแต่อดีตจนถึงตอนนี้ เสียงร้องของฉันมีไว้เพื่อ...\" \"เพื่อเหล่าผู้คนที่สิ้นหวัง\"",
+    "icon": "/starrail/assets/icon/light_cone/23026.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23026.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23026.webp"
+  },
+  "23027": {
+    "id": "23027",
+    "name": "Sailing Towards a Second Life",
+    "rarity": 5,
+    "path": "Rogue",
+    "desc": "เขารู้สึกราวกับตกลงไปในห้วงทะเลลึก ทุกสิ่งทุกอย่างได้จากเขาไป เหลือเพียงความคิดอันว่างเปล่า ที่กำลังกระเสือกกระสนดิ้นรนอยู่ ความหวาดกลัว ความไม่สบายใจ ความโดดเดี่ยว ความมืดมน และความโกรธแค้น... สิ่งเหล่านี้ไม่ได้หายไปพร้อมร่างกายของเขา แต่ยังอยู่ในเปลือกกลไกในอีกรูปแบบหนึ่ง และมันก็หนักอึ้งมากขึ้นเรื่อยๆ เขาได้ยินเสียงเรียกของผู้ล่วงลับ และได้กลิ่นไหม้ เสียงเครื่องยนต์ดังก้องอยู่ในหู เลือดสีฟ้าสดใหม่ ไหลไปยังหัวใจที่หิวกระหายของเขา... ความทรงจำอันโหดร้ายปรากฏขึ้นอีกครั้ง และความแค้นที่ฝังลึกอยู่ในใจ ก็กลายเป็นแสงริบหรี่ในความมืดมิด เขาเดินตามแสงนั้นไปจนสุดทาง และพยายามอย่างสุดความสามารถ เพื่อลอยขึ้นมาเหนือผิวน้ำ เขาลืมตาขึ้น พร้อมกับประกายไฟที่แว็บผ่านไป ก่อนจะได้ยินคำแสดงความยินดีของหมอ... \"ยินดีต้อนรับสู่โลกอีกครั้ง\" เขากำมือแน่น ซึ่งตอนนี้พวกมันทำมาจากเหล็กที่เย็นเฉียบ... และเขาจะไม่ได้มีชีวิตอยู่เพื่อตัวเองอีกต่อไป",
+    "icon": "/starrail/assets/icon/light_cone/23027.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23027.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23027.webp"
+  },
+  "23028": {
+    "id": "23028",
+    "name": "Yet Hope Is Priceless",
+    "rarity": 5,
+    "path": "Mage",
+    "desc": "\"เลดี้หยกเมตตา ถ้าไม่ได้คุณคอยส่งสิ่งของ และเงินช่วยเหลือมาตลอด สถานเลี้ยงเด็กกำพร้าก็คงจะ...\" เธอลูบหัวเด็กๆ อย่างเบามือ และหยุดไม่ให้ผู้อำนวยการพูดต่อ \"ตราบใดที่ฉันยังอยู่ ก็ไม่ต้องกังวลเรื่องอนาคตหรอก... ส่วนคำพูดพวกนี้ ก็ไม่จำเป็นต้องพูดให้พวกเด็กๆ ฟังเลย มันมีแต่จะทำให้พวกเขากังวลเสียเปล่าๆ\" เด็กๆ เงยหน้าขึ้นแล้วเล่าเสียงเจื้อยแจ้ว ถึงเรื่องสนุกที่พบเจอช่วงนี้ รวมถึงเรื่องกลุ้มใจ และความฝันของพวกเขา \"เลดี้หยกเมตตา คราวหน้า คุณจะมาอีกเมื่อไหร่เหรอ?\" \"อย่าทำงานหนักเกินไป แล้วก็รีบเข้านอนไวๆ ด้วยนะ...\" \"เลดี้หยกเมตตา โตขึ้นหนูจะต้องเป็นเหมือนคุณให้ได้!\" เธอมองดูดวงตาที่ใสบริสุทธิ์ของเด็กๆ แล้วชะงักไปครู่หนึ่ง \"เป็นเหมือนฉันงั้นเหรอ...\" เด็กน้อยยื่นแอปเปิลให้เธอ\"อื้ม! เป็นคนที่นำแสงสว่าง และความหวังมาให้ผู้อื่นยังไงล่ะ!\" ความยากจน ความผิดพลาด ความโศกเศร้า ความทุกข์ทรมาน... เธอเดินทางท่ามกลางกาแล็กซี รับหลักประกันจากผู้อื่น และให้สิ่งตอบแทนที่เท่าเทียมกัน ชีวิตดำรงอยู่เพราะความปรารถนา ดิ้นรนเพราะความปรารถนา ตายจากเพราะความปรารถนา... นี่เป็นกฎที่ไม่อาจต้านทานได้ และเป็นสิ่งที่ชีวิตหลีกเลี่ยงไม่ได้เช่นกัน นักการกุศลหน้าเนื้อใจเสือ นักธุรกิจชั่วร้ายที่จำนำวิญญาณ... เธอได้รับตัวตนมากมายจากผู้คนหลากโลก แต่มีเพียงตัวเธอเท่านั้นที่เข้าใจ ถึงคุณธรรมเบื้องหลังการกระทำเหล่านี้",
+    "icon": "/starrail/assets/icon/light_cone/23028.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23028.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23028.webp"
+  },
+  "23029": {
+    "id": "23029",
+    "name": "Those Many Springs",
+    "rarity": 5,
+    "path": "Warlock",
+    "desc": "พิรุณโปรยปรายลงมาหลายหน สายชลยามวสันต์เอ่อล้น ต้นไม้ใบหญ้างอกงาม \"นี่เป็นฤดูใบไม้ผลิครั้งที่เท่าไหร่กันนะ?\" เขานึกถึงเหล่านักรบวัยเยาว์ ที่มุ่งหน้าเข้าสู่สนามรบเป็นครั้งแรก เป็นเช่นนี้ปีแล้วปีเล่า คนแล้วคนเล่า แต่กลับยังฮึกเหิมมีชีวิตชีวา และเต็มไปด้วยความหวังดังเดิม กิ่งหลิวโน้มหัก ดั่งรอผู้หวนกลับมา สุดท้ายสิ่งที่พวกเขานำกลับมายังบ้านเกิด... ก็มักจะเป็นน้ำค้างแข็ง ที่ไม่อาจหลอมละลายได้อีกต่อไป เสียงนกร้องดัง เขาหลับตาลง ปล่อยให้แสงแดดลอดผ่านร่องใบไม้ และส่องลงมาบนใบหน้าเขา ...\"เพราะอย่างนี้ ผู้ที่ยังอยู่ที่นี่ ก็คือผู้ที่เปล่าเปลี่ยวที่สุด\"",
+    "icon": "/starrail/assets/icon/light_cone/23029.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23029.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23029.webp"
+  },
+  "23030": {
+    "id": "23030",
+    "name": "Dance at Sunset",
+    "rarity": 5,
+    "path": "Warrior",
+    "desc": "ท่ามกลางแสงสนธยาอันเจิดจรัส เงาร่างปราดเปรียววิ่งอยู่บนหลังคา \"Lili, Guoguo มาดูกันซิว่าระหว่างพวกเรา ใครจะไปถึงจุดหมายก่อนกัน!\" หญิงสาวปีนขึ้นไปบนชายคา ดุจดั่งสัตว์ตัวน้อยที่ว่องไว เธอหลบหลีกสายตาของผู้คุ้มกัน และพลิ้วไหวไปกับสายลม เพื่อไล่ตามแสงอาทิตย์สุดท้าย สายลมอุ่นๆ พัดผ่านใบหน้าของหญิงสาว แสงอัสดงย้อมแมวน้อย ให้เปล่งประกายเจิดจรัส \"พวกเธอชนะ!\" เธอเช็ดเหงื่อบนหน้าผาก แล้วกอดเจ้าแมวไว้ในอ้อมแขน ดวงดาวลอยอยู่บนฟ้า รอยยิ้มอันบริสุทธิ์แสนผ่อนคลาย เบ่งบานอยู่บนใบหน้าเธอ ราวกับแสงยามตะวันรอน ที่ลอยละล่องอยู่บนท้องนภา",
+    "icon": "/starrail/assets/icon/light_cone/23030.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23030.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23030.webp"
+  },
+  "23031": {
+    "id": "23031",
+    "name": "I Venture Forth to Hunt",
+    "rarity": 5,
+    "path": "Rogue",
+    "desc": "\"พวกทาสที่น่าสมเพชและน่าขัน...\" กองทัพสาวกแห่งความเฟื่องฟูที่เกรียงไกร บุกเข้ามาประชิดพรมแดน พิษหมาป่าถาโถมใส่กองทัพแดนเขียวขจี ราวกับกระแสน้ำที่ไหลบ่า และพยายามปลุกความกลัวที่ฝังลึกอยู่ในใจ จนกลายเป็นภาพลวงตา ที่น่าสะพรึงแบบต่างๆ ทำให้พวกเขาลดอาวุธลง และลังเลที่จะก้าวไปข้างหน้า แต่แนวรบยังคงมั่นคงราวกับกำแพงสัมฤทธิ์ และไม่สั่นคลอนต่อเสียงเหยียดหยามของ Borisin จนมีร่างหนึ่งค่อยๆ เดินออกมา เธอขยับเขยื้อนร่างกายอย่างเชื่องช้า ภายใต้แรงกระตุ้นของพลังงานชั่วร้าย ที่มองไม่เห็น และธงที่สะบัดพลิ้วเสียงดัง \"นายพล ท่านนายพลปรากฏตัวแล้ว...\" \"นายพล Feixiao...\" \"นายพล 'ทัณฑ์สวรรค์'!\" เสียงเรียกอันแผ่วเบาเริ่มรวมกัน จนเป็นเสียงคำรามของการต่อสู้ที่ดังกึกก้อง \"โผทะยานไม่ร่วงหล่น ชัยชนะชั่วนิรันดร์!\" เธอยืนอยู่ที่นั่นเพียงลำพัง เพียงคนเดียว แต่ราวกับทั้งกองทัพ",
+    "icon": "/starrail/assets/icon/light_cone/23031.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23031.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23031.webp"
+  },
+  "23032": {
+    "id": "23032",
+    "name": "Scent Alone Stays True",
+    "rarity": 5,
+    "path": "Priest",
+    "desc": "\"ข้อแรก ปรับปรุงความเคยชินในการทำงาน\" \"ข้อที่สอง ปฏิบัติตามกฎการให้รางวัล และลงโทษอย่างเคร่งครัด\" \"แน่นอนว่าส่วนที่สำคัญที่สุดคือ สืบหาความสัมพันธ์ทางผลประโยชน์ ที่ซับซ้อนเหล่านั้นให้เร็วที่สุด...\" เดิมทีตั้งใจมาชมวิวทิวทัศน์ แต่ความคิดกลับวกไปที่เรื่องงานโดยไม่รู้ตัว จากนั้นความกดดันและความหงุดหงิด ก็พลันตามมา เธอรีบจุดเครื่องหอมประโลมจิตใจ ที่พกติดตัวมาด้วย \"โลกนี้ช่างงดงามเหลือเกิน แต่ฉันกลับหัวเสียขนาดนี้ซะได้... วันหยุดทั้งที อย่าคิดเรื่องที่ชวนให้รำคาญใจดีกว่า...\"",
+    "icon": "/starrail/assets/icon/light_cone/23032.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23032.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23032.webp"
+  },
+  "23033": {
+    "id": "23033",
+    "name": "Ninjutsu Inscription: Dazzling Evilbreaker",
+    "rarity": 5,
+    "path": "Mage",
+    "desc": "ณ สถานที่แห่งหนึ่งใน \"โลกนินจา\" หมอกสีเทาหม่นหมองเข้าปกคลุมเมือง \"ย๊าาา...!\" เงาร่างของเด็กสาว เคลื่อนตัวท่ามกลางสัตว์ประหลาด เงาพร่างพราวเป็นดั่งสีสันสดใส ที่สาดส่องไปยังดินแดนไร้แสงจันทร์ ท่ามกลางฝุ่นควัน เหล่า \"นินจาชั่วร้าย\" ร้องคร่ำครวญด้วยความเจ็บปวด ทั้งตื่นตระหนกระคนประหลาดใจ \"เธอ... เป็นใคร...\" \"ข้าน้อยมีฉายานามว่า 'Rappa' จิตใจแน่วแน่ สยบความชั่วร้าย ผดุงความชอบธรรม\" เหล่า \"นินจาชั่วร้าย\" หันมองหน้ากัน และคิดจะหลบหนีไปคนละทิศละทาง \"ท่านพร้อมจะเอ่ยคำลาโลกแล้วรึยัง...\" ดาวกระจายหมุนวน ดั่งลำแสงพลิ้วไหว กลิ่นอายความอันตรายถาโถมโหมซัด \"เคล็ดวิชาลับ: ทลายสังหารสุดตระการตา!\" ระเบิดด้านหลังจุดประกายค่ำคืน ที่เต็มไปด้วยเศษซากจนสว่างไสว เธอสูดหายใจลึก ก่อนจะกระโจนเข้าไปในแสงไฟนีออน ที่ดูอึกทึกครึกโครมเหมือนเพลงเฮฟวีเมทัล \"สิ่งที่ชั่วร้ายเช่นนี้ ช่างน่ารังเกียจจริงๆ การไล่ล่าครั้งใหญ่ของนินจาผู้กล้าจอมวุ่น จะยังคงดำเนินต่อไป...\"",
+    "icon": "/starrail/assets/icon/light_cone/23033.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23033.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23033.webp"
+  },
+  "23034": {
+    "id": "23034",
+    "name": "A Grounded Ascent",
+    "rarity": 5,
+    "path": "Shaman",
+    "desc": "ภาพลวงและความหลงได้พังทลายลง เขาอยากเป็นดวงอาทิตย์ของสรรพสิ่ง แต่กลับร่วงหล่นลงมาจากฟากฟ้า \"สัมผัสได้ถึงความเจ็บปวดแล้วรึยัง?\" อีกเสียงหนึ่งในใจเขา เอ่ยขึ้นเช่นนั้น \"นั่นคือสิ่งที่ฉันควรจะรู้สึก\" เขาตกลงไปในฝุ่นธุลี ใช้ฝีเท้าอันหนักอึ้งเป็นคำตอบกลับ เขาเดินอยู่บนผืนดิน และได้ยลความทุกข์ยาก ที่ปกคลุมไปทั่วโลกอีกครั้ง ราวกับน้ำพุที่พวยพุ่งไม่หยุดหย่อน เขาก้าวผ่านขวากหนามที่ขวางกั้นเส้นทาง เขาได้ยินเสียงร้องของผู้คน เขาได้พบกับความขื่นขม และเขาได้รับความเงียบสงบในที่สุด \"การร่วงหล่นเป็นอีกชื่อหนึ่งของการโบยบิน\" และเขาก็ได้พาตัวเอง \"ออกเดินทาง\" ในวันที่แปด",
+    "icon": "/starrail/assets/icon/light_cone/23034.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23034.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23034.webp"
+  },
+  "23035": {
+    "id": "23035",
+    "name": "Long Road Leads Home",
+    "rarity": 5,
+    "path": "Warlock",
+    "desc": "\"เธอ...คือใครกัน?\" หญิงสาวลองแตะตัวเอง ที่ไม่คุ้นเคยอย่างแผ่วเบา เธอนึกถึงเปลวไฟในวันนั้น ที่กลืนกินเธอจนหมดสิ้น รวมถึงพัดประดับอัญมณี ที่สลายกลายเป็นเถ้าถ่าน ตัวเองเคยเดินอยู่บนเส้นทางอันยาวไกล เพื่อตามหาแสงสว่างที่อยู่ข้างหน้า เสียงจากภายนอกกำลังเรียกหาเธอ นำทางเธอไปข้างหน้า และพาเธอข้ามผ่านความมืดมิด เสียงในใจได้ย้ำเตือนเธอ ถึงคำสัตย์ที่ยังทำไม่สำเร็จ คำสัญญาที่เคยให้ไว้ ความฝันที่ยังไม่เป็นจริง สิ่งเหล่านี้ยังรอคอยเธออยู่... พวกมันไม่เคยมลายหายไปในเปลวไฟ แต่กลับส่องสว่างมากยิ่งขึ้น ท่ามกลางเปลวไฟ \"นั่นคือฉันเอง...\" เธอยืนอยู่ที่ปลายทาง และไม่เหลียวหลังอาวรณ์ถึงอดีตอีก... \"ฉันคนเดิม ก็คือฉันคนใหม่\"",
+    "icon": "/starrail/assets/icon/light_cone/23035.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23035.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23035.webp"
+  },
+  "23036": {
+    "id": "23036",
+    "name": "Time Woven Into Gold",
+    "rarity": 5,
+    "path": "Memory",
+    "desc": "\"เส้นนี้คือ ความเสียสละของนักรบ\" \"เส้นนี้คือ การเติบโตของวีรชน\" \"เส้นนี้คือ ความเจริญของบ้านเมือง\" ... หุ่นตัดชุดดึงและโยงเส้นด้าย มารวมไว้ที่ปลายนิ้วของเธอ \"ร่องรอยของวีรชนบางคน ถูกตัดขาดไปเสียแล้ว...\" เธอดึงด้ายทองอีกบางส่วนขึ้นมา แล้วเย็บต่อ \"โชคชะตาของวีรชนบางคน ยังคงดำเนินต่อไป...\" เครื่องทอที่ได้รับอัตลักษณ์เทพ ยังคงหมุนด้วยตนเองต่อไป เหล่าหุ่นตัดชุด พากันร่ายรำอย่างสง่างาม และแล้ว เวลาก็ล่วงเลยผ่านเครื่องทอไปนับพันปี เธอเคยชินกับการรอคอยแบบนี้ มานานแล้ว.... นั่นก็เพื่อ \"แรงบันดาลใจ\" ในการถักทอเวลา ให้กลายเป็นทองคำ",
+    "icon": "/starrail/assets/icon/light_cone/23036.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23036.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23036.webp"
+  },
+  "23037": {
+    "id": "23037",
+    "name": "Into the Unreachable Veil",
+    "rarity": 5,
+    "path": "Mage",
+    "desc": "\"จัดการจดหมายของสถาบันแห่งปัญญา เรียบร้อยแล้ว\" \"Simulated Universe ทำงานตามปกติ...\" \"บทความรวมผลงาน ได้รับการตีพิมพ์รอบใหม่แล้ว\" \"ชู่ว เบาๆ หน่อย อย่ารบกวนคุณ Herta เชียว...\" ...ในหอคอยสูงตระหง่านที่ขอบจักรวาล เหล่าหุ่นเชิดกำลังจัดการเรื่องต่างๆ อย่างเป็นระบบระเบียบ เพื่อรอคอยการปรากฏตัวของเธอ เวลาผ่านไปอย่างรวดเร็ว ผู้คนมากมายนับไม่ถ้วน พาดผ่านฟ้าราตรีแห่งประวัติศาสตร์ ราวกับดาวตก และเปล่งประกายเพียงชั่วครู่ ก่อนจะเงียบงันลงอีกครั้ง \"คุณ Herta ไม่ได้โผล่หน้ามานานมากแล้ว...\" \"เจ้าตัวยังคิดอยู่งั้นเหรอ...\" \"ฮึ คิดว่าแค่ได้สัจพจน์มาไม่กี่ข้อ ก็จบแล้วงั้นสินะ?\" เธอบิดขี้เกียจ เงยหน้าขึ้นจากการคำนวณ คล้ายจะเกิดความคิดบางอย่างอีกครั้ง... \"มีสิ่งที่สงสัยไม่ได้ที่ไหนกัน ฉันจะถามให้ถึงที่สุดเลย!\"",
+    "icon": "/starrail/assets/icon/light_cone/23037.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23037.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23037.webp"
+  },
+  "23038": {
+    "id": "23038",
+    "name": "If Time Were a Flower",
+    "rarity": 5,
+    "path": "Shaman",
+    "desc": "\"แม่ หนูอยากฟังเรื่องเล่าอีก!\" \"ลูกรัก วันนี้เล่าเรื่องเกี่ยวกับเวลาดีไหม?\" \"เวลา... คืออะไรเหรอ?\" \"เวลาก็เหมือนกับดอกไม้ดอกหนึ่งน่ะ\" \"เหมือนดอกฟันสิงโต ที่บานอยู่ในทุ่งกว้างรึเปล่า!\" \"ใช่แล้ว เวลาก็เหมือนกับดอกฟันสิงโต ที่จะเติบโต เบ่งบาน และเกิดเป็นผล พวกเราเรียกกลีบของมันว่า... 'กาลเวลา'\" \"แล้วต่อจากนั้นล่ะ?\" \"ต่อจากนั้น มันก็จะเหี่ยวเฉาและกลายเป็นพันๆ กลีบ หลงเหลือไว้เพียงเมล็ดพันธุ์ ที่ลอยล่องไปทั่วทุกแห่ง...\" \"แม่ นั่นเรียกว่า 'อนาคต' ใช่มั้ย!\" \"ถ้างั้นลองทายดูสิ ว่าหลังจากนั้นมันจะกลายเป็นอะไร?\" \"มันจะกลายเป็นดอกไม้มากมาย และกลายเป็นทุ่งดอกไม้งดงามใช่รึเปล่า?\" ผู้เป็นแม่ยังไม่ทันได้เอ่ยตอบ แสงแดดจากนอกหน้าต่าง ก็สาดส่องลงบนใบหน้าของเด็กสาว ร่างที่แสนอ่อนโยนนั้น ก็พลันหายไปในความฝันอีกครา เธอลืมตาขึ้น... \"ถ้ากาลเวลาคือดอกไม้...\" เธอพึมพำ \"มันจะต้องกลายเป็นทุ่งดอกไม้แน่\" เด็กสาวผู้เงียบขรึมเอ่ยขึ้น \"แน่นอนอยู่แล้ว!\" เด็กสาวผู้ซุกซนส่งเสียงเริงร่า หลังจากสำเร็จผลงานชิ้นเอกของตน",
+    "icon": "/starrail/assets/icon/light_cone/23038.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23038.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23038.webp"
+  },
+  "23039": {
+    "id": "23039",
+    "name": "Flame of Blood, Blaze My Path",
+    "rarity": 5,
+    "path": "Warrior",
+    "desc": "น้ำค้างเย็นยะเยือกจับตัวบนคมดาบ ซึ่งมีร่องรอยของคราบเลือดไหลอาบ ผืนดินรกร้างอวลกลิ่นสนิม เปลวไฟจากการต่อสู้อันเดือดระอุ ยังคงลุกโชนอยู่บนเถ้าถ่าน \"Mydeimos เมื่อครู่ช่างเป็นการต่อสู้ที่ยอดเยี่ยมจริงๆ!\" นักรบที่เปลือยท่อนบนเช็ดอาวุธ และร้องบอกอย่างตื่นเต้น \"Mydei สักวันผมก็จะเอาชนะศัตรู ให้ได้เหมือนอย่างพี่เหมือนกัน!\" เด็กชายมองเขาด้วยความชื่นชม พร้อมกับถือดาบที่หักอยู่ในมือ \"ผู้สืบบัลลังก์ อีกไม่นาน พวกเราก็จะได้กลับไปยัง Kremnos แล้ว\" ชายชราที่ผ่านโลกมาอย่างโชกโชน แย้มยิ้มแล้วดื่มอวยพรให้กับเขา เขาพยักหน้าเล็กน้อย แล้วเดินไปทางค่ายเพียงลำพัง ความเจ็บปวดจากการเกิดใหม่ ยังคงแล่นไปทั่วผิวหนังของเขา และพรุ่งนี้ เขาจะนำกองทหารโดดเดี่ยวแห่ง Kremnos ออกเดินทางไปยังต่างแดนอีกครั้ง การเดินทางอันยาวนานจะสิ้นสุดลงที่ใดนั้น เขาไม่อาจล่วงรู้ได้ แต่สิ่งเดียวที่มั่นใจได้ก็คือ เขาจะแบกรับหน้าที่ของราชา จนกว่าโลหิตและเปลวเพลิงจะดับสูญ ในยามค่ำคืน เขายกดื่มน้ำอมฤตสีโลหิตเพียงลำพัง เสียงพิณของกวีพเนจรที่ผ่านทางมา ล่องลอยอยู่ในอากาศ... \"บ้านเกิดคือดินแดนแห่งความฝัน มิใช่แห่งหนที่เราจะไปถึงได้\"",
+    "icon": "/starrail/assets/icon/light_cone/23039.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23039.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23039.webp"
+  },
+  "23040": {
+    "id": "23040",
+    "name": "Make Farewells More Beautiful",
+    "rarity": 5,
+    "path": "Memory",
+    "desc": "พิธีอำลาอีกแล้ว หญิงสาวก้าวผ่านแสงจันทร์ที่แตกสลาย และถักทอมงกุฎดอกไม้ริมแม่น้ำ เพื่อเป็นการอำลา บทเพลงโบราณแสนเศร้า ถูกแช่แข็งในอากาศเย็นยะเยือก แม่น้ำที่เงียบสงบ ไหลรินสู่ทุ่งดอกไม้ที่ห่างไกล หนังสือที่เปื้อนเลือด ดาบยาวที่ขึ้นสนิม ผ้าเช็ดหน้าที่ปักบทกวี... เธอรับสิ่งของต่างหน้า และเรื่องราวชั่วชีวิตของพวกเขาไว้ \"ดวงตาของฉันเป็นดั่งกระจก ที่จะคิดถึงท้องฟ้าพร่างดาวตลอดไป\" นั่นคือคำจารึกหน้าหลุมศพ ของนักวิชาการที่ด่วนจากไป \"ไม่ว่าจะเป็นชีวิตหรือความตาย อัศวินล้วนแต่ปรายตามองอย่างเย็นชา\" นั่นคือคติเตือนใจ ที่นักรบนิรนามยึดมั่นมาทั้งชีวิต \"ชีวิตเป็นเพียงแค่ความตาย ที่โชนแสงเพียงชั่วขณะ\" นั่นคือประโยคสุดท้ายที่ถูกเขียนขึ้นด้วยชีวิต ของกวีผู้แสวงหาความเป็นนิรันดร์ ... \"บุปผาทุกดอก ล้วนแต่เคยผลิบานอย่างภาคภูมิ...\" ท่ามกลางเสียงคร่ำครวญของแม่น้ำ เธอได้มอบบทกวี พวงดอกไม้ และความระลึกถึงแก่ผู้ที่จากไป \"หากการเหี่ยวเฉาเป็นสิ่งที่หลีกเลี่ยงไม่ได้ อย่างน้อย ก็ขอให้การอำลาของเรา... เป็นสิ่งที่สวยงามยิ่งขึ้นเถิด\"",
+    "icon": "/starrail/assets/icon/light_cone/23040.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23040.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23040.webp"
+  },
+  "23041": {
+    "id": "23041",
+    "name": "Life Should Be Cast to Flames",
+    "rarity": 5,
+    "path": "Mage",
+    "desc": "ระหว่างการทดลองอันลึกล้ำ มักจะมีภาพลวงตาหลั่งไหลเข้ามา และขัดขวางฝีเท้าของเขา เสียงกระซิบล่อลวงกล่าวว่า ทิ้งการทดลองที่อันตรายนั่นเสียเถิด เหตุใดต้องเดิมพันชีวิตของตัวเองด้วยเล่า เสียงขู่ที่เย็นยะเยือกกล่าวว่า ผู้ที่อยู่บนเส้นแบ่งความเป็นและความตาย สุดท้ายจะถูกเผาผลาญชีวิต ทั้งยังมีเสียงด่าว่าอันโกรธเกรี้ยว ที่ร้องเรียกให้ส่งคนบาปผู้ดูหมิ่นเทพ ไปยังสถานลงทัณฑ์อันโหดร้าย \"ในที่สุดการแสดงที่ก้าวข้ามชีวิต ก็ถึงเวลาปิดม่านอำลาแล้ว\" เขาหลับตาลง จับเชื้อไฟแห่งเทพเจ้าเอาไว้ และปล่อยให้ความเจ็บปวด กลืนกินจิตวิญญาณที่ใกล้จะมอดดับ เริ่มจากดวงตาที่แน่วแน่ จากนั้นก็เป็นหัวใจที่สั่นไหว และจิตวิญญาณที่สมบูรณ์... เขานำตัวเองไปสู่การหลอม ที่ทั้งบริสุทธิ์และรุนแรงนี้ ด้วยมือของตัวเอง... เสียงต่างๆ ดังลั่นขึ้นมา จากนั้นก็พลันเงียบสงัด ท่ามกลางความมืดมิด ความจริงอันรุ่งโรจน์ ก็ได้ก่อตัวขึ้นในมือของเขา",
+    "icon": "/starrail/assets/icon/light_cone/23041.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23041.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23041.webp"
+  },
+  "23042": {
+    "id": "23042",
+    "name": "Long May Rainbows Adorn the Sky",
+    "rarity": 5,
+    "path": "Memory",
+    "desc": "\"อารมณ์เป็นดั่งก้อนเมฆ ส่วนเราคือท้องฟ้าที่แบกรับมันเอาไว้ ถ้าท้องฟ้าเต็มไปด้วยเมฆครึ้ม จิตใจก็จะสั่นคลอนไม่มั่นคง\" ผู้เยียวยาตั้งใจฟังความทุกข์ของผู้มาเยือน และเอ่ยปลอบอย่างอ่อนโยนเป็นการรักษา \"หลับตาลง หายใจช้าๆ... แล้วจินตนาการว่าตัวเอง อยู่ในที่ที่อบอุ่นและนุ่มนวล...\" คำพูดเหล่านี้ราวกับมีเวทมนตร์ แสงสีรุ้งสาดส่องออกมา จากใต้ปีกของอสูรปีกเหิน \"มีสายลมพัดผ่านทุ่งกว้าง มาพร้อมกับกลิ่นหอมของดอกไม้ป่า เมฆชุ่มชื้นลอยฟุ้ง และมีแสงแดดลอดผ่าน...\" ผู้มาเยือนค่อยๆ ผล็อยหลับสู่ความฝันอันแสนหวาน เหลือเพียงเสียงหายใจสม่ำเสมอเท่านั้น หลังจากรักษาผู้ป่วยคนสุดท้ายเสร็จ ผู้เยียวยาก็ปิดประตูห้องผู้ป่วยเบาๆ ราตรีนิรันดร์ที่ไร้ขอบเขต ยังคงซัดโหมอยู่ไกลๆ และซากปรักหักพังยังคงตั้งตระหง่าน ราวกับเป็นบาดแผลของผืนดิน \"ชาติหน้า ขอให้แสงแห่งรุ่งอรุณ คอยปกปักรักษาผู้คนด้วยเถอะ...\" เธออธิษฐานต่อท้องนภา ก่อนที่จะออกเดินทาง... \"ขอให้ท้องนภาและแสงสีรุ้ง คงอยู่ตลอดไป\"",
+    "icon": "/starrail/assets/icon/light_cone/23042.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23042.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23042.webp"
+  },
+  "23043": {
+    "id": "23043",
+    "name": "Lies Dance on the Breeze",
+    "rarity": 5,
+    "path": "Warlock",
+    "desc": "หญิงสาวหูแมวเหยียดแข้งขาอยู่บนหลังคา แล้วลื่นไถลลงไปในยามราตรี ในคลังสมบัติที่เงียบสงัดมานับพันปี หญิงสาวเคลื่อนที่อย่างอิสระ และเก็บสมบัติล้ำค่าไว้ในอ้อมแขน จากนั้นก็หนีไปอย่างไร้ร่องรอย \"โชคชะตาโง่เขลา ไม่มีทางตามฉันทันหรอก!\" สายลมในซากปรักหักพัง มาพร้อมกับกลิ่นอายของความรกร้าง และพัดผ่านหมวกคลุมศีรษะของเธอ เธอนอนหนุนหินเย็นๆ กลืนกินอาหารแห้งหยาบๆ และเล่นเหรียญทองที่ปลายนิ้ว เสียงแผ่วเบาจากที่ไกลๆ ดังมาถึงหูของเธอ ในเมืองศักดิ์สิทธิ์ที่แสงรุ่งอรุณสาดส่อง ผู้คนกำลังเพลิดเพลินไปกับ งานเลี้ยงและความอบอุ่น \"อีกนานแค่ไหนกัน... หนึ่งปี หรือหมื่นปี?\" เธอบิดขี้เกียจ และทิ้งความกังวลไว้เบื้องหลัง \"ฮึ Cifera น่ะ จะหัวเราะจนวินาทีสุดท้ายเสมอ!\" สายฟ้าสีทองพาดผ่านนภา คำพูดของหญิงสาวยังลอยอยู่ในสายลม ...เช่นเดียวกับเมื่อพันปีก่อน",
+    "icon": "/starrail/assets/icon/light_cone/23043.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23043.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23043.webp"
+  },
+  "23044": {
+    "id": "23044",
+    "name": "Thus Burns the Dawn",
+    "rarity": 5,
+    "path": "Warrior",
+    "desc": "เป็นอีกครั้งที่ยืนอยู่ ณ ปลายทาง ของการเดินทาง ร่างชายหนุ่มกลืนไปกับแสงสีทองแผดเผา \"โลหิตสีทองนั่น ความหวังในการกอบกู้โลกนั่น ที่แท้ก็...\" น้ำตาของเขายังไม่ทันร่วงหล่น ก็ระเหยหายไปจนสิ้น \"Phainon ไว้เจอกันพรุ่งนี้นะ!\" \"ผู้กอบกู้ จำไว้ว่าต้องมีชีวิตให้ถึงที่สุดล่ะ!\" \"จงกลายเป็นรุ่งอรุณของ Amphoreus เถอะ...\" ... ความปรารถนาของทุกคน สะท้อนก้องในความว่างเปล่า วีรบุรุษไร้นามแหลกสลาย เผยซึ่งความตายอันแสนโหดร้าย \"หากเพลิงแห่งโทสะ ไม่เพียงพอจะผลาญโชคชะตาที่บิดเบี้ยว...\" เขาปีนป่ายขึ้นไปบนยอดเขาครั้งแล้วครั้งเล่า และร่วงหล่นแตกสลายครั้งแล้วครั้งเล่า... \"ถ้าอย่างนั้น ก็จงมอดไหม้ไปพร้อมกับฉันซะ!\"",
+    "icon": "/starrail/assets/icon/light_cone/23044.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23044.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23044.webp"
+  },
+  "23045": {
+    "id": "23045",
+    "name": "A Thankless Coronation",
+    "rarity": 5,
+    "path": "Warrior",
+    "desc": "ภายในห้วงมายา เสียงบทสนทนาในวันนั้น ยังคงดังก้องอยู่ในหูของหญิงสาว \"เมอร์ลิน ดาบเล่มนี้ ดึงออกมาไม่ยากสักนิด\" \"ก็จริง สำหรับเจ้าแล้ว การจะเป็นกษัตริย์ที่ทุกคนคาดหวังนั้น ไม่ได้ยากเย็นอะไรเลย ถึงยังไงก็มีข้าคอยชี้แนะอยู่แล้ว แต่ว่านะ... อาเธอเรีย สิ่งที่ยากจริงๆ ก็คือ เจ้าไม่อาจทำตามความคาดหวัง ของทุกคนตลอดไปได้\" \"พอถึงตอนนั้น พวกเขาจะเลือกกษัตริย์ที่เหมาะสมกว่าย่อมได้ ข้าไม่คัดค้านอยู่แล้ว\" \"แล้วถ้าไม่มีคนแบบนั้นอยู่จริงล่ะ?\" \"...งั้นข้าก็จะพยายามตอบสนอง ต่อความคาดหวังของทุกคน อย่างสุดความสามารถเอง\" ในตอนนี้ หญิงสาวรู้นานแล้วว่า เรื่องนี้จะกลายเป็นโศกนาฏกรรมแบบใด หากในยามนี้ คือช่วงเวลาแรกเริ่มในตอนนั้น เธอจะเลือกยอมแพ้หรือไม่? กษัตริย์ไม่เอื้อนเอ่ยสิ่งใด เพียงแต่กำดาบเอาไว้แน่นเท่านั้น และแล้ว เสียงดาบที่ถูกดึงออกจากศิลา ก็ได้ดังกึกก้องขึ้นอีกครา",
+    "icon": "/starrail/assets/icon/light_cone/23045.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23045.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23045.webp"
+  },
+  "23046": {
+    "id": "23046",
+    "name": "The Hell Where Ideals Burn",
+    "rarity": 5,
+    "path": "Rogue",
+    "desc": "เปลวไฟแห่งผลกรรมลุกลามทั่วทุ่งราบ อุดมคติของใครบางคนกลายเป็นเถ้าถ่าน อุดมคติของใครบางคนลุกโชน ผู้พิทักษ์ทะลวงผ่านกระสุนและศรธนู ที่นี่ไม่มีใครที่เขาช่วยเหลือได้ ที่นี่เต็มไปด้วยผู้คนที่เขาหวังจะกอบกู้ ช่วยหนึ่งคน สังหารหนึ่งคน ช่วยหมื่นคน สังหารหมื่นคน โชคชะตาของการห้ำหั่นกันเอง คือส่วนหนึ่งที่ทำให้มนุษย์ดำรงสืบสาน เพราะเคยชินกับทุกสิ่งมานานแล้ว ย่างก้าวของผู้พิทักษ์จึงไม่เคยลังเล ปณิธานที่ปกคลุมขาสองข้าง ดุจดังสายลม ส่วนปณิธานที่ปกคลุมแขนสองข้าง เป็นดั่งเปลวเพลิง เขายังคงมองหาปาฏิหาริย์ในการกอบกู้ต่อไป",
+    "icon": "/starrail/assets/icon/light_cone/23046.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23046.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23046.webp"
+  },
+  "23047": {
+    "id": "23047",
+    "name": "Why Does the Ocean Sing",
+    "rarity": 5,
+    "path": "Warlock",
+    "desc": "คลื่นซัดสาดกระเซ็น กระหึ่มก้องทั่วผืนฟ้า ฝูงปลาแหวกว่ายอยู่ในทะเลที่ว่างเปล่า ฟองคลื่นแห่งวันวานโหมสาดซัด ท่วงทำนองเพลงนั้นยังคงก้องกังวาน \"เจ้าหญิงผู้สูงศักดิ์ มาร่วมงานเลี้ยงกับพวกเราเถิด!\" เพื่อตอบรับเสียงเรียกจากห้วงลึก เธอร่ายรำไปกับคลื่นทมิฬ กระทั่งเหลือเธอเพียงผู้เดียว บนเวทีที่แสนยิ่งใหญ่ \"นักดาบแห่งท้องทะเล เหตุใดจึงเงียบงัน เหตุใดจึงขับขาน?\" ทุกย่างก้าวบนผืนแผ่นดิน เธอต้องทนทุกข์ทรมาน แทบไม่เคยได้ร้องเพลง มีเพียงดาบสีชาด ที่บรรเลงเพลงคร่ำครวญแห่งชีวิต \"ขุนพลมัจฉาดาบ มาร่วมพิชิตทะเลหมู่ดาวไปด้วยกันเถอะ!\" เมื่อเธอพบกับแสงที่ส่องประกายนี้ ในที่สุด เธอก็หยิบคันชักไวโอลินขึ้นมา โดยเชื่อว่านั่น จะเป็นจุดเริ่มต้นของงานเลี้ยงฉลอง ... \"Helektra... Helektra... เมื่อเพลงจบลง เธอจะว่ายไปที่ไหนอีก?\" เมื่อความหวังอันลวงหลอกแตกสลาย เธอมักจะตอบคำถามผู้คน ด้วยท่วงทำนองที่เดียวดายเสมอมา ทว่ากลับทำให้ผู้ฟังทั้งหลายเคลิบเคลิ้มไป หรือบางที... ไม่ว่าจะในโลกมนุษย์หรือใต้ทะเลลึก ผู้ฟังที่แท้จริงมีเพียงผู้บรรเลงเท่านั้น",
+    "icon": "/starrail/assets/icon/light_cone/23047.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23047.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23047.webp"
+  },
+  "23048": {
+    "id": "23048",
+    "name": "Epoch Etched in Golden Blood",
+    "rarity": 5,
+    "path": "Shaman",
+    "desc": "\"ในอีกพันปีข้างหน้า ประวัติศาสตร์จะจารึกถึง Cerydra ว่าอย่างไร?\" เธอเคยถูกผู้คนถามเช่นนี้ ในใจของคนบางคน เธอคือ \"จักรพรรดินี\" ผู้ทรงเกียรติ เธอคือเผด็จการที่เย็นชาและโหดร้าย เธอคือ \"ผู้สวมมงกุฎเพลิง\" ที่มีความทะเยอทะยาน เธอคือจักรพรรดินี ผู้ใช้เลือดและไฟเผาผลาญยุคเก่า... มีคนโต้แย้งว่า เธอเป็นเพียง \"ตัวหมาก\" ที่น่าสงสาร ชนชั้นปกครองที่ถูกทอดทิ้งผู้นี้ เป็นเพียงนักโทษแห่งความทะเยอทะยาน ในเกมหมากรุกที่ต้องต่อกรกับเทพเจ้า เธอถูกกำหนดให้ต้องพ่ายแพ้อย่างราบคาบ มีคนกล่าวว่า ในส่วนลึกของจิตใจที่มืดมนยิ่งกว่าทะเล เธอเป็นเพียงคนธรรมดาที่ชื่อว่า \"Cerydra\"... เธอจักเศร้าโศกเพื่อสหายที่ตายจากไป เธอจักลังเลและหวาดกลัว เมื่อต้องเผชิญหน้ากับภารกิจอันหนักอึ้ง จนไม่อาจก้าวไปข้างหน้าได้... \"หึ ประวัติศาสตร์ไม่จำเป็นต้องจดจำฉันหรอก...\" เธอกล้ำกลืนความขื่นขมนี้ และเดินไปบนทางแห่งการไล่ล่าเปลวไฟ ที่เต็มไปด้วยการเสียสละ... \"โลหิตทองที่ลุกโชนของเรา จะจารึกมันเอาไว้!\"",
+    "icon": "/starrail/assets/icon/light_cone/23048.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23048.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23048.webp"
+  },
+  "23049": {
+    "id": "23049",
+    "name": "To Evernight's Stars",
+    "rarity": 5,
+    "path": "Memory",
+    "desc": "ในรอยแยกแห่งกาลเวลา มีเพียงเสียงหัวใจของเธอที่ยังดังก้อง เช่นเดียวกับคืนวันมากมายในอดีต... ที่เฝ้ามองในยามราตรี และหลับใหลในยามราตรี เธอได้เก็บรักษาความทรงจำ ที่เธอฝากฝังเอาไว้อย่างทะนุถนอม เด็กสาวออกเดินทาง จากจุดเริ่มต้นที่ว่างเปล่า แต้มแต่งสีสันสดใส แก่ทุกสถานีที่เคยแวะพัก บนขบวนรถไฟอันแสนอบอุ่น เพื่อนร่วมทางที่มีนิสัยแตกต่างกันไป ดาวแต่ละดวงที่สว่างไสว... เป็นดั่งฝันอันแสนวิเศษที่ชวนให้หลงใหล \"การเดินทางที่แท้จริงของ March 7th กำลังจะเริ่มขึ้นแล้ว!\" คำป่าวประกาศของเด็กสาว ราวกับดังก้องอยู่ข้างหู เธอทอดสายตามอง ไปยังท้องฟ้าพร่างดาวอันไกลโพ้น ลำแสงหนึ่งกำลังจะมาเยือน... นั่นคือแสงไฟจากขบวนรถไฟ ที่เปรียบเสมือนกับดาวตก \"ราตรีสวัสดิ์นะ March... เมื่อถึงวันที่เธอตื่นขึ้นมาอีกที ก็จงเดินทางบุกเบิกต่อไปเถอะ ♭\" กระแสความทรงจำถาโถมเข้ามา เธอฝังความปรารถนาไว้ในก้นบึ้งหัวใจ ฝังแสงริบหรี่ และเสียงความคิดแผ่วเบานั่นไว้ ...เธอไม่เคยลืมเลือนเลย",
+    "icon": "/starrail/assets/icon/light_cone/23049.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23049.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23049.webp"
+  },
+  "23050": {
+    "id": "23050",
+    "name": "Never Forget Her Flame",
+    "rarity": 5,
+    "path": "Warlock",
+    "desc": "\"มาสิ มาอยู่เคียงข้างฉัน...\" ความทรงจำอันแจ่มชัด ซึ่งนำทางโดยเปลวเพลิง ได้โอบล้อมร่างกาย และจิตวิญญาณของเธอ อดีตได้ฝังจมลงสู่หลุมศพ... มันเป็นเช่นนั้นจริงเหรอ? \"ชู่ว... อย่าร้องไห้สะอึกสะอื้น อย่าปฏิเสธ...\" เธอสลักตัวเองลงในหัวใจของผู้อื่น แววตาที่เคยแปลกหน้า ค่อยๆ กลายเป็นความคุ้นเคย \"นึกออกแล้วรึยัง?\" เมื่อเถ้าถ่านของความทรงจำเก่าๆ จางหายไป ใบหน้าก็พลันส่งกลิ่นหอมของดอกไม้ ที่ชวนให้หลงใหล... \"ฉัน... คือความทรงจำของเธอ\"",
+    "icon": "/starrail/assets/icon/light_cone/23050.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23050.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23050.webp"
+  },
+  "23051": {
+    "id": "23051",
+    "name": "Though Worlds Apart",
+    "rarity": 5,
+    "path": "Knight",
+    "desc": "ในแดนโบราณไพศาลไร้ขอบเขต เด็กหนุ่มออกเดินทางค้นหาตามลำพัง ราวกับเขาได้หวนสู่คืนวันร่อนเร่ ฝ่าคลื่นโหมซัด ผจญลมหนาวเหน็บ ปะทะกับอสูรยักษ์ และต่อสู้กับคลื่นความชั่วร้าย แต่ในช่วงเวลาที่หอบหายใจนั้น เขากลับไม่โดดเดี่ยว แม้หนทางจะยาวไกลนับหมื่นลี้ เขาก็ยังมองเห็นแสงสว่างเบื้องหน้า... นั่นคือความหวังของสรรพชีวิตทั้งมวล ผืนปฐพีที่แตกสลาย ไม่อาจรองรับชีวิตใหม่ได้อีกต่อไป พวกมันจึงมารวมตัวอยู่ข้างกายเขา เพื่อแสวงหาการปลอบประโลม และการปกป้อง นั่นคือถ้อยคำที่สหายฝากไว้ในใจเขา ราวกับว่า เส้นทางยาวเหยียดที่ไม่มีวันสิ้นสุด ได้เชื่อมโยงพวกเขาไว้อย่างแน่นแฟ้น วันวานที่เคยทำให้เขาทุกข์ใจ เคยปะทุขึ้นพร้อมสายลม แต่สุดท้ายเส้นทางที่ก้าวผ่านมา ก็จะกลายเป็นแรงหนุน สำหรับการลอกคราบเปลี่ยนแปลง \"ฉันจะปกป้องเส้นทางการบุกเบิก\" เด็กหนุ่มพุ่งทะยานออกไปพร้อมหอก และมุ่งหน้าไปสู่แสงสว่าง... \"และปกป้องความหวังอันริบหรี่ทั้งหมด!\"",
+    "icon": "/starrail/assets/icon/light_cone/23051.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23051.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23051.webp"
+  },
+  "23052": {
+    "id": "23052",
+    "name": "This Love, Forever",
+    "rarity": 5,
+    "path": "Memory",
+    "desc": "นภาสีครามสะท้อนภาพวันพรุ่งนี้อันเจิดจ้า หนึ่งก้าว สองก้าว... เส้นทางที่สาวน้อยเดินผ่าน ช่างยาวนานเหลือเกิน แต่โชคดีที่เรื่องราวอันล้ำค่าเหล่านั้น ไม่ได้ถูกกาลเวลาที่หมุนเวียนลืมเลือนไป และในตอนนี้ ภายใต้การบรรจงร่วมเขียนของทุกคน มหากาพย์ก็เป็นอันเสร็จสมบูรณ์ และได้มาถึงตอนจบในที่สุด หมู่ดารา มวลบุปผา เหล่าสกุณา และโลกใหม่ที่สวยงาม ผ้าโปร่งบาง มงกุฎดอกไม้ ชุดกระโปรงยาว และสายลมที่ได้พัดพาพรมาให้ การเฝ้าตามหากว่าสามสิบล้านชาติ กลับเป็นช่วงเวลาแห่งความสุขชั่วขณะ ซึ่งมีค่ายิ่งกว่าคำพูดนับหมื่นพัน ของความเป็นนิรันดร์ \"คิก สัญญากันแล้วนะ...\" สาวน้อยเหลียวมอง พลางยิ้มอย่างอ่อนโยน \"คนหนึ่งรั้งอยู่ในอดีต ส่วนอีกคนมุ่งหน้าสู่อนาคต... แต่หัวใจของเรา ไม่เคยแยกจากกันเลย ♪\" เธอเขย่งปลายเท้า และก้าวเข้าสู่อดีต... ส่วนความทรงจำ ก็ได้กลายเป็นริ้วคลื่นแห่งอดีต ที่พัดพาไปสู่วันพรุ่งนี้",
+    "icon": "/starrail/assets/icon/light_cone/23052.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23052.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23052.webp"
+  },
+  "23053": {
+    "id": "23053",
+    "name": "Dazzled by a Flowery World",
+    "rarity": 5,
+    "path": "Elation",
+    "desc": "เมื่อเธอหัวเราะ แฟนๆ ก็หัวเราะตาม เมื่อเธอเศร้า แฟนๆ ก็หลั่งน้ำตา เมื่อเธอโกรธ แฟนๆ ก็โกรธตาม \"น่ารัก ขี้เล่น และเป็นที่นิยม Sparxie คือสิ่งที่ฉันอยากจะเป็น...\" \"อย่าหลงกลเชียวนะ Sparxie คือยาพิษ คือเรื่องโกหก...\" \"จะติดตามน้อง Sparxie ตลอดไป เธอมอบความกล้าให้ฉันได้เกิดใหม่...\" \"Sparxie ควรหายไปจากโลกนี้!\" ... คลิก รัวคอมเมนต์ แชท... ในดวงตาของทุกคน \"Sparxie\" ร้อนแรงและเปล่งประกายมากยิ่งขึ้น \"ฉันรับรู้ถึงความรู้สึกของทุกคนแล้ว~ ฉันจะตอบแทนทุกคน ด้วยวิธีที่ร้อนแรงที่สุดเลย~♥ อย่างเช่น...\" ในช่วงท้ายของไลฟ์สตรีม สาวน้อยกะพริบตา ราวกับมองทะลุเข้าไป ในหัวใจของทุกคนที่อยู่หน้าจอ... \"ถ้าให้โอกาสหนึ่งครั้ง คุณจะเลือกเป็น Sparxie มั้ย?\"",
+    "icon": "/starrail/assets/icon/light_cone/23053.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23053.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23053.webp"
+  },
+  "23054": {
+    "id": "23054",
+    "name": "When She Decided to See",
+    "rarity": 5,
+    "path": "Elation",
+    "desc": "เป็นอีกครั้งนึงในสิบทิศสะท้อนโลกแห่งกฎ ที่เธอเฝ้ามองดูโชคชะตาที่ซ้อนทับกัน เหมือนตาข่ายลูกปัดที่ส่องประกายระยิบระยับ ด้วยเหตุและผลอันไม่มีที่สิ้นสุด \"เธอเห็นอะไร?\" อาจารย์เคยเอ่ยถามเธอเช่นนั้น ผู้พยากรณ์บางคน มองเห็นความเล็กจ้อยของตัวเอง และไม่เชื่ออีกต่อไปว่า พลังของมนุษย์จะเปลี่ยนแปลงโชคชะตาได้ บางคนมองเห็นแนวโน้มที่สำคัญในอนาคต จึงพยายามหาทางออกที่ดีที่สุด เพื่อไปตามแนวโน้มนั้น ในขณะนั้นเอง เด็กสาวจ้องมองเข้าไปในโลกแห่งกฎ เธอเห็นความมืดมิดที่ไร้ขอบเขต นั่นคืออนาคตที่ถูกกำหนดเอาไว้นานแล้ว และเธอก็ยังเห็น \"แสงดาว\" เช่นกัน... ความเป็นไปได้เล็กน้อยเหล่านั้น ยังไม่ถูกสายตาของเทพเจ้ากลืนกิน แสงดาวนั้น เคยเล็ดลอดผ่านมือของเธอไป เหลือทิ้งไว้เพียงราตรีนิรันดร์ให้กับ Fanghu เธอยังเคยคว้าตัวแปรที่เลือนราง เพื่อพลิกโชคชะตาของ Yuque \"ที่ทางตันถูกเรียกว่าทางตัน ก็เพราะไม่มีใครกล้าฝ่าฝืนโชคชะตา\" เธออยากได้คำตอบของตัวเอง แม้จะต้องก้าวเข้าสู่อันตราย ที่โชคชะตากำหนดไว้ก็ตาม... \"ฉันมองเห็นอะไรนั้น ไม่สำคัญ สิ่งสำคัญคือฉันทำอะไรได้บ้างต่างหาก\"",
+    "icon": "/starrail/assets/icon/light_cone/23054.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23054.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23054.webp"
+  },
+  "23056": {
+    "id": "23056",
+    "name": "The Finale of a Lie",
+    "rarity": 5,
+    "path": "Rogue",
+    "desc": "\" 'ปูพื้นฐานการสืบสวนเชิงนักสืบ' บอกว่ายังไงนะ? เมื่อถึงเวลาจำเป็น...\" เขี้ยวที่ถักทอด้วยสีแดงดำ คืบคลานขึ้นมาบนบ่าทีละนิ้ว ในจุดที่ยามราตรีจมดิ่ง เมฆปริศนาพลันปรากฏขึ้น ในป่ามืดมิด สัตว์ร้ายซ่อนเร้นกาย \"เกมไล่ล่านี้ ถึงเวลาจบลงสักที\" สีเลือดจางหาย แสงจันทร์บนผืนฟ้ายังคงสดใส ดวงดาวหลับใหลอย่างสงบ นี่คือการค้นหาความจริงครั้งใหม่ของเขา แต่เงาจากอดีต ได้ตบลงบนไหล่ของเขาเบาๆ แล้วค่อยๆ จางหายไป ดิ้นรนในเวลานี้ จนกระทั่ง... \"จนกระทั่ง... ถึงวันลงทัณฑ์ความชั่วร้าย\"",
+    "icon": "/starrail/assets/icon/light_cone/23056.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/23056.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/23056.webp"
+  },
+  "24000": {
+    "id": "24000",
+    "name": "On the Fall of an Aeon",
+    "rarity": 5,
+    "path": "Warrior",
+    "desc": "มันเริ่มจากแสงที่ส่องวาบ พวกเขาร่วงหล่น ภายใต้ภัยคุกคามจากการแตกดับ พวกเขาจำต้องหยุดการแยกตัวตน แล้วโอบกอดกันและกันเพื่อแย่งชิงการเป็นที่หนึ่ง พยายามใช้สิทธิ์ในการแพร่พันธุ์ มาแลกกับโอกาสอยู่รอด พวกเขาร่วมมือ จนเกิดเป็นความสามัคคีอย่างที่ไม่เคยมีมาก่อน ...แต่ Path กลับจบลงกะทันหัน พวกเขาพลันมุ่งสู่การดับสูญที่แท้จริง",
+    "icon": "/starrail/assets/icon/light_cone/24000.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/24000.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/24000.webp"
+  },
+  "24001": {
+    "id": "24001",
+    "name": "Cruising in the Stellar Sea",
+    "rarity": 5,
+    "path": "Rogue",
+    "desc": "ล่องไปมาท่ามกลางทะเลแห่งดวงดาว ความเร็วราวกับสายรุ้งส่องวาบ ไล่ล่าสิ่งชั่วร้ายอมตะ ตามหายารักษาของสมบัติลวงตา ใฝ่หาเส้นทางแห่งการหลุดพ้น การเดินทางของเขา ราวกับสัตย์สาบานที่ไม่มีวันแตกดับ ตลอดกาลนานนับนิรันดร์",
+    "icon": "/starrail/assets/icon/light_cone/24001.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/24001.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/24001.webp"
+  },
+  "24002": {
+    "id": "24002",
+    "name": "Texture of Memories",
+    "rarity": 5,
+    "path": "Knight",
+    "desc": "จักรวาลราวกับแดนรกร้างที่เต็มไปด้วยกองขยะ บางครั้งก็มีสิ่งของล้ำค่า ที่ไร้คนค้นพบและเก็บไป เขามองดูรอยแยกของอดีต และคัดเลือกเมล็ดพันธุ์แห่งความทรงจำ ...หากชีวิตใหม่จะถือกำเนิด เมล็ดพันธุ์ของมันก็จะต้องตาย อัญมณีสีชมพู สีน้ำเงิน และสีขาวถูกนำมา ระยิบระยับตาอยู่ในเรือนเพาะชำนั้น แต่จักรวาลยังคงเงียบงันราวกับปริศนา",
+    "icon": "/starrail/assets/icon/light_cone/24002.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/24002.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/24002.webp"
+  },
+  "24003": {
+    "id": "24003",
+    "name": "Solitary Healing",
+    "rarity": 5,
+    "path": "Warlock",
+    "desc": "สิ่งที่สร้างจากความลึกลับ กลับไร้รูปร่าง สรรพสิ่งว่างเปล่า เป็นดั่งความฝันอันฉับพลัน ผู้ทำลายตนจะพินาศ ผู้ปรารถนาชีวิตจะอยู่รอด จุดประกายแด่สิ่งที่ดับสิ้น เพิ่มความชุ่มชื่นแด่สิ่งที่แห้งเฉา เพื่อสงเคราะห์เวทนาต่อความโกลาหล จึงมอบยาวิเศษหล่อเลี้ยงเงาลวงตา หันหลังให้ด้านมืดของดวงดาว บรรจุไว้ในขวดอย่างสูญเปล่า \"แม้จะขัดแย้งกัน แต่เรานั้นก็แสนจะภาคภูมิใจ\"",
+    "icon": "/starrail/assets/icon/light_cone/24003.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/24003.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/24003.webp"
+  },
+  "24004": {
+    "id": "24004",
+    "name": "Eternal Calculus",
+    "rarity": 5,
+    "path": "Mage",
+    "desc": "ลอยไปในความว่างเปล่าตลอดกาล ข้อมูลที่เปล่งประกาย หลั่งไหลเข้ามาในหัวของเขา ราวกับกระแสน้ำไหลหลาก เปลี่ยนแปลงทุกสิ่งในอดีต และอนาคตให้เป็นสัญลักษณ์ เขาคาดการณ์จุดจบด้วยจุดแรกเริ่ม ความรู้ คำตอบ ความจริง... แสงอันเจิดจ้าเปล่งประกาย ออกมาจากหมอกแห่งข้อมูล แล้วทุกสิ่งก็กระจ่างชัดสำหรับเขา",
+    "icon": "/starrail/assets/icon/light_cone/24004.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/24004.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/24004.webp"
+  },
+  "24005": {
+    "id": "24005",
+    "name": "Memory's Curtain Never Falls",
+    "rarity": 5,
+    "path": "Memory",
+    "desc": "ไม่ว่าจะเป็นดาวที่รุ่งโรจน์ ดาวที่รกร้าง ดาวที่อายุขัยสั้น หรือดาวที่อยู่มายาวนาน... ทุกดวงดาวและทุกช่วงเวลา ล้วนเกิดเหตุการณ์ต่างๆ นับไม่ถ้วน ประวัติศาสตร์ที่ก่อตัวขึ้น จะหลอมละลายในสัมผัสเดียว และกลายเป็นน้ำตา ที่ไหลรินออกมาจากดวงตาของโลกา... บ้างก็บอกว่า น้ำตาเหล่านั้นหนักอึ้งอย่างยิ่ง กาลเวลาที่สั่งสมไว้ จะทำให้ความเป็นนิรันดร์จางหายไป บ้างก็บอกว่า มันเป็นเรื่องราวน่าอัศจรรย์ ทั้งความเศร้าโศกที่แจ่มชัด และความยินดีที่แสนสงบ ทั้งหมดนี้ไม่มีความปลอมเปลือก ปะปนเลยแม้แต่น้อย กาแล็กซีหลั่งไหลไปอย่างเงียบงัน เขาไม่เอื้อนเอ่ยสิ่งใด เพียงแค่จ้องมอง... จ้องมองและเฝ้ารอ ให้พวกมันกลายเป็น \"ความทรงจำ\"",
+    "icon": "/starrail/assets/icon/light_cone/24005.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/24005.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/24005.webp"
+  },
+  "24006": {
+    "id": "24006",
+    "name": "Elation Brimming With Blessings",
+    "rarity": 5,
+    "path": "Elation",
+    "desc": "ภายใต้ปลายนิ้วของเหล่าอัจฉริยะ ข้อมูลทำงานอย่างราบรื่น ไม่มีวันหยุดนิ่ง หน้ากากซ่อนอยู่ในช่องว่างระหว่าง \"เหตุการณ์\" คอยจับตามองทุกความเป็นไปได้ ที่กำลังรอการพัฒนา วิเคราะห์ คำนวณ ตอบคำถาม ตั้งคำถาม นี่ไม่ใช่เวทีของเหล่าอัจฉริยะหรือไร? เสียงเชียร์ น้ำตา เสียงคำราม เสียงคร่ำครวญ... อารมณ์ความรู้สึกของชีวิต ผลิบานเต็มกำลัง ละครใบ้กลายเป็นเสียงโห่ร้อง ปิติสุขเปี่ยมล้นด้วยพร นี่คือฉากที่น่าหลงใหลที่สุดใช่หรือไม่? คำตอบยังคงเดิม... คาดเดาไม่ได้!",
+    "icon": "/starrail/assets/icon/light_cone/24006.webp",
+    "preview": "/starrail/assets/image/light_cone_preview/24006.webp",
+    "portrait": "/starrail/assets/image/light_cone_portrait/24006.webp"
+  }
+}

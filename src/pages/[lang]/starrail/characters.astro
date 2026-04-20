@@ -1,0 +1,802 @@
+---
+// src/pages/[lang]/starrail/characters.astro
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { Icon } from 'astro-icon/components'
+
+const allData = import.meta.glob('/src/data/starrail/**/*.json', { eager: true })
+
+export async function getStaticPaths() {
+  const languages = ['kr', 'en', 'jp', 'cn', 'fr', 'de', 'es', 'id', 'pt', 'ru', 'th', 'vi', 'cht']
+  return languages.map((lang) => ({ params: { lang } }))
+}
+
+const { lang } = Astro.params
+
+const cleanText = (text: string) => {
+  if (!text) return ''
+  return text.replace(/\{RUBY_B#([^}]+)\}([^\{]+)\{RUBY_E\#\}/g, '$1').trim()
+}
+
+const toAssetUrl = (rel: string) =>
+  !rel ? '' : rel.startsWith('/') ? rel : `/starrail/assets/${rel.replace(/^\//, '')}`
+
+let characters: any[] = []
+let descriptions: any = {}
+let pathsData: Record<string, any> = {}
+let elementsData: Record<string, any> = {}
+
+try {
+  const baseDir = `/src/data/starrail/${lang}`
+  const charModule    = allData[`${baseDir}/characters.json`]  as any
+  const descModule    = allData[`${baseDir}/descriptions.json`] as any
+  const pathsModule   = allData[`${baseDir}/paths.json`]        as any
+  const elementsModule = allData[`${baseDir}/elements.json`]    as any
+
+  descriptions  = descModule.default
+  pathsData     = pathsModule.default
+  elementsData  = elementsModule.default
+
+  characters = Object.entries(charModule.default)
+    .map(([id, data]: [string, any]) => ({ id, ...data }))
+    .filter((char) => {
+      if (char.id.startsWith('800')) return true
+      if (!char.name || char.name.includes('{NICKNAME}')) return false
+      return char.name.trim() !== ''
+    })
+    .map((char) => {
+      if (char.id.startsWith('800')) {
+        const pathName = pathsData[char.path]?.text || pathsData[char.path]?.name || char.path
+        const baseName = lang === 'kr' ? '개척자' : 'Trailblazer'
+        char.name = `${baseName} • ${pathName}`
+      }
+      return char
+    })
+    .sort((a, b) => {
+      const loc = lang === 'kr' ? 'ko' : lang === 'jp' ? 'ja' : lang === 'cn' || lang === 'cht' ? 'zh' : 'en'
+      return cleanText(a.name).localeCompare(cleanText(b.name), loc, { sensitivity: 'base' })
+    })
+} catch (e) {
+  console.error(`Error loading characters for ${lang}:`, e)
+}
+
+const sortLocale = lang === 'kr' ? 'ko' : lang === 'jp' ? 'ja' : lang === 'cn' || lang === 'cht' ? 'zh' : 'en'
+
+// 필터 옵션 수집
+const elementIdSet = new Map<string, string>()
+const pathIdSet    = new Map<string, { title: string; iconUrl: string }>()
+
+for (const c of characters) {
+  const elRow = elementsData[c.element]
+  elementIdSet.set(c.element, elRow?.name || c.element)
+  const pRow = pathsData[c.path]
+  const title = pRow?.text || pRow?.name || c.path
+  const iconUrl = pRow?.icon_small
+    ? toAssetUrl(pRow.icon_small)
+    : pRow?.name ? `/starrail/assets/icon/path/${pRow.name}Small.webp` : ''
+  pathIdSet.set(c.path, { title, iconUrl })
+}
+
+const elementOptions = [...elementIdSet.entries()]
+  .map(([id, name]) => ({ id, name, iconUrl: `/starrail/assets/icon/element/${id}.webp` }))
+  .sort((a, b) => a.name.localeCompare(b.name, sortLocale, { sensitivity: 'base' }))
+
+const pathOptions = [...pathIdSet.entries()]
+  .map(([id, meta]) => ({ id, title: meta.title, iconUrl: meta.iconUrl }))
+  .sort((a, b) => a.title.localeCompare(b.title, sortLocale, { sensitivity: 'base' }))
+
+const totalCount = characters.length
+
+const labels = lang === 'kr'
+  ? {
+      title: '캐릭터',
+      subtitle: '붕괴: 스타레일의 모든 캐릭터',
+      search: '이름으로 검색…',
+      filterAll: '전체',
+      filter4: '4★',
+      filter5: '5★',
+      reset: '초기화',
+      showing: '{v}명 표시',
+      total: '전체 {t}명',
+      noMatch: '조건에 맞는 캐릭터가 없습니다.',
+      filterElement: '속성',
+      filterPath: '운명의 길',
+      filterRarity: '희귀도',
+      filters: '필터',
+    }
+  : {
+      title: 'Characters',
+      subtitle: 'All playable characters in Honkai: Star Rail',
+      search: 'Search by name…',
+      filterAll: 'All',
+      filter4: '4★',
+      filter5: '5★',
+      reset: 'Reset',
+      showing: '{v} shown',
+      total: '{t} total',
+      noMatch: 'No characters match your filters.',
+      filterElement: 'Element',
+      filterPath: 'Path',
+      filterRarity: 'Rarity',
+      filters: 'Filters',
+    }
+---
+
+<DefaultLayout
+  title={`${labels.title} | Star Rail DB`}
+  description="Honkai: Star Rail character list. Filter by rarity, element and path."
+>
+  <div class="chars-page">
+
+    <!-- ── 페이지 헤더 ── -->
+    <div class="chars-header">
+      <div class="chars-header-inner">
+        <nav class="breadcrumb" aria-label="breadcrumb">
+          <a href={`/${lang}`}>Home</a>
+          <span class="sep" aria-hidden="true">/</span>
+          <a href={`/${lang}/starrail`}>Star Rail</a>
+          <span class="sep" aria-hidden="true">/</span>
+          <span class="current">{labels.title}</span>
+        </nav>
+
+        <div class="chars-title-row">
+          <div>
+            <h1 class="chars-title">{labels.title}</h1>
+            <p class="chars-subtitle">{labels.subtitle}</p>
+          </div>
+          <p class="chars-count-badge" id="char-count-badge">
+            {totalCount}
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="chars-body">
+
+      <!-- ── 필터 사이드바 ── -->
+      <aside class="filter-panel" aria-label={labels.filters}>
+
+        <!-- 검색 -->
+        <div class="filter-group">
+          <div class="search-wrap">
+            <Icon name="lucide:search" size="0.85rem" class="search-icon" />
+            <input
+              type="search"
+              id="charSearch"
+              placeholder={labels.search}
+              autocomplete="off"
+              class="search-input"
+            />
+          </div>
+        </div>
+
+        <!-- 희귀도 -->
+        <div class="filter-group">
+          <p class="filter-label">{labels.filterRarity}</p>
+          <div class="filter-chips">
+            <button class="fchip fchip--active" data-rarity-filter="all" aria-pressed="true">
+              {labels.filterAll}
+            </button>
+            <button class="fchip" data-rarity-filter="5" aria-pressed="false">
+              <span class="rarity-star">5★</span>
+            </button>
+            <button class="fchip" data-rarity-filter="4" aria-pressed="false">
+              <span class="rarity-star rarity-star--4">4★</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- 속성 -->
+        {elementOptions.length > 0 && (
+          <div class="filter-group">
+            <p class="filter-label">{labels.filterElement}</p>
+            <div class="filter-icons">
+              <button class="ficon-btn ficon-btn--active" data-element-filter="" aria-pressed="true" aria-label={labels.filterAll}>
+                <span class="ficon-all">{labels.filterAll}</span>
+              </button>
+              {elementOptions.map(el => (
+                <button
+                  class="ficon-btn"
+                  data-element-filter={el.id}
+                  aria-pressed="false"
+                  aria-label={el.name}
+                  title={el.name}
+                >
+                  <img src={el.iconUrl} alt={el.name} width="22" height="22" loading="lazy" />
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <!-- 운명의 길 -->
+        {pathOptions.length > 0 && (
+          <div class="filter-group">
+            <p class="filter-label">{labels.filterPath}</p>
+            <div class="filter-icons">
+              <button class="ficon-btn ficon-btn--active" data-path-filter="" aria-pressed="true" aria-label={labels.filterAll}>
+                <span class="ficon-all">{labels.filterAll}</span>
+              </button>
+              {pathOptions.map(p => (
+                <button
+                  class="ficon-btn"
+                  data-path-filter={p.id}
+                  aria-pressed="false"
+                  aria-label={p.title}
+                  title={p.title}
+                >
+                  {p.iconUrl
+                    ? <img src={p.iconUrl} alt={p.title} width="22" height="22" loading="lazy" class="path-filter-icon" />
+                    : <span class="ficon-all">?</span>
+                  }
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <!-- 초기화 -->
+        <button class="reset-btn" id="char-filter-reset" type="button">
+          <Icon name="lucide:rotate-ccw" size="0.75rem" />
+          {labels.reset}
+        </button>
+
+        <!-- 결과 수 -->
+        <p class="filter-result" id="char-count-line" aria-live="polite">
+          {labels.showing.replace('{v}', String(totalCount))}
+          <span class="filter-result-total">· {labels.total.replace('{t}', String(totalCount))}</span>
+        </p>
+
+      </aside>
+
+      <!-- ── 캐릭터 그리드 ── -->
+      <div class="chars-grid-wrap">
+        <div
+          id="characters-grid"
+          class="chars-grid"
+        >
+          {characters.map((char) => {
+            const elementIconUrl = char.element ? `/starrail/assets/icon/element/${char.element}.webp` : ''
+            const pRow = pathsData[char.path]
+            const pathIconUrl = pRow?.icon_small
+              ? toAssetUrl(pRow.icon_small)
+              : pRow?.name ? `/starrail/assets/icon/path/${pRow.name}Small.webp` : ''
+            const pathTitle = pRow?.text || pRow?.name || char.path
+            const rarity = Number(char.rarity) || 5
+
+            return (
+              <a
+                href={`/${lang}/starrail/characters/${char.id}`}
+                class="char-card"
+                data-character-card
+                data-name={cleanText(char.name).toLowerCase()}
+                data-rarity={String(rarity)}
+                data-element={char.element}
+                data-path={char.path}
+              >
+                <!-- 캐릭터 이미지 -->
+                <div class="char-img-wrap" data-rarity={rarity}>
+                  <img
+                    src={`/starrail/assets/icon/character/${char.id}.webp`}
+                    alt={cleanText(char.name)}
+                    class="char-img"
+                    loading="lazy"
+                    decoding="async"
+                    width="128"
+                    height="128"
+                  />
+                  <!-- 속성 아이콘 -->
+                  {elementIconUrl && (
+                    <img src={elementIconUrl} alt="" class="char-el-icon" width="18" height="18" loading="lazy" />
+                  )}
+                  <!-- 희귀도 -->
+                  <span class="char-rarity" data-rarity={rarity}>{rarity}★</span>
+                </div>
+
+                <!-- 정보 -->
+                <div class="char-info">
+                  <p class="char-name">{cleanText(char.name)}</p>
+                  <div class="char-meta">
+                    {pathIconUrl && (
+                      <img src={pathIconUrl} alt={pathTitle} class="char-path-icon" width="14" height="14" loading="lazy" title={pathTitle} />
+                    )}
+                    <span class="char-path-name">{pathTitle}</span>
+                  </div>
+                </div>
+              </a>
+            )
+          })}
+        </div>
+
+        <!-- 검색 결과 없음 -->
+        <div id="char-filter-empty" class="filter-empty hidden" role="status">
+          <Icon name="lucide:search-x" size="2.5rem" />
+          <p>{labels.noMatch}</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script is:inline define:vars={{ labelShowing: labels.showing, labelTotal: labels.total, totalCount }}>
+  ;(function () {
+    function init() {
+      var cards       = Array.prototype.slice.call(document.querySelectorAll('[data-character-card]'))
+      var search      = document.getElementById('charSearch')
+      var countLine   = document.getElementById('char-count-line')
+      var countBadge  = document.getElementById('char-count-badge')
+      var empty       = document.getElementById('char-filter-empty')
+      var resetBtn    = document.getElementById('char-filter-reset')
+      var rarityBtns  = Array.prototype.slice.call(document.querySelectorAll('[data-rarity-filter]'))
+      var elementBtns = Array.prototype.slice.call(document.querySelectorAll('[data-element-filter]'))
+      var pathBtns    = Array.prototype.slice.call(document.querySelectorAll('[data-path-filter]'))
+
+      var activeRarity  = 'all'
+      var activeElement = ''
+      var activePath    = ''
+
+      function updatePressed(btns, activeVal, attr) {
+        btns.forEach(function (btn) {
+          var v = btn.getAttribute(attr) || ''
+          btn.setAttribute('aria-pressed', v === activeVal ? 'true' : 'false')
+          btn.classList.toggle('fchip--active', v === activeVal)
+          btn.classList.toggle('ficon-btn--active', v === activeVal)
+        })
+      }
+
+      function apply() {
+        var q = search ? search.value.trim().toLowerCase() : ''
+        var visible = 0
+        cards.forEach(function (card) {
+          var name  = card.getAttribute('data-name')    || ''
+          var r     = card.getAttribute('data-rarity')  || ''
+          var el    = card.getAttribute('data-element') || ''
+          var path  = card.getAttribute('data-path')   || ''
+          var show  =
+            (activeRarity  === 'all' || r    === activeRarity)  &&
+            (!activeElement          || el   === activeElement) &&
+            (!activePath             || path === activePath)    &&
+            (!q                      || name.indexOf(q) !== -1)
+          card.classList.toggle('hidden', !show)
+          if (show) visible++
+        })
+
+        var showStr = labelShowing.replace('{v}', String(visible))
+        var totStr  = labelTotal.replace('{t}', String(totalCount))
+        if (countLine)  countLine.innerHTML  = showStr + ' <span class="filter-result-total">· ' + totStr + '</span>'
+        if (countBadge) countBadge.textContent = String(visible)
+        if (empty) empty.classList.toggle('hidden', visible !== 0)
+      }
+
+      rarityBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          activeRarity = btn.getAttribute('data-rarity-filter') || 'all'
+          updatePressed(rarityBtns, activeRarity, 'data-rarity-filter')
+          apply()
+        }, { passive: true })
+      })
+
+      elementBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var v = btn.getAttribute('data-element-filter') || ''
+          activeElement = activeElement === v ? '' : v
+          updatePressed(elementBtns, activeElement, 'data-element-filter')
+          apply()
+        }, { passive: true })
+      })
+
+      pathBtns.forEach(function (btn) {
+        btn.addEventListener('click', function () {
+          var v = btn.getAttribute('data-path-filter') || ''
+          activePath = activePath === v ? '' : v
+          updatePressed(pathBtns, activePath, 'data-path-filter')
+          apply()
+        }, { passive: true })
+      })
+
+      if (search) {
+        search.addEventListener('input',  apply, { passive: true })
+        search.addEventListener('search', apply, { passive: true })
+      }
+
+      if (resetBtn) {
+        resetBtn.addEventListener('click', function () {
+          activeRarity = 'all'; activeElement = ''; activePath = ''
+          updatePressed(rarityBtns,  'all', 'data-rarity-filter')
+          updatePressed(elementBtns, '',    'data-element-filter')
+          updatePressed(pathBtns,    '',    'data-path-filter')
+          if (search) { search.value = ''; search.focus() }
+          apply()
+        }, { passive: true })
+      }
+
+      apply()
+    }
+    document.addEventListener('DOMContentLoaded', init)
+    document.addEventListener('astro:page-load', init)
+  })()
+  </script>
+</DefaultLayout>
+
+<style>
+/* ── 페이지 레이아웃 ── */
+.chars-page {
+  min-height: 100vh;
+  background: var(--c-bg);
+  color: var(--foreground-color);
+  font-family: var(--font-body);
+}
+
+/* ── 헤더 ── */
+.chars-header {
+  border-bottom: 1px solid var(--c-border);
+  background: var(--c-surface);
+  padding: 2rem 0 1.5rem;
+}
+.chars-header-inner {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+.breadcrumb a { color: inherit; text-decoration: none; transition: color var(--anim-fast); }
+.breadcrumb a:hover { color: var(--c-accent); }
+.breadcrumb .sep { opacity: 0.4; }
+.breadcrumb .current { color: var(--c-accent); }
+
+.chars-title-row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.chars-title {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+.chars-subtitle {
+  margin-top: 0.4rem;
+  font-size: 0.82rem;
+  color: var(--c-muted);
+}
+.chars-count-badge {
+  font-family: var(--font-mono);
+  font-size: 2rem;
+  font-weight: 900;
+  color: var(--c-accent);
+  opacity: 0.5;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
+/* ── 바디 레이아웃 ── */
+.chars-body {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+@media (max-width: 900px) {
+  .chars-body { grid-template-columns: 1fr; }
+}
+
+/* ── 필터 패널 ── */
+.filter-panel {
+  position: sticky;
+  top: 72px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background: var(--c-surface);
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+}
+@media (max-width: 900px) {
+  .filter-panel {
+    position: static;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+  }
+}
+
+.filter-group { display: flex; flex-direction: column; gap: 0.6rem; }
+
+.filter-label {
+  font-size: 0.6rem;
+  font-weight: 900;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+
+/* 검색 */
+.search-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.search-icon {
+  position: absolute;
+  left: 0.7rem;
+  color: var(--c-muted);
+  pointer-events: none;
+  flex-shrink: 0;
+}
+.search-input {
+  width: 100%;
+  padding: 0.5rem 0.75rem 0.5rem 2.1rem;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-sm);
+  background: var(--c-surface2);
+  color: var(--foreground-color);
+  font-size: 0.78rem;
+  font-family: var(--font-body);
+  outline: none;
+  transition: border-color var(--anim-fast);
+}
+.search-input::placeholder { color: var(--c-muted); }
+.search-input:focus { border-color: var(--c-accent); }
+
+/* 칩 필터 */
+.filter-chips { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+
+.fchip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.35rem 0.7rem;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-sm);
+  background: var(--c-surface2);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--c-muted);
+  cursor: pointer;
+  transition: border-color var(--anim-fast), color var(--anim-fast), background var(--anim-fast);
+  min-height: 32px;
+}
+.fchip:hover { border-color: var(--c-border-hi); color: var(--foreground-color); }
+.fchip--active {
+  border-color: var(--c-accent);
+  background: var(--c-accent-glow);
+  color: var(--c-accent);
+}
+
+.rarity-star { color: #fbbf24; }
+.rarity-star--4 { color: #a78bfa; }
+
+/* 아이콘 필터 */
+.filter-icons { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+
+.ficon-btn {
+  width: 36px; height: 36px;
+  display: flex; align-items: center; justify-content: center;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-sm);
+  background: var(--c-surface2);
+  cursor: pointer;
+  transition: border-color var(--anim-fast), background var(--anim-fast);
+  overflow: hidden;
+  padding: 4px;
+}
+.ficon-btn:hover { border-color: var(--c-border-hi); background: var(--c-surface); }
+.ficon-btn--active {
+  border-color: var(--c-accent);
+  background: var(--c-accent-glow);
+  box-shadow: 0 0 0 1px var(--c-accent);
+}
+.ficon-all {
+  font-size: 0.58rem;
+  font-weight: 900;
+  color: var(--c-muted);
+  letter-spacing: 0.04em;
+}
+.ficon-btn--active .ficon-all { color: var(--c-accent); }
+.ficon-btn img { width: 100%; height: 100%; object-fit: contain; }
+.path-filter-icon { filter: brightness(0) invert(1); }
+.ficon-btn--active .path-filter-icon { filter: brightness(0) invert(1); }
+
+/* 초기화 버튼 */
+.reset-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-sm);
+  background: transparent;
+  color: var(--c-muted);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: border-color var(--anim-fast), color var(--anim-fast);
+  align-self: flex-start;
+}
+.reset-btn:hover { border-color: var(--c-accent); color: var(--c-accent); }
+
+/* 결과 수 */
+.filter-result {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--c-accent);
+  letter-spacing: 0.04em;
+}
+.filter-result-total {
+  color: var(--c-muted);
+  font-weight: 500;
+}
+
+/* ── 캐릭터 그리드 ── */
+.chars-grid-wrap { min-width: 0; }
+
+.chars-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 0.75rem;
+}
+@media (max-width: 480px) {
+  .chars-grid { grid-template-columns: repeat(3, 1fr); gap: 0.5rem; }
+}
+
+/* ── 캐릭터 카드 ── */
+.char-card {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--c-border);
+  border-radius: var(--radius-md);
+  background: var(--c-surface);
+  text-decoration: none;
+  color: var(--foreground-color);
+  overflow: hidden;
+  transition: border-color var(--anim-fast), transform var(--anim-fast), box-shadow var(--anim-fast);
+  content-visibility: auto;
+  contain-intrinsic-size: 0 160px;
+}
+.char-card:hover {
+  border-color: var(--c-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--c-accent-glow);
+}
+
+/* 이미지 영역 */
+.char-img-wrap {
+  position: relative;
+  aspect-ratio: 1;
+  background: var(--c-surface2);
+  overflow: hidden;
+}
+
+/* 희귀도별 배경 그라디언트 */
+.char-img-wrap[data-rarity="5"] {
+  background: linear-gradient(135deg, #1a1428, #2a1f3d);
+}
+.char-img-wrap[data-rarity="4"] {
+  background: linear-gradient(135deg, #141428, #1f1f3d);
+}
+
+.char-img {
+  width: 100%; height: 100%;
+  object-fit: contain;
+  padding: 4px;
+  transition: transform var(--anim-med);
+}
+.char-card:hover .char-img { transform: scale(1.08); }
+
+.char-el-icon {
+  position: absolute;
+  top: 5px; left: 5px;
+  width: 18px; height: 18px;
+  object-fit: contain;
+  filter: drop-shadow(0 1px 3px rgba(0,0,0,0.6));
+}
+
+.char-rarity {
+  position: absolute;
+  bottom: 4px; right: 4px;
+  font-size: 0.6rem;
+  font-weight: 900;
+  background: rgba(0,0,0,0.55);
+  backdrop-filter: blur(4px);
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+  letter-spacing: 0.02em;
+}
+.char-rarity[data-rarity="5"] { color: #fbbf24; }
+.char-rarity[data-rarity="4"] { color: #a78bfa; }
+
+/* 정보 영역 */
+.char-info {
+  padding: 0.5rem 0.55rem;
+  border-top: 1px solid var(--c-border);
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  background: var(--c-surface);
+}
+
+.char-name {
+  font-size: 0.7rem;
+  font-weight: 700;
+  line-height: 1.3;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  word-break: keep-all;
+  transition: color var(--anim-fast);
+}
+.char-card:hover .char-name { color: var(--c-accent); }
+
+.char-meta {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.char-path-icon {
+  width: 14px; height: 14px;
+  object-fit: contain;
+  opacity: 0.5;
+  filter: brightness(0) invert(1);
+  flex-shrink: 0;
+  transition: opacity var(--anim-fast);
+}
+.char-card:hover .char-path-icon { opacity: 0.9; }
+.char-path-name {
+  font-size: 0.6rem;
+  color: var(--c-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* 검색 결과 없음 */
+.filter-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  padding: 5rem 2rem;
+  color: var(--c-muted);
+  text-align: center;
+  border: 1px dashed var(--c-border);
+  border-radius: var(--radius-lg);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+.filter-empty svg { opacity: 0.3; }
+.hidden { display: none !important; }
+
+/* reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  .char-card { transition: border-color var(--anim-fast); }
+  .char-card:hover { transform: none; }
+  .char-img { transition: none; }
+}
+
+h1, h2, p { word-break: keep-all; }
+</style>

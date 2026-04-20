@@ -1,0 +1,582 @@
+{
+  "MaxHP": {
+    "type": "MaxHP",
+    "name": "PV",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": false,
+    "order": 1,
+    "icon": "/starrail/assets/icon/character/IconMaxHP.webp"
+  },
+  "Attack": {
+    "type": "Attack",
+    "name": "ATQ",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": false,
+    "order": 2,
+    "icon": "/starrail/assets/icon/character/IconAttack.webp"
+  },
+  "Defence": {
+    "type": "Defence",
+    "name": "DÉF",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": false,
+    "order": 3,
+    "icon": "/starrail/assets/icon/character/IconDefence.webp"
+  },
+  "Speed": {
+    "type": "Speed",
+    "name": "VIT",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": false,
+    "order": 4,
+    "icon": "/starrail/assets/icon/character/IconSpeed.webp"
+  },
+  "CriticalChance": {
+    "type": "CriticalChance",
+    "name": "Chances de coup critique",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": false,
+    "order": 5,
+    "icon": "/starrail/assets/icon/character/IconCriticalChance.webp"
+  },
+  "CriticalDamage": {
+    "type": "CriticalDamage",
+    "name": "DGT CRIT",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": false,
+    "order": 6,
+    "icon": "/starrail/assets/icon/character/IconCriticalDamage.webp"
+  },
+  "BreakDamageAddedRatio": {
+    "type": "BreakDamageAddedRatio",
+    "name": "Effet de Rupture",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": false,
+    "order": 7,
+    "icon": "/starrail/assets/icon/character/IconBreakUp.webp"
+  },
+  "BreakDamageAddedRatioBase": {
+    "type": "BreakDamageAddedRatioBase",
+    "name": "Effet de Rupture",
+    "field": "break_dmg",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 8,
+    "icon": "/starrail/assets/icon/character/IconBreakUp.webp"
+  },
+  "HealRatio": {
+    "type": "HealRatio",
+    "name": "Augm. des soins prodigués",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": true,
+    "order": 9,
+    "icon": "/starrail/assets/icon/character/IconHealRatio.webp"
+  },
+  "MaxSP": {
+    "type": "MaxSP",
+    "name": "Énergie max",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": false,
+    "order": 10,
+    "icon": "/starrail/assets/icon/character/IconEnergyLimit.webp"
+  },
+  "SpecialMaxSP": {
+    "type": "SpecialMaxSP",
+    "name": "",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": false,
+    "order": 11,
+    "icon": "/starrail/assets/icon/character/IconEnergy_1308.webp"
+  },
+  "SPRatio": {
+    "type": "SPRatio",
+    "name": "Taux de régénération d'énergie",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": true,
+    "order": 12,
+    "icon": "/starrail/assets/icon/character/IconEnergyRecovery.webp"
+  },
+  "StatusProbability": {
+    "type": "StatusProbability",
+    "name": "Chances d'app. des effets",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": true,
+    "order": 13,
+    "icon": "/starrail/assets/icon/character/IconStatusProbability.webp"
+  },
+  "StatusResistance": {
+    "type": "StatusResistance",
+    "name": "RÉS aux effets",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": true,
+    "order": 14,
+    "icon": "/starrail/assets/icon/character/IconStatusResistance.webp"
+  },
+  "CriticalChanceBase": {
+    "type": "CriticalChanceBase",
+    "name": "Chances de coup critique",
+    "field": "crit_rate",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 15,
+    "icon": "/starrail/assets/icon/character/IconCriticalChance.webp"
+  },
+  "CriticalDamageBase": {
+    "type": "CriticalDamageBase",
+    "name": "DGT CRIT",
+    "field": "crit_dmg",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 16,
+    "icon": "/starrail/assets/icon/character/IconCriticalDamage.webp"
+  },
+  "HealRatioBase": {
+    "type": "HealRatioBase",
+    "name": "Augm. des soins prodigués",
+    "field": "heal_rate",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 17,
+    "icon": "/starrail/assets/icon/character/IconHealRatio.webp"
+  },
+  "StanceBreakAddedRatio": {
+    "type": "StanceBreakAddedRatio",
+    "name": "",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": false,
+    "order": 18,
+    "icon": null
+  },
+  "SPRatioBase": {
+    "type": "SPRatioBase",
+    "name": "Taux de régénération d'énergie",
+    "field": "sp_rate",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 19,
+    "icon": "/starrail/assets/icon/character/IconEnergyRecovery.webp"
+  },
+  "StatusProbabilityBase": {
+    "type": "StatusProbabilityBase",
+    "name": "Chances d'app. des effets",
+    "field": "effect_hit",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 20,
+    "icon": "/starrail/assets/icon/character/IconStatusProbability.webp"
+  },
+  "StatusResistanceBase": {
+    "type": "StatusResistanceBase",
+    "name": "RÉS aux effets",
+    "field": "effect_res",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 21,
+    "icon": "/starrail/assets/icon/character/IconStatusResistance.webp"
+  },
+  "ElationDamageAddedRatio": {
+    "type": "ElationDamageAddedRatio",
+    "name": "Allégresse",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": false,
+    "order": 22,
+    "icon": "/starrail/assets/icon/character/IconJoy.webp"
+  },
+  "ElationDamageAddedRatioBase": {
+    "type": "ElationDamageAddedRatioBase",
+    "name": "Allégresse",
+    "field": "elation_dmg",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 23,
+    "icon": "/starrail/assets/icon/character/IconJoy.webp"
+  },
+  "PhysicalAddedRatio": {
+    "type": "PhysicalAddedRatio",
+    "name": "Augm. des DGT physiques",
+    "field": "physical_dmg",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 24,
+    "icon": "/starrail/assets/icon/character/IconPhysicalAddedRatio.webp"
+  },
+  "PhysicalResistance": {
+    "type": "PhysicalResistance",
+    "name": "Augm. de la RÉS physique",
+    "field": "physical_res",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 25,
+    "icon": "/starrail/assets/icon/character/IconPhysicalResistanceDelta.webp"
+  },
+  "FireAddedRatio": {
+    "type": "FireAddedRatio",
+    "name": "Augm. des DGT de feu",
+    "field": "fire_dmg",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 26,
+    "icon": "/starrail/assets/icon/character/IconFireAddedRatio.webp"
+  },
+  "FireResistance": {
+    "type": "FireResistance",
+    "name": "Augm. de la RÉS au feu",
+    "field": "fire_res",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 27,
+    "icon": "/starrail/assets/icon/character/IconFireResistanceDelta.webp"
+  },
+  "IceAddedRatio": {
+    "type": "IceAddedRatio",
+    "name": "Augm. des DGT de glace",
+    "field": "ice_dmg",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 28,
+    "icon": "/starrail/assets/icon/character/IconIceAddedRatio.webp"
+  },
+  "IceResistance": {
+    "type": "IceResistance",
+    "name": "Augm. de la RÉS à la glace",
+    "field": "ice_res",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 29,
+    "icon": "/starrail/assets/icon/character/IconIceResistanceDelta.webp"
+  },
+  "ThunderAddedRatio": {
+    "type": "ThunderAddedRatio",
+    "name": "Augm. des DGT de foudre",
+    "field": "thunder_dmg",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 30,
+    "icon": "/starrail/assets/icon/character/IconThunderAddedRatio.webp"
+  },
+  "ThunderResistance": {
+    "type": "ThunderResistance",
+    "name": "Augm. de la RÉS à la foudre",
+    "field": "thunder_res",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 31,
+    "icon": "/starrail/assets/icon/character/IconThunderResistanceDelta.webp"
+  },
+  "WindAddedRatio": {
+    "type": "WindAddedRatio",
+    "name": "Augm. des DGT de vent",
+    "field": "wind_dmg",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 32,
+    "icon": "/starrail/assets/icon/character/IconWindAddedRatio.webp"
+  },
+  "WindResistance": {
+    "type": "WindResistance",
+    "name": "Augm. de la RÉS au vent",
+    "field": "wind_res",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 33,
+    "icon": "/starrail/assets/icon/character/IconWindResistanceDelta.webp"
+  },
+  "QuantumAddedRatio": {
+    "type": "QuantumAddedRatio",
+    "name": "Augm. des DGT quantiques",
+    "field": "quantum_dmg",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 34,
+    "icon": "/starrail/assets/icon/character/IconQuantumAddedRatio.webp"
+  },
+  "QuantumResistance": {
+    "type": "QuantumResistance",
+    "name": "Augm. de la RÉS quantique",
+    "field": "quantum_res",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 35,
+    "icon": "/starrail/assets/icon/character/IconQuantumResistanceDelta.webp"
+  },
+  "ImaginaryAddedRatio": {
+    "type": "ImaginaryAddedRatio",
+    "name": "Augm. des DGT imaginaires",
+    "field": "imaginary_dmg",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 36,
+    "icon": "/starrail/assets/icon/character/IconImaginaryAddedRatio.webp"
+  },
+  "ImaginaryResistance": {
+    "type": "ImaginaryResistance",
+    "name": "Augm. de la RÉS imaginaire",
+    "field": "imaginary_res",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 37,
+    "icon": "/starrail/assets/icon/character/IconImaginaryResistanceDelta.webp"
+  },
+  "BaseHP": {
+    "type": "BaseHP",
+    "name": "PV de base",
+    "field": "hp",
+    "affix": true,
+    "ratio": false,
+    "percent": false,
+    "order": 38,
+    "icon": "/starrail/assets/icon/character/IconMaxHP.webp"
+  },
+  "HPDelta": {
+    "type": "HPDelta",
+    "name": "PV",
+    "field": "hp",
+    "affix": true,
+    "ratio": false,
+    "percent": false,
+    "order": 39,
+    "icon": "/starrail/assets/icon/character/IconMaxHP.webp"
+  },
+  "HPAddedRatio": {
+    "type": "HPAddedRatio",
+    "name": "PV",
+    "field": "hp",
+    "affix": true,
+    "ratio": true,
+    "percent": true,
+    "order": 40,
+    "icon": "/starrail/assets/icon/character/IconMaxHP.webp"
+  },
+  "BaseAttack": {
+    "type": "BaseAttack",
+    "name": "ATQ de base",
+    "field": "atk",
+    "affix": true,
+    "ratio": false,
+    "percent": false,
+    "order": 41,
+    "icon": "/starrail/assets/icon/character/IconAttack.webp"
+  },
+  "AttackDelta": {
+    "type": "AttackDelta",
+    "name": "ATQ",
+    "field": "atk",
+    "affix": true,
+    "ratio": false,
+    "percent": false,
+    "order": 42,
+    "icon": "/starrail/assets/icon/character/IconAttack.webp"
+  },
+  "AttackAddedRatio": {
+    "type": "AttackAddedRatio",
+    "name": "ATQ",
+    "field": "atk",
+    "affix": true,
+    "ratio": true,
+    "percent": true,
+    "order": 43,
+    "icon": "/starrail/assets/icon/character/IconAttack.webp"
+  },
+  "BaseDefence": {
+    "type": "BaseDefence",
+    "name": "DÉF de base",
+    "field": "def",
+    "affix": true,
+    "ratio": false,
+    "percent": false,
+    "order": 44,
+    "icon": "/starrail/assets/icon/character/IconDefence.webp"
+  },
+  "DefenceDelta": {
+    "type": "DefenceDelta",
+    "name": "DÉF",
+    "field": "def",
+    "affix": true,
+    "ratio": false,
+    "percent": false,
+    "order": 45,
+    "icon": "/starrail/assets/icon/character/IconDefence.webp"
+  },
+  "DefenceAddedRatio": {
+    "type": "DefenceAddedRatio",
+    "name": "DÉF",
+    "field": "def",
+    "affix": true,
+    "ratio": true,
+    "percent": true,
+    "order": 46,
+    "icon": "/starrail/assets/icon/character/IconDefence.webp"
+  },
+  "BaseSpeed": {
+    "type": "BaseSpeed",
+    "name": "VIT",
+    "field": "spd",
+    "affix": true,
+    "ratio": false,
+    "percent": false,
+    "order": 47,
+    "icon": "/starrail/assets/icon/character/IconSpeed.webp"
+  },
+  "HealTakenRatio": {
+    "type": "HealTakenRatio",
+    "name": "Les soins reçus augmentent de .",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": true,
+    "order": 48,
+    "icon": "/starrail/assets/icon/character/IconHealRatio.webp"
+  },
+  "PhysicalResistanceDelta": {
+    "type": "PhysicalResistanceDelta",
+    "name": "Augm. de la RÉS physique",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": true,
+    "order": 49,
+    "icon": "/starrail/assets/icon/character/IconPhysicalResistanceDelta.webp"
+  },
+  "FireResistanceDelta": {
+    "type": "FireResistanceDelta",
+    "name": "Augm. de la RÉS au feu",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": true,
+    "order": 50,
+    "icon": "/starrail/assets/icon/character/IconFireResistanceDelta.webp"
+  },
+  "IceResistanceDelta": {
+    "type": "IceResistanceDelta",
+    "name": "Augm. de la RÉS à la glace",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": true,
+    "order": 51,
+    "icon": "/starrail/assets/icon/character/IconIceResistanceDelta.webp"
+  },
+  "ThunderResistanceDelta": {
+    "type": "ThunderResistanceDelta",
+    "name": "Augm. de la RÉS à la foudre",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": true,
+    "order": 52,
+    "icon": "/starrail/assets/icon/character/IconThunderResistanceDelta.webp"
+  },
+  "WindResistanceDelta": {
+    "type": "WindResistanceDelta",
+    "name": "Augm. de la RÉS au vent",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": true,
+    "order": 53,
+    "icon": "/starrail/assets/icon/character/IconWindResistanceDelta.webp"
+  },
+  "QuantumResistanceDelta": {
+    "type": "QuantumResistanceDelta",
+    "name": "Augm. de la RÉS quantique",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": true,
+    "order": 54,
+    "icon": "/starrail/assets/icon/character/IconQuantumResistanceDelta.webp"
+  },
+  "ImaginaryResistanceDelta": {
+    "type": "ImaginaryResistanceDelta",
+    "name": "Augm. de la RÉS imaginaire",
+    "field": "",
+    "affix": false,
+    "ratio": false,
+    "percent": true,
+    "order": 55,
+    "icon": "/starrail/assets/icon/character/IconImaginaryResistanceDelta.webp"
+  },
+  "SpeedDelta": {
+    "type": "SpeedDelta",
+    "name": "VIT",
+    "field": "spd",
+    "affix": true,
+    "ratio": false,
+    "percent": false,
+    "order": 57,
+    "icon": "/starrail/assets/icon/character/IconSpeed.webp"
+  },
+  "SpeedAddedRatio": {
+    "type": "SpeedAddedRatio",
+    "name": "VIT",
+    "field": "spd",
+    "affix": true,
+    "ratio": true,
+    "percent": true,
+    "order": 100,
+    "icon": "/starrail/assets/icon/character/IconSpeed.webp"
+  },
+  "AllDamageTypeAddedRatio": {
+    "type": "AllDamageTypeAddedRatio",
+    "name": "DGT ↑",
+    "field": "all_dmg",
+    "affix": true,
+    "ratio": false,
+    "percent": true,
+    "order": 101,
+    "icon": "/starrail/assets/icon/character/IconAttack.webp"
+  }
+}

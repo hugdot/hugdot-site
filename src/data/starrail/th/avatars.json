@@ -1,0 +1,2457 @@
+{
+  "1": {
+    "id": "1",
+    "name": "Wen Mingde",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Wenmingde.webp"
+  },
+  "2": {
+    "id": "2",
+    "name": "Dr. Dig",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_DoctorDig.webp"
+  },
+  "3": {
+    "id": "3",
+    "name": "บัญชีทางการของ \"Wildfire\"",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "4": {
+    "id": "4",
+    "name": "ประกาศในเขตหวงห้าม",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "5": {
+    "id": "5",
+    "name": "Rocky",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Rocky.webp"
+  },
+  "6": {
+    "id": "6",
+    "name": "เสียงหัวเราะในเปลือกหอย",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "7": {
+    "id": "7",
+    "name": "\"Herta: ระบบตรวจสอบรอบทิศทาง\"",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "8": {
+    "id": "8",
+    "name": "Abraham",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Abraham.webp"
+  },
+  "9": {
+    "id": "9",
+    "name": "???",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "10": {
+    "id": "10",
+    "name": "Julian",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Julian.webp"
+  },
+  "11": {
+    "id": "11",
+    "name": "???",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Julian.webp"
+  },
+  "12": {
+    "id": "12",
+    "name": "Oleg",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Oleg.webp"
+  },
+  "13": {
+    "id": "13",
+    "name": "ครอบครัว Astral Express",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Train.webp"
+  },
+  "14": {
+    "id": "14",
+    "name": "???",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "15": {
+    "id": "15",
+    "name": "Heritor Club ของคุณ Herta",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "16": {
+    "id": "16",
+    "name": "คนที่คุณก็รู้ว่าใคร",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "17": {
+    "id": "17",
+    "name": "M-Robot",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "18": {
+    "id": "18",
+    "name": "นักบินเถื่อน",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "19": {
+    "id": "19",
+    "name": "Richard ผู้รอบรู้",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "20": {
+    "id": "20",
+    "name": "Bill Portcullis",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "21": {
+    "id": "21",
+    "name": "ลูกสำรองสีเขียวอวบอั๋น",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "22": {
+    "id": "22",
+    "name": "นกแดงแรงฤทธิ์",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "23": {
+    "id": "23",
+    "name": "เชอร์ลี่ย์สีม่วง",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "24": {
+    "id": "24",
+    "name": "Pamela",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Pamela.webp"
+  },
+  "25": {
+    "id": "25",
+    "name": "ท้าชนคนจริง",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "26": {
+    "id": "26",
+    "name": "แอโฟรคือศิลปะ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "27": {
+    "id": "27",
+    "name": "แชทหาคู่ส่วนตัว",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "28": {
+    "id": "28",
+    "name": "สุดแสบประจัญบาน",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "29": {
+    "id": "29",
+    "name": "Leonard",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Leonard.webp"
+  },
+  "30": {
+    "id": "30",
+    "name": "เครือข่ายระหว่างดวงดาว",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "31": {
+    "id": "31",
+    "name": "Tantan",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Tantan.webp"
+  },
+  "32": {
+    "id": "32",
+    "name": "Luhui",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Luhui.webp"
+  },
+  "33": {
+    "id": "33",
+    "name": "Wen Furui",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Wnfurui.webp"
+  },
+  "34": {
+    "id": "34",
+    "name": "จิ้งจอกสาวพราวเสน่ห์ Daiqing",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Daiqing.webp"
+  },
+  "35": {
+    "id": "35",
+    "name": "???",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "36": {
+    "id": "36",
+    "name": "คนแล่เนื้อ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "37": {
+    "id": "37",
+    "name": "บริการลูกค้าอัตโนมัติ \"Cloudbreadth Sleeves\"",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "38": {
+    "id": "38",
+    "name": "Xikui",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Xikui.webp"
+  },
+  "39": {
+    "id": "39",
+    "name": "Yujin",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Yujin.webp"
+  },
+  "40": {
+    "id": "40",
+    "name": "Dunn",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Donne.webp"
+  },
+  "41": {
+    "id": "41",
+    "name": "Qingster",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "42": {
+    "id": "42",
+    "name": "Dahao",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Dahao.webp"
+  },
+  "44": {
+    "id": "44",
+    "name": "Liangmu",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Liangmu.webp"
+  },
+  "46": {
+    "id": "46",
+    "name": "Diting",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Diting.webp"
+  },
+  "47": {
+    "id": "47",
+    "name": "Jingyan",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Jingyana.webp"
+  },
+  "48": {
+    "id": "48",
+    "name": "Emily",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Emilie.webp"
+  },
+  "49": {
+    "id": "49",
+    "name": "\"ร้านอุปกรณ์เครื่องใช้สันติภาพแห่งดวงดาว\"",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "50": {
+    "id": "50",
+    "name": "สมาคมพิทักษ์สิทธิ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "51": {
+    "id": "51",
+    "name": "Qingni",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Qingni.webp"
+  },
+  "52": {
+    "id": "52",
+    "name": "Grumpy",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Bukaixin.webp"
+  },
+  "53": {
+    "id": "53",
+    "name": "ไม่ระบุชื่อ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "54": {
+    "id": "54",
+    "name": "Chengjie",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Chengjie.webp"
+  },
+  "55": {
+    "id": "55",
+    "name": "Ziqiao",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Ziqiao.webp"
+  },
+  "56": {
+    "id": "56",
+    "name": "กลุ่มแชทของ Herta, Arlan, {NICKNAME}",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "57": {
+    "id": "57",
+    "name": "???",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "58": {
+    "id": "58",
+    "name": "???",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "59": {
+    "id": "59",
+    "name": "วิศวกรซ่อมบำรุง",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Engineer.webp"
+  },
+  "60": {
+    "id": "60",
+    "name": "Qingzu",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Qingzu.webp"
+  },
+  "61": {
+    "id": "61",
+    "name": "ชบาสีเขียว",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Lvfulong.webp"
+  },
+  "62": {
+    "id": "62",
+    "name": "???",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "63": {
+    "id": "63",
+    "name": "Hex Club",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "64": {
+    "id": "64",
+    "name": "???",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "65": {
+    "id": "65",
+    "name": "???",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "66": {
+    "id": "66",
+    "name": "Dan Shu",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Danshu.webp"
+  },
+  "67": {
+    "id": "67",
+    "name": "กลุ่มแชทของ Gepard, Serval และ {NICKNAME}",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "68": {
+    "id": "68",
+    "name": "Abraham, {NICKNAME}, Asta...",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "69": {
+    "id": "69",
+    "name": "Regin",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Regin.webp"
+  },
+  "70": {
+    "id": "70",
+    "name": "ทีมสอบสวนคดีพิเศษด้านการโจรกรรมโบราณวัตถุ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "71": {
+    "id": "71",
+    "name": "เจ้าหน้าที่สอบสวนแห่งกองกำลัง",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_NPCSoldier.webp"
+  },
+  "72": {
+    "id": "72",
+    "name": "AI ตอบกลับอัตโนมัติ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Zhangzhang.webp"
+  },
+  "73": {
+    "id": "73",
+    "name": "กลุ่มแชทของ Bronya, {NICKNAME}, March 7th, และ Dan Heng",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "74": {
+    "id": "74",
+    "name": "ไม่ระบุชื่อ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "75": {
+    "id": "75",
+    "name": "ไม่ระบุชื่อ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "76": {
+    "id": "76",
+    "name": "Realm-Keeping Commission: ศูนย์รับมือเหตุฉุกเฉิน",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "77": {
+    "id": "77",
+    "name": "กลุ่มแชทของ Bronya, Gepard, {NICKNAME} และคนอื่นๆ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "78": {
+    "id": "78",
+    "name": "กลุ่มฟื้นฟูตรอก Aurum",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "79": {
+    "id": "79",
+    "name": "Mingxi",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Mingxi.webp"
+  },
+  "80": {
+    "id": "80",
+    "name": "Xiaohan",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Xiaohan.webp"
+  },
+  "82": {
+    "id": "82",
+    "name": "Zhongshan",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Zhongshan.webp"
+  },
+  "83": {
+    "id": "83",
+    "name": "Cong",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_XiaoCong.webp"
+  },
+  "84": {
+    "id": "84",
+    "name": "Todd",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Taode.webp"
+  },
+  "86": {
+    "id": "86",
+    "name": "Wilder",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Velite.webp"
+  },
+  "87": {
+    "id": "87",
+    "name": "คุณ Xiyan",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_MrXiYan.webp"
+  },
+  "88": {
+    "id": "88",
+    "name": "Giovanni",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Giovanni.webp"
+  },
+  "89": {
+    "id": "89",
+    "name": "Yancui",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Yancui.webp"
+  },
+  "90": {
+    "id": "90",
+    "name": "หน่วยล่าท้าผี",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "91": {
+    "id": "91",
+    "name": "Watson",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Wosen.webp"
+  },
+  "92": {
+    "id": "92",
+    "name": "Guangjin",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Guangjin.webp"
+  },
+  "93": {
+    "id": "93",
+    "name": "กลุ่มสอบถามอย่างเป็นทางการของแนวรบ Aetherium",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "95": {
+    "id": "95",
+    "name": "นักวิจัยแผนกนิเวศวิทยา",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_JieZhongKe.webp"
+  },
+  "97": {
+    "id": "97",
+    "name": "ถั่วกวนออกโรง",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "98": {
+    "id": "98",
+    "name": "นักกินแตงมืออาชีพ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "102": {
+    "id": "102",
+    "name": "???",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "103": {
+    "id": "103",
+    "name": "Rich ผู้รอบรู้",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "104": {
+    "id": "104",
+    "name": "หลอดทดลอง",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "105": {
+    "id": "105",
+    "name": "ทีมรักษาความสงบ Herta",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "106": {
+    "id": "106",
+    "name": "Dr. Edward",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_DreamStore.webp"
+  },
+  "107": {
+    "id": "107",
+    "name": "กลุ่มแชทของ Topaz, March 7th และ {NICKNAME}",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "108": {
+    "id": "108",
+    "name": "???",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "109": {
+    "id": "109",
+    "name": "กลุ่มแชทของ Argenti, March 7th, Pom-Pom และ {NICKNAME}",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "110": {
+    "id": "110",
+    "name": "กลุ่มหน่วยล่าท้าผี",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "111": {
+    "id": "111",
+    "name": "A-Yue",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "112": {
+    "id": "112",
+    "name": "หลอดทดลอง",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "113": {
+    "id": "113",
+    "name": "สถานีอวกาศ: กลุ่มอัปเดตงานของสมาคมอัจฉริยะ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "114": {
+    "id": "114",
+    "name": "ถั่วกวนออกโรง, Bill Portcullis, นักบินเถื่อน...",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "115": {
+    "id": "115",
+    "name": "ทีม Penacony",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "116": {
+    "id": "116",
+    "name": "สำนักหนังสือพิมพ์ฝันหวาน",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_DreamOffice.webp"
+  },
+  "117": {
+    "id": "117",
+    "name": "แฟนคลับ Lesley Dean รวมพล!",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "118": {
+    "id": "118",
+    "name": "Woolsey",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Woolsey.webp"
+  },
+  "119": {
+    "id": "119",
+    "name": "นาฬิ■■■",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "120": {
+    "id": "120",
+    "name": "ร้านอาหาร Clock Diner",
+    "icon": "/starrail/assets/icon/character/UI_Message_DelicayExpress.webp"
+  },
+  "121": {
+    "id": "121",
+    "name": "Uma",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Uma.webp"
+  },
+  "122": {
+    "id": "122",
+    "name": "สินค้าสุดหรูแห่ง Penacony",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_LuxuryStore.webp"
+  },
+  "123": {
+    "id": "123",
+    "name": "แก้วคริสตัล",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "124": {
+    "id": "124",
+    "name": "เพื่อนเก่า",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "125": {
+    "id": "125",
+    "name": "ถังขยะ",
+    "icon": "/starrail/assets/icon/character/202002.webp"
+  },
+  "126": {
+    "id": "126",
+    "name": "ถังขยะที่ร้อนแรง",
+    "icon": "/starrail/assets/icon/character/202002.webp"
+  },
+  "127": {
+    "id": "127",
+    "name": "ถังขยะที่ร้อนแรงดั่งไฟ",
+    "icon": "/starrail/assets/icon/character/202002.webp"
+  },
+  "128": {
+    "id": "128",
+    "name": "ถังขยะที่หัวใจแตกสลาย",
+    "icon": "/starrail/assets/icon/character/202002.webp"
+  },
+  "129": {
+    "id": "129",
+    "name": "???",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "130": {
+    "id": "130",
+    "name": "กลุ่มโปรเจกต์จิ๊กซอว์สร้างฝัน",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "131": {
+    "id": "131",
+    "name": "สำนักหนังสือพิมพ์ฝันหวาน",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_DreamOffice.webp"
+  },
+  "132": {
+    "id": "132",
+    "name": "ท่านเซอร์ฟ้าคราม",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "133": {
+    "id": "133",
+    "name": "Siobhan",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Sionbhan.webp"
+  },
+  "134": {
+    "id": "134",
+    "name": "Tizocic III",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_DesolaTheSecond.webp"
+  },
+  "135": {
+    "id": "135",
+    "name": "???",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "136": {
+    "id": "136",
+    "name": "ผู้การเบิ้ม",
+    "icon": "/starrail/assets/icon/character/Monster_3002030.webp"
+  },
+  "137": {
+    "id": "137",
+    "name": "โพดำ",
+    "icon": "/starrail/assets/icon/character/Monster_3001010.webp"
+  },
+  "138": {
+    "id": "138",
+    "name": "คุณผู้หญิง",
+    "icon": "/starrail/assets/icon/character/Monster_3002010.webp"
+  },
+  "139": {
+    "id": "139",
+    "name": "หนุ่มอมทุกข์",
+    "icon": "/starrail/assets/icon/character/Monster_3001020.webp"
+  },
+  "140": {
+    "id": "140",
+    "name": "หมดกัน! พวกเราถูกเจ้าเซ่อล้อมไว้แล้ว!",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "141": {
+    "id": "141",
+    "name": "นักสืบป้ายโฆษณา",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_AdvertBoard.webp"
+  },
+  "142": {
+    "id": "142",
+    "name": "Acheron",
+    "icon": "/starrail/assets/icon/character/1308.webp"
+  },
+  "143": {
+    "id": "143",
+    "name": "1111111111",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "144": {
+    "id": "144",
+    "name": "จะดูดอกไม้ไฟจากที่ไหนดี",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "145": {
+    "id": "145",
+    "name": "จัดทำโดย Bloodhound",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "146": {
+    "id": "146",
+    "name": "ฝ่ายบริการลูกค้า Clock Studios",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "147": {
+    "id": "147",
+    "name": "อาจารย์ Gongshu",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_MasterGongshu.webp"
+  },
+  "148": {
+    "id": "148",
+    "name": "Geed",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Jetta.webp"
+  },
+  "149": {
+    "id": "149",
+    "name": "หน้าที่ต้องเป็นหน้าที่",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "150": {
+    "id": "150",
+    "name": "Aideen",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Aideen.webp"
+  },
+  "151": {
+    "id": "151",
+    "name": "พนักงานส่งของ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "152": {
+    "id": "152",
+    "name": "สวดที่รักทั้งสาม",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "153": {
+    "id": "153",
+    "name": "Dancy",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Dennis.webp"
+  },
+  "154": {
+    "id": "154",
+    "name": "Micah",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Micah.webp"
+  },
+  "155": {
+    "id": "155",
+    "name": "Tinah",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Tina.webp"
+  },
+  "156": {
+    "id": "156",
+    "name": "ตุ๊กตา \"ข้อความ\"",
+    "icon": "/starrail/assets/icon/character/202017.webp"
+  },
+  "157": {
+    "id": "157",
+    "name": "ข้าน้อยคือนินจาผู้กล้าจอมวุ่น",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "158": {
+    "id": "158",
+    "name": "Arfey",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Aierfei.webp"
+  },
+  "159": {
+    "id": "159",
+    "name": "ชุมนุมนินจาเสียง",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "160": {
+    "id": "160",
+    "name": "Dafanchy",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Dafanqi.webp"
+  },
+  "161": {
+    "id": "161",
+    "name": "Czipo",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "162": {
+    "id": "162",
+    "name": "ฝ่ายประสานงานพิธีดวลยุทธ์",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "163": {
+    "id": "163",
+    "name": "ตัวแทนคณะผู้จัดงานพิธีดวลยุทธ์",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_FightFest.webp"
+  },
+  "164": {
+    "id": "164",
+    "name": "ขยะอิเล็กทรอนิกส์",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_BandMember02.webp"
+  },
+  "165": {
+    "id": "165",
+    "name": "มือกีตาร์ขั้นเทพ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_BandMember01.webp"
+  },
+  "166": {
+    "id": "166",
+    "name": "Czi",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_BandMember03.webp"
+  },
+  "167": {
+    "id": "167",
+    "name": "นินจาผู้กล้าจอมวุ่น",
+    "icon": "/starrail/assets/icon/character/1317.webp"
+  },
+  "168": {
+    "id": "168",
+    "name": "จุดรวมพลแฟนคลับ \"จอมวุ่น\"",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "170": {
+    "id": "170",
+    "name": "เซย์ชีสสส",
+    "icon": "/starrail/assets/icon/character/1001.webp"
+  },
+  "171": {
+    "id": "171",
+    "name": "มิตรรักแฟนบานาน่า",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Montana.webp"
+  },
+  "172": {
+    "id": "172",
+    "name": "Chaletka",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Chaletka.webp"
+  },
+  "173": {
+    "id": "173",
+    "name": "ร่ำรวยดั่งหวีกล้วย",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Richesandhonor.webp"
+  },
+  "174": {
+    "id": "174",
+    "name": "หัวปลีจัง (เวอร์ชันขยัน)",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Kenebo.webp"
+  },
+  "175": {
+    "id": "175",
+    "name": "กลุ่มบานาน่าใหม่: มหาวิทยาลัย Paperfold",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "176": {
+    "id": "176",
+    "name": "กลุ่มแชทของ Tribbie, Dan Heng, {NICKNAME}",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "177": {
+    "id": "177",
+    "name": "ทีมต้อนรับแขกของ Amphoreus",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "179": {
+    "id": "179",
+    "name": "ผู้ศรัทธาศาสตร์ลึกลับแห่งวิวัฒนาการ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "180": {
+    "id": "180",
+    "name": "เสียงกระซิบของแพะรับบาปทองคำ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "181": {
+    "id": "181",
+    "name": "ถือโคมหาคน",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "182": {
+    "id": "182",
+    "name": "กลุ่มแชทของ Castorice, Aglaea, {NICKNAME}",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "183": {
+    "id": "183",
+    "name": "กลุ่มแชท \"เทพีพราวอัสดง\"",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "184": {
+    "id": "184",
+    "name": "นักสำรวจนอกท้องฟ้า",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "185": {
+    "id": "185",
+    "name": "Zagreus ให้เงินฉัน",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "186": {
+    "id": "186",
+    "name": "ฝากตัวรับใช้เป็นหุ่นตัดเย็บ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "187": {
+    "id": "187",
+    "name": "ไททันที่สิบสาม",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "188": {
+    "id": "188",
+    "name": "Phagousa ยังดื่มอยู่",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "189": {
+    "id": "189",
+    "name": "Hekate",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Hekate.webp"
+  },
+  "190": {
+    "id": "190",
+    "name": "Demetria",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Demetria.webp"
+  },
+  "191": {
+    "id": "191",
+    "name": "Yueyuan",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Yueyuan.webp"
+  },
+  "192": {
+    "id": "192",
+    "name": "กลุ่มแชทของ Aglaea, Castorice, {NICKNAME}",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "193": {
+    "id": "193",
+    "name": "หุ่นตัดชุด",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_AglaeaServant.webp"
+  },
+  "194": {
+    "id": "194",
+    "name": "ฉุกเฉิน",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "195": {
+    "id": "195",
+    "name": "นักร้องดินแดนหิมะ",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "196": {
+    "id": "196",
+    "name": "กลุ่มแฟนเกมของ {NICKNAME}",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "197": {
+    "id": "197",
+    "name": "คณะกรรมการจัดการแข่งขัน",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "198": {
+    "id": "198",
+    "name": "ตัวแทนขององค์กร",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "199": {
+    "id": "199",
+    "name": "Verginia",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Virginia.webp"
+  },
+  "200": {
+    "id": "200",
+    "name": "Cyrene",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Cyrene.webp"
+  },
+  "201": {
+    "id": "201",
+    "name": "Kate (กำลังปฏิบัติหน้าที่)",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "202": {
+    "id": "202",
+    "name": "สมาคมคนรักไคเมร่า",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "203": {
+    "id": "203",
+    "name": "วันนี้เค้กขยะกินอะไรดี",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "204": {
+    "id": "204",
+    "name": "รัชทายาทมายา",
+    "icon": "/starrail/assets/icon/character/WebIcon_Npc_4.webp"
+  },
+  "205": {
+    "id": "205",
+    "name": "ต้นกกใต้แสงจันทร์",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "206": {
+    "id": "206",
+    "name": "Franken_Official",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "207": {
+    "id": "207",
+    "name": "เฟอร์โบ้เซ่อ",
+    "icon": "/starrail/assets/icon/character/WebIcon_Npc_3.webp"
+  },
+  "208": {
+    "id": "208",
+    "name": "เฟอร์ฟลิกซ์",
+    "icon": "/starrail/assets/icon/character/WebIcon_Npc_5.webp"
+  },
+  "209": {
+    "id": "209",
+    "name": "จูลโบ้",
+    "icon": "/starrail/assets/icon/character/WebIcon_Npc_6.webp"
+  },
+  "210": {
+    "id": "210",
+    "name": "AAA \"เฟอร์โบโบ้รายสัปดาห์\" ส่งรวม",
+    "icon": "/starrail/assets/icon/character/UI_Message_Group_Default.webp"
+  },
+  "211": {
+    "id": "211",
+    "name": "\"ผู้เฒ่า\"",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "212": {
+    "id": "212",
+    "name": "สินเชื่อดอกเบี้ยทบต้น",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "213": {
+    "id": "213",
+    "name": "ShannieZhong หมายเลข 4",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Zhongshan.webp"
+  },
+  "214": {
+    "id": "214",
+    "name": "ผู้ช่วยไลฟ์สตรีม Sparxie",
+    "icon": "/starrail/assets/icon/character/1501.webp"
+  },
+  "215": {
+    "id": "215",
+    "name": "A ผู้ช่วยตัวน้อยของ Sparxie เอ็นเตอร์เทนเมนต์",
+    "icon": "/starrail/assets/icon/character/1501.webp"
+  },
+  "216": {
+    "id": "216",
+    "name": "ไดอารี่ Sparxie จะต้องดัง",
+    "icon": "/starrail/assets/icon/character/1501.webp"
+  },
+  "217": {
+    "id": "217",
+    "name": "เครื่องโฆษณาอัตโนมัติ \"กระต่ายรางดาว\"",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "218": {
+    "id": "218",
+    "name": "",
+    "icon": "/starrail/assets/icon/character/1504.webp"
+  },
+  "219": {
+    "id": "219",
+    "name": "",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "1000": {
+    "id": "1000",
+    "name": "Pom-Pom",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Pam.webp"
+  },
+  "1001": {
+    "id": "1001",
+    "name": "March 7th",
+    "icon": "/starrail/assets/icon/character/1001.webp"
+  },
+  "1002": {
+    "id": "1002",
+    "name": "Dan Heng",
+    "icon": "/starrail/assets/icon/character/1002.webp"
+  },
+  "1003": {
+    "id": "1003",
+    "name": "Himeko",
+    "icon": "/starrail/assets/icon/character/1003.webp"
+  },
+  "1004": {
+    "id": "1004",
+    "name": "Welt",
+    "icon": "/starrail/assets/icon/character/1004.webp"
+  },
+  "1005": {
+    "id": "1005",
+    "name": "Kafka",
+    "icon": "/starrail/assets/icon/character/1005.webp"
+  },
+  "1006": {
+    "id": "1006",
+    "name": "Silver Wolf",
+    "icon": "/starrail/assets/icon/character/1006.webp"
+  },
+  "1007": {
+    "id": "1007",
+    "name": "Screwllum",
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Screwllum.webp"
+  },
+  "1008": {
+    "id": "1008",
+    "name": "Arlan",
+    "icon": "/starrail/assets/icon/character/1008.webp"
+  },
+  "1009": {
+    "id": "1009",
+    "name": "Asta",
+    "icon": "/starrail/assets/icon/character/1009.webp"
+  },
+  "1013": {
+    "id": "1013",
+    "name": "Herta",
+    "icon": "/starrail/assets/icon/character/1013.webp"
+  },
+  "1014": {
+    "id": "1014",
+    "name": "Saber",
+    "icon": "/starrail/assets/icon/character/1014.webp"
+  },
+  "1015": {
+    "id": "1015",
+    "name": "Archer",
+    "icon": "/starrail/assets/icon/character/1015.webp"
+  },
+  "1101": {
+    "id": "1101",
+    "name": "Bronya",
+    "icon": "/starrail/assets/icon/character/1101.webp"
+  },
+  "1102": {
+    "id": "1102",
+    "name": "Seele",
+    "icon": "/starrail/assets/icon/character/1102.webp"
+  },
+  "1103": {
+    "id": "1103",
+    "name": "Serval",
+    "icon": "/starrail/assets/icon/character/1103.webp"
+  },
+  "1104": {
+    "id": "1104",
+    "name": "Gepard",
+    "icon": "/starrail/assets/icon/character/1104.webp"
+  },
+  "1105": {
+    "id": "1105",
+    "name": "Natasha",
+    "icon": "/starrail/assets/icon/character/1105.webp"
+  },
+  "1106": {
+    "id": "1106",
+    "name": "Pela",
+    "icon": "/starrail/assets/icon/character/1106.webp"
+  },
+  "1107": {
+    "id": "1107",
+    "name": "Clara",
+    "icon": "/starrail/assets/icon/character/1107.webp"
+  },
+  "1108": {
+    "id": "1108",
+    "name": "Sampo",
+    "icon": "/starrail/assets/icon/character/1108.webp"
+  },
+  "1109": {
+    "id": "1109",
+    "name": "Hook",
+    "icon": "/starrail/assets/icon/character/1109.webp"
+  },
+  "1110": {
+    "id": "1110",
+    "name": "Lynx",
+    "icon": "/starrail/assets/icon/character/1110.webp"
+  },
+  "1111": {
+    "id": "1111",
+    "name": "Luka",
+    "icon": "/starrail/assets/icon/character/1111.webp"
+  },
+  "1112": {
+    "id": "1112",
+    "name": "Topaz",
+    "icon": "/starrail/assets/icon/character/1112.webp"
+  },
+  "1201": {
+    "id": "1201",
+    "name": "Qingque",
+    "icon": "/starrail/assets/icon/character/1201.webp"
+  },
+  "1202": {
+    "id": "1202",
+    "name": "Tingyun",
+    "icon": "/starrail/assets/icon/character/1202.webp"
+  },
+  "1203": {
+    "id": "1203",
+    "name": "Luocha",
+    "icon": "/starrail/assets/icon/character/1203.webp"
+  },
+  "1204": {
+    "id": "1204",
+    "name": "Jing Yuan",
+    "icon": "/starrail/assets/icon/character/1204.webp"
+  },
+  "1205": {
+    "id": "1205",
+    "name": "Blade",
+    "icon": "/starrail/assets/icon/character/1205.webp"
+  },
+  "1206": {
+    "id": "1206",
+    "name": "Sushang",
+    "icon": "/starrail/assets/icon/character/1206.webp"
+  },
+  "1207": {
+    "id": "1207",
+    "name": "Yukong",
+    "icon": "/starrail/assets/icon/character/1207.webp"
+  },
+  "1208": {
+    "id": "1208",
+    "name": "Fu Xuan",
+    "icon": "/starrail/assets/icon/character/1208.webp"
+  },
+  "1209": {
+    "id": "1209",
+    "name": "Yanqing",
+    "icon": "/starrail/assets/icon/character/1209.webp"
+  },
+  "1210": {
+    "id": "1210",
+    "name": "Guinaifen",
+    "icon": "/starrail/assets/icon/character/1210.webp"
+  },
+  "1211": {
+    "id": "1211",
+    "name": "Bailu",
+    "icon": "/starrail/assets/icon/character/1211.webp"
+  },
+  "1214": {
+    "id": "1214",
+    "name": "Xueyi",
+    "icon": "/starrail/assets/icon/character/1214.webp"
+  },
+  "1215": {
+    "id": "1215",
+    "name": "Hanya",
+    "icon": "/starrail/assets/icon/character/1215.webp"
+  },
+  "1217": {
+    "id": "1217",
+    "name": "Huohuo",
+    "icon": "/starrail/assets/icon/character/1217.webp"
+  },
+  "1218": {
+    "id": "1218",
+    "name": "Jiaoqiu",
+    "icon": "/starrail/assets/icon/character/1218.webp"
+  },
+  "1220": {
+    "id": "1220",
+    "name": "Feixiao",
+    "icon": "/starrail/assets/icon/character/1220.webp"
+  },
+  "1221": {
+    "id": "1221",
+    "name": "Yunli",
+    "icon": "/starrail/assets/icon/character/1221.webp"
+  },
+  "1222": {
+    "id": "1222",
+    "name": "Lingsha",
+    "icon": "/starrail/assets/icon/character/1222.webp"
+  },
+  "1223": {
+    "id": "1223",
+    "name": "Moze",
+    "icon": "/starrail/assets/icon/character/1223.webp"
+  },
+  "1301": {
+    "id": "1301",
+    "name": "Gallagher",
+    "icon": "/starrail/assets/icon/character/1301.webp"
+  },
+  "1302": {
+    "id": "1302",
+    "name": "Argenti",
+    "icon": "/starrail/assets/icon/character/1302.webp"
+  },
+  "1303": {
+    "id": "1303",
+    "name": "Ruan Mei",
+    "icon": "/starrail/assets/icon/character/1303.webp"
+  },
+  "1304": {
+    "id": "1304",
+    "name": "Aventurine",
+    "icon": "/starrail/assets/icon/character/1304.webp"
+  },
+  "1305": {
+    "id": "1305",
+    "name": "Dr. Ratio",
+    "icon": "/starrail/assets/icon/character/1305.webp"
+  },
+  "1306": {
+    "id": "1306",
+    "name": "Sparkle",
+    "icon": "/starrail/assets/icon/character/1306.webp"
+  },
+  "1307": {
+    "id": "1307",
+    "name": "Black Swan",
+    "icon": "/starrail/assets/icon/character/1307.webp"
+  },
+  "1308": {
+    "id": "1308",
+    "name": "Acheron",
+    "icon": "/starrail/assets/icon/character/1308.webp"
+  },
+  "1309": {
+    "id": "1309",
+    "name": "Robin",
+    "icon": "/starrail/assets/icon/character/1309.webp"
+  },
+  "1310": {
+    "id": "1310",
+    "name": "Firefly",
+    "icon": "/starrail/assets/icon/character/1310.webp"
+  },
+  "1312": {
+    "id": "1312",
+    "name": "Misha",
+    "icon": "/starrail/assets/icon/character/1312.webp"
+  },
+  "1313": {
+    "id": "1313",
+    "name": "Sunday",
+    "icon": "/starrail/assets/icon/character/1313.webp"
+  },
+  "1314": {
+    "id": "1314",
+    "name": "Jade",
+    "icon": "/starrail/assets/icon/character/1314.webp"
+  },
+  "1315": {
+    "id": "1315",
+    "name": "Boothill",
+    "icon": "/starrail/assets/icon/character/1315.webp"
+  },
+  "1317": {
+    "id": "1317",
+    "name": "Rappa",
+    "icon": "/starrail/assets/icon/character/1317.webp"
+  },
+  "1321": {
+    "id": "1321",
+    "name": "ดอกดาห์เลีย",
+    "icon": "/starrail/assets/icon/character/1321.webp"
+  },
+  "1401": {
+    "id": "1401",
+    "name": "ท่าน Herta",
+    "icon": "/starrail/assets/icon/character/1401.webp"
+  },
+  "1402": {
+    "id": "1402",
+    "name": "Aglaea",
+    "icon": "/starrail/assets/icon/character/1402.webp"
+  },
+  "1403": {
+    "id": "1403",
+    "name": "Tribbie",
+    "icon": "/starrail/assets/icon/character/1403.webp"
+  },
+  "1404": {
+    "id": "1404",
+    "name": "Mydei",
+    "icon": "/starrail/assets/icon/character/1404.webp"
+  },
+  "1405": {
+    "id": "1405",
+    "name": "Anaxa",
+    "icon": "/starrail/assets/icon/character/1405.webp"
+  },
+  "1406": {
+    "id": "1406",
+    "name": "Cipher",
+    "icon": "/starrail/assets/icon/character/1406.webp"
+  },
+  "1407": {
+    "id": "1407",
+    "name": "Castorice",
+    "icon": "/starrail/assets/icon/character/1407.webp"
+  },
+  "1408": {
+    "id": "1408",
+    "name": "Phainon",
+    "icon": "/starrail/assets/icon/character/1408.webp"
+  },
+  "1409": {
+    "id": "1409",
+    "name": "Hyacine",
+    "icon": "/starrail/assets/icon/character/1409.webp"
+  },
+  "1410": {
+    "id": "1410",
+    "name": "Hysilens",
+    "icon": "/starrail/assets/icon/character/1410.webp"
+  },
+  "1412": {
+    "id": "1412",
+    "name": "Cerydra",
+    "icon": "/starrail/assets/icon/character/1412.webp"
+  },
+  "1413": {
+    "id": "1413",
+    "name": "Evernight",
+    "icon": "/starrail/assets/icon/character/1413.webp"
+  },
+  "1415": {
+    "id": "1415",
+    "name": "Cyrene",
+    "icon": "/starrail/assets/icon/character/1415.webp"
+  },
+  "1501": {
+    "id": "1501",
+    "name": "Sparxie",
+    "icon": "/starrail/assets/icon/character/1501.webp"
+  },
+  "1502": {
+    "id": "1502",
+    "name": "Yao Guang",
+    "icon": "/starrail/assets/icon/character/1502.webp"
+  },
+  "1504": {
+    "id": "1504",
+    "name": "",
+    "icon": "/starrail/assets/icon/character/1504.webp"
+  },
+  "200001": {
+    "id": "200001",
+    "name": "-",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/UI_Message_Contacts_Anonymous.webp"
+  },
+  "200101": {
+    "id": "200101",
+    "name": "March 7th - ต้อนรับ",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHeadS1_1001.webp"
+  },
+  "200102": {
+    "id": "200102",
+    "name": "Dan Heng - ต้อนรับ",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHeadS1_1002.webp"
+  },
+  "200103": {
+    "id": "200103",
+    "name": "Himeko - ต้อนรับ",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHeadS1_1003.webp"
+  },
+  "200104": {
+    "id": "200104",
+    "name": "Welt - ต้อนรับ",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHeadS1_1004.webp"
+  },
+  "200105": {
+    "id": "200105",
+    "name": "ผู้บุกเบิก - ต้อนรับ",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHeadS1_8001.webp"
+  },
+  "200106": {
+    "id": "200106",
+    "name": "ผู้บุกเบิก - ต้อนรับ",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHeadS1_8002.webp"
+  },
+  "200107": {
+    "id": "200107",
+    "name": "Kafka - งานเลี้ยงมื้อค่ำ",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200107.webp"
+  },
+  "200108": {
+    "id": "200108",
+    "name": "Blade - งานเลี้ยงมื้อค่ำ",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200108.webp"
+  },
+  "200109": {
+    "id": "200109",
+    "name": "Jing Yuan - พักผ่อน",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200109.webp"
+  },
+  "200110": {
+    "id": "200110",
+    "name": "Fu Xuan - พักผ่อน",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200110.webp"
+  },
+  "200111": {
+    "id": "200111",
+    "name": "Bronya - เฉลิมฉลอง",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200111.webp"
+  },
+  "200112": {
+    "id": "200112",
+    "name": "Gepard - เฉลิมฉลอง",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200112.webp"
+  },
+  "200113": {
+    "id": "200113",
+    "name": "Jingliu - การเดินทางที่แสนไกล",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200113.webp"
+  },
+  "200114": {
+    "id": "200114",
+    "name": "Yanqing - การเดินทางที่แสนไกล",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200114.webp"
+  },
+  "200115": {
+    "id": "200115",
+    "name": "Ruan Mei - การศึกษาวิจัย",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200115.webp"
+  },
+  "200116": {
+    "id": "200116",
+    "name": "Dr. Ratio - การศึกษาวิจัย",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200116.webp"
+  },
+  "200117": {
+    "id": "200117",
+    "name": "Sparkle - ภาพลวงตา",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200117.webp"
+  },
+  "200118": {
+    "id": "200118",
+    "name": "Sampo - ภาพลวงตา",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200118.webp"
+  },
+  "200119": {
+    "id": "200119",
+    "name": "Topaz - เฉียบขาด",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200119.webp"
+  },
+  "200120": {
+    "id": "200120",
+    "name": "Aventurine - เฉียบขาด",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200120.webp"
+  },
+  "200121": {
+    "id": "200121",
+    "name": "Acheron - ซุ่มโจมตี",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200121.webp"
+  },
+  "200122": {
+    "id": "200122",
+    "name": "Boothill - ซุ่มโจมตี",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200122.webp"
+  },
+  "200123": {
+    "id": "200123",
+    "name": "Firefly - วิสัยทัศน์",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200123.webp"
+  },
+  "200124": {
+    "id": "200124",
+    "name": "SAM - วิสัยทัศน์",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200124.webp"
+  },
+  "200125": {
+    "id": "200125",
+    "name": "Bailu - คุณหมอใจดี",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200125.webp"
+  },
+  "200126": {
+    "id": "200126",
+    "name": "Jiaoqiu - คุณหมอใจดี",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200126.webp"
+  },
+  "200127": {
+    "id": "200127",
+    "name": "Feixiao - ออกกำลังกาย",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200127.webp"
+  },
+  "200128": {
+    "id": "200128",
+    "name": "Moze - ออกกำลังกาย",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200128.webp"
+  },
+  "200129": {
+    "id": "200129",
+    "name": "Rappa - เปิดฉาก",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200129.webp"
+  },
+  "200130": {
+    "id": "200130",
+    "name": "Silver Wolf - เปิดฉาก",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200130.webp"
+  },
+  "200131": {
+    "id": "200131",
+    "name": "Robin - วัยผลิบาน",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200131.webp"
+  },
+  "200132": {
+    "id": "200132",
+    "name": "Sunday - วัยผลิบาน",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200132.webp"
+  },
+  "200133": {
+    "id": "200133",
+    "name": "ท่าน Herta - พักดื่มชา",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200133.webp"
+  },
+  "200134": {
+    "id": "200134",
+    "name": "Herta - พักดื่มชา",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200134.webp"
+  },
+  "200135": {
+    "id": "200135",
+    "name": "Mydei - อาหารเลิศรส",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200135.webp"
+  },
+  "200136": {
+    "id": "200136",
+    "name": "Tribbie - อาหารเลิศรส",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200136.webp"
+  },
+  "200137": {
+    "id": "200137",
+    "name": "Castorice - ช่างคิด",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200137.webp"
+  },
+  "200138": {
+    "id": "200138",
+    "name": "Anaxa - ช่างคิด",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200138.webp"
+  },
+  "200139": {
+    "id": "200139",
+    "name": "Hyacine - หลับฝันดี",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200139.webp"
+  },
+  "200140": {
+    "id": "200140",
+    "name": "Cipher - หลับฝันดี",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200140.webp"
+  },
+  "200141": {
+    "id": "200141",
+    "name": "Phainon - สมัยนิยม",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200141.webp"
+  },
+  "200142": {
+    "id": "200142",
+    "name": "Aglaea - สมัยนิยม",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200142.webp"
+  },
+  "200143": {
+    "id": "200143",
+    "name": "Hysilens - พิชิต",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200143.webp"
+  },
+  "200144": {
+    "id": "200144",
+    "name": "Cerydra - พิชิต",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200144.webp"
+  },
+  "200145": {
+    "id": "200145",
+    "name": "Evernight - ซุ่มซ่อน",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200145.webp"
+  },
+  "200146": {
+    "id": "200146",
+    "name": "Dan Heng - จ้าวทระนงคงปฐพี: ซุ่มซ่อน",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200146.webp"
+  },
+  "200147": {
+    "id": "200147",
+    "name": "Cyrene - ตามสัญญา",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200147.webp"
+  },
+  "200148": {
+    "id": "200148",
+    "name": "ริ้วคลื่นแห่งอดีต - ตามสัญญา",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200148.webp"
+  },
+  "200149": {
+    "id": "200149",
+    "name": "ดอกดาห์เลีย - ความทรงจำ",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200149.webp"
+  },
+  "200150": {
+    "id": "200150",
+    "name": "Black Swan - ความทรงจำ",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200150.webp"
+  },
+  "200151": {
+    "id": "200151",
+    "name": "Yao Guang - เต้นรำ",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200151.webp"
+  },
+  "200152": {
+    "id": "200152",
+    "name": "Sparxie - เต้นรำ",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200152.webp"
+  },
+  "200153": {
+    "id": "200153",
+    "name": "",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200153.webp"
+  },
+  "200154": {
+    "id": "200154",
+    "name": "",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_200154.webp"
+  },
+  "201001": {
+    "id": "201001",
+    "name": "March 7th: อนุรักษ์",
+    "icon": "/starrail/assets/icon/character/1001.webp"
+  },
+  "201002": {
+    "id": "201002",
+    "name": "Dan Heng",
+    "icon": "/starrail/assets/icon/character/1002.webp"
+  },
+  "201003": {
+    "id": "201003",
+    "name": "Himeko",
+    "icon": "/starrail/assets/icon/character/1003.webp"
+  },
+  "201004": {
+    "id": "201004",
+    "name": "Welt",
+    "icon": "/starrail/assets/icon/character/1004.webp"
+  },
+  "201005": {
+    "id": "201005",
+    "name": "Kafka",
+    "icon": "/starrail/assets/icon/character/1005.webp"
+  },
+  "201006": {
+    "id": "201006",
+    "name": "Silver Wolf",
+    "icon": "/starrail/assets/icon/character/1006.webp"
+  },
+  "201008": {
+    "id": "201008",
+    "name": "Arlan",
+    "icon": "/starrail/assets/icon/character/1008.webp"
+  },
+  "201009": {
+    "id": "201009",
+    "name": "Asta",
+    "icon": "/starrail/assets/icon/character/1009.webp"
+  },
+  "201013": {
+    "id": "201013",
+    "name": "Herta",
+    "icon": "/starrail/assets/icon/character/1013.webp"
+  },
+  "201014": {
+    "id": "201014",
+    "name": "Saber",
+    "icon": "/starrail/assets/icon/character/1014.webp"
+  },
+  "201015": {
+    "id": "201015",
+    "name": "Archer",
+    "icon": "/starrail/assets/icon/character/1015.webp"
+  },
+  "201101": {
+    "id": "201101",
+    "name": "Bronya",
+    "icon": "/starrail/assets/icon/character/1101.webp"
+  },
+  "201102": {
+    "id": "201102",
+    "name": "Seele",
+    "icon": "/starrail/assets/icon/character/1102.webp"
+  },
+  "201103": {
+    "id": "201103",
+    "name": "Serval",
+    "icon": "/starrail/assets/icon/character/1103.webp"
+  },
+  "201104": {
+    "id": "201104",
+    "name": "Gepard",
+    "icon": "/starrail/assets/icon/character/1104.webp"
+  },
+  "201105": {
+    "id": "201105",
+    "name": "Natasha",
+    "icon": "/starrail/assets/icon/character/1105.webp"
+  },
+  "201106": {
+    "id": "201106",
+    "name": "Pela",
+    "icon": "/starrail/assets/icon/character/1106.webp"
+  },
+  "201107": {
+    "id": "201107",
+    "name": "Clara",
+    "icon": "/starrail/assets/icon/character/1107.webp"
+  },
+  "201108": {
+    "id": "201108",
+    "name": "Sampo",
+    "icon": "/starrail/assets/icon/character/1108.webp"
+  },
+  "201109": {
+    "id": "201109",
+    "name": "Hook",
+    "icon": "/starrail/assets/icon/character/1109.webp"
+  },
+  "201110": {
+    "id": "201110",
+    "name": "Lynx",
+    "icon": "/starrail/assets/icon/character/1110.webp"
+  },
+  "201111": {
+    "id": "201111",
+    "name": "Luka",
+    "icon": "/starrail/assets/icon/character/1111.webp"
+  },
+  "201112": {
+    "id": "201112",
+    "name": "Topaz & Numby",
+    "icon": "/starrail/assets/icon/character/1112.webp"
+  },
+  "201201": {
+    "id": "201201",
+    "name": "Qingque",
+    "icon": "/starrail/assets/icon/character/1201.webp"
+  },
+  "201202": {
+    "id": "201202",
+    "name": "Tingyun",
+    "icon": "/starrail/assets/icon/character/1202.webp"
+  },
+  "201203": {
+    "id": "201203",
+    "name": "Luocha",
+    "icon": "/starrail/assets/icon/character/1203.webp"
+  },
+  "201204": {
+    "id": "201204",
+    "name": "Jing Yuan",
+    "icon": "/starrail/assets/icon/character/1204.webp"
+  },
+  "201205": {
+    "id": "201205",
+    "name": "Blade",
+    "icon": "/starrail/assets/icon/character/1205.webp"
+  },
+  "201206": {
+    "id": "201206",
+    "name": "Sushang",
+    "icon": "/starrail/assets/icon/character/1206.webp"
+  },
+  "201207": {
+    "id": "201207",
+    "name": "Yukong",
+    "icon": "/starrail/assets/icon/character/1207.webp"
+  },
+  "201208": {
+    "id": "201208",
+    "name": "Fu Xuan",
+    "icon": "/starrail/assets/icon/character/1208.webp"
+  },
+  "201209": {
+    "id": "201209",
+    "name": "Yanqing",
+    "icon": "/starrail/assets/icon/character/1209.webp"
+  },
+  "201210": {
+    "id": "201210",
+    "name": "Guinaifen",
+    "icon": "/starrail/assets/icon/character/1210.webp"
+  },
+  "201211": {
+    "id": "201211",
+    "name": "Bailu",
+    "icon": "/starrail/assets/icon/character/1211.webp"
+  },
+  "201212": {
+    "id": "201212",
+    "name": "Jingliu",
+    "icon": "/starrail/assets/icon/character/1212.webp"
+  },
+  "201213": {
+    "id": "201213",
+    "name": "Dan Heng - จ้าวยลจันทรา",
+    "icon": "/starrail/assets/icon/character/1213.webp"
+  },
+  "201214": {
+    "id": "201214",
+    "name": "Xueyi",
+    "icon": "/starrail/assets/icon/character/1214.webp"
+  },
+  "201215": {
+    "id": "201215",
+    "name": "Hanya",
+    "icon": "/starrail/assets/icon/character/1215.webp"
+  },
+  "201217": {
+    "id": "201217",
+    "name": "Huohuo",
+    "icon": "/starrail/assets/icon/character/1217.webp"
+  },
+  "201218": {
+    "id": "201218",
+    "name": "Jiaoqiu",
+    "icon": "/starrail/assets/icon/character/1218.webp"
+  },
+  "201220": {
+    "id": "201220",
+    "name": "Feixiao",
+    "icon": "/starrail/assets/icon/character/1220.webp"
+  },
+  "201221": {
+    "id": "201221",
+    "name": "Yunli",
+    "icon": "/starrail/assets/icon/character/1221.webp"
+  },
+  "201222": {
+    "id": "201222",
+    "name": "Lingsha",
+    "icon": "/starrail/assets/icon/character/1222.webp"
+  },
+  "201223": {
+    "id": "201223",
+    "name": "Moze",
+    "icon": "/starrail/assets/icon/character/1223.webp"
+  },
+  "201224": {
+    "id": "201224",
+    "name": "March 7th: ล่าสังหาร",
+    "icon": "/starrail/assets/icon/character/1224.webp"
+  },
+  "201225": {
+    "id": "201225",
+    "name": "ผู้จากจรลืมหวน",
+    "icon": "/starrail/assets/icon/character/1225.webp"
+  },
+  "201301": {
+    "id": "201301",
+    "name": "Gallagher",
+    "icon": "/starrail/assets/icon/character/1301.webp"
+  },
+  "201302": {
+    "id": "201302",
+    "name": "Argenti",
+    "icon": "/starrail/assets/icon/character/1302.webp"
+  },
+  "201303": {
+    "id": "201303",
+    "name": "Ruan Mei",
+    "icon": "/starrail/assets/icon/character/1303.webp"
+  },
+  "201304": {
+    "id": "201304",
+    "name": "Aventurine",
+    "icon": "/starrail/assets/icon/character/1304.webp"
+  },
+  "201305": {
+    "id": "201305",
+    "name": "Dr. Ratio",
+    "icon": "/starrail/assets/icon/character/1305.webp"
+  },
+  "201306": {
+    "id": "201306",
+    "name": "Sparkle",
+    "icon": "/starrail/assets/icon/character/1306.webp"
+  },
+  "201307": {
+    "id": "201307",
+    "name": "Black Swan",
+    "icon": "/starrail/assets/icon/character/1307.webp"
+  },
+  "201308": {
+    "id": "201308",
+    "name": "Acheron",
+    "icon": "/starrail/assets/icon/character/1308.webp"
+  },
+  "201309": {
+    "id": "201309",
+    "name": "Robin",
+    "icon": "/starrail/assets/icon/character/1309.webp"
+  },
+  "201310": {
+    "id": "201310",
+    "name": "Firefly",
+    "icon": "/starrail/assets/icon/character/1310.webp"
+  },
+  "201312": {
+    "id": "201312",
+    "name": "Misha",
+    "icon": "/starrail/assets/icon/character/1312.webp"
+  },
+  "201313": {
+    "id": "201313",
+    "name": "Sunday",
+    "icon": "/starrail/assets/icon/character/1313.webp"
+  },
+  "201314": {
+    "id": "201314",
+    "name": "Jade",
+    "icon": "/starrail/assets/icon/character/1314.webp"
+  },
+  "201315": {
+    "id": "201315",
+    "name": "Boothill",
+    "icon": "/starrail/assets/icon/character/1315.webp"
+  },
+  "201317": {
+    "id": "201317",
+    "name": "Rappa",
+    "icon": "/starrail/assets/icon/character/1317.webp"
+  },
+  "201321": {
+    "id": "201321",
+    "name": "ดอกดาห์เลีย",
+    "icon": "/starrail/assets/icon/character/1321.webp"
+  },
+  "201401": {
+    "id": "201401",
+    "name": "ท่าน Herta",
+    "icon": "/starrail/assets/icon/character/1401.webp"
+  },
+  "201402": {
+    "id": "201402",
+    "name": "Aglaea",
+    "icon": "/starrail/assets/icon/character/1402.webp"
+  },
+  "201403": {
+    "id": "201403",
+    "name": "Tribbie",
+    "icon": "/starrail/assets/icon/character/1403.webp"
+  },
+  "201404": {
+    "id": "201404",
+    "name": "Mydei",
+    "icon": "/starrail/assets/icon/character/1404.webp"
+  },
+  "201405": {
+    "id": "201405",
+    "name": "Anaxa",
+    "icon": "/starrail/assets/icon/character/1405.webp"
+  },
+  "201406": {
+    "id": "201406",
+    "name": "Cipher",
+    "icon": "/starrail/assets/icon/character/1406.webp"
+  },
+  "201407": {
+    "id": "201407",
+    "name": "Castorice",
+    "icon": "/starrail/assets/icon/character/1407.webp"
+  },
+  "201408": {
+    "id": "201408",
+    "name": "Phainon",
+    "icon": "/starrail/assets/icon/character/1408.webp"
+  },
+  "201409": {
+    "id": "201409",
+    "name": "Hyacine",
+    "icon": "/starrail/assets/icon/character/1409.webp"
+  },
+  "201410": {
+    "id": "201410",
+    "name": "Hysilens",
+    "icon": "/starrail/assets/icon/character/1410.webp"
+  },
+  "201412": {
+    "id": "201412",
+    "name": "Cerydra",
+    "icon": "/starrail/assets/icon/character/1412.webp"
+  },
+  "201413": {
+    "id": "201413",
+    "name": "Evernight",
+    "icon": "/starrail/assets/icon/character/1413.webp"
+  },
+  "201414": {
+    "id": "201414",
+    "name": "Dan Heng - จ้าวทระนงคงปฐพี",
+    "icon": "/starrail/assets/icon/character/1414.webp"
+  },
+  "201415": {
+    "id": "201415",
+    "name": "Cyrene",
+    "icon": "/starrail/assets/icon/character/1415.webp"
+  },
+  "201501": {
+    "id": "201501",
+    "name": "Sparxie",
+    "icon": "/starrail/assets/icon/character/1501.webp"
+  },
+  "201502": {
+    "id": "201502",
+    "name": "Yao Guang",
+    "icon": "/starrail/assets/icon/character/1502.webp"
+  },
+  "201504": {
+    "id": "201504",
+    "name": "",
+    "icon": "/starrail/assets/icon/character/1504.webp"
+  },
+  "202001": {
+    "id": "202001",
+    "name": "Wubbaboo",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202001.webp"
+  },
+  "202002": {
+    "id": "202002",
+    "name": "ถังขยะเล็ก",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202002.webp"
+  },
+  "202003": {
+    "id": "202003",
+    "name": "Junjun",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202003.webp"
+  },
+  "202004": {
+    "id": "202004",
+    "name": "Peppy",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202004.webp"
+  },
+  "202005": {
+    "id": "202005",
+    "name": "Diting",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202005.webp"
+  },
+  "202006": {
+    "id": "202006",
+    "name": "ประกาศจับ",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202006.webp"
+  },
+  "202007": {
+    "id": "202007",
+    "name": "เมนูโอชะของ Pom-Pom",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202007.webp"
+  },
+  "202008": {
+    "id": "202008",
+    "name": "\"ชีวิตของขนม\"",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202008.webp"
+  },
+  "202009": {
+    "id": "202009",
+    "name": "{NICKNAME}: รางแห่งดวงดาว",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202009.webp"
+  },
+  "202010": {
+    "id": "202010",
+    "name": "{NICKNAME}: รางแห่งดวงดาว",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202010.webp"
+  },
+  "202011": {
+    "id": "202011",
+    "name": "เจ้าหนูนาฬิกา",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202011.webp"
+  },
+  "202012": {
+    "id": "202012",
+    "name": "ลูกพี่ Hanu",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202012.webp"
+  },
+  "202013": {
+    "id": "202013",
+    "name": "นกกระดาษ",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202013.webp"
+  },
+  "202014": {
+    "id": "202014",
+    "name": "Kakavasha",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202014.webp"
+  },
+  "202015": {
+    "id": "202015",
+    "name": "อัศวินบอลแฮมสเตอร์",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202015.webp"
+  },
+  "202016": {
+    "id": "202016",
+    "name": "ฉลองครบรอบหนึ่งปี",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202016.webp"
+  },
+  "202017": {
+    "id": "202017",
+    "name": "ตุ๊กตา Sparkle",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202017.webp"
+  },
+  "202018": {
+    "id": "202018",
+    "name": "\"ไฮ มาทดสอบกัน\"",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202018.webp"
+  },
+  "202019": {
+    "id": "202019",
+    "name": "Yanqing: แดนฝัน",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202019.webp"
+  },
+  "202020": {
+    "id": "202020",
+    "name": "นาฬิกาในห้วงฝัน",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202020.webp"
+  },
+  "202021": {
+    "id": "202021",
+    "name": "Mem",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202021.webp"
+  },
+  "202022": {
+    "id": "202022",
+    "name": "ตุ๊กตา Trianne",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202022.webp"
+  },
+  "202023": {
+    "id": "202023",
+    "name": "Polyxia",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202023.webp"
+  },
+  "202024": {
+    "id": "202024",
+    "name": "อาชาแห่ง Janus",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202024.webp"
+  },
+  "202025": {
+    "id": "202025",
+    "name": "ภูตจอมโจร",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202025.webp"
+  },
+  "202028": {
+    "id": "202028",
+    "name": "Owlbert - แช่น้ำ",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202028.webp"
+  },
+  "202029": {
+    "id": "202029",
+    "name": "March 7th - เทศกาล",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_202029.webp"
+  },
+  "202030": {
+    "id": "202030",
+    "name": "แมลงทองคำ",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202030.webp"
+  },
+  "202031": {
+    "id": "202031",
+    "name": "\"มองไม่เห็นฉัน\"",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202031.webp"
+  },
+  "202033": {
+    "id": "202033",
+    "name": "ด้วยนามแห่งไม้เบสบอล",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202033.webp"
+  },
+  "202034": {
+    "id": "202034",
+    "name": "Firefly - ท่องเที่ยว",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_202034.webp"
+  },
+  "202035": {
+    "id": "202035",
+    "name": "\"ปะระรังปังบู้มมม\"",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202035.webp"
+  },
+  "202036": {
+    "id": "202036",
+    "name": "{NICKNAME} - ผู้เขียน",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202036.webp"
+  },
+  "202037": {
+    "id": "202037",
+    "name": "{NICKNAME} - ผู้เขียน",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202037.webp"
+  },
+  "202038": {
+    "id": "202038",
+    "name": "แง้วววว!",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202038.webp"
+  },
+  "202039": {
+    "id": "202039",
+    "name": "ความเร็วและเมล็ดถั่ว",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202039.webp"
+  },
+  "202040": {
+    "id": "202040",
+    "name": "\"อสูรธรณีจิ๋วจะโตแล้ว\"",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202040.webp"
+  },
+  "202041": {
+    "id": "202041",
+    "name": "ผู้ชนะในท้ายที่สุด",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202041.webp"
+  },
+  "202042": {
+    "id": "202042",
+    "name": "บนจิตรกรรมฝาผนัง",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202042.webp"
+  },
+  "202043": {
+    "id": "202043",
+    "name": "Ruan Mei - รื่นรมย์",
+    "rarity": 5,
+    "icon": "/starrail/assets/icon/character/IconHead_202043.webp"
+  },
+  "202044": {
+    "id": "202044",
+    "name": "รวมพลเมืองทวิมิติ",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202044.webp"
+  },
+  "202045": {
+    "id": "202045",
+    "name": "การ \"บุกเบิก\" กำลังท่องไป",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202045.webp"
+  },
+  "202046": {
+    "id": "202046",
+    "name": "มั่งคั่งโฮ่งโฮ่ง",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202046.webp"
+  },
+  "202048": {
+    "id": "202048",
+    "name": "ลองฟังดูหน่อย",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202048.webp"
+  },
+  "202049": {
+    "id": "202049",
+    "name": "",
+    "rarity": 4,
+    "icon": "/starrail/assets/icon/character/IconHead_202049.webp"
+  },
+  "208001": {
+    "id": "208001",
+    "name": "{NICKNAME}: ทำลายล้าง",
+    "icon": "/starrail/assets/icon/character/8001.webp"
+  },
+  "208002": {
+    "id": "208002",
+    "name": "{NICKNAME}: ทำลายล้าง",
+    "icon": "/starrail/assets/icon/character/8002.webp"
+  },
+  "208003": {
+    "id": "208003",
+    "name": "{NICKNAME}: อนุรักษ์",
+    "icon": "/starrail/assets/icon/character/8003.webp"
+  },
+  "208004": {
+    "id": "208004",
+    "name": "{NICKNAME}: อนุรักษ์",
+    "icon": "/starrail/assets/icon/character/8004.webp"
+  },
+  "208005": {
+    "id": "208005",
+    "name": "{NICKNAME} - ประสาน",
+    "icon": "/starrail/assets/icon/character/8005.webp"
+  },
+  "208006": {
+    "id": "208006",
+    "name": "{NICKNAME} - ประสาน",
+    "icon": "/starrail/assets/icon/character/8006.webp"
+  },
+  "208007": {
+    "id": "208007",
+    "name": "{NICKNAME}: ความทรงจำ",
+    "icon": "/starrail/assets/icon/character/8007.webp"
+  },
+  "208008": {
+    "id": "208008",
+    "name": "{NICKNAME}: ความทรงจำ",
+    "icon": "/starrail/assets/icon/character/8008.webp"
+  }
+}

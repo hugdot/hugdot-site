@@ -1,0 +1,590 @@
+{
+  "Dados de Redução de Dimensão": {
+    "id": "1",
+    "name": "Dados de Redução de Dimensão",
+    "desc": "",
+    "bg_desc": "Nove dados de seis lados constituem este dispositivo piramidal bizarro. Pode reduzir o número de dimensões que ocupa continuamente e existe num mundo de três dimensões como uma entidade puramente bidimensional. Ninguém sabe quem o criou ou por quê.",
+    "icon": "/starrail/assets/icon/curio/1001.webp"
+  },
+  "Trametes Caótico": {
+    "id": "2",
+    "name": "Trametes Caótico",
+    "desc": "",
+    "bg_desc": "As nuvens são geradas por um acúmulo de umidade. Elas não servem para nada e se dissipam sem qualquer aviso prévio. Contudo, quando humanos olham para nuvens com formas aleatórias, eles muitas vezes projetam sua imaginação nelas. Os Doutores do Caos não acreditam no niilismo absoluto, ou seja, tudo que parece não ter sentido certamente tem algum propósito irrefutável. O Trametes Caótico é a Curio mais comum entre eles, usada para restaurar a confiança de Autoaniquiladores desesperados para voltar a ter algum propósito na vida.",
+    "icon": "/starrail/assets/icon/curio/1002.webp"
+  },
+  "Olho Composto de Salto": {
+    "id": "3",
+    "name": "Olho Composto de Salto",
+    "desc": "",
+    "bg_desc": "Existem dois tipos de Inominados: um deles gosta do mistério do desconhecido, enquanto o outro tende a explorar o universo com um plano definido. O segundo grupo criou os Olhos Compostos de Salto com o poder de Akivili. A luz nesses dispositivos é capaz de dar um salto para as estrelas diante do usuário e voltar com notícias de novos mundos. Para os Inominados que viajam sozinhos, os Olhos Compostos de Salto são ferramentas imprescindíveis, impedindo que eles caiam de cabeça em mundos repletos de queijo âmbar-gris.",
+    "icon": "/starrail/assets/icon/curio/1003.webp"
+  },
+  "Fruta da Árvore Alienígena": {
+    "id": "4",
+    "name": "Fruta da Árvore Alienígena",
+    "desc": "",
+    "bg_desc": "Esta fruta em forma de coração nasceu em uma árvore abençoada por Yaoshi que supostamente brotou há 50 Eras de Âmbar. Não se sabe se a fruta confere imortalidade para quem a come, mas a árvore sem dúvida é uma criatura imortal.",
+    "icon": "/starrail/assets/icon/curio/1004.webp"
+  },
+  "Caixa de Imprecisão": {
+    "id": "5",
+    "name": "Caixa de Imprecisão",
+    "desc": "",
+    "bg_desc": "Esta caixa pode ser aberta por qualquer lado, mas os espaços que deveriam se sobrepor não se sobrepõem. Devido a essa característica singular, ninguém sabe ao certo o que acontece quando a caixa é aberta. Sendo assim, não se recomenda guardar nada dentro dela.",
+    "icon": "/starrail/assets/icon/curio/1005.webp"
+  },
+  "Queijo Âmbar-Gris": {
+    "id": "6",
+    "name": "Queijo Âmbar-Gris",
+    "desc": "",
+    "bg_desc": "Era uma vez um robô-assistente que transformou Âmbar-Gris da Abundância em queijo para satisfazer o apetite aparentemente sem fim de seu mestre. Mas, inesperadamente, o Queijo Âmbar-Gris começou a se multiplicar sozinho. O robô e seu mestre tentaram consumi-lo a toda velocidade, mas sua digestão não conseguia acompanhar a rapidez com que o queijo se multiplicava. Assim, os dois tiveram que pedir socorro a um grupo de Atores Enlutados que estavam passando e fugiram de gôndola para outro mundo. Aquele mundo do cosmos continua abarrotado de queijo delicioso até hoje, tão apertado que não sobrou sequer um centímetro de espaço. Moral da história: não desperdice comida.",
+    "icon": "/starrail/assets/icon/curio/1006.webp"
+  },
+  "Cola da Sorte": {
+    "id": "7",
+    "name": "Cola da Sorte",
+    "desc": "",
+    "bg_desc": "Será que sorte é uma habilidade? Talvez. Será que é possível mudar sua sorte? Herta acredita que sim. Ela foi a mente brilhante que inventou a \"Cola da Sorte\". Basta aplicar nas suas pálpebras para ter 24 horas do sistema de boa sorte. Muitas pessoas na Estação Espacial Herta ficaram empolgadas para testar a invenção, e todas elas tiveram um dia monótono. Isso só mostra como elas são sortudas de poder ter uma vida ordinária neste mundo tão turbulento.",
+    "icon": "/starrail/assets/icon/curio/1007.webp"
+  },
+  "O Pergaminho Comilão": {
+    "id": "8",
+    "name": "O Pergaminho Comilão",
+    "desc": "",
+    "bg_desc": "Na lista de Curios da Herta, o nível de perigo deste pergaminho aparece como extremamente alto. Ele pertencia a um Ficciologista da História antes de ir parar na Estação Espacial. O pergaminho se alimenta da história da humanidade, sua língua gananciosa mastigando o subconsciente coletivo da civilização em pedacinhos. Herta fabricou memórias falsas do mundo para que ele devorasse, a fim de saciar sua gula interminável, mas um dia o pergaminho descobrirá os truques da gênio.",
+    "icon": "/starrail/assets/icon/curio/1008.webp"
+  },
+  "Relógio Cuco Quebrado": {
+    "id": "9",
+    "name": "Relógio Cuco Quebrado",
+    "desc": "",
+    "bg_desc": "Certa vez, uma mestra artesã de relógios conheceu Terminus. O relógio cuco em suas mãos caiu no chão com o choque, ficando estilhaçado e quebrado no passado da divindade. Depois disso, a mestra artesã se juntou à Vanguarda do Presságio, tentando usar relógios cucos para interpretar a profecia de Terminus. Embora tenha construído inúmeros relógios na vida, ela sempre deu um valor especial a este relógio cuco quebrado. Ela já havia conhecido Terminus quando ele quebrou. Terminus ainda não a havia conhecido quando quebrou.",
+    "icon": "/starrail/assets/icon/curio/1059.webp"
+  },
+  "Relógio Cuco Mecânico": {
+    "id": "10",
+    "name": "Relógio Cuco Mecânico",
+    "desc": "",
+    "bg_desc": "Após a Segunda Rebelião de Rubert, a CPI planejou um extermínio brutal de todas as formas de vida mecânica no Cosmos. Felizmente, antes que o plano fosse levado adiante, eles souberam que Screwllum havia sido escolhido por Nous para se juntar à Sociedade de Gênios como membro #76. A CPI então construiu este relógio cuco mecânico para dar de presente como um agrado para o novo gênio. Hoje em dia, ele pode parecer um tanto ordinário, mas na época em que seres mecânicos estavam sendo perseguidos, o relógio cuco mecânico foi um verdadeiro símbolo de paz.",
+    "icon": "/starrail/assets/icon/curio/1010.webp"
+  },
+  "O Jaleco do Doutor": {
+    "id": "11",
+    "name": "O Jaleco do Doutor",
+    "desc": "",
+    "bg_desc": "Certo dia, um item incrivelmente valioso surgiu na rede do Dispositivo IX, chamando a atenção de inúmeros compradores. Segundo relatos, este jaleco pertenceu ao Dr. Primitivo, membro #64 da Sociedade de Gênios, e supostamente tinha poderes incríveis. O vendedor era anônimo, mas as pessoas acreditavam se tratar de um membro dos Vigias da Galáxia e não cansaram de mandar perguntas a ele. Infelizmente, o dono misterioso do jaleco não respondeu a nenhuma delas mesmo depois que o item foi vendido.",
+    "icon": "/starrail/assets/icon/curio/1011.webp"
+  },
+  "Ingresso da Sociedade": {
+    "id": "12",
+    "name": "Ingresso da Sociedade",
+    "desc": "",
+    "bg_desc": "O membro #56 da Sociedade de Gênios, Elias Salas, tinha um sonho. Ele queria que os gênios da Sociedade pudessem se reunir e conversar sobre suas vidas, seus amores e suas ambições. Com isso em mente, ele inventou os \"Ingressos da Sociedade\", planejando um sistema complexo para que todos os membros novos da Sociedade recebessem um ingresso mesmo após sua morte. Este ingresso teletransportaria o usuário instantaneamente para uma dimensão específica de festividades. A verdade é que todos os membros que vieram depois do #56 de fato usaram seus Ingressos da Sociedade, mas nenhum deles usou ao mesmo tempo que outra pessoa.",
+    "icon": "/starrail/assets/icon/curio/1012.webp"
+  },
+  "Título de Fé": {
+    "id": "13",
+    "name": "Título de Fé",
+    "desc": "",
+    "bg_desc": "Os membros da equipe da Corporação da Paz Interastral que são promovidos ao nível P40 ganham o direito de comprar Títulos de Fé. Estes títulos indicam a afirmação de Louis Fleming a funcionários individuais e vêm com um voto sagrado: o funcionário agora tem um lugar na conquista destinada da Preservação da Majestade Âmbar. As habilidades e riquezas da pessoa não são nada, e sua fé é como uma única partícula de poeira num vasto mar estrelado. No entanto, gerações da humanidade se unirão e, por fim, obterão o poder para proteger todo o universo.",
+    "icon": "/starrail/assets/icon/curio/1013.webp"
+  },
+  "Manto da Beleza": {
+    "id": "14",
+    "name": "Manto da Beleza",
+    "desc": "",
+    "bg_desc": "O universo inteiro se curvou perante a graça dos Cavaleiros da Beleza quando eles ainda atravessavam o céu. Estes nobres cavaleiros que buscavam a beleza vestiam armaduras resplandecentes de ouro e prata, além de robes magníficos tecidos de seda e luz estelar. Sob os capacetes, tinham rostos de uma beleza divina. Até mesmo na era atual, na qual A Beleza já se foi, aqueles que já presenciaram a magnitude dos cavaleiros acreditam que Idrila voltará um dia.",
+    "icon": "/starrail/assets/icon/curio/1014.webp"
+  },
+  "Moeda de Ouro da Discórdia": {
+    "id": "15",
+    "name": "Moeda de Ouro da Discórdia",
+    "desc": "",
+    "bg_desc": "Nem todos os planetas receberam de braços abertos a expansão do império comercial da Corporação da Paz Interastral. Embora o mapa cósmico continuasse se expandindo, sempre havia raras exceções que recusavam a ajuda da CPI. \"Agradecemos, mas não precisamos de créditos. Podemos nos cuidar sozinhos.\" Geralmente, ao ouvir estas palavras, os representantes da CPI davam de ombros e casualmente destruíam a raiz do sistema comercial do planeta, normalmente baseado em ouro.",
+    "icon": "/starrail/assets/icon/curio/1015.webp"
+  },
+  "Máquina de Escrever Inútil": {
+    "id": "16",
+    "name": "Máquina de Escrever Inútil",
+    "desc": "",
+    "bg_desc": "Esta máquina de escrever foi confiscada de um Enigmático exilado pela CPI. Ela tem 27 teclas e pode produzir todos os idiomas não decifrados do universo com suas combinações. Agora, olhe ao redor e veja se há palavras divagando, sem sentido, partidas e caóticas! Talvez sejam criações desta máquina de escrever.",
+    "icon": "/starrail/assets/icon/curio/1016.webp"
+  },
+  "Aparador de Pavio de Vela da Inexistência": {
+    "id": "17",
+    "name": "Aparador de Pavio de Vela da Inexistência",
+    "desc": "",
+    "bg_desc": "Poucos usariam este aparador de pavio de vela em velas de verdade. Geralmente, ele é utilizado para um propósito mais cruel, sombrio e doloroso. Este aparador não corta nada material, mas sim o calor no coração de organismos vivos, a motivação que chamamos de \"paixão\". Se o Aparador de Pavio de Vela da Inexistência for usado em seu coração, você não sentirá dor, apenas apatia.",
+    "icon": "/starrail/assets/icon/curio/1017.webp"
+  },
+  "Cápsula Onisciente": {
+    "id": "18",
+    "name": "Cápsula Onisciente",
+    "desc": "",
+    "bg_desc": "Há um grupo da Guilda de Intelectuais que acredita que a ciência era originalmente a mesma coisa que a mágica, e que a ciência avançada é mágica e mágica rigorosa é ciência. Eles se inspiraram em antigas mitologias fantásticas e criaram a Cápsula Onisciente, um dispositivo leve de armazenamento. O plano da Guilda de Intelectuais era que a Cápsula Onisciente um dia ligasse a semiplanos independentes, obtendo assim espaço infinito além das tecnologias avançadas de compressão espacial atualmente em uso... E eles ainda estão tentando.",
+    "icon": "/starrail/assets/icon/curio/1030.webp"
+  },
+  "Gravação de Além do Céu": {
+    "id": "19",
+    "name": "Gravação de Além do Céu",
+    "desc": "",
+    "bg_desc": "O Coro Além do Céu perdeu sua fé quando Xipe absorveu Ena, a Ordem. Os acordes solenes foram silenciados e as estrelas ficaram mudas. Apenas algumas gravações, feitas pelo público devoto do Coro, ainda restam. Quando essas gravações são tocadas em fonógrafos específicos, é possível escutar canções do fim do universo, sons que contêm a beleza da Ordem. O último Fonógrafo da Ordem foi destruído na Guerra do Imperador, e agora a espessa camada de poeira nas gravações é um protesto ao tempo silencioso.",
+    "icon": "/starrail/assets/icon/curio/1031.webp"
+  },
+  "Dados Entrópicos": {
+    "id": "20",
+    "name": "Dados Entrópicos",
+    "desc": "",
+    "bg_desc": "Dados Entrópicos são comuns no universo e causam incontáveis perturbações minúsculas, mas malévolas. Para usar um desses, você o segura firme e pensa em qualquer frase com significado. Então, jogue o dado e pense na comida que você mais deseja comer. Dependendo do número que sair, você pode receber riqueza inesperada ou vivenciar um amor maravilhoso. Infelizmente, as possibilidades também incluem doença, azar, maldições e chuva infinita. Apesar disso, muitas pessoas ainda adoram brincar com estes dados, e declaram felizes que eles são apenas uma piada criada pelos Tolos Mascarados.",
+    "icon": "/starrail/assets/icon/curio/1034.webp"
+  },
+  "Dado de Trapezoedro Brilhante": {
+    "id": "21",
+    "name": "Dado de Trapezoedro Brilhante",
+    "desc": "",
+    "bg_desc": "Este dado tem lados irregulares e uma luz maravilhosa que rodopia incontida dentro dele. Dizem que ele é o selo de um terrível e indescritível deus maligno, e que se deve evitar contato com ele em ambientes escuros a todo custo. Algumas pessoas não acreditaram nessa lenda e insistiram em brincar com o dado em um quarto escuro, apenas para descobrirem que a luz dentro do dado não pode ser bloqueada. Foi assim que surgiu o Paradoxo do Dado de Trapezoedro Brilhante: não se pode provar algo que não pode ser provado.",
+    "icon": "/starrail/assets/icon/curio/1035.webp"
+  },
+  "Cera Seladora da Preservação": {
+    "id": "22",
+    "name": "Cera Seladora da Preservação",
+    "desc": "",
+    "bg_desc": "Existe um ditado entre os Autoaniquiladores desanimados que diz que o universo não tem propósito e que os humanos não são nada aos olhos dos Aeons. Se os Aeons realmente são superiores a todas as formas de vida e reinam supremos, então por que eles se importariam com as preocupações diárias dos mortais? A existência de IX, sem forma e em sono profundo, é a prova disso. Para mostrar aos Autoaniquiladores que os Aeons realmente se importam, os Doutores do Caos combinaram os ofícios do deus demônio dos monges do oculto para criar a Cera Seladora dos Aeons. Dizem que selar com esta Cera Seladora atrairá um vislumbre do Aeon correspondente além do espaço e do tempo. Ainda não existem exemplos bem-sucedidos, mas alguns Autoaniquiladores recobraram sua fé no universo, nos Aeons e em todo o resto após selar com esta cera seladora.",
+    "icon": "/starrail/assets/icon/curio/1020.webp"
+  },
+  "Cera Seladora da Euforia": {
+    "id": "23",
+    "name": "Cera Seladora da Euforia",
+    "desc": "",
+    "bg_desc": "Existe um ditado entre os Autoaniquiladores desanimados que diz que o universo não tem propósito e que os humanos não são nada aos olhos dos Aeons. Se os Aeons realmente são superiores a todas as formas de vida e reinam supremos, então por que eles se importariam com as preocupações diárias dos mortais? A existência de IX, sem forma e em sono profundo, é a prova disso. Para mostrar aos Autoaniquiladores que os Aeons realmente se importam, os Doutores do Caos combinaram os ofícios do deus demônio dos monges do oculto para criar a Cera Seladora dos Aeons. Dizem que selar com esta Cera Seladora atrairá um vislumbre do Aeon correspondente além do espaço e do tempo. Ainda não existem exemplos bem-sucedidos, mas alguns Autoaniquiladores recobraram sua fé no universo, nos Aeons e em todo o resto após selar com esta cera seladora.",
+    "icon": "/starrail/assets/icon/curio/1021.webp"
+  },
+  "Cera Seladora da Caça": {
+    "id": "24",
+    "name": "Cera Seladora da Caça",
+    "desc": "",
+    "bg_desc": "Existe um ditado entre os Autoaniquiladores desanimados que diz que o universo não tem propósito e que os humanos não são nada aos olhos dos Aeons. Se os Aeons realmente são superiores a todas as formas de vida e reinam supremos, então por que eles se importariam com as preocupações diárias dos mortais? A existência de IX, sem forma e em sono profundo, é a prova disso. Para mostrar aos Autoaniquiladores que os Aeons realmente se importam, os Doutores do Caos combinaram os ofícios do deus demônio dos monges do oculto para criar a Cera Seladora dos Aeons. Dizem que selar com esta Cera Seladora atrairá um vislumbre do Aeon correspondente além do espaço e do tempo. Ainda não existem exemplos bem-sucedidos, mas alguns Autoaniquiladores recobraram sua fé no universo, nos Aeons e em todo o resto após selar com esta cera seladora.",
+    "icon": "/starrail/assets/icon/curio/1022.webp"
+  },
+  "Cera Seladora da Destruição": {
+    "id": "25",
+    "name": "Cera Seladora da Destruição",
+    "desc": "",
+    "bg_desc": "Existe um ditado entre os Autoaniquiladores que o universo não tem propósito algum, e que os humanos não são nada aos olhos de Aeons. Se Aeons realmente estão acima de todas as formas de vida e governam, soberanos, então por que eles se importariam com as preocupações mundanas dos mortais? A existência de IX, sem forma e em um sono profundo, será a prova disso. Para mostrar aos Autoaniquiladores que Aeons não se importam, os Doutores do Caos usaram os ofícios do deus demoníaco dos monges ocultistas para criar a Cera Seladora. Dizem que usar esta cera atrai o olhar de Aeons correspondentes através do espaço e tempo. Não há nenhum exemplo comprovando isso, mas alguns Autoaniquiladores recuperaram sua fé no universo, Aeons e todo o resto depois de usá-la.",
+    "icon": "/starrail/assets/icon/curio/1023.webp"
+  },
+  "Cera Seladora da Recordação": {
+    "id": "26",
+    "name": "Cera Seladora da Recordação",
+    "desc": "",
+    "bg_desc": "Existe um ditado entre os Autoaniquiladores que o universo não tem propósito algum, e que os humanos não são nada aos olhos de Aeons. Se Aeons realmente estão acima de todas as formas de vida e governam, soberanos, então por que eles se importariam com as preocupações mundanas dos mortais? A existência de IX, sem forma e em um sono profundo, será a prova disso. Para mostrar aos Autoaniquiladores que Aeons não se importam, os Doutores do Caos usaram os ofícios do deus demoníaco dos monges ocultistas para criar a Cera Seladora. Dizem que usar esta cera atrai o olhar de Aeons correspondentes através do espaço e tempo. Não há nenhum exemplo comprovando isso, mas alguns Autoaniquiladores recuperaram sua fé no universo, Aeons e todo o resto depois de usá-la.",
+    "icon": "/starrail/assets/icon/curio/1024.webp"
+  },
+  "Cera Seladora da Inexistência": {
+    "id": "27",
+    "name": "Cera Seladora da Inexistência",
+    "desc": "",
+    "bg_desc": "Existe um ditado entre os Autoaniquiladores que o universo não tem propósito algum, e que os humanos não são nada aos olhos de Aeons. Se Aeons realmente estão acima de todas as formas de vida e governam, soberanos, então por que eles se importariam com as preocupações mundanas dos mortais? A existência de IX, sem forma e em um sono profundo, será a prova disso. Para mostrar aos Autoaniquiladores que Aeons não se importam, os Doutores do Caos usaram os ofícios do deus demoníaco dos monges ocultistas para criar a Cera Seladora. Dizem que usar esta cera atrai o olhar de Aeons correspondentes através do espaço e tempo. Não há nenhum exemplo comprovando isso, mas alguns Autoaniquiladores recuperaram sua fé no universo, Aeons e todo o resto depois de usá-la.",
+    "icon": "/starrail/assets/icon/curio/1047.webp"
+  },
+  "Cera Seladora da Abundância": {
+    "id": "28",
+    "name": "Cera Seladora da Abundância",
+    "desc": "",
+    "bg_desc": "Existe um ditado entre os Autoaniquiladores que o universo não tem propósito algum, e que os humanos não são nada aos olhos de Aeons. Se Aeons realmente estão acima de todas as formas de vida e governam, soberanos, então por que eles se importariam com as preocupações mundanas dos mortais? A existência de IX, sem forma e em um sono profundo, será a prova disso. Para mostrar aos Autoaniquiladores que Aeons não se importam, os Doutores do Caos usaram os ofícios do deus demoníaco dos monges ocultistas para criar a Cera Seladora. Dizem que usar esta cera atrai o olhar de Aeons correspondentes através do espaço e tempo. Não há nenhum exemplo comprovando isso, mas alguns Autoaniquiladores recuperaram sua fé no universo, Aeons e todo o resto depois de usá-la.",
+    "icon": "/starrail/assets/icon/curio/1025.webp"
+  },
+  "Código Corrompido": {
+    "id": "45",
+    "name": "Código Corrompido",
+    "desc": "",
+    "bg_desc": "Há quebras de linha aleatória, sem recuo, e até os nomes das variáveis e das funções estão em abreviações incompreensíveis... É tão feio que você não consegue revisá-lo a olho nu.\n\"Mas e se funcionar?\"",
+    "icon": "/starrail/assets/icon/curio/420001.webp"
+  },
+  "Código Estranho": {
+    "id": "47",
+    "name": "Código Estranho",
+    "desc": "",
+    "bg_desc": "Seus instintos dizem que o código pode funcionar, mas também dizem que seus instintos podem estar errados.\n\"Isso parece um loop infinito, mas nós ainda podemos tentar executá-lo...\"",
+    "icon": "/starrail/assets/icon/curio/420002.webp"
+  },
+  "Código Normal": {
+    "id": "49",
+    "name": "Código Normal",
+    "desc": "",
+    "bg_desc": "Este código pode se safar com a lógica, mas só consegue isso às custas de complexidade de tempo e espaço.\n\"Tudo bem. Os usuários não sabem mesmo a diferença... Se alguém reclamar de atraso, é só falar para atualizarem a RAM.\"",
+    "icon": "/starrail/assets/icon/curio/420003.webp"
+  },
+  "Código Elegante": {
+    "id": "51",
+    "name": "Código Elegante",
+    "desc": "",
+    "bg_desc": "Você ficaria feliz só de ler esse código, mas levá-lo consigo ainda traz consequências terríveis.\n\"Nenhum caractere a mais... É uma obra de arte.\"",
+    "icon": "/starrail/assets/icon/curio/420004.webp"
+  },
+  "Código Misterioso": {
+    "id": "53",
+    "name": "Código Misterioso",
+    "desc": "",
+    "bg_desc": "É arriscado executá-lo, mas escrevê-lo foi um grande pecado.\n\"Quem escreveu isto? Cabe uma acusação de ataque deliberado?!\"",
+    "icon": "/starrail/assets/icon/curio/420005.webp"
+  },
+  "Código Infinitamente Recorrente": {
+    "id": "55",
+    "name": "Código Infinitamente Recorrente",
+    "desc": "",
+    "bg_desc": "Você tem quase certeza que executar isto causará uma sobrecarga, consumindo toda a memória disponível.\nPor outro lado, te concederá muitos Fragmentos Cósmicos. Então, por que não?\n\"Meu poderoso Duque Mecânico, não entendo por que você tolera esses códigos hediondos em nosso projeto impecável!\"\n\"Condição: perfeição é o oposto de erros. Pergunta: o universo real é perfeito? Resposta: negativo. Conclusão: o Universo Simulado não deve ser perfeito. Deve existir espaço para erros.\"",
+    "icon": "/starrail/assets/icon/curio/420006.webp"
+  },
+  "Isca de Estrela Despedaçada": {
+    "id": "57",
+    "name": "Isca de Estrela Despedaçada",
+    "desc": "",
+    "bg_desc": "Antes das Guerras do Crepúsculo, os fragmentos explodidos originados da expansão de nébulas desordenadas podiam ser usados como iscas, e seu aroma único de poeira cósmica podia atrair Leviatãs a procura de alimento. No entanto, a \"Isca de Estrela Despedaçada\" parece ter perdido sua eficácia original após o catastrófico desastre. Por mais que eruditos pesquisassem e modificassem a isca, ninguém voltou a vislumbrar a forma dos Leviatãs.",
+    "icon": "/starrail/assets/icon/curio/1029.webp"
+  },
+  "Pavio de Vela da Obliteração": {
+    "id": "58",
+    "name": "Pavio de Vela da Obliteração",
+    "desc": "",
+    "bg_desc": "Se esse aparador de pavio de vela for usado para aparar um pavio, as chamas antimatéria raivosas acenderão a vela, e todo o castiçal será obliterado em segundos devido às intensas colisões de partículas. Se o aparador cortar levemente a pele, reações exotérmicas serão acionadas imediatamente. Qualquer parte do corpo tocada pelo aparador irá se transformar instantaneamente em antiprótons, reverberar por todo o corpo e depois se dispersar.",
+    "icon": "/starrail/assets/icon/curio/1046.webp"
+  },
+  "Teia de Inseto": {
+    "id": "59",
+    "name": "Teia de Inseto",
+    "desc": "",
+    "bg_desc": "Os Arqueólogos Armados já denunciaram diversas vezes os perigos que encontraram na natureza. Eles descobriram um rastro interminável de teias de inseto dentro de um ninho, com peles de minhocas em decomposição, dezenas de milhares de bolsas de ovos e várias secreções grudadas nelas. Quem tocar nestas teias tem um grande risco de ser infectado por uma larva parasita. Uma vez, um Arqueólogo Armado contaminado pelo parasita cortou uma larva da pele debaixo do próprio braço com uma faca para fornecer dados para a Guilda de Intelectuais, com fins de pesquisa. O mundo acadêmico valorizou muito esta ação, fez muitas pesquisas a respeito e chegou à conclusão de que estas criaturas devem ser descendentes de Tayzzyronth, Monarca Insectorum.",
+    "icon": "/starrail/assets/icon/curio/1019.webp"
+  },
+  "Dispensador de Promissórias Angelical": {
+    "id": "60",
+    "name": "Dispensador de Promissórias Angelical",
+    "desc": "",
+    "bg_desc": "Um dispensador de dívidas distribuído pelo Departamento de Consolidação de Negócios da Corporação da Paz Interastral. Quando a concha externa é aberta, ela se condensará em um contador com forma de anjo por meio da projeção de ondas de partículas de elétrons. A CPI produziu simultaneamente muitos tipos de dispensadores, incluindo uns que podem ser usados no pulso e outros em forma de travesseiros de abraço que ajudam no sono. Para usá-lo, o cliente precisa periodicamente inserir moedas de ouro para retornos muitas vezes maiores que o capital investido ao fim do ciclo da dívida. Em essência, trata-se de um produto de investimento.",
+    "icon": "/starrail/assets/icon/curio/1044.webp"
+  },
+  "Coroa de Louros de Mudanças Planares": {
+    "id": "61",
+    "name": "Coroa de Louros de Mudanças Planares",
+    "desc": "",
+    "bg_desc": "Depois que as mentes mais inteligentes de cada sistema estelar são reconhecidas pela Guilda de Intelectuais, elas estão aptas a receber a Coroa de Louros de Mudanças Planares na Cerimônia de Senciência Imperial. As folhas da coroa de louros são feitas de folhas de mésons deterioradas, e a coroa em si foi tecida no formato de galhos usando feixes quânticos. Depois que os laureados a colocam, eles se sentem como se existissem noutro plano do universo.",
+    "icon": "/starrail/assets/icon/curio/1032.webp"
+  },
+  "Prisma de Espaço-Tempo": {
+    "id": "62",
+    "name": "Prisma de Espaço-Tempo",
+    "desc": "",
+    "bg_desc": "Um prisma multifacetado em forma de queijo. Cada orifício é uma superfície individual, e suas reflexões produzem efeitos diferentes. Algumas cobaias têm seus corpos fisicamente aumentados ou reduzidos após serem refletidos no prisma, enquanto outras não sofrem alterações corporais, mas recebem lembranças de outras pessoas. Elas acabam diagnosticadas com memomitia e passam a afirmar que viram a face enigmática do Aeon Fuli no prisma.",
+    "icon": "/starrail/assets/icon/curio/1028.webp"
+  },
+  "Grande Loteria Cósmica": {
+    "id": "63",
+    "name": "Grande Loteria Cósmica",
+    "desc": "",
+    "bg_desc": "As táticas de marketing da Grande Loteria Cósmica, vendida pelo Departamento de Desenvolvimento de Marketing da Corporação da Paz Interastral, são tão apaixonadas e esquentadas quanto o próprio Oswaldo Schneider. Basta uma moeda cósmica para apostar em sua sorte e se tornar um comerciante na experiência de produzir sonhos, onde todos têm chance de se tornar um magnata cósmico e se juntar à estrutura de negócios. Influenciados pela estratégia de marketing de Oswaldo Schneider, poucos novos mundos conseguem resistir a tais tentações. Eles se juntam ansiosos à estrutura de negócios universal da Corporação da Paz Interastral para ganhar um ingresso que equivale ao direito de operar a Grande Loteria Cósmica em seus próprios reinos.",
+    "icon": "/starrail/assets/icon/curio/1026.webp"
+  },
+  "Relógio Cuco de Divinação": {
+    "id": "65",
+    "name": "Relógio Cuco de Divinação",
+    "desc": "",
+    "bg_desc": "Todos os dias ao amanhecer, esse relógio cuco irá cuspir um pedaço de papel com poesia. Todas as frases nos poemas serão compostas por jargões de sistemas matemáticos antigos. Alguns acreditam que esses poemas são proféticos e afirmam estar perto de decifrá-los, mas o relógio de repente desaparece. A possibilidade de prever o futuro já não tem preço, e todos esperam que o relógio volte a circular no mercado. Se isso acontecer, todas as riquezas do universo iriam em direção ao relógio. Mas há também quem pense se tratar apenas de um relógio cuco artístico, projetado para ser bom na escrita de poemas.",
+    "icon": "/starrail/assets/icon/curio/1040.webp"
+  },
+  "Relógio Cuco da Floresta Negra": {
+    "id": "66",
+    "name": "Relógio Cuco da Floresta Negra",
+    "desc": "",
+    "bg_desc": "Ao fim da Segunda Crise Maquinaria, muitos robôs ficaram ansiosos e sensíveis a possíveis conflitos. Um rumor de que as formas de vida mecânicas trariam o desastre final prontamente chamou a atenção de todos os robôs, e eles formaram uma equipe de expedição para vasculhar terras inexploradas três vezes. Eles alcançaram a ilha no extremo sul do território e arrastaram o criador do rumor de uma floresta envolvida em total escuridão, um mestre artesão que se escondeu nas montanhas para estudar tecnologia maligna.",
+    "icon": "/starrail/assets/icon/curio/1038.webp"
+  },
+  "Relógio Cuco de Movimento Perpétuo": {
+    "id": "67",
+    "name": "Relógio Cuco de Movimento Perpétuo",
+    "desc": "",
+    "bg_desc": "Depois que Screwllum, membro #76 da Sociedade de Gênios, conquistou uma difícil paz para as formas de vida mecânicas, o Planeta Screwllum deu boas-vindas a uma Segunda Revolução Industrial. Incontáveis inventores criaram máquinas de maldição, calculadoras de probabilidade e guardas doces, e também pesquisaram com paixão assuntos relacionados aos Sete Grandes Mistérios. \"Movimento Perpétuo\", o segundo assunto do ranking, era adorado por todas as formas de vida mecânicas. Um grande inventor classificado na décima nona posição no Planeta Screwllum presenteou seu próprio Relógio Cuco de Movimento Perpétuo ao fim da vida. Essa bela obra usava a Energia Espiral de Archimeles para se manter para sempre em movimento, mas o grande inventor pôs fim à própria vida, aparentemente sem qualquer motivo, após receber honrarias supremas por sua criação.",
+    "icon": "/starrail/assets/icon/curio/1041.webp"
+  },
+  "Mentalidade de Punklorde": {
+    "id": "68",
+    "name": "Mentalidade de Punklorde",
+    "desc": "",
+    "bg_desc": "A vida não passa de um jogo. Esta frase não é brincadeira para hackers do cibermundo Punklorde. Eles esquadrinham a internet e usam uma tecnologia conhecida como Edição de Éter para alterar a realidade, transformando a vida num grande jogo. Ocasionalmente, os melhores entre eles voam para longe do planeta e usam o vasto cosmos como um segundo estágio para além da área do tutorial. Esta fita cassete registra a história de um hacker lendário. A vida dele começou nos reservatórios de água subterrâneos de Punklorde e acabou na companhia dos Vigias da Galáxia. Disseram que o funeral foi tranquilo, que havia só uma fita de jogo jazendo em silêncio sobre o caixão e servindo como nota de rodapé de \"Zerou o Jogo\" nos ritos finais do hacker.",
+    "icon": "/starrail/assets/icon/curio/1048.webp"
+  },
+  "Pasta de Coloração de Sinalizador": {
+    "id": "69",
+    "name": "Pasta de Coloração de Sinalizador",
+    "desc": "",
+    "bg_desc": "As cores brilhantes e estimulantes da Pasta de Coloração de Sinalizador permitem que a Equipe de Resgate Galáctico encontre facilmente sinais escritos com ela. A pasta foi inventada por um Inominado que tinha grandes habilidades artísticas. Esse Inominado sofreu certa vez um acidente de voo e ficou preso em um sistema estelar desolado. No fim, usando restos de um fragmento de uma Estrela Anã Branca, ele conseguiu produzir o item mais magnífico da história da busca e resgate, a Pasta de Coloração de Sinalizador.",
+    "icon": "/starrail/assets/icon/curio/1036.webp"
+  },
+  "Relógio Cuco da CPI": {
+    "id": "70",
+    "name": "Relógio Cuco da CPI",
+    "desc": "",
+    "bg_desc": "O primeiro Protótipo do Relógio Cuco da CPI representa o início da Operação Relógio Cuco. Muitos gostariam de saber por que a Operação Relógio Cuco surgiu. Louis Fleming declarou que a adoração de Qlipoth, Aeon de Preservação, significa que a CPI precisa proteger a presença que conquistou a duras penas. Em seu discurso, ele afirmou que, apesar de controlar as finanças do universo, a Corporação da Paz Interastral ainda precisa permanecer vigilante contra a catástrofe da Finalidade. É por isso que ele defendeu a criação da série de relógios cuco, para reunir informações sobre esse Aeon, e assim remover meticulosamente qualquer possibilidade da CPI falir ou ser desmantelada em sua futura jornada cósmica.",
+    "icon": "/starrail/assets/icon/curio/1039.webp"
+  },
+  "Moeda de Prata da Discórdia": {
+    "id": "102",
+    "name": "Moeda de Prata da Discórdia",
+    "desc": "",
+    "bg_desc": "A Divisão Tecnológica da Corporação da Paz Interastral é adepta de redescobrir produtos com potencial comercial. Quando a rede de comunicação interestelar estava começando a ser estabelecida, e a oferta de antenas estava abaixo da demanda, a CPI rapidamente reconheceu a necessidade latente deste item no mercado cósmico. Um plano engenhoso nascia: Visto que a maleabilidade excepcional da prata permitia que ela fosse esticada de uma grama até metros de antenas, um pesquisador criou uma Moeda de Prata da Discórdia que se dividia infinitamente, aumentando drasticamente a quantidade de prata disponível para suprir as demandas. A CPI então derreteu essas moedas para fundir antenas e exportou-as através de vários sistemas estelares, trazendo avanços enormes para as comunicações interplanetárias.",
+    "icon": "/starrail/assets/icon/curio/1045.webp"
+  },
+  "Laços da Família": {
+    "id": "104",
+    "name": "Laços da Família",
+    "desc": "",
+    "bg_desc": "Um fugitivo disse ter adquirido Laços da Família após abrir uma caixa peculiar, e inadvertidamente entrou em uma reunião da Família que venera Xipe, a Harmonia. Ele descreveu ter visto uma cena sem precedentes: os desejos de diversos corpos celestiais estavam emaranhados, enrolando-se em um único nó. Sob os Laços da Família, as pessoas arregalavam seus olhos, suas faces demonstravam sorrisos macabros de orelha a orelha, olhando uns para os outros com expressões idênticas. Quando ele expressou uma dúvida ao ver a cena, todos no grande salão simultaneamente levaram seus olhares a ele e falaram com a mesma voz: \"Bem-vindo\". O fugitivo ficou imediatamente assustado e, em desespero, implorou pela sua sobrevivência, com seus olhos também arregalados, seu rosto marcado pelo mesmo sorriso.",
+    "icon": "/starrail/assets/icon/curio/1057.webp"
+  },
+  "Armadilha de Buraco Negro": {
+    "id": "106",
+    "name": "Armadilha de Buraco Negro",
+    "desc": "",
+    "bg_desc": "Os lugares onde a curvatura do espaço-tempo é mais extrema são onde se suspeita que haja vastas sombras projetadas pelo Aeon da Inexistência. Contudo, como a SUA presença é sempre coberta de névoa e mistério, há muitos eruditos que acreditam ter recebido revelações do Aeon, fazendo com que eles deixem tudo para trás para seguir a melancolia da Inexistência, sem pensar ou se preocupar com sua própria segurança. No fim, nenhum jamais retornou. É uma crença comum entre os círculos acadêmicos convencionais que isso é uma armadilha colocada intencionalmente por poderes ocultos, mas de acordo com dados de pesquisa, realmente parece haver algum tipo de energia desconhecida flutuando por essas regiões, por razões inimagináveis.",
+    "icon": "/starrail/assets/icon/curio/1043.webp"
+  },
+  "Loteria Interastral": {
+    "id": "107",
+    "name": "Loteria Interastral",
+    "desc": "",
+    "bg_desc": "Como você faz um modelo de negócios duradouro? Após receber críticas selvagens na última Grande Loteria Cósmica, o Departamento de Consolidação de Negócios da Corporação da Paz Interastral seguiu a visão de produto de Oswaldo Schneider e colocou a Loteria Interastral no mercado, esperando que ela também lhes trouxesse sucesso. Eles até conectaram oitenta e seis cadeias de produção industriais complementares e as promoveram como uma única unidade. Contudo, apesar da \"Deusa das Loterias\", Beatrice Mellanine, que queria se desenvolver como porta-voz do produto, ter falecido de causas desconhecidas, a CPI ainda conquistou uma montanha de créditos no final!",
+    "icon": "/starrail/assets/icon/curio/1068.webp"
+  },
+  "Relógio Cuco Fissurado": {
+    "id": "108",
+    "name": "Relógio Cuco Fissurado",
+    "desc": "",
+    "bg_desc": "Após receber um sinal da Finalidade, os Relógios Cuco conectados à catástrofe apareceram subitamente na Floresta Negra, fazendo com que blockchains de entidades inorgânicas quebrassem por razões desconhecidas. Porém, um Inominado passando pela floresta começou a coletar os relógios, devido a sua paixão, e estava determinado a trazer os relógios de volta para casa com ele. Os Relógios Cuco partidos se rompiam constantemente durante a jornada e, no fim, a nave do Inominado estava cheia até seu limite. Contudo, devido a sua falta de compreensão dos sinais dados pelo fenômeno emergente resultante do rompimento constante dos Relógios Cuco dentro do tempo atribuído, o Inominado foi devorado pelo Enxame na metade da sua viagem interestelar.",
+    "icon": "/starrail/assets/icon/curio/1053.webp"
+  },
+  "Fofoca Típica da Sociedade de Gênios": {
+    "id": "110",
+    "name": "Fofoca Típica da Sociedade de Gênios",
+    "desc": "",
+    "bg_desc": "\"O EQ da Herta é muito baixo e o Screwllum precisa aprender mais sobre o senso comum dos orgânicos!\" Fãs da Sociedade de Gênios estão sempre discutindo sobre os vários gênios, e sempre se encontram em argumentações sobre coisas desimportantes como a idade real de Stephen Lloyd. Alguns acreditam que ele seja um homem de meia-idade, enquanto outros acreditam que ele é apenas uma criança. Neste caos de argumentos, os fãs registraram uma anedota interessante: Dizem que consideravam que o ser conhecido como \"Cientista Louco\" entre os membros da Sociedade de Gênios fosse um homem, mas ninguém esperava que fosse uma mulher cientista, muito menos uma de costumes tão elegantes. Assim, os fãs aprenderam com essa experiência e fizeram um novo questionamento: será que o gênero de Stephen Lloyd também é falso?",
+    "icon": "/starrail/assets/icon/curio/1063.webp"
+  },
+  "Tônico de Caos Eficiente": {
+    "id": "111",
+    "name": "Tônico de Caos Eficiente",
+    "desc": "",
+    "bg_desc": "Os Doutores do Caos não conseguem ver o motivo de demonstrações insignificantes de rebeldia. Eles já colocaram a presa de um Espírito da Inquisição, muco de Baviru e o sangue de um demônio errante em um Tônico de Caos Eficiente antes de colocá-lo em contato com a cabeça de uma aranha telepática para selar a abertura do tônico. Os Doutores do Caos acreditam que este tônico pode tratar a solidão de um paciente de forma inigualável, mas que também faz com que os pacientes se tornem cada vez mais hostis aos doutores ao final do processo. Seus efeitos colaterais podem fazer com que os Autoaniquiladores contemplem a \"Sombra da Inexistência\".",
+    "icon": "/starrail/assets/icon/curio/1056.webp"
+  },
+  "Engrenagem Mecânica do Império de Rubert": {
+    "id": "112",
+    "name": "Engrenagem Mecânica do Império de Rubert",
+    "desc": "",
+    "bg_desc": "#Rubert II professou ter herdado as memórias do Imperador Rubert, listado como número #27 da Sociedade de Gênios, e iniciou a segunda ofensiva cósmica anti-orgânica da Guerra do Imperador. Com a guerra veio uma calamidade terrível, e ao final do conflito, a CPI havia gasto uma vasta quantidade de créditos para honrar os restos mortais de #Rubert II repetidas vezes. Isso, contudo, levou a uma revelação chocante: #Rubert II era um ser de carne e osso.",
+    "icon": "/starrail/assets/icon/curio/1070.webp"
+  },
+  "Modelo do Sistema Cavidade": {
+    "id": "113",
+    "name": "Modelo do Sistema Cavidade",
+    "desc": "",
+    "bg_desc": "Herta uma vez coletou um modelo por conta de uma história distante que ela ouviu. O governo federal do Sistema Cavidade sempre se encontrou pressionado irregularmente por uma tempestade de doces infláveis invasores. Assim, seu departamento financeiro sempre foi forçado a gastar quantidades imensuráveis de créditos para lidar com os danos causados pelo solo erodido a cada ano natural. Uma vez, houve um Inominado que passou por este planeta, e ele quis descobrir os segredos do seu formato. Após vários meses de exploração, ele gritou em choque: \"O universo tem uma forma irregular, parecida com um dente!\"",
+    "icon": "/starrail/assets/icon/curio/1065.webp"
+  },
+  "Máscara de Tolo": {
+    "id": "115",
+    "name": "Máscara de Tolo",
+    "desc": "",
+    "bg_desc": "A máscara dos Tolos Mascarados é um símbolo da sua fé na Euforia, e usar a dita máscara é um bilhete de entrada eficiente para as reuniões na taverna na beira do mundo onde eles se reúnem. Essas máscaras são feitas de um material pesado, são de cores vibrantes e com um sorriso maníaco que, surpreendentemente, é feito de pinceladas intricadas, como se esperando por uma pegadinha divertida. Elas portam o certificado da devoção dos Tolos Mascarados, mas parece que elas foram todas roubadas da nave pelos Atores Enlutados.",
+    "icon": "/starrail/assets/icon/curio/1067.webp"
+  },
+  "Autômato Ilusório": {
+    "id": "118",
+    "name": "Autômato Ilusório",
+    "desc": "",
+    "bg_desc": "Dizem que os autômatos fabricados pelos Ficciologistas da História foram criados em larga escala de fabricações de alta qualidade, o que pode ser entendido como uma cortina de fumaça super eficiente e multi-colorida. Contudo, devido aos maus hábitos dos Ficciologistas da História ao lidar com suas próprias documentações históricas, os autômatos eventualmente descobriram sua própria fabricação ilusória ao ler certos textos confidenciais, e então chamaram outra questão à atenção: Poderiam os Ficciologistas da História serem, eles próprios, fabricações?",
+    "icon": "/starrail/assets/icon/curio/1064.webp"
+  },
+  "Meteorito Artificial": {
+    "id": "120",
+    "name": "Meteorito Artificial",
+    "desc": "",
+    "bg_desc": "Dentro de um século, três gênios que atraíram o olhar do Aeon da Erudição nasceram no mesmo planeta. Eles eram Bohdan, número #7, Lambda, número #8 e Klein, número #9. Portanto, esta época ficou conhecida como a \"Era de Ouro\". Dizem que uma situação digna de comédia romântica se desenvolveu entre os três, visto que, nesta época, Klein (número #9 da Sociedade de Gênios) criou um meteorito artificial para o número #7, Bohdan, e sobre a superfície do meteorito havia uma réplica do Olho da Erudição.",
+    "icon": "/starrail/assets/icon/curio/1061.webp"
+  },
+  "Toxi-Chama Thalan": {
+    "id": "121",
+    "name": "Toxi-Chama Thalan",
+    "desc": "",
+    "bg_desc": "Yu Qingtu, número #55 da Sociedade de Gênios, prefere dar nomes extravagantes aos seus coquetéis. Alguns dentre eles podem até ter nomes com significados especiais, conectados com histórias que poucos conhecem, como do Toxi-Chama Thalan, que está registrado como um dos 774 coquetéis mais tóxicos. Os registros mostram que no Sistema Aterlexiano o Toxi-Chama Thalan já foi extremamente popular entre os locais, sendo que ninguém que o provou foi capaz de descrever seu sabor após tomá-lo. Os Pepeshianos, imbuídos de um senso de olfato aguçado, usariam dos seus conhecimentos sobre a bebida em benefício próprio, trazendo versões contrabandeadas da bebida como o Misti-Chama Thalan, o Hidro-Chama Thalan e o Detoxi-Chama Thalan para o cosmos, sendo cada um deles uma versão totalmente inofensiva e não-alcoólica.",
+    "icon": "/starrail/assets/icon/curio/1062.webp"
+  },
+  "A Colisão Rosácea": {
+    "id": "122",
+    "name": "A Colisão Rosácea",
+    "desc": "",
+    "bg_desc": "Yu Qingtu, número #55 da Sociedade de Gênios, tem um ótimo gosto para música. Por conta de sua fantástica amizade com Ruan Mei, ela um dia fez uma bebida de presente para a outra, para a qual deu o nome chamativo da música ancestral da sua Era de Âmbar favorita. A bebida que Yu Qingtu criou, chamada de Colisão Rosácea, era comprovadamente não-tóxica, mas um mixologista já gastou dias tentando recriar a sua fórmula, buscando provar que a bebida seria feita das carcaças de diversos insetos, esporos de insetos, carapaças e fósforo, mas concluiu que a bebida pode possuir qualidades alucinógenas.",
+    "icon": "/starrail/assets/icon/curio/1060.webp"
+  },
+  "Cera Seladora da Propagação": {
+    "id": "123",
+    "name": "Cera Seladora da Propagação",
+    "desc": "",
+    "bg_desc": "Existe um ditado entre os Autoaniquiladores desanimados que diz que o universo não tem propósito e que os humanos não são nada aos olhos dos Aeons. Se os Aeons realmente são superiores a todas as formas de vida e reinam supremos, então por que eles se importariam com as preocupações diárias dos mortais? A existência de IX, sem forma e em sono profundo, é a prova disso. Para mostrar aos Autoaniquiladores que os Aeons realmente se importam, os Doutores do Caos combinaram os ofícios do deus demônio dos monges do oculto para criar a Cera Seladora dos Aeons. Dizem que selar com esta Cera Seladora atrairá um vislumbre do Aeon correspondente além do espaço e do tempo. Ainda não existem exemplos bem-sucedidos, mas alguns Autoaniquiladores recobraram sua fé no universo, nos Aeons e em todo o resto após selar com esta cera seladora.",
+    "icon": "/starrail/assets/icon/curio/1052.webp"
+  },
+  "Cera Seladora da Erudição": {
+    "id": "211",
+    "name": "Cera Seladora da Erudição",
+    "desc": "",
+    "bg_desc": "Existe um ditado entre os Autoaniquiladores desanimados que diz que o universo não tem propósito e que os humanos não são nada aos olhos dos Aeons. Se os Aeons realmente são superiores a todas as formas de vida e reinam supremos, então por que eles se importariam com as preocupações diárias dos mortais? A existência de IX, sem forma e em sono profundo, é a prova disso. Para mostrar aos Autoaniquiladores que os Aeons realmente se importam, os Doutores do Caos combinaram os ofícios do deus demônio dos monges do oculto para criar a Cera Seladora dos Aeons. Dizem que selar com esta Cera Seladora atrairá um vislumbre do Aeon correspondente além do espaço e do tempo. Ainda não existem exemplos bem-sucedidos, mas alguns Autoaniquiladores recobraram sua fé no universo, nos Aeons e em todo o resto após selar com esta cera seladora.",
+    "icon": "/starrail/assets/icon/curio/1082.webp"
+  },
+  "Dispositivo de Tambor Triangular": {
+    "id": "1101",
+    "name": "Dispositivo de Tambor Triangular",
+    "desc": "",
+    "bg_desc": "Na era em que Ena, a Ordem, ainda vivia, saltos extraordinários em civilizações de certos planetas eram acompanhadas de hinos de pura fortuna, parabenizando-os de longe. Essas canções de louvor lembravam bênçãos divinas e suas melodias não se limitavam a forma da oitava tradicional, com suas harmonias sempre criando novas combinações, jamais duplicadas. O Coro Além do Céu reverenciava como esta melodia variava infinitamente, e ainda assim se mantinha nos âmbitos da \"Ordem\", buscando assim criar um Dispositivo de Tambor Triangular para replicar este espectro infinito de notas.",
+    "icon": "/starrail/assets/icon/curio/1033.webp"
+  },
+  "Medalha da Era do Sangue da Glória": {
+    "id": "1105",
+    "name": "Medalha da Era do Sangue da Glória",
+    "desc": "",
+    "bg_desc": "Uma centena de Eras de Âmbar após a proliferação do sistema da Era de Âmbar e do Sinal de Sinestesia, o comércio interestelar continuou a se desenvolver e a troca de recursos se tornou uma prioridade. Alguns planetas ascenderam e se tornaram centros interestelares cheios de vida, sinalizando a vinda da Segunda Prosperidade, chamada de \"Era do Sangue Glorioso\". A Segunda Prosperidade durou por quase quinhentas Eras de Âmbar antes de entrar em um declínio gradual, mas nem a apocalíptica Guerra de Energia Interestelar poderia apagar suas conquistas incríveis. Ao mesmo tempo, Nous, a Erudição, inesperadamente terminou seus cálculos quanto aos mistérios do universo.",
+    "icon": "/starrail/assets/icon/curio/1069.webp"
+  },
+  "\"Detetive Descabelado\"": {
+    "id": "1114",
+    "name": "\"Detetive Descabelado\"",
+    "desc": "",
+    "bg_desc": "A Corporação da Paz Interastral em certo momento criou uma grande variedade de discos de programas, que agora são propriedade do Departamento do Projeto Tradicional, devido ao baixo número de vendas. De acordo com os boatos da frota de transporte dos portos dos planetas de retiro, Arita, o velho e amigável gerente do Departamento do Projeto Tradicional, estava muito interessado em um programa sobre um certo \"Detetive Descabelado\". Após re-assistir o programa consecutivamente por 63 horas do sistema, a equipe já suspeitava que talvez o talentoso detetive do programa de variedades tivesse lembrado o gerente do seu passado intenso durante sua juventude.",
+    "icon": "/starrail/assets/icon/curio/1049.webp"
+  },
+  "Satélite #900 Mecânico Maléfico": {
+    "id": "1116",
+    "name": "Satélite #900 Mecânico Maléfico",
+    "desc": "",
+    "bg_desc": "As operações econômicas da Aliança do Sistema Charon-Targin são apoiadas pelas vendas dos seus dois tipos de aparelhos que alteram pensamentos. Caso o lado de fora queira alcançar a aliança, eles devem passar por caminhos neurais de uma forma de vida Intellitron de titânio. Dizem que a Aliança do Sistema Charon-Targin é hostil a toda forma de vida orgânica, e é uma civilização anti-orgânica típica nas suas táticas inescrupulosas para exterminar seus inimigos. Dentre os seus vários instrumentos de destruição em massa, o Satélite #900 é o mais maléfico de todos. Contudo, o satélite foi finalmente descartado pelos cidadãos da Aliança Charon-Targin devido a sua aparência mecânica distinta, que não se integrava com a população que decidiu se disfarçar dentre os orgânicos.",
+    "icon": "/starrail/assets/icon/curio/1050.webp"
+  },
+  "Espírito dos Cavaleiros da Beleza": {
+    "id": "1117",
+    "name": "Espírito dos Cavaleiros da Beleza",
+    "desc": "",
+    "bg_desc": "A facção que mais gosta de lidar com os Cavaleiros da Beleza provavelmente são os Tolos Mascarados. Esses tolos gostam de se divertir explorando a fé dos cavaleiros no retorno eventual de Idrila, enquanto os cavaleiros em si se mantém como praticantes obstinados e imaculados dos caminhos da Beleza. Devido as razões listadas acima, os Atores Enlutados desenvolveram um senso de empatia pelos cavaleiros pelo espírito que eles demonstram, e eles coletaram um dente sacrificado por um Cavaleiro da Beleza em sua prática de busca pela perfeição estética, com o desejo pelo dente durando até o presente.",
+    "icon": "/starrail/assets/icon/curio/1051.webp"
+  },
+  "Uma Pitada de Pólvora Barbada": {
+    "id": "1119",
+    "name": "Uma Pitada de Pólvora Barbada",
+    "desc": "",
+    "bg_desc": "Comparadas às moedas de pedra, madeira, ouro ou metais supérnios, os mineradores nômades são mais obcecados com a escavação do Éter. Houve um período em que eles eram até mesmo embriagados pela sensação de escavar grandes quantidades de Éter usando suas próprias mãos enquanto estavam nas minas, mas estas experiências trouxeram a calamidade a eles. Vários mineradores grandes e robustos tiveram seu fim em explosões de pólvora em áreas desconhecidas, enquanto apenas um minerador pequeno e delicado foi capaz de sobreviver. Sua barba, dali em diante, sempre tremeluzindo com uma pequena chama.",
+    "icon": "/starrail/assets/icon/curio/1066.webp"
+  },
+  "Estrela dos Desejos": {
+    "id": "3201",
+    "name": "Estrela dos Desejos",
+    "desc": "",
+    "bg_desc": "Meteoritos caíram por todos os cantos do cosmos. As pessoas costumavam dizer que podiam ouvir essas pedras se comunicando com os humanos, atraindo-os a fazerem um desejo a elas. Elas realmente são capazes de conceder qualquer desejo sem custo algum? Dizem que existe uma organização que vaga pelas estrelas apenas para revelar o mistério por trás desses meteoritos. Ninguém sabe se essas pedras são uma bênção de um Aeon, ou se todos foram tragados para uma conspiração artificial.",
+    "icon": "/starrail/assets/icon/curio/1042.webp"
+  },
+  "O Preço da Paz": {
+    "id": "3202",
+    "name": "O Preço da Paz",
+    "desc": "",
+    "bg_desc": "O Grupo de Apoio à Majestade Âmbar se expandiu rapidamente nos anos após o Desastre do Enxame, se estabelecendo como a Corporação da Paz Interastral, florescendo a alturas inalcançáveis. Porém, afetada pela Guerra Comercial da Fronteira Estelar e pela Guerra do Imperador, o caminho da organização em direção à paz interastral se tornou cada vez mais árduo. Depois de mais dez Eras de Âmbar, essa guerra acabou com a queda do Império Maquinário. O universo deu finalmente as boas-vindas à \"Segunda Prosperidade\", que viria a durar por centenas de Eras de Âmbar. As pessoas acreditavam que esta era de prosperidade nunca acabaria, até o dia em que a ainda mais terrível Guerra de Energia Interestelar teve seu início.",
+    "icon": "/starrail/assets/icon/curio/1074.webp"
+  },
+  "\"Água-viva nas Escadas\"": {
+    "id": "3203",
+    "name": "\"Água-viva nas Escadas\"",
+    "desc": "",
+    "bg_desc": "Os Enigmáticos possuem um ditado: sempre que um enigma se manifesta no universo, ele deixa para trás uma \"escada\" no vazio. Então, as realidades dissolvidas escorrerão pelos degraus, se condensando em uma coisa sarapintada que se assemelha a uma água-viva. Certa vez, existiu um Inominado que alegava ter feito contato com uma \"Água-Viva nas Escadas\". Em sua loucura, ele proclamou que a água-viva ativaria as regiões de cognição dentro da massa cinzenta do cérebro das pessoas, um lugar vasto além da compreensão das mentes mortais.",
+    "icon": "/starrail/assets/icon/curio/1081.webp"
+  },
+  "Queda da Racionalidade": {
+    "id": "3204",
+    "name": "Queda da Racionalidade",
+    "desc": "",
+    "bg_desc": "O que é a verdade? Ninguém sabe realmente. Supondo que a \"estupidez\" é uma doença incurável neste mundo, então disseminar conhecimento conta como um tratamento para o universo. Mas podem os \"livros\" curar todos os seres vivos? De acordo com os registros históricos da Guilda de Intelectuais, a União dos Filósofos da Galáxia Coroa de Louros certa vez eclodiu em uma guerra civil, e sangue e óleo de máquinas mancharam todos os livros nos corredores dos contempladores. Incontáveis números de eruditos morreram, e os funcionários da CPI que testemunharam tudo isso, julgaram essa ocorrência como \"Queda da Racionalidade\". Através de meios tão absurdos, livros limparam o mundo de suas impurezas uma vez mais.",
+    "icon": "/starrail/assets/icon/curio/1080.webp"
+  },
+  "Caixa Indecifrável": {
+    "id": "3205",
+    "name": "Caixa Indecifrável",
+    "desc": "",
+    "bg_desc": "Uma caixa que pode prever os pensamentos da pessoa que a abrir. Quando a tampa da caixa é levantada, o item dentro se manifestará naquilo que sua mente visualizar. Herta uma vez a classificou como uma das Curios mais difíceis de se lidar. Ela se desentendeu com a Caixa Indecifrável inúmeras vezes, mas ela nunca foi capaz de controlar os pensamentos em sua cabeça ao abrir a caixa. Finalmente, ela a colocou de lado e nunca mais tocou nela de novo. Talvez Herta seja capaz de fazer quase qualquer coisa, exceto esvaziar sua mente completamente.",
+    "icon": "/starrail/assets/icon/curio/1037.webp"
+  },
+  "Fruta Podre da Árvore Alienígena": {
+    "id": "3206",
+    "name": "Fruta Podre da Árvore Alienígena",
+    "desc": "",
+    "bg_desc": "Os Buscadores de Elixir certa vez encontraram uma Fruta da Árvore Alienígena apodrecida. A cor da casca já estava esquisita, tendo mudado de um amarelo-claro para um azul poeirento. Para compreender a farmacologia por trás desta fruta, um par de Buscadores de Elixir gêmeos ingeriu separadamente, uma Fruta da Árvore Alienígena normal e uma versão apodrecida. Um deles acolheu a metamorfose imediatamente, enquanto o outro morreu instantaneamente. Mas como não havia mais ninguém presente, ninguém pôde confirmar qual gêmeo sobreviveu e qual fruta ele comeu.",
+    "icon": "/starrail/assets/icon/curio/1073.webp"
+  },
+  "Rei das Esponjas": {
+    "id": "3207",
+    "name": "Rei das Esponjas",
+    "desc": "",
+    "bg_desc": "Na Floresta Negra, uma esponja milagrosamente se tornou senciente. Ela tentou interagir com os também sencientes parafusos, mas acabou dando de cara na parede. Ela ponderou sobre sua dolorosa experiência e aprendeu a aparar todas as pontas em sua personalidade, permitindo-se brilhar e escalar a escada social constantemente, finalmente se tornando uma esponja macia e esperta. Agora, ela dedica seus esforços para estimular esponjas descartadas a desenvolverem suas próprias autoconsciências.",
+    "icon": "/starrail/assets/icon/curio/1072.webp"
+  },
+  "Magnetismo Misterioso": {
+    "id": "3208",
+    "name": "Magnetismo Misterioso",
+    "desc": "",
+    "bg_desc": "Para combater a determinação da Erudição, os Enigmáticos realizaram um grande trabalho em relação ao conhecimento que ainda não foi definido. Eles inseriram a Névoa do Pensamento e a Chuva da Sensação em uma única lente prismática, e suas cores combinadas se alteraram infinitamente para formar um \"campo magnético\" que pode afetar os sentidos. Regozijantes com seu sucesso, os Enigmáticos buscaram continuar com essa linha de pesquisa, mas foram forçados a parar, pois quanto mais eles se comprometiam com esse estudo, mas incertos eles ficavam da necessidade de sua continuidade.",
+    "icon": "/starrail/assets/icon/curio/1084.webp"
+  },
+  "\"Coração Orgânico\"": {
+    "id": "3209",
+    "name": "\"Coração Orgânico\"",
+    "desc": "",
+    "bg_desc": "Formas de vida mecânicas também possuem esteriótipos para as orgânicas. Por exemplo, este coração fundido com uma maçã, ou essa maçã fundida com um coração. Infelizmente, a natureza dessa questão permanecerá eternamente inconclusiva. Seu criador, o Dr. Olsen, foi acusado de ser \"muito conhecedor do mundo orgânico\" e foi \"resolvido\" pelo Império Maquinário durante a guerra. Sem dúvidas, apenas uma forma de vida orgânica teria sido capaz de provar sua inocência.",
+    "icon": "/starrail/assets/icon/curio/1077.webp"
+  },
+  "Bolsa de Ruan Mei": {
+    "id": "3210",
+    "name": "Bolsa de Ruan Mei",
+    "desc": "",
+    "bg_desc": "A Sociedade de Gênios está repleta de figuras lendárias, e, portanto, sempre existem pessoas que querem classificar as criações de cada gênio. A bolsa de Ruan Mei está na vanguarda dessas criações. Dizem que ela desejava carregar o universo em sua bolsa, mas foi forçada a selá-la quando a dimensionalidade dentro dela continuou a se expandir. A Bolsa de Ruan Mei passou o resto de seu tempo em exposição em uma vitrine. Stephen Lloyd, por algum motivo, uma vez enxergou nela sua importante companhia, ele nunca revelou para ninguém como ele contemplou se esconder dentro da bolsa para evitar sua família.",
+    "icon": "/starrail/assets/icon/curio/1078.webp"
+  },
+  "Codificador de \"Pensamentos Invalidantes\"": {
+    "id": "3212",
+    "name": "Codificador de \"Pensamentos Invalidantes\"",
+    "desc": "",
+    "bg_desc": "\"Quando a raça humana se tornará máquina? E quando as máquinas se tornarão humanos?\" Seguindo o calendário da era das máquinas, neste dia às três da tarde, o invasivo Codificador de \"Pensamentos Invalidantes\" entrou na mente de um certo indivíduo orgânico na Cidade Mecânica. No início, ele estava indefeso contra os pensamentos descontrolados em sua própria mente. Então, ele percebeu que escrever notas poderia ajudá-lo a conter efetivamente a ansiedade e a falta de sentido que o Codificador de \"Pensamentos Invalidantes\" causou a ele. Então, ele começou a escrever, cuspindo palavras, expelindo os caóticos e incoerentes barulhos em sua cabeça que permaneciam ensurdecedores, ainda que fossem desprovidos de substância. Ele produziu linhas e linhas de códigos de erro. Isso, eventualmente, chamou a atenção dos Enigmáticos.",
+    "icon": "/starrail/assets/icon/curio/1071.webp"
+  },
+  "\"Agrupador de Pensamento\" Médio": {
+    "id": "3213",
+    "name": "\"Agrupador de Pensamento\" Médio",
+    "desc": "",
+    "bg_desc": "Seguindo o calendário da era das máquinas, neste dia, às três da tarde, o invasivo Agrupador de Pensamento Médio entrou na mente de um indivíduo orgânico arrogante na Cidade Mecânica. O \"Agrupador de Pensamento\" Médio quebrou o coração dele. Ele percebeu que o limite de todos os talentos dele chegava à média dos membros da comunidade. Mas ele não se desesperou, pois ele logo aprendeu a dominar esta habilidade nova e única, escondendo sua onda de emoções das massas inorgânicas, se tornando a máquina mais mediana de todas e embarcando no Caminho do Equilíbrio.",
+    "icon": "/starrail/assets/icon/curio/1083.webp"
+  },
+  "Cyphertech \"Coração Cinzento\"": {
+    "id": "3214",
+    "name": "Cyphertech \"Coração Cinzento\"",
+    "desc": "",
+    "bg_desc": "Seguindo o calendário da era das máquinas, neste dia, à uma hora da madrugada, o Cyphertech \"Coração Cinzento\" se reiniciou novamente. Ele refez o código comprimindo seu corpo cada vez mais, quebrando-o, remontando-o, mas nunca escapando do resultado final de total desalento, tão sem esperança quanto cinzas. Depois de tentar sem parar por três mil e seiscentas vezes, ele finalmente entendeu que o significado de seu próprio código sequenciado era o próprio \"Coração Cinzento\".",
+    "icon": "/starrail/assets/icon/curio/1079.webp"
+  },
+  "Criarco-íris \"Regozijante\"": {
+    "id": "3215",
+    "name": "Criarco-íris \"Regozijante\"",
+    "desc": "",
+    "bg_desc": "Seguindo o calendário da era das máquinas, neste dia, às seis horas da manhã, o invasivo \"Regozijante\" entrou na mente de um fera unicórnea na Cidade Mecânica. Apenas poucos animais sem modificações insignificantes permaneciam na cidade. Portanto, movido pelo contágio \"Regozijante\", a fera unicórnea foi capaz de superar todos os tipos de derrotas desesperadoras, incidentes esquisitos e momentos debilitantes de terror. A tristeza se tornou alegria para ele, a dor se tornou prazer e a pressão se tornou um gatilho para secretar neurotransmissores estimulantes. Até um dia em que ele percebeu que havia se ensinado a converter o \"humor\" em um parâmetro livremente ajustável. Doravante, a confiança dele se tornou perpetuamente alta e inabalável, transformando-o em um \"Unicórnio Radiante de Arco-íris\".",
+    "icon": "/starrail/assets/icon/curio/1075.webp"
+  },
+  "Célula Maquinária da \"Mente Selvagem\"": {
+    "id": "3216",
+    "name": "Célula Maquinária da \"Mente Selvagem\"",
+    "desc": "",
+    "bg_desc": "\"Eu vi o imperador Rubert!\" Seguindo o calendário da era das máquinas, neste dia, às nove horas da noite, o invasivo \"Mente Selvagem\" entrou nos pensamentos de um certo cérebro-in-vitro na Cidade Mecânica. Ele foi incapaz de distinguir se era orgânico, inorgânico ou apenas uma forma de vida gasosa. Ele alegou que havia se encontrado com o imperador, apenas para se libertar do \"Mente Selvagem\" em sua mente. O pensamento atingiu os limites do seu cérebro, sobrecarregando seus pensamentos até a exaustão. Mas depois que Rubert fixou uma única linha de código inofensiva, ele acordou de seu torpor, percebendo que nada disso havia realmente acontecido, que havia sido apenas outra ilusão.",
+    "icon": "/starrail/assets/icon/curio/1076.webp"
+  }
+}

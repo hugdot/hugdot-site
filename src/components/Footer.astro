@@ -1,80 +1,114 @@
 ---
-import Logo from './Logo.astro'
-import { Heading, Link } from 'accessible-astro-components'
-import { tools, getToolHref, getToolsByCategory } from '@data/tools/index'
+// src/components/Footer.astro
+import { Icon } from 'astro-icon/components'
 
 const currentYear = new Date().getFullYear()
-const textTools = getToolsByCategory('text')
-const imageTools = getToolsByCategory('image')
-const pdfTools = getToolsByCategory('pdf')
-const generatorTools = getToolsByCategory('generator')
-const snsTools = getToolsByCategory('sns')
-const calculatorTools = getToolsByCategory('calculator')
+
+const pathname = Astro.url.pathname
+const langMatch = pathname.match(/^\/(kr|en|jp|cn|fr|de|es|id|pt|ru|th|vi|cht)\//)
+const lang = langMatch?.[1] ?? 'kr'
+
+const isKr = lang === 'kr'
+
+const links = {
+  starrail: [
+    { label: isKr ? '캐릭터'    : 'Characters',    href: `/${lang}/starrail/characters` },
+    { label: isKr ? '광추'      : 'Light Cones',   href: `/${lang}/starrail/light-cones` },
+    { label: isKr ? '유물'      : 'Relics',        href: `/${lang}/starrail/relics` },
+    { label: isKr ? '업적'      : 'Achievements',  href: `/${lang}/starrail/achievements` },
+    { label: isKr ? '모의 우주' : 'Sim. Universe', href: `/${lang}/starrail/simulated-universe` },
+    { label: isKr ? '계획기'    : 'Planner',       href: `/${lang}/starrail/planner` },
+    { label: isKr ? '재료'      : 'Materials',     href: `/${lang}/starrail/items` },
+  ],
+  site: [
+    { label: 'About',          href: '/about' },
+    { label: 'Contact',        href: '/contact' },
+    { label: 'Privacy Policy', href: '/privacy-policy' },
+    { label: 'Terms',          href: '/terms' },
+  ],
+}
 ---
 
-<footer>
-  <section class="py-16">
-    <Heading level="h2" class="sr-only">Footer</Heading>
-    <div class="container grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
-      
-      <div class="flex flex-col gap-4">
-        <Heading level="h3" size="h6">Text Tools</Heading>
-        <ul class="flex flex-col gap-2">
-          {textTools.map((tool) => (
-            <li><Link href={getToolHref(tool.category, tool.slug)}>{tool.label}</Link></li>
-          ))}
-        </ul>
-      </div>
+<footer class="site-footer">
+  <div class="footer-inner">
 
-      <div class="flex flex-col gap-4">
-        <Heading level="h3" size="h6">Image Tools</Heading>
-        <ul class="flex flex-col gap-2">
-          {imageTools.map((tool) => (
-            <li><Link href={getToolHref(tool.category, tool.slug)}>{tool.label}</Link></li>
-          ))}
-        </ul>
-      </div>
-
-      <div class="flex flex-col gap-4">
-        <Heading level="h3" size="h6">PDF Tools</Heading>
-        <ul class="flex flex-col gap-2">
-          {pdfTools.map((tool) => (
-            <li><Link href={getToolHref(tool.category, tool.slug)}>{tool.label}</Link></li>
-          ))}
-        </ul>
-      </div>
-
-      <div class="flex flex-col gap-4">
-        <Heading level="h3" size="h6">Generators</Heading>
-        <ul class="flex flex-col gap-2">
-          {generatorTools.map((tool) => (
-            <li><Link href={getToolHref(tool.category, tool.slug)}>{tool.label}</Link></li>
-          ))}
-        </ul>
-      </div>
-
+    <div class="footer-brand">
+      <a href="/" class="footer-logo" aria-label="HugDot">
+        <span class="logo-mark">H</span><span class="logo-text">ugDot</span>
+      </a>
+      <p class="footer-desc">
+        {isKr ? '게임 데이터베이스 — 공식 리소스 기반' : 'Game Database — Based on official resources'}
+      </p>
+      <p class="footer-disclaimer">
+        {isKr
+          ? 'HugDot는 HoYoverse와 무관한 팬 사이트입니다.'
+          : 'HugDot is a fan site not affiliated with HoYoverse.'}
+      </p>
     </div>
-  </section>
 
-  <section class="py-8">
-    <div class="container flex flex-col gap-4 md:flex-row md:justify-between">
-      <div class="flex items-center gap-6">
-        <Logo loading="lazy" />
-        <ul class="flex gap-4">
-          <li><Link href="/">Home</Link></li>
-          <li><Link href="/about">About</Link></li>
-          <li><Link href="/terms">Terms</Link></li>
-          <li><Link href="/contact">Contact</Link></li>
-          <li><Link href="/privacy-policy">Privacy Policy</Link></li>
-        </ul>
+    <div class="footer-links">
+      <div class="footer-col">
+        <p class="footer-col-title">Honkai: Star Rail</p>
+        {links.starrail.map(l => (
+          <a href={l.href} class="footer-link">{l.label}</a>
+        ))}
       </div>
-      <p class="text-sm opacity-75">&copy; {currentYear} hugdot. All rights reserved.</p>
+      <div class="footer-col">
+        <p class="footer-col-title">Site</p>
+        {links.site.map(l => (
+          <a href={l.href} class="footer-link">{l.label}</a>
+        ))}
+      </div>
     </div>
-  </section>
+
+  </div>
+
+  <div class="footer-bottom">
+    <p>© {currentYear} HugDot. All rights reserved.</p>
+    
+  </div>
 </footer>
 
 <style>
-  section {
-    border-top: 1px solid var(--border-color-subtle);
-  }
+.site-footer {
+  border-top: 1px solid var(--c-border);
+  background: var(--c-surface);
+  margin-top: 4rem;
+}
+.footer-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2.5rem 1.25rem;
+  display: flex;
+  gap: 3rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.footer-brand { display:flex; flex-direction:column; gap:0.6rem; max-width:260px; }
+.footer-logo { display:inline-flex; align-items:baseline; text-decoration:none; }
+.logo-mark { font-family:var(--font-display); font-size:1.2rem; font-weight:900; color:var(--c-accent); letter-spacing:-0.03em; }
+.logo-text { font-family:var(--font-display); font-size:1.2rem; font-weight:700; color:var(--foreground-color); letter-spacing:-0.03em; opacity:0.85; }
+.footer-desc { font-size:0.78rem; color:var(--c-muted); line-height:1.6; }
+.footer-disclaimer { font-size:0.68rem; color:var(--c-muted); opacity:0.6; line-height:1.5; }
+.footer-links { display:flex; gap:2.5rem; flex-wrap:wrap; }
+.footer-col { display:flex; flex-direction:column; gap:0.5rem; }
+.footer-col-title { font-size:0.62rem; font-weight:900; letter-spacing:0.1em; text-transform:uppercase; color:var(--c-muted); margin-bottom:0.25rem; }
+.footer-link { font-size:0.78rem; font-weight:500; color:var(--c-muted); text-decoration:none; transition:color 140ms; }
+.footer-link:hover { color:var(--foreground-color); }
+.footer-bottom {
+  border-top:1px solid var(--c-border);
+  max-width:1200px;
+  margin:0 auto;
+  padding:1rem 1.25rem;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:0.5rem;
+  font-size:0.68rem;
+  color:var(--c-muted);
+  opacity:0.7;
+}
+.footer-data-credit a { color:var(--c-accent); text-decoration:none; opacity:0.8; }
+.footer-data-credit a:hover { opacity:1; }
 </style>

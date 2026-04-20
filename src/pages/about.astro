@@ -1,117 +1,176 @@
 ---
 import DefaultLayout from '@layouts/DefaultLayout.astro'
-import PageHeader from '@components/PageHeader.astro'
-import { Heading } from 'accessible-astro-components'
 import { Icon } from 'astro-icon/components'
 ---
 
-<DefaultLayout title="About Us | HugDot">
-  <PageHeader 
-    title="About HugDot" 
-    subtitle="Our mission is to simplify your digital workflow without compromising your privacy." 
-    bgType="gradient" 
-  />
+<DefaultLayout title="About | HugDot" description="HugDot is a multi-language game database for gacha RPGs. Accurate data, fast search, and useful tools for players worldwide.">
+<div class="about-page">
 
-  <section class="my-16 container">
-    <div class="grid grid-cols-1 gap-16 md:grid-cols-2 items-start">
-      
-      <div class="space-content">
-        <Heading level="h2">The "Dot" in Digital Freedom</Heading>
-        <p class="text-lg leading-relaxed">
-          <strong>HugDot ( . )</strong> was founded on a simple yet powerful premise: 
-          <em>Your files belong to you, and they should stay with you.</em>
-        </p>
-        <p>
-          In an era where most web tools act as "data vacuums," we decided to build a different kind of lab. 
-          A place where high-performance utility meets absolute privacy. We don't just "protect" your data; 
-          we design our systems so we never have access to it in the first place.
-        </p>
-
-        <div class="mt-8 space-y-6">
-          <div class="flex gap-4">
-            <div class="mt-1 bg-primary-100 dark:bg-primary-900 p-2 rounded-lg h-fit">
-              <Icon name="lucide:zap" size={24} class="text-primary-600" />
-            </div>
-            <div>
-              <h4 class="font-bold text-xl">Speed of Native, Ease of Web</h4>
-              <p class="text-sm opacity-80">By utilizing WebAssembly (WASM) and modern JavaScript, our tools run at near-native speeds directly in your browser tab.</p>
-            </div>
-          </div>
-
-          <div class="flex gap-4">
-            <div class="mt-1 bg-primary-100 dark:bg-primary-900 p-2 rounded-lg h-fit">
-              <Icon name="lucide:globe" size={24} class="text-primary-600" />
-            </div>
-            <div>
-              <h4 class="font-bold text-xl">Global Accessibility</h4>
-              <p class="text-sm opacity-80">We believe utility has no borders. HugDot is being built to support 16+ languages, ensuring everyone has access to professional-grade tools.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="bg-gray-50 dark:bg-gray-900 p-8 rounded-2xl border border-gray-200 dark:border-gray-800 space-content">
-        <Heading level="h3">Why HugDot?</Heading>
-        
-        <div class="space-y-4">
-          <p class="font-bold text-primary-600 dark:text-primary-400">1. Zero Server-Side Processing</p>
-          <p class="text-sm">
-            Traditional tools upload your PDF, image, or video to their servers. We don't. 
-            All logic happens locally on your CPU/GPU. No "Upload" button means no data leak risk.
-          </p>
-
-          <p class="font-bold text-primary-600 dark:text-primary-400">2. Privacy by Design</p>
-          <p class="text-sm">
-            We don't require accounts for basic utilities. No tracking pixels, no intrusive cookies. 
-            Just the tool you need, exactly when you need it.
-          </p>
-
-          <p class="font-bold text-primary-600 dark:text-primary-400">3. Built for Automation</p>
-          <p class="text-sm">
-            From Programmatic SEO tools to batch image processors, we build for efficiency. 
-            Our lab is constantly evolving to tackle the most repetitive digital tasks.
-          </p>
-        </div>
-
-        <hr class="my-8 border-gray-200 dark:border-gray-800" />
-
-        <div class="flex flex-col gap-4">
-          <p class="text-sm italic opacity-70">
-            "HugDot is an operation fueled by coffee and a passion for clean code. 
-            Every tool is built with the user's rights in mind."
-          </p>
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-full bg-gradient-to-tr from-primary-500 to-secondary-500"></div>
-            <div>
-              <p class="text-sm font-bold">Kim</p>
-              <p class="text-xs opacity-60">Founder & Webmaster</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
+  <!-- Hero -->
+  <section class="ab-hero">
+    <div class="aw">
+      <p class="eyebrow">About HugDot</p>
+      <h1 class="ab-title">Game Database<br/>for Everyone</h1>
+      <p class="ab-sub">
+        HugDot is a free, multi-language game database focused on gacha RPGs.
+        We provide accurate character data, farming guides, and planning tools
+        — available in 13 languages with no login required.
+      </p>
+    </div>
+    <div class="ab-bg" aria-hidden="true">
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
     </div>
   </section>
 
-  <section class="py-16 bg-primary-600 text-white text-center">
-    <div class="container space-content">
-      <Heading level="h2">Need a Custom Tool?</Heading>
-      <p class="max-w-xl mx-auto opacity-90">
-        If you have a workflow problem that needs an automated, private solution, we want to hear from you.
-      </p>
-      <div class="mt-8">
-        <a href="/contact" class="bg-white text-primary-600 px-8 py-3 rounded-full font-bold hover:bg-gray-100 transition-colors">
-          Get in Touch
+  <!-- 현재 서비스 -->
+  <section class="ab-section">
+    <div class="aw">
+      <h2 class="sec-title">Currently Available</h2>
+      <div class="game-card">
+        <div class="gc-icon">⭐</div>
+        <div class="gc-body">
+          <p class="gc-name">Honkai: Star Rail</p>
+          <p class="gc-desc">Characters, Light Cones, Relics, Simulated Universe, Achievements, Ascension Planner, Farming Materials</p>
+        </div>
+        <a href="/kr/starrail" class="gc-btn">
+          View DB <Icon name="lucide:arrow-right" size="0.8rem"/>
         </a>
       </div>
+
+      <div class="coming-soon">
+        <p class="cs-label">Coming Soon</p>
+        <div class="cs-games">
+          <span class="cs-game">Zenless Zone Zero</span>
+          <span class="cs-game">Wuthering Waves</span>
+          <span class="cs-game">Genshin Impact</span>
+        </div>
+      </div>
     </div>
   </section>
+
+  <!-- 특징 -->
+  <section class="ab-section ab-section--gray">
+    <div class="aw">
+      <h2 class="sec-title">What We Offer</h2>
+      <div class="feat-grid">
+        <div class="feat-card">
+          <Icon name="lucide:globe" size="1.5rem" class="feat-icon"/>
+          <h3 class="feat-title">13 Languages</h3>
+          <p class="feat-desc">Korean, English, Japanese, Chinese (Simplified & Traditional), French, German, Spanish, Indonesian, Portuguese, Russian, Thai, Vietnamese.</p>
+        </div>
+        <div class="feat-card">
+          <Icon name="lucide:database" size="1.5rem" class="feat-icon"/>
+          <h3 class="feat-title">Official Data</h3>
+          <p class="feat-desc">All stats, skills, and descriptions are sourced directly from official game data. No guesswork, no outdated wikis.</p>
+        </div>
+        <div class="feat-card">
+          <Icon name="lucide:calculator" size="1.5rem" class="feat-icon"/>
+          <h3 class="feat-title">Planning Tools</h3>
+          <p class="feat-desc">Ascension planner lets you calculate materials needed for multiple characters and light cones at once.</p>
+        </div>
+        <div class="feat-card">
+          <Icon name="lucide:map-pin" size="1.5rem" class="feat-icon"/>
+          <h3 class="feat-title">Farming Sources</h3>
+          <p class="feat-desc">Every material shows exactly where to farm it and which monsters drop it — something most databases don't show.</p>
+        </div>
+        <div class="feat-card">
+          <Icon name="lucide:lock" size="1.5rem" class="feat-icon"/>
+          <h3 class="feat-title">No Login Required</h3>
+          <p class="feat-desc">All features are free and accessible without creating an account. Your planner data is saved locally on your device.</p>
+        </div>
+        <div class="feat-card">
+          <Icon name="lucide:zap" size="1.5rem" class="feat-icon"/>
+          <h3 class="feat-title">Fast & Static</h3>
+          <p class="feat-desc">Built with Astro SSG and deployed on Cloudflare Pages. Pages load instantly with no server-side processing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 소개 -->
+  <section class="ab-section">
+    <div class="aw aw--narrow">
+      <h2 class="sec-title">About This Project</h2>
+      <div class="about-text">
+        <p>
+          HugDot started as a personal project to build a better game database — one that works in multiple languages,
+          provides accurate data, and includes tools that actually help players plan their progress.
+        </p>
+        <p>
+          All game data is sourced from official public resources and updated regularly.
+          The site is built with static generation (Astro + Cloudflare Pages), which means fast load times
+          and no server costs passed on to users.
+        </p>
+        <p>
+          If you find incorrect data or have suggestions, feel free to reach out via the contact page.
+        </p>
+        <div class="ab-links">
+          <a href="/contact" class="ab-link">
+            <Icon name="lucide:mail" size="0.9rem"/> Contact
+          </a>
+          <a href="/privacy-policy" class="ab-link">
+            <Icon name="lucide:shield" size="0.9rem"/> Privacy Policy
+          </a>
+          <a href="/terms" class="ab-link">
+            <Icon name="lucide:file-text" size="0.9rem"/> Terms
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
 </DefaultLayout>
 
 <style>
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 1rem;
-  }
+.about-page { min-height:100vh; background:var(--c-bg); color:var(--foreground-color); }
+.aw { max-width:1100px; margin:0 auto; padding:0 1.5rem; }
+.aw--narrow { max-width:720px; }
+
+/* Hero */
+.ab-hero { position:relative; overflow:hidden; padding:5rem 1.5rem 4rem; border-bottom:1px solid var(--c-border); }
+.eyebrow { font-size:.68rem; font-weight:900; letter-spacing:.14em; text-transform:uppercase; color:var(--c-accent); margin-bottom:.75rem; }
+.ab-title { font-family:var(--font-display); font-size:clamp(2rem,5vw,3.5rem); font-weight:700; letter-spacing:-.03em; line-height:1.1; margin-bottom:1rem; }
+.ab-sub { font-size:.95rem; color:var(--c-muted); line-height:1.8; max-width:560px; word-break:keep-all; }
+.ab-bg { position:absolute; inset:0; pointer-events:none; }
+.orb { position:absolute; border-radius:50%; filter:blur(80px); opacity:.12; }
+.orb-1 { width:400px; height:400px; top:-100px; right:-50px; background:radial-gradient(circle,#7c9dfc,transparent 70%); }
+.orb-2 { width:250px; height:250px; bottom:0; left:30%; background:radial-gradient(circle,#a78bfa,transparent 70%); }
+
+/* 섹션 */
+.ab-section { padding:3.5rem 0; border-bottom:1px solid var(--c-border); }
+.ab-section--gray { background:var(--c-surface); }
+.ab-section:last-child { border-bottom:none; padding-bottom:6rem; }
+.sec-title { font-family:var(--font-display); font-size:1.3rem; font-weight:700; letter-spacing:.03em; text-transform:uppercase; margin-bottom:1.5rem; }
+
+/* 게임 카드 */
+.game-card { display:flex; align-items:center; gap:1rem; padding:1.25rem 1.4rem; border:1px solid color-mix(in srgb,var(--c-accent) 30%,transparent); border-radius:var(--radius-lg); background:var(--c-surface); flex-wrap:wrap; }
+.gc-icon { font-size:1.8rem; flex-shrink:0; }
+.gc-body { flex:1; min-width:200px; }
+.gc-name { font-family:var(--font-display); font-size:1.1rem; font-weight:700; margin-bottom:.25rem; }
+.gc-desc { font-size:.72rem; color:var(--c-muted); line-height:1.5; }
+.gc-btn { display:inline-flex; align-items:center; gap:.4rem; padding:.55rem 1.1rem; border-radius:var(--radius-sm); background:var(--c-accent); color:#fff; font-size:.78rem; font-weight:700; text-decoration:none; white-space:nowrap; transition:opacity var(--anim-fast); }
+.gc-btn:hover { opacity:.85; }
+
+.coming-soon { margin-top:1rem; padding:1rem 1.4rem; border:1px solid var(--c-border); border-radius:var(--radius-md); background:var(--c-surface2); display:flex; align-items:center; gap:1rem; flex-wrap:wrap; }
+.cs-label { font-size:.65rem; font-weight:900; letter-spacing:.1em; text-transform:uppercase; color:var(--c-muted); white-space:nowrap; }
+.cs-games { display:flex; flex-wrap:wrap; gap:.4rem; }
+.cs-game { font-size:.72rem; font-weight:600; padding:.2em .6em; border:1px solid var(--c-border); border-radius:4px; color:var(--c-muted); }
+
+/* 특징 */
+.feat-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:.75rem; }
+.feat-card { padding:1.25rem; border:1px solid var(--c-border); border-radius:var(--radius-md); background:var(--c-bg); }
+.feat-icon { color:var(--c-accent); margin-bottom:.75rem; }
+.feat-title { font-size:.95rem; font-weight:700; margin-bottom:.4rem; }
+.feat-desc { font-size:.75rem; color:var(--c-muted); line-height:1.7; word-break:keep-all; }
+
+/* 소개 텍스트 */
+.about-text { display:flex; flex-direction:column; gap:1rem; }
+.about-text p { font-size:.88rem; color:var(--c-muted); line-height:1.9; word-break:keep-all; }
+.ab-links { display:flex; flex-wrap:wrap; gap:.5rem; margin-top:1rem; }
+.ab-link { display:inline-flex; align-items:center; gap:.4rem; padding:.45rem .9rem; border:1px solid var(--c-border); border-radius:var(--radius-sm); background:var(--c-surface); color:var(--foreground-color); font-size:.75rem; font-weight:700; text-decoration:none; transition:border-color var(--anim-fast),color var(--anim-fast); }
+.ab-link:hover { border-color:var(--c-accent); color:var(--c-accent); }
+
+h1,h2,h3,p { word-break:keep-all; }
 </style>

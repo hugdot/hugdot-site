@@ -67,7 +67,8 @@ export default defineConfig({
 
   output: 'server', 
   
-  adapter: cloudflare(),  
+  adapter: cloudflare(),
+  mode: 'advanced',  
   compressHTML: false,
   site: 'https://hugdot.com',
   integrations: [icon(), mdx(), sitemap()],

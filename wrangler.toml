@@ -1,8 +1,9 @@
 # wrangler.toml
 name = "hugdot-site"
 main = "dist/_worker.js"
-compatibility_date = "2024-04-21"
-compatibility_flags = [ "nodejs_compat" ] # 대시보드 대신 여기서 설정!
+compatibility_date = "2024-09-23" # 날짜를 실제 과거 안정화 날짜로 변경
+compatibility_flags = [ "nodejs_compat" ]
 
 [assets]
 directory = "./dist"
+binding = "ASSETS"

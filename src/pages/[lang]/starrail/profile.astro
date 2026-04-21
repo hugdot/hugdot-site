@@ -29,7 +29,7 @@ const rankDescJSON = JSON.stringify(rankDescMap).replace(/</g, '\\u003c')
 const T: Record<string, any> = {
   kr: {
     pageTitle: 'UID 프로필',
-    placeholder: 'UID 입력 (예: 600000382)',
+    placeholder: '',
     search: '조회',
     loading: '불러오는 중...',
     errorEmpty: '전시대에 캐릭터가 없거나 비공개 상태입니다.',
@@ -39,7 +39,7 @@ const T: Record<string, any> = {
   },
   en: {
     pageTitle: 'UID Profile',
-    placeholder: 'Enter UID (e.g. 600000382)',
+    placeholder: 'Enter UID',
     search: 'Search',
     loading: 'Loading...',
     errorEmpty: 'No characters in showcase or showcase is private.',
@@ -94,7 +94,7 @@ const mihomoLangJS = JSON.stringify(mihomoLang)
   }
   function mihomoImg(p) {
     if (!p) return ''
-    return 'https://api.mihomo.me/' + p
+    return '/api/mihomo-img/' + p
   }
   function img(path, w, h, cls) {
     if (!path) return ''
@@ -462,7 +462,7 @@ const mihomoLangJS = JSON.stringify(mihomoLang)
   async function fetchProfile(uid) {
     showLoading()
     try {
-      var res  = await fetch('https://api.mihomo.me/sr_info_parsed/' + encodeURIComponent(uid) + '?lang=' + mihomoLang)
+      var res  = await fetch('/api/mihomo?uid=' + encodeURIComponent(uid) + '&lang=' + mihomoLang)
       var data = await res.json()
       if (!res.ok || data.detail) { showError(data.detail || t.errorInvalid); return }
       showResult(data)

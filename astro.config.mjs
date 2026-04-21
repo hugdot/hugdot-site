@@ -6,6 +6,7 @@ import mdx from '@astrojs/mdx'
 import sitemap from '@astrojs/sitemap'
 import tailwindcss from '@tailwindcss/vite'
 import { enhanceConfigForWorkspace } from './scripts/workspace-config.js'
+import cloudflare from '@astrojs/cloudflare';
 
 const viteConfig = {
   css: {
@@ -63,6 +64,10 @@ const viteConfig = {
 }
 
 export default defineConfig({
+
+  output: 'server', 
+  
+  adapter: cloudflare(),  
   compressHTML: false,
   site: 'https://hugdot.com',
   integrations: [icon(), mdx(), sitemap()],

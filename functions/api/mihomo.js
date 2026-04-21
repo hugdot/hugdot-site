@@ -1,4 +1,4 @@
-export const onRequestGet: PagesFunction = async (context) => {
+export async function onRequestGet(context) {
   const url  = new URL(context.request.url)
   const uid  = url.searchParams.get('uid')?.trim()
   const lang = url.searchParams.get('lang') || 'kr'

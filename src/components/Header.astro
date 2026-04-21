@@ -48,13 +48,18 @@ import { starrailI18n } from '@utils/i18n'
 const m = starrailI18n[currentLang] ?? starrailI18n['en']
 
 const starRailMenus = [
-  { label: m.characters,   href: `/${currentLang}/starrail/characters` },
-  { label: m.lightcones,   href: `/${currentLang}/starrail/light-cones` },
-  { label: m.relics,       href: `/${currentLang}/starrail/relics` },
-  { label: m.simulated,    href: `/${currentLang}/starrail/simulated-universe` },
-  { label: m.planner,      href: `/${currentLang}/starrail/planner` },
-  { label: m.achievements, href: `/${currentLang}/starrail/achievements` },
-  { label: m.items,        href: `/${currentLang}/starrail/items` },
+  { label: m.characters,                  href: `/${currentLang}/starrail/characters` },
+  { label: m.tierList || 'Tier List',     href: `/${currentLang}/starrail/tier-list` },
+  { label: m.planner,                     href: `/${currentLang}/starrail/planner` },
+  { label: m.profile || 'Profile',        href: `/${currentLang}/starrail/profile` },
+]
+
+const dataMenus = [
+  { label: m.lightcones,  href: `/${currentLang}/starrail/light-cones` },
+  { label: m.relics,      href: `/${currentLang}/starrail/relics` },
+  { label: m.achievements,href: `/${currentLang}/starrail/achievements` },
+  { label: m.items,       href: `/${currentLang}/starrail/items` },
+  { label: m.simulated,   href: `/${currentLang}/starrail/simulated-universe` },
 ]
 const currentMenus = currentGame?.id === 'starrail' ? starRailMenus : []
 
@@ -69,8 +74,8 @@ const switchLang = (code: string) =>
 
     <!-- ── 로고 ── -->
     <a href="/" class="logo" aria-label="HugDot Home">
-      <span class="logo-mark">H</span>
-      <span class="logo-text">ugDot</span>
+      <img src="/favicon.svg" alt="" class="logo-icon" width="28" height="20" aria-hidden="true"/>
+      <span class="logo-text">HugDot</span>
     </a>
 
     <!-- ── 게임 선택 ── -->
@@ -98,7 +103,7 @@ const switchLang = (code: string) =>
     <!-- ── 게임 서브 네비 ── -->
     {currentMenus.length > 0 && (
       <nav class="sub-nav" aria-label="Game navigation">
-        {currentMenus.map(item => (
+        {starRailMenus.map(item => (
           <a
             href={item.href}
             class={`sub-link ${pathname.startsWith(item.href) ? 'sub-link--active' : ''}`}
@@ -106,6 +111,24 @@ const switchLang = (code: string) =>
             {item.label}
           </a>
         ))}
+        <!-- 데이터 드롭다운 -->
+        <div class="dropdown-wrap" id="data-wrap">
+          <button class={`sub-link data-btn${dataMenus.some(i => pathname.startsWith(i.href)) ? ' sub-link--active' : ''}`} id="data-btn" aria-haspopup="true" aria-expanded="false">
+            {m.dataLabel || 'Data'}
+            <Icon name="lucide:chevron-down" size="0.65rem" class="chevron-icon" />
+          </button>
+          <div class="dropdown data-dropdown" id="data-dropdown" role="menu">
+            {dataMenus.map(item => (
+              <a
+                href={item.href}
+                class={`dd-item ${pathname.startsWith(item.href) ? 'dd-item--active' : ''}`}
+                role="menuitem"
+              >
+                {item.label}
+              </a>
+            ))}
+          </div>
+        </div>
       </nav>
     )}
 
@@ -144,36 +167,44 @@ const switchLang = (code: string) =>
   <!-- ── 모바일 메뉴 ── -->
   <div class="mob-menu" id="mob-menu" aria-hidden="true">
     {currentMenus.length > 0 && (
-      <div class="mob-section">
-        <p class="mob-section-label">{currentGame?.shortName}</p>
-        {currentMenus.map(item => (
-          <a
-            href={item.href}
-            class={`mob-link ${pathname.startsWith(item.href) ? 'mob-link--active' : ''}`}
-          >
-            {item.label}
-          </a>
-        ))}
-      </div>
+      <>
+        <!-- 주요 메뉴 -->
+        <div class="mob-section">
+          <p class="mob-section-label">{currentGame?.shortName}</p>
+          {[
+            { label: m.characters, href: `/${currentLang}/starrail/characters` },
+            { label: m.tierList || 'Tier List', href: `/${currentLang}/starrail/tier-list` },
+            { label: m.planner, href: `/${currentLang}/starrail/planner` },
+            { label: m.profile || 'Profile', href: `/${currentLang}/starrail/profile` },
+          ].map(item => (
+            <a
+              href={item.href}
+              class={`mob-link ${pathname.startsWith(item.href) ? 'mob-link--active' : ''}`}
+            >
+              {item.label}
+            </a>
+          ))}
+        </div>
+        <!-- 데이터 묶음 -->
+        <div class="mob-section">
+          <p class="mob-section-label">{m.dataLabel || 'Data'}</p>
+          {[
+            { label: m.lightcones, href: `/${currentLang}/starrail/light-cones` },
+            { label: m.relics, href: `/${currentLang}/starrail/relics` },
+            { label: m.achievements, href: `/${currentLang}/starrail/achievements` },
+            { label: m.items, href: `/${currentLang}/starrail/items` },
+            { label: m.simulated, href: `/${currentLang}/starrail/simulated-universe` },
+          ].map(item => (
+            <a
+              href={item.href}
+              class={`mob-link ${pathname.startsWith(item.href) ? 'mob-link--active' : ''}`}
+            >
+              {item.label}
+            </a>
+          ))}
+        </div>
+      </>
     )}
-
-    <div class="mob-section">
-      <p class="mob-section-label">
-        <Icon name="lucide:globe" size="0.8rem" />
-        언어 선택
-      </p>
-      <div class="mob-lang-grid">
-        {languages.map(l => (
-          <a
-            href={switchLang(l.code)}
-            class={`mob-lang-item ${l.code === currentLang ? 'mob-lang-item--active' : ''}`}
-          >
-            <span class="mob-lang-code">{l.code.toUpperCase()}</span>
-            <span class="mob-lang-label">{l.label}</span>
-          </a>
-        ))}
-      </div>
-    </div>
   </div>
 </header>
 
@@ -182,11 +213,11 @@ const switchLang = (code: string) =>
   var openId = null
 
   function closeAll() {
-    ;['game-dropdown', 'lang-dropdown'].forEach(function (id) {
+    ;['game-dropdown', 'lang-dropdown', 'data-dropdown'].forEach(function (id) {
       var el = document.getElementById(id)
       if (el) el.classList.remove('open')
     })
-    ;['game-btn', 'lang-btn'].forEach(function (id) {
+    ;['game-btn', 'lang-btn', 'data-btn'].forEach(function (id) {
       var el = document.getElementById(id)
       if (el) el.setAttribute('aria-expanded', 'false')
     })
@@ -231,6 +262,7 @@ const switchLang = (code: string) =>
     closeAll()
     initDropdown('game-btn', 'game-dropdown')
     initDropdown('lang-btn', 'lang-dropdown')
+    initDropdown('data-btn', 'data-dropdown')
     initMob()
     initSticky()
   }
@@ -272,27 +304,27 @@ const switchLang = (code: string) =>
 .logo {
   display: flex;
   align-items: center;
+  gap: 0.4rem;
   text-decoration: none;
   flex-shrink: 0;
   margin-right: 0.5rem;
 }
-.logo-mark {
-  font-family: var(--font-display);
-  font-size: 1.3rem;
-  font-weight: 900;
-  color: var(--c-accent);
-  letter-spacing: -0.03em;
-  line-height: 1;
+.logo-icon {
+  width: 28px;
+  height: 20px;
+  object-fit: contain;
+  flex-shrink: 0;
 }
 .logo-text {
   font-family: var(--font-display);
-  font-size: 1.3rem;
-  font-weight: 700;
+  font-size: 1.25rem;
+  font-weight: 800;
   color: var(--foreground-color);
-  letter-spacing: -0.03em;
+  letter-spacing: -0.04em;
   line-height: 1;
-  opacity: 0.85;
 }
+.logo:hover .logo-text { color: #d648ff; }
+.logo-mark { display: none; }
 
 /* ── 공통 헤더 버튼 ── */
 .hdr-btn {
@@ -425,6 +457,21 @@ const switchLang = (code: string) =>
   opacity: 0.8;
 }
 .lang-item--active .lang-name { opacity: 1; }
+
+/* 데이터 드롭다운 버튼 */
+.data-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+.data-dropdown { min-width: 160px; padding: 0.4rem; }
 
 /* ── 서브 네비 ── */
 .sub-nav {

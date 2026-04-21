@@ -29,7 +29,7 @@ const rankDescJSON = JSON.stringify(rankDescMap).replace(/</g, '\\u003c')
 const T: Record<string, any> = {
   kr: {
     pageTitle: 'UID 프로필',
-    placeholder: 'UID 입력 (예: 600000382)',
+    placeholder: 'UID 입력 ',
     search: '조회',
     loading: '불러오는 중...',
     errorEmpty: '전시대에 캐릭터가 없거나 비공개 상태입니다.',
@@ -39,7 +39,7 @@ const T: Record<string, any> = {
   },
   en: {
     pageTitle: 'UID Profile',
-    placeholder: 'Enter UID (e.g. 600000382)',
+    placeholder: 'Enter UID ',
     search: 'Search',
     loading: 'Loading...',
     errorEmpty: 'No characters in showcase or showcase is private.',
@@ -57,16 +57,26 @@ const mihomoLangJS = JSON.stringify(mihomoLang)
   title={`${t.pageTitle} | Star Rail DB | HugDot`}
   description="UID로 스타레일 캐릭터 빌드와 유물 점수를 확인하세요."
 >
-<div class="profile-page">
-  <div class="sw">
-    <div class="uid-section">
-      <h1 class="page-title">{t.pageTitle}</h1>
+
+<!-- 페이지 헤더 -->
+<div class="prof-header">
+  <div class="prof-header-inner">
+    <div class="prof-title-row">
+      <div>
+        <h1 class="prof-title">{t.pageTitle}</h1>
+        <p class="prof-subtitle">{t.placeholder}</p>
+      </div>
       <div class="uid-form">
         <input type="text" id="uid-input" class="uid-input"
           placeholder={t.placeholder} maxlength="10" inputmode="numeric"/>
         <button class="uid-btn" id="uid-btn">{t.search}</button>
       </div>
     </div>
+  </div>
+</div>
+
+<div class="profile-page">
+  <div class="sw">
     <div id="profile-result"></div>
   </div>
 </div>
@@ -505,7 +515,14 @@ const mihomoLangJS = JSON.stringify(mihomoLang)
 
 /* UID */
 .uid-section { margin-bottom:2rem; }
-.page-title { font-family:var(--font-display); font-size:1.6rem; font-weight:700; letter-spacing:-.02em; margin-bottom:1rem; }
+.page-title { display:none; }
+
+/* 페이지 헤더 — characters.astro와 동일 */
+.prof-header{border-bottom:1px solid var(--c-border);background:var(--c-surface);padding:2rem 0 1.5rem}
+.prof-header-inner{max-width:1400px;margin:0 auto;padding:0 1.5rem;display:flex;flex-direction:column;gap:1rem}
+.prof-title-row{display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap}
+.prof-title{font-family:var(--font-display);font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;letter-spacing:-.03em;text-transform:uppercase;line-height:1}
+.prof-subtitle{margin-top:.4rem;font-size:.82rem;color:var(--c-muted)}
 .uid-form { display:flex; gap:.5rem; max-width:440px; }
 .uid-input { flex:1; padding:.7rem 1rem; border:1.5px solid var(--c-border-hi); border-radius:var(--radius-md); background:var(--c-surface); color:var(--foreground-color); font-size:.95rem; font-family:var(--font-mono); outline:none; transition:border-color var(--anim-fast); }
 .uid-input:focus { border-color:var(--c-accent); }

@@ -65,7 +65,7 @@ const viteConfig = {
 export default defineConfig({
   compressHTML: false,
   site: 'https://hugdot.com',
-  integrations: [compress(), icon(), mdx(), sitemap()],
+  integrations: [icon(), mdx(), sitemap()],
   vite: enhanceConfigForWorkspace(viteConfig),
   env: {
     schema: {

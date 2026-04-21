@@ -34,7 +34,8 @@ const links = {
 
     <div class="footer-brand">
       <a href="/" class="footer-logo" aria-label="HugDot">
-        <span class="logo-mark">H</span><span class="logo-text">ugDot</span>
+        <img src="/favicon.svg" alt="" class="footer-logo-icon" width="32" height="22" aria-hidden="true"/>
+        <span class="footer-logo-text">HugDot</span>
       </a>
       <p class="footer-desc">
         {isKr ? '게임 데이터베이스 — 공식 리소스 기반' : 'Game Database — Based on official resources'}
@@ -85,9 +86,12 @@ const links = {
   justify-content: space-between;
 }
 .footer-brand { display:flex; flex-direction:column; gap:0.6rem; max-width:260px; }
-.footer-logo { display:inline-flex; align-items:baseline; text-decoration:none; }
-.logo-mark { font-family:var(--font-display); font-size:1.2rem; font-weight:900; color:var(--c-accent); letter-spacing:-0.03em; }
-.logo-text { font-family:var(--font-display); font-size:1.2rem; font-weight:700; color:var(--foreground-color); letter-spacing:-0.03em; opacity:0.85; }
+.footer-logo { display:inline-flex; align-items:center; gap:0.45rem; text-decoration:none; }
+.footer-logo-icon { width:32px; height:22px; object-fit:contain; flex-shrink:0; }
+.footer-logo-text { font-family:var(--font-display); font-size:1.2rem; font-weight:800; color:var(--foreground-color); letter-spacing:-0.04em; }
+.footer-logo:hover .footer-logo-text { color:#d648ff; }
+.logo-mark { display:none; }
+.logo-text { display:none; }
 .footer-desc { font-size:0.78rem; color:var(--c-muted); line-height:1.6; }
 .footer-disclaimer { font-size:0.68rem; color:var(--c-muted); opacity:0.6; line-height:1.5; }
 .footer-links { display:flex; gap:2.5rem; flex-wrap:wrap; }

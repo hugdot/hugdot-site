@@ -57,7 +57,7 @@
     "tailwindcss": "^4.2.1"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^13.1.10",
+    "@astrojs/cloudflare": "^12.2.0",
     "@astrojs/sitemap": "^3.7.0",
     "@tailwindcss/vite": "^4.2.1",
     "json-bigint": "^1.0.0"

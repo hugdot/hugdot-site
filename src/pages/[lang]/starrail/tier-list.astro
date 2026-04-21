@@ -1,0 +1,306 @@
+---
+// @ts-nocheck
+import DefaultLayout from '@layouts/DefaultLayout.astro'
+import { starrailI18n } from '@utils/i18n'
+
+export async function getStaticPaths() {
+  const languages = ['kr', 'en', 'jp', 'cn', 'fr', 'de', 'es', 'id', 'pt', 'ru', 'th', 'vi', 'cht']
+  return languages.map((lang) => ({ params: { lang } }))
+}
+
+const { lang } = Astro.params
+
+import tierDataRaw from '../../../data/starrail/tier-list.json'
+const tierData: any = tierDataRaw
+
+const charModule = await import(`../../../data/starrail/${lang}/characters.json`).catch(() => import('../../../data/starrail/en/characters.json'))
+const characters: Record<string, any> = (charModule as any).default
+
+const elemModule = await import(`../../../data/starrail/${lang}/elements.json`).catch(() => import('../../../data/starrail/en/elements.json'))
+const elementsRaw: Record<string, any> = (elemModule as any).default
+
+const pathModule = await import(`../../../data/starrail/${lang}/paths.json`).catch(() => import('../../../data/starrail/en/paths.json'))
+const pathsRaw: Record<string, any> = (pathModule as any).default
+
+// 필터용 속성/운명의 길 목록
+const elementOptions = Object.values(elementsRaw).map((e: any) => ({
+  id: e.id, name: e.name, icon: `/starrail/assets/icon/element/${e.id}.webp`
+}))
+const pathOptions = Object.values(pathsRaw).map((p: any) => ({
+  id: p.id, name: p.name, icon: p.icon_small
+}))
+
+const slugToId: Record<string, string> = tierData.slugToId
+
+const TRAILBLAZER_NAMES: Record<string, Record<string, string>> = {
+  'trailblazer-destruction': { kr: '개척자·파괴', en: 'TB·Destruction', jp: '開拓者·壊滅', default: 'TB·Destruction' },
+  'trailblazer-preservation': { kr: '개척자·보존', en: 'TB·Preservation', jp: '開拓者·存護', default: 'TB·Preservation' },
+  'trailblazer-harmony': { kr: '개척자·조화', en: 'TB·Harmony', jp: '開拓者·調和', default: 'TB·Harmony' },
+  'trailblazer-remembrance': { kr: '개척자·기억', en: 'TB·Remembrance', jp: '開拓者·追憶', default: 'TB·Remembrance' },
+}
+
+function getChar(slug: string) {
+  const id = slugToId[slug]
+  if (!id) return null
+  const c = characters[id]
+  if (!c) return null
+  // 개척자 이름 처리
+  let name = c.name
+  if (name === '{NICKNAME}' || name.includes('{NICKNAME}')) {
+    const tb = TRAILBLAZER_NAMES[slug]
+    name = tb ? (tb[lang] || tb.default) : 'Trailblazer'
+  }
+  return { id, tag: c.tag, name, element: c.element, rarity: c.rarity, path: c.path }
+}
+
+const TIERS = ['tier-0','tier-05','tier-1','tier-15','tier-2','tier-3','tier-4','tier-5']
+const TIER_LABELS: Record<string,string> = { 'tier-0':'T0','tier-05':'T0.5','tier-1':'T1','tier-15':'T1.5','tier-2':'T2','tier-3':'T3','tier-4':'T4','tier-5':'T5' }
+const TIER_COLORS: Record<string,string> = { 'tier-0':'#ef4444','tier-05':'#f97316','tier-1':'#f59e0b','tier-15':'#eab308','tier-2':'#84cc16','tier-3':'#22c55e','tier-4':'#06b6d4','tier-5':'#6366f1' }
+const TIER_GROUPS: Record<string,string> = { 'tier-0':'apex','tier-05':'apex','tier-1':'meta','tier-15':'meta','tier-2':'meta','tier-3':'offmeta','tier-4':'offmeta','tier-5':'forgotten' }
+const GROUP_LABELS: Record<string,Record<string,string>> = {
+  apex:{kr:'⚡ APEX 캐릭터',en:'⚡ APEX CHARACTERS'},
+  meta:{kr:'✦ 메타 캐릭터',en:'✦ META CHARACTERS'},
+  offmeta:{kr:'◈ 오프메타 캐릭터',en:'◈ OFF-META CHARACTERS'},
+  forgotten:{kr:'✕ 잊혀진 캐릭터',en:'✕ THE FORGOTTEN ONES'},
+}
+const ROLES = ['dps','support-dps','amplifier','sustain']
+const ROLE_LABELS: Record<string,Record<string,string>> = {
+  dps:{kr:'DPS',en:'DPS'},
+  'support-dps':{kr:'서포트 DPS',en:'Support DPS'},
+  amplifier:{kr:'앰플리파이어',en:'Amplifier'},
+  sustain:{kr:'서스테인',en:'Sustain'},
+}
+const modes = ['moc','pf','as']
+const L = starrailI18n[lang] ?? starrailI18n['en']
+const modeLabels = { moc: L.moc, pf: L.pf, as: L.as }
+const T = { title: L.tierList, source: L.tierSource, all: L.tierAll, rarity: L.tierRarity, element: L.tierElement, path: L.tierPath }
+---
+
+<DefaultLayout>
+  <div class="pw tl-page">
+    <div class="tl-header">
+      <h1 class="tl-title">{T.title}</h1>
+      <p class="tl-source">{T.source}</p>
+    </div>
+
+    <div class="mode-tabs">
+      {modes.map((m,i) => (
+        <button class={`mode-tab${i===0?' mode-tab--on':''}`} data-mode={m} type="button">
+          {modeLabels[m]}
+        </button>
+      ))}
+    </div>
+
+    <!-- 필터 바 -->
+    <div class="filter-bar">
+      <!-- 희귀도 -->
+      <div class="filter-group">
+        <button class="fchip fchip--on" data-rarity="">{T.all}</button>
+        <button class="fchip" data-rarity="5">5★</button>
+        <button class="fchip" data-rarity="4">4★</button>
+      </div>
+      <div class="filter-sep"></div>
+      <!-- 속성 -->
+      <div class="filter-group">
+        <button class="ficon ficon--on" data-element="" title={T.all}>
+          <span class="ficon-all">{T.all}</span>
+        </button>
+        {elementOptions.map(el => (
+          <button class="ficon" data-element={el.id} title={el.name}>
+            <img src={el.icon} alt={el.name} width="22" height="22" loading="lazy"/>
+          </button>
+        ))}
+      </div>
+      <div class="filter-sep"></div>
+      <!-- 운명의 길 -->
+      <div class="filter-group">
+        <button class="ficon ficon--on" data-path="" title={T.all}>
+          <span class="ficon-all">{T.all}</span>
+        </button>
+        {pathOptions.map(p => (
+          <button class="ficon" data-path={p.id} title={p.name}>
+            <img src={p.icon} alt={p.name} width="22" height="22" loading="lazy"/>
+          </button>
+        ))}
+      </div>
+    </div>
+
+    <div class="tl-col-header">
+      <div></div>
+      {ROLES.map(role => (
+        <div class="tl-role-col">
+          <span class={`role-label role-${role}`}>{lang==='kr'?ROLE_LABELS[role].kr:ROLE_LABELS[role].en}</span>
+        </div>
+      ))}
+    </div>
+
+    {modes.map((mode) => {
+      const modeData = tierData[mode] || {}
+      let lastGroup = ''
+      return (
+        <div class={`tl-mode-content${mode==='moc'?' tl-mode--on':''}`} data-mode={mode}>
+          {TIERS.map(tier => {
+            const td = modeData[tier] || {}
+            const hasAny = ROLES.some(r => (td[r]?.length||0) > 0)
+            if (!hasAny) return null
+            const group = TIER_GROUPS[tier]
+            const showGroup = group !== lastGroup
+            if (showGroup) lastGroup = group
+            return (
+              <Fragment>
+                {showGroup && <div class={`group-header group-${group}`}>{lang==='kr'?GROUP_LABELS[group].kr:GROUP_LABELS[group].en}</div>}
+                <div class="tl-row">
+                  <div class="tl-tier-badge" style={`background:${TIER_COLORS[tier]}`}>{TIER_LABELS[tier]}</div>
+                  {ROLES.map(role => {
+                    const chars = td[role] || []
+                    return (
+                      <div class="tl-role-cell">
+                        {chars.map(c => {
+                          const ch = getChar(c.slug)
+                          if (!ch) return null
+                          return (
+                            <a href={`/${lang}/starrail/characters/${ch.tag}`} class={`tl-char r${ch.rarity}`} title={ch.name} data-element={ch.element||''} data-path={ch.path||''} data-rarity={ch.rarity||''}>
+                              <div class="tl-char-img">
+                                <img src={`/starrail/assets/icon/character/${ch.id}.webp`} alt={ch.name} width="76" height="76" loading="lazy"/>
+                                {ch.element && <img src={`/starrail/assets/icon/element/${ch.element}.webp`} alt="" class="tl-char-el" width="16" height="16"/>}
+                              </div>
+                              <p class="tl-char-name">{ch.name}</p>
+                            </a>
+                          )
+                        })}
+                      </div>
+                    )
+                  })}
+                </div>
+              </Fragment>
+            )
+          })}
+        </div>
+      )
+    })}
+  </div>
+</DefaultLayout>
+
+<script is:inline>
+;(function(){
+  var activeRarity = '', activeElement = '', activePath = ''
+
+  function applyFilters() {
+    document.querySelectorAll('.tl-char').forEach(function(ch) {
+      var r = ch.dataset.rarity || ''
+      var el = ch.dataset.element || ''
+      var pa = ch.dataset.path || ''
+      var show = (!activeRarity || r === activeRarity)
+                && (!activeElement || el === activeElement)
+                && (!activePath || pa === activePath)
+      ch.classList.toggle('tl-char--hidden', !show)
+    })
+  }
+
+  function initFilters() {
+    // 희귀도
+    document.querySelectorAll('[data-rarity]').forEach(function(btn) {
+      if (!btn.classList.contains('fchip')) return
+      btn.addEventListener('click', function() {
+        activeRarity = btn.dataset.rarity
+        document.querySelectorAll('.fchip').forEach(function(b) { b.classList.remove('fchip--on') })
+        btn.classList.add('fchip--on')
+        applyFilters()
+      })
+    })
+    // 속성
+    document.querySelectorAll('[data-element]').forEach(function(btn) {
+      if (!btn.classList.contains('ficon')) return
+      btn.addEventListener('click', function() {
+        activeElement = btn.dataset.element
+        document.querySelectorAll('.ficon[data-element]').forEach(function(b) { b.classList.remove('ficon--on') })
+        btn.classList.add('ficon--on')
+        applyFilters()
+      })
+    })
+    // 운명의 길
+    document.querySelectorAll('[data-path]').forEach(function(btn) {
+      if (!btn.classList.contains('ficon')) return
+      btn.addEventListener('click', function() {
+        activePath = btn.dataset.path
+        document.querySelectorAll('.ficon[data-path]').forEach(function(b) { b.classList.remove('ficon--on') })
+        btn.classList.add('ficon--on')
+        applyFilters()
+      })
+    })
+  }
+
+  function init(){
+    document.querySelectorAll('.mode-tab').forEach(function(btn){
+      btn.addEventListener('click',function(){
+        var mode=btn.dataset.mode
+        document.querySelectorAll('.mode-tab').forEach(function(b){b.classList.remove('mode-tab--on')})
+        document.querySelectorAll('.tl-mode-content').forEach(function(el){el.classList.remove('tl-mode--on')})
+        btn.classList.add('mode-tab--on')
+        document.querySelector('.tl-mode-content[data-mode="'+mode+'"]')?.classList.add('tl-mode--on')
+      })
+    })
+    initFilters()
+  }
+  document.addEventListener('DOMContentLoaded',init)
+  document.addEventListener('astro:page-load',init)
+})()
+</script>
+
+<style>
+.pw{max-width:1400px;margin:0 auto;padding:0 1.5rem}
+.tl-page{padding:1.5rem 0 3rem}
+.tl-header{margin-bottom:1.25rem}
+.tl-title{font-size:1.5rem;font-weight:800;margin-bottom:.25rem}
+.tl-source{font-size:.72rem;color:var(--c-muted)}
+
+/* 필터 바 */
+.filter-bar{display:flex;align-items:center;flex-wrap:wrap;gap:.5rem;margin-bottom:1rem;padding:.6rem .75rem;border:1px solid var(--c-border);border-radius:var(--radius-md);background:var(--c-surface)}
+.filter-group{display:flex;align-items:center;gap:.3rem;flex-wrap:wrap}
+.filter-sep{width:1px;height:24px;background:var(--c-border);flex-shrink:0}
+.fchip{padding:.3rem .7rem;border-radius:99px;border:1px solid var(--c-border);background:transparent;color:var(--c-muted);font-size:.72rem;font-weight:700;cursor:pointer;transition:all var(--anim-fast)}
+.fchip:hover{border-color:var(--c-border-hi);color:var(--foreground-color)}
+.fchip--on{background:var(--c-accent);border-color:var(--c-accent);color:#fff}
+.ficon{width:32px;height:32px;border-radius:50%;border:2px solid transparent;background:var(--c-surface2);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all var(--anim-fast);padding:0}
+.ficon:hover{border-color:var(--c-border-hi)}
+.ficon--on{border-color:var(--c-accent);background:color-mix(in srgb,var(--c-accent) 15%,var(--c-surface2))}
+.ficon img{width:20px;height:20px;object-fit:contain}
+.ficon-all{font-size:.55rem;font-weight:800;color:var(--c-muted)}
+.ficon--on .ficon-all{color:var(--c-accent)}
+
+/* 필터 숨김 */
+.tl-char--hidden{display:none!important}.mode-tabs{display:flex;gap:.35rem;margin-bottom:1.25rem;flex-wrap:wrap}
+.mode-tab{padding:.5rem 1.1rem;border-radius:var(--radius-sm);border:1px solid var(--c-border);background:var(--c-surface);color:var(--c-muted);font-size:.78rem;font-weight:700;cursor:pointer;transition:all var(--anim-fast);white-space:nowrap}
+.mode-tab:hover{color:var(--foreground-color);border-color:var(--c-border-hi)}
+.mode-tab--on{background:var(--c-accent);color:#fff;border-color:var(--c-accent)}
+.tl-mode-content{display:none}
+.tl-mode-content.tl-mode--on{display:block}
+.tl-col-header{display:grid;grid-template-columns:64px 1fr 1fr 1fr 1fr;gap:.5rem;margin-bottom:.35rem;padding:0 .25rem}
+.tl-role-col{text-align:center}
+.role-label{font-size:.7rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--c-muted)}
+.role-dps{color:#f87171}
+.role-support-dps{color:#c084fc}
+.role-amplifier{color:#fbbf24}
+.role-sustain{color:#4ade80}
+.group-header{text-align:center;font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;padding:.5rem;margin:.75rem 0 .35rem;border-top:1px solid var(--c-border);border-bottom:1px solid var(--c-border)}
+.group-apex{color:#ef4444;border-color:color-mix(in srgb,#ef4444 30%,var(--c-border))}
+.group-meta{color:#f59e0b;border-color:color-mix(in srgb,#f59e0b 30%,var(--c-border))}
+.group-offmeta{color:#22c55e;border-color:color-mix(in srgb,#22c55e 30%,var(--c-border))}
+.group-forgotten{color:#06b6d4;border-color:color-mix(in srgb,#06b6d4 30%,var(--c-border))}
+.tl-row{display:grid;grid-template-columns:64px 1fr 1fr 1fr 1fr;gap:.5rem;margin-bottom:.35rem;border:1px solid var(--c-border);border-radius:var(--radius-md);background:var(--c-surface);overflow:hidden;min-height:100px}
+.tl-tier-badge{display:flex;align-items:center;justify-content:center;font-size:.9rem;font-weight:900;color:#fff;letter-spacing:.04em;align-self:stretch}
+.tl-role-cell{display:flex;flex-wrap:wrap;gap:.35rem;padding:.5rem .35rem;align-content:flex-start;border-left:1px solid var(--c-border)}
+.tl-char{display:flex;flex-direction:column;align-items:center;gap:.2rem;text-decoration:none;width:88px;border-radius:var(--radius-sm);padding:.3rem .15rem;transition:background var(--anim-fast)}
+.tl-char:hover{background:var(--c-surface2)}
+.tl-char-img{position:relative;width:76px;height:76px;border-radius:8px;overflow:hidden;border:2px solid var(--c-border);background:var(--c-surface2)}
+.tl-char.r5 .tl-char-img{border-color:#b45309;background:linear-gradient(135deg,#1a1428,#2a1f3d)}
+.tl-char.r4 .tl-char-img{border-color:#6d28d9;background:linear-gradient(135deg,#141428,#1f1f3d)}
+.tl-char-img img:first-child{width:100%;height:100%;object-fit:contain;padding:3px}
+.tl-char-el{position:absolute;top:4px;left:4px;width:16px;height:16px;object-fit:contain;filter:drop-shadow(0 1px 3px rgba(0,0,0,.6))}
+.tl-char-name{font-size:.62rem;font-weight:700;color:var(--c-muted);text-align:center;line-height:1.2;width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+@media(max-width:700px){
+  .tl-col-header{display:none}
+  .tl-row{grid-template-columns:44px 1fr 1fr;grid-template-rows:auto}
+  .tl-tier-badge{min-height:auto;padding:.5rem 0;font-size:.75rem;grid-row:1/-1}
+}
+</style>

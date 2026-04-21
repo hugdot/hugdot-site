@@ -53,9 +53,16 @@ const characters = Object.entries(charsRaw)
       const pathName = pathsRaw[d.path]?.text || pathsRaw[d.path]?.name || d.path
       name = `${lang === 'kr' ? '개척자' : 'Trailblazer'} · ${pathName}`
     }
-    return { id, name, rarity: Number(d.rarity) || 5, element: d.element ?? '', skillTrees: d.skill_trees ?? [] }
+    return { id, tag: d.tag, name, rarity: Number(d.rarity) || 5, element: d.element ?? '', skillTrees: d.skill_trees ?? [] }
+
   })
-  .sort((a, b) => b.rarity - a.rarity || a.name.localeCompare(b.name))
+  .sort((a, b) => {
+    const aIs8 = a.id.startsWith('8')
+    const bIs8 = b.id.startsWith('8')
+    if (aIs8 && !bIs8) return 1
+    if (!aIs8 && bIs8) return -1
+    return Number(b.id) - Number(a.id)
+  })
 
 // ── 캐릭터 플래너 데이터 ──
 const plannerData: Record<string, any> = {}
@@ -95,7 +102,7 @@ const lightCones = Object.entries(lcRaw)
     id, name: cleanText(d.name ?? ''), rarity: Number(d.rarity) || 3,
     path: d.path ?? '', icon: d.icon ?? `/starrail/assets/icon/light_cone/${id}.webp`,
   }))
-  .sort((a, b) => b.rarity - a.rarity || a.name.localeCompare(b.name))
+  .sort((a, b) => Number(b.id) - Number(a.id))
 
 // ── 광추 플래너 데이터 ──
 const lcPlannerData: Record<string, any> = {}
@@ -126,7 +133,7 @@ const L = lang === 'kr'
       result:'Required Materials', noResult:'Select items and set goals to calculate.',
       asc:'Ascension', skills:'Skills', traces:'Include Traces', from:'Source', clear:'Clear All' }
 
-const charList = characters.map(c => ({ id: c.id, name: c.name, rarity: c.rarity, element: c.element, icon: `/starrail/assets/icon/character/${c.id}.webp`, elIcon: c.element ? `/starrail/assets/icon/element/${c.element}.webp` : '' }))
+const charList = characters.map(c => ({ id: c.id, tag: c.tag, name: c.name, rarity: c.rarity, element: c.element, icon: `/starrail/assets/icon/character/${c.id}.webp`, elIcon: c.element ? `/starrail/assets/icon/element/${c.element}.webp` : '' }))
 const lcList = lightCones.map(lc => ({ id: lc.id, name: lc.name, rarity: lc.rarity, path: lc.path, icon: lc.icon }))
 ---
 
@@ -136,11 +143,7 @@ const lcList = lightCones.map(lc => ({ id: lc.id, name: lc.name, rarity: lc.rari
   <!-- 헤더 -->
   <div class="pl-header">
     <div class="pw">
-      <nav class="bc">
-        <a href={`/${lang}`}>Home</a><span>/</span>
-        <a href={`/${lang}/starrail`}>Star Rail</a><span>/</span>
-        <span class="bc-cur">{L.title}</span>
-      </nav>
+      
       <div class="hd-row">
         <div><h1 class="pl-title">{L.title}</h1><p class="pl-sub">{L.subtitle}</p></div>
         <button class="clear-btn" id="clearAll" type="button">
@@ -177,8 +180,8 @@ const lcList = lightCones.map(lc => ({ id: lc.id, name: lc.name, rarity: lc.rari
 
       <!-- 캐릭터 그리드 -->
       <div class="cgrid" id="charGrid">
-        {characters.map(c => (
-          <button class="cbtn" data-cid={c.id} data-cname={c.name.toLowerCase()} title={c.name} type="button">
+        {characters.map((c, i) => (
+          <button class={`cbtn${i >= 12 ? ' cbtn-hidden' : ''}`} data-cid={c.id} data-cname={c.name.toLowerCase()} title={c.name} type="button">
             <div class={`cimg-wrap r${c.rarity}`}>
               <img src={`/starrail/assets/icon/character/${c.id}.webp`} alt={c.name} width="56" height="56" loading="lazy" class="cimg"/>
               {c.element && <img src={`/starrail/assets/icon/element/${c.element}.webp`} alt="" width="14" height="14" loading="lazy" class="cel"/>}
@@ -187,11 +190,14 @@ const lcList = lightCones.map(lc => ({ id: lc.id, name: lc.name, rarity: lc.rari
           </button>
         ))}
       </div>
+      <button class="show-more-btn" id="charShowMore" type="button">
+        {lang === 'kr' ? `+ 전체 보기 (${characters.length - 12}명 더)` : `+ Show all (${characters.length - 12} more)`}
+      </button>
 
       <!-- 광추 그리드 -->
       <div class="cgrid hidden" id="lcGrid">
-        {lightCones.map(lc => (
-          <button class="cbtn lc-btn" data-lcid={lc.id} data-lcname={lc.name.toLowerCase()} title={lc.name} type="button">
+        {lightCones.map((lc, i) => (
+          <button class={`cbtn lc-btn${i >= 12 ? ' cbtn-hidden' : ''}`} data-lcid={lc.id} data-lcname={lc.name.toLowerCase()} title={lc.name} type="button">
             <div class={`cimg-wrap r${lc.rarity}`}>
               <img src={lc.icon} alt={lc.name} width="56" height="56" loading="lazy" class="cimg lc-img"/>
             </div>
@@ -199,6 +205,9 @@ const lcList = lightCones.map(lc => ({ id: lc.id, name: lc.name, rarity: lc.rari
           </button>
         ))}
       </div>
+      <button class="show-more-btn hidden" id="lcShowMore" type="button">
+        {lang === 'kr' ? `+ 전체 보기 (${lightCones.length - 12}개 더)` : `+ Show all (${lightCones.length - 12} more)`}
+      </button>
     </div>
 
     <!-- 오른쪽 -->
@@ -287,7 +296,7 @@ const lcList = lightCones.map(lc => ({ id: lc.id, name: lc.name, rarity: lc.rari
 
     // 필요량
     var mnum=document.createElement('p'); mnum.className='mat-num'+(done?' mat-num--done':'')
-    mnum.textContent='필요: × '+m.num.toLocaleString(); info.appendChild(mnum)
+    mnum.textContent='× '+m.num.toLocaleString(); info.appendChild(mnum)
 
     // 보유/부족 행
     var invRow=document.createElement('div'); invRow.className='inv-row'
@@ -302,7 +311,7 @@ const lcList = lightCones.map(lc => ({ id: lc.id, name: lc.name, rarity: lc.rari
       var done=need===0
       var needEl=card.querySelector('.need-lbl')
       if(needEl){
-        needEl.textContent=done ? '✓ 완료' : '부족: × '+need.toLocaleString()
+        needEl.textContent=done ? '✓' : '▼ '+need.toLocaleString()
         needEl.className='need-lbl'+(done?' need-lbl--done':'')
       }
       card.classList.toggle('mat-card--done', done)
@@ -310,7 +319,7 @@ const lcList = lightCones.map(lc => ({ id: lc.id, name: lc.name, rarity: lc.rari
       if(mnumEl) mnumEl.className='mat-num'+(done?' mat-num--done':'')
     })
     var needLbl=document.createElement('span'); needLbl.className='need-lbl'+(done?' need-lbl--done':'')
-    needLbl.textContent=done ? '✓ 완료' : '부족: × '+need.toLocaleString()
+    needLbl.textContent=done ? '✓' : '▼ '+need.toLocaleString()
     invRow.appendChild(invLbl); invRow.appendChild(invInput); invRow.appendChild(needLbl)
     info.appendChild(invRow)
 
@@ -422,13 +431,39 @@ const lcList = lightCones.map(lc => ({ id: lc.id, name: lc.name, rarity: lc.rari
     mode=m
     var mtabs=document.querySelectorAll('.mtab')
     mtabs.forEach(function(t){ t.classList.toggle('mtab--on', t.dataset.mode===m) })
-    // 그리드/검색 전환
     var cg=document.getElementById('charGrid'), lg=document.getElementById('lcGrid')
     var csw=document.getElementById('charSearchWrap'), lsw=document.getElementById('lcSearchWrap')
-    if(m==='char'){ cg&&cg.classList.remove('hidden'); lg&&lg.classList.add('hidden'); csw&&csw.classList.remove('hidden'); lsw&&lsw.classList.add('hidden') }
-    else {          cg&&cg.classList.add('hidden'); lg&&lg.classList.remove('hidden'); csw&&csw.classList.add('hidden'); lsw&&lsw.classList.remove('hidden') }
+    var csm=document.getElementById('charShowMore'), lsm=document.getElementById('lcShowMore')
+    if(m==='char'){
+      cg&&cg.classList.remove('hidden'); lg&&lg.classList.add('hidden')
+      csw&&csw.classList.remove('hidden'); lsw&&lsw.classList.add('hidden')
+      csm&&csm.classList.remove('hidden'); lsm&&lsm.classList.add('hidden')
+    } else {
+      cg&&cg.classList.add('hidden'); lg&&lg.classList.remove('hidden')
+      csw&&csw.classList.add('hidden'); lsw&&lsw.classList.remove('hidden')
+      csm&&csm.classList.add('hidden'); lsm&&lsm.classList.remove('hidden')
+    }
     renderSel()
   }
+
+  // ── 캐릭터/광추 클릭 — init 밖에서 한 번만 등록 ──
+  document.addEventListener('click', function(e) {
+    // 캐릭터
+    var cBtn = e.target.closest('.cbtn:not(.lc-btn)')
+    if(cBtn && document.getElementById('charGrid') && document.getElementById('charGrid').contains(cBtn)) {
+      var cid = cBtn.dataset.cid; var pd = plannerData[cid]; if(!pd) return
+      if(selChar[cid]){ delete selChar[cid] } else { selChar[cid]={ asc:{cur:0,tgt:6}, skills:pd.skills.map(function(sk){return{cur:1,tgt:sk.maxLv}}), trace:true } }
+      saveChar(); updCharBtns(); renderCharSel()
+      return
+    }
+    // 광추
+    var lBtn = e.target.closest('.lc-btn')
+    if(lBtn && document.getElementById('lcGrid') && document.getElementById('lcGrid').contains(lBtn)) {
+      var lid = lBtn.dataset.lcid; var pd = lcPlannerData[lid]; if(!pd) return
+      if(selLC[lid]){ delete selLC[lid] } else { selLC[lid]={ asc:{cur:0,tgt:6} } }
+      saveLC(); updLCBtns(); renderLCSel()
+    }
+  })
 
   // ── 이벤트 ──
   function init(){
@@ -437,36 +472,54 @@ const lcList = lightCones.map(lc => ({ id: lc.id, name: lc.name, rarity: lc.rari
       btn.addEventListener('click',function(){ switchMode(btn.dataset.mode) },{passive:true})
     })
 
-    // 캐릭터 버튼
-    document.querySelectorAll('.cbtn:not(.lc-btn)').forEach(function(btn){
-      btn.addEventListener('click',function(){
-        var cid=btn.dataset.cid; var pd=plannerData[cid]; if(!pd) return
-        if(selChar[cid]){ delete selChar[cid] } else { selChar[cid]={ asc:{cur:0,tgt:6}, skills:pd.skills.map(function(sk){return{cur:1,tgt:sk.maxLv}}), trace:true } }
-        saveChar(); updCharBtns(); renderCharSel()
-      },{passive:true})
-    })
-
-    // 광추 버튼
-    document.querySelectorAll('.lc-btn').forEach(function(btn){
-      btn.addEventListener('click',function(){
-        var lid=btn.dataset.lcid; var pd=lcPlannerData[lid]; if(!pd) return
-        if(selLC[lid]){ delete selLC[lid] } else { selLC[lid]={ asc:{cur:0,tgt:6} } }
-        saveLC(); updLCBtns(); renderLCSel()
-      },{passive:true})
-    })
-
-    // 캐릭터 검색
+    // 캐릭터 검색 — 검색 시 숨긴 캐릭터도 표시
     var csi=document.getElementById('charSearch')
     if(csi) csi.addEventListener('input',function(){
       var q=csi.value.trim().toLowerCase()
-      document.querySelectorAll('.cbtn:not(.lc-btn)').forEach(function(b){ b.classList.toggle('hidden',q!==''&&b.dataset.cname.indexOf(q)===-1) })
+      var showMoreBtn=document.getElementById('charShowMore')
+      if(q !== '') {
+        // 검색 중엔 전체 표시 + 필터
+        document.querySelectorAll('.cbtn:not(.lc-btn)').forEach(function(b){
+          b.classList.remove('cbtn-hidden')
+          b.classList.toggle('hidden', b.dataset.cname.indexOf(q)===-1)
+        })
+        if(showMoreBtn) showMoreBtn.classList.add('hidden')
+      } else {
+        // 검색 해제 시 원래대로
+        document.querySelectorAll('.cbtn:not(.lc-btn)').forEach(function(b){ b.classList.remove('hidden') })
+        if(showMoreBtn) showMoreBtn.classList.remove('hidden')
+      }
+    },{passive:true})
+
+    // 더보기 버튼
+    var showMoreBtn=document.getElementById('charShowMore')
+    if(showMoreBtn) showMoreBtn.addEventListener('click',function(){
+      document.querySelectorAll('.cbtn-hidden').forEach(function(b){ b.classList.remove('cbtn-hidden') })
+      showMoreBtn.classList.add('hidden')
     },{passive:true})
 
     // 광추 검색
     var lsi=document.getElementById('lcSearch')
     if(lsi) lsi.addEventListener('input',function(){
       var q=lsi.value.trim().toLowerCase()
-      document.querySelectorAll('.lc-btn').forEach(function(b){ b.classList.toggle('hidden',q!==''&&b.dataset.lcname.indexOf(q)===-1) })
+      var lcShowMoreBtn=document.getElementById('lcShowMore')
+      if(q !== '') {
+        document.querySelectorAll('.lc-btn').forEach(function(b){
+          b.classList.remove('cbtn-hidden')
+          b.classList.toggle('hidden', b.dataset.lcname.indexOf(q)===-1)
+        })
+        if(lcShowMoreBtn) lcShowMoreBtn.classList.add('hidden')
+      } else {
+        document.querySelectorAll('.lc-btn').forEach(function(b){ b.classList.remove('hidden') })
+        if(lcShowMoreBtn) lcShowMoreBtn.classList.remove('hidden')
+      }
+    },{passive:true})
+
+    // 광추 더보기
+    var lcShowMoreBtn=document.getElementById('lcShowMore')
+    if(lcShowMoreBtn) lcShowMoreBtn.addEventListener('click',function(){
+      document.querySelectorAll('.lc-btn.cbtn-hidden').forEach(function(b){ b.classList.remove('cbtn-hidden') })
+      lcShowMoreBtn.classList.add('hidden')
     },{passive:true})
 
     // 전체 초기화
@@ -523,14 +576,24 @@ const lcList = lightCones.map(lc => ({ id: lc.id, name: lc.name, rarity: lc.rari
 @media(max-width:900px){ .pl-body{grid-template-columns:1fr} }
 
 /* 왼쪽 */
-.pl-left { position:sticky; top:72px; display:flex; flex-direction:column; gap:.6rem; max-height:calc(100vh - 120px); }
-@media(max-width:900px){ .pl-left{position:static;max-height:none} }
+.pl-left { position:sticky; top:72px; display:flex; flex-direction:column; gap:.6rem; max-height:calc(100vh - 120px); overflow-y:auto; }
+@media(max-width:900px){ .pl-left{position:static;max-height:none;overflow-y:visible} }
 .sw { position:relative; flex-shrink:0; }
 .si { position:absolute; left:.7rem; top:50%; transform:translateY(-50%); color:var(--c-muted); pointer-events:none; }
 .sinput { width:100%; padding:.5rem .75rem .5rem 2.1rem; border:1px solid var(--c-border); border-radius:var(--radius-sm); background:var(--c-surface); color:var(--foreground-color); font-size:.78rem; outline:none; transition:border-color var(--anim-fast); }
 .sinput::placeholder { color:var(--c-muted); }
 .sinput:focus { border-color:var(--c-accent); }
-.cgrid { display:grid; grid-template-columns:repeat(3,1fr); gap:.35rem; overflow-y:auto; flex:1; padding-bottom:.5rem; }
+.cgrid { display:grid; grid-template-columns:repeat(3,1fr); gap:.35rem; flex-shrink:0; padding-bottom:.5rem; }
+.cbtn.cbtn-hidden { display:none !important; }
+.show-more-btn {
+  width:100%; margin-top:.35rem; padding:.45rem;
+  border:1px dashed var(--c-border-hi); border-radius:var(--radius-sm);
+  background:transparent; color:var(--c-muted); font-size:.72rem; font-weight:700;
+  cursor:pointer; transition:color var(--anim-fast), border-color var(--anim-fast);
+  flex-shrink:0;
+}
+.show-more-btn:hover { color:var(--foreground-color); border-color:var(--c-accent); }
+.show-more-btn.hidden { display:none; }
 .cgrid::-webkit-scrollbar { width:3px; }
 .cgrid::-webkit-scrollbar-thumb { background:var(--c-border-hi); border-radius:99px; }
 .cbtn { display:flex; flex-direction:column; align-items:center; gap:.25rem; padding:.35rem .2rem; border:2px solid transparent; border-radius:var(--radius-sm); background:var(--c-surface); cursor:pointer; transition:border-color var(--anim-fast),background var(--anim-fast); }

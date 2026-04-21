@@ -2,6 +2,7 @@
 // src/pages/[lang]/starrail/index.astro
 import DefaultLayout from '@layouts/DefaultLayout.astro'
 import { Icon } from 'astro-icon/components'
+import { starrailI18n } from '@utils/i18n'
 
 const allData = import.meta.glob('/src/data/starrail/**/*.json', { eager: true })
 
@@ -16,13 +17,77 @@ const baseDir = `/src/data/starrail/${lang}`
 const charsRaw:    Record<string, any> = (allData[`${baseDir}/characters.json`]   as any)?.default ?? {}
 const elementsRaw: Record<string, any> = (allData[`${baseDir}/elements.json`]     as any)?.default ?? {}
 const pathsRaw:    Record<string, any> = (allData[`${baseDir}/paths.json`]         as any)?.default ?? {}
+const lcsRaw:      Record<string, any> = (allData[`${baseDir}/light_cones.json`]  as any)?.default ?? {}
+const relicsRaw:   Record<string, any> = (allData[`${baseDir}/relic_sets.json`]   as any)?.default ?? {}
+const itemsRaw:    Record<string, any> = (allData[`${baseDir}/items.json`]         as any)?.default ?? {}
 
 const cleanText = (text: string) => {
   if (!text) return ''
   return text.replace(/\{RUBY_B#([^}]+)\}([^\{]+)\{RUBY_E\#\}/g,'$1').replace(/\{[^}]*\}/g,'').replace(/<[^>]*>/g,'').trim()
 }
 
-// 최신 5성 캐릭터 (ID 내림차순, 최대 8명)
+type SearchItem = {
+  id: string
+  type: 'character' | 'lightcone' | 'relic' | 'item'
+  name: string
+  sub: string
+  icon: string
+  href: string
+  rarity?: number
+}
+
+const searchIndex: SearchItem[] = []
+
+Object.entries(charsRaw).forEach(([id, d]: [string, any]) => {
+  if (id.startsWith('800')) return
+  const name = cleanText(d.name ?? '')
+  if (!name || name.includes('{NICKNAME}')) return
+  const elName   = cleanText(elementsRaw[d.element]?.name ?? d.element ?? '')
+  const pathName = cleanText(pathsRaw[d.path]?.name ?? d.path ?? '')
+  searchIndex.push({ id, type: 'character', name,
+    sub: [elName, pathName].filter(Boolean).join(' · '),
+    icon: `/starrail/assets/icon/character/${id}.webp`,
+    href: `/${lang}/starrail/characters/${id}`,
+    rarity: d.rarity })
+})
+
+Object.entries(lcsRaw).forEach(([id, d]: [string, any]) => {
+  const name = cleanText(d.name ?? '')
+  if (!name) return
+  const pathName = cleanText(pathsRaw[d.path]?.name ?? d.path ?? '')
+  const rawIcon  = (d.icon ?? '').replace(/^\/starrail\/assets\//, '').replace(/^\//, '')
+  searchIndex.push({ id, type: 'lightcone', name,
+    sub: pathName,
+    icon: rawIcon ? `/starrail/assets/${rawIcon}` : '',
+    href: `/${lang}/starrail/light-cones`,
+    rarity: d.rarity })
+})
+
+Object.entries(relicsRaw).forEach(([id, d]: [string, any]) => {
+  const name = cleanText(d.name ?? '')
+  if (!name) return
+  const desc = Array.isArray(d.desc) ? cleanText(d.desc[0] ?? '') : ''
+  const rawIcon = (d.icon ?? '').replace(/^\/starrail\/assets\//, '').replace(/^\//, '')
+  searchIndex.push({ id, type: 'relic', name,
+    sub: desc.slice(0, 40),
+    icon: rawIcon ? `/starrail/assets/${rawIcon}` : '',
+    href: `/${lang}/starrail/relics`,
+    rarity: 5 })
+})
+
+Object.entries(itemsRaw).forEach(([id, d]: [string, any]) => {
+  if (d.type !== 'Material') return
+  if ((d.rarity ?? 0) < 2) return
+  const name = cleanText(d.name ?? '')
+  if (!name || name.includes('{')) return
+  const rawIcon = (d.icon ?? '').replace(/^\/starrail\/assets\//, '').replace(/^\//, '')
+  searchIndex.push({ id, type: 'item', name,
+    sub: cleanText(d.sub_type ?? ''),
+    icon: rawIcon ? `/starrail/assets/${rawIcon}` : '',
+    href: `/${lang}/starrail/items`,
+    rarity: d.rarity })
+})
+
 const recentChars = Object.entries(charsRaw)
   .filter(([id, d]: [string, any]) => {
     if (id.startsWith('800')) return false
@@ -31,64 +96,22 @@ const recentChars = Object.entries(charsRaw)
   .sort(([a], [b]) => Number(b) - Number(a))
   .slice(0, 8)
   .map(([id, d]: [string, any]) => ({
-    id,
-    name: cleanText(d.name ?? ''),
-    element: d.element ?? '',
-    path: d.path ?? '',
-    rarity: d.rarity ?? 5,
+    id, name: cleanText(d.name ?? ''), element: d.element ?? '', rarity: d.rarity ?? 5,
   }))
 
-// 언어별 UI
-const T: Record<string, any> = {
-  kr: {
-    title: '붕괴: 스타레일 DB',
-    subtitle: '캐릭터, 광추, 유물, 계획까지 — 한 곳에서',
-    eyebrow: 'HugDot · 게임 데이터베이스',
-    recentTitle: '최신 캐릭터',
-    featuresTitle: '사이트 특징',
-    navTitle: '바로가기',
-    features: [
-      { icon: 'lucide:globe', title: '13개 언어 지원', desc: '한국어, 영어, 일본어 등 13개 언어로 제공' },
-      { icon: 'lucide:map-pin', title: '파밍 위치 정보', desc: '재료별 획득처와 드랍 몬스터를 한눈에' },
-      { icon: 'lucide:calculator', title: '돌파 계획기', desc: '여러 캐릭터·광추의 재료를 한번에 계산' },
-      { icon: 'lucide:database', title: '공식 데이터 기반', desc: 'Dimbreath 공식 데이터로 정확한 수치 제공' },
-    ],
-    sections: [
-      { key:'characters',  label:'캐릭터',     desc:'스킬·행적·스탯·성혼',   href:`/${lang}/starrail/characters`,         icon:'lucide:users',       color:'#7c9dfc' },
-      { key:'lightcones',  label:'광추',        desc:'운명의 길별 광추 목록',  href:`/${lang}/starrail/light-cones`,         icon:'lucide:zap',         color:'#fbbf24' },
-      { key:'relics',      label:'유물',        desc:'세트 효과 및 어픽스',    href:`/${lang}/starrail/relics`,             icon:'lucide:gem',         color:'#a78bfa' },
-      { key:'achievements',label:'업적',        desc:'전체 업적 목록 및 필터', href:`/${lang}/starrail/achievements`,       icon:'lucide:trophy',      color:'#f97316' },
-      { key:'simulated',   label:'모의 우주',   desc:'축복·기물·구역 정보',    href:`/${lang}/starrail/simulated-universe`, icon:'lucide:sparkles',    color:'#34d399' },
-      { key:'planner',     label:'계획',      desc:'돌파·스킬 재료 계산',    href:`/${lang}/starrail/planner`,            icon:'lucide:calendar',    color:'#f472b6' },
-      { key:'items',       label:'재료',        desc:'파밍 재료 및 드랍처',    href:`/${lang}/starrail/items`,              icon:'lucide:package',     color:'#60a5fa' },
-    ],
-  },
-  en: {
-    title: 'Honkai: Star Rail DB',
-    subtitle: 'Characters, Light Cones, Relics, Planner — all in one place',
-    eyebrow: 'HugDot · Game Database',
-    recentTitle: 'Recent Characters',
-    featuresTitle: 'Why HugDot?',
-    navTitle: 'Quick Access',
-    features: [
-      { icon: 'lucide:globe', title: '13 Languages', desc: 'Available in Korean, English, Japanese and 10 more' },
-      { icon: 'lucide:map-pin', title: 'Farming Sources', desc: 'See where to farm each material and which monsters drop it' },
-      { icon: 'lucide:calculator', title: 'Ascension Planner', desc: 'Calculate materials for multiple characters at once' },
-      { icon: 'lucide:database', title: 'Official Data', desc: 'Accurate stats and values from official game data' },
-    ],
-    sections: [
-      { key:'characters',  label:'Characters',       desc:'Skills, Traces, Stats, Eidolons', href:`/${lang}/starrail/characters`,         icon:'lucide:users',       color:'#7c9dfc' },
-      { key:'lightcones',  label:'Light Cones',      desc:'Light Cones by Path',             href:`/${lang}/starrail/light-cones`,         icon:'lucide:zap',         color:'#fbbf24' },
-      { key:'relics',      label:'Relics',            desc:'Set effects and affixes',         href:`/${lang}/starrail/relics`,             icon:'lucide:gem',         color:'#a78bfa' },
-      { key:'achievements',label:'Achievements',     desc:'Full achievement list',            href:`/${lang}/starrail/achievements`,       icon:'lucide:trophy',      color:'#f97316' },
-      { key:'simulated',   label:'Sim. Universe',    desc:'Blessings, Curios, Domains',      href:`/${lang}/starrail/simulated-universe`, icon:'lucide:sparkles',    color:'#34d399' },
-      { key:'planner',     label:'Planner',           desc:'Ascension material calculator',   href:`/${lang}/starrail/planner`,            icon:'lucide:calendar',    color:'#f472b6' },
-      { key:'items',       label:'Materials',         desc:'Farming materials & drop sources',href:`/${lang}/starrail/items`,              icon:'lucide:package',     color:'#60a5fa' },
-      { key:'monsters',    label:'Achievement Track', desc:'Track achievement progress',      href:`/${lang}/starrail/achievements`,       icon:'lucide:list-checks', color:'#94a3b8' },
-    ],
-  },
+const ui = starrailI18n[lang] ?? starrailI18n['en']
+
+// sections에 href 조립
+const SECTION_HREF: Record<string, string> = {
+  characters:   `/${lang}/starrail/characters`,
+  lightcones:   `/${lang}/starrail/light-cones`,
+  relics:       `/${lang}/starrail/relics`,
+  achievements: `/${lang}/starrail/achievements`,
+  simulated:    `/${lang}/starrail/simulated-universe`,
+  planner:      `/${lang}/starrail/planner`,
+  items:        `/${lang}/starrail/items`,
 }
-const ui = T[lang] ?? T['en']
+const sections = ui.sections.map((s: any) => ({ ...s, href: SECTION_HREF[s.key] }))
 
 const EL_ICON: Record<string, string> = {
   Physical:  '/starrail/assets/icon/element/Physical.webp',
@@ -99,6 +122,8 @@ const EL_ICON: Record<string, string> = {
   Quantum:   '/starrail/assets/icon/element/Quantum.webp',
   Imaginary: '/starrail/assets/icon/element/Imaginary.webp',
 }
+
+const searchIndexJSON = JSON.stringify(searchIndex).replace(/</g, '\\u003c').replace(/>/g, '\\u003e')
 ---
 
 <DefaultLayout
@@ -108,21 +133,34 @@ const EL_ICON: Record<string, string> = {
 >
 <div class="sr-page">
 
-  <!-- ── Hero ── -->
   <section class="sr-hero">
     <div class="hero-inner">
       <p class="eyebrow">{ui.eyebrow}</p>
       <h1 class="hero-title">{ui.title}</h1>
       <p class="hero-sub">{ui.subtitle}</p>
-      <div class="hero-btns">
-        <a href={`/${lang}/starrail/characters`} class="btn-primary">
-          <Icon name="lucide:users" size="0.9rem"/>
-          {T[lang]?.sections[0]?.label ?? 'Characters'}
-        </a>
-        <a href={`/${lang}/starrail/planner`} class="btn-secondary">
-          <Icon name="lucide:calendar" size="0.9rem"/>
-          {T[lang]?.sections[5]?.label ?? 'Planner'}
-        </a>
+      <div class="search-wrap" id="search-wrap">
+        <div class="search-box" id="search-box">
+          <svg class="search-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+          </svg>
+          <input
+            type="search"
+            id="search-input"
+            class="search-input"
+            placeholder={ui.searchPlaceholder}
+            autocomplete="off"
+            spellcheck="false"
+            aria-label={ui.searchPlaceholder}
+            aria-autocomplete="list"
+            aria-controls="search-results"
+          />
+          <button class="search-clear" id="search-clear" aria-label="Clear" hidden>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+              <path d="M18 6 6 18M6 6l12 12"/>
+            </svg>
+          </button>
+        </div>
+        <div class="search-dropdown" id="search-results" role="listbox" hidden></div>
       </div>
     </div>
     <div class="hero-bg" aria-hidden="true">
@@ -132,17 +170,14 @@ const EL_ICON: Record<string, string> = {
     </div>
   </section>
 
-  <!-- ── 바로가기 ── -->
   <section class="sr-section">
     <div class="sw">
       <h2 class="section-title">{ui.navTitle}</h2>
       <div class="nav-grid">
-        {ui.sections.map((s: any) => (
+        {sections.map((s: any) => (
           <a href={s.href} class="nav-card" style={`--nc:${s.color}`}>
             <div class="nc-glow"></div>
-            <div class="nc-icon">
-              <Icon name={s.icon} size="1.2rem"/>
-            </div>
+            <div class="nc-icon"><Icon name={s.icon} size="1.2rem"/></div>
             <div class="nc-body">
               <p class="nc-label">{s.label}</p>
               <p class="nc-desc">{s.desc}</p>
@@ -154,14 +189,13 @@ const EL_ICON: Record<string, string> = {
     </div>
   </section>
 
-  <!-- ── 최신 캐릭터 ── -->
   {recentChars.length > 0 && (
     <section class="sr-section">
       <div class="sw">
         <div class="section-hd">
           <h2 class="section-title">{ui.recentTitle}</h2>
           <a href={`/${lang}/starrail/characters`} class="see-all">
-            {lang === 'kr' ? '전체 보기' : 'View all'}
+            {ui.viewAll}
             <Icon name="lucide:arrow-right" size="0.8rem"/>
           </a>
         </div>
@@ -169,21 +203,9 @@ const EL_ICON: Record<string, string> = {
           {recentChars.map(c => (
             <a href={`/${lang}/starrail/characters/${c.id}`} class="char-card">
               <div class="cc-img-wrap">
-                <img
-                  src={`/starrail/assets/icon/character/${c.id}.webp`}
-                  alt={c.name}
-                  width="80" height="80"
-                  loading="lazy"
-                  class="cc-img"
-                />
+                <img src={`/starrail/assets/icon/character/${c.id}.webp`} alt={c.name} width="80" height="80" loading="lazy" class="cc-img"/>
                 {c.element && EL_ICON[c.element] && (
-                  <img
-                    src={EL_ICON[c.element]}
-                    alt={c.element}
-                    width="18" height="18"
-                    loading="lazy"
-                    class="cc-el"
-                  />
+                  <img src={EL_ICON[c.element]} alt={c.element} width="18" height="18" loading="lazy" class="cc-el"/>
                 )}
               </div>
               <p class="cc-name">{c.name}</p>
@@ -194,16 +216,13 @@ const EL_ICON: Record<string, string> = {
     </section>
   )}
 
-  <!-- ── 사이트 특징 ── -->
   <section class="sr-section sr-section--features">
     <div class="sw">
       <h2 class="section-title">{ui.featuresTitle}</h2>
       <div class="feat-grid">
         {ui.features.map((f: any) => (
           <div class="feat-card">
-            <div class="feat-icon">
-              <Icon name={f.icon} size="1.4rem"/>
-            </div>
+            <div class="feat-icon"><Icon name={f.icon} size="1.4rem"/></div>
             <div>
               <p class="feat-title">{f.title}</p>
               <p class="feat-desc">{f.desc}</p>
@@ -216,25 +235,164 @@ const EL_ICON: Record<string, string> = {
 
 </div>
 
+<script is:inline define:vars={{ searchIndexJSON, lang, searchLabels: ui.searchLabel, noResults: ui.noResults }}>
+;(function () {
+  var index = JSON.parse(searchIndexJSON)
+
+  function normalize(s) {
+    return (s || '').toLowerCase().replace(/\s+/g, '')
+  }
+
+  var CHOSUNG = ['ㄱ','ㄲ','ㄴ','ㄷ','ㄸ','ㄹ','ㅁ','ㅂ','ㅃ','ㅅ','ㅆ','ㅇ','ㅈ','ㅉ','ㅊ','ㅋ','ㅌ','ㅍ','ㅎ']
+  function extractChosung(str) {
+    return (str || '').split('').map(function(c) {
+      var code = c.charCodeAt(0) - 0xAC00
+      if (code < 0 || code > 11171) return c.toLowerCase()
+      return CHOSUNG[Math.floor(code / 588)]
+    }).join('')
+  }
+
+  function scoreItem(item, q) {
+    var nq   = normalize(q)
+    var name = normalize(item.name)
+    var sub  = normalize(item.sub)
+    if (name === nq)                             return 100
+    if (name.startsWith(nq))                     return 80
+    if (name.includes(nq))                       return 60
+    if (sub.includes(nq))                        return 30
+    if (extractChosung(item.name).includes(nq))  return 40
+    return 0
+  }
+
+  function search(q) {
+    if (!q || !q.trim()) return []
+    return index
+      .map(function(item) { return { item: item, s: scoreItem(item, q) } })
+      .filter(function(r) { return r.s > 0 })
+      .sort(function(a, b) { return b.s - a.s })
+      .slice(0, 12)
+      .map(function(r) { return r.item })
+  }
+
+  var TYPE_COLOR   = { character:'#7c9dfc', lightcone:'#fbbf24', relic:'#a78bfa', item:'#60a5fa' }
+  var RARITY_COLOR = { 5:'#fbbf24', 4:'#a78bfa', 3:'#60a5fa', 2:'#9ca3af' }
+
+  function esc(s) {
+    return (s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;')
+  }
+
+  function renderResults(items) {
+    var dd = document.getElementById('search-results')
+    if (!dd) return
+    if (!items.length) {
+      dd.innerHTML = '<div class="sr-empty">' + esc(noResults) + '</div>'
+      dd.hidden = false
+      return
+    }
+    dd.innerHTML = items.map(function(item) {
+      var tc = TYPE_COLOR[item.type] || '#7c9dfc'
+      var rc = RARITY_COLOR[item.rarity] || '#9ca3af'
+      var tl = searchLabels[item.type] || item.type
+      return '<a href="' + esc(item.href) + '" class="sr-item" role="option">' +
+        '<div class="sr-img-wrap" style="border-color:' + rc + '33">' +
+          (item.icon ? '<img src="' + esc(item.icon) + '" alt="" width="36" height="36" loading="lazy" class="sr-img" onerror="this.style.display=\'none\'">' : '') +
+        '</div>' +
+        '<div class="sr-body">' +
+          '<span class="sr-name">' + esc(item.name) + '</span>' +
+        '</div>' +
+        '<span class="sr-badge" style="color:' + tc + ';border-color:' + tc + '44;background:' + tc + '15">' + esc(tl) + '</span>' +
+      '</a>'
+    }).join('')
+    dd.hidden = false
+  }
+
+  function close() {
+    var dd = document.getElementById('search-results')
+    if (dd) dd.hidden = true
+  }
+
+  var timer
+  function init() {
+    var input = document.getElementById('search-input')
+    var clear = document.getElementById('search-clear')
+    var wrap  = document.getElementById('search-wrap')
+    if (!input || !clear || !wrap) return
+
+    input.addEventListener('input', function() {
+      clearTimeout(timer)
+      var q = input.value
+      clear.hidden = !q
+      timer = setTimeout(function() {
+        if (!q.trim()) { close(); return }
+        renderResults(search(q))
+      }, 100)
+    })
+
+    clear.addEventListener('click', function() {
+      input.value = ''; clear.hidden = true; close(); input.focus()
+    })
+
+    input.addEventListener('focus', function() {
+      if (input.value.trim()) renderResults(search(input.value))
+    })
+
+    input.addEventListener('keydown', function(e) {
+      var dd = document.getElementById('search-results')
+      if (!dd || dd.hidden) return
+      var items = dd.querySelectorAll('.sr-item')
+      var active = dd.querySelector('.sr-item--active')
+      var idx = active ? Array.from(items).indexOf(active) : -1
+      if (e.key === 'ArrowDown') {
+        e.preventDefault()
+        var next = items[idx + 1] || items[0]
+        if (active) active.classList.remove('sr-item--active')
+        next.classList.add('sr-item--active')
+        next.scrollIntoView({ block: 'nearest' })
+      } else if (e.key === 'ArrowUp') {
+        e.preventDefault()
+        var prev = items[idx - 1] || items[items.length - 1]
+        if (active) active.classList.remove('sr-item--active')
+        prev.classList.add('sr-item--active')
+        prev.scrollIntoView({ block: 'nearest' })
+      } else if (e.key === 'Enter' && active) {
+        e.preventDefault(); active.click()
+      } else if (e.key === 'Escape') {
+        close()
+      }
+    })
+
+    document.addEventListener('click', function(e) {
+      if (!wrap.contains(e.target)) close()
+    }, { passive: true })
+  }
+
+  document.readyState === 'loading'
+    ? document.addEventListener('DOMContentLoaded', init, { once: true })
+    : init()
+
+  document.addEventListener('astro:page-load', init)
+})()
+</script>
+
 <script is:inline define:vars={{ lang }}>
 try { localStorage.setItem('hd-lang', lang) } catch(e){}
 </script>
 </DefaultLayout>
 
 <style>
-.sr-page { min-height:100vh; background:var(--c-bg); color:var(--foreground-color); }
+.sr-page { min-height:100vh; }
 .sw { max-width:1200px; margin:0 auto; padding:0 1.5rem; }
 
-/* ── Hero ── */
 .sr-hero {
-  position:relative; overflow:hidden;
+  position:relative; 
   padding:6rem 1.5rem 5rem;
   border-bottom:1px solid var(--c-border);
 }
 .hero-inner {
   position:relative; z-index:1;
-  max-width:1200px; margin:0 auto;
-  display:flex; flex-direction:column; gap:1.25rem;
+  max-width:680px; margin:0 auto;
+  display:flex; flex-direction:column; align-items:center; gap:1.25rem;
+  text-align:center;
 }
 .eyebrow { font-size:.68rem; font-weight:900; letter-spacing:.14em; text-transform:uppercase; color:var(--c-accent); }
 .hero-title {
@@ -243,25 +401,70 @@ try { localStorage.setItem('hd-lang', lang) } catch(e){}
   font-weight:700; letter-spacing:-.03em; line-height:1.1;
   word-break:keep-all;
 }
-.hero-sub { font-size:1rem; color:var(--c-muted); line-height:1.7; max-width:560px; word-break:keep-all; }
-.hero-btns { display:flex; gap:.75rem; flex-wrap:wrap; margin-top:.5rem; }
-.btn-primary {
-  display:inline-flex; align-items:center; gap:.5rem;
-  padding:.7rem 1.4rem; border-radius:var(--radius-md);
-  background:var(--c-accent); color:#fff;
-  font-size:.85rem; font-weight:700; text-decoration:none;
-  transition:opacity var(--anim-fast),transform var(--anim-fast);
+.hero-sub { font-size:1rem; color:var(--c-muted); line-height:1.7; word-break:keep-all; }
+
+.search-wrap { position:relative; width:100%; max-width:560px; }
+.search-box {
+  display:flex; align-items:center; gap:.6rem;
+  padding:.8rem 1rem;
+  border:1.5px solid var(--c-border-hi);
+  border-radius:var(--radius-lg);
+  background:var(--c-surface);
+  transition:border-color var(--anim-fast), box-shadow var(--anim-fast);
 }
-.btn-primary:hover { opacity:.9; transform:translateY(-1px); }
-.btn-secondary {
-  display:inline-flex; align-items:center; gap:.5rem;
-  padding:.7rem 1.4rem; border-radius:var(--radius-md);
-  border:1px solid var(--c-border); background:var(--c-surface);
-  color:var(--foreground-color);
-  font-size:.85rem; font-weight:700; text-decoration:none;
-  transition:border-color var(--anim-fast),transform var(--anim-fast);
+.search-wrap:focus-within .search-box {
+  border-color:var(--c-accent);
+  box-shadow:0 0 0 3px var(--c-accent-glow), 0 4px 24px rgba(0,0,0,.3);
 }
-.btn-secondary:hover { border-color:var(--c-accent); transform:translateY(-1px); }
+.search-icon { flex-shrink:0; color:var(--c-muted); }
+.search-input {
+  flex:1; border:none; background:transparent; outline:none; min-width:0;
+  color:var(--foreground-color); font-size:.95rem; font-family:var(--font-body);
+}
+.search-input::placeholder { color:var(--c-muted); }
+.search-input::-webkit-search-cancel-button { display:none; }
+.search-clear {
+  flex-shrink:0; display:flex; align-items:center; justify-content:center;
+  width:22px; height:22px; border-radius:50%;
+  border:none; background:var(--c-surface2); color:var(--c-muted); cursor:pointer;
+  transition:background var(--anim-fast);
+}
+.search-clear:hover { background:var(--c-border-hi); color:var(--foreground-color); }
+
+.search-dropdown {
+  position:absolute; top:calc(100% + 8px); left:0; right:0; z-index:200;
+  background:var(--c-surface);
+  border:1px solid var(--c-border-hi);
+  border-radius:var(--radius-md);
+  box-shadow:0 16px 48px rgba(0,0,0,.55);
+  max-height:400px; overflow-y:auto;
+}
+.search-dropdown::-webkit-scrollbar { width:4px; }
+.search-dropdown::-webkit-scrollbar-thumb { background:var(--c-border-hi); border-radius:2px; }
+
+.sr-item {
+  display:flex; align-items:center; gap:.75rem;
+  padding:.6rem .9rem;
+  text-decoration:none; color:var(--foreground-color);
+  border-bottom:1px solid var(--c-border);
+  transition:background var(--anim-fast);
+}
+.sr-item:last-child { border-bottom:none; }
+.sr-item:hover, .sr-item--active { background:var(--c-surface2); }
+.sr-img-wrap {
+  flex-shrink:0; width:36px; height:36px; border-radius:6px;
+  background:var(--c-surface2); border:1px solid transparent;
+  display:flex; align-items:center; justify-content:center; overflow:hidden;
+}
+.sr-img { width:100%; height:100%; object-fit:contain; }
+.sr-body { flex:1; min-width:0; display:flex; flex-direction:column; gap:.1rem; text-align:left; }
+.sr-name { font-size:.82rem; font-weight:700; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.sr-sub  { font-size:.65rem; color:var(--c-muted); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.sr-badge {
+  flex-shrink:0; font-size:.58rem; font-weight:900; letter-spacing:.06em;
+  text-transform:uppercase; padding:.15em .5em; border-radius:4px; border:1px solid;
+}
+.sr-empty { padding:1.75rem; text-align:center; font-size:.8rem; color:var(--c-muted); font-weight:600; }
 
 .hero-bg { position:absolute; inset:0; pointer-events:none; }
 .orb { position:absolute; border-radius:50%; filter:blur(80px); opacity:.15; }
@@ -269,7 +472,6 @@ try { localStorage.setItem('hd-lang', lang) } catch(e){}
 .orb-2 { width:300px; height:300px; bottom:0; left:20%; background:radial-gradient(circle,#a78bfa,transparent 70%); }
 .orb-3 { width:200px; height:200px; top:30%; left:-50px; background:radial-gradient(circle,#34d399,transparent 70%); }
 
-/* ── 섹션 공통 ── */
 .sr-section { padding:3rem 0; border-bottom:1px solid var(--c-border); }
 .sr-section--features { border-bottom:none; padding-bottom:5rem; }
 .section-hd { display:flex; align-items:center; justify-content:space-between; margin-bottom:1.5rem; }
@@ -278,13 +480,11 @@ try { localStorage.setItem('hd-lang', lang) } catch(e){}
 .see-all { display:inline-flex; align-items:center; gap:.35rem; font-size:.75rem; font-weight:700; color:var(--c-accent); text-decoration:none; transition:gap var(--anim-fast); }
 .see-all:hover { gap:.55rem; }
 
-/* ── 바로가기 그리드 ── */
 .nav-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:.6rem; }
 .nav-card {
   position:relative; display:flex; align-items:center; gap:.85rem;
-  padding:1rem 1rem 1rem .9rem;
+  padding:1rem .9rem; border-radius:var(--radius-md); background:var(--c-surface);
   border:1px solid color-mix(in srgb,var(--nc) 20%,transparent);
-  border-radius:var(--radius-md); background:var(--c-surface);
   text-decoration:none; color:var(--foreground-color); overflow:hidden;
   transition:border-color var(--anim-fast),transform var(--anim-fast),box-shadow var(--anim-fast);
 }
@@ -292,13 +492,12 @@ try { localStorage.setItem('hd-lang', lang) } catch(e){}
 .nav-card:hover .nc-label { color:var(--nc); }
 .nav-card:hover .nc-arrow { color:var(--nc); transform:translateX(3px); }
 .nc-glow { position:absolute; inset:0; background:radial-gradient(ellipse at left,color-mix(in srgb,var(--nc) 8%,transparent),transparent 60%); pointer-events:none; }
-.nc-icon { flex-shrink:0; width:40px; height:40px; border-radius:var(--radius-sm); background:color-mix(in srgb,var(--nc) 12%,transparent); border:1px solid color-mix(in srgb,var(--nc) 25%,transparent); display:flex; align-items:center; justify-content:center; color:var(--nc); position:relative; z-index:1; }
+.nc-icon { flex-shrink:0; width:40px; height:40px; border-radius:var(--radius-sm); display:flex; align-items:center; justify-content:center; color:var(--nc); position:relative; z-index:1; background:color-mix(in srgb,var(--nc) 12%,transparent); border:1px solid color-mix(in srgb,var(--nc) 25%,transparent); }
 .nc-body { flex:1; min-width:0; position:relative; z-index:1; }
 .nc-label { font-size:.88rem; font-weight:700; font-family:var(--font-display); transition:color var(--anim-fast); line-height:1.2; }
 .nc-desc { font-size:.65rem; color:var(--c-muted); margin-top:.15rem; word-break:keep-all; }
 .nc-arrow { flex-shrink:0; color:var(--c-muted); position:relative; z-index:1; transition:color var(--anim-fast),transform var(--anim-fast); }
 
-/* ── 최신 캐릭터 ── */
 .char-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(88px,1fr)); gap:.5rem; }
 .char-card { display:flex; flex-direction:column; align-items:center; gap:.35rem; padding:.5rem .3rem; border:1px solid var(--c-border); border-radius:var(--radius-md); background:var(--c-surface); text-decoration:none; color:var(--foreground-color); transition:border-color var(--anim-fast),transform var(--anim-fast); }
 .char-card:hover { border-color:var(--c-accent); transform:translateY(-2px); }
@@ -308,12 +507,14 @@ try { localStorage.setItem('hd-lang', lang) } catch(e){}
 .cc-name { font-size:.6rem; font-weight:700; text-align:center; color:var(--c-muted); line-height:1.2; word-break:keep-all; max-width:80px; overflow:hidden; display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; }
 .char-card:hover .cc-name { color:var(--c-accent); }
 
-/* ── 특징 ── */
 .feat-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(240px,1fr)); gap:.75rem; }
-.feat-card { display:flex; align-items:flex-start; gap:.85rem; padding:1.1rem 1.1rem; border:1px solid var(--c-border); border-radius:var(--radius-md); background:var(--c-surface); }
-.feat-icon { flex-shrink:0; width:42px; height:42px; border-radius:var(--radius-sm); background:var(--c-accent-glow); border:1px solid color-mix(in srgb,var(--c-accent) 25%,transparent); display:flex; align-items:center; justify-content:center; color:var(--c-accent); }
+.feat-card { display:flex; align-items:flex-start; gap:.85rem; padding:1.1rem; border:1px solid var(--c-border); border-radius:var(--radius-md); background:var(--c-surface); }
+.feat-icon { flex-shrink:0; width:42px; height:42px; border-radius:var(--radius-sm); display:flex; align-items:center; justify-content:center; color:var(--c-accent); background:var(--c-accent-glow); border:1px solid color-mix(in srgb,var(--c-accent) 25%,transparent); }
 .feat-title { font-size:.88rem; font-weight:700; margin-bottom:.3rem; }
 .feat-desc { font-size:.72rem; color:var(--c-muted); line-height:1.6; word-break:keep-all; }
 
 h1,h2,p { word-break:keep-all; }
+@media (max-width:600px) {
+  .hero-inner { align-items:stretch; text-align:left; }
+}
 </style>

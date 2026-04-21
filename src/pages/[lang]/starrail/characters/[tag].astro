@@ -2,7 +2,6 @@
 // src/pages/[lang]/starrail/characters/[id].astro
 import DefaultLayout from '@layouts/DefaultLayout.astro'
 import { Icon } from 'astro-icon/components'
-import { Heading } from 'accessible-astro-components'
 import { maxCharacterLevel, terminalBaseStat } from '@utils/characterLevelStats'
 import LightConesTab from '@components/starrail/LightConesTab.astro'
 import RelicSetsTab from '@components/starrail/RelicSetsTab.astro'
@@ -32,21 +31,32 @@ const toAssetUrl = (rel: string) => {
   return `/starrail/assets/${cleanPath}`
 }
 
+// --- 상세 페이지 상단 부분 ---
+
 export async function getStaticPaths() {
   const languages = ['kr', 'en', 'jp', 'cn', 'fr', 'de', 'es', 'id', 'pt', 'ru', 'th', 'vi', 'cht']
   const allData = import.meta.glob('/src/data/starrail/**/*.json', { eager: true })
   const krCharModule = allData['/src/data/starrail/kr/characters.json'] as any
   const charData = krCharModule?.default || krCharModule
+  
   const validIds = Object.entries(charData)
     .filter(([id, data]: [string, any]) => {
       if (id.startsWith('800')) return true
       return data.name && data.name.trim() !== '' && !data.name.includes('{NICKNAME}')
     })
     .map(([id]) => id)
-  return languages.flatMap((lang) => validIds.map((id) => ({ params: { lang, id } })))
-}
 
-const { lang, id } = Astro.params
+  return languages.flatMap((lang) => validIds.map((numericId) => {
+    const character = charData[numericId]; // 위에서 정의한 charData 사용
+    return {
+      params: { lang, tag: character.tag }, // URL에 JingYuan 등 사용
+      props: { realId: numericId }        // 실제 숫자 ID 전달
+    };
+  }));
+} // <--- 함수 닫는 괄호 확인!
+
+const { lang, tag } = Astro.params 
+const { realId } = Astro.props         // props에서 전달받은 numericId를 받음
 
 const cleanText = (text: string) => {
   if (!text) return ''
@@ -234,7 +244,7 @@ try {
   const itemsModule = allData[`${baseDir}/items.json`] as any
   const propsModule = allData[`${baseDir}/properties.json`] as any
 
-  char = charModule?.default?.[id as string]
+  char = charModule?.default?.[realId as string]
   pathsData = pathsModule?.default
   descriptions = descModule?.default
   itemsMap = itemsModule?.default
@@ -244,7 +254,7 @@ try {
     const pathData = descriptions?.[char.path]
     const officialPathName = pathData?.title || pathData?.name || char.path
 
-    if (id?.startsWith('800')) {
+    if (realId?.startsWith('800')) {
       const baseName = lang === 'kr' ? '개척자' : 'Trailblazer'
       char.name = `${baseName} • ${officialPathName}`
     } else {
@@ -276,14 +286,14 @@ try {
     eidolons = (char.ranks || []).map((rId: string) => rankModule.default[rId]).filter(Boolean)
 
     const trees = skillTreeModule.default
-    const majorRe = new RegExp(`^${id}81\\d{2}$`)
+    const majorRe = new RegExp(`^${realId}81\\d{2}$`)
     majorTraces = (char.skill_trees || [])
       .filter((tid: string) => majorRe.test(tid))
       .map((tid: string) => trees[tid])
       .filter((n: any) => n && n.name && n.desc)
       .sort((a: any, b: any) => (a.levels?.[0]?.promotion ?? 0) - (b.levels?.[0]?.promotion ?? 0))
 
-    const minorSums = sumMinorTraceProps(trees, char.skill_trees || [], id as string)
+    const minorSums = sumMinorTraceProps(trees, char.skill_trees || [], realId as string)
     minorTraceSummary = minorSums
       .map((row) => {
         const prop = propertiesMap[row.type]
@@ -291,7 +301,7 @@ try {
       })
       .filter((row) => row.value !== 0)
 
-    promotion = promoModule.default[id as string]
+    promotion = promoModule.default[realId as string]
     maxCharLevel = maxCharacterLevel(char.rarity)
 
     if (promotion?.values?.length) {
@@ -373,7 +383,7 @@ try {
     }
   }
 } catch (e) {
-  console.error(`Error loading data for ${lang}/${id}:`, e)
+  console.error(`Error loading data for ${lang}/${realId}:`, e)
 }
 
 const elementInfo = descriptions?.[char?.element] || { name: char?.element }
@@ -421,15 +431,7 @@ const hasSections = {
     </div>
 
     <div class="page-inner">
-      <!-- ── BREADCRUMB ── -->
-      <nav class="breadcrumb" aria-label="breadcrumb">
-        <a href={`/${lang}`}>Home</a>
-        <span class="sep" aria-hidden="true">/</span>
-        <a href={`/${lang}/starrail/characters`}>Characters</a>
-        <span class="sep" aria-hidden="true">/</span>
-        <span class="current">{cleanText(char?.name)}</span>
-      </nav>
-
+     
       <!-- ── HERO GRID ── -->
       <div class="hero-grid">
         <!-- LEFT: Portrait -->
@@ -1299,7 +1301,7 @@ const hasSections = {
   </script>
 </DefaultLayout>
 
-<style>
+<style is:global>
   /* ══════════════════════════════════════════════════════════
    DESIGN SYSTEM — SF 터미널 × 동양 미학 크로스오버
    모든 애니메이션: transform/opacity (GPU compositor only)
@@ -1658,7 +1660,7 @@ const hasSections = {
     border: 1px solid var(--c-border);
     border-radius: var(--radius-lg);
     background: var(--c-surface);
-    padding: 1.1rem 1.2rem;
+    padding: 1.25rem; /* 여백을 조금 더 넓게 */
   }
 
   .stats-card-header,
@@ -1767,15 +1769,22 @@ const hasSections = {
   .mat-list {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
-    margin: 0.5rem 0 0;
+    gap: 0.5rem; /* 각 줄 사이의 간격 */
+    margin: 1rem 0 0;
     padding: 0;
     list-style: none;
   }
   .mat-row {
     display: flex;
-    align-items: center;
+    align-items: center; /* 아이콘과 글자 높이 맞춤 */
     gap: 0.75rem;
+    background: var(--c-surface2); /* 스탯 창처럼 배경색 추가 */
+    padding: 0.5rem 0.75rem;
+    border-radius: var(--radius-sm);
+    transition: background var(--anim-fast);
+  }
+  .mat-row:hover {
+    background: color-mix(in srgb, var(--c-accent) 8%, var(--c-surface2));
   }
   .mat-icon-wrap {
     display: flex;
@@ -1783,11 +1792,11 @@ const hasSections = {
     justify-content: center;
     align-items: center;
     border: 1px solid var(--c-border-hi);
-    border-radius: var(--radius-sm);
-    background: var(--c-surface2);
-    padding: 3px;
-    width: 38px;
-    height: 38px;
+    border-radius: 6px;
+    background: var(--c-bg);
+    padding: 2px;
+    width: 32px;  /* 크기를 조금 줄여서 정돈 */
+    height: 32px;
     overflow: hidden;
   }
   .mat-icon-img {
@@ -1801,14 +1810,16 @@ const hasSections = {
   .mat-name {
     flex: 1;
     font-weight: 600;
-    font-size: 0.76rem;
-    line-height: 1.4;
+    font-size: 0.82rem; /* 비정상적으로 큰 크기를 본문 수준으로 수정 */
+    color: var(--c-text);
+    line-height: 1;
     word-break: keep-all;
   }
   .mat-num {
     flex-shrink: 0;
-    color: var(--c-muted);
-    font-size: 0.68rem;
+    color: var(--c-accent); /* 포인트 컬러 적용 */
+    font-size: 0.85rem;
+    font-weight: 700;
     font-family: var(--font-mono);
   }
 

@@ -130,13 +130,7 @@ const labels = lang === 'kr'
     <!-- ── 페이지 헤더 ── -->
     <div class="chars-header">
       <div class="chars-header-inner">
-        <nav class="breadcrumb" aria-label="breadcrumb">
-          <a href={`/${lang}`}>Home</a>
-          <span class="sep" aria-hidden="true">/</span>
-          <a href={`/${lang}/starrail`}>Star Rail</a>
-          <span class="sep" aria-hidden="true">/</span>
-          <span class="current">{labels.title}</span>
-        </nav>
+        
 
         <div class="chars-title-row">
           <div>
@@ -265,7 +259,7 @@ const labels = lang === 'kr'
 
             return (
               <a
-                href={`/${lang}/starrail/characters/${char.id}`}
+                href={`/${lang}/starrail/characters/${char.tag}`}
                 class="char-card"
                 data-character-card
                 data-name={cleanText(char.name).toLowerCase()}

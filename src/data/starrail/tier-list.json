@@ -1,0 +1,565 @@
+{
+  "slugToId": {
+    "acheron": "1308",
+    "aglaea": "1402",
+    "anaxa": "1405",
+    "archer": "1015",
+    "argenti": "1302",
+    "arlan": "1008",
+    "ashveil": "1504",
+    "asta": "1009",
+    "aventurine": "1304",
+    "bailu": "1211",
+    "black-swan": "1307",
+    "blade": "1205",
+    "boothill": "1315",
+    "bronya": "1101",
+    "castorice": "1407",
+    "cerydra": "1412",
+    "cipher": "1406",
+    "clara": "1107",
+    "cyrene": "1415",
+    "dan-heng": "1002",
+    "dan-heng-permansor-terrae": "1414",
+    "dr-ratio": "1305",
+    "feixiao": "1220",
+    "firefly": "1310",
+    "fu-xuan": "1208",
+    "gallagher": "1301",
+    "gepard": "1104",
+    "guinaifen": "1210",
+    "hanya": "1215",
+    "herta": "1013",
+    "himeko": "1003",
+    "hook": "1109",
+    "huohuo": "1217",
+    "hyacine": "1409",
+    "hysilens": "1410",
+    "imbibitor-lunae": "1213",
+    "jade": "1314",
+    "jiaoqiu": "1218",
+    "jing-yuan": "1204",
+    "jingliu": "1212",
+    "kafka": "1005",
+    "lingsha": "1222",
+    "luka": "1111",
+    "luocha": "1203",
+    "lynx": "1110",
+    "march-7th": "1001",
+    "march-7th-evernight": "1413",
+    "march-7th-swordmaster": "1224",
+    "misha": "1312",
+    "moze": "1223",
+    "mydei": "1404",
+    "natasha": "1105",
+    "pela": "1106",
+    "phainon": "1408",
+    "qingque": "1201",
+    "rappa": "1317",
+    "robin": "1309",
+    "ruan-mei": "1303",
+    "saber": "1014",
+    "sampo": "1108",
+    "seele": "1102",
+    "serval": "1103",
+    "silver-wolf": "1006",
+    "sparkle": "1306",
+    "sparxie": "1501",
+    "sunday": "1313",
+    "sushang": "1206",
+    "the-dahlia": "1321",
+    "the-herta": "1401",
+    "tingyun": "1202",
+    "tingyun-fugue": "1225",
+    "topaz": "1112",
+    "trailblazer-destruction": "8001",
+    "trailblazer-harmony": "8005",
+    "trailblazer-preservation": "8003",
+    "trailblazer-remembrance": "8007",
+    "tribbie": "1403",
+    "welt": "1004",
+    "xueyi": "1214",
+    "yanqing": "1209",
+    "yao-guang": "1502",
+    "yunli": "1221",
+    "yukong": "1207"
+  },
+  "moc": {
+    "tier-0": {
+      "dps": [
+        {"slug":"archer","tags":"SP-Unfriendly"},
+        {"slug":"ashveil","tags":"Buff, SP-Friendly"},
+        {"slug":"castorice","tags":"Advance, SP-Friendly"},
+        {"slug":"firefly","tags":"Advance, Break, SP-Unfriendly"},
+        {"slug":"hysilens","tags":"DoT, Debuff"},
+        {"slug":"march-7th-evernight","tags":"Buff, SP-Friendly"},
+        {"slug":"sparxie","tags":""}
+      ],
+      "support-dps": [
+        {"slug":"black-swan","tags":"Debuff, DOT"},
+        {"slug":"kafka","tags":"DOT"},
+        {"slug":"march-7th-evernight","tags":"Buff, SP-Friendly"}
+      ],
+      "amplifier": [
+        {"slug":"cyrene","tags":"Energy, Buff"},
+        {"slug":"sparkle","tags":"Advance, Buff, SP-Friendly"},
+        {"slug":"the-dahlia","tags":"Break, Buff, SP-Friendly"},
+        {"slug":"tribbie","tags":"Buff"},
+        {"slug":"yao-guang","tags":"SP-Friendly"}
+      ],
+      "sustain": [
+        {"slug":"dan-heng-permansor-terrae","tags":"Buff, SP-Friendly"},
+        {"slug":"hyacine","tags":"Buff, SP-Unfriendly"}
+      ]
+    },
+    "tier-05": {
+      "dps": [
+        {"slug":"anaxa","tags":"Debuff"},
+        {"slug":"mydei","tags":"SP-Friendly"},
+        {"slug":"phainon","tags":""}
+      ],
+      "amplifier": [
+        {"slug":"cerydra","tags":"Buff"},
+        {"slug":"cipher","tags":"Debuff, SP-Friendly"},
+        {"slug":"sunday","tags":"Advance, Buff, Energy"},
+        {"slug":"tingyun-fugue","tags":"Break, Buff, Debuff, Delay"},
+        {"slug":"trailblazer-harmony","tags":"Break, Buff"},
+        {"slug":"trailblazer-remembrance","tags":"Advance, Buff"}
+      ],
+      "sustain": [
+        {"slug":"gallagher","tags":"Advance, Break, Debuff, SP-Friendly"},
+        {"slug":"huohuo","tags":"Buff, Energy"},
+        {"slug":"lingsha","tags":"Break, Debuff"}
+      ]
+    },
+    "tier-1": {
+      "dps": [
+        {"slug":"aglaea","tags":"Advance, SP-Friendly"},
+        {"slug":"boothill","tags":"Break"},
+        {"slug":"feixiao","tags":""},
+        {"slug":"saber","tags":"Advance"},
+        {"slug":"the-herta","tags":"Advance, Buff, SP-Unfriendly"}
+      ],
+      "support-dps": [
+        {"slug":"anaxa","tags":"Debuff"},
+        {"slug":"ashveil","tags":"Buff, SP-Friendly"}
+      ],
+      "amplifier": [
+        {"slug":"bronya","tags":"Advance, Buff, SP-Unfriendly"},
+        {"slug":"robin","tags":"Advance, Buff"},
+        {"slug":"ruan-mei","tags":"Break, Buff, Delay"},
+        {"slug":"silver-wolf","tags":"Debuff"}
+      ],
+      "sustain": [
+        {"slug":"aventurine","tags":"Debuff, SP-Friendly"},
+        {"slug":"luocha","tags":"SP-Friendly"}
+      ]
+    },
+    "tier-15": {
+      "dps": [
+        {"slug":"acheron","tags":"Debuff"},
+        {"slug":"rappa","tags":"Break, SP-Friendly"}
+      ],
+      "support-dps": [
+        {"slug":"jade","tags":"SP-Friendly"}
+      ],
+      "amplifier": [
+        {"slug":"jiaoqiu","tags":"Debuff, DOT"},
+        {"slug":"tingyun","tags":"Buff, Energy"}
+      ]
+    },
+    "tier-2": {
+      "dps": [
+        {"slug":"blade","tags":"SP-Friendly"},
+        {"slug":"jingliu","tags":"SP-Friendly"},
+        {"slug":"yunli","tags":""}
+      ],
+      "support-dps": [
+        {"slug":"argenti","tags":""},
+        {"slug":"herta","tags":""},
+        {"slug":"march-7th-swordmaster","tags":"Advance, Break, Buff"},
+        {"slug":"topaz","tags":"Debuff"}
+      ],
+      "sustain": [
+        {"slug":"fu-xuan","tags":"Buff"}
+      ]
+    },
+    "tier-3": {
+      "dps": [
+        {"slug":"clara","tags":""},
+        {"slug":"himeko","tags":""},
+        {"slug":"jing-yuan","tags":""}
+      ],
+      "support-dps": [
+        {"slug":"moze","tags":"Debuff"},
+        {"slug":"serval","tags":"DOT"}
+      ],
+      "amplifier": [
+        {"slug":"pela","tags":"Debuff"}
+      ],
+      "sustain": [
+        {"slug":"bailu","tags":""},
+        {"slug":"lynx","tags":""}
+      ]
+    },
+    "tier-4": {
+      "dps": [
+        {"slug":"imbibitor-lunae","tags":"SP-Unfriendly"},
+        {"slug":"seele","tags":"Advance"}
+      ],
+      "sustain": [
+        {"slug":"gepard","tags":""}
+      ]
+    },
+    "tier-5": {
+      "dps": [
+        {"slug":"argenti","tags":""},
+        {"slug":"arlan","tags":""},
+        {"slug":"dan-heng","tags":"Advance, Debuff"},
+        {"slug":"dr-ratio","tags":"Debuff"},
+        {"slug":"hook","tags":""},
+        {"slug":"luka","tags":"Break, Debuff"},
+        {"slug":"misha","tags":"Debuff"},
+        {"slug":"qingque","tags":"SP-Unfriendly"},
+        {"slug":"sushang","tags":"Advance, Break"},
+        {"slug":"trailblazer-destruction","tags":""},
+        {"slug":"xueyi","tags":"Break"},
+        {"slug":"yanqing","tags":""}
+      ],
+      "support-dps": [
+        {"slug":"sampo","tags":"Break, Debuff, DOT"},
+        {"slug":"welt","tags":"Debuff, Delay"}
+      ],
+      "amplifier": [
+        {"slug":"asta","tags":"Buff"},
+        {"slug":"guinaifen","tags":"Debuff, DOT"},
+        {"slug":"hanya","tags":"Buff"},
+        {"slug":"yukong","tags":"Buff"}
+      ],
+      "sustain": [
+        {"slug":"march-7th","tags":""},
+        {"slug":"natasha","tags":""},
+        {"slug":"trailblazer-preservation","tags":"Break, Debuff"}
+      ]
+    }
+  },
+  "pf": {
+    "tier-0": {
+      "dps": [
+        {"slug":"castorice","tags":"Advance, SP-Friendly"},
+        {"slug":"march-7th-evernight","tags":"Buff, SP-Friendly"},
+        {"slug":"sparxie","tags":""}
+      ],
+      "support-dps": [
+        {"slug":"march-7th-evernight","tags":"Buff, SP-Friendly"}
+      ],
+      "amplifier": [
+        {"slug":"cyrene","tags":"Energy, Buff"},
+        {"slug":"trailblazer-remembrance","tags":"Advance, Buff"},
+        {"slug":"tribbie","tags":"Buff"},
+        {"slug":"yao-guang","tags":"SP-Friendly"}
+      ],
+      "sustain": [
+        {"slug":"hyacine","tags":"Buff, SP-Unfriendly"}
+      ]
+    },
+    "tier-05": {
+      "dps": [
+        {"slug":"ashveil","tags":"Buff, SP-Friendly"},
+        {"slug":"hysilens","tags":"DoT, Debuff"},
+        {"slug":"mydei","tags":"SP-Friendly"},
+        {"slug":"rappa","tags":"Break, SP-Friendly"},
+        {"slug":"the-herta","tags":"Advance, Buff, SP-Unfriendly"}
+      ],
+      "support-dps": [
+        {"slug":"anaxa","tags":"Debuff"},
+        {"slug":"black-swan","tags":"Debuff, DOT"},
+        {"slug":"herta","tags":""},
+        {"slug":"jade","tags":"SP-Friendly"},
+        {"slug":"kafka","tags":"DOT"}
+      ],
+      "amplifier": [
+        {"slug":"cipher","tags":"Debuff, SP-Friendly"},
+        {"slug":"sparkle","tags":"Advance, Buff, SP-Friendly"},
+        {"slug":"the-dahlia","tags":"Break, Buff, SP-Friendly"}
+      ],
+      "sustain": [
+        {"slug":"dan-heng-permansor-terrae","tags":"Buff, SP-Friendly"},
+        {"slug":"huohuo","tags":"Buff, Energy"},
+        {"slug":"lingsha","tags":"Break, Debuff"}
+      ]
+    },
+    "tier-1": {
+      "dps": [
+        {"slug":"anaxa","tags":"Debuff"},
+        {"slug":"firefly","tags":"Advance, Break, SP-Unfriendly"},
+        {"slug":"phainon","tags":""}
+      ],
+      "support-dps": [
+        {"slug":"argenti","tags":""},
+        {"slug":"ashveil","tags":"Buff, SP-Friendly"}
+      ],
+      "amplifier": [
+        {"slug":"cerydra","tags":"Buff"},
+        {"slug":"robin","tags":"Advance, Buff"},
+        {"slug":"ruan-mei","tags":"Break, Buff, Delay"},
+        {"slug":"sunday","tags":"Advance, Buff, Energy"},
+        {"slug":"tingyun-fugue","tags":"Break, Buff, Debuff, Delay"}
+      ],
+      "sustain": [
+        {"slug":"aventurine","tags":"Debuff, SP-Friendly"},
+        {"slug":"gallagher","tags":"Advance, Break, Debuff, SP-Friendly"},
+        {"slug":"luocha","tags":"SP-Friendly"}
+      ]
+    },
+    "tier-15": {
+      "dps": [
+        {"slug":"acheron","tags":"Debuff"},
+        {"slug":"aglaea","tags":"Advance, SP-Friendly"},
+        {"slug":"archer","tags":"SP-Unfriendly"},
+        {"slug":"himeko","tags":""}
+      ],
+      "amplifier": [
+        {"slug":"bronya","tags":"Advance, Buff, SP-Unfriendly"},
+        {"slug":"jiaoqiu","tags":"Debuff, DOT"},
+        {"slug":"trailblazer-harmony","tags":"Break, Buff"}
+      ],
+      "sustain": [
+        {"slug":"fu-xuan","tags":"Buff"}
+      ]
+    },
+    "tier-2": {
+      "dps": [
+        {"slug":"argenti","tags":""},
+        {"slug":"saber","tags":"Advance"}
+      ],
+      "support-dps": [
+        {"slug":"blade","tags":"SP-Friendly"},
+        {"slug":"serval","tags":"DOT"}
+      ],
+      "amplifier": [
+        {"slug":"silver-wolf","tags":"Debuff"},
+        {"slug":"tingyun","tags":"Buff, Energy"}
+      ]
+    },
+    "tier-3": {
+      "dps": [
+        {"slug":"blade","tags":"SP-Friendly"},
+        {"slug":"jing-yuan","tags":""},
+        {"slug":"jingliu","tags":"SP-Friendly"}
+      ],
+      "amplifier": [
+        {"slug":"pela","tags":"Debuff"}
+      ],
+      "sustain": [
+        {"slug":"bailu","tags":""},
+        {"slug":"lynx","tags":""}
+      ]
+    },
+    "tier-4": {
+      "dps": [
+        {"slug":"clara","tags":""},
+        {"slug":"feixiao","tags":""}
+      ],
+      "sustain": [
+        {"slug":"gepard","tags":""}
+      ]
+    },
+    "tier-5": {
+      "dps": [
+        {"slug":"arlan","tags":""},
+        {"slug":"boothill","tags":"Break"},
+        {"slug":"dan-heng","tags":"Advance, Debuff"},
+        {"slug":"dr-ratio","tags":"Debuff"},
+        {"slug":"hook","tags":""},
+        {"slug":"imbibitor-lunae","tags":"SP-Unfriendly"},
+        {"slug":"luka","tags":"Break, Debuff"},
+        {"slug":"misha","tags":"Debuff"},
+        {"slug":"qingque","tags":"SP-Unfriendly"},
+        {"slug":"seele","tags":"Advance"},
+        {"slug":"sushang","tags":"Advance, Break"},
+        {"slug":"trailblazer-destruction","tags":""},
+        {"slug":"xueyi","tags":"Break"},
+        {"slug":"yanqing","tags":""}
+      ],
+      "support-dps": [
+        {"slug":"march-7th-swordmaster","tags":"Advance, Break, Buff"},
+        {"slug":"moze","tags":"Debuff"},
+        {"slug":"sampo","tags":"Break, Debuff, DOT"},
+        {"slug":"topaz","tags":"Debuff"},
+        {"slug":"welt","tags":"Debuff, Delay"}
+      ],
+      "amplifier": [
+        {"slug":"asta","tags":"Buff"},
+        {"slug":"guinaifen","tags":"Debuff, DOT"},
+        {"slug":"hanya","tags":"Buff"},
+        {"slug":"yukong","tags":"Buff"}
+      ],
+      "sustain": [
+        {"slug":"march-7th","tags":""},
+        {"slug":"natasha","tags":""},
+        {"slug":"trailblazer-preservation","tags":"Break, Debuff"}
+      ]
+    }
+  },
+  "as": {
+    "tier-0": {
+      "dps": [
+        {"slug":"castorice","tags":"Advance, SP-Friendly"},
+        {"slug":"firefly","tags":"Advance, Break, SP-Unfriendly"},
+        {"slug":"march-7th-evernight","tags":"Buff, SP-Friendly"}
+      ],
+      "support-dps": [
+        {"slug":"march-7th-evernight","tags":"Buff, SP-Friendly"}
+      ],
+      "amplifier": [
+        {"slug":"cyrene","tags":"Energy, Buff"},
+        {"slug":"the-dahlia","tags":"Break, Buff, SP-Friendly"},
+        {"slug":"trailblazer-remembrance","tags":"Advance, Buff"},
+        {"slug":"tribbie","tags":"Buff"}
+      ],
+      "sustain": [
+        {"slug":"hyacine","tags":"Buff, SP-Unfriendly"}
+      ]
+    },
+    "tier-05": {
+      "dps": [
+        {"slug":"anaxa","tags":"Debuff"},
+        {"slug":"archer","tags":"SP-Unfriendly"},
+        {"slug":"ashveil","tags":"Buff, SP-Friendly"},
+        {"slug":"boothill","tags":"Break"},
+        {"slug":"hysilens","tags":"DoT, Debuff"},
+        {"slug":"phainon","tags":""},
+        {"slug":"rappa","tags":"Break, SP-Friendly"},
+        {"slug":"sparxie","tags":""}
+      ],
+      "support-dps": [
+        {"slug":"black-swan","tags":"Debuff, DOT"},
+        {"slug":"kafka","tags":"DOT"}
+      ],
+      "amplifier": [
+        {"slug":"cerydra","tags":"Buff"},
+        {"slug":"ruan-mei","tags":"Break, Buff, Delay"},
+        {"slug":"sparkle","tags":"Advance, Buff, SP-Friendly"},
+        {"slug":"sunday","tags":"Advance, Buff, Energy"},
+        {"slug":"tingyun-fugue","tags":"Break, Buff, Debuff, Delay"},
+        {"slug":"yao-guang","tags":"SP-Friendly"}
+      ],
+      "sustain": [
+        {"slug":"dan-heng-permansor-terrae","tags":"Buff, SP-Friendly"},
+        {"slug":"gallagher","tags":"Advance, Break, Debuff, SP-Friendly"},
+        {"slug":"huohuo","tags":"Buff, Energy"},
+        {"slug":"lingsha","tags":"Break, Debuff"}
+      ]
+    },
+    "tier-1": {
+      "dps": [
+        {"slug":"aglaea","tags":"Advance, SP-Friendly"},
+        {"slug":"feixiao","tags":""},
+        {"slug":"himeko","tags":""},
+        {"slug":"mydei","tags":"SP-Friendly"},
+        {"slug":"saber","tags":"Advance"},
+        {"slug":"the-herta","tags":"Advance, Buff, SP-Unfriendly"}
+      ],
+      "support-dps": [
+        {"slug":"anaxa","tags":"Debuff"},
+        {"slug":"ashveil","tags":"Buff, SP-Friendly"},
+        {"slug":"jade","tags":"SP-Friendly"},
+        {"slug":"march-7th-swordmaster","tags":"Advance, Break, Buff"}
+      ],
+      "amplifier": [
+        {"slug":"bronya","tags":"Advance, Buff, SP-Unfriendly"},
+        {"slug":"cipher","tags":"Debuff, SP-Friendly"},
+        {"slug":"robin","tags":"Advance, Buff"},
+        {"slug":"silver-wolf","tags":"Debuff"},
+        {"slug":"trailblazer-harmony","tags":"Break, Buff"}
+      ],
+      "sustain": [
+        {"slug":"aventurine","tags":"Debuff, SP-Friendly"},
+        {"slug":"luocha","tags":"SP-Friendly"}
+      ]
+    },
+    "tier-15": {
+      "dps": [
+        {"slug":"acheron","tags":"Debuff"}
+      ],
+      "support-dps": [
+        {"slug":"argenti","tags":""},
+        {"slug":"herta","tags":""},
+        {"slug":"topaz","tags":"Debuff"}
+      ],
+      "amplifier": [
+        {"slug":"jiaoqiu","tags":"Debuff, DOT"},
+        {"slug":"pela","tags":"Debuff"},
+        {"slug":"tingyun","tags":"Buff, Energy"}
+      ]
+    },
+    "tier-2": {
+      "support-dps": [
+        {"slug":"blade","tags":"SP-Friendly"}
+      ],
+      "sustain": [
+        {"slug":"fu-xuan","tags":"Buff"}
+      ]
+    },
+    "tier-3": {
+      "dps": [
+        {"slug":"blade","tags":"SP-Friendly"},
+        {"slug":"jing-yuan","tags":""},
+        {"slug":"jingliu","tags":"SP-Friendly"}
+      ],
+      "support-dps": [
+        {"slug":"moze","tags":"Debuff"},
+        {"slug":"serval","tags":"DOT"}
+      ],
+      "sustain": [
+        {"slug":"bailu","tags":""},
+        {"slug":"lynx","tags":""}
+      ]
+    },
+    "tier-4": {
+      "dps": [
+        {"slug":"imbibitor-lunae","tags":"SP-Unfriendly"},
+        {"slug":"seele","tags":"Advance"},
+        {"slug":"yunli","tags":""}
+      ],
+      "amplifier": [
+        {"slug":"asta","tags":"Buff"},
+        {"slug":"guinaifen","tags":"Debuff, DOT"},
+        {"slug":"hanya","tags":"Buff"}
+      ],
+      "sustain": [
+        {"slug":"gepard","tags":""}
+      ]
+    },
+    "tier-5": {
+      "dps": [
+        {"slug":"argenti","tags":""},
+        {"slug":"arlan","tags":""},
+        {"slug":"clara","tags":""},
+        {"slug":"dan-heng","tags":"Advance, Debuff"},
+        {"slug":"dr-ratio","tags":"Debuff"},
+        {"slug":"hook","tags":""},
+        {"slug":"luka","tags":"Break, Debuff"},
+        {"slug":"misha","tags":"Debuff"},
+        {"slug":"qingque","tags":"SP-Unfriendly"},
+        {"slug":"sushang","tags":"Advance, Break"},
+        {"slug":"trailblazer-destruction","tags":""},
+        {"slug":"xueyi","tags":"Break"},
+        {"slug":"yanqing","tags":""}
+      ],
+      "support-dps": [
+        {"slug":"sampo","tags":"Break, Debuff, DOT"},
+        {"slug":"welt","tags":"Debuff, Delay"}
+      ],
+      "amplifier": [
+        {"slug":"yukong","tags":"Buff"}
+      ],
+      "sustain": [
+        {"slug":"march-7th","tags":""},
+        {"slug":"natasha","tags":""},
+        {"slug":"trailblazer-preservation","tags":"Break, Debuff"}
+      ]
+    }
+  }
+}

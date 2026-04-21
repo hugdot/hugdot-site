@@ -43,23 +43,9 @@ const languages = [
   { code: 'vi',  label: 'Tiếng Việt' },
 ]
 
-const menuLabels: Record<string, Record<string, string>> = {
-  kr:  { characters:'캐릭터', lightcones:'광추', relics:'유물', simulated:'시뮬레이션 우주', planner:'계획', achievements:'업적', items:'재료' },
-  en:  { characters:'Characters', lightcones:'Light Cones', relics:'Relics', simulated:'Sim. Universe', planner:'Planner', achievements:'Achievements', items:'Materials' },
-  jp:  { characters:'キャラ', lightcones:'光円錐', relics:'遺物', simulated:'模擬宇宙', planner:'プランナー', achievements:'実績', items:'素材' },
-  cn:  { characters:'角色', lightcones:'光锥', relics:'遗器', simulated:'模拟宇宙', planner:'计划器', achievements:'成就', items:'材料' },
-  cht: { characters:'角色', lightcones:'光錐', relics:'遺器', simulated:'模擬宇宙', planner:'計畫器', achievements:'成就', items:'材料' },
-  fr:  { characters:'Personnages', lightcones:'Cônes', relics:'Reliques', simulated:'Univ. Simulé', planner:'Planificateur', achievements:'Succès', items:'Matériaux' },
-  de:  { characters:'Charaktere', lightcones:'Lichtkegel', relics:'Relikte', simulated:'Sim. Universum', planner:'Planer', achievements:'Erfolge', items:'Materialien' },
-  es:  { characters:'Personajes', lightcones:'Conos', relics:'Reliquias', simulated:'Univ. Simulado', planner:'Planificador', achievements:'Logros', items:'Materiales' },
-  id:  { characters:'Karakter', lightcones:'Kerucut', relics:'Relik', simulated:'Alam Simulasi', planner:'Perencana', achievements:'Pencapaian', items:'Material' },
-  pt:  { characters:'Personagens', lightcones:'Cones', relics:'Relíquias', simulated:'Univ. Simulado', planner:'Planejador', achievements:'Conquistas', items:'Materiais' },
-  ru:  { characters:'Персонажи', lightcones:'Световые конусы', relics:'Реликвии', simulated:'Сим. Вселенная', planner:'Планировщик', achievements:'Достижения', items:'Материалы' },
-  th:  { characters:'ตัวละคร', lightcones:'โคนแสง', relics:'โบราณวัตถุ', simulated:'จักรวาลจำลอง', planner:'วางแผน', achievements:'ความสำเร็จ', items:'วัสดุ' },
-  vi:  { characters:'Nhân Vật', lightcones:'Nón Sáng', relics:'Di Vật', simulated:'Vũ Trụ Mô Phỏng', planner:'Lập Kế Hoạch', achievements:'Thành Tích', items:'Vật Liệu' },
-}
-
-const m = menuLabels[currentLang] ?? menuLabels['en']
+import { starrailI18n } from '@utils/i18n'
+// ...
+const m = starrailI18n[currentLang] ?? starrailI18n['en']
 
 const starRailMenus = [
   { label: m.characters,   href: `/${currentLang}/starrail/characters` },
@@ -211,25 +197,25 @@ const switchLang = (code: string) =>
     var btn = document.getElementById(btnId)
     var dd  = document.getElementById(dropId)
     if (!btn || !dd) return
-    btn.addEventListener('click', function (e) {
+    btn.onclick = function (e) {
       e.stopPropagation()
       if (openId === dropId) { closeAll(); return }
       closeAll()
       dd.classList.add('open')
       btn.setAttribute('aria-expanded', 'true')
       openId = dropId
-    }, { passive: true })
+    }
   }
 
   function initMob() {
     var toggle = document.getElementById('mob-toggle')
     var menu   = document.getElementById('mob-menu')
     if (!toggle || !menu) return
-    toggle.addEventListener('click', function () {
+    toggle.onclick = function () {
       var isOpen = menu.classList.toggle('mob-menu--open')
       toggle.setAttribute('aria-expanded', String(isOpen))
       menu.setAttribute('aria-hidden', String(!isOpen))
-    }, { passive: true })
+    }
   }
 
   function initSticky() {
@@ -240,14 +226,18 @@ const switchLang = (code: string) =>
     }, { passive: true })
   }
 
-  document.addEventListener('click', closeAll, { passive: true })
-
-  document.addEventListener('DOMContentLoaded', function () {
+  function init() {
+    openId = null
+    closeAll()
     initDropdown('game-btn', 'game-dropdown')
     initDropdown('lang-btn', 'lang-dropdown')
     initMob()
     initSticky()
-  }, { once: true })
+  }
+
+  document.addEventListener('click', closeAll, { passive: true })
+  document.addEventListener('DOMContentLoaded', init, { once: true })
+  document.addEventListener('astro:page-load', init)
 })()
 </script>
 

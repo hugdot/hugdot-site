@@ -7,12 +7,12 @@ export async function getStaticPaths() {
   return languages.map((lang) => ({ params: { lang } }))
 }
 
-const { lang } = Astro.params
+const { lang = 'en' } = Astro.params
 const MIHOMO_LANG: Record<string, string> = {
   kr:'kr', en:'en', jp:'jp', cn:'cn', cht:'cht',
   fr:'fr', de:'de', es:'es', id:'id', pt:'pt', ru:'ru', th:'th', vi:'vi',
 }
-const mihomoLang = MIHOMO_LANG[lang] ?? 'en'
+const mihomoLang = MIHOMO_LANG[lang as string] ?? 'en'
 
 // 성혼 설명 로드
 const allData = import.meta.glob('/src/data/starrail/**/*.json', { eager: true })

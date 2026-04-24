@@ -19,7 +19,7 @@ export const starrailI18n: Record<string, any> = {
     characters: '캐릭터', lightcones: '광추', relics: '유물',
     simulated: '시뮬레이션 우주', planner: '계획', achievements: '업적', items: '재료',
     tierList: '티어 리스트',
-    profile: '프로파일',
+    profile: '프로필',
     dataLabel: '데이터',
     moc: '혼돈의 기억', pf: '허구 이야기', as: '종말의 환영',
     tierSource: '출처: Prydwen.gg',

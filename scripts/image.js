@@ -1,61 +1,115 @@
-import fs from 'node:fs';
-import path from 'node:path';
+import fs from 'fs';
+import path from 'path';
+import axios from 'axios';
+import sharp from 'sharp';
 import { fileURLToPath } from 'node:url';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// 데이터 루트 경로 (본인의 프로젝트 구조에 맞게 조정)
-const DATA_ROOT = path.join(__dirname, '../src/data/starrail');
+// --- 설정 ---
+const DATA_DIR = path.join(__dirname, '../src/data/wuwa/kr'); 
+const OUTPUT_BASE_DIR = path.join(__dirname, '../public/wuwa/assets'); 
+const GITHUB_RAW_BASE = 'https://raw.githubusercontent.com/555me/Wuthering-Waves-GameAssets/main';
 
-// 1. 모든 언어 폴더 가져오기 (ko, en, jp, ru 등)
-const languages = fs.readdirSync(DATA_ROOT).filter(file => 
-  fs.statSync(path.join(DATA_ROOT, file)).isDirectory()
-);
+// [카테고리 판별] 큰 분류만 정하고, 하위 폴더는 필드명(key)을 그대로 사용
+function getBaseCategory(gamePath, fileName) {
+    const p = gamePath.toLowerCase();
+    const f = fileName.toLowerCase();
 
-languages.forEach((lang) => {
-  const filePath = path.join(DATA_ROOT, lang, 'simulated_curios.json');
-  
-  // 파일이 존재하는지 확인
-  if (!fs.existsSync(filePath)) {
-    console.log(`⚠️  [${lang}] 파일이 없어 건너뜁니다: ${filePath}`);
-    return;
-  }
-
-  try {
-    const rawData = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
-    const uniqueMap = new Map();
-
-    // 2. 가공 로직 (경로 수정 + 이름 중복 제거)
-    Object.values(rawData).forEach((item) => {
-      const curName = item.name;
-      const curId = parseInt(item.id);
-
-      // 아이콘 경로 수정
-      if (item.icon) {
-        item.icon = item.icon.replace('/icon/character/', '/icon/curio/');
-      }
-
-      // 중복 제거 (낮은 ID 우선)
-      if (!uniqueMap.has(curName)) {
-        uniqueMap.set(curName, item);
-      } else {
-        const existingItem = uniqueMap.get(curName);
-        if (curId < parseInt(existingItem.id)) {
-          uniqueMap.set(curName, item);
-        }
-      }
-    });
-
-    // 3. 기존 파일 덮어씌우기
-    const cleanedData = Object.fromEntries(uniqueMap);
-    fs.writeFileSync(filePath, JSON.stringify(cleanedData, null, 2), 'utf-8');
+    if (f.includes('resonator')) return 'character';
+    if (f.includes('weapon')) return 'weapon';
+    if (f.includes('element')) return 'element';
+    if (f.includes('echo') || p.includes('phantom')) return 'echo';
+    if (f.includes('item')) return 'item';
+    if (f.includes('skill')) return 'skill';
     
-    console.log(`✅ [${lang}] 가공 완료: ${Object.keys(cleanedData).length}개 기물 저장됨.`);
+    return 'misc';
+}
 
-  } catch (err) {
-    console.error(`❌ [${lang}] 처리 중 오류 발생:`, err);
-  }
-});
+async function processData() {
+    const files = fs.readdirSync(DATA_DIR).filter(f => f.endsWith('.json'));
 
-console.log('\n🚀 모든 언어 파일에 대한 클리닝 작업이 완료되었습니다.');
+    for (const file of files) {
+        const filePath = path.join(DATA_DIR, file);
+        let content = JSON.parse(fs.readFileSync(filePath, 'utf-8'));
+        let isModified = false;
+
+        console.log(`\n📂 파일 처리 중: ${file}`);
+
+        // [핵심] 재귀 함수에서 ID와 현재 필드명(Key)을 추적
+        const transform = async (obj, currentId = null) => {
+            if (!obj || typeof obj !== 'object') return;
+
+            // 현재 객체에서 ID 추출
+            const id = obj.id || obj.ItemId || obj.Id || currentId;
+
+            for (const key in obj) {
+                const value = obj[key];
+
+                if (typeof value === 'string' && value.startsWith('/Game/Aki/')) {
+                    // 1. 대분류 결정 (파일 이름 기반)
+                    const baseCat = getBaseCategory(value, file);
+                    
+                    // 2. [핵심] 하위 폴더명을 JSON 필드명(key)으로 사용
+                    const subCat = key; 
+
+                    // 3. 파일명은 고유 ID로 설정
+                    const finalFileName = id ? id.toString() : value.split('/').pop().split('.')[0];
+                    
+                    // 4. 최종 경로 조합 (예: /wuwa/assets/character/portrait/1102.webp)
+                    const localWebPath = `/wuwa/assets/${baseCat}/${subCat}/${finalFileName}.webp`;
+                    const fullOutputPath = path.join(OUTPUT_BASE_DIR, baseCat, subCat, `${finalFileName}.webp`);
+
+                    await downloadAndConvert(value, fullOutputPath);
+
+                    // 5. JSON 경로 업데이트
+                    obj[key] = localWebPath;
+                    isModified = true;
+                } else if (typeof value === 'object' && value !== null) {
+                    // 하위 객체로 내려갈 때 현재 ID 전달
+                    await transform(value, id);
+                }
+            }
+        };
+
+        if (!Array.isArray(content)) {
+            for (const k in content) await transform(content[k], k);
+        } else {
+            await transform(content);
+        }
+
+        if (isModified) {
+            fs.writeFileSync(filePath, JSON.stringify(content, null, 2));
+            console.log(`✅ ${file} 경로 및 필드명 폴더 동기화 완료`);
+        }
+    }
+}
+
+async function downloadAndConvert(gamePath, outputPath) {
+    if (fs.existsSync(outputPath)) return; 
+
+    const remoteUrl = `${GITHUB_RAW_BASE}${gamePath.split('.')[0]}.png`.replace('/Game/Aki', '');
+    const dir = path.dirname(outputPath);
+    if (!fs.existsSync(dir)) fs.mkdirSync(dir, { recursive: true });
+
+    try {
+        const response = await axios({
+            url: remoteUrl,
+            method: 'GET',
+            responseType: 'arraybuffer',
+            timeout: 8000
+        });
+
+        await sharp(response.data)
+            .webp({ quality: 90 })
+            .toFile(outputPath);
+        
+        console.log(`  📸 저장: ${outputPath.split('assets')[1]}`);
+    } catch (err) {
+        // 실패 시 무시
+    }
+}
+
+console.log('🚀 [필드명 기반] 에셋 최적화 및 JSON 동기화 시작...');
+processData();

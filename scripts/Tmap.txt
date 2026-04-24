@@ -1,0 +1,15 @@
+const result = {}
+document.querySelectorAll('.custom-tier-list-hsr .custom-tier').forEach(tier => {
+  const tierName = [...tier.classList].find(c => c.startsWith('tier-') && c !== 'custom-tier')
+  result[tierName] = {}
+  tier.querySelectorAll('.custom-tier-container > div').forEach(col => {
+    const roleName = col.querySelector('.burst-type-mobile')?.className?.match(/burst-type-mobile (\w+)/)?.[1]
+      || col.querySelector('[class*="dps"],[class*="amplifier"],[class*="sustain"]')?.textContent?.trim()
+    const chars = [...col.querySelectorAll('a[href*="characters"]')].map(a => ({
+      slug: a.href.split('/star-rail/characters/')[1]?.replace(/\/$/, ''),
+      tags: a.querySelector('[class*="tag"],[class*="Tag"]')?.textContent?.trim() || ''
+    }))
+    if(chars.length) result[tierName][roleName || col.className] = chars
+  })
+})
+console.log(JSON.stringify(result, null, 2))

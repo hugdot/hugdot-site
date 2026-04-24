@@ -60,6 +60,8 @@
     "@astrojs/cloudflare": "^12.2.0",
     "@astrojs/sitemap": "^3.7.0",
     "@tailwindcss/vite": "^4.2.1",
-    "json-bigint": "^1.0.0"
+    "axios": "^1.15.2",
+    "json-bigint": "^1.0.0",
+    "sharp": "^0.34.5"
   }
 }

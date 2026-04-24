@@ -31,3 +31,9 @@ package-lock.json
 
 # cursor
 .cursor
+
+wuwa/
+
+google-indexing-script/
+
+bing-indexing-script/

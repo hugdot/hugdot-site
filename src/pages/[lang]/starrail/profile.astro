@@ -14,17 +14,6 @@ const MIHOMO_LANG: Record<string, string> = {
 }
 const mihomoLang = MIHOMO_LANG[lang as string] ?? 'en'
 
-// 성혼 설명 로드
-const allData = import.meta.glob('/src/data/starrail/**/*.json', { eager: true })
-const ranksRaw: Record<string, any> = (allData[`/src/data/starrail/${lang}/character_ranks.json`] as any)?.default ?? {}
-// id → { name, rank, desc } 맵
-const rankDescMap: Record<string, any> = {}
-Object.values(ranksRaw).forEach((d: any) => {
-  const charId = String(d.id).slice(0, 4)  // "101401" → "1014"
-  if (!rankDescMap[charId]) rankDescMap[charId] = []
-  rankDescMap[charId].push({ rank: d.rank, name: d.name, desc: d.desc })
-})
-const rankDescJSON = JSON.stringify(rankDescMap).replace(/</g, '\\u003c')
 
 const T: Record<string, any> = {
   kr: {
@@ -81,11 +70,10 @@ const mihomoLangJS = JSON.stringify(mihomoLang)
   </div>
 </div>
 
-<script is:inline define:vars={{ tJSON, mihomoLangJS, rankDescJSON }}>
+<script is:inline define:vars={{ tJSON, mihomoLangJS }}>
 ;(function() {
   var t          = JSON.parse(tJSON)
   var mihomoLang = JSON.parse(mihomoLangJS)
-  var rankDescs  = JSON.parse(rankDescJSON)
   var SLOT_NAMES = t.relicSlots
 
   function localImg(p) {
@@ -94,7 +82,8 @@ const mihomoLangJS = JSON.stringify(mihomoLang)
   }
   function mihomoImg(p) {
     if (!p) return ''
-    return '/api/mihomo-img/' + p
+    // 파일명 mihomo-img.js에 맞춰서 쿼리 스트링(?img=) 방식으로 변경
+    return '/api/mihomo-img?img=' + encodeURIComponent(p)
   }
   function img(path, w, h, cls) {
     if (!path) return ''
@@ -221,12 +210,10 @@ const mihomoLangJS = JSON.stringify(mihomoLang)
     var lc = char.light_cone || null
 
     // 성혼 (로컬 rank 설명 데이터 활용)
-    var charRankDescs = rankDescs[String(char.id)] || []
     var rankHtml = char.rank_icons ? char.rank_icons.map(function(icon, i) {
       var active  = i < char.rank
       var rankNum = i + 1
-      var rd      = charRankDescs.find(function(r) { return r.rank === rankNum }) || {}
-      var tooltip = 'E' + rankNum + (rd.name ? ' ' + rd.name : '') + (rd.desc ? '\n' + rd.desc : '')
+      var tooltip = 'Eidolon ' + rankNum // 상세 설명 대신 단계만 표시
       return '<div class="ei' + (active ? ' ei--on' : '') + '" data-tooltip="' + esc(tooltip) + '" onmouseenter="showSkillTip(event,this)" onmouseleave="hideSkillTip()">' +
         img(icon, 26, 26) +
       '</div>'
